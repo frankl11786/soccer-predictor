@@ -1,0 +1,43 @@
+name: Update forecasts
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 9 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+      FTP_HOST: ${{ secrets.FTP_HOST }}
+      FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
+      FTP_TLS: ${{ secrets.FTP_TLS }}
+      JAX_PLATFORM_NAME: cpu
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && pip install -r requirements.txt
+      - name: Refresh data, fit models, and simulate seasons
+        run: python -m predictor.run --league all --refresh
+      - name: Validate generated snapshots
+        run: python -m unittest discover -s tests -v
+      - name: Save snapshots and API cache
+        run: |
+          git config user.name "forecast-bot"
+          git config user.email "forecast-bot@users.noreply.github.com"
+          git add app/data data/cache data/model
+          git diff --cached --quiet || git commit -m "Automated forecast refresh"
+          git push
+      - name: Deploy website to GoDaddy
+        run: python scripts/deploy_ftp.py

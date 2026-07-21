@@ -1,0 +1,31 @@
+slug,name,short,conference,attack,defense,market_value,color
+atlanta-united,Atlanta United,ATL,East,0.04,0.1,62,#A71930
+charlotte-fc,Charlotte FC,CLT,East,0.1,-0.02,54,#1A85C8
+chicago-fire-fc,Chicago Fire FC,CHI,East,-0.01,0.08,47,#C8102E
+fc-cincinnati,FC Cincinnati,CIN,East,0.29,-0.19,76,#F05323
+columbus-crew,Columbus Crew,CLB,East,0.27,-0.15,71,#FEDD00
+dc-united,D.C. United,DCU,East,-0.12,0.17,39,#EF3E42
+inter-miami-cf,Inter Miami CF,MIA,East,0.38,-0.05,94,#F7B5CD
+cf-montréal,CF Montréal,MTL,East,-0.15,0.2,35,#0099D8
+nashville-sc,Nashville SC,NSH,East,0.18,-0.15,57,#FDE100
+new-england-revolution,New England Revolution,NER,East,-0.01,0.05,44,#0A2240
+new-york-city-fc,New York City FC,NYC,East,0.16,-0.08,63,#6CACE4
+orlando-city-sc,Orlando City SC,ORL,East,0.21,-0.1,66,#61259E
+philadelphia-union,Philadelphia Union,PHI,East,0.25,-0.17,58,#071B2C
+red-bull-new-york,Red Bull New York,RBNY,East,0.08,-0.03,49,#ED1E36
+toronto-fc,Toronto FC,TOR,East,-0.05,0.12,51,#B81137
+austin-fc,Austin FC,ATX,West,0.05,0.04,52,#00B140
+colorado-rapids,Colorado Rapids,COL,West,0.04,0.08,43,#862633
+fc-dallas,FC Dallas,DAL,West,0.02,0.06,50,#BF0D3E
+houston-dynamo-fc,Houston Dynamo FC,HOU,West,0.11,-0.03,48,#FF6B00
+los-angeles-fc,Los Angeles FC,LAFC,West,0.31,-0.18,79,#C39E6D
+la-galaxy,LA Galaxy,LAG,West,0.16,0.01,68,#00245D
+minnesota-united-fc,Minnesota United FC,MIN,West,0.19,-0.11,54,#8CD2F4
+portland-timbers,Portland Timbers,POR,West,0.14,0.01,53,#004812
+real-salt-lake,Real Salt Lake,RSL,West,0.13,-0.06,50,#B30838
+st-louis-city-sc,St. Louis CITY SC,STL,West,0.02,0.07,46,#E4002B
+san-diego-fc,San Diego FC,SD,West,0.28,-0.12,72,#F3D03E
+san-jose-earthquakes,San Jose Earthquakes,SJ,West,0.07,0.13,42,#0067B1
+seattle-sounders-fc,Seattle Sounders FC,SEA,West,0.25,-0.18,69,#5D9732
+sporting-kansas-city,Sporting Kansas City,SKC,West,-0.08,0.17,41,#93B1D7
+vancouver-whitecaps-fc,Vancouver Whitecaps FC,VAN,West,0.3,-0.21,64,#00245E

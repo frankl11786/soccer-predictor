@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Transparent season forecasts for MLS and the English Premier League." />
+  <title>Touchline Forecast</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#/home" aria-label="Touchline Forecast home">
+        <span class="brand-mark">TF</span>
+        <span><strong>Touchline Forecast</strong><small id="model-version">model loading…</small></span>
+      </a>
+      <div class="topbar-actions">
+        <div class="league-switcher" role="group" aria-label="League">
+          <button class="league-button active" data-league="epl">Premier League</button>
+          <button class="league-button" data-league="mls">MLS</button>
+        </div>
+        <button class="search-button" id="search-open" aria-label="Search teams"><span>Search teams</span><kbd>⌘ K</kbd></button>
+        <button class="mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button>
+      </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <nav id="primary-nav" aria-label="Primary navigation">
+        <a href="#/home" data-route="home"><span>⌂</span>Overview</a>
+        <a href="#/forecast" data-route="forecast"><span>↗</span>Forecast</a>
+        <a href="#/table" data-route="table"><span>≡</span>Projected table</a>
+        <a href="#/matchups" data-route="matchups"><span>⚔</span>Matchups</a>
+        <a href="#/races" data-route="races"><span>⌁</span><span id="races-label">Season races</span></a>
+        <a href="#/schedule" data-route="schedule"><span>◫</span>Schedule</a>
+        <a href="#/scores" data-route="scores"><span>●</span>Scores</a>
+        <a href="#/news" data-route="news"><span>◆</span>Model news</a>
+        <a href="#/method" data-route="method"><span>∑</span>Methodology</a>
+      </nav>
+      <div class="sidebar-card">
+        <div class="eyebrow">Snapshot</div>
+        <strong id="snapshot-title">Loading…</strong>
+        <p id="snapshot-date"></p>
+        <span class="demo-pill" id="data-mode-pill">Snapshot</span>
+      </div>
+      <p class="sidebar-foot">Probabilities are model output, not betting advice.</p>
+    </aside>
+
+    <main id="main" tabindex="-1">
+      <div class="loading-state"><div class="spinner"></div><p>Loading forecast snapshot…</p></div>
+    </main>
+  </div>
+
+  <dialog id="search-dialog" class="search-dialog">
+    <form method="dialog" class="search-panel">
+      <div class="search-input-wrap">
+        <span>⌕</span>
+        <input id="team-search" autocomplete="off" placeholder="Search clubs…" />
+        <button value="cancel" aria-label="Close">Esc</button>
+      </div>
+      <div id="search-results" class="search-results"></div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

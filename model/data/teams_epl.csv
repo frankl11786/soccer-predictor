@@ -1,0 +1,21 @@
+slug,name,short,conference,attack,defense,market_value,color
+arsenal,Arsenal,ARS,Premier League,0.43,-0.36,1260,#EF0107
+aston-villa,Aston Villa,AVL,Premier League,0.18,-0.08,650,#670E36
+bournemouth,Bournemouth,BOU,Premier League,0.08,0.0,460,#DA291C
+brentford,Brentford,BRE,Premier League,0.04,0.04,410,#E30613
+brighton-and-hove-albion,Brighton & Hove Albion,BHA,Premier League,0.13,-0.02,590,#0057B8
+chelsea,Chelsea,CHE,Premier League,0.34,-0.2,1120,#034694
+coventry-city,Coventry City,COV,Premier League,-0.2,0.22,145,#69B3E7
+crystal-palace,Crystal Palace,CRY,Premier League,0.1,-0.06,510,#1B458F
+everton,Everton,EVE,Premier League,-0.02,-0.02,380,#003399
+fulham,Fulham,FUL,Premier League,0.02,0.03,360,#111111
+hull-city,Hull City,HUL,Premier League,-0.27,0.28,105,#F5A12D
+ipswich-town,Ipswich Town,IPS,Premier League,-0.18,0.2,150,#3A64A3
+leeds-united,Leeds United,LEE,Premier League,-0.03,0.07,310,#FFCD00
+liverpool,Liverpool,LIV,Premier League,0.39,-0.25,1180,#C8102E
+manchester-city,Manchester City,MCI,Premier League,0.38,-0.27,1240,#6CABDD
+manchester-united,Manchester United,MUN,Premier League,0.18,-0.04,860,#DA291C
+newcastle-united,Newcastle United,NEW,Premier League,0.24,-0.12,760,#241F20
+nottingham-forest,Nottingham Forest,NFO,Premier League,0.07,-0.08,470,#DD0000
+sunderland,Sunderland,SUN,Premier League,-0.08,0.1,260,#EB172B
+tottenham-hotspur,Tottenham Hotspur,TOT,Premier League,0.16,0.02,790,#132257
