@@ -4,7 +4,7 @@
     "name": "Major League Soccer",
     "season": "2026",
     "as_of": "2026-07-22",
-    "generated_at": "2026-07-22T22:40:34Z",
+    "generated_at": "2026-07-22T23:21:35Z",
     "model_version": "bayes-ss-poisson-v2-multisource",
     "data_mode": "LIVE API + BAYESIAN MODEL",
     "iterations": 20000,
@@ -23,7 +23,7 @@
           ],
           "seasons_unavailable": [],
           "fixtures_received": 1541,
-          "updated_at": "2026-07-22T22:22:00Z"
+          "updated_at": "2026-07-22T23:04:34Z"
         },
         {
           "source": "American Soccer Analysis",
@@ -34,10 +34,10 @@
           ],
           "fixtures_received": 763,
           "errors": [],
-          "updated_at": "2026-07-22T22:22:08Z"
+          "updated_at": "2026-07-22T23:04:40Z"
         }
       ],
-      "updated_at": "2026-07-22T22:40:34Z"
+      "updated_at": "2026-07-22T23:21:35Z"
     },
     "polymarket": {
       "source": "Polymarket",
@@ -49,7 +49,7 @@
       "events_checked": 6,
       "quotes_found": 30,
       "errors": [],
-      "updated_at": "2026-07-22T22:40:34Z"
+      "updated_at": "2026-07-22T23:21:35Z"
     }
   },
   "teams": [
@@ -901,9 +901,9 @@
         "question": "Will Atlanta United FC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 36041.4523,
+        "liquidity": 32105.81452,
         "volume": 100230.3853349999,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -970,9 +970,9 @@
         "question": "Will Charlotte FC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 32280.58381,
+        "liquidity": 32198.85434,
         "volume": 2007885.1070090015,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1039,9 +1039,9 @@
         "question": "Will Chicago Fire FC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 91269.99287,
+        "liquidity": 88634.43264,
         "volume": 238418.26072700002,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1108,9 +1108,9 @@
         "question": "Will FC Cincinnati win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 39578.11463,
+        "liquidity": 39740.43585,
         "volume": 1580003.5707039994,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1177,9 +1177,9 @@
         "question": "Will Columbus Crew win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 38577.04168,
+        "liquidity": 37289.84589,
         "volume": 3109935.791144,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1246,9 +1246,9 @@
         "question": "Will D.C. United win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 32859.30234,
+        "liquidity": 29548.6939,
         "volume": 16096.498283000003,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1315,9 +1315,9 @@
         "question": "Will Inter Miami CF win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 21519.4803,
+        "liquidity": 19902.2873,
         "volume": 67451.54124099997,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1384,9 +1384,9 @@
         "question": "Will CF Montréal win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 27830.12763,
+        "liquidity": 27832.12297,
         "volume": 59932.753401000016,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1453,9 +1453,9 @@
         "question": "Will Nashville SC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 66122.81844,
+        "liquidity": 68498.83721,
         "volume": 306018.8705680003,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1522,9 +1522,9 @@
         "question": "Will New England Revolution win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 27971.95294,
+        "liquidity": 30125.85802,
         "volume": 49129.87032300003,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1591,9 +1591,9 @@
         "question": "Will New York City FC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 37484.47396,
+        "liquidity": 37282.8433,
         "volume": 693660.7164969982,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1660,9 +1660,9 @@
         "question": "Will Orlando City SC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 26513.23758,
+        "liquidity": 23906.3859,
         "volume": 2341582.1142619997,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1722,16 +1722,16 @@
       "conf_final": 0.0,
       "cup_final": 0.0,
       "champion": 0.0,
-      "market": 0.002,
-      "edge": -0.002,
+      "market": 0.0015,
+      "edge": -0.0015,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Philadelphia Union win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 35462.21667,
+        "liquidity": 35568.65515,
         "volume": 202869.913932,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1798,9 +1798,9 @@
         "question": "Will New York Red Bulls win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 40171.20152,
+        "liquidity": 36862.29396,
         "volume": 607200.8065829991,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1867,9 +1867,9 @@
         "question": "Will Toronto FC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 37636.21794,
+        "liquidity": 39605.23212,
         "volume": 35894.99353300001,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -1936,9 +1936,9 @@
         "question": "Will Austin FC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 32467.51147,
+        "liquidity": 29176.69265,
         "volume": 77139.35489599993,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2005,9 +2005,9 @@
         "question": "Will Colorado Rapids win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 34620.29447,
+        "liquidity": 34661.8417,
         "volume": 113298.44456599998,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2074,9 +2074,9 @@
         "question": "Will FC Dallas win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 34131.41735,
+        "liquidity": 33333.40035,
         "volume": 67889.65168099999,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2143,9 +2143,9 @@
         "question": "Will Houston Dynamo FC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 44617.21826,
+        "liquidity": 43831.40363,
         "volume": 456708.7954009987,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2212,9 +2212,9 @@
         "question": "Will Los Angeles FC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 25571.4537,
+        "liquidity": 25254.9129,
         "volume": 30701.233653999992,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2281,9 +2281,9 @@
         "question": "Will LA Galaxy win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 39479.71922,
+        "liquidity": 36950.47106,
         "volume": 22159.390599000013,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2350,9 +2350,9 @@
         "question": "Will Minnesota United FC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 28625.82091,
+        "liquidity": 32447.53191,
         "volume": 477447.68026599946,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2419,9 +2419,9 @@
         "question": "Will Portland Timbers win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 33685.09283,
+        "liquidity": 33485.71683,
         "volume": 89748.45178699998,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2488,9 +2488,9 @@
         "question": "Will Real Salt Lake win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 35495.90556,
+        "liquidity": 32901.23191,
         "volume": 2945207.9209210053,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2557,9 +2557,9 @@
         "question": "Will St. Louis City SC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 27936.21634,
+        "liquidity": 30219.50934,
         "volume": 75051.675188,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2626,9 +2626,9 @@
         "question": "Will San Diego FC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 34444.3873,
+        "liquidity": 33634.72991,
         "volume": 1217461.6492629983,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2695,9 +2695,9 @@
         "question": "Will San Jose Earthquakes win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 42563.48895,
+        "liquidity": 47257.21972,
         "volume": 1151313.82248,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2764,9 +2764,9 @@
         "question": "Will Seattle Sounders FC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 25665.87377,
+        "liquidity": 24521.75973,
         "volume": 853325.0889189977,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2833,9 +2833,9 @@
         "question": "Will Sporting Kansas City win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 26387.42128,
+        "liquidity": 27133.75328,
         "volume": 58223.594235000004,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     },
     {
@@ -2902,9 +2902,9 @@
         "question": "Will Vancouver Whitecaps FC win the 2026 MLS Cup?",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "liquidity": 106280.76266,
+        "liquidity": 106312.19366,
         "volume": 375176.33143400034,
-        "updated_at": "2026-07-22T22:40:34Z"
+        "updated_at": "2026-07-22T23:21:35Z"
       }
     }
   ],
