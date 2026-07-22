@@ -9,25 +9,8 @@ import numpy as np
 import pandas as pd
 
 from .api_football import FINAL_STATUSES
-from .config import BUCKET_DAYS, LeagueConfig, OVERRIDE_DIR
-from .utils import deterministic_color, load_csv, normalize_name, slugify
-
-
-ALIASES = {
-    "newyorkredbulls": "redbullnewyork",
-    "montrealimpact": "cfmontreal",
-    "intermiami": "intermiamicf",
-    "lafc": "losangelesfc",
-    "losangelesgalaxy": "lagalaxy",
-    "stlouiscity": "stlouiscitysc",
-    "dcunited": "dcunited",
-    "brightonhovealbion": "brightonandhovealbion",
-    "wolverhamptonwanderers": "wolves",
-    "tottenham": "tottenhamhotspur",
-    "manchesterutd": "manchesterunited",
-    "manchestercity": "manchestercity",
-    "nottinghamforest": "nottinghamforest",
-}
+from .config import BUCKET_DAYS, LeagueConfig
+from .identity import team_catalog
 
 
 @dataclass
@@ -43,102 +26,59 @@ class PreparedLeague:
     value_by_id: dict[int, float]
 
 
-def _override_rows(cfg: LeagueConfig) -> list[dict[str, str]]:
-    return load_csv(OVERRIDE_DIR / f"teams_{cfg.key}.csv")
+def _dedupe(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    # Cross-source dedupe uses canonical teams, season, and date. Prefer rows with a final score.
+    chosen: dict[tuple, dict[str, Any]] = {}
+    for row in rows:
+        date_key = str(row.get("date") or "")[:10]
+        key = (row.get("season"), date_key, row.get("home_id"), row.get("away_id"))
+        previous = chosen.get(key)
+        if previous is None:
+            chosen[key] = row
+            continue
+        previous_final = previous.get("status") in FINAL_STATUSES
+        current_final = row.get("status") in FINAL_STATUSES
+        if current_final and not previous_final:
+            chosen[key] = row
+    return sorted(chosen.values(), key=lambda row: (row.get("timestamp") or 0, str(row.get("fixture_id"))))
 
 
-def _match_override(name: str, overrides: list[dict[str, str]]) -> dict[str, str] | None:
-    normalized = ALIASES.get(normalize_name(name), normalize_name(name))
-    best = None
-    for row in overrides:
-        candidate = ALIASES.get(normalize_name(row.get("name", "")), normalize_name(row.get("name", "")))
-        if candidate == normalized:
-            return row
-        if candidate and (candidate in normalized or normalized in candidate):
-            best = row
-    return best
-
-
-def _conference(api_id: int, name: str, standings_groups: dict[int, str], override: dict[str, str] | None, cfg: LeagueConfig) -> str:
-    if cfg.key == "epl":
-        return "Premier League"
-    group = standings_groups.get(api_id, "")
-    if "east" in group.lower():
-        return "East"
-    if "west" in group.lower():
-        return "West"
-    if override and override.get("conference"):
-        return override["conference"]
-    return "Unknown"
-
-
-def prepare_league(
-    cfg: LeagueConfig,
-    fixture_rows: list[dict[str, Any]],
-    api_teams: list[dict[str, Any]],
-    standings_groups: dict[int, str],
-) -> PreparedLeague:
-    if not api_teams:
-        raise ValueError(f"API-Football returned no current teams for {cfg.name} {cfg.current_season}.")
-    overrides = _override_rows(cfg)
-    teams: list[dict[str, Any]] = []
-    for item in api_teams:
-        override = _match_override(item["name"], overrides)
-        market_value = float((override or {}).get("market_value") or 1.0)
-        short = item.get("code") or (override or {}).get("short") or "".join(word[0] for word in item["name"].split())[:4].upper()
-        teams.append(
-            {
-                "api_id": int(item["api_id"]),
-                "name": item["name"],
-                "short": short,
-                "conference": _conference(int(item["api_id"]), item["name"], standings_groups, override, cfg),
-                "market_value": market_value,
-                "color": (override or {}).get("color") or deterministic_color(item["name"]),
-                "slug": slugify(item["name"]),
-                "logo": item.get("logo"),
-                "venue": item.get("venue"),
-                "venue_city": item.get("venue_city"),
-                "venue_surface": item.get("venue_surface"),
-            }
-        )
-
+def prepare_league(cfg: LeagueConfig, fixture_rows: list[dict[str, Any]]) -> PreparedLeague:
+    teams = team_catalog(cfg)
+    if not teams:
+        raise ValueError(f"No team catalog exists for {cfg.name}.")
+    fixture_rows = _dedupe(fixture_rows)
     current_ids = [team["api_id"] for team in teams]
     current_set = set(current_ids)
-    current = [row for row in fixture_rows if row["season"] == cfg.current_season and row["home_id"] in current_set and row["away_id"] in current_set]
+    current = [
+        row for row in fixture_rows
+        if row["season"] == cfg.current_season and row["home_id"] in current_set and row["away_id"] in current_set
+    ]
     if cfg.key == "mls":
-        regular = [row for row in current if "regular" in row["round"].lower()]
+        regular = [row for row in current if "regular" in str(row.get("round", "")).lower()]
         if regular:
             current = regular
     if not current:
-        raise ValueError(f"API-Football returned no current-season fixtures for {cfg.name}.")
+        raise ValueError(f"No current-season fixtures were found for {cfg.name}.")
 
     completed = [
         row for row in fixture_rows
         if row["status"] in FINAL_STATUSES and row["home_goals"] is not None and row["away_goals"] is not None
     ]
     if len(completed) < 80:
-        raise ValueError(
-            f"Only {len(completed)} completed historical fixtures were available. "
-            "The Bayesian model needs at least 80. The free API plan may not expose enough seasons yet."
-        )
+        raise ValueError(f"Only {len(completed)} completed fixtures were available; at least 80 are required.")
 
     all_ids = sorted({row["home_id"] for row in completed} | {row["away_id"] for row in completed} | current_set)
     team_index = {team_id: index for index, team_id in enumerate(all_ids)}
     name_by_id = {row["home_id"]: row["home_name"] for row in fixture_rows}
     name_by_id.update({row["away_id"]: row["away_name"] for row in fixture_rows})
 
-    override_values = {normalize_name(row.get("name", "")): float(row.get("market_value") or 1.0) for row in overrides}
     current_value = {team["api_id"]: team["market_value"] for team in teams}
     known_values = [value for value in current_value.values() if value > 0]
     default_value = float(np.median(known_values)) if known_values else 1.0
-    value_by_id: dict[int, float] = {}
-    for team_id in all_ids:
-        if team_id in current_value:
-            value_by_id[team_id] = current_value[team_id]
-        else:
-            value_by_id[team_id] = override_values.get(normalize_name(name_by_id.get(team_id, "")), default_value)
+    value_by_id = {team_id: current_value.get(team_id, default_value) for team_id in all_ids}
 
-    parsed_dates = [datetime.fromisoformat(row["date"].replace("Z", "+00:00")) for row in completed]
+    parsed_dates = [datetime.fromisoformat(str(row["date"]).replace("Z", "+00:00")) for row in completed]
     origin = min(parsed_dates).astimezone(timezone.utc)
     now = datetime.now(timezone.utc)
     max_date = max(max(parsed_dates), now)
@@ -161,7 +101,7 @@ def prepare_league(
 
     current_rows = []
     for row in current:
-        when = datetime.fromisoformat(row["date"].replace("Z", "+00:00")).astimezone(timezone.utc)
+        when = datetime.fromisoformat(str(row["date"]).replace("Z", "+00:00")).astimezone(timezone.utc)
         current_rows.append({**row, "future_bucket": max(0, int((when - now).days // BUCKET_DAYS))})
 
     return PreparedLeague(

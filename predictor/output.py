@@ -18,7 +18,7 @@ def build_snapshot(
     simulation: SimulationResult,
     quotes: dict[str, MarketQuote],
     market_meta: dict[str, Any],
-    api_meta: dict[str, Any],
+    data_meta: dict[str, Any],
     output_path,
 ) -> dict[str, Any]:
     forecast_by_slug = {row["team"]: row for row in simulation.forecast}
@@ -65,12 +65,12 @@ def build_snapshot(
             "data_mode": "LIVE API + BAYESIAN MODEL",
             "iterations": cfg.simulations,
             "notice": (
-                f"Fixtures and results come from API-Football. Attack and defense ratings are fitted from "
+                f"Fixtures and results come from a free multi-source pipeline. Attack and defense ratings are fitted from "
                 f"{fit.summary['matches']:,} completed matches using a Bayesian state-space Poisson model. "
-                "Polymarket values appear only when an active matching market is found."
+                "Polymarket values are an independent comparison and appear only when an active matching market is found."
             ),
             "completed_matches": completed,
-            "api_football": api_meta,
+            "data_sources": data_meta,
             "polymarket": market_meta,
         },
         "teams": teams,

@@ -70,54 +70,40 @@ def cached_request(
     return wrapped
 
 
-def fetch_league_bundle(client: ApiFootballClient, cfg: LeagueConfig, refresh: bool = False) -> dict[str, Any]:
-    fixture_payloads: list[dict[str, Any]] = []
+def fetch_history_rows(client: ApiFootballClient, cfg: LeagueConfig, refresh: bool = False) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    payloads: list[dict[str, Any]] = []
     unavailable: list[dict[str, Any]] = []
-    for season in cfg.history_seasons:
+    for season in cfg.api_history_seasons:
         try:
-            wrapped = cached_request(
-                client,
-                cfg.key,
-                f"fixtures_{season}",
-                "fixtures",
-                {"league": cfg.api_league_id, "season": season, "timezone": "UTC"},
-                refresh=refresh or season == cfg.current_season,
+            payloads.append(
+                cached_request(
+                    client,
+                    cfg.key,
+                    f"fixtures_{season}",
+                    "fixtures",
+                    {"league": cfg.api_league_id, "season": season, "timezone": "UTC"},
+                    refresh=refresh,
+                )
             )
-            fixture_payloads.append(wrapped)
         except (requests.RequestException, ApiFootballError) as exc:
             unavailable.append({"season": season, "error": str(exc)})
 
-    teams = cached_request(
-        client,
-        cfg.key,
-        f"teams_{cfg.current_season}",
-        "teams",
-        {"league": cfg.api_league_id, "season": cfg.current_season},
-        refresh=refresh,
-    )
-    try:
-        standings = cached_request(
-            client,
-            cfg.key,
-            f"standings_{cfg.current_season}",
-            "standings",
-            {"league": cfg.api_league_id, "season": cfg.current_season},
-            refresh=True,
-        )
-    except (requests.RequestException, ApiFootballError) as exc:
-        standings = {"fetched_at": utc_now_iso(), "payload": {"response": []}, "warning": str(exc)}
-
-    return {
-        "fixtures": fixture_payloads,
-        "teams": teams,
-        "standings": standings,
-        "unavailable": unavailable,
+    rows = fixture_rows(payloads)
+    metadata = {
+        "source": "API-Football",
+        "purpose": "historical results",
+        "league_id": cfg.api_league_id,
+        "seasons_requested": list(cfg.api_history_seasons),
+        "seasons_unavailable": unavailable,
+        "fixtures_received": len(rows),
+        "updated_at": utc_now_iso(),
     }
+    return rows, metadata
 
 
-def fixture_rows(bundle: dict[str, Any]) -> list[dict[str, Any]]:
+def fixture_rows(wrapped_payloads: list[dict[str, Any]]) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
-    for wrapped in bundle["fixtures"]:
+    for wrapped in wrapped_payloads:
         payload = wrapped.get("payload", {})
         for item in payload.get("response", []):
             fixture = item.get("fixture", {})
@@ -128,16 +114,17 @@ def fixture_rows(bundle: dict[str, Any]) -> list[dict[str, Any]]:
             status = fixture.get("status", {})
             rows.append(
                 {
-                    "fixture_id": int(fixture["id"]),
+                    "fixture_id": f"api-{fixture['id']}",
+                    "source": "API-Football",
                     "date": fixture.get("date"),
                     "timestamp": fixture.get("timestamp"),
                     "season": int(league.get("season")),
                     "round": league.get("round") or "",
                     "status": status.get("short") or "",
                     "status_long": status.get("long") or "",
-                    "home_id": int(teams["home"]["id"]),
+                    "home_id": 0,
                     "home_name": teams["home"]["name"],
-                    "away_id": int(teams["away"]["id"]),
+                    "away_id": 0,
                     "away_name": teams["away"]["name"],
                     "home_goals": goals.get("home"),
                     "away_goals": goals.get("away"),
@@ -149,39 +136,3 @@ def fixture_rows(bundle: dict[str, Any]) -> list[dict[str, Any]]:
             )
     unique = {row["fixture_id"]: row for row in rows}
     return sorted(unique.values(), key=lambda row: (row.get("timestamp") or 0, row["fixture_id"]))
-
-
-def current_team_rows(bundle: dict[str, Any]) -> list[dict[str, Any]]:
-    response = bundle.get("teams", {}).get("payload", {}).get("response", [])
-    rows = []
-    for item in response:
-        team = item.get("team", {})
-        venue = item.get("venue", {})
-        rows.append(
-            {
-                "api_id": int(team["id"]),
-                "name": team["name"],
-                "code": team.get("code"),
-                "country": team.get("country"),
-                "founded": team.get("founded"),
-                "logo": team.get("logo"),
-                "venue": venue.get("name"),
-                "venue_city": venue.get("city"),
-                "venue_surface": venue.get("surface"),
-            }
-        )
-    return rows
-
-
-def standings_groups(bundle: dict[str, Any]) -> dict[int, str]:
-    result: dict[int, str] = {}
-    response = bundle.get("standings", {}).get("payload", {}).get("response", [])
-    for competition in response:
-        groups = competition.get("league", {}).get("standings", [])
-        for group in groups:
-            for row in group:
-                team_id = row.get("team", {}).get("id")
-                group_name = row.get("group") or ""
-                if team_id is not None:
-                    result[int(team_id)] = group_name
-    return result

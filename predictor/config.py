@@ -16,7 +16,8 @@ class LeagueConfig:
     name: str
     api_league_id: int
     current_season: int
-    history_seasons: tuple[int, ...]
+    api_history_seasons: tuple[int, ...]
+    supplemental_seasons: tuple[int, ...]
     competition: str
     simulations: int
     polymarket_queries: tuple[str, ...]
@@ -29,7 +30,8 @@ LEAGUES = {
         name="English Premier League",
         api_league_id=39,
         current_season=2026,
-        history_seasons=(2023, 2024, 2025, 2026),
+        api_history_seasons=(2022, 2023, 2024),
+        supplemental_seasons=(2025, 2026),
         competition="epl",
         simulations=20_000,
         polymarket_queries=(
@@ -44,7 +46,8 @@ LEAGUES = {
         name="Major League Soccer",
         api_league_id=253,
         current_season=2026,
-        history_seasons=(2023, 2024, 2025, 2026),
+        api_history_seasons=(2022, 2023, 2024),
+        supplemental_seasons=(2025, 2026),
         competition="mls",
         simulations=20_000,
         polymarket_queries=(
@@ -56,7 +59,7 @@ LEAGUES = {
     ),
 }
 
-MODEL_VERSION = "bayes-ss-poisson-v1"
+MODEL_VERSION = "bayes-ss-poisson-v2-multisource"
 BUCKET_DAYS = 28
 POSTERIOR_SAMPLES = 800
 SVI_STEPS = 5_000
