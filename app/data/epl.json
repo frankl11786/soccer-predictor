@@ -4,7 +4,7 @@
     "name": "English Premier League",
     "season": "2026/27",
     "as_of": "2026-07-23",
-    "generated_at": "2026-07-23T02:48:07Z",
+    "generated_at": "2026-07-23T03:39:51Z",
     "model_version": "bayes-ss-poisson-v2-multisource",
     "data_mode": "LIVE API + BAYESIAN MODEL",
     "iterations": 20000,
@@ -23,7 +23,7 @@
           ],
           "seasons_unavailable": [],
           "fixtures_received": 1140,
-          "updated_at": "2026-07-23T02:30:49Z"
+          "updated_at": "2026-07-23T03:22:09Z"
         },
         {
           "source": "OpenFootball",
@@ -34,10 +34,10 @@
           ],
           "fixtures_received": 760,
           "errors": [],
-          "updated_at": "2026-07-23T02:30:50Z"
+          "updated_at": "2026-07-23T03:22:10Z"
         }
       ],
-      "updated_at": "2026-07-23T02:48:07Z"
+      "updated_at": "2026-07-23T03:39:51Z"
     },
     "polymarket": {
       "source": "Polymarket",
@@ -49,7 +49,7 @@
       "events_checked": 2,
       "quotes_found": 18,
       "errors": [],
-      "updated_at": "2026-07-23T02:48:07Z"
+      "updated_at": "2026-07-23T03:39:51Z"
     }
   },
   "teams": [
@@ -629,9 +629,9 @@
         "question": "Will Arsenal win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 520320.7732,
+        "liquidity": 521740.0749,
         "volume": 39699.108642999985,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -686,9 +686,9 @@
         "question": "Will Aston Villa win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 209042.64272,
+        "liquidity": 212080.84272,
         "volume": 31515.395472999997,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -743,9 +743,9 @@
         "question": "Will Bournemouth win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 167510.46948,
+        "liquidity": 170907.47023,
         "volume": 23796.848,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -800,9 +800,9 @@
         "question": "Will Brentford win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 197684.89719,
+        "liquidity": 201148.26239,
         "volume": 35750.149483,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -906,9 +906,9 @@
         "question": "Will Chelsea win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 208936.5372,
+        "liquidity": 211224.6798,
         "volume": 96135.21393000006,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -963,9 +963,9 @@
         "question": "Will Coventry City win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 177849.60491,
+        "liquidity": 181246.00491,
         "volume": 49159.961749,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -1020,9 +1020,9 @@
         "question": "Will Crystal Palace win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 176287.60336,
+        "liquidity": 179742.20336,
         "volume": 28603.080233,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -1077,9 +1077,9 @@
         "question": "Will Everton win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 169284.83218,
+        "liquidity": 173922.36618,
         "volume": 27063.015000000003,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -1134,9 +1134,9 @@
         "question": "Will Fulham win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 175091.86759,
+        "liquidity": 178492.03259,
         "volume": 38856.572060000006,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -1191,9 +1191,9 @@
         "question": "Will Hull City win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 177237.46902,
+        "liquidity": 180631.20402,
         "volume": 36363.990427,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -1248,9 +1248,9 @@
         "question": "Will Ipswich Town win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 157600.0868,
+        "liquidity": 161141.70341,
         "volume": 25930.050761000002,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -1305,9 +1305,9 @@
         "question": "Will Leeds United win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 164936.73972,
+        "liquidity": 169666.80872,
         "volume": 33601.852272000004,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -1362,9 +1362,9 @@
         "question": "Will Liverpool win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 280201.3275,
+        "liquidity": 281898.5238,
         "volume": 24153.988910999993,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -1419,9 +1419,9 @@
         "question": "Will Manchester City win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 794205.0517,
-        "volume": 406314.7712510004,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "liquidity": 796505.7405,
+        "volume": 406324.9645830004,
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -1476,9 +1476,9 @@
         "question": "Will Manchester United win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 352463.0985,
+        "liquidity": 359467.0948,
         "volume": 50818.63195500002,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -1533,9 +1533,9 @@
         "question": "Will Newcastle United win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 211359.87338,
+        "liquidity": 214971.87338,
         "volume": 40036.322611,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -1590,9 +1590,9 @@
         "question": "Will Nottingham Forest win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 159107.76058,
+        "liquidity": 162559.20058,
         "volume": 30404.608594000005,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
@@ -1647,9 +1647,9 @@
         "question": "Will Sunderland win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 167902.54209,
+        "liquidity": 174786.34209,
         "volume": 31140.338227,
-        "updated_at": "2026-07-23T02:48:07Z"
+        "updated_at": "2026-07-23T03:39:51Z"
       }
     },
     {
