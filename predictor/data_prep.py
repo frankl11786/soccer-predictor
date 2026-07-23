@@ -58,6 +58,30 @@ def prepare_league(cfg: LeagueConfig, fixture_rows: list[dict[str, Any]]) -> Pre
         regular = [row for row in current if "regular" in str(row.get("round", "")).lower()]
         if regular:
             current = regular
+
+        expected_matches = 510
+        appearances = {team_id: 0 for team_id in current_ids}
+        for row in current:
+            if row["home_id"] in appearances:
+                appearances[row["home_id"]] += 1
+            if row["away_id"] in appearances:
+                appearances[row["away_id"]] += 1
+        bad_counts = {
+            team_id: count
+            for team_id, count in appearances.items()
+            if count != 34
+        }
+        if len(current) != expected_matches or bad_counts:
+            sample = ", ".join(
+                f"{team_id}:{count}"
+                for team_id, count in list(bad_counts.items())[:8]
+            )
+            raise ValueError(
+                "MLS schedule validation failed: "
+                f"expected {expected_matches} regular-season fixtures and 34 per club, "
+                f"received {len(current)} fixtures. Bad club counts: {sample or 'none'}."
+            )
+
     if not current:
         raise ValueError(f"No current-season fixtures were found for {cfg.name}.")
 
