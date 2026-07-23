@@ -4,7 +4,7 @@
     "name": "English Premier League",
     "season": "2026/27",
     "as_of": "2026-07-23",
-    "generated_at": "2026-07-23T04:21:25Z",
+    "generated_at": "2026-07-23T11:39:24Z",
     "model_version": "bayes-ss-poisson-v2-multisource",
     "data_mode": "LIVE API + BAYESIAN MODEL",
     "iterations": 20000,
@@ -23,7 +23,7 @@
           ],
           "seasons_unavailable": [],
           "fixtures_received": 1140,
-          "updated_at": "2026-07-23T04:04:36Z"
+          "updated_at": "2026-07-23T11:23:47Z"
         },
         {
           "source": "OpenFootball",
@@ -34,10 +34,10 @@
           ],
           "fixtures_received": 760,
           "errors": [],
-          "updated_at": "2026-07-23T04:04:36Z"
+          "updated_at": "2026-07-23T11:23:47Z"
         }
       ],
-      "updated_at": "2026-07-23T04:21:25Z"
+      "updated_at": "2026-07-23T11:39:24Z"
     },
     "polymarket": {
       "source": "Polymarket",
@@ -49,7 +49,7 @@
       "events_checked": 2,
       "quotes_found": 18,
       "errors": [],
-      "updated_at": "2026-07-23T04:21:25Z"
+      "updated_at": "2026-07-23T11:39:24Z"
     },
     "compared_with_previous_snapshot": true
   },
@@ -630,9 +630,9 @@
         "question": "Will Arsenal win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 524096.4999,
+        "liquidity": 403014.5605,
         "volume": 39699.108642999985,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -687,9 +687,9 @@
         "question": "Will Aston Villa win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 208481.04272,
-        "volume": 31515.395472999997,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "liquidity": 211538.54085,
+        "volume": 31809.513119999996,
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -744,9 +744,9 @@
         "question": "Will Bournemouth win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 163894.56948,
-        "volume": 23796.848,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "liquidity": 171712.81375,
+        "volume": 24296.848,
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -801,9 +801,9 @@
         "question": "Will Brentford win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 196945.98535,
+        "liquidity": 189818.86335,
         "volume": 35750.149483,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -907,9 +907,9 @@
         "question": "Will Chelsea win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 210532.3204,
-        "volume": 97135.21393000006,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "liquidity": 212558.3431,
+        "volume": 97309.48393000005,
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -964,9 +964,9 @@
         "question": "Will Coventry City win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 179236.55091,
+        "liquidity": 176629.49491,
         "volume": 49159.961749,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -1021,9 +1021,9 @@
         "question": "Will Crystal Palace win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 179139.93136,
+        "liquidity": 175602.21736,
         "volume": 28603.080233,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -1078,9 +1078,9 @@
         "question": "Will Everton win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 171740.15618,
+        "liquidity": 169204.62618,
         "volume": 27063.015000000003,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -1135,9 +1135,9 @@
         "question": "Will Fulham win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 178488.86759,
+        "liquidity": 177813.64127,
         "volume": 38856.572060000006,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -1192,9 +1192,9 @@
         "question": "Will Hull City win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 176432.09157,
+        "liquidity": 172355.86635,
         "volume": 36363.990427,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -1249,9 +1249,9 @@
         "question": "Will Ipswich Town win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 156963.00517,
+        "liquidity": 156256.12037,
         "volume": 25930.050761000002,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -1306,9 +1306,9 @@
         "question": "Will Leeds United win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 164567.36372,
+        "liquidity": 163871.72272,
         "volume": 33601.852272000004,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -1363,9 +1363,9 @@
         "question": "Will Liverpool win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 279122.601,
-        "volume": 24153.988910999993,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "liquidity": 280000.6124,
+        "volume": 24253.988910999993,
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -1420,9 +1420,9 @@
         "question": "Will Manchester City win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 791767.528,
-        "volume": 406324.9645830004,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "liquidity": 792628.1466,
+        "volume": 406575.05077100045,
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -1477,9 +1477,9 @@
         "question": "Will Manchester United win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 369918.292,
-        "volume": 50818.63195500002,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "liquidity": 366415.2368,
+        "volume": 50910.29861900002,
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -1534,9 +1534,9 @@
         "question": "Will Newcastle United win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 206872.16138,
-        "volume": 40036.322611,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "liquidity": 211125.71735,
+        "volume": 40204.652611000005,
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -1591,9 +1591,9 @@
         "question": "Will Nottingham Forest win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 162559.20058,
+        "liquidity": 160166.41604,
         "volume": 30404.608594000005,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -1648,9 +1648,9 @@
         "question": "Will Sunderland win the 2026-27 English Premier League (EPL) Championship?",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "liquidity": 167899.54209,
+        "liquidity": 167224.31609,
         "volume": 31140.338227,
-        "updated_at": "2026-07-23T04:21:25Z"
+        "updated_at": "2026-07-23T11:39:24Z"
       }
     },
     {
@@ -12347,17 +12347,17 @@
   ],
   "news": [
     {
-      "id": "system-epl-2026-07-23T04:21:25Z",
+      "id": "system-epl-2026-07-23T11:39:24Z",
       "type": "system",
       "date": "2026-07-23",
-      "generated_at": "2026-07-23T04:21:25Z",
+      "generated_at": "2026-07-23T11:39:24Z",
       "team": null,
       "headline": "Automated model refresh completed",
       "summary": "The latest English Premier League data was downloaded, the Bayesian model was fully refitted, and 20,000 season simulations were completed.",
       "affects_forecast": true,
       "impact": "System update",
       "details": {
-        "generated_at": "2026-07-23T04:21:25Z",
+        "generated_at": "2026-07-23T11:39:24Z",
         "model_version": "bayes-ss-poisson-v2-multisource",
         "matches_fitted": 1520,
         "simulations": 20000,
