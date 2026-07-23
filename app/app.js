@@ -10,6 +10,7 @@ const state = {
   matchupA: null,
   matchupB: null,
   venue: 'a-home',
+  raceExpanded: {},
 };
 
 const main = document.getElementById('main');
@@ -19,6 +20,14 @@ const searchResults = document.getElementById('search-results');
 
 const esc = (value = '') => String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
 const pct = (v, digits = 0) => `${(Number(v || 0) * 100).toFixed(digits)}%`;
+const probPct = (v, digits = 1) => {
+  const value = Number(v || 0);
+  if (value === 0) return '0%';
+  const percentage = value * 100;
+  if (percentage < 0.1) return '<0.1%';
+  if (percentage >= 99.95) return '100%';
+  return `${percentage.toFixed(digits)}%`;
+};
 const signedPct = v => `${v >= 0 ? '+' : ''}${(Number(v || 0) * 100).toFixed(1)}%`;
 const dateText = iso => new Intl.DateTimeFormat('en-US', {month:'short', day:'numeric', year:'numeric'}).format(new Date(`${iso}T12:00:00`));
 const compactDate = iso => new Intl.DateTimeFormat('en-US', {month:'short', day:'numeric'}).format(new Date(`${iso}T12:00:00`));
@@ -231,24 +240,40 @@ function positionClass(i, total, league) {
   if (i===0) return 'title';
   if (league==='epl' && i<4) return 'europe';
   if (league==='epl' && i>=total-3) return 'danger';
-  if (league==='mls' && i<9) return 'europe';
+  if (league==='mls' && i<7) return 'europe';
+  if (league==='mls' && i<9) return 'wildcard';
   return '';
 }
-function tableSection(rows, title='') {
+function tableSection(rows, title='', id='') {
   const tMap=teamMap();
-  return `<article class="card">${title?`<div class="card-head"><h2>${title}</h2></div>`:''}<div class="table-wrap"><table><thead><tr><th>Pos</th><th>Club</th><th>P</th><th>Pts</th><th>GD</th><th>Projected</th><th>Range</th><th>${outcomeLabel()}</th></tr></thead><tbody>${rows.map((r,i)=>{
+  const body=rows.map((r,i)=>{
     const t=tMap[r.team];
     const lo=Math.max(0, Math.round(r.projected_points-1.64*r.points_sd));
     const hi=Math.round(r.projected_points+1.64*r.points_sd);
-    return `<tr data-team="${t.slug}"><td><span class="position-chip ${positionClass(i,rows.length,state.league)}">${i+1}</span></td><td><span class="table-team">${badge(t)}${esc(t.name)}</span></td><td>${r.p||0}</td><td>${r.pts||0}</td><td>${r.gd>0?'+':''}${r.gd||0}</td><td><b>${r.projected_points.toFixed(1)}</b></td><td>${lo}–${hi}</td><td>${pct(r[outcomeKey()],1)}</td></tr>`;
-  }).join('')}</tbody></table></div></article>`;
+    const row=`<tr data-team="${t.slug}" tabindex="0" aria-label="View ${esc(t.name)} forecast"><td><span class="position-chip ${positionClass(i,rows.length,state.league)}">${i+1}</span></td><td><span class="table-team">${badge(t)}${esc(t.name)}</span></td><td>${r.p||0}</td><td>${r.pts||0}</td><td>${r.gd>0?'+':''}${r.gd||0}</td><td><b>${r.projected_points.toFixed(1)}</b></td><td>${lo}–${hi}</td><td>${probPct(r[outcomeKey()],1)}</td></tr>`;
+    if(state.league==='mls' && i===8) {
+      return `${row}<tr class="playoff-cutoff-row" aria-hidden="true"><td colspan="8"><span>Playoff cutoff</span><small>Seeds 1–7 qualify directly · Seeds 8–9 enter the Wild Card round</small></td></tr>`;
+    }
+    return row;
+  }).join('');
+  return `<article class="card projection-card"${id?` id="${id}"`:''}>${title?`<div class="card-head"><h2>${title}</h2><span class="conference-legend"><i class="legend-direct"></i>Direct playoff <i class="legend-wildcard"></i>Wild Card</span></div>`:''}<div class="table-wrap projection-table-wrap"><table class="projection-table"><thead><tr><th>Pos</th><th>Club</th><th>P</th><th>Pts</th><th>GD</th><th>Projected</th><th>Range</th><th>${outcomeLabel()}</th></tr></thead><tbody>${body}</tbody></table></div></article>`;
 }
 function renderTable() {
   const copy = state.league==='epl'
     ? 'The mean final table across all season simulations. The range is an approximate 90% interval for final points.'
     : 'Conference tables are ranked separately for postseason qualification. The Shield is determined across both conferences.';
-  main.innerHTML=`<div class="page">${pageHead('Season projection', state.league==='epl'?'Projected table':'Conference projections', copy)}${notice()}<section class="grid ${state.league==='mls'?'split':''}">${state.league==='epl'?tableSection(projectedRows()):tableSection(projectedRows('East'),'Eastern Conference')+tableSection(projectedRows('West'),'Western Conference')}</section></div>`;
-  document.querySelectorAll('tr[data-team]').forEach(row=>row.addEventListener('click',()=>location.hash=`#/team/${row.dataset.team}`));
+  const content=state.league==='epl'
+    ? `<section class="grid">${tableSection(projectedRows())}</section>`
+    : `<nav class="conference-jumps" aria-label="Jump to conference"><span>Jump to:</span><button class="conference-jump" data-target="east-conference">Eastern Conference</button><button class="conference-jump" data-target="west-conference">Western Conference</button></nav><section class="grid mls-table-stack">${tableSection(projectedRows('East'),'Eastern Conference','east-conference')}${tableSection(projectedRows('West'),'Western Conference','west-conference')}</section>`;
+  main.innerHTML=`<div class="page">${pageHead('Season projection', state.league==='epl'?'Projected table':'Conference projections', copy)}${notice()}${content}</div>`;
+  document.querySelectorAll('tr[data-team]').forEach(row=>{
+    const open=()=>location.hash=`#/team/${row.dataset.team}`;
+    row.addEventListener('click',open);
+    row.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open();}});
+  });
+  document.querySelectorAll('.conference-jump').forEach(button=>button.addEventListener('click',()=>{
+    document.getElementById(button.dataset.target)?.scrollIntoView({behavior:'smooth',block:'start'});
+  }));
 }
 
 function poissonP(lambda, goals) { return Math.exp(-lambda) * Math.pow(lambda, goals) / factorial(goals); }
@@ -300,10 +325,40 @@ function scoreMatrix(matrix) {
   return `<table class="score-matrix"><thead><tr><th></th>${matrix[0].map((_,i)=>`<th>${i}</th>`).join('')}</tr></thead><tbody>${matrix.map((row,h)=>`<tr><th>${h}</th>${row.map(p=>`<td><span class="score-cell" style="background:rgba(10,111,87,${Math.max(.03,p/max*.8)});display:block;padding:7px 2px"><span>${pct(p,1)}</span></span></td>`).join('')}</tr>`).join('')}</tbody></table>`;
 }
 
+function raceDefinition(key) {
+  const definitions = state.league==='epl'
+    ? {
+        title: 'Finishes first in the Premier League table.',
+        top4: 'Finishes in the top four in the final league table.',
+        relegation: 'Finishes in the bottom three and is relegated.',
+      }
+    : {
+        shield: 'Finishes with the best regular-season record across both conferences.',
+        cup_final: 'Wins its conference playoff and reaches the MLS Cup championship match.',
+        champion: 'Wins the postseason championship and lifts MLS Cup.',
+      };
+  return definitions[key] || 'Share of simulations in which this outcome occurs.';
+}
 function raceCard(title,key,reverse=false) {
   const tMap=teamMap();
-  const rows=[...state.data.forecast].sort((a,b)=>(Number(a[key]||0)-Number(b[key]||0))*(reverse?1:-1)).slice(0,6);
-  return `<article class="card race-card"><div class="eyebrow">Probability</div><h3>${title}</h3>${rows.map(f=>`<div class="race-row">${teamInline(tMap[f.team])}<span class="prob-value">${pct(f[key],1)}</span><span class="prob-bar" style="grid-column:1/-1"><span style="width:${Math.max(1,(f[key]||0)*100)}%"></span></span></div>`).join('')}</article>`;
+  const expansionKey=`${state.league}:${key}`;
+  const expanded=Boolean(state.raceExpanded[expansionKey]);
+  const allRows=[...state.data.forecast].sort((a,b)=>(Number(a[key]||0)-Number(b[key]||0))*(reverse?1:-1));
+  const rows=expanded?allRows:allRows.slice(0,6);
+  const rowHtml=rows.map(f=>{
+    const value=Number(f[key]||0);
+    const width=value>0?Math.max(1,value*100):0;
+    return `<a class="race-row race-link" href="#/team/${encodeURIComponent(f.team)}" aria-label="View ${esc(tMap[f.team].name)} forecast">${teamInline(tMap[f.team])}<span class="prob-value">${probPct(value,1)}</span><span class="prob-bar" style="grid-column:1/-1"><span style="width:${width}%"></span></span></a>`;
+  }).join('');
+  const toggle=allRows.length>6?`<button class="race-toggle" type="button" data-race-key="${key}" aria-expanded="${expanded}">${expanded?'Show top 6 ↑':`View all ${allRows.length} teams ↓`}</button>`:'';
+  return `<article class="card race-card"><div class="eyebrow">Probability</div><h3>${title}</h3><p class="race-definition"><span class="info-dot" aria-hidden="true">i</span>${esc(raceDefinition(key))}</p><div class="race-rows">${rowHtml}</div>${toggle}</article>`;
+}
+function bindRaceControls() {
+  document.querySelectorAll('.race-toggle').forEach(button=>button.addEventListener('click',()=>{
+    const expansionKey=`${state.league}:${button.dataset.raceKey}`;
+    state.raceExpanded[expansionKey]=!state.raceExpanded[expansionKey];
+    renderRaces();
+  }));
 }
 function conferenceBracket(conf) {
   const rows=projectedRows(conf).slice(0,9), tMap=teamMap();
@@ -321,6 +376,7 @@ function renderRaces() {
   } else {
     main.innerHTML=`<div class="page">${pageHead('Postseason simulation','Projected playoff bracket','The mean conference tables populate this visual bracket. Every MLS Cup probability, however, comes from rebuilding and playing the bracket in each simulation.')}${notice()}<section class="grid races-grid" style="margin-bottom:16px">${raceCard('Supporters’ Shield','shield')}${raceCard('Reach MLS Cup','cup_final')}${raceCard('Win MLS Cup','champion')}</section><section class="grid">${conferenceBracket('East')}${conferenceBracket('West')}</section></div>`;
   }
+  bindRaceControls();
 }
 
 function filteredFixtures() {
