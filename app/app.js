@@ -11,6 +11,7 @@ const state = {
   matchupB: null,
   venue: 'a-home',
   raceExpanded: {},
+  newsFilter: 'all',
 };
 
 const main = document.getElementById('main');
@@ -83,6 +84,7 @@ function switchLeague(key, announce = true) {
   state.sortDir = -1;
   state.scheduleFilter = 'upcoming';
   state.scheduleTeam = 'all';
+  state.newsFilter = 'all';
   localStorage.setItem('tf-league', key);
   document.querySelectorAll('.league-button').forEach(b => b.classList.toggle('active', b.dataset.league === key));
   document.getElementById('model-version').textContent = state.data.meta.model_version;
@@ -457,9 +459,145 @@ function renderScores() {
   }).join('')}</tbody></table></div></article></div>`;
 }
 
+function newsType(entry) {
+  if (entry.type) return entry.type;
+  if (entry.headline === 'Automated model refresh completed' || !entry.team) return 'system';
+  return 'team_update';
+}
+
+function newsCategory(entry) {
+  const type = newsType(entry);
+  if (type === 'forecast_mover') return 'forecast';
+  if (type === 'warning') return 'warning';
+  if (type === 'system') return 'system';
+  return 'team';
+}
+
+function systemIdentity(kind = 'system') {
+  const warning = kind === 'warning';
+  return `<span class="team-inline system-identity"><span class="badge system-badge ${warning ? 'warning-badge' : ''}">${warning ? '!' : 'TF'}</span><span><strong>${warning ? 'Data warning' : 'Touchline Forecast'}</strong><small>${warning ? 'Review required' : 'System update'}</small></span></span>`;
+}
+
+function detailValue(value) {
+  if (value === null || value === undefined || value === '') return '—';
+  if (Array.isArray(value)) return value.map(esc).join(', ');
+  return esc(value);
+}
+
+function newsDetails(entry) {
+  const details = entry.details || {};
+  const type = newsType(entry);
+  if (type === 'forecast_mover') {
+    const before = Number(details.before || 0);
+    const after = Number(details.after || 0);
+    const delta = Number(details.delta || 0);
+    const max = Math.max(before, after, 0.001);
+    return `<div class="news-expanded mover-details">
+      <div class="movement-summary">
+        <div><small>Previous snapshot</small><strong>${probPct(before)}</strong></div>
+        <span class="movement-arrow">→</span>
+        <div><small>Current snapshot</small><strong>${probPct(after)}</strong></div>
+        <span class="movement-delta ${delta >= 0 ? 'up' : 'down'}">${delta >= 0 ? '▲' : '▼'} ${Math.abs(delta * 100).toFixed(1)} pts</span>
+      </div>
+      <div class="movement-bars" aria-label="Probability movement">
+        <span><i style="width:${clamp(before / max * 100, 1, 100)}%"></i></span>
+        <span class="current"><i style="width:${clamp(after / max * 100, 1, 100)}%"></i></span>
+      </div>
+      <dl class="news-facts">
+        <div><dt>Outcome</dt><dd>${detailValue(details.metric)}</dd></div>
+        <div><dt>Projected points</dt><dd>${detailValue(details.projected_points_before)} → ${detailValue(details.projected_points_after)}</dd></div>
+        <div><dt>Average finish</dt><dd>${detailValue(details.avg_position_before)} → ${detailValue(details.avg_position_after)}</dd></div>
+        <div><dt>Why it moved</dt><dd>${detailValue(details.explanation || 'New results, schedule information and updated model ratings were incorporated in the nightly rebuild.')}</dd></div>
+      </dl>
+      ${entry.team ? `<a class="news-action" href="#/team/${encodeURIComponent(entry.team)}">Open team forecast →</a>` : ''}
+    </div>`;
+  }
+
+  const facts = [
+    ['Published', details.generated_at ? kickoffText(details.generated_at) : entry.date ? dateText(entry.date) : '—'],
+    ['Model version', details.model_version],
+    ['Matches fitted', details.matches_fitted?.toLocaleString?.() || details.matches_fitted],
+    ['Simulations', details.simulations?.toLocaleString?.() || details.simulations],
+    ['Completed league matches', details.completed_matches],
+    ['Data sources', details.sources],
+    ['Validation', details.validation],
+    ['Deployment', details.deployment],
+    ['Inference', details.inference],
+    ['Review status', details.review_status],
+    ['Model treatment', details.model_treatment],
+    ['Affected fixtures', details.affected_fixtures],
+  ].filter(([, value]) => value !== null && value !== undefined && value !== '');
+
+  return `<div class="news-expanded">
+    ${facts.length ? `<dl class="news-facts">${facts.map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${detailValue(value)}</dd></div>`).join('')}</dl>` : '<p class="news-detail-copy">No additional structured details were supplied for this entry.</p>'}
+    ${details.note ? `<p class="news-detail-copy">${esc(details.note)}</p>` : ''}
+    ${entry.team ? `<a class="news-action" href="#/team/${encodeURIComponent(entry.team)}">Open team forecast →</a>` : ''}
+  </div>`;
+}
+
 function renderNews() {
-  const tMap=teamMap();
-  main.innerHTML=`<div class="page">${pageHead('Human-in-the-loop adjustments','Model news','This page records automated refreshes and will later hold reviewed injury, suspension, transfer and manager adjustments.')}${notice()}<section class="news-list">${state.data.news.map(n=>`<article class="card news-item"><time>${dateText(n.date)}</time><div>${teamInline(tMap[n.team], n.impact)}<h3>${esc(n.headline)}</h3><p>${esc(n.summary)}</p></div><span class="${n.affects_forecast?'affects':'pending'}">${n.affects_forecast?'◆ Affects forecast':'Review pending'}</span></article>`).join('')}</section></div>`;
+  const tMap = teamMap();
+  const entries = (state.data.news || []).map((entry, index) => ({...entry, _index:index, _type:newsType(entry), _category:newsCategory(entry)}));
+  const movers = entries.filter(entry => entry._type === 'forecast_mover').sort((a,b) => Math.abs(Number(b.details?.delta || 0)) - Math.abs(Number(a.details?.delta || 0)));
+  const filtered = state.newsFilter === 'all' ? entries : entries.filter(entry => entry._category === state.newsFilter);
+  const filterCounts = {
+    all: entries.length,
+    forecast: entries.filter(entry => entry._category === 'forecast').length,
+    team: entries.filter(entry => entry._category === 'team').length,
+    system: entries.filter(entry => entry._category === 'system').length,
+    warning: entries.filter(entry => entry._category === 'warning').length,
+  };
+  const filters = [
+    ['all','All'],
+    ['forecast','Forecast changes'],
+    ['team','Team updates'],
+    ['system','System'],
+    ['warning','Warnings'],
+  ];
+
+  const moversPanel = movers.length ? `<section class="card movers-panel">
+    <div class="card-head"><div><div class="eyebrow">Since the prior snapshot</div><h2>Biggest forecast movements</h2></div><button class="text-button" data-news-filter="forecast">View all changes →</button></div>
+    <div class="movers-grid">${movers.slice(0,3).map(entry => {
+      const t = tMap[entry.team];
+      const delta = Number(entry.details?.delta || 0);
+      return `<a href="#/team/${encodeURIComponent(entry.team)}" class="mover-tile">${t ? badge(t) : ''}<span><strong>${t ? esc(t.name) : esc(entry.team || 'Team')}</strong><small>${esc(entry.details?.metric || 'Forecast')}</small></span><b class="${delta >= 0 ? 'up' : 'down'}">${delta >= 0 ? '▲' : '▼'} ${Math.abs(delta*100).toFixed(1)} pts</b></a>`;
+    }).join('')}</div>
+  </section>` : '';
+
+  const cards = filtered.map(entry => {
+    const type = entry._type;
+    const t = entry.team ? tMap[entry.team] : null;
+    const identity = (type === 'system' || type === 'warning' || !t)
+      ? systemIdentity(type)
+      : teamInline(t, entry.impact || (type === 'forecast_mover' ? 'Forecast movement' : 'Team update'));
+    const statusLabel = type === 'warning' ? '⚠ Warning' : entry.affects_forecast ? '◆ Affects forecast' : 'Review pending';
+    const statusClass = type === 'warning' ? 'warning-pill' : entry.affects_forecast ? 'affects' : 'pending';
+    return `<details class="card news-item news-${esc(type)}">
+      <summary class="news-summary">
+        <time>${entry.date ? dateText(entry.date) : 'Latest update'}</time>
+        <div class="news-main">${identity}<h3>${esc(entry.headline)}</h3><p>${esc(entry.summary)}</p></div>
+        <span class="news-status ${statusClass}">${statusLabel}</span>
+        <span class="expand-control"><span class="show-label">View details</span><span class="hide-label">Hide details</span><b>⌄</b></span>
+      </summary>
+      ${newsDetails(entry)}
+    </details>`;
+  }).join('');
+
+  main.innerHTML = `<div class="page">
+    ${pageHead('Transparent change log','Model news','See what changed in each nightly rebuild, why team probabilities moved, and whether any reviewed team news or data warnings affected the forecast.')}
+    ${notice()}
+    ${moversPanel}
+    <div class="news-toolbar" role="group" aria-label="Filter model news">
+      ${filters.map(([key,label]) => `<button class="news-filter ${state.newsFilter === key ? 'active' : ''}" data-news-filter="${key}">${label}<span>${filterCounts[key]}</span></button>`).join('')}
+    </div>
+    <section class="news-list">${cards || '<div class="card empty"><h2>No entries in this category</h2><p>Try another filter or wait for the next nightly model rebuild.</p></div>'}</section>
+  </div>`;
+
+  document.querySelectorAll('[data-news-filter]').forEach(button => button.addEventListener('click', event => {
+    event.preventDefault();
+    state.newsFilter = button.dataset.newsFilter;
+    renderNews();
+  }));
 }
 
 function renderMethod() {
