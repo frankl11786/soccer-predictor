@@ -22,6 +22,12 @@ const pct = (v, digits = 0) => `${(Number(v || 0) * 100).toFixed(digits)}%`;
 const signedPct = v => `${v >= 0 ? '+' : ''}${(Number(v || 0) * 100).toFixed(1)}%`;
 const dateText = iso => new Intl.DateTimeFormat('en-US', {month:'short', day:'numeric', year:'numeric'}).format(new Date(`${iso}T12:00:00`));
 const compactDate = iso => new Intl.DateTimeFormat('en-US', {month:'short', day:'numeric'}).format(new Date(`${iso}T12:00:00`));
+const kickoffText = value => {
+  if (!value) return '';
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '';
+  return new Intl.DateTimeFormat('en-US', {month:'short', day:'numeric', year:'numeric', hour:'numeric', minute:'2-digit', timeZoneName:'short'}).format(date);
+};
 const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
 
 function teamMap() { return Object.fromEntries(state.data.teams.map(t => [t.slug, t])); }
@@ -30,6 +36,7 @@ function tableMap() { return Object.fromEntries(state.data.current_table.map(r =
 function team(slug) { return teamMap()[slug]; }
 function forecast(slug) { return forecastMap()[slug]; }
 function current(slug) { return tableMap()[slug] || {p:0,w:0,d:0,l:0,gf:0,ga:0,gd:0,pts:0}; }
+function fixtureById(id) { return state.data.fixtures.find(f => String(f.id) === String(id)); }
 function outcomeKey() { return state.league === 'epl' ? 'title' : 'champion'; }
 function outcomeLabel() { return state.league === 'epl' ? 'Title' : 'MLS Cup'; }
 function badge(t, size = '') { return `<span class="badge ${size}" style="background:${esc(t.color)}">${esc(t.short)}</span>`; }
@@ -80,12 +87,15 @@ function switchLeague(key, announce = true) {
 
 function parseRoute() {
   const raw = location.hash.replace(/^#\/?/, '') || 'home';
-  const [page, slug] = raw.split('/');
+  const parts = raw.split('/');
+  const page = parts.shift();
+  const slug = decodeURIComponent(parts.join('/'));
   return {page, slug};
 }
 
 function updateNav(page) {
-  document.querySelectorAll('#primary-nav a').forEach(a => a.classList.toggle('active', a.dataset.route === page));
+  const navPage = page === 'match' ? 'schedule' : page;
+  document.querySelectorAll('#primary-nav a').forEach(a => a.classList.toggle('active', a.dataset.route === navPage));
   document.getElementById('sidebar').classList.remove('open');
 }
 
@@ -104,6 +114,7 @@ function renderRoute() {
     news: renderNews,
     method: renderMethod,
     team: () => renderTeam(slug),
+    match: () => renderMatch(slug),
   };
   (routes[page] || renderHome)();
   main.focus({preventScroll:true});
@@ -155,7 +166,8 @@ function renderHome() {
 
 function fixtureCompact(f, tMap) {
   const h = tMap[f.home], a = tMap[f.away];
-  return `<div class="fixture-row"><span class="date">${compactDate(f.date)}</span><span class="fixture-teams"><span class="fixture-team"><span>${esc(h.short)} · ${esc(h.name)}</span>${f.status === 'final' ? `<b>${f.home_score}</b>` : ''}</span><span class="fixture-team"><span>${esc(a.short)} · ${esc(a.name)}</span>${f.status === 'final' ? `<b>${f.away_score}</b>` : ''}</span></span>${f.status === 'final' ? `<span class="score">${f.home_score}–${f.away_score}</span>` : `<span class="fixture-prob">${pct(f.probabilities.home)} / ${pct(f.probabilities.draw)} / ${pct(f.probabilities.away)}</span>`}</div>`;
+  const href = `#/match/${encodeURIComponent(f.id)}`;
+  return `<a class="fixture-row fixture-link" href="${href}" aria-label="View ${esc(h.name)} versus ${esc(a.name)} details"><span class="date">${compactDate(f.date)}</span><span class="fixture-teams"><span class="fixture-team"><span>${esc(h.short)} · ${esc(h.name)}</span>${f.status === 'final' ? `<b>${f.home_score}</b>` : ''}</span><span class="fixture-team"><span>${esc(a.short)} · ${esc(a.name)}</span>${f.status === 'final' ? `<b>${f.away_score}</b>` : ''}</span></span>${f.status === 'final' ? `<span class="score">${f.home_score}–${f.away_score}</span>` : `<span class="fixture-prob">${pct(f.probabilities.home)} / ${pct(f.probabilities.draw)} / ${pct(f.probabilities.away)}<small>View match →</small></span>`}</a>`;
 }
 
 function forecastColumns() {
@@ -328,7 +340,55 @@ function renderSchedule() {
 }
 function fixtureDetailed(f,tMap) {
   const h=tMap[f.home],a=tMap[f.away];
-  return `<div class="fixture-row" style="grid-template-columns:90px minmax(250px,1fr) minmax(170px,.6fr)"><span class="date">Round ${f.round}<br>${dateText(f.date)}</span><span class="fixture-teams"><span class="fixture-team"><span class="team-inline">${badge(h)}<strong>${esc(h.name)}</strong></span>${f.status==='final'?`<b>${f.home_score}</b>`:''}</span><span class="fixture-team"><span class="team-inline">${badge(a)}<strong>${esc(a.name)}</strong></span>${f.status==='final'?`<b>${f.away_score}</b>`:''}</span></span><span class="fixture-prob"><b>${pct(f.probabilities.home,1)} · ${pct(f.probabilities.draw,1)} · ${pct(f.probabilities.away,1)}</b><br>xG ${f.xg_home}–${f.xg_away}${f.status==='final'?`<br><span class="score">${f.home_score}–${f.away_score}</span>`:''}</span></div>`;
+  const href = `#/match/${encodeURIComponent(f.id)}`;
+  return `<a class="fixture-row fixture-row-detailed fixture-link" href="${href}" aria-label="View ${esc(h.name)} versus ${esc(a.name)} details"><span class="date">Round ${esc(f.round)}<br>${dateText(f.date)}</span><span class="fixture-teams"><span class="fixture-team"><span class="team-inline">${badge(h)}<strong>${esc(h.name)}</strong></span>${f.status==='final'?`<b>${f.home_score}</b>`:''}</span><span class="fixture-team"><span class="team-inline">${badge(a)}<strong>${esc(a.name)}</strong></span>${f.status==='final'?`<b>${f.away_score}</b>`:''}</span></span><span class="fixture-prob"><b>${pct(f.probabilities.home,1)} · ${pct(f.probabilities.draw,1)} · ${pct(f.probabilities.away,1)}</b><br>xG ${f.xg_home}–${f.xg_away}${f.status==='final'?`<br><span class="score">${f.home_score}–${f.away_score}</span>`:''}<small>View match details →</small></span></a>`;
+}
+
+function fixtureScoreModel(f) {
+  const lh = clamp(Number(f.xg_home || 0), .05, 6);
+  const la = clamp(Number(f.xg_away || 0), .05, 6);
+  const matrix = Array.from({length:7},(_,h)=>Array.from({length:7},(_,a)=>poissonP(lh,h)*poissonP(la,a)));
+  return {lh, la, matrix};
+}
+function likelyScores(matrix, home, away) {
+  return matrix.flatMap((row,h)=>row.map((prob,a)=>({h,a,prob}))).sort((x,y)=>y.prob-x.prob).slice(0,5).map(row=>`<div class="likely-score"><strong>${row.h}–${row.a}</strong><span>${pct(row.prob,1)}</span><small>${esc(home.short)}–${esc(away.short)}</small></div>`).join('');
+}
+function intervalLabel(value) {
+  return Array.isArray(value) && value.length===2 ? `${pct(value[0],1)}–${pct(value[1],1)}` : 'Not available';
+}
+function recentForm(slug, beforeId) {
+  const reference=fixtureById(beforeId);
+  const cutoff=reference?.date||'9999-12-31';
+  const fixtures=state.data.fixtures.filter(f=>f.status==='final'&&f.id!==beforeId&&f.date<=cutoff&&(f.home===slug||f.away===slug)).sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5);
+  return fixtures.map(f=>{
+    const isHome=f.home===slug;
+    const gf=isHome?f.home_score:f.away_score, ga=isHome?f.away_score:f.home_score;
+    const result=gf>ga?'W':gf<ga?'L':'D';
+    const opp=team(isHome?f.away:f.home);
+    return `<a class="form-match" href="#/match/${encodeURIComponent(f.id)}"><span class="form-pill ${result.toLowerCase()}">${result}</span><span><strong>${gf}–${ga}</strong><small>${esc(opp.short)} · ${compactDate(f.date)}</small></span></a>`;
+  }).join('')||'<div class="empty compact">No completed matches yet.</div>';
+}
+function ratingCard(t, f) {
+  const attackRange=Array.isArray(f?.attack_interval)?`${f.attack_interval[0].toFixed(2)} to ${f.attack_interval[1].toFixed(2)}`:'Not available';
+  const defenseRange=Array.isArray(f?.defense_interval)?`${f.defense_interval[0].toFixed(2)} to ${f.defense_interval[1].toFixed(2)}`:'Not available';
+  return `<article class="card rating-card"><div class="rating-team">${badge(t,'large')}<div><h3>${esc(t.name)}</h3><a href="#/team/${t.slug}">Open club forecast →</a></div></div><div class="rating-stats"><div><small>Attack rating</small><strong>${Number(f?.attack??t.attack).toFixed(2)}</strong><span>90% range: ${attackRange}</span></div><div><small>Defense rating</small><strong>${Number(f?.defense??t.defense).toFixed(2)}</strong><span>90% range: ${defenseRange}</span></div><div><small>Projected points</small><strong>${Number(f?.projected_points||0).toFixed(1)}</strong><span>${state.league==='epl'?`Title ${pct(f?.title||0,1)}`:`MLS Cup ${pct(f?.champion||0,1)}`}</span></div></div></article>`;
+}
+function renderMatch(id) {
+  const f=fixtureById(id);
+  if(!f){ main.innerHTML=`<div class="page"><article class="card"><div class="empty"><h2>Match not found</h2><p>The fixture may have changed during the latest data refresh.</p><a class="button" href="#/schedule">Back to schedule</a></div></article></div>`; return; }
+  const h=team(f.home), a=team(f.away), hForecast=forecast(h.slug), aForecast=forecast(a.slug);
+  const model=fixtureScoreModel(f), probs=f.probabilities, max=Math.max(probs.home,probs.draw,probs.away);
+  const favorite=max===probs.home?h:max===probs.away?a:null;
+  const status=f.status==='final'?`Final · ${f.home_score}–${f.away_score}`:'Upcoming';
+  const timing=f.kickoff?kickoffText(f.kickoff):dateText(f.date);
+  const read=favorite?`${favorite.name} has the highest win probability at ${pct(max,1)}. The model’s mean scoring expectation is ${Number(f.xg_home).toFixed(2)}–${Number(f.xg_away).toFixed(2)} in expected goals.`:`The draw is the single most likely 1X2 outcome at ${pct(probs.draw,1)}. The model’s mean scoring expectation is ${Number(f.xg_home).toFixed(2)}–${Number(f.xg_away).toFixed(2)} in expected goals.`;
+  main.innerHTML=`<div class="page match-page">
+    <a class="back-link" href="#/schedule">← Back to schedule</a>
+    <section class="match-hero card"><div class="match-meta"><span class="eyebrow">${esc(state.data.meta.name)} · Round ${esc(f.round)}</span><strong>${esc(timing)}</strong><span class="status-pill ${f.status==='final'?'final':''}">${esc(status)}</span></div><div class="match-teams"><a href="#/team/${h.slug}" class="match-club">${badge(h,'large')}<span><strong>${esc(h.name)}</strong><small>Home</small></span></a><div class="match-score"><strong>${f.status==='final'?`${f.home_score}–${f.away_score}`:'vs'}</strong><span>${Number(f.xg_home).toFixed(2)}–${Number(f.xg_away).toFixed(2)} xG</span></div><a href="#/team/${a.slug}" class="match-club away">${badge(a,'large')}<span><strong>${esc(a.name)}</strong><small>Away</small></span></a></div></section>
+    <section class="grid match-detail-grid"><article class="card"><div class="card-head"><h2>Outcome forecast</h2><span class="eyebrow">Posterior probability</span></div><div class="card-body"><div class="outcome-grid"><div class="outcome-card ${probs.home===max?'favorite':''}"><small>${esc(h.short)} win</small><strong>${pct(probs.home,1)}</strong><span>90% range ${intervalLabel(probs.home_interval)}</span></div><div class="outcome-card ${probs.draw===max?'favorite':''}"><small>Draw</small><strong>${pct(probs.draw,1)}</strong><span>90% range ${intervalLabel(probs.draw_interval)}</span></div><div class="outcome-card ${probs.away===max?'favorite':''}"><small>${esc(a.short)} win</small><strong>${pct(probs.away,1)}</strong><span>90% range ${intervalLabel(probs.away_interval)}</span></div></div><div class="model-read"><strong>Model read</strong><p>${esc(read)}</p></div></div></article><article class="card"><div class="card-head"><h2>Most likely scores</h2><span class="eyebrow">Mean-xG Poisson</span></div><div class="card-body likely-scores">${likelyScores(model.matrix,h,a)}<p class="detail-note">Exact-score probabilities use the mean expected goals. The 1X2 probabilities include posterior uncertainty, so the two views will not match perfectly.</p></div></article></section>
+    <section class="grid rating-grid">${ratingCard(h,hForecast)}${ratingCard(a,aForecast)}</section>
+    <section class="grid match-detail-grid"><article class="card"><div class="card-head"><h2>Exact score matrix</h2><span class="eyebrow">Rows ${esc(h.short)} · columns ${esc(a.short)}</span></div><div class="card-body table-wrap">${scoreMatrix(model.matrix)}</div></article><article class="card"><div class="card-head"><h2>Recent form</h2><span class="eyebrow">Last five completed</span></div><div class="card-body form-columns"><div><h3>${esc(h.short)}</h3>${recentForm(h.slug,f.id)}</div><div><h3>${esc(a.short)}</h3>${recentForm(a.slug,f.id)}</div></div></article></section>
+  </div>`;
 }
 
 function renderScores() {
