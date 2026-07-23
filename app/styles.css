@@ -428,3 +428,164 @@ details[open] .expand-control b { transform: rotate(180deg); }
   .news-facts { grid-template-columns: 1fr; }
   .movement-delta { margin-left: 0; }
 }
+
+
+/* Theme switch and dark mode */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  padding: 8px 10px;
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 800;
+  transition: background .16s ease, color .16s ease, border-color .16s ease, transform .16s ease;
+}
+.theme-toggle:hover { color: var(--green); border-color: var(--green); transform: translateY(-1px); }
+.theme-toggle:focus-visible { outline: 3px solid rgba(10,111,87,.25); outline-offset: 2px; }
+.theme-icon { width: 15px; font-size: 15px; line-height: 1; }
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --ink: #edf5f2;
+  --muted: #a5b2ae;
+  --paper: #0b1413;
+  --card: #14201e;
+  --line: #2b3b38;
+  --green: #43d3a6;
+  --green-dark: #2bb789;
+  --shadow: 0 18px 50px rgba(0,0,0,.28);
+}
+html[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at 80% -10%, rgba(67,211,166,.13), transparent 30rem),
+    var(--paper);
+}
+html[data-theme="dark"] .topbar {
+  background: rgba(11,20,19,.91);
+}
+html[data-theme="dark"] .brand-mark,
+html[data-theme="dark"] .league-button.active,
+html[data-theme="dark"] .sidebar-card,
+html[data-theme="dark"] .zone-title td,
+html[data-theme="dark"] .button,
+html[data-theme="dark"] .big-prob.favorite,
+html[data-theme="dark"] .team-hero,
+html[data-theme="dark"] .equation,
+html[data-theme="dark"] .toast,
+html[data-theme="dark"] .system-badge,
+html[data-theme="dark"] .race-toggle:hover,
+html[data-theme="dark"] .race-toggle:focus-visible {
+  background: #071d19;
+  color: #f4fbf8;
+}
+html[data-theme="dark"] .league-button.active { box-shadow: 0 5px 18px rgba(0,0,0,.4); }
+html[data-theme="dark"] .league-switcher,
+html[data-theme="dark"] .search-button,
+html[data-theme="dark"] .theme-toggle,
+html[data-theme="dark"] .mobile-menu,
+html[data-theme="dark"] select,
+html[data-theme="dark"] .input,
+html[data-theme="dark"] .conference-jump,
+html[data-theme="dark"] .news-filter {
+  background: #14201e;
+  color: var(--muted);
+}
+html[data-theme="dark"] .metric-card,
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .search-panel,
+html[data-theme="dark"] .mover-tile {
+  background: rgba(20,32,30,.94);
+}
+html[data-theme="dark"] .sidebar nav a:hover,
+html[data-theme="dark"] .sidebar nav a.active,
+html[data-theme="dark"] .search-result:hover,
+html[data-theme="dark"] .search-result.active,
+html[data-theme="dark"] .fixture-link:hover,
+html[data-theme="dark"] .race-link:hover,
+html[data-theme="dark"] .news-summary:hover,
+html[data-theme="dark"] .mover-tile:hover {
+  background: rgba(67,211,166,.09);
+}
+html[data-theme="dark"] .notice {
+  border-color: #66512a;
+  background: #2b2417;
+  color: #f0d69b;
+}
+html[data-theme="dark"] .notice span { color: #e0c891; }
+html[data-theme="dark"] kbd,
+html[data-theme="dark"] .search-input-wrap button,
+html[data-theme="dark"] .position-chip,
+html[data-theme="dark"] .button.secondary,
+html[data-theme="dark"] .race-toggle,
+html[data-theme="dark"] .segmented,
+html[data-theme="dark"] .pending,
+html[data-theme="dark"] .news-filter span,
+html[data-theme="dark"] .big-prob {
+  background: #22302d;
+  color: var(--ink);
+  border-color: var(--line);
+}
+html[data-theme="dark"] .segmented button.active { background: #0a261f; color: #f4fbf8; }
+html[data-theme="dark"] th { background: #192623; }
+html[data-theme="dark"] td,
+html[data-theme="dark"] .forecast-item,
+html[data-theme="dark"] .fixture-row,
+html[data-theme="dark"] .bracket-team + .bracket-team,
+html[data-theme="dark"] .news-facts div,
+html[data-theme="dark"] .search-input-wrap {
+  border-color: #283936;
+}
+html[data-theme="dark"] tbody tr:hover { background: rgba(67,211,166,.08); }
+html[data-theme="dark"] .prob-bar,
+html[data-theme="dark"] .movement-bars > span,
+html[data-theme="dark"] .spinner,
+html[data-theme="dark"] .outcome-card,
+html[data-theme="dark"] .model-read,
+html[data-theme="dark"] .likely-score {
+  background: #25322f;
+}
+html[data-theme="dark"] .spinner { border-color: #344540; border-top-color: var(--green); }
+html[data-theme="dark"] .method-copy p,
+html[data-theme="dark"] .method-copy li,
+html[data-theme="dark"] .detail-note,
+html[data-theme="dark"] .news-detail-copy { color: #aebbb7; }
+html[data-theme="dark"] .search-dialog::backdrop { background: rgba(1,7,6,.7); }
+html[data-theme="dark"] .search-input-wrap input { color: var(--ink); }
+html[data-theme="dark"] .search-input-wrap input::placeholder { color: #778783; }
+html[data-theme="dark"] .bracket-match { background: #14201e; box-shadow: 0 8px 22px rgba(0,0,0,.2); }
+html[data-theme="dark"] .status-pill { background: #173b31; color: #77e0bd; }
+html[data-theme="dark"] .status-pill.final { background: #293633; color: var(--ink); }
+html[data-theme="dark"] .playoff-cutoff-row td {
+  background: #30291c;
+  color: #e6c47f;
+  border-color: #66512a;
+}
+html[data-theme="dark"] .playoff-cutoff-row small { color: #c5a96e; }
+html[data-theme="dark"] .info-dot { background: #172421; }
+html[data-theme="dark"] .race-toggle { background: #202d2a; }
+html[data-theme="dark"] .news-filter:hover,
+html[data-theme="dark"] .news-filter.active { background: #153029; }
+html[data-theme="dark"] .news-expanded { background: rgba(8,23,20,.55); }
+html[data-theme="dark"] .news-warning { border-color: #80642c; }
+html[data-theme="dark"] .news-warning .news-expanded { background: #2a2416; }
+html[data-theme="dark"] .warning-pill,
+html[data-theme="dark"] .position-chip.wildcard { background: #4a3b16; color: #f4d27c; }
+html[data-theme="dark"] .affects,
+html[data-theme="dark"] .movement-delta { background: #173b31; color: #78dfbd; }
+html[data-theme="dark"] .movement-delta.down { background: #402421; color: #f3a79d; }
+html[data-theme="dark"] .conference-jumps { background: rgba(11,20,19,.95); }
+html[data-theme="dark"] .team-hero p,
+html[data-theme="dark"] .sidebar-card p { color: #b8c8c3; }
+html[data-theme="dark"] .theme-toggle:hover { background: #173029; }
+
+@media (max-width: 780px) {
+  .theme-label { display: none; }
+  .theme-toggle { width: 38px; padding: 8px; }
+}

@@ -12,12 +12,14 @@ const state = {
   venue: 'a-home',
   raceExpanded: {},
   newsFilter: 'all',
+  themePreference: localStorage.getItem('tf-theme') || 'system',
 };
 
 const main = document.getElementById('main');
 const searchDialog = document.getElementById('search-dialog');
 const teamSearch = document.getElementById('team-search');
 const searchResults = document.getElementById('search-results');
+const themeToggle = document.getElementById('theme-toggle');
 
 const esc = (value = '') => String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
 const pct = (v, digits = 0) => `${(Number(v || 0) * 100).toFixed(digits)}%`;
@@ -39,6 +41,43 @@ const kickoffText = value => {
   return new Intl.DateTimeFormat('en-US', {month:'short', day:'numeric', year:'numeric', hour:'numeric', minute:'2-digit', timeZoneName:'short'}).format(date);
 };
 const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+
+
+function resolvedTheme(preference = state.themePreference) {
+  if (preference === 'system') {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  return preference;
+}
+
+function updateThemeControl() {
+  if (!themeToggle) return;
+  const current = document.documentElement.dataset.theme || resolvedTheme();
+  const dark = current === 'dark';
+  themeToggle.setAttribute('aria-pressed', String(dark));
+  themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+  themeToggle.title = dark ? 'Switch to light mode' : 'Switch to dark mode';
+  const icon = themeToggle.querySelector('.theme-icon');
+  const label = themeToggle.querySelector('.theme-label');
+  if (icon) icon.textContent = dark ? '☀' : '☾';
+  if (label) label.textContent = dark ? 'Light' : 'Dark';
+}
+
+function applyTheme(preference, persist = true) {
+  state.themePreference = preference;
+  const theme = resolvedTheme(preference);
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.dataset.themePreference = preference;
+  if (persist) localStorage.setItem('tf-theme', preference);
+  updateThemeControl();
+}
+
+function toggleTheme() {
+  const current = document.documentElement.dataset.theme || resolvedTheme();
+  const next = current === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  toast(`${next === 'dark' ? 'Dark' : 'Light'} mode enabled`);
+}
 
 function teamMap() { return Object.fromEntries(state.data.teams.map(t => [t.slug, t])); }
 function forecastMap() { return Object.fromEntries(state.data.forecast.map(f => [f.team, f])); }
@@ -650,12 +689,18 @@ function renderSearch(query) {
 
 window.addEventListener('hashchange', renderRoute);
 document.querySelectorAll('.league-button').forEach(b=>b.addEventListener('click',()=>switchLeague(b.dataset.league)));
+if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
 document.getElementById('search-open').addEventListener('click', openSearch);
 document.getElementById('mobile-menu').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));
 teamSearch.addEventListener('input',e=>renderSearch(e.target.value));
 document.addEventListener('keydown',e=>{
   if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openSearch();}
   if(e.key==='Escape'&&searchDialog.open)searchDialog.close();
+});
+
+applyTheme(state.themePreference, false);
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', () => {
+  if (state.themePreference === 'system') applyTheme('system', false);
 });
 
 loadData();

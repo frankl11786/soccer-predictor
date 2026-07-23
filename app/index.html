@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Transparent season forecasts for MLS and the English Premier League." />
   <title>Touchline Forecast</title>
+  <script>
+    (() => {
+      const preference = localStorage.getItem('tf-theme') || 'system';
+      const dark = preference === 'dark' || (preference === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      document.documentElement.dataset.themePreference = preference;
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -19,6 +27,9 @@
           <button class="league-button active" data-league="epl">Premier League</button>
           <button class="league-button" data-league="mls">MLS</button>
         </div>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
+          <span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark</span>
+        </button>
         <button class="search-button" id="search-open" aria-label="Search teams"><span>Search teams</span><kbd>⌘ K</kbd></button>
         <button class="mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button>
       </div>
