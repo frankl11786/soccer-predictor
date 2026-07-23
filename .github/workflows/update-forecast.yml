@@ -3,41 +3,145 @@ name: Update forecasts
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 9 * * *"
+    - cron: "0 0 * * *"
+      timezone: "America/New_York"
 
 permissions:
   contents: write
 
+# Prevent a manual run and the nightly run from updating/deploying at the same time.
+concurrency:
+  group: forecast-refresh
+  cancel-in-progress: false
+
 jobs:
-  update:
+  rebuild:
+    name: Rebuild ${{ matrix.league_name }}
     runs-on: ubuntu-latest
     timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        include:
+          - league: epl
+            league_name: Premier League
+          - league: mls
+            league_name: MLS
     env:
       API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+      JAX_PLATFORM_NAME: cpu
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && pip install -r requirements.txt
+
+      - name: Fully rebuild ${{ matrix.league_name }} model
+        run: python -m predictor.run --league "${{ matrix.league }}" --refresh
+
+      - name: Run validation tests
+        run: python -m unittest discover -s tests -v
+
+      - name: Stage generated files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          STAGE="forecast-artifact"
+          mkdir -p "$STAGE/app/data" "$STAGE/data/model" "$STAGE/data/cache/api_football"
+
+          cp "app/data/${{ matrix.league }}.json" "$STAGE/app/data/"
+          cp "data/model/posterior_${{ matrix.league }}.npz" "$STAGE/data/model/"
+
+          if [ -d "data/cache/api_football/${{ matrix.league }}" ]; then
+            cp -R "data/cache/api_football/${{ matrix.league }}" "$STAGE/data/cache/api_football/"
+          fi
+
+          if [ "${{ matrix.league }}" = "epl" ]; then
+            if [ -d data/cache/openfootball ]; then
+              cp -R data/cache/openfootball "$STAGE/data/cache/"
+            fi
+          else
+            if [ -d data/cache/asa ]; then
+              cp -R data/cache/asa "$STAGE/data/cache/"
+            fi
+            if [ -d data/cache/espn ]; then
+              cp -R data/cache/espn "$STAGE/data/cache/"
+            fi
+          fi
+
+      - name: Upload ${{ matrix.league_name }} results
+        uses: actions/upload-artifact@v7
+        with:
+          name: forecast-${{ matrix.league }}
+          path: forecast-artifact/
+          if-no-files-found: error
+          retention-days: 1
+          compression-level: 0
+
+  publish:
+    name: Save and deploy forecasts
+    needs: rebuild
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
       FTP_HOST: ${{ secrets.FTP_HOST }}
       FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
       FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
       FTP_REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
       FTP_TLS: ${{ secrets.FTP_TLS }}
-      JAX_PLATFORM_NAME: cpu
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Download both league results
+        uses: actions/download-artifact@v8
         with:
-          python-version: "3.11"
-          cache: pip
-      - name: Install dependencies
-        run: python -m pip install --upgrade pip && pip install -r requirements.txt
-      - name: Refresh data, fit models, and simulate seasons
-        run: python -m predictor.run --league all --refresh
-      - name: Validate generated snapshots
-        run: python -m unittest discover -s tests -v
-      - name: Save snapshots and API cache
+          pattern: forecast-*
+          path: .
+          merge-multiple: true
+
+      - name: Verify merged forecast files
         run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          for league in ("epl", "mls"):
+              path = Path("app/data") / f"{league}.json"
+              if not path.exists():
+                  raise SystemExit(f"Missing generated forecast: {path}")
+              data = json.loads(path.read_text())
+              if not data.get("fixtures") or not data.get("forecast"):
+                  raise SystemExit(f"Generated {league} snapshot is incomplete")
+              print(
+                  f"Validated {league}: "
+                  f"{len(data['fixtures'])} fixtures, "
+                  f"{len(data['forecast'])} forecast rows"
+              )
+          PY
+
+      - name: Save snapshots, model files, and source cache
+        run: |
+          set -euo pipefail
           git config user.name "forecast-bot"
           git config user.email "forecast-bot@users.noreply.github.com"
           git add app/data data/cache data/model
-          git diff --cached --quiet || git commit -m "Automated forecast refresh"
-          git push
+          if git diff --cached --quiet; then
+            echo "No forecast changes to commit."
+          else
+            git commit -m "Automated nightly forecast refresh"
+            git push
+          fi
+
       - name: Deploy website to GoDaddy
-        run: python scripts/deploy_ftp.py
+        run: python3 scripts/deploy_ftp.py
