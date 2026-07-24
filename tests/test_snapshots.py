@@ -60,12 +60,16 @@ class SnapshotTests(unittest.TestCase):
                 if modern_market_schema:
                     self.assertIn(outcome, row)
                 self.assertAlmostEqual(float(row["edge"]), float(row.get(outcome, 0.0)) - float(market), delta=0.00001)
-                details = row.get("market_details")
+               details = row.get("market_details")
                 if modern_market_schema:
                     self.assertIsInstance(details, dict)
-                if isinstance(details, dict):
-                    self.assertTrue(details.get("comparison_only", True))
-                    self.assertAlmostEqual(float(details["normalized_probability"]), float(market), delta=0.00001)
+                    self.assertTrue(details.get("comparison_only"))
+                    self.assertIn("normalized_probability", details)
+                    self.assertAlmostEqual(
+                        float(details["normalized_probability"]),
+                        float(market),
+                        delta=0.00001,
+                    )
 
             for fixture in data["fixtures"]:
                 probs = fixture["probabilities"]
