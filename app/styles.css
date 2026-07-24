@@ -589,3 +589,123 @@ html[data-theme="dark"] .theme-toggle:hover { background: #173029; }
   .theme-label { display: none; }
   .theme-toggle { width: 38px; padding: 8px; }
 }
+
+/* Model-versus-Polymarket comparison */
+.market-metrics { grid-template-columns: repeat(5,minmax(0,1fr)); }
+.market-forecast-list { padding-top: 10px; }
+.forecast-comparison-head,
+.market-forecast-item {
+  display: grid;
+  grid-template-columns: 29px minmax(150px,1.15fr) minmax(80px,.75fr) 76px 86px 70px;
+  gap: 10px;
+  align-items: center;
+}
+.forecast-comparison-head { padding: 0 0 5px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-size: 8px; text-align: right; }
+.market-forecast-item { padding: 10px 0; }
+.comparison-value { text-align: right; font: 800 11px ui-monospace,monospace; white-space: nowrap; }
+.market-value { color: var(--blue); }
+.market-disclaimer { margin: 14px 2px 0; color: var(--muted); font-size: 9px; line-height: 1.55; }
+.fixture-compare-compact { grid-template-columns: 62px minmax(0,1fr) minmax(165px,.78fr); }
+.probability-compare { display: grid; gap: 4px; }
+.probability-compare > span { display: flex; justify-content: space-between; gap: 8px; }
+.probability-compare small { margin: 0; color: var(--muted); }
+.probability-compare b { color: var(--ink); font-size: 9px; white-space: nowrap; }
+.probability-compare em { color: var(--muted); font-size: 8px; font-style: normal; }
+.market-line.available b { color: var(--blue); }
+.market-line.unavailable b { color: var(--muted); font-weight: 650; }
+.market-cell { color: var(--blue); font-weight: 750; }
+.market-coverage-pill { margin-left: auto; padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--card); font-size: 9px; font-weight: 750; }
+.fixture-comparison-row { grid-template-columns: 90px minmax(250px,1fr) minmax(260px,.9fr); }
+.fixture-market-compare { display: grid; gap: 4px; text-align: right; }
+.comparison-row { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: baseline; }
+.comparison-row small { color: var(--muted); font-size: 8px; }
+.comparison-row b { font: 800 10px ui-monospace,monospace; white-space: nowrap; }
+.comparison-row.market.available b { color: var(--blue); }
+.comparison-row.market.unavailable b { color: var(--muted); font-weight: 650; }
+.fixture-market-compare > em { color: var(--muted); font-size: 8px; font-style: normal; }
+.comparison-edge { color: var(--muted); font-size: 8px; }
+.view-detail { color: var(--green) !important; font-weight: 800; }
+.market-comparison-card { margin-top: 16px; }
+.market-empty { text-align: left; }
+.market-empty strong { display: block; margin-bottom: 5px; }
+.market-empty p { margin: 0; color: var(--muted); font-size: 11px; }
+.market-outcome-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
+.market-outcome { padding: 14px; border: 1px solid var(--line); border-radius: 13px; background: rgba(240,237,228,.5); }
+.market-outcome > small { display: block; margin-bottom: 10px; color: var(--muted); font-size: 9px; font-weight: 850; text-transform: uppercase; letter-spacing: .06em; }
+.market-outcome > div { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 4px 0; }
+.market-outcome span { color: var(--muted); font-size: 9px; }
+.market-outcome strong { font: 850 13px ui-monospace,monospace; }
+.market-meta { display: flex; flex-wrap: wrap; gap: 7px 14px; margin-top: 14px; color: var(--muted); font-size: 9px; }
+.market-meta a { color: var(--green); font-weight: 800; text-decoration: none; }
+.market-meta a:hover { text-decoration: underline; }
+.race-row-market { grid-template-columns: minmax(0,1fr) minmax(160px,.85fr); }
+.race-probabilities { display: grid; grid-template-columns: repeat(3,minmax(48px,1fr)); gap: 7px; text-align: right; }
+.race-probabilities small,.race-probabilities b { display: block; }
+.race-probabilities small { color: var(--muted); font-size: 7px; text-transform: uppercase; letter-spacing: .05em; }
+.race-probabilities b { font: 800 10px ui-monospace,monospace; }
+.market-card-note { margin: 12px 0 0; color: var(--muted); font-size: 8px; line-height: 1.45; }
+.team-profile-grid { grid-template-columns: minmax(0,1.25fr) minmax(310px,.75fr); align-items: start; }
+.profile-metrics { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.team-market-card { margin-top: 16px; }
+.team-market-panel { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.team-market-panel > div:not(.team-market-meta) { padding: 13px; border: 1px solid var(--line); border-radius: 12px; background: rgba(240,237,228,.5); }
+.team-market-panel small,.team-market-panel strong { display: block; }
+.team-market-panel small { color: var(--muted); font-size: 9px; }
+.team-market-panel strong { margin-top: 4px; font-size: 23px; letter-spacing: -.04em; }
+.team-market-meta { grid-column: 1/-1; display: flex; flex-wrap: wrap; gap: 7px 14px; color: var(--muted); font-size: 9px; }
+.team-market-meta a { color: var(--green); font-weight: 800; text-decoration: none; }
+.team-market-panel.unavailable { display: block; }
+.team-market-panel.unavailable p { margin: 5px 0 0; color: var(--muted); font-size: 11px; }
+.matchup-market-strip { display: grid; grid-template-columns: auto minmax(0,1fr) auto; align-items: center; gap: 12px; margin: 14px 0; padding: 11px 13px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); color: inherit; text-decoration: none; }
+.matchup-market-strip strong { font-size: 10px; }
+.matchup-market-strip span { color: var(--blue); font: 800 10px ui-monospace,monospace; text-align: center; }
+.matchup-market-strip em { color: var(--green); font-size: 9px; font-style: normal; font-weight: 800; }
+.matchup-market-strip.unavailable span { color: var(--muted); font-family: inherit; font-weight: 500; }
+.market-method-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin: 16px 0; }
+.market-method-grid > div { padding: 14px; border: 1px solid var(--line); border-radius: 13px; background: rgba(240,237,228,.45); }
+.market-method-grid strong { font-size: 12px; }
+.market-method-grid p { margin: 6px 0 0 !important; font-size: 11px !important; }
+
+html[data-theme="dark"] .market-outcome,
+html[data-theme="dark"] .team-market-panel > div:not(.team-market-meta),
+html[data-theme="dark"] .market-method-grid > div { background: #202d2a; }
+html[data-theme="dark"] .market-coverage-pill,
+html[data-theme="dark"] .matchup-market-strip { background: #14201e; }
+html[data-theme="dark"] .market-value,
+html[data-theme="dark"] .comparison-row.market.available b,
+html[data-theme="dark"] .market-line.available b,
+html[data-theme="dark"] .matchup-market-strip span,
+html[data-theme="dark"] .market-cell { color: #85bfe9; }
+
+@media (max-width: 1100px) {
+  .market-metrics { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .forecast-comparison-head,.market-forecast-item { grid-template-columns: 25px minmax(130px,1fr) 62px 72px 62px; }
+  .forecast-comparison-head span:nth-child(3),.market-forecast-item .prob-bar { display: none; }
+  .team-profile-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 780px) {
+  .market-metrics { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .fixture-compare-compact { grid-template-columns: 58px minmax(0,1fr); }
+  .fixture-compare-compact .fixture-prob { grid-column: 1/-1; text-align: left; padding-left: 68px; }
+  .fixture-comparison-row { grid-template-columns: 68px minmax(0,1fr); }
+  .fixture-comparison-row .fixture-market-compare { grid-column: 1/-1; text-align: left; padding-left: 78px; }
+  .comparison-row { grid-template-columns: 85px 1fr; }
+  .comparison-row b { white-space: normal; }
+  .market-outcome-grid,.market-method-grid { grid-template-columns: 1fr; }
+  .race-row-market { grid-template-columns: 1fr; }
+  .race-probabilities { text-align: left; }
+  .team-market-panel { grid-template-columns: 1fr; }
+  .team-market-meta { grid-column: auto; }
+  .profile-metrics { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .matchup-market-strip { grid-template-columns: 1fr; }
+  .matchup-market-strip span { text-align: left; }
+  .market-coverage-pill { width: 100%; margin-left: 0; }
+}
+@media (max-width: 520px) {
+  .market-metrics { grid-template-columns: 1fr; }
+  .forecast-comparison-head,.market-forecast-item { grid-template-columns: 23px minmax(105px,1fr) 58px 65px 56px; gap: 6px; }
+  .comparison-value { font-size: 9px; }
+  .fixture-compare-compact .fixture-prob,.fixture-comparison-row .fixture-market-compare { padding-left: 0; }
+  .market-outcome-grid { gap: 7px; }
+  .profile-metrics { grid-template-columns: 1fr; }
+}

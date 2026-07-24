@@ -24,6 +24,16 @@ class PreparedLeague:
     time_origin: datetime
     bucket_days: int
     value_by_id: dict[int, float]
+    last_observed_at: datetime
+    days_since_last_observed: int
+    recent_season: int | None
+    recent_attack: np.ndarray
+    recent_defense: np.ndarray
+    recent_matches: np.ndarray
+    current_season_matches: np.ndarray
+    seed_attack: np.ndarray
+    seed_defense: np.ndarray
+    historical_value_mode: str
 
 
 def _dedupe(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -41,6 +51,79 @@ def _dedupe(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if current_final and not previous_final:
             chosen[key] = row
     return sorted(chosen.values(), key=lambda row: (row.get("timestamp") or 0, str(row.get("fixture_id"))))
+
+
+def _season_strength_inputs(
+    completed: list[dict[str, Any]],
+    current_ids: list[int],
+    current_season: int,
+) -> tuple[int | None, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    """Build stable prior-season attack/defense signals for current clubs.
+
+    The inputs are based only on matches available before the forecast season.
+    Rates are shrunk toward the league average by eight pseudo-matches so that
+    small samples and promoted clubs do not create extreme priors.
+    """
+    previous_seasons = sorted(
+        {
+            int(row["season"])
+            for row in completed
+            if row.get("season") is not None and int(row["season"]) < current_season
+        }
+    )
+    recent_season = previous_seasons[-1] if previous_seasons else None
+    n = len(current_ids)
+    attack = np.zeros(n, dtype=np.float32)
+    defense = np.zeros(n, dtype=np.float32)
+    matches = np.zeros(n, dtype=np.int32)
+    current_matches = np.zeros(n, dtype=np.int32)
+    pos = {team_id: index for index, team_id in enumerate(current_ids)}
+
+    for row in completed:
+        if int(row.get("season", -1)) != current_season:
+            continue
+        for team_id in (row["home_id"], row["away_id"]):
+            if team_id in pos:
+                current_matches[pos[team_id]] += 1
+
+    if recent_season is None:
+        return None, attack, defense, matches, current_matches
+
+    gf = np.zeros(n, dtype=np.float64)
+    ga = np.zeros(n, dtype=np.float64)
+    all_goals = 0.0
+    all_team_games = 0
+    for row in completed:
+        if int(row.get("season", -1)) != recent_season:
+            continue
+        hg = float(row["home_goals"])
+        ag = float(row["away_goals"])
+        all_goals += hg + ag
+        all_team_games += 2
+        h = pos.get(row["home_id"])
+        a = pos.get(row["away_id"])
+        if h is not None:
+            matches[h] += 1
+            gf[h] += hg
+            ga[h] += ag
+        if a is not None:
+            matches[a] += 1
+            gf[a] += ag
+            ga[a] += hg
+
+    league_rate = all_goals / max(all_team_games, 1)
+    league_rate = max(league_rate, 0.25)
+    pseudo_matches = 8.0
+    for i in range(n):
+        if matches[i] == 0:
+            continue
+        scored_rate = (gf[i] + pseudo_matches * league_rate) / (matches[i] + pseudo_matches)
+        allowed_rate = (ga[i] + pseudo_matches * league_rate) / (matches[i] + pseudo_matches)
+        attack[i] = float(np.clip(math.log(scored_rate / league_rate), -0.55, 0.55))
+        # Bayesian internal convention: larger defense means stronger defense.
+        defense[i] = float(np.clip(-math.log(allowed_rate / league_rate), -0.55, 0.55))
+
+    return recent_season, attack, defense, matches, current_matches
 
 
 def prepare_league(cfg: LeagueConfig, fixture_rows: list[dict[str, Any]]) -> PreparedLeague:
@@ -94,8 +177,6 @@ def prepare_league(cfg: LeagueConfig, fixture_rows: list[dict[str, Any]]) -> Pre
 
     all_ids = sorted({row["home_id"] for row in completed} | {row["away_id"] for row in completed} | current_set)
     team_index = {team_id: index for index, team_id in enumerate(all_ids)}
-    name_by_id = {row["home_id"]: row["home_name"] for row in fixture_rows}
-    name_by_id.update({row["away_id"]: row["away_name"] for row in fixture_rows})
 
     current_value = {team["api_id"]: team["market_value"] for team in teams}
     known_values = [value for value in current_value.values() if value > 0]
@@ -104,22 +185,30 @@ def prepare_league(cfg: LeagueConfig, fixture_rows: list[dict[str, Any]]) -> Pre
 
     parsed_dates = [datetime.fromisoformat(str(row["date"]).replace("Z", "+00:00")) for row in completed]
     origin = min(parsed_dates).astimezone(timezone.utc)
+    last_observed = max(parsed_dates).astimezone(timezone.utc)
     now = datetime.now(timezone.utc)
-    max_date = max(max(parsed_dates), now)
-    n_times = max(2, int(math.floor((max_date - origin).days / BUCKET_DAYS)) + 1)
+
+    # Critical preseason fix: the latent state ends at the final observed match.
+    # It no longer creates June/July state buckets with no likelihood evidence.
+    n_times = max(2, int(math.floor((last_observed - origin).days / BUCKET_DAYS)) + 1)
 
     history_rows = []
     for row, when in zip(completed, parsed_dates):
         bucket = min(n_times - 1, max(0, int((when.astimezone(timezone.utc) - origin).days // BUCKET_DAYS)))
         hv = max(value_by_id[row["home_id"]], 0.01)
         av = max(value_by_id[row["away_id"]], 0.01)
+        # The override CSV contains current squad values, not historical values.
+        # Applying them to 2022-2025 EPL matches creates look-ahead bias, so EPL
+        # history deliberately omits the value term. Current values are still
+        # used for all future-fixture simulations.
+        value_diff = 0.0 if cfg.key == "epl" else math.log(hv / av)
         history_rows.append(
             {
                 **row,
                 "home_idx": team_index[row["home_id"]],
                 "away_idx": team_index[row["away_id"]],
                 "time_idx": bucket,
-                "value_diff": math.log(hv / av),
+                "value_diff": value_diff,
             }
         )
 
@@ -127,6 +216,15 @@ def prepare_league(cfg: LeagueConfig, fixture_rows: list[dict[str, Any]]) -> Pre
     for row in current:
         when = datetime.fromisoformat(str(row["date"]).replace("Z", "+00:00")).astimezone(timezone.utc)
         current_rows.append({**row, "future_bucket": max(0, int((when - now).days // BUCKET_DAYS))})
+
+    recent_season, recent_attack, recent_defense, recent_matches, current_season_matches = _season_strength_inputs(
+        completed,
+        current_ids,
+        cfg.current_season,
+    )
+    seed_attack = np.asarray([float(team.get("seed_attack", 0.0)) for team in teams], dtype=np.float32)
+    # CSV defense is negative for a strong defense; the model uses positive.
+    seed_defense = -np.asarray([float(team.get("seed_defense", 0.0)) for team in teams], dtype=np.float32)
 
     return PreparedLeague(
         history=pd.DataFrame(history_rows).sort_values("timestamp").reset_index(drop=True),
@@ -138,4 +236,14 @@ def prepare_league(cfg: LeagueConfig, fixture_rows: list[dict[str, Any]]) -> Pre
         time_origin=origin,
         bucket_days=BUCKET_DAYS,
         value_by_id=value_by_id,
+        last_observed_at=last_observed,
+        days_since_last_observed=max(0, (now - last_observed).days),
+        recent_season=recent_season,
+        recent_attack=recent_attack,
+        recent_defense=recent_defense,
+        recent_matches=recent_matches,
+        current_season_matches=current_season_matches,
+        seed_attack=seed_attack,
+        seed_defense=seed_defense,
+        historical_value_mode="future-only" if cfg.key == "epl" else "historical-and-future",
     )

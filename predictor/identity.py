@@ -70,6 +70,12 @@ def team_catalog(cfg: LeagueConfig) -> list[dict[str, Any]]:
                 "short": row.get("short") or "".join(word[0] for word in row["name"].split())[:4].upper(),
                 "conference": row.get("conference") or ("Premier League" if cfg.key == "epl" else "Unknown"),
                 "market_value": float(row.get("market_value") or 1.0),
+                # CSV convention: positive attack is stronger; negative defense
+                # means fewer goals conceded. The Bayesian model stores defense
+                # internally with the opposite sign, so conversion happens in
+                # data preparation.
+                "seed_attack": float(row.get("attack") or 0.0),
+                "seed_defense": float(row.get("defense") or 0.0),
                 "color": row.get("color") or deterministic_color(row["name"]),
                 "slug": slug,
                 "logo": None,

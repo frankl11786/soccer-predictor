@@ -1,0 +1,35 @@
+Touchline Forecast — final EPL correction and Polymarket comparison package
+
+Upload these items to the repository root:
+- app/
+- predictor/
+- tests/
+- README-FINAL-MODEL-AND-POLYMARKET.md
+- PACKAGE-MANIFEST.txt (optional documentation)
+
+Included frontend files:
+- app/index.html
+- app/app.js
+- app/styles.css
+
+Included model and data-output files:
+- predictor/backtest.py
+- predictor/bayes.py
+- predictor/config.py
+- predictor/data_prep.py
+- predictor/identity.py
+- predictor/output.py
+- predictor/polymarket.py
+- predictor/run.py
+- predictor/simulate.py
+
+Included validation files:
+- tests/test_model_corrections.py
+- tests/test_polymarket.py
+- tests/test_snapshots.py
+
+Intentionally not included:
+- .github/workflows/update-forecast.yml (preserves the existing parallel midnight workflow)
+- app/data/*.json (the next Actions run generates fresh snapshots)
+- requirements.txt (no new dependency is required)
+- caches, posterior files, screenshots, or compiled bytecode

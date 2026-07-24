@@ -10,7 +10,7 @@ from scipy.stats import poisson
 
 from .api_football import FINAL_STATUSES
 from .bayes import PosteriorFit
-from .config import RANDOM_SEED
+from .config import FUTURE_STATE_RETENTION, RANDOM_SEED
 from .data_prep import PreparedLeague
 
 
@@ -113,8 +113,17 @@ def _future_paths(fit: PosteriorFit, simulations: int, future_buckets: int, rng:
     sigma_a = fit.sigma_attack[sample_idx].astype(np.float32)
     sigma_d = fit.sigma_defense[sample_idx].astype(np.float32)
     for bucket in range(1, future_buckets + 1):
-        attacks[bucket] = attacks[bucket - 1] + rng.normal(0, sigma_a[:, None], attacks[0].shape)
-        defenses[bucket] = defenses[bucket - 1] + rng.normal(0, sigma_d[:, None], defenses[0].shape)
+        # Controlled mean reversion prevents a ten-month season from turning
+        # into an unconstrained random walk while preserving genuine rating
+        # uncertainty learned by the Bayesian model.
+        attacks[bucket] = (
+            FUTURE_STATE_RETENTION * attacks[bucket - 1]
+            + rng.normal(0, sigma_a[:, None], attacks[0].shape)
+        )
+        defenses[bucket] = (
+            FUTURE_STATE_RETENTION * defenses[bucket - 1]
+            + rng.normal(0, sigma_d[:, None], defenses[0].shape)
+        )
         attacks[bucket] -= attacks[bucket].mean(axis=1, keepdims=True)
         defenses[bucket] -= defenses[bucket].mean(axis=1, keepdims=True)
     return (

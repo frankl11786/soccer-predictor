@@ -4,9 +4,9 @@ import math
 from typing import Any
 
 from .bayes import PosteriorFit
-from .config import LeagueConfig, MODEL_VERSION
+from .config import FUTURE_STATE_RETENTION, LeagueConfig, MARKET_SANITY_THRESHOLD, MODEL_VERSION
 from .data_prep import PreparedLeague
-from .polymarket import MarketQuote
+from .polymarket import MarketQuote, MatchMarketQuote
 from .simulate import SimulationResult
 from .utils import read_json, utc_now_iso, write_json
 
@@ -41,6 +41,20 @@ def _source_errors(data_meta: dict[str, Any]) -> list[str]:
                     errors.append(f"{source_name}: {message}")
         elif value:
             errors.append(f"{source_name}: {value}")
+    return errors
+
+
+def _market_errors(market_meta: dict[str, Any]) -> list[str]:
+    errors: list[str] = []
+    for label, section in (("Season winner", market_meta), ("Match markets", market_meta.get("match_markets") or {})):
+        values = section.get("errors") if isinstance(section, dict) else None
+        if isinstance(values, (list, tuple)):
+            errors.extend(f"Polymarket {label}: {value}" for value in values if value)
+        elif values:
+            errors.append(f"Polymarket {label}: {values}")
+    if len(errors) > 20:
+        hidden = len(errors) - 20
+        errors = errors[:20] + [f"{hidden} additional Polymarket request error(s) omitted from this entry"]
     return errors
 
 
@@ -154,9 +168,19 @@ def _build_news(
     fit: PosteriorFit,
     simulation: SimulationResult,
     data_meta: dict[str, Any],
+    market_meta: dict[str, Any],
 ) -> list[dict[str, Any]]:
     completed = sum(1 for fixture in simulation.fixtures if fixture["status"] == "final")
     sources = _source_names(data_meta)
+    backtest = data_meta.get("backtest") or {}
+    if backtest.get("status") == "completed":
+        validation_text = (
+            "Snapshot generated successfully. Temporal holdout: "
+            f"Brier {float(backtest.get('brier_score', 0)):.3f}; "
+            f"skill vs naive {float(backtest.get('brier_skill_vs_naive', 0)):+.1%}."
+        )
+    else:
+        validation_text = "Snapshot generated successfully; workflow validation runs before publication."
     entries: list[dict[str, Any]] = [
         {
             "id": f"system-{cfg.key}-{generated}",
@@ -178,15 +202,20 @@ def _build_news(
                 "simulations": cfg.simulations,
                 "completed_matches": completed,
                 "sources": sources,
-                "validation": "Snapshot generated successfully; workflow validation runs before publication.",
+                "validation": validation_text,
                 "deployment": "Published to the live site after both league jobs completed.",
                 "inference": "NumPyro stochastic variational inference with an automatic normal guide",
+                "temporal_holdout": data_meta.get("backtest"),
+                "preseason_calibration": fit.summary.get("state_adjustment"),
+                "polymarket_season_quotes": market_meta.get("quotes_found", 0),
+                "polymarket_match_quotes": (market_meta.get("match_markets") or {}).get("quotes_found", 0),
+                "polymarket_match_coverage": (market_meta.get("match_markets") or {}).get("coverage", 0),
                 "note": "This is an automated system entry. It is intentionally not assigned to a club.",
             },
         }
     ]
 
-    errors = _source_errors(data_meta)
+    errors = _source_errors(data_meta) + _market_errors(market_meta)
     if errors:
         entries.append(
             {
@@ -207,6 +236,110 @@ def _build_news(
             }
         )
 
+
+    if backtest.get("status") == "completed" and float(backtest.get("brier_skill_vs_naive") or 0.0) < -0.05:
+        entries.append(
+            {
+                "id": f"warning-backtest-{cfg.key}-{generated}",
+                "type": "warning",
+                "date": generated[:10],
+                "generated_at": generated,
+                "team": None,
+                "headline": "Temporal holdout performance fell below the naive baseline",
+                "summary": (
+                    f"The holdout Brier skill score was {float(backtest.get('brier_skill_vs_naive', 0)):+.1%}. "
+                    "The forecast was published with a model-review warning."
+                ),
+                "affects_forecast": False,
+                "impact": "Backtest review flag",
+                "details": {
+                    "validation": (
+                        f"Brier {float(backtest.get('brier_score', 0)):.3f}; "
+                        f"log loss {float(backtest.get('log_loss', 0)):.3f}; "
+                        f"skill vs naive {float(backtest.get('brier_skill_vs_naive', 0)):+.1%}."
+                    ),
+                    "review_status": "Model review recommended before treating large edges as actionable",
+                    "model_treatment": "The holdout result does not alter the production forecast automatically.",
+                    "note": backtest.get("limitations"),
+                },
+            }
+        )
+
+    market_alerts = (market_meta.get("sanity_checks") or {}).get("large_divergences") or []
+    if market_alerts:
+        largest = market_alerts[0]
+        entries.append(
+            {
+                "id": f"warning-market-{cfg.key}-{generated}",
+                "type": "warning",
+                "date": generated[:10],
+                "generated_at": generated,
+                "team": largest.get("team"),
+                "headline": "Model-to-market divergence exceeds the review threshold",
+                "summary": (
+                    f"The largest gap is {abs(float(largest.get('difference', 0))) * 100:.1f} percentage points. "
+                    "Polymarket remains an independent comparison and is not used to force the model toward market prices."
+                ),
+                "affects_forecast": False,
+                "impact": "Model review flag",
+                "details": {
+                    "validation": (
+                        f"{largest.get('team_name', largest.get('team'))}: "
+                        f"model {float(largest.get('model', 0)) * 100:.1f}% vs "
+                        f"normalized market {float(largest.get('market', 0)) * 100:.1f}%."
+                    ),
+                    "review_status": (
+                        f"{len(market_alerts)} club(s) exceeded the "
+                        f"{MARKET_SANITY_THRESHOLD * 100:.0f}-point threshold."
+                    ),
+                    "model_treatment": "Polymarket remains comparison-only; no market price was added to the Bayesian model.",
+                    "note": "This flag does not alter either the model probability or the normalized market probability.",
+                    "threshold": MARKET_SANITY_THRESHOLD,
+                    "largest_divergence": largest,
+                    "all_large_divergences": market_alerts,
+                },
+            }
+        )
+
+    match_alerts = ((market_meta.get("match_markets") or {}).get("sanity_checks") or {}).get("large_divergences") or []
+    if match_alerts:
+        largest_match = match_alerts[0]
+        home_name = team_names.get(str(largest_match.get("home") or ""), str(largest_match.get("home") or "Home"))
+        away_name = team_names.get(str(largest_match.get("away") or ""), str(largest_match.get("away") or "Away"))
+        entries.append(
+            {
+                "id": f"warning-match-market-{cfg.key}-{generated}",
+                "type": "warning",
+                "date": generated[:10],
+                "generated_at": generated,
+                "team": None,
+                "headline": "A match forecast differs materially from Polymarket",
+                "summary": (
+                    f"The largest exact-match gap is {abs(float(largest_match.get('difference', 0))) * 100:.1f} percentage points "
+                    f"for {home_name} vs {away_name}."
+                ),
+                "affects_forecast": False,
+                "impact": "Match review flag",
+                "details": {
+                    "validation": (
+                        f"{largest_match.get('outcome', 'Outcome')}: "
+                        f"model {float(largest_match.get('model', 0)) * 100:.1f}% vs "
+                        f"normalized market {float(largest_match.get('market', 0)) * 100:.1f}%."
+                    ),
+                    "review_status": (
+                        f"{len(match_alerts)} exact match market(s) exceeded the "
+                        f"{MARKET_SANITY_THRESHOLD * 100:.0f}-point threshold."
+                    ),
+                    "model_treatment": "The market comparison is diagnostic only and never changes the match forecast.",
+                    "affected_fixtures": f"{home_name} vs {away_name}",
+                    "note": "Open the scheduled match page to compare all three outcomes.",
+                    "threshold": MARKET_SANITY_THRESHOLD,
+                    "largest_divergence": largest_match,
+                    "all_large_divergences": match_alerts,
+                },
+            }
+        )
+
     entries.extend(_movement_news(cfg, previous, current_forecast, team_names, generated))
     entries.extend(_manual_news(previous))
     return entries
@@ -218,6 +351,7 @@ def build_snapshot(
     fit: PosteriorFit,
     simulation: SimulationResult,
     quotes: dict[str, MarketQuote],
+    match_quotes: dict[str, MatchMarketQuote],
     market_meta: dict[str, Any],
     data_meta: dict[str, Any],
     output_path,
@@ -231,28 +365,133 @@ def build_snapshot(
             {
                 **team,
                 "attack": row["attack"],
+                # Backward-compatible goal effect used by Matchup Lab: more
+                # negative means a stronger defense because it is added to the
+                # opponent's log-goal rate. A positive display metric is also
+                # published to avoid sign ambiguity in tables and team cards.
                 "defense": row["defense"],
+                "defense_strength": round(-float(row["defense"]), 4),
             }
         )
 
     outcome_key = "title" if cfg.key == "epl" else "champion"
-    for row, team in zip(simulation.forecast, prepared.teams):
+    market_divergences: list[dict[str, Any]] = []
+    for team in prepared.teams:
+        row = forecast_by_slug[team["slug"]]
+        row["defense_strength"] = round(-float(row["defense"]), 4)
+        if isinstance(row.get("defense_interval"), list) and len(row["defense_interval"]) == 2:
+            row["defense_strength_interval"] = [
+                round(-float(row["defense_interval"][1]), 4),
+                round(-float(row["defense_interval"][0]), 4),
+            ]
         quote = quotes.get(team["name"])
         row["market"] = round(quote.probability, 6) if quote else None
+        row["market_raw"] = round(quote.raw_probability, 6) if quote else None
         row["edge"] = round(row[outcome_key] - quote.probability, 6) if quote else None
         row["market_details"] = (
             {
                 "source": "Polymarket",
                 "question": quote.question,
+                "market_id": quote.market_id,
+                "event_id": quote.event_id,
                 "event": quote.event_title,
                 "event_slug": quote.event_slug,
+                "raw_probability": round(quote.raw_probability, 6),
+                "normalized_probability": round(quote.probability, 6),
+                "normalized": quote.normalized,
+                "normalization_total": round(quote.normalization_total, 6) if quote.normalization_total else None,
                 "liquidity": quote.liquidity,
                 "volume": quote.volume,
                 "updated_at": quote.updated_at,
+                "comparison_only": True,
             }
             if quote
             else None
         )
+        if quote:
+            difference = float(row[outcome_key]) - float(quote.probability)
+            if abs(difference) >= MARKET_SANITY_THRESHOLD:
+                market_divergences.append(
+                    {
+                        "team": team["slug"],
+                        "team_name": team["name"],
+                        "metric": outcome_key,
+                        "model": round(float(row[outcome_key]), 6),
+                        "market": round(float(quote.probability), 6),
+                        "market_raw": round(float(quote.raw_probability), 6),
+                        "difference": round(difference, 6),
+                    }
+                )
+
+    market_divergences.sort(key=lambda item: abs(float(item["difference"])), reverse=True)
+    market_meta["sanity_checks"] = {
+        "threshold": MARKET_SANITY_THRESHOLD,
+        "status": "warning" if market_divergences else "passed",
+        "large_divergences": market_divergences,
+        "note": "Sanity checks never feed Polymarket prices into the Bayesian model.",
+    }
+
+    match_divergences: list[dict[str, Any]] = []
+    for fixture in simulation.fixtures:
+        quote = match_quotes.get(str(fixture.get("id") or ""))
+        if not quote:
+            continue
+        market_probabilities = {
+            "home": round(quote.home_probability, 6),
+            "draw": round(quote.draw_probability, 6),
+            "away": round(quote.away_probability, 6),
+        }
+        raw_probabilities = {
+            "home": round(quote.home_raw_probability, 6),
+            "draw": round(quote.draw_raw_probability, 6),
+            "away": round(quote.away_raw_probability, 6),
+        }
+        model_probabilities = fixture.get("probabilities") or {}
+        edges = {
+            outcome: round(float(model_probabilities.get(outcome) or 0.0) - probability, 6)
+            for outcome, probability in market_probabilities.items()
+        }
+        fixture["polymarket"] = {
+            "source": "Polymarket",
+            "probabilities": market_probabilities,
+            "raw_probabilities": raw_probabilities,
+            "model_edge": edges,
+            "normalized": quote.normalized,
+            "normalization_total": round(quote.normalization_total, 6),
+            "event_id": quote.event_id,
+            "event_title": quote.event_title,
+            "event_slug": quote.event_slug,
+            "event_url": quote.event_url,
+            "market_ids": quote.market_ids,
+            "questions": quote.questions,
+            "liquidity": round(quote.liquidity, 2),
+            "volume": round(quote.volume, 2),
+            "kickoff": quote.kickoff,
+            "updated_at": quote.updated_at,
+            "comparison_only": True,
+        }
+        largest_outcome, largest_gap = max(edges.items(), key=lambda item: abs(item[1]))
+        if abs(largest_gap) >= MARKET_SANITY_THRESHOLD:
+            match_divergences.append(
+                {
+                    "fixture_id": fixture.get("id"),
+                    "home": fixture.get("home"),
+                    "away": fixture.get("away"),
+                    "outcome": largest_outcome,
+                    "model": round(float(model_probabilities.get(largest_outcome) or 0.0), 6),
+                    "market": market_probabilities[largest_outcome],
+                    "difference": largest_gap,
+                }
+            )
+
+    match_divergences.sort(key=lambda item: abs(float(item["difference"])), reverse=True)
+    match_meta = market_meta.setdefault("match_markets", {})
+    match_meta["sanity_checks"] = {
+        "threshold": MARKET_SANITY_THRESHOLD,
+        "status": "warning" if match_divergences else "passed",
+        "large_divergences": match_divergences[:20],
+        "note": "Match-market checks are informational and never change model probabilities.",
+    }
 
     generated = utc_now_iso()
     completed = sum(1 for fixture in simulation.fixtures if fixture["status"] == "final")
@@ -270,7 +509,8 @@ def build_snapshot(
             "notice": (
                 f"Fixtures and results come from a free multi-source pipeline. Attack and defense ratings are fitted from "
                 f"{fit.summary['matches']:,} completed matches using a Bayesian state-space Poisson model. "
-                "Polymarket values are an independent comparison and appear only when an active matching market is found."
+                "Polymarket season-winner and exact 1X2 match prices are displayed as an independent comparison when an exact market is available. "
+                "They are normalized within their event for like-for-like comparison and never used as a model input."
             ),
             "completed_matches": completed,
             "data_sources": data_meta,
@@ -290,12 +530,14 @@ def build_snapshot(
             fit,
             simulation,
             data_meta,
+            market_meta,
         ),
         "model": {
-            "type": "Bayesian state-space Poisson",
+            "type": "Bayesian state-space Poisson with calibrated preseason transition",
             "base_goals": round(math.exp(fit.summary["intercept_mean"]), 4),
             "home_advantage_log": round(fit.summary["home_advantage_mean"], 4),
             "market_value_coefficient": round(fit.summary["market_value_coefficient_mean"], 4),
+            "market_value_historical_mode": fit.summary.get("market_value_historical_mode"),
             "posterior_sd": round((fit.summary["sigma_attack_mean"] + fit.summary["sigma_defense_mean"]) / 2, 4),
             "sigma_attack": round(fit.summary["sigma_attack_mean"], 4),
             "sigma_defense": round(fit.summary["sigma_defense_mean"], 4),
@@ -303,11 +545,17 @@ def build_snapshot(
             "time_buckets": fit.summary["time_buckets"],
             "bucket_days": fit.summary["bucket_days"],
             "matches_fitted": fit.summary["matches"],
+            "last_observed_at": fit.summary.get("last_observed_at"),
+            "preseason_calibration": fit.summary.get("state_adjustment"),
+            "temporal_holdout": data_meta.get("backtest"),
+            "future_state_retention": FUTURE_STATE_RETENTION,
             "inference": "NumPyro stochastic variational inference with an automatic normal guide",
             "equations": {
                 "home": "log(lambda_home) = alpha + H + attack_home,t - defense_away,t + beta_value*log(value_home/value_away)",
                 "away": "log(lambda_away) = alpha + attack_away,t - defense_home,t - beta_value*log(value_home/value_away)",
-                "state": "rating_t = rating_(t-1) + Normal(0, sigma)",
+                "historical_state": "rating_t = rating_(t-1) + Normal(0, sigma), ending at the last observed match",
+                "future_state": "rating_future = retention*rating_previous + Normal(0, sigma)",
+                "preseason": "rating_start = w*fitted_last_state + (1-w)*preseason_target",
             },
         },
     }
