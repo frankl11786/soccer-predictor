@@ -517,6 +517,33 @@ def build_snapshot(
             "polymarket": market_meta,
             "compared_with_previous_snapshot": bool(previous.get("forecast")),
         },
+               "methodology": {
+            "market_comparison": {
+                "source": "Polymarket",
+                "comparison_only": True,
+                "used_as_model_input": False,
+                "season_winner_prices": (
+                    "Prices come from the configured exact competition-winner event "
+                    "and are normalized within that event when the contract set is "
+                    "sufficiently complete."
+                ),
+                "match_prices": (
+                    "A match comparison is published only for a date-verified, "
+                    "full-match home/draw/away market that passes the matching safeguards."
+                ),
+                "edge_definition": (
+                    "Bayesian probability minus normalized Polymarket probability"
+                ),
+                "sanity_warning_threshold": MARKET_SANITY_THRESHOLD,
+            },
+            "preseason_calibration": {
+                "applies_to": "EPL",
+                "last_fitted_state": (
+                    "The fitted time axis ends at the last completed match."
+                ),
+                "polymarket_influence": "None",
+            },
+        },
         "teams": teams,
         "current_table": simulation.current_table,
         "forecast": simulation.forecast,
