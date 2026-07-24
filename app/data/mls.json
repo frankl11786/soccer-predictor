@@ -4,7 +4,7 @@
     "name": "Major League Soccer",
     "season": "2026",
     "as_of": "2026-07-24",
-    "generated_at": "2026-07-24T10:47:28Z",
+    "generated_at": "2026-07-24T11:33:00Z",
     "model_version": "bayes-ss-poisson-v4-market-comparison",
     "data_mode": "LIVE API + BAYESIAN MODEL",
     "iterations": 20000,
@@ -23,7 +23,7 @@
           ],
           "seasons_unavailable": [],
           "fixtures_received": 1541,
-          "updated_at": "2026-07-24T10:29:08Z"
+          "updated_at": "2026-07-24T11:15:07Z"
         },
         {
           "source": "American Soccer Analysis",
@@ -34,7 +34,7 @@
           ],
           "fixtures_received": 778,
           "errors": [],
-          "updated_at": "2026-07-24T10:29:14Z"
+          "updated_at": "2026-07-24T11:15:13Z"
         },
         {
           "source": "ESPN",
@@ -43,14 +43,14 @@
           "fixtures_received": 511,
           "request_errors": [],
           "cached": false,
-          "updated_at": "2026-07-24T10:29:14Z"
+          "updated_at": "2026-07-24T11:15:14Z"
         }
       ],
       "backtest": {
         "status": "not_run",
         "reason": "Nightly holdout currently runs for EPL only."
       },
-      "updated_at": "2026-07-24T10:47:28Z"
+      "updated_at": "2026-07-24T11:33:00Z"
     },
     "polymarket": {
       "source": "Polymarket",
@@ -69,13 +69,13 @@
         {
           "event_id": "200782",
           "event_slug": "mls-cup-winner-2026",
-          "raw_yes_total": 1.02,
+          "raw_yes_total": 1.0205,
           "active_contracts": 30,
           "matched_teams": 30
         }
       ],
       "errors": [],
-      "updated_at": "2026-07-24T10:47:20Z",
+      "updated_at": "2026-07-24T11:32:52Z",
       "match_markets": {
         "source": "Polymarket",
         "market_type": "match_1x2",
@@ -89,7 +89,7 @@
         "rejected_incomplete_1x2": 0,
         "rejected_ambiguous": 33,
         "errors": [],
-        "updated_at": "2026-07-24T10:47:28Z",
+        "updated_at": "2026-07-24T11:33:00Z",
         "note": "Only exact three-outcome match-result markets are accepted. Polymarket normally lists games near kickoff, so later fixtures may show no market.",
         "sanity_checks": {
           "threshold": 0.2,
@@ -107,9 +107,9 @@
             "team_name": "Vancouver Whitecaps FC",
             "metric": "champion",
             "model": 0.5215,
-            "market": 0.144608,
+            "market": 0.144537,
             "market_raw": 0.1475,
-            "difference": 0.376892
+            "difference": 0.376963
           }
         ],
         "note": "Sanity checks never feed Polymarket prices into the Bayesian model."
@@ -1070,9 +1070,9 @@
         -0.3233,
         0.6959
       ],
-      "market": 0.005392,
+      "market": 0.00539,
       "market_raw": 0.0055,
-      "edge": -0.001492,
+      "edge": -0.00149,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Atlanta United FC win the 2026 MLS Cup?",
@@ -1081,12 +1081,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0055,
-        "normalized_probability": 0.005392,
+        "normalized_probability": 0.00539,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 36349.90632,
+        "normalization_total": 1.0205,
+        "liquidity": 35524.04258,
         "volume": 100700.9915349999,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -1152,9 +1152,9 @@
         -0.1776,
         0.8587
       ],
-      "market": 0.014216,
+      "market": 0.014209,
       "market_raw": 0.0145,
-      "edge": 0.000284,
+      "edge": 0.000291,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Charlotte FC win the 2026 MLS Cup?",
@@ -1163,12 +1163,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0145,
-        "normalized_probability": 0.014216,
+        "normalized_probability": 0.014209,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 32035.65505,
-        "volume": 2008022.0347360016,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "normalization_total": 1.0205,
+        "liquidity": 35092.33581,
+        "volume": 2008036.4347360015,
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -1234,9 +1234,9 @@
         -0.4999,
         0.4854
       ],
-      "market": 0.061275,
+      "market": 0.061244,
       "market_raw": 0.0625,
-      "edge": -0.021775,
+      "edge": -0.021744,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Chicago Fire FC win the 2026 MLS Cup?",
@@ -1245,12 +1245,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0625,
-        "normalized_probability": 0.061275,
+        "normalized_probability": 0.061244,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 86907.12203,
-        "volume": 238806.23072700005,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "normalization_total": 1.0205,
+        "liquidity": 86390.56082,
+        "volume": 238810.78072700003,
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -1316,9 +1316,9 @@
         -1.2904,
         -0.2353
       ],
-      "market": 0.040686,
+      "market": 0.040666,
       "market_raw": 0.0415,
-      "edge": -0.040386,
+      "edge": -0.040366,
       "market_details": {
         "source": "Polymarket",
         "question": "Will FC Cincinnati win the 2026 MLS Cup?",
@@ -1327,12 +1327,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0415,
-        "normalized_probability": 0.040686,
+        "normalized_probability": 0.040666,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 42027.86862,
+        "normalization_total": 1.0205,
+        "liquidity": 41577.86127,
         "volume": 1580545.8207039996,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -1398,9 +1398,9 @@
         -0.469,
         0.5876
       ],
-      "market": 0.013235,
+      "market": 0.013229,
       "market_raw": 0.0135,
-      "edge": 0.002665,
+      "edge": 0.002671,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Columbus Crew win the 2026 MLS Cup?",
@@ -1409,12 +1409,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0135,
-        "normalized_probability": 0.013235,
+        "normalized_probability": 0.013229,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 35821.2133,
-        "volume": 3110308.2386809997,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "normalization_total": 1.0205,
+        "liquidity": 33067.15299,
+        "volume": 3110324.9458339997,
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -1480,9 +1480,9 @@
         -0.8144,
         0.2338
       ],
-      "market": 0.007353,
+      "market": 0.007349,
       "market_raw": 0.0075,
-      "edge": -0.007203,
+      "edge": -0.007199,
       "market_details": {
         "source": "Polymarket",
         "question": "Will D.C. United win the 2026 MLS Cup?",
@@ -1491,12 +1491,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0075,
-        "normalized_probability": 0.007353,
+        "normalized_probability": 0.007349,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 34669.60192,
+        "normalization_total": 1.0205,
+        "liquidity": 33853.17993,
         "volume": 16096.498283000003,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -1562,9 +1562,9 @@
         -0.0804,
         0.9295
       ],
-      "market": 0.284314,
+      "market": 0.284174,
       "market_raw": 0.29,
-      "edge": -0.155314,
+      "edge": -0.155174,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Inter Miami CF win the 2026 MLS Cup?",
@@ -1573,12 +1573,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.29,
-        "normalized_probability": 0.284314,
+        "normalized_probability": 0.284174,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 31041.5155,
+        "normalization_total": 1.0205,
+        "liquidity": 29810.9166,
         "volume": 71629.73227399997,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -1644,9 +1644,9 @@
         -0.9624,
         0.0784
       ],
-      "market": 0.001961,
+      "market": 0.00196,
       "market_raw": 0.002,
-      "edge": -0.001961,
+      "edge": -0.00196,
       "market_details": {
         "source": "Polymarket",
         "question": "Will CF Montréal win the 2026 MLS Cup?",
@@ -1655,12 +1655,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.002,
-        "normalized_probability": 0.001961,
+        "normalized_probability": 0.00196,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 28086.07306,
+        "normalization_total": 1.0205,
+        "liquidity": 27189.76942,
         "volume": 60683.253401000016,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -1726,9 +1726,9 @@
         0.0489,
         1.0678
       ],
-      "market": 0.089216,
+      "market": 0.089172,
       "market_raw": 0.091,
-      "edge": -0.046566,
+      "edge": -0.046522,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Nashville SC win the 2026 MLS Cup?",
@@ -1737,12 +1737,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.091,
-        "normalized_probability": 0.089216,
+        "normalized_probability": 0.089172,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 72011.3592,
-        "volume": 307266.1456620003,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "normalization_total": 1.0205,
+        "liquidity": 71150.01207,
+        "volume": 307280.28566200024,
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -1808,9 +1808,9 @@
         0.148,
         1.2349
       ],
-      "market": 0.012255,
+      "market": 0.012249,
       "market_raw": 0.0125,
-      "edge": 0.034145,
+      "edge": 0.034151,
       "market_details": {
         "source": "Polymarket",
         "question": "Will New England Revolution win the 2026 MLS Cup?",
@@ -1819,12 +1819,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0125,
-        "normalized_probability": 0.012255,
+        "normalized_probability": 0.012249,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 24711.36533,
+        "normalization_total": 1.0205,
+        "liquidity": 23993.25707,
         "volume": 49129.87032300003,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -1890,9 +1890,9 @@
         -0.149,
         0.7972
       ],
-      "market": 0.020098,
+      "market": 0.020088,
       "market_raw": 0.0205,
-      "edge": -0.019898,
+      "edge": -0.019888,
       "market_details": {
         "source": "Polymarket",
         "question": "Will New York City FC win the 2026 MLS Cup?",
@@ -1901,12 +1901,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0205,
-        "normalized_probability": 0.020098,
+        "normalized_probability": 0.020088,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 38839.65001,
-        "volume": 693856.8364969981,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "normalization_total": 1.0205,
+        "liquidity": 38815.18827,
+        "volume": 693862.3464969981,
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -1972,9 +1972,9 @@
         -0.9018,
         0.1723
       ],
-      "market": 0.010294,
+      "market": 0.010289,
       "market_raw": 0.0105,
-      "edge": -0.010244,
+      "edge": -0.010239,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Orlando City SC win the 2026 MLS Cup?",
@@ -1983,12 +1983,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0105,
-        "normalized_probability": 0.010294,
+        "normalized_probability": 0.010289,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 25506.3056,
+        "normalization_total": 1.0205,
+        "liquidity": 22128.7226,
         "volume": 2348321.4098159997,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -2054,9 +2054,9 @@
         0.0664,
         1.0614
       ],
-      "market": 0.001961,
+      "market": 0.00196,
       "market_raw": 0.002,
-      "edge": 0.009839,
+      "edge": 0.00984,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Philadelphia Union win the 2026 MLS Cup?",
@@ -2065,12 +2065,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.002,
-        "normalized_probability": 0.001961,
+        "normalized_probability": 0.00196,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 37203.61447,
+        "normalization_total": 1.0205,
+        "liquidity": 36304.83583,
         "volume": 203451.463932,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -2136,9 +2136,9 @@
         -0.5849,
         0.4863
       ],
-      "market": 0.016176,
+      "market": 0.016169,
       "market_raw": 0.0165,
-      "edge": -0.014626,
+      "edge": -0.014619,
       "market_details": {
         "source": "Polymarket",
         "question": "Will New York Red Bulls win the 2026 MLS Cup?",
@@ -2147,12 +2147,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0165,
-        "normalized_probability": 0.016176,
+        "normalized_probability": 0.016169,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 34351.64727,
+        "normalization_total": 1.0205,
+        "liquidity": 33647.65949,
         "volume": 607200.8065829991,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -2218,9 +2218,9 @@
         -0.6764,
         0.3853
       ],
-      "market": 0.007353,
+      "market": 0.007349,
       "market_raw": 0.0075,
-      "edge": -0.007253,
+      "edge": -0.007249,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Toronto FC win the 2026 MLS Cup?",
@@ -2229,12 +2229,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0075,
-        "normalized_probability": 0.007353,
+        "normalized_probability": 0.007349,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 34531.41385,
+        "normalization_total": 1.0205,
+        "liquidity": 33672.69186,
         "volume": 35894.99353300001,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -2300,9 +2300,9 @@
         -0.8989,
         0.216
       ],
-      "market": 0.002451,
+      "market": 0.00245,
       "market_raw": 0.0025,
-      "edge": -0.000801,
+      "edge": -0.0008,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Austin FC win the 2026 MLS Cup?",
@@ -2311,12 +2311,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0025,
-        "normalized_probability": 0.002451,
+        "normalized_probability": 0.00245,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 35054.45004,
+        "normalization_total": 1.0205,
+        "liquidity": 34035.97532,
         "volume": 77213.42889599992,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -2382,9 +2382,9 @@
         -0.9317,
         0.1193
       ],
-      "market": 0.002941,
+      "market": 0.00294,
       "market_raw": 0.003,
-      "edge": -0.002741,
+      "edge": -0.00274,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Colorado Rapids win the 2026 MLS Cup?",
@@ -2393,12 +2393,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.003,
-        "normalized_probability": 0.002941,
+        "normalized_probability": 0.00294,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 32681.94627,
+        "normalization_total": 1.0205,
+        "liquidity": 32004.57727,
         "volume": 113298.44456599998,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -2464,9 +2464,9 @@
         -0.8767,
         0.1953
       ],
-      "market": 0.006373,
+      "market": 0.006369,
       "market_raw": 0.0065,
-      "edge": -0.004623,
+      "edge": -0.004619,
       "market_details": {
         "source": "Polymarket",
         "question": "Will FC Dallas win the 2026 MLS Cup?",
@@ -2475,12 +2475,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0065,
-        "normalized_probability": 0.006373,
+        "normalized_probability": 0.006369,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 28710.72601,
+        "normalization_total": 1.0205,
+        "liquidity": 28181.30313,
         "volume": 73332.50882199997,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -2546,9 +2546,9 @@
         -0.2503,
         0.7205
       ],
-      "market": 0.017157,
+      "market": 0.017148,
       "market_raw": 0.0175,
-      "edge": -0.013457,
+      "edge": -0.013448,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Houston Dynamo FC win the 2026 MLS Cup?",
@@ -2557,12 +2557,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0175,
-        "normalized_probability": 0.017157,
+        "normalized_probability": 0.017148,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 45361.29453,
+        "normalization_total": 1.0205,
+        "liquidity": 44560.17144,
         "volume": 456842.9456349987,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -2628,9 +2628,9 @@
         -0.3974,
         0.6125
       ],
-      "market": 0.083333,
+      "market": 0.083293,
       "market_raw": 0.085,
-      "edge": -0.083233,
+      "edge": -0.083193,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Los Angeles FC win the 2026 MLS Cup?",
@@ -2639,12 +2639,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.085,
-        "normalized_probability": 0.083333,
+        "normalized_probability": 0.083293,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 17324.676,
+        "normalization_total": 1.0205,
+        "liquidity": 19937.9465,
         "volume": 32591.79809699999,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -2710,9 +2710,9 @@
         -1.2683,
         -0.1968
       ],
-      "market": 0.017157,
+      "market": 0.017148,
       "market_raw": 0.0175,
-      "edge": -0.016857,
+      "edge": -0.016848,
       "market_details": {
         "source": "Polymarket",
         "question": "Will LA Galaxy win the 2026 MLS Cup?",
@@ -2721,12 +2721,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0175,
-        "normalized_probability": 0.017157,
+        "normalized_probability": 0.017148,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 36913.11715,
+        "normalization_total": 1.0205,
+        "liquidity": 36484.11231,
         "volume": 22159.390599000013,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -2792,9 +2792,9 @@
         -0.1068,
         0.8732
       ],
-      "market": 0.009314,
+      "market": 0.009309,
       "market_raw": 0.0095,
-      "edge": -0.007964,
+      "edge": -0.007959,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Minnesota United FC win the 2026 MLS Cup?",
@@ -2803,12 +2803,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0095,
-        "normalized_probability": 0.009314,
+        "normalized_probability": 0.009309,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 27016.90986,
+        "normalization_total": 1.0205,
+        "liquidity": 26262.64553,
         "volume": 477599.0424879995,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -2874,9 +2874,9 @@
         -0.3896,
         0.6634
       ],
-      "market": 0.003431,
+      "market": 0.00343,
       "market_raw": 0.0035,
-      "edge": 0.004769,
+      "edge": 0.00477,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Portland Timbers win the 2026 MLS Cup?",
@@ -2885,12 +2885,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0035,
-        "normalized_probability": 0.003431,
+        "normalized_probability": 0.00343,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 34265.6081,
+        "normalization_total": 1.0205,
+        "liquidity": 33163.16479,
         "volume": 90246.22511999999,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -2956,9 +2956,9 @@
         -0.7362,
         0.3279
       ],
-      "market": 0.016176,
+      "market": 0.016169,
       "market_raw": 0.0165,
-      "edge": 0.006824,
+      "edge": 0.006831,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Real Salt Lake win the 2026 MLS Cup?",
@@ -2967,12 +2967,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0165,
-        "normalized_probability": 0.016176,
+        "normalized_probability": 0.016169,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 36895.20147,
+        "normalization_total": 1.0205,
+        "liquidity": 36788.9261,
         "volume": 2945468.3241680055,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -3038,9 +3038,9 @@
         -0.8221,
         0.2459
       ],
-      "market": 0.005392,
+      "market": 0.00539,
       "market_raw": 0.0055,
-      "edge": -0.005292,
+      "edge": -0.00529,
       "market_details": {
         "source": "Polymarket",
         "question": "Will St. Louis City SC win the 2026 MLS Cup?",
@@ -3049,12 +3049,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0055,
-        "normalized_probability": 0.005392,
+        "normalized_probability": 0.00539,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 27021.29474,
+        "normalization_total": 1.0205,
+        "liquidity": 23496.57909,
         "volume": 83184.36525300001,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -3120,9 +3120,9 @@
         -0.773,
         0.4306
       ],
-      "market": 0.018137,
+      "market": 0.018128,
       "market_raw": 0.0185,
-      "edge": 0.013163,
+      "edge": 0.013172,
       "market_details": {
         "source": "Polymarket",
         "question": "Will San Diego FC win the 2026 MLS Cup?",
@@ -3131,12 +3131,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0185,
-        "normalized_probability": 0.018137,
+        "normalized_probability": 0.018128,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 33830.98848,
+        "normalization_total": 1.0205,
+        "liquidity": 32467.37814,
         "volume": 1217902.6348729983,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -3202,9 +3202,9 @@
         -0.0648,
         0.9429
       ],
-      "market": 0.041667,
+      "market": 0.041646,
       "market_raw": 0.0425,
-      "edge": 0.000933,
+      "edge": 0.000954,
       "market_details": {
         "source": "Polymarket",
         "question": "Will San Jose Earthquakes win the 2026 MLS Cup?",
@@ -3213,12 +3213,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0425,
-        "normalized_probability": 0.041667,
+        "normalized_probability": 0.041646,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 45318.59599,
-        "volume": 1154128.0107309998,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "normalization_total": 1.0205,
+        "liquidity": 42117.97259,
+        "volume": 1154254.3407309998,
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -3284,9 +3284,9 @@
         -0.064,
         1.012
       ],
-      "market": 0.038235,
+      "market": 0.038217,
       "market_raw": 0.039,
-      "edge": 0.020015,
+      "edge": 0.020033,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Seattle Sounders FC win the 2026 MLS Cup?",
@@ -3295,12 +3295,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.039,
-        "normalized_probability": 0.038235,
+        "normalized_probability": 0.038217,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 26081.5683,
-        "volume": 853799.6489189976,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "normalization_total": 1.0205,
+        "liquidity": 23034.60677,
+        "volume": 853801.8189189977,
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -3366,9 +3366,9 @@
         -1.1409,
         -0.0883
       ],
-      "market": 0.007843,
-      "market_raw": 0.008,
-      "edge": -0.007843,
+      "market": 0.008329,
+      "market_raw": 0.0085,
+      "edge": -0.008329,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Sporting Kansas City win the 2026 MLS Cup?",
@@ -3376,13 +3376,13 @@
         "event_id": "200782",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "raw_probability": 0.008,
-        "normalized_probability": 0.007843,
+        "raw_probability": 0.0085,
+        "normalized_probability": 0.008329,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 25425.21013,
+        "normalization_total": 1.0205,
+        "liquidity": 20984.24975,
         "volume": 58274.094235000004,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     },
@@ -3448,9 +3448,9 @@
         -0.2105,
         0.854
       ],
-      "market": 0.144608,
+      "market": 0.144537,
       "market_raw": 0.1475,
-      "edge": 0.376892,
+      "edge": 0.376963,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Vancouver Whitecaps FC win the 2026 MLS Cup?",
@@ -3459,12 +3459,12 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.1475,
-        "normalized_probability": 0.144608,
+        "normalized_probability": 0.144537,
         "normalized": true,
-        "normalization_total": 1.02,
-        "liquidity": 113526.71078,
+        "normalization_total": 1.0205,
+        "liquidity": 115225.66344,
         "volume": 375181.33143400034,
-        "updated_at": "2026-07-24T10:47:20Z",
+        "updated_at": "2026-07-24T11:32:52Z",
         "comparison_only": true
       }
     }
@@ -18229,17 +18229,17 @@
   ],
   "news": [
     {
-      "id": "system-mls-2026-07-24T10:47:28Z",
+      "id": "system-mls-2026-07-24T11:33:00Z",
       "type": "system",
       "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:47:28Z",
+      "generated_at": "2026-07-24T11:33:00Z",
       "team": null,
       "headline": "Automated model refresh completed",
       "summary": "The latest Major League Soccer data was downloaded, the Bayesian model was fully refitted, and 20,000 season simulations were completed.",
       "affects_forecast": true,
       "impact": "System update",
       "details": {
-        "generated_at": "2026-07-24T10:47:28Z",
+        "generated_at": "2026-07-24T11:33:00Z",
         "model_version": "bayes-ss-poisson-v4-market-comparison",
         "matches_fitted": 2310,
         "simulations": 20000,
@@ -18268,10 +18268,10 @@
       }
     },
     {
-      "id": "warning-market-mls-2026-07-24T10:47:28Z",
+      "id": "warning-market-mls-2026-07-24T11:33:00Z",
       "type": "warning",
       "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:47:28Z",
+      "generated_at": "2026-07-24T11:33:00Z",
       "team": "vancouver-whitecaps-fc",
       "headline": "Model-to-market divergence exceeds the review threshold",
       "summary": "The largest gap is 37.7 percentage points. Polymarket remains an independent comparison and is not used to force the model toward market prices.",
@@ -18288,9 +18288,9 @@
           "team_name": "Vancouver Whitecaps FC",
           "metric": "champion",
           "model": 0.5215,
-          "market": 0.144608,
+          "market": 0.144537,
           "market_raw": 0.1475,
-          "difference": 0.376892
+          "difference": 0.376963
         },
         "all_large_divergences": [
           {
@@ -18298,195 +18298,11 @@
             "team_name": "Vancouver Whitecaps FC",
             "metric": "champion",
             "model": 0.5215,
-            "market": 0.144608,
+            "market": 0.144537,
             "market_raw": 0.1475,
-            "difference": 0.376892
+            "difference": 0.376963
           }
         ]
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-inter-miami-cf-champion",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:47:28Z",
-      "team": "inter-miami-cf",
-      "headline": "Inter Miami CF win mls cup probability decreased",
-      "summary": "Win MLS Cup moved from 13.7% to 12.9% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-0.8 percentage points",
-      "details": {
-        "metric": "Win MLS Cup",
-        "metric_key": "champion",
-        "before": 0.13695,
-        "after": 0.129,
-        "delta": -0.00795,
-        "projected_points_before": 72.64,
-        "projected_points_after": 72.49,
-        "avg_position_before": 3.44,
-        "avg_position_after": 3.43,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-vancouver-whitecaps-fc-cup_final",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:47:28Z",
-      "team": "vancouver-whitecaps-fc",
-      "headline": "Vancouver Whitecaps FC reach mls cup probability decreased",
-      "summary": "Reach MLS Cup moved from 67.3% to 66.7% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-0.6 percentage points",
-      "details": {
-        "metric": "Reach MLS Cup",
-        "metric_key": "cup_final",
-        "before": 0.6731,
-        "after": 0.6671,
-        "delta": -0.006,
-        "projected_points_before": 82.62,
-        "projected_points_after": 82.38,
-        "avg_position_before": 1.34,
-        "avg_position_after": 1.35,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-seattle-sounders-fc-cup_final",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:47:28Z",
-      "team": "seattle-sounders-fc",
-      "headline": "Seattle Sounders FC reach mls cup probability increased",
-      "summary": "Reach MLS Cup moved from 10.3% to 10.9% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+0.6 percentage points",
-      "details": {
-        "metric": "Reach MLS Cup",
-        "metric_key": "cup_final",
-        "before": 0.10305,
-        "after": 0.109,
-        "delta": 0.00595,
-        "projected_points_before": 61.97,
-        "projected_points_after": 61.81,
-        "avg_position_before": 6.96,
-        "avg_position_after": 6.97,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-new-england-revolution-cup_final",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:47:28Z",
-      "team": "new-england-revolution",
-      "headline": "New England Revolution reach mls cup probability increased",
-      "summary": "Reach MLS Cup moved from 14.3% to 14.7% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+0.5 percentage points",
-      "details": {
-        "metric": "Reach MLS Cup",
-        "metric_key": "cup_final",
-        "before": 0.1427,
-        "after": 0.14745,
-        "delta": 0.00475,
-        "projected_points_before": 62.27,
-        "projected_points_after": 62.12,
-        "avg_position_before": 6.91,
-        "avg_position_after": 6.92,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-real-salt-lake-cup_final",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:47:28Z",
-      "team": "real-salt-lake",
-      "headline": "Real Salt Lake reach mls cup probability increased",
-      "summary": "Reach MLS Cup moved from 4.3% to 4.6% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+0.3 percentage points",
-      "details": {
-        "metric": "Reach MLS Cup",
-        "metric_key": "cup_final",
-        "before": 0.04285,
-        "after": 0.0456,
-        "delta": 0.00275,
-        "projected_points_before": 59.41,
-        "projected_points_after": 59.27,
-        "avg_position_before": 8.19,
-        "avg_position_after": 8.2,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-columbus-crew-cup_final",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:47:28Z",
-      "team": "columbus-crew",
-      "headline": "Columbus Crew reach mls cup probability increased",
-      "summary": "Reach MLS Cup moved from 6.6% to 6.8% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+0.2 percentage points",
-      "details": {
-        "metric": "Reach MLS Cup",
-        "metric_key": "cup_final",
-        "before": 0.06605,
-        "after": 0.06845,
-        "delta": 0.0024,
-        "projected_points_before": 49.95,
-        "projected_points_after": 49.81,
-        "avg_position_before": 12.74,
-        "avg_position_after": 12.81,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-nashville-sc-champion",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:47:28Z",
-      "team": "nashville-sc",
-      "headline": "Nashville SC win mls cup probability decreased",
-      "summary": "Win MLS Cup moved from 4.5% to 4.3% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-0.2 percentage points",
-      "details": {
-        "metric": "Win MLS Cup",
-        "metric_key": "champion",
-        "before": 0.04505,
-        "after": 0.04265,
-        "delta": -0.0024,
-        "projected_points_before": 72.73,
-        "projected_points_after": 72.59,
-        "avg_position_before": 3.43,
-        "avg_position_after": 3.41,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-chicago-fire-fc-cup_final",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:47:28Z",
-      "team": "chicago-fire-fc",
-      "headline": "Chicago Fire FC reach mls cup probability decreased",
-      "summary": "Reach MLS Cup moved from 14.0% to 13.8% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-0.2 percentage points",
-      "details": {
-        "metric": "Reach MLS Cup",
-        "metric_key": "cup_final",
-        "before": 0.14,
-        "after": 0.1377,
-        "delta": -0.0023,
-        "projected_points_before": 58.88,
-        "projected_points_after": 58.83,
-        "avg_position_before": 8.36,
-        "avg_position_after": 8.32,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
       }
     }
   ],

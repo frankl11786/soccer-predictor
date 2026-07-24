@@ -4,7 +4,7 @@
     "name": "English Premier League",
     "season": "2026/27",
     "as_of": "2026-07-24",
-    "generated_at": "2026-07-24T10:49:16Z",
+    "generated_at": "2026-07-24T11:34:27Z",
     "model_version": "bayes-ss-poisson-v4-market-comparison",
     "data_mode": "LIVE API + BAYESIAN MODEL",
     "iterations": 20000,
@@ -23,7 +23,7 @@
           ],
           "seasons_unavailable": [],
           "fixtures_received": 1140,
-          "updated_at": "2026-07-24T10:29:09Z"
+          "updated_at": "2026-07-24T11:15:10Z"
         },
         {
           "source": "OpenFootball",
@@ -34,7 +34,7 @@
           ],
           "fixtures_received": 760,
           "errors": [],
-          "updated_at": "2026-07-24T10:29:09Z"
+          "updated_at": "2026-07-24T11:15:10Z"
         }
       ],
       "backtest": {
@@ -52,7 +52,7 @@
         "brier_skill_vs_naive": -0.054759,
         "limitations": "This is a lightweight match-outcome holdout, not a complete season-title calibration study. Current preseason seeds and Polymarket data are excluded. It is intended to catch large regressions during automated rebuilds."
       },
-      "updated_at": "2026-07-24T10:49:16Z"
+      "updated_at": "2026-07-24T11:34:27Z"
     },
     "polymarket": {
       "source": "Polymarket",
@@ -77,7 +77,7 @@
         }
       ],
       "errors": [],
-      "updated_at": "2026-07-24T10:49:16Z",
+      "updated_at": "2026-07-24T11:34:27Z",
       "match_markets": {
         "source": "Polymarket",
         "market_type": "match_1x2",
@@ -91,7 +91,7 @@
         "rejected_incomplete_1x2": 0,
         "rejected_ambiguous": 0,
         "errors": [],
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "note": "Only exact three-outcome match-result markets are accepted. Polymarket normally lists games near kickoff, so later fixtures may show no market.",
         "sanity_checks": {
           "threshold": 0.2,
@@ -784,9 +784,9 @@
         "normalized_probability": 0.340201,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 409214.6208,
-        "volume": 55542.00390399998,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "liquidity": 417435.3578,
+        "volume": 57042.00390399998,
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -854,9 +854,9 @@
         "normalized_probability": 0.015812,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 213042.24604,
+        "liquidity": 214081.68004,
         "volume": 33397.748412999994,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -924,9 +924,9 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 170348.71597,
+        "liquidity": 171702.72297,
         "volume": 24296.848,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -994,9 +994,9 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 192879.98555,
+        "liquidity": 196768.39,
         "volume": 40750.149483,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1064,9 +1064,9 @@
         "normalized_probability": 0.002396,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 169884.79738,
+        "liquidity": 174697.76738,
         "volume": 32687.205399,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1134,9 +1134,9 @@
         "normalized_probability": 0.09104,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 221338.844,
-        "volume": 109377.7439300001,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "liquidity": 222415.2143,
+        "volume": 109427.57393000012,
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1204,9 +1204,9 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 181619.8094,
+        "liquidity": 187292.1164,
         "volume": 49159.961749,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1274,9 +1274,9 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 175935.53538,
+        "liquidity": 177292.17326,
         "volume": 29103.080233,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1344,9 +1344,9 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 175643.42999,
+        "liquidity": 176997.43699,
         "volume": 27063.015000000003,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1414,9 +1414,9 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 174449.00243,
+        "liquidity": 175803.00943,
         "volume": 38856.572060000006,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1484,9 +1484,9 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 172491.92729,
+        "liquidity": 173845.93429,
         "volume": 36363.990427,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1554,9 +1554,9 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 151596.74433,
+        "liquidity": 157696.30133,
         "volume": 25930.050761000002,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1624,9 +1624,9 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 165071.00365,
+        "liquidity": 169188.41065,
         "volume": 33601.852272000004,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1694,9 +1694,9 @@
         "normalized_probability": 0.110206,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 313968.0438,
+        "liquidity": 313498.0638,
         "volume": 24812.318904999993,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1764,9 +1764,9 @@
         "normalized_probability": 0.282702,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 813454.7739,
+        "liquidity": 810914.2612,
         "volume": 417565.40384200047,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1834,9 +1834,9 @@
         "normalized_probability": 0.110206,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 370170.8617,
+        "liquidity": 378432.5327,
         "volume": 51252.748615000026,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1904,9 +1904,9 @@
         "normalized_probability": 0.005271,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 208212.80243,
+        "liquidity": 207794.16269,
         "volume": 43703.67261000001,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -1974,9 +1974,9 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 169104.95445,
+        "liquidity": 171152.56145,
         "volume": 30404.608594000005,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -2044,9 +2044,9 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 167560.07758,
+        "liquidity": 168914.08458,
         "volume": 31140.338227,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     },
@@ -2114,9 +2114,9 @@
         "normalized_probability": 0.026354,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 213917.48861,
-        "volume": 66034.73571400005,
-        "updated_at": "2026-07-24T10:49:16Z",
+        "liquidity": 210837.98967,
+        "volume": 66074.59571400005,
+        "updated_at": "2026-07-24T11:34:27Z",
         "comparison_only": true
       }
     }
@@ -12765,17 +12765,17 @@
   ],
   "news": [
     {
-      "id": "system-epl-2026-07-24T10:49:16Z",
+      "id": "system-epl-2026-07-24T11:34:27Z",
       "type": "system",
       "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:49:16Z",
+      "generated_at": "2026-07-24T11:34:27Z",
       "team": null,
       "headline": "Automated model refresh completed",
       "summary": "The latest English Premier League data was downloaded, the Bayesian model was fully refitted, and 20,000 season simulations were completed.",
       "affects_forecast": true,
       "impact": "System update",
       "details": {
-        "generated_at": "2026-07-24T10:49:16Z",
+        "generated_at": "2026-07-24T11:34:27Z",
         "model_version": "bayes-ss-poisson-v4-market-comparison",
         "matches_fitted": 1520,
         "simulations": 20000,
@@ -12827,10 +12827,10 @@
       }
     },
     {
-      "id": "warning-backtest-epl-2026-07-24T10:49:16Z",
+      "id": "warning-backtest-epl-2026-07-24T11:34:27Z",
       "type": "warning",
       "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:49:16Z",
+      "generated_at": "2026-07-24T11:34:27Z",
       "team": null,
       "headline": "Temporal holdout performance fell below the naive baseline",
       "summary": "The holdout Brier skill score was -5.5%. The forecast was published with a model-review warning.",
@@ -12844,10 +12844,10 @@
       }
     },
     {
-      "id": "warning-market-epl-2026-07-24T10:49:16Z",
+      "id": "warning-market-epl-2026-07-24T11:34:27Z",
       "type": "warning",
       "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:49:16Z",
+      "generated_at": "2026-07-24T11:34:27Z",
       "team": "manchester-city",
       "headline": "Model-to-market divergence exceeds the review threshold",
       "summary": "The largest gap is 24.0 percentage points. Polymarket remains an independent comparison and is not used to force the model toward market prices.",
@@ -12879,190 +12879,6 @@
             "difference": -0.240052
           }
         ]
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-hull-city-relegation",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:49:16Z",
-      "team": "hull-city",
-      "headline": "Hull City relegation probability increased",
-      "summary": "Relegation moved from 33.7% to 78.7% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+45.0 percentage points",
-      "details": {
-        "metric": "Relegation",
-        "metric_key": "relegation",
-        "before": 0.33695,
-        "after": 0.7871,
-        "delta": 0.45015,
-        "projected_points_before": 38.87,
-        "projected_points_after": 27.46,
-        "avg_position_before": 13.98,
-        "avg_position_after": 18.54,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-coventry-city-relegation",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:49:16Z",
-      "team": "coventry-city",
-      "headline": "Coventry City relegation probability increased",
-      "summary": "Relegation moved from 26.0% to 62.3% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+36.3 percentage points",
-      "details": {
-        "metric": "Relegation",
-        "metric_key": "relegation",
-        "before": 0.26035,
-        "after": 0.6233,
-        "delta": 0.36295,
-        "projected_points_before": 43.01,
-        "projected_points_after": 31.5,
-        "avg_position_before": 12.98,
-        "avg_position_after": 17.63,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-brighton-and-hove-albion-relegation",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:49:16Z",
-      "team": "brighton-and-hove-albion",
-      "headline": "Brighton & Hove Albion relegation probability decreased",
-      "summary": "Relegation moved from 43.1% to 14.1% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-29.0 percentage points",
-      "details": {
-        "metric": "Relegation",
-        "metric_key": "relegation",
-        "before": 0.43065,
-        "after": 0.14085,
-        "delta": -0.2898,
-        "projected_points_before": 32.81,
-        "projected_points_after": 46.19,
-        "avg_position_before": 15.59,
-        "avg_position_after": 12.88,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-manchester-city-top4",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:49:16Z",
-      "team": "manchester-city",
-      "headline": "Manchester City top-four finish probability increased",
-      "summary": "Top-four finish moved from 6.1% to 32.1% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+26.1 percentage points",
-      "details": {
-        "metric": "Top-four finish",
-        "metric_key": "top4",
-        "before": 0.06075,
-        "after": 0.3214,
-        "delta": 0.26065,
-        "projected_points_before": 46.76,
-        "projected_points_after": 62.2,
-        "avg_position_before": 12.1,
-        "avg_position_after": 6.99,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-arsenal-title",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:49:16Z",
-      "team": "arsenal",
-      "headline": "Arsenal premier league title probability increased",
-      "summary": "Premier League title moved from 31.2% to 53.0% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+21.9 percentage points",
-      "details": {
-        "metric": "Premier League title",
-        "metric_key": "title",
-        "before": 0.31175,
-        "after": 0.53045,
-        "delta": 0.2187,
-        "projected_points_before": 84.94,
-        "projected_points_after": 80.93,
-        "avg_position_before": 3.01,
-        "avg_position_after": 2.13,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-liverpool-top4",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:49:16Z",
-      "team": "liverpool",
-      "headline": "Liverpool top-four finish probability increased",
-      "summary": "Top-four finish moved from 8.8% to 26.9% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+18.0 percentage points",
-      "details": {
-        "metric": "Top-four finish",
-        "metric_key": "top4",
-        "before": 0.08835,
-        "after": 0.2688,
-        "delta": 0.18045,
-        "projected_points_before": 49.2,
-        "projected_points_after": 60.04,
-        "avg_position_before": 11.51,
-        "avg_position_after": 7.78,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-brentford-relegation",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:49:16Z",
-      "team": "brentford",
-      "headline": "Brentford relegation probability decreased",
-      "summary": "Relegation moved from 34.2% to 18.1% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-16.1 percentage points",
-      "details": {
-        "metric": "Relegation",
-        "metric_key": "relegation",
-        "before": 0.34165,
-        "after": 0.18085,
-        "delta": -0.1608,
-        "projected_points_before": 35.28,
-        "projected_points_after": 43.62,
-        "avg_position_before": 15.09,
-        "avg_position_after": 13.77,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-07-24-nottingham-forest-top4",
-      "type": "forecast_mover",
-      "date": "2026-07-24",
-      "generated_at": "2026-07-24T10:49:16Z",
-      "team": "nottingham-forest",
-      "headline": "Nottingham Forest top-four finish probability decreased",
-      "summary": "Top-four finish moved from 43.6% to 30.3% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-13.3 percentage points",
-      "details": {
-        "metric": "Top-four finish",
-        "metric_key": "top4",
-        "before": 0.43565,
-        "after": 0.30275,
-        "delta": -0.1329,
-        "projected_points_before": 70.45,
-        "projected_points_after": 61.42,
-        "avg_position_before": 6.0,
-        "avg_position_after": 7.27,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
       }
     }
   ],
