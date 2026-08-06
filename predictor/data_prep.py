@@ -53,6 +53,159 @@ def _dedupe(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sorted(chosen.values(), key=lambda row: (row.get("timestamp") or 0, str(row.get("fixture_id"))))
 
 
+
+
+MLS_SCHEDULE_SOURCES = (
+    "FixtureDownload",
+    "PublishedSnapshotFallback",
+    "ESPN",
+)
+MLS_EXPECTED_FIXTURES = 510
+MLS_EXPECTED_TEAM_MATCHES = 34
+
+
+def _is_regular_season(row: dict[str, Any]) -> bool:
+    round_name = str(row.get("round") or "").lower()
+    return not round_name or "regular" in round_name
+
+
+def _valid_mls_schedule(
+    rows: list[dict[str, Any]],
+    current_ids: list[int],
+) -> tuple[bool, dict[int, int]]:
+    appearances = {team_id: 0 for team_id in current_ids}
+    for row in rows:
+        if row.get("home_id") in appearances:
+            appearances[row["home_id"]] += 1
+        if row.get("away_id") in appearances:
+            appearances[row["away_id"]] += 1
+    valid = (
+        len(rows) == MLS_EXPECTED_FIXTURES
+        and all(count == MLS_EXPECTED_TEAM_MATCHES for count in appearances.values())
+    )
+    return valid, appearances
+
+
+def _prepare_mls_current(
+    fixture_rows: list[dict[str, Any]],
+    current_season: int,
+    current_ids: list[int],
+) -> list[dict[str, Any]]:
+    """Use one complete schedule as the spine and overlay the best final results.
+
+    American Soccer Analysis is the preferred completed-result source, but its
+    games endpoint only contains matches known to it at request time. A complete
+    510-match schedule source is therefore retained as the season spine.
+    """
+    current_set = set(current_ids)
+    season_rows = [
+        row
+        for row in fixture_rows
+        if row.get("season") == current_season
+        and row.get("home_id") in current_set
+        and row.get("away_id") in current_set
+        and _is_regular_season(row)
+    ]
+
+    schedule: list[dict[str, Any]] | None = None
+    source_counts: dict[str, int] = {}
+    count_details: dict[str, dict[int, int]] = {}
+    for source in MLS_SCHEDULE_SOURCES:
+        candidates = [row for row in season_rows if row.get("source") == source]
+        # Stable source fixture IDs make this safe even when a source repeats a row.
+        candidates = list({str(row.get("fixture_id")): row for row in candidates}.values())
+        candidates.sort(key=lambda row: (row.get("timestamp") or 0, str(row.get("fixture_id"))))
+        source_counts[source] = len(candidates)
+        valid, appearances = _valid_mls_schedule(candidates, current_ids)
+        count_details[source] = appearances
+        if valid:
+            schedule = candidates
+            break
+
+    if schedule is None:
+        combined = _dedupe(season_rows)
+        valid, appearances = _valid_mls_schedule(combined, current_ids)
+        if valid:
+            schedule = combined
+            source_counts["combined"] = len(combined)
+            count_details["combined"] = appearances
+        else:
+            bad = {team_id: count for team_id, count in appearances.items() if count != 34}
+            sample = ", ".join(f"{team_id}:{count}" for team_id, count in list(bad.items())[:8])
+            raise ValueError(
+                "MLS schedule validation failed: no complete 510-match schedule source was available. "
+                f"Source counts: {source_counts}. Combined rows: {len(combined)}. "
+                f"Bad club counts: {sample or 'none'}."
+            )
+
+    # Results are matched by the scheduled home/away pairing and nearest date.
+    # This preserves the complete schedule while allowing ASA/API final scores to
+    # replace a third-party schedule result when available.
+    final_rows = [
+        row
+        for row in season_rows
+        if row.get("status") in FINAL_STATUSES
+        and row.get("home_goals") is not None
+        and row.get("away_goals") is not None
+    ]
+    by_pair: dict[tuple[int, int], list[dict[str, Any]]] = {}
+    for row in final_rows:
+        by_pair.setdefault((row["home_id"], row["away_id"]), []).append(row)
+
+    source_rank = {
+        "American Soccer Analysis": 0,
+        "API-Football": 1,
+        "FixtureDownload": 2,
+        "PublishedSnapshotFallback": 3,
+        "ESPN": 4,
+    }
+    used_result_ids: set[str] = set()
+    merged: list[dict[str, Any]] = []
+    for scheduled in schedule:
+        scheduled_ts = int(scheduled.get("timestamp") or 0)
+        candidates = []
+        for result in by_pair.get((scheduled["home_id"], scheduled["away_id"]), []):
+            result_id = str(result.get("fixture_id"))
+            if result_id in used_result_ids:
+                continue
+            day_gap = abs(int(result.get("timestamp") or 0) - scheduled_ts) / 86400
+            if day_gap <= 45:
+                candidates.append((day_gap, source_rank.get(str(result.get("source")), 9), result))
+
+        if candidates:
+            _, _, result = min(candidates, key=lambda item: (item[1], item[0]))
+            used_result_ids.add(str(result.get("fixture_id")))
+            combined = {
+                **scheduled,
+                "date": result.get("date") or scheduled.get("date"),
+                "timestamp": result.get("timestamp") or scheduled.get("timestamp"),
+                "status": result.get("status"),
+                "status_long": result.get("status_long"),
+                "home_goals": result.get("home_goals"),
+                "away_goals": result.get("away_goals"),
+                "penalty_home": result.get("penalty_home"),
+                "penalty_away": result.get("penalty_away"),
+                "venue_id": result.get("venue_id") or scheduled.get("venue_id"),
+                "venue_name": result.get("venue_name") or scheduled.get("venue_name"),
+                "schedule_source": scheduled.get("source"),
+                "result_source": result.get("source"),
+            }
+            merged.append(combined)
+        else:
+            merged.append({**scheduled, "schedule_source": scheduled.get("source")})
+
+    valid, appearances = _valid_mls_schedule(merged, current_ids)
+    if not valid:
+        bad = {team_id: count for team_id, count in appearances.items() if count != 34}
+        sample = ", ".join(f"{team_id}:{count}" for team_id, count in list(bad.items())[:8])
+        raise ValueError(
+            "MLS schedule validation failed after result overlay: "
+            f"received {len(merged)} fixtures. Bad club counts: {sample or 'none'}."
+        )
+
+    return sorted(merged, key=lambda row: (row.get("timestamp") or 0, str(row.get("fixture_id"))))
+
+
 def _season_strength_inputs(
     completed: list[dict[str, Any]],
     current_ids: list[int],
@@ -130,47 +283,41 @@ def prepare_league(cfg: LeagueConfig, fixture_rows: list[dict[str, Any]]) -> Pre
     teams = team_catalog(cfg)
     if not teams:
         raise ValueError(f"No team catalog exists for {cfg.name}.")
-    fixture_rows = _dedupe(fixture_rows)
+
     current_ids = [team["api_id"] for team in teams]
     current_set = set(current_ids)
-    current = [
-        row for row in fixture_rows
-        if row["season"] == cfg.current_season and row["home_id"] in current_set and row["away_id"] in current_set
-    ]
-    if cfg.key == "mls":
-        regular = [row for row in current if "regular" in str(row.get("round", "")).lower()]
-        if regular:
-            current = regular
 
-        expected_matches = 510
-        appearances = {team_id: 0 for team_id in current_ids}
-        for row in current:
-            if row["home_id"] in appearances:
-                appearances[row["home_id"]] += 1
-            if row["away_id"] in appearances:
-                appearances[row["away_id"]] += 1
-        bad_counts = {
-            team_id: count
-            for team_id, count in appearances.items()
-            if count != 34
-        }
-        if len(current) != expected_matches or bad_counts:
-            sample = ", ".join(
-                f"{team_id}:{count}"
-                for team_id, count in list(bad_counts.items())[:8]
-            )
-            raise ValueError(
-                "MLS schedule validation failed: "
-                f"expected {expected_matches} regular-season fixtures and 34 per club, "
-                f"received {len(current)} fixtures. Bad club counts: {sample or 'none'}."
-            )
+    if cfg.key == "mls":
+        current = _prepare_mls_current(
+            fixture_rows,
+            cfg.current_season,
+            current_ids,
+        )
+        # Use the single validated schedule spine for current-season history as
+        # well. This prevents duplicate ASA/schedule rows after postponements.
+        historical_rows = [
+            row for row in fixture_rows
+            if row.get("season") != cfg.current_season
+        ]
+        fixture_rows = _dedupe(historical_rows) + current
+        fixture_rows.sort(key=lambda row: (row.get("timestamp") or 0, str(row.get("fixture_id"))))
+    else:
+        fixture_rows = _dedupe(fixture_rows)
+        current = [
+            row for row in fixture_rows
+            if row["season"] == cfg.current_season
+            and row["home_id"] in current_set
+            and row["away_id"] in current_set
+        ]
 
     if not current:
         raise ValueError(f"No current-season fixtures were found for {cfg.name}.")
 
     completed = [
         row for row in fixture_rows
-        if row["status"] in FINAL_STATUSES and row["home_goals"] is not None and row["away_goals"] is not None
+        if row["status"] in FINAL_STATUSES
+        and row["home_goals"] is not None
+        and row["away_goals"] is not None
     ]
     if len(completed) < 80:
         raise ValueError(f"Only {len(completed)} completed fixtures were available; at least 80 are required.")

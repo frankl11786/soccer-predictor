@@ -9,7 +9,7 @@ from .backtest import temporal_holdout_backtest
 from .bayes import fit_model
 from .config import APP_DATA, LEAGUES
 from .data_prep import prepare_league
-from .espn import fetch_mls_schedule
+from .mls_schedule import fetch_complete_mls_schedule
 from .identity import canonicalize_fixture_rows
 from .openfootball import fetch_epl_rows
 from .output import build_snapshot
@@ -25,8 +25,14 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
     history_rows, api_meta = fetch_history_rows(client, cfg, refresh=refresh)
 
     if key == "epl":
+        # OpenFootball now supplies an independent historical fallback as well
+        # as the current schedule. This keeps the model operational when the
+        # API-Football free tier cannot return one or more older seasons.
+        openfootball_seasons = tuple(
+            sorted(set(cfg.api_history_seasons + cfg.supplemental_seasons))
+        )
         supplemental_rows, current_meta = fetch_epl_rows(
-            cfg.supplemental_seasons,
+            openfootball_seasons,
             refresh=refresh,
         )
         source_meta = [api_meta, current_meta]
@@ -35,12 +41,12 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
             cfg.supplemental_seasons,
             refresh=refresh,
         )
-        espn_rows, espn_meta = fetch_mls_schedule(
+        schedule_rows, schedule_meta = fetch_complete_mls_schedule(
             cfg.current_season,
             refresh=refresh,
         )
-        supplemental_rows = asa_rows + espn_rows
-        source_meta = [api_meta, asa_meta, espn_meta]
+        supplemental_rows = asa_rows + schedule_rows
+        source_meta = [api_meta, asa_meta, schedule_meta]
 
     raw_fixtures = canonicalize_fixture_rows(
         cfg,
