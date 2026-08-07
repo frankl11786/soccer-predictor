@@ -3,8 +3,8 @@
     "league": "epl",
     "name": "English Premier League",
     "season": "2026/27",
-    "as_of": "2026-08-06",
-    "generated_at": "2026-08-06T23:40:07Z",
+    "as_of": "2026-08-07",
+    "generated_at": "2026-08-07T08:37:57Z",
     "model_version": "bayes-ss-poisson-v4-market-comparison",
     "data_mode": "LIVE API + BAYESIAN MODEL",
     "iterations": 20000,
@@ -36,7 +36,7 @@
             }
           ],
           "fixtures_received": 0,
-          "updated_at": "2026-08-06T23:29:08Z"
+          "updated_at": "2026-08-07T08:20:15Z"
         },
         {
           "source": "OpenFootball",
@@ -58,7 +58,7 @@
           "fixtures_received": 1900,
           "cached_seasons": [],
           "errors": [],
-          "updated_at": "2026-08-06T23:29:10Z"
+          "updated_at": "2026-08-07T08:20:15Z"
         }
       ],
       "backtest": {
@@ -76,7 +76,7 @@
         "brier_skill_vs_naive": -0.051341,
         "limitations": "This is a lightweight match-outcome holdout, not a complete season-title calibration study. Current preseason seeds and Polymarket data are excluded. It is intended to catch large regressions during automated rebuilds."
       },
-      "updated_at": "2026-08-06T23:40:07Z"
+      "updated_at": "2026-08-07T08:37:57Z"
     },
     "polymarket": {
       "source": "Polymarket",
@@ -95,13 +95,13 @@
         {
           "event_id": "659518",
           "event_slug": "epl-2027-champion-20260701200428749",
-          "raw_yes_total": 1.0475,
+          "raw_yes_total": 1.044,
           "active_contracts": 20,
           "matched_teams": 20
         }
       ],
       "errors": [],
-      "updated_at": "2026-08-06T23:40:03Z",
+      "updated_at": "2026-08-07T08:37:54Z",
       "match_markets": {
         "source": "Polymarket",
         "market_type": "match_1x2",
@@ -115,7 +115,7 @@
         "rejected_incomplete_1x2": 0,
         "rejected_ambiguous": 12,
         "errors": [],
-        "updated_at": "2026-08-06T23:40:07Z",
+        "updated_at": "2026-08-07T08:37:57Z",
         "note": "Only exact three-outcome match-result markets are accepted. Polymarket normally lists games near kickoff, so later fixtures may show no market.",
         "sanity_checks": {
           "threshold": 0.2,
@@ -133,9 +133,9 @@
             "team_name": "Arsenal",
             "metric": "title",
             "model": 0.6153,
-            "market": 0.348449,
+            "market": 0.349617,
             "market_raw": 0.365,
-            "difference": 0.266851
+            "difference": 0.265683
           }
         ],
         "note": "Sanity checks never feed Polymarket prices into the Bayesian model."
@@ -794,9 +794,9 @@
         0.484,
         0.986
       ],
-      "market": 0.348449,
+      "market": 0.349617,
       "market_raw": 0.365,
-      "edge": 0.266851,
+      "edge": 0.265683,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Arsenal win the 2026-27 English Premier League (EPL) Championship?",
@@ -805,12 +805,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.365,
-        "normalized_probability": 0.348449,
+        "normalized_probability": 0.349617,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 362728.1077,
-        "volume": 410337.3869719999,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 346407.3568,
+        "volume": 426504.32627799996,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -864,9 +864,9 @@
         -0.3416,
         0.1519
       ],
-      "market": 0.011933,
+      "market": 0.011973,
       "market_raw": 0.0125,
-      "edge": -0.009583,
+      "edge": -0.009623,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Aston Villa win the 2026-27 English Premier League (EPL) Championship?",
@@ -875,12 +875,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.0125,
-        "normalized_probability": 0.011933,
+        "normalized_probability": 0.011973,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 589315.25273,
-        "volume": 141613.51372599998,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 589683.98842,
+        "volume": 141782.195809,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -934,9 +934,9 @@
         -0.4306,
         0.0728
       ],
-      "market": 0.001432,
+      "market": 0.001437,
       "market_raw": 0.0015,
-      "edge": -0.001282,
+      "edge": -0.001287,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Bournemouth win the 2026-27 English Premier League (EPL) Championship?",
@@ -945,12 +945,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.0015,
-        "normalized_probability": 0.001432,
+        "normalized_probability": 0.001437,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 556227.14748,
-        "volume": 106670.28699999997,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 571833.41477,
+        "volume": 106670.287,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1004,9 +1004,9 @@
         -0.1887,
         0.3052
       ],
-      "market": 0.001432,
+      "market": 0.001437,
       "market_raw": 0.0015,
-      "edge": -0.001282,
+      "edge": -0.001287,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Brentford win the 2026-27 English Premier League (EPL) Championship?",
@@ -1015,12 +1015,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.0015,
-        "normalized_probability": 0.001432,
+        "normalized_probability": 0.001437,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 556147.00525,
-        "volume": 133017.015483,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 570032.74743,
+        "volume": 134039.63548300002,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1074,9 +1074,9 @@
         -0.2191,
         0.2594
       ],
-      "market": 0.002387,
+      "market": 0.002395,
       "market_raw": 0.0025,
-      "edge": 0.001713,
+      "edge": 0.001705,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Brighton win the 2026-27 English Premier League (EPL) Championship?",
@@ -1085,12 +1085,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.0025,
-        "normalized_probability": 0.002387,
+        "normalized_probability": 0.002395,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 492400.6955,
-        "volume": 160667.494229,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 492541.95468,
+        "volume": 160689.48422900002,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1144,9 +1144,9 @@
         -0.0375,
         0.4634
       ],
-      "market": 0.090692,
+      "market": 0.090996,
       "market_raw": 0.095,
-      "edge": -0.089892,
+      "edge": -0.090196,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Chelsea win the 2026-27 English Premier League (EPL) Championship?",
@@ -1155,12 +1155,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.095,
-        "normalized_probability": 0.090692,
+        "normalized_probability": 0.090996,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 462850.1043,
-        "volume": 289906.48432199995,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 467244.6643,
+        "volume": 290052.674322,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1214,9 +1214,9 @@
         -0.4571,
         -0.187
       ],
-      "market": 0.001432,
+      "market": 0.001437,
       "market_raw": 0.0015,
-      "edge": -0.001432,
+      "edge": -0.001437,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Coventry City win the 2026-27 English Premier League (EPL) Championship?",
@@ -1225,12 +1225,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.0015,
-        "normalized_probability": 0.001432,
+        "normalized_probability": 0.001437,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 587739.23957,
-        "volume": 108089.22274900001,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 587021.05096,
+        "volume": 108127.11774900003,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1284,9 +1284,9 @@
         -0.4713,
         0.0371
       ],
-      "market": 0.001432,
+      "market": 0.001437,
       "market_raw": 0.0015,
-      "edge": -0.001432,
+      "edge": -0.001437,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Crystal Palace win the 2026-27 English Premier League (EPL) Championship?",
@@ -1295,12 +1295,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.0015,
-        "normalized_probability": 0.001432,
+        "normalized_probability": 0.001437,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 567324.24018,
+        "normalization_total": 1.044,
+        "liquidity": 582586.6231,
         "volume": 89288.24723299999,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1354,9 +1354,9 @@
         -0.2786,
         0.1999
       ],
-      "market": 0.001432,
+      "market": 0.001437,
       "market_raw": 0.0015,
-      "edge": -0.000832,
+      "edge": -0.000837,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Everton win the 2026-27 English Premier League (EPL) Championship?",
@@ -1365,12 +1365,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.0015,
-        "normalized_probability": 0.001432,
+        "normalized_probability": 0.001437,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 570784.17419,
-        "volume": 91100.05500000001,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 586779.5092,
+        "volume": 91127.43500000001,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1424,9 +1424,9 @@
         -0.0784,
         0.3924
       ],
-      "market": 0.001432,
-      "market_raw": 0.0015,
-      "edge": -0.000182,
+      "market": 0.000479,
+      "market_raw": 0.0005,
+      "edge": 0.000771,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Fulham win the 2026-27 English Premier League (EPL) Championship?",
@@ -1434,13 +1434,13 @@
         "event_id": "659518",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "raw_probability": 0.0015,
-        "normalized_probability": 0.001432,
+        "raw_probability": 0.0005,
+        "normalized_probability": 0.000479,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 574862.88102,
-        "volume": 94853.15306,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 563124.12907,
+        "volume": 132853.15306,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1494,9 +1494,9 @@
         -0.5387,
         -0.2535
       ],
-      "market": 0.001432,
-      "market_raw": 0.0015,
-      "edge": -0.001432,
+      "market": 0.000479,
+      "market_raw": 0.0005,
+      "edge": -0.000479,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Hull City win the 2026-27 English Premier League (EPL) Championship?",
@@ -1504,13 +1504,13 @@
         "event_id": "659518",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "raw_probability": 0.0015,
-        "normalized_probability": 0.001432,
+        "raw_probability": 0.0005,
+        "normalized_probability": 0.000479,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 568977.60377,
-        "volume": 86494.25042699998,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 571672.56955,
+        "volume": 89499.435427,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1564,9 +1564,9 @@
         -0.493,
         -0.2333
       ],
-      "market": 0.001432,
-      "market_raw": 0.0015,
-      "edge": -0.001432,
+      "market": 0.000479,
+      "market_raw": 0.0005,
+      "edge": -0.000479,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Ipswich Town win the 2026-27 English Premier League (EPL) Championship?",
@@ -1574,13 +1574,13 @@
         "event_id": "659518",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "raw_probability": 0.0015,
-        "normalized_probability": 0.001432,
+        "raw_probability": 0.0005,
+        "normalized_probability": 0.000479,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 558758.3078,
-        "volume": 77377.32476099998,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 561395.79457,
+        "volume": 121543.92476099999,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1634,9 +1634,9 @@
         -0.382,
         0.0952
       ],
-      "market": 0.001432,
+      "market": 0.001437,
       "market_raw": 0.0015,
-      "edge": -0.001182,
+      "edge": -0.001187,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Leeds United win the 2026-27 English Premier League (EPL) Championship?",
@@ -1645,12 +1645,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.0015,
-        "normalized_probability": 0.001432,
+        "normalized_probability": 0.001437,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 487626.21523,
-        "volume": 164939.31427199996,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 503221.81742,
+        "volume": 164939.314272,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1704,9 +1704,9 @@
         -0.1552,
         0.3266
       ],
-      "market": 0.119332,
+      "market": 0.119732,
       "market_raw": 0.125,
-      "edge": -0.098932,
+      "edge": -0.099332,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Liverpool win the 2026-27 English Premier League (EPL) Championship?",
@@ -1715,12 +1715,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.125,
-        "normalized_probability": 0.119332,
+        "normalized_probability": 0.119732,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 345565.7041,
-        "volume": 278311.11502200004,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 340209.2551,
+        "volume": 278312.25138000003,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1774,9 +1774,9 @@
         0.3197,
         0.8415
       ],
-      "market": 0.272076,
+      "market": 0.272989,
       "market_raw": 0.285,
-      "edge": 0.059174,
+      "edge": 0.058261,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Manchester City win the 2026-27 English Premier League (EPL) Championship?",
@@ -1785,12 +1785,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.285,
-        "normalized_probability": 0.272076,
+        "normalized_probability": 0.272989,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 851804.3988,
-        "volume": 1520500.9119669995,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 746370.8635,
+        "volume": 1521151.9347230003,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1844,9 +1844,9 @@
         -0.4402,
         0.0374
       ],
-      "market": 0.109785,
+      "market": 0.110153,
       "market_raw": 0.115,
-      "edge": -0.102385,
+      "edge": -0.102753,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Manchester United win the 2026-27 English Premier League (EPL) Championship?",
@@ -1855,12 +1855,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.115,
-        "normalized_probability": 0.109785,
+        "normalized_probability": 0.110153,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 519972.4895,
-        "volume": 154441.060229,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 520101.5839,
+        "volume": 154541.06022899997,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1914,9 +1914,9 @@
         -0.3122,
         0.1766
       ],
-      "market": 0.002387,
+      "market": 0.002395,
       "market_raw": 0.0025,
-      "edge": 0.001363,
+      "edge": 0.001355,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Newcastle United win the 2026-27 English Premier League (EPL) Championship?",
@@ -1925,12 +1925,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.0025,
-        "normalized_probability": 0.002387,
+        "normalized_probability": 0.002395,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 537309.25018,
-        "volume": 189067.33352,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 537936.80503,
+        "volume": 189067.33352000001,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -1984,9 +1984,9 @@
         -0.1587,
         0.2996
       ],
-      "market": 0.001432,
+      "market": 0.001437,
       "market_raw": 0.0015,
-      "edge": 0.004068,
+      "edge": 0.004063,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Nottingham Forest win the 2026-27 English Premier League (EPL) Championship?",
@@ -1995,12 +1995,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.0015,
-        "normalized_probability": 0.001432,
+        "normalized_probability": 0.001437,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 535094.49191,
-        "volume": 101792.81559400001,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 551694.27073,
+        "volume": 101966.81559400001,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -2054,9 +2054,9 @@
         -0.2402,
         0.2968
       ],
-      "market": 0.001432,
+      "market": 0.001437,
       "market_raw": 0.0015,
-      "edge": -0.001332,
+      "edge": -0.001337,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Sunderland win the 2026-27 English Premier League (EPL) Championship?",
@@ -2065,12 +2065,12 @@
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
         "raw_probability": 0.0015,
-        "normalized_probability": 0.001432,
+        "normalized_probability": 0.001437,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 580329.0943,
-        "volume": 86509.77222700001,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 583960.84842,
+        "volume": 86509.772227,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     },
@@ -2124,9 +2124,9 @@
         -0.1438,
         0.3259
       ],
-      "market": 0.027208,
-      "market_raw": 0.0285,
-      "edge": -0.020558,
+      "market": 0.02682,
+      "market_raw": 0.028,
+      "edge": -0.02017,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Tottenham win the 2026-27 English Premier League (EPL) Championship?",
@@ -2134,13 +2134,13 @@
         "event_id": "659518",
         "event": "EPL: 2027 Champion",
         "event_slug": "epl-2027-champion-20260701200428749",
-        "raw_probability": 0.0285,
-        "normalized_probability": 0.027208,
+        "raw_probability": 0.028,
+        "normalized_probability": 0.02682,
         "normalized": true,
-        "normalization_total": 1.0475,
-        "liquidity": 438136.64212,
-        "volume": 332009.67566000007,
-        "updated_at": "2026-08-06T23:40:03Z",
+        "normalization_total": 1.044,
+        "liquidity": 437718.58353,
+        "volume": 341341.318915,
+        "updated_at": "2026-08-07T08:37:54Z",
         "comparison_only": true
       }
     }
@@ -12789,17 +12789,17 @@
   ],
   "news": [
     {
-      "id": "system-epl-2026-08-06T23:40:07Z",
+      "id": "system-epl-2026-08-07T08:37:57Z",
       "type": "system",
-      "date": "2026-08-06",
-      "generated_at": "2026-08-06T23:40:07Z",
+      "date": "2026-08-07",
+      "generated_at": "2026-08-07T08:37:57Z",
       "team": null,
       "headline": "Automated model refresh completed",
       "summary": "The latest English Premier League data was downloaded, the Bayesian model was fully refitted, and 20,000 season simulations were completed.",
       "affects_forecast": true,
       "impact": "System update",
       "details": {
-        "generated_at": "2026-08-06T23:40:07Z",
+        "generated_at": "2026-08-07T08:37:57Z",
         "model_version": "bayes-ss-poisson-v4-market-comparison",
         "matches_fitted": 1520,
         "simulations": 20000,
@@ -12851,10 +12851,10 @@
       }
     },
     {
-      "id": "warning-backtest-epl-2026-08-06T23:40:07Z",
+      "id": "warning-backtest-epl-2026-08-07T08:37:57Z",
       "type": "warning",
-      "date": "2026-08-06",
-      "generated_at": "2026-08-06T23:40:07Z",
+      "date": "2026-08-07",
+      "generated_at": "2026-08-07T08:37:57Z",
       "team": null,
       "headline": "Temporal holdout performance fell below the naive baseline",
       "summary": "The holdout Brier skill score was -5.1%. The forecast was published with a model-review warning.",
@@ -12868,17 +12868,17 @@
       }
     },
     {
-      "id": "warning-market-epl-2026-08-06T23:40:07Z",
+      "id": "warning-market-epl-2026-08-07T08:37:57Z",
       "type": "warning",
-      "date": "2026-08-06",
-      "generated_at": "2026-08-06T23:40:07Z",
+      "date": "2026-08-07",
+      "generated_at": "2026-08-07T08:37:57Z",
       "team": "arsenal",
       "headline": "Model-to-market divergence exceeds the review threshold",
-      "summary": "The largest gap is 26.7 percentage points. Polymarket remains an independent comparison and is not used to force the model toward market prices.",
+      "summary": "The largest gap is 26.6 percentage points. Polymarket remains an independent comparison and is not used to force the model toward market prices.",
       "affects_forecast": false,
       "impact": "Model review flag",
       "details": {
-        "validation": "Arsenal: model 61.5% vs normalized market 34.8%.",
+        "validation": "Arsenal: model 61.5% vs normalized market 35.0%.",
         "review_status": "1 club(s) exceeded the 20-point threshold.",
         "model_treatment": "Polymarket remains comparison-only; no market price was added to the Bayesian model.",
         "note": "This flag does not alter either the model probability or the normalized market probability.",
@@ -12888,9 +12888,9 @@
           "team_name": "Arsenal",
           "metric": "title",
           "model": 0.6153,
-          "market": 0.348449,
+          "market": 0.349617,
           "market_raw": 0.365,
-          "difference": 0.266851
+          "difference": 0.265683
         },
         "all_large_divergences": [
           {
@@ -12898,195 +12898,11 @@
             "team_name": "Arsenal",
             "metric": "title",
             "model": 0.6153,
-            "market": 0.348449,
+            "market": 0.349617,
             "market_raw": 0.365,
-            "difference": 0.266851
+            "difference": 0.265683
           }
         ]
-      }
-    },
-    {
-      "id": "forecast-2026-08-06-liverpool-top4",
-      "type": "forecast_mover",
-      "date": "2026-08-06",
-      "generated_at": "2026-08-06T23:40:07Z",
-      "team": "liverpool",
-      "headline": "Liverpool top-four finish probability decreased",
-      "summary": "Top-four finish moved from 81.4% to 43.0% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-38.4 percentage points",
-      "details": {
-        "metric": "Top-four finish",
-        "metric_key": "top4",
-        "before": 0.8136,
-        "after": 0.43,
-        "delta": -0.3836,
-        "projected_points_before": 76.52,
-        "projected_points_after": 64.57,
-        "avg_position_before": 2.9,
-        "avg_position_after": 5.99,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-06-chelsea-top4",
-      "type": "forecast_mover",
-      "date": "2026-08-06",
-      "generated_at": "2026-08-06T23:40:07Z",
-      "team": "chelsea",
-      "headline": "Chelsea top-four finish probability decreased",
-      "summary": "Top-four finish moved from 44.1% to 10.2% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-33.9 percentage points",
-      "details": {
-        "metric": "Top-four finish",
-        "metric_key": "top4",
-        "before": 0.4414,
-        "after": 0.10225,
-        "delta": -0.33915,
-        "projected_points_before": 66.1,
-        "projected_points_after": 53.33,
-        "avg_position_before": 5.7,
-        "avg_position_after": 9.85,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-06-arsenal-title",
-      "type": "forecast_mover",
-      "date": "2026-08-06",
-      "generated_at": "2026-08-06T23:40:07Z",
-      "team": "arsenal",
-      "headline": "Arsenal premier league title probability increased",
-      "summary": "Premier League title moved from 27.7% to 61.5% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+33.8 percentage points",
-      "details": {
-        "metric": "Premier League title",
-        "metric_key": "title",
-        "before": 0.2771,
-        "after": 0.6153,
-        "delta": 0.3382,
-        "projected_points_before": 75.35,
-        "projected_points_after": 88.62,
-        "avg_position_before": 3.15,
-        "avg_position_after": 1.54,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-06-manchester-united-top4",
-      "type": "forecast_mover",
-      "date": "2026-08-06",
-      "generated_at": "2026-08-06T23:40:07Z",
-      "team": "manchester-united",
-      "headline": "Manchester United top-four finish probability increased",
-      "summary": "Top-four finish moved from 4.4% to 26.8% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+22.5 percentage points",
-      "details": {
-        "metric": "Top-four finish",
-        "metric_key": "top4",
-        "before": 0.0439,
-        "after": 0.26845,
-        "delta": 0.22455,
-        "projected_points_before": 50.15,
-        "projected_points_after": 59.45,
-        "avg_position_before": 11.57,
-        "avg_position_after": 7.69,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-06-manchester-city-top4",
-      "type": "forecast_mover",
-      "date": "2026-08-06",
-      "generated_at": "2026-08-06T23:40:07Z",
-      "team": "manchester-city",
-      "headline": "Manchester City top-four finish probability increased",
-      "summary": "Top-four finish moved from 72.9% to 95.2% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+22.3 percentage points",
-      "details": {
-        "metric": "Top-four finish",
-        "metric_key": "top4",
-        "before": 0.72885,
-        "after": 0.95205,
-        "delta": 0.2232,
-        "projected_points_before": 73.48,
-        "projected_points_after": 83.53,
-        "avg_position_before": 3.59,
-        "avg_position_after": 2.09,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-06-ipswich-town-relegation",
-      "type": "forecast_mover",
-      "date": "2026-08-06",
-      "generated_at": "2026-08-06T23:40:07Z",
-      "team": "ipswich-town",
-      "headline": "Ipswich Town relegation probability decreased",
-      "summary": "Relegation moved from 79.1% to 62.3% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-16.8 percentage points",
-      "details": {
-        "metric": "Relegation",
-        "metric_key": "relegation",
-        "before": 0.7907,
-        "after": 0.62315,
-        "delta": -0.16755,
-        "projected_points_before": 27.49,
-        "projected_points_after": 31.86,
-        "avg_position_before": 18.51,
-        "avg_position_after": 17.58,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-06-bournemouth-relegation",
-      "type": "forecast_mover",
-      "date": "2026-08-06",
-      "generated_at": "2026-08-06T23:40:07Z",
-      "team": "bournemouth",
-      "headline": "Bournemouth relegation probability increased",
-      "summary": "Relegation moved from 1.4% to 17.1% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+15.7 percentage points",
-      "details": {
-        "metric": "Relegation",
-        "metric_key": "relegation",
-        "before": 0.0138,
-        "after": 0.17075,
-        "delta": 0.15695,
-        "projected_points_before": 57.14,
-        "projected_points_after": 44.33,
-        "avg_position_before": 8.85,
-        "avg_position_after": 13.3,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-06-crystal-palace-relegation",
-      "type": "forecast_mover",
-      "date": "2026-08-06",
-      "generated_at": "2026-08-06T23:40:07Z",
-      "team": "crystal-palace",
-      "headline": "Crystal Palace relegation probability increased",
-      "summary": "Relegation moved from 2.5% to 17.0% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+14.6 percentage points",
-      "details": {
-        "metric": "Relegation",
-        "metric_key": "relegation",
-        "before": 0.02465,
-        "after": 0.17045,
-        "delta": 0.1458,
-        "projected_points_before": 53.55,
-        "projected_points_after": 44.39,
-        "avg_position_before": 10.24,
-        "avg_position_after": 13.3,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
       }
     }
   ],
