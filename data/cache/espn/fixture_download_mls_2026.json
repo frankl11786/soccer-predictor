@@ -5080,6 +5080,26 @@
     "venue_name": "Yankee Stadium"
   },
   {
+    "fixture_id": "fd-mls-2026-258",
+    "source": "FixtureDownload",
+    "date": "2026-08-01T23:30:00Z",
+    "timestamp": 1785627000,
+    "season": 2026,
+    "round": "Regular Season - 19",
+    "status": "FT",
+    "status_long": "Match Finished",
+    "home_id": 0,
+    "home_name": "FC Cincinnati",
+    "away_id": 0,
+    "away_name": "San Jose Earthquakes",
+    "home_goals": 4,
+    "away_goals": 2,
+    "penalty_home": null,
+    "penalty_away": null,
+    "venue_id": null,
+    "venue_name": "TQL Stadium"
+  },
+  {
     "fixture_id": "fd-mls-2026-259",
     "source": "FixtureDownload",
     "date": "2026-08-01T23:30:00Z",
@@ -5298,26 +5318,6 @@
     "penalty_away": null,
     "venue_id": null,
     "venue_name": "DICK'S Sporting Goods Park"
-  },
-  {
-    "fixture_id": "fd-mls-2026-258",
-    "source": "FixtureDownload",
-    "date": "2026-08-02T01:46:00Z",
-    "timestamp": 1785635160,
-    "season": 2026,
-    "round": "Regular Season - 19",
-    "status": "FT",
-    "status_long": "Match Finished",
-    "home_id": 0,
-    "home_name": "FC Cincinnati",
-    "away_id": 0,
-    "away_name": "San Jose Earthquakes",
-    "home_goals": 4,
-    "away_goals": 2,
-    "penalty_home": null,
-    "penalty_away": null,
-    "venue_id": null,
-    "venue_name": "TQL Stadium"
   },
   {
     "fixture_id": "fd-mls-2026-268",
