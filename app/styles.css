@@ -590,38 +590,45 @@ html[data-theme="dark"] .theme-toggle:hover { background: #173029; }
   .theme-toggle { width: 38px; padding: 8px; }
 }
 
-/* Model-versus-Polymarket comparison */
-.market-metrics { grid-template-columns: repeat(5,minmax(0,1fr)); }
-.market-forecast-list { padding-top: 10px; }
+/* Model-versus-prediction-markets comparison */
+.market-metrics { grid-template-columns: repeat(6,minmax(0,1fr)); }
+.market-forecast-list { padding-top: 10px; overflow-x: auto; }
 .forecast-comparison-head,
 .market-forecast-item {
   display: grid;
-  grid-template-columns: 29px minmax(150px,1.15fr) minmax(80px,.75fr) 76px 86px 70px;
-  gap: 10px;
+  grid-template-columns: 29px minmax(145px,1.1fr) minmax(70px,.55fr) 62px 70px 62px 76px 78px;
+  gap: 9px;
   align-items: center;
+  min-width: 720px;
 }
 .forecast-comparison-head { padding: 0 0 5px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-size: 8px; text-align: right; }
 .market-forecast-item { padding: 10px 0; }
 .comparison-value { text-align: right; font: 800 11px ui-monospace,monospace; white-space: nowrap; }
 .market-value { color: var(--blue); }
+.kalshi-value,.kalshi-cell { color: var(--amber); }
+.consensus-value,.consensus-cell { color: var(--green); font-weight: 850; }
 .market-disclaimer { margin: 14px 2px 0; color: var(--muted); font-size: 9px; line-height: 1.55; }
-.fixture-compare-compact { grid-template-columns: 62px minmax(0,1fr) minmax(165px,.78fr); }
+.fixture-compare-compact { grid-template-columns: 62px minmax(0,1fr) minmax(245px,.95fr); }
 .probability-compare { display: grid; gap: 4px; }
 .probability-compare > span { display: flex; justify-content: space-between; gap: 8px; }
 .probability-compare small { margin: 0; color: var(--muted); }
 .probability-compare b { color: var(--ink); font-size: 9px; white-space: nowrap; }
 .probability-compare em { color: var(--muted); font-size: 8px; font-style: normal; }
 .market-line.available b { color: var(--blue); }
-.market-line.unavailable b { color: var(--muted); font-weight: 650; }
+.kalshi-line.available b { color: var(--amber); }
+.consensus-line.available b { color: var(--green); }
+.market-line.unavailable b,.kalshi-line.unavailable b,.consensus-line.unavailable b { color: var(--muted); font-weight: 650; }
 .market-cell { color: var(--blue); font-weight: 750; }
 .market-coverage-pill { margin-left: auto; padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--card); font-size: 9px; font-weight: 750; }
-.fixture-comparison-row { grid-template-columns: 90px minmax(250px,1fr) minmax(260px,.9fr); }
+.fixture-comparison-row { grid-template-columns: 90px minmax(250px,1fr) minmax(330px,1.1fr); }
 .fixture-market-compare { display: grid; gap: 4px; text-align: right; }
 .comparison-row { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: baseline; }
 .comparison-row small { color: var(--muted); font-size: 8px; }
 .comparison-row b { font: 800 10px ui-monospace,monospace; white-space: nowrap; }
 .comparison-row.market.available b { color: var(--blue); }
-.comparison-row.market.unavailable b { color: var(--muted); font-weight: 650; }
+.comparison-row.kalshi.available b { color: var(--amber); }
+.comparison-row.consensus.available b { color: var(--green); }
+.comparison-row.market.unavailable b,.comparison-row.kalshi.unavailable b,.comparison-row.consensus.unavailable b { color: var(--muted); font-weight: 650; }
 .fixture-market-compare > em { color: var(--muted); font-size: 8px; font-style: normal; }
 .comparison-edge { color: var(--muted); font-size: 8px; }
 .view-detail { color: var(--green) !important; font-weight: 800; }
@@ -635,11 +642,12 @@ html[data-theme="dark"] .theme-toggle:hover { background: #173029; }
 .market-outcome > div { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; padding: 4px 0; }
 .market-outcome span { color: var(--muted); font-size: 9px; }
 .market-outcome strong { font: 850 13px ui-monospace,monospace; }
+.market-outcome .market-range { color: var(--muted); font-size: 8px; }
 .market-meta { display: flex; flex-wrap: wrap; gap: 7px 14px; margin-top: 14px; color: var(--muted); font-size: 9px; }
 .market-meta a { color: var(--green); font-weight: 800; text-decoration: none; }
 .market-meta a:hover { text-decoration: underline; }
-.race-row-market { grid-template-columns: minmax(0,1fr) minmax(160px,.85fr); }
-.race-probabilities { display: grid; grid-template-columns: repeat(3,minmax(48px,1fr)); gap: 7px; text-align: right; }
+.race-row-market { grid-template-columns: minmax(0,1fr) minmax(300px,1.25fr); }
+.race-probabilities { display: grid; grid-template-columns: repeat(5,minmax(50px,1fr)); gap: 7px; text-align: right; }
 .race-probabilities small,.race-probabilities b { display: block; }
 .race-probabilities small { color: var(--muted); font-size: 7px; text-transform: uppercase; letter-spacing: .05em; }
 .race-probabilities b { font: 800 10px ui-monospace,monospace; }
@@ -647,7 +655,7 @@ html[data-theme="dark"] .theme-toggle:hover { background: #173029; }
 .team-profile-grid { grid-template-columns: minmax(0,1.25fr) minmax(310px,.75fr); align-items: start; }
 .profile-metrics { grid-template-columns: repeat(4,minmax(0,1fr)); }
 .team-market-card { margin-top: 16px; }
-.team-market-panel { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.team-market-panel { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
 .team-market-panel > div:not(.team-market-meta) { padding: 13px; border: 1px solid var(--line); border-radius: 12px; background: rgba(240,237,228,.5); }
 .team-market-panel small,.team-market-panel strong { display: block; }
 .team-market-panel small { color: var(--muted); font-size: 9px; }
@@ -676,10 +684,18 @@ html[data-theme="dark"] .comparison-row.market.available b,
 html[data-theme="dark"] .market-line.available b,
 html[data-theme="dark"] .matchup-market-strip span,
 html[data-theme="dark"] .market-cell { color: #85bfe9; }
+html[data-theme="dark"] .kalshi-value,
+html[data-theme="dark"] .kalshi-cell,
+html[data-theme="dark"] .comparison-row.kalshi.available b,
+html[data-theme="dark"] .kalshi-line.available b { color: #f3bd6a; }
+html[data-theme="dark"] .consensus-value,
+html[data-theme="dark"] .consensus-cell,
+html[data-theme="dark"] .comparison-row.consensus.available b,
+html[data-theme="dark"] .consensus-line.available b { color: #78dfbd; }
 
 @media (max-width: 1100px) {
   .market-metrics { grid-template-columns: repeat(3,minmax(0,1fr)); }
-  .forecast-comparison-head,.market-forecast-item { grid-template-columns: 25px minmax(130px,1fr) 62px 72px 62px; }
+  .forecast-comparison-head,.market-forecast-item { grid-template-columns: 25px minmax(130px,1fr) 60px 68px 60px 72px 72px; min-width: 630px; }
   .forecast-comparison-head span:nth-child(3),.market-forecast-item .prob-bar { display: none; }
   .team-profile-grid { grid-template-columns: 1fr; }
 }
@@ -689,13 +705,12 @@ html[data-theme="dark"] .market-cell { color: #85bfe9; }
   .fixture-compare-compact .fixture-prob { grid-column: 1/-1; text-align: left; padding-left: 68px; }
   .fixture-comparison-row { grid-template-columns: 68px minmax(0,1fr); }
   .fixture-comparison-row .fixture-market-compare { grid-column: 1/-1; text-align: left; padding-left: 78px; }
-  .comparison-row { grid-template-columns: 85px 1fr; }
+  .comparison-row { grid-template-columns: 92px 1fr; }
   .comparison-row b { white-space: normal; }
   .market-outcome-grid,.market-method-grid { grid-template-columns: 1fr; }
   .race-row-market { grid-template-columns: 1fr; }
   .race-probabilities { text-align: left; }
-  .team-market-panel { grid-template-columns: 1fr; }
-  .team-market-meta { grid-column: auto; }
+  .team-market-panel { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .profile-metrics { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .matchup-market-strip { grid-template-columns: 1fr; }
   .matchup-market-strip span { text-align: left; }
@@ -703,9 +718,12 @@ html[data-theme="dark"] .market-cell { color: #85bfe9; }
 }
 @media (max-width: 520px) {
   .market-metrics { grid-template-columns: 1fr; }
-  .forecast-comparison-head,.market-forecast-item { grid-template-columns: 23px minmax(105px,1fr) 58px 65px 56px; gap: 6px; }
+  .forecast-comparison-head,.market-forecast-item { grid-template-columns: 23px minmax(115px,1fr) 56px 62px 56px 66px 66px; gap: 6px; min-width: 535px; }
   .comparison-value { font-size: 9px; }
   .fixture-compare-compact .fixture-prob,.fixture-comparison-row .fixture-market-compare { padding-left: 0; }
   .market-outcome-grid { gap: 7px; }
+  .race-probabilities { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .team-market-panel { grid-template-columns: 1fr; }
+  .team-market-meta { grid-column: auto; }
   .profile-metrics { grid-template-columns: 1fr; }
 }

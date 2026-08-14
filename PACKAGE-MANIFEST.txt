@@ -1,35 +1,18 @@
-Touchline Forecast — final EPL correction and Polymarket comparison package
+Soccer Predictor — Kalshi + Prediction-Market Consensus
 
-Upload these items to the repository root:
-- app/
-- predictor/
-- tests/
-- README-FINAL-MODEL-AND-POLYMARKET.md
-- PACKAGE-MANIFEST.txt (optional documentation)
-
-Included frontend files:
-- app/index.html
+Upload these paths over the matching paths in the repository:
 - app/app.js
 - app/styles.css
-
-Included model and data-output files:
-- predictor/backtest.py
-- predictor/bayes.py
+- predictor/kalshi.py
 - predictor/config.py
-- predictor/data_prep.py
-- predictor/identity.py
-- predictor/output.py
-- predictor/polymarket.py
 - predictor/run.py
-- predictor/simulate.py
-
-Included validation files:
-- tests/test_model_corrections.py
-- tests/test_polymarket.py
+- predictor/output.py
+- tests/test_kalshi.py
 - tests/test_snapshots.py
+- README-KALSHI-CONSENSUS.md
 
 Intentionally not included:
-- .github/workflows/update-forecast.yml (preserves the existing parallel midnight workflow)
-- app/data/*.json (the next Actions run generates fresh snapshots)
-- requirements.txt (no new dependency is required)
-- caches, posterior files, screenshots, or compiled bytecode
+- app/data/epl.json
+- app/data/mls.json
+- .github/workflows/update-forecast.yml
+- Bayesian model/data-source files not required by this enhancement

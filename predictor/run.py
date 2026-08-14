@@ -11,6 +11,7 @@ from .config import APP_DATA, LEAGUES
 from .data_prep import prepare_league
 from .mls_schedule import fetch_complete_mls_schedule
 from .identity import canonicalize_fixture_rows
+from .kalshi import fetch_match_quotes as fetch_kalshi_match_quotes, fetch_winner_quotes as fetch_kalshi_winner_quotes
 from .openfootball import fetch_epl_rows
 from .output import build_snapshot
 from .polymarket import fetch_match_quotes, fetch_winner_quotes
@@ -98,6 +99,24 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
         f"{len(quotes)} season-winner quotes; "
         f"{len(match_quotes)} exact match markets"
     )
+
+    kalshi_quotes, kalshi_meta = fetch_kalshi_winner_quotes(
+        cfg.kalshi_event_ticker,
+        [team["name"] for team in prepared.teams],
+    )
+    kalshi_match_quotes, kalshi_match_meta = fetch_kalshi_match_quotes(
+        simulation.fixtures,
+        prepared.teams,
+        series_ticker=cfg.kalshi_game_series_ticker,
+        lookahead_days=cfg.polymarket_match_lookahead_days,
+        max_fixtures=cfg.polymarket_match_max_fixtures,
+    )
+    kalshi_meta["match_markets"] = kalshi_match_meta
+    print(
+        "Kalshi comparison: "
+        f"{len(kalshi_quotes)} season-winner quotes; "
+        f"{len(kalshi_match_quotes)} exact match markets"
+    )
     data_meta = {
         "sources": source_meta,
         "backtest": backtest_meta,
@@ -112,6 +131,9 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
         quotes,
         match_quotes,
         market_meta,
+        kalshi_quotes,
+        kalshi_match_quotes,
+        kalshi_meta,
         data_meta,
         output_path,
     )

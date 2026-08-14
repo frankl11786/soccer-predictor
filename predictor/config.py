@@ -25,6 +25,8 @@ class LeagueConfig:
     polymarket_league_terms: tuple[str, ...]
     polymarket_match_lookahead_days: int
     polymarket_match_max_fixtures: int
+    kalshi_event_ticker: str | None
+    kalshi_game_series_ticker: str | None
     season_label: str
 
 
@@ -49,6 +51,8 @@ LEAGUES = {
         polymarket_league_terms=("EPL", "Premier League", "English Premier League"),
         polymarket_match_lookahead_days=21,
         polymarket_match_max_fixtures=60,
+        kalshi_event_ticker="KXPREMIERLEAGUE-27",
+        kalshi_game_series_ticker="KXEPLGAME",
         season_label="2026/27",
     ),
     "mls": LeagueConfig(
@@ -69,11 +73,13 @@ LEAGUES = {
         polymarket_league_terms=("MLS", "Major League Soccer", "MLS Soccer"),
         polymarket_match_lookahead_days=21,
         polymarket_match_max_fixtures=60,
+        kalshi_event_ticker="KXMLSCUP-26",
+        kalshi_game_series_ticker="KXMLSGAME",
         season_label="2026",
     ),
 }
 
-MODEL_VERSION = "bayes-ss-poisson-v4-market-comparison"
+MODEL_VERSION = "bayes-ss-poisson-v5-market-consensus"
 BUCKET_DAYS = 28
 POSTERIOR_SAMPLES = 800
 SVI_STEPS = 5_000
