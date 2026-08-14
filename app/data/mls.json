@@ -4,7 +4,7 @@
     "name": "Major League Soccer",
     "season": "2026",
     "as_of": "2026-08-14",
-    "generated_at": "2026-08-14T04:26:54Z",
+    "generated_at": "2026-08-14T08:57:56Z",
     "model_version": "bayes-ss-poisson-v5-market-consensus",
     "data_mode": "LIVE API + BAYESIAN MODEL",
     "iterations": 20000,
@@ -36,7 +36,7 @@
             }
           ],
           "fixtures_received": 0,
-          "updated_at": "2026-08-14T04:09:34Z"
+          "updated_at": "2026-08-14T08:42:42Z"
         },
         {
           "source": "American Soccer Analysis",
@@ -47,7 +47,7 @@
           ],
           "fixtures_received": 809,
           "errors": [],
-          "updated_at": "2026-08-14T04:09:41Z"
+          "updated_at": "2026-08-14T08:42:48Z"
         },
         {
           "source": "FixtureDownload",
@@ -57,14 +57,14 @@
           "cached": false,
           "fallback": null,
           "errors": [],
-          "updated_at": "2026-08-14T04:09:42Z"
+          "updated_at": "2026-08-14T08:42:48Z"
         }
       ],
       "backtest": {
         "status": "not_run",
         "reason": "Nightly holdout currently runs for EPL only."
       },
-      "updated_at": "2026-08-14T04:26:54Z"
+      "updated_at": "2026-08-14T08:57:56Z"
     },
     "polymarket": {
       "source": "Polymarket",
@@ -83,13 +83,13 @@
         {
           "event_id": "200782",
           "event_slug": "mls-cup-winner-2026",
-          "raw_yes_total": 1.0145,
+          "raw_yes_total": 1.012,
           "active_contracts": 30,
           "matched_teams": 30
         }
       ],
       "errors": [],
-      "updated_at": "2026-08-14T04:26:31Z",
+      "updated_at": "2026-08-14T08:57:29Z",
       "match_markets": {
         "source": "Polymarket",
         "market_type": "match_1x2",
@@ -104,11 +104,11 @@
         "quotes_found": 43,
         "coverage": 0.716667,
         "rejected_incomplete_1x2": 0,
-        "rejected_ambiguous": 51,
+        "rejected_ambiguous": 50,
         "errors": [
           "event discovery: 422 Client Error: Unprocessable Entity for url: https://gamma-api.polymarket.com/events?tag_slug=soccer&related_tags=True&active=True&closed=False&limit=500&offset=0&order=start_date&ascending=False"
         ],
-        "updated_at": "2026-08-14T04:26:52Z",
+        "updated_at": "2026-08-14T08:57:56Z",
         "note": "Active soccer events are discovered through Polymarket's events endpoint first; public-search is only a fallback. Only exact three-outcome match-result markets are accepted, and market prices remain comparison-only.",
         "sanity_checks": {
           "threshold": 0.2,
@@ -129,8 +129,8 @@
               "away": "nashville-sc",
               "outcome": "away",
               "model": 0.69617,
-              "market": 0.408867,
-              "difference": 0.287303
+              "market": 0.410891,
+              "difference": 0.285279
             },
             {
               "fixture_id": "fd-mls-2026-284",
@@ -160,22 +160,22 @@
               "difference": 0.223867
             },
             {
-              "fixture_id": "fd-mls-2026-294",
-              "home": "colorado-rapids",
-              "away": "los-angeles-fc",
-              "outcome": "away",
-              "model": 0.62227,
-              "market": 0.406863,
-              "difference": 0.215407
-            },
-            {
               "fixture_id": "fd-mls-2026-276",
               "home": "toronto-fc",
               "away": "new-england-revolution",
               "outcome": "away",
               "model": 0.51087,
-              "market": 0.296482,
-              "difference": 0.214388
+              "market": 0.29798,
+              "difference": 0.21289
+            },
+            {
+              "fixture_id": "fd-mls-2026-294",
+              "home": "colorado-rapids",
+              "away": "los-angeles-fc",
+              "outcome": "away",
+              "model": 0.62227,
+              "market": 0.410891,
+              "difference": 0.211379
             },
             {
               "fixture_id": "fd-mls-2026-311",
@@ -210,10 +210,10 @@
       "priced_contracts": 30,
       "quotes_found": 29,
       "normalization_applied": true,
-      "normalization_total": 1.045,
+      "normalization_total": 1.04,
       "price_method": "bid/ask midpoint when usable; otherwise last trade",
       "errors": [],
-      "updated_at": "2026-08-14T04:26:53Z",
+      "updated_at": "2026-08-14T08:57:56Z",
       "match_markets": {
         "source": "Kalshi",
         "market_type": "match_result",
@@ -224,16 +224,16 @@
           "market_rows": 135,
           "merged_events": 45
         },
-        "discovery_min_close_ts": 1786638413,
+        "discovery_min_close_ts": 1786654676,
         "fixtures_checked": 60,
-        "quotes_found": 45,
-        "coverage": 0.75,
+        "quotes_found": 44,
+        "coverage": 0.7333333333333333,
         "lookahead_days": 21,
         "max_fixtures": 60,
         "price_method": "bid/ask midpoint when usable; otherwise last trade; 1X2 normalized to 100%",
         "discovery_method": "status-agnostic events plus markets fallback within the configured Kalshi series",
         "errors": [],
-        "updated_at": "2026-08-14T04:26:54Z",
+        "updated_at": "2026-08-14T08:57:56Z",
         "sanity_checks": {
           "threshold": 0.2,
           "status": "warning",
@@ -244,8 +244,17 @@
               "away": "minnesota-united-fc",
               "outcome": "home",
               "model": 0.76233,
-              "market": 0.46,
-              "difference": 0.30233
+              "market": 0.460396,
+              "difference": 0.301934
+            },
+            {
+              "fixture_id": "fd-mls-2026-302",
+              "home": "charlotte-fc",
+              "away": "dc-united",
+              "outcome": "away",
+              "model": 0.25776,
+              "market": 0.550725,
+              "difference": -0.292965
             },
             {
               "fixture_id": "fd-mls-2026-290",
@@ -253,8 +262,8 @@
               "away": "nashville-sc",
               "outcome": "away",
               "model": 0.69617,
-              "market": 0.406863,
-              "difference": 0.289307
+              "market": 0.408867,
+              "difference": 0.287303
             },
             {
               "fixture_id": "fd-mls-2026-284",
@@ -280,26 +289,8 @@
               "away": "san-jose-earthquakes",
               "outcome": "away",
               "model": 0.58309,
-              "market": 0.360825,
-              "difference": 0.222265
-            },
-            {
-              "fixture_id": "fd-mls-2026-294",
-              "home": "colorado-rapids",
-              "away": "los-angeles-fc",
-              "outcome": "away",
-              "model": 0.62227,
-              "market": 0.40796,
-              "difference": 0.21431
-            },
-            {
-              "fixture_id": "fd-mls-2026-276",
-              "home": "toronto-fc",
-              "away": "new-england-revolution",
-              "outcome": "away",
-              "model": 0.51087,
-              "market": 0.299492,
-              "difference": 0.211378
+              "market": 0.361809,
+              "difference": 0.221281
             },
             {
               "fixture_id": "fd-mls-2026-304",
@@ -307,8 +298,26 @@
               "away": "toronto-fc",
               "outcome": "home",
               "model": 0.86466,
-              "market": 0.656716,
-              "difference": 0.207944
+              "market": 0.653266,
+              "difference": 0.211394
+            },
+            {
+              "fixture_id": "fd-mls-2026-294",
+              "home": "colorado-rapids",
+              "away": "los-angeles-fc",
+              "outcome": "away",
+              "model": 0.62227,
+              "market": 0.412935,
+              "difference": 0.209335
+            },
+            {
+              "fixture_id": "fd-mls-2026-276",
+              "home": "toronto-fc",
+              "away": "new-england-revolution",
+              "outcome": "away",
+              "model": 0.51087,
+              "market": 0.306533,
+              "difference": 0.204337
             }
           ],
           "note": "Kalshi match-market checks are informational and never change model probabilities."
@@ -338,8 +347,8 @@
             "away": "minnesota-united-fc",
             "outcome": "home",
             "model": 0.76233,
-            "market": 0.458724,
-            "difference": 0.303606,
+            "market": 0.458921,
+            "difference": 0.303409,
             "sources": [
               "Polymarket",
               "Kalshi"
@@ -351,8 +360,8 @@
             "away": "nashville-sc",
             "outcome": "away",
             "model": 0.69617,
-            "market": 0.407865,
-            "difference": 0.288305,
+            "market": 0.409879,
+            "difference": 0.286291,
             "sources": [
               "Polymarket",
               "Kalshi"
@@ -385,27 +394,27 @@
             ]
           },
           {
-            "fixture_id": "fd-mls-2026-296",
-            "home": "la-galaxy",
-            "away": "san-jose-earthquakes",
-            "outcome": "away",
-            "model": 0.58309,
-            "market": 0.360825,
-            "difference": 0.222265,
-            "sources": [
-              "Kalshi"
-            ]
-          },
-          {
             "fixture_id": "fd-mls-2026-304",
             "home": "inter-miami-cf",
             "away": "toronto-fc",
             "outcome": "home",
             "model": 0.86466,
-            "market": 0.643892,
-            "difference": 0.220768,
+            "market": 0.642167,
+            "difference": 0.222493,
             "sources": [
               "Polymarket",
+              "Kalshi"
+            ]
+          },
+          {
+            "fixture_id": "fd-mls-2026-296",
+            "home": "la-galaxy",
+            "away": "san-jose-earthquakes",
+            "outcome": "away",
+            "model": 0.58309,
+            "market": 0.361809,
+            "difference": 0.221281,
+            "sources": [
               "Kalshi"
             ]
           },
@@ -415,8 +424,8 @@
             "away": "los-angeles-fc",
             "outcome": "away",
             "model": 0.62227,
-            "market": 0.407411,
-            "difference": 0.214859,
+            "market": 0.411913,
+            "difference": 0.210357,
             "sources": [
               "Polymarket",
               "Kalshi"
@@ -428,8 +437,8 @@
             "away": "new-england-revolution",
             "outcome": "away",
             "model": 0.51087,
-            "market": 0.297987,
-            "difference": 0.212883,
+            "market": 0.302257,
+            "difference": 0.208613,
             "sources": [
               "Polymarket",
               "Kalshi"
@@ -437,7 +446,7 @@
           }
         ]
       },
-      "updated_at": "2026-08-14T04:26:54Z"
+      "updated_at": "2026-08-14T08:57:56Z"
     },
     "compared_with_previous_snapshot": true
   },
@@ -1396,9 +1405,9 @@
         -0.7568,
         0.2254
       ],
-      "market": 0.002957,
+      "market": 0.002964,
       "market_raw": 0.003,
-      "edge": -0.002657,
+      "edge": -0.002664,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Atlanta United FC win the 2026 MLS Cup?",
@@ -1407,17 +1416,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.003,
-        "normalized_probability": 0.002957,
+        "normalized_probability": 0.002964,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 30578.0782,
+        "normalization_total": 1.012,
+        "liquidity": 30960.89965,
         "volume": 102269.47343500002,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004785,
+      "kalshi": 0.004808,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.004485,
+      "kalshi_edge": -0.004508,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-ATL",
@@ -1425,9 +1434,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004785,
+        "normalized_probability": 0.004808,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -1440,8 +1449,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003871,
-      "consensus_edge": -0.003571,
+      "market_consensus": 0.003886,
+      "consensus_edge": -0.003586,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1514,9 +1523,9 @@
         -0.3992,
         0.6612
       ],
-      "market": 0.013307,
+      "market": 0.01334,
       "market_raw": 0.0135,
-      "edge": -0.001407,
+      "edge": -0.00144,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Charlotte FC win the 2026 MLS Cup?",
@@ -1525,17 +1534,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0135,
-        "normalized_probability": 0.013307,
+        "normalized_probability": 0.01334,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 30791.597,
+        "normalization_total": 1.012,
+        "liquidity": 30039.43229,
         "volume": 2011779.4085419998,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.014354,
+      "kalshi": 0.014423,
       "kalshi_raw": 0.015,
-      "kalshi_edge": -0.002454,
+      "kalshi_edge": -0.002523,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-CLT",
@@ -1543,9 +1552,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.015,
-        "normalized_probability": 0.014354,
+        "normalized_probability": 0.014423,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.01,
         "ask": 0.02,
         "last": 0.02,
@@ -1558,8 +1567,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.013831,
-      "consensus_edge": -0.001931,
+      "market_consensus": 0.013881,
+      "consensus_edge": -0.001981,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1632,9 +1641,9 @@
         -0.8663,
         0.1438
       ],
-      "market": 0.049285,
+      "market": 0.049407,
       "market_raw": 0.05,
-      "edge": -0.041285,
+      "edge": -0.041407,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Chicago Fire FC win the 2026 MLS Cup?",
@@ -1643,17 +1652,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.05,
-        "normalized_probability": 0.049285,
+        "normalized_probability": 0.049407,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 24719.15869,
-        "volume": 243691.3838329999,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "normalization_total": 1.012,
+        "liquidity": 22739.53494,
+        "volume": 243691.38383299997,
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.052632,
+      "kalshi": 0.052885,
       "kalshi_raw": 0.055,
-      "kalshi_edge": -0.044632,
+      "kalshi_edge": -0.044885,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-CHI",
@@ -1661,23 +1670,23 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.055,
-        "normalized_probability": 0.052632,
+        "normalized_probability": 0.052885,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.05,
         "ask": 0.06,
         "last": 0.06,
         "spread": 0.01,
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
-        "volume": 50946.76,
-        "volume_24h": 526.17,
-        "open_interest": 35610.52,
+        "volume": 52479.25,
+        "volume_24h": 2058.66,
+        "open_interest": 37143.01,
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.050958,
-      "consensus_edge": -0.042958,
+      "market_consensus": 0.051146,
+      "consensus_edge": -0.043146,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1750,9 +1759,9 @@
         -0.5393,
         0.4488
       ],
-      "market": 0.040907,
+      "market": 0.041008,
       "market_raw": 0.0415,
-      "edge": 0.005643,
+      "edge": 0.005542,
       "market_details": {
         "source": "Polymarket",
         "question": "Will FC Cincinnati win the 2026 MLS Cup?",
@@ -1761,17 +1770,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0415,
-        "normalized_probability": 0.040907,
+        "normalized_probability": 0.041008,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 33927.29303,
+        "normalization_total": 1.012,
+        "liquidity": 33981.76185,
         "volume": 1585564.8896249998,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.033493,
+      "kalshi": 0.033654,
       "kalshi_raw": 0.035,
-      "kalshi_edge": 0.013057,
+      "kalshi_edge": 0.012896,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-CIN",
@@ -1779,9 +1788,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.035,
-        "normalized_probability": 0.033493,
+        "normalized_probability": 0.033654,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.03,
         "ask": 0.04,
         "last": 0.04,
@@ -1794,8 +1803,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.0372,
-      "consensus_edge": 0.00935,
+      "market_consensus": 0.037331,
+      "consensus_edge": 0.009219,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1868,9 +1877,9 @@
         -0.2436,
         0.779
       ],
-      "market": 0.013307,
+      "market": 0.01334,
       "market_raw": 0.0135,
-      "edge": -0.003507,
+      "edge": -0.00354,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Columbus Crew win the 2026 MLS Cup?",
@@ -1879,17 +1888,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0135,
-        "normalized_probability": 0.013307,
+        "normalized_probability": 0.01334,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 32123.39557,
+        "normalization_total": 1.012,
+        "liquidity": 32550.98247,
         "volume": 3112835.3907260005,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.014354,
+      "kalshi": 0.014423,
       "kalshi_raw": 0.015,
-      "kalshi_edge": -0.004554,
+      "kalshi_edge": -0.004623,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-CLB",
@@ -1897,9 +1906,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.015,
-        "normalized_probability": 0.014354,
+        "normalized_probability": 0.014423,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.01,
         "ask": 0.02,
         "last": 0.02,
@@ -1912,8 +1921,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.013831,
-      "consensus_edge": -0.004031,
+      "market_consensus": 0.013881,
+      "consensus_edge": -0.004081,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1986,9 +1995,9 @@
         -0.4459,
         0.5872
       ],
-      "market": 0.006407,
+      "market": 0.006423,
       "market_raw": 0.0065,
-      "edge": -0.002707,
+      "edge": -0.002723,
       "market_details": {
         "source": "Polymarket",
         "question": "Will D.C. United win the 2026 MLS Cup?",
@@ -1997,20 +2006,20 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0065,
-        "normalized_probability": 0.006407,
+        "normalized_probability": 0.006423,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 31222.95003,
+        "normalization_total": 1.012,
+        "liquidity": 31829.22506,
         "volume": 18829.249707000006,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
       "kalshi": null,
       "kalshi_raw": null,
       "kalshi_edge": null,
       "kalshi_details": null,
-      "market_consensus": 0.006407,
-      "consensus_edge": -0.002707,
+      "market_consensus": 0.006423,
+      "consensus_edge": -0.002723,
       "consensus_details": {
         "sources": [
           "Polymarket"
@@ -2082,9 +2091,9 @@
         -0.409,
         0.6609
       ],
-      "market": 0.280927,
+      "market": 0.281621,
       "market_raw": 0.285,
-      "edge": -0.133577,
+      "edge": -0.134271,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Inter Miami CF win the 2026 MLS Cup?",
@@ -2093,17 +2102,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.285,
-        "normalized_probability": 0.280927,
+        "normalized_probability": 0.281621,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 12533.0861,
+        "normalization_total": 1.012,
+        "liquidity": 13843.4174,
         "volume": 86931.54590899998,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.244019,
+      "kalshi": 0.245192,
       "kalshi_raw": 0.255,
-      "kalshi_edge": -0.096669,
+      "kalshi_edge": -0.097842,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-MIA",
@@ -2111,23 +2120,23 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.255,
-        "normalized_probability": 0.244019,
+        "normalized_probability": 0.245192,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.25,
         "ask": 0.26,
         "last": 0.26,
         "spread": 0.01,
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
-        "volume": 266600.4,
-        "volume_24h": 3342.85,
-        "open_interest": 124894.8,
+        "volume": 266673.53,
+        "volume_24h": 3361.07,
+        "open_interest": 124925.84,
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.262473,
-      "consensus_edge": -0.115123,
+      "market_consensus": 0.263406,
+      "consensus_edge": -0.116056,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2200,9 +2209,9 @@
         -0.5988,
         0.3811
       ],
-      "market": 0.001971,
+      "market": 0.001976,
       "market_raw": 0.002,
-      "edge": 0.001479,
+      "edge": 0.001474,
       "market_details": {
         "source": "Polymarket",
         "question": "Will CF Montréal win the 2026 MLS Cup?",
@@ -2211,17 +2220,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.002,
-        "normalized_probability": 0.001971,
+        "normalized_probability": 0.001976,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 27834.51856,
-        "volume": 62369.662745999995,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "normalization_total": 1.012,
+        "liquidity": 27260.78881,
+        "volume": 62384.87774599998,
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004785,
+      "kalshi": 0.004808,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.001335,
+      "kalshi_edge": -0.001358,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-MTL",
@@ -2229,9 +2238,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004785,
+        "normalized_probability": 0.004808,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -2244,8 +2253,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003378,
-      "consensus_edge": 7.2e-05,
+      "market_consensus": 0.003392,
+      "consensus_edge": 5.8e-05,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2318,9 +2327,9 @@
         0.1231,
         1.1459
       ],
-      "market": 0.093149,
+      "market": 0.093379,
       "market_raw": 0.0945,
-      "edge": 0.082201,
+      "edge": 0.081971,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Nashville SC win the 2026 MLS Cup?",
@@ -2329,17 +2338,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0945,
-        "normalized_probability": 0.093149,
+        "normalized_probability": 0.093379,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 20509.03463,
-        "volume": 313415.7860769999,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "normalization_total": 1.012,
+        "liquidity": 22617.79759,
+        "volume": 313415.78607699985,
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.110048,
+      "kalshi": 0.110577,
       "kalshi_raw": 0.115,
-      "kalshi_edge": 0.065302,
+      "kalshi_edge": 0.064773,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-NSH",
@@ -2347,9 +2356,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.115,
-        "normalized_probability": 0.110048,
+        "normalized_probability": 0.110577,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.11,
         "ask": 0.12,
         "last": 0.12,
@@ -2357,13 +2366,13 @@
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
         "volume": 74338.36,
-        "volume_24h": 114.13,
+        "volume_24h": 35.64,
         "open_interest": 41454.58,
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.101599,
-      "consensus_edge": 0.073751,
+      "market_consensus": 0.101978,
+      "consensus_edge": 0.073372,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2436,9 +2445,9 @@
         -0.4826,
         0.5065
       ],
-      "market": 0.014293,
+      "market": 0.014328,
       "market_raw": 0.0145,
-      "edge": -0.002493,
+      "edge": -0.002528,
       "market_details": {
         "source": "Polymarket",
         "question": "Will New England Revolution win the 2026 MLS Cup?",
@@ -2447,17 +2456,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0145,
-        "normalized_probability": 0.014293,
+        "normalized_probability": 0.014328,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 18444.29735,
+        "normalization_total": 1.012,
+        "liquidity": 18953.22302,
         "volume": 60502.26750500001,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.014354,
+      "kalshi": 0.014423,
       "kalshi_raw": 0.015,
-      "kalshi_edge": -0.002554,
+      "kalshi_edge": -0.002623,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-NE",
@@ -2465,9 +2474,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.015,
-        "normalized_probability": 0.014354,
+        "normalized_probability": 0.014423,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.01,
         "ask": 0.02,
         "last": 0.01,
@@ -2480,8 +2489,8 @@
         "updated_at": "2026-07-13T21:31:32.511076Z",
         "comparison_only": true
       },
-      "market_consensus": 0.014323,
-      "consensus_edge": -0.002523,
+      "market_consensus": 0.014376,
+      "consensus_edge": -0.002576,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2554,9 +2563,9 @@
         -0.4552,
         0.6105
       ],
-      "market": 0.020207,
+      "market": 0.020257,
       "market_raw": 0.0205,
-      "edge": -0.008257,
+      "edge": -0.008307,
       "market_details": {
         "source": "Polymarket",
         "question": "Will New York City FC win the 2026 MLS Cup?",
@@ -2565,17 +2574,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0205,
-        "normalized_probability": 0.020207,
+        "normalized_probability": 0.020257,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 32705.10204,
+        "normalization_total": 1.012,
+        "liquidity": 32943.08066,
         "volume": 696645.0604099999,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.033493,
+      "kalshi": 0.033654,
       "kalshi_raw": 0.035,
-      "kalshi_edge": -0.021543,
+      "kalshi_edge": -0.021704,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-NYC",
@@ -2583,9 +2592,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.035,
-        "normalized_probability": 0.033493,
+        "normalized_probability": 0.033654,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.03,
         "ask": 0.04,
         "last": 0.03,
@@ -2598,8 +2607,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.02685,
-      "consensus_edge": -0.0149,
+      "market_consensus": 0.026955,
+      "consensus_edge": -0.015005,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2672,9 +2681,9 @@
         -0.8729,
         0.067
       ],
-      "market": 0.022178,
-      "market_raw": 0.0225,
-      "edge": -0.016778,
+      "market": 0.021739,
+      "market_raw": 0.022,
+      "edge": -0.016339,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Orlando City SC win the 2026 MLS Cup?",
@@ -2682,18 +2691,18 @@
         "event_id": "200782",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "raw_probability": 0.0225,
-        "normalized_probability": 0.022178,
+        "raw_probability": 0.022,
+        "normalized_probability": 0.021739,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 21418.8383,
+        "normalization_total": 1.012,
+        "liquidity": 21399.5761,
         "volume": 2364020.1711289994,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.014354,
+      "kalshi": 0.014423,
       "kalshi_raw": 0.015,
-      "kalshi_edge": -0.008954,
+      "kalshi_edge": -0.009023,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-ORL",
@@ -2701,9 +2710,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.015,
-        "normalized_probability": 0.014354,
+        "normalized_probability": 0.014423,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.01,
         "ask": 0.02,
         "last": 0.02,
@@ -2716,8 +2725,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.018266,
-      "consensus_edge": -0.012866,
+      "market_consensus": 0.018081,
+      "consensus_edge": -0.012681,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2790,9 +2799,9 @@
         -0.0402,
         0.9453
       ],
-      "market": 0.002464,
+      "market": 0.00247,
       "market_raw": 0.0025,
-      "edge": 0.027436,
+      "edge": 0.02743,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Philadelphia Union win the 2026 MLS Cup?",
@@ -2801,17 +2810,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0025,
-        "normalized_probability": 0.002464,
+        "normalized_probability": 0.00247,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 32488.81947,
-        "volume": 209138.943932,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "normalization_total": 1.012,
+        "liquidity": 32849.1719,
+        "volume": 209138.94393200002,
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004785,
+      "kalshi": 0.004808,
       "kalshi_raw": 0.005,
-      "kalshi_edge": 0.025115,
+      "kalshi_edge": 0.025092,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-PHI",
@@ -2819,9 +2828,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004785,
+        "normalized_probability": 0.004808,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -2834,8 +2843,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003624,
-      "consensus_edge": 0.026276,
+      "market_consensus": 0.003639,
+      "consensus_edge": 0.026261,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2908,9 +2917,9 @@
         -0.7276,
         0.3548
       ],
-      "market": 0.016264,
+      "market": 0.016304,
       "market_raw": 0.0165,
-      "edge": -0.014264,
+      "edge": -0.014304,
       "market_details": {
         "source": "Polymarket",
         "question": "Will New York Red Bulls win the 2026 MLS Cup?",
@@ -2919,17 +2928,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0165,
-        "normalized_probability": 0.016264,
+        "normalized_probability": 0.016304,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 34040.01779,
-        "volume": 609625.297887,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "normalization_total": 1.012,
+        "liquidity": 35223.37938,
+        "volume": 609625.2978870003,
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.014354,
+      "kalshi": 0.014423,
       "kalshi_raw": 0.015,
-      "kalshi_edge": -0.012354,
+      "kalshi_edge": -0.012423,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-NY",
@@ -2937,9 +2946,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.015,
-        "normalized_probability": 0.014354,
+        "normalized_probability": 0.014423,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.01,
         "ask": 0.02,
         "last": 0.02,
@@ -2952,8 +2961,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.015309,
-      "consensus_edge": -0.013309,
+      "market_consensus": 0.015364,
+      "consensus_edge": -0.013364,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -3026,9 +3035,9 @@
         -0.9465,
         0.0147
       ],
-      "market": 0.00345,
+      "market": 0.003458,
       "market_raw": 0.0035,
-      "edge": -0.00295,
+      "edge": -0.002958,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Toronto FC win the 2026 MLS Cup?",
@@ -3037,17 +3046,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0035,
-        "normalized_probability": 0.00345,
+        "normalized_probability": 0.003458,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 40371.56703,
+        "normalization_total": 1.012,
+        "liquidity": 40241.23177,
         "volume": 37874.160515,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004785,
+      "kalshi": 0.004808,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.004285,
+      "kalshi_edge": -0.004308,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-TOR",
@@ -3055,9 +3064,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004785,
+        "normalized_probability": 0.004808,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -3070,8 +3079,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.004117,
-      "consensus_edge": -0.003617,
+      "market_consensus": 0.004133,
+      "consensus_edge": -0.003633,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -3144,9 +3153,9 @@
         -0.7526,
         0.2723
       ],
-      "market": 0.001479,
+      "market": 0.001482,
       "market_raw": 0.0015,
-      "edge": 0.000621,
+      "edge": 0.000618,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Austin FC win the 2026 MLS Cup?",
@@ -3155,17 +3164,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0015,
-        "normalized_probability": 0.001479,
+        "normalized_probability": 0.001482,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 34180.43541,
-        "volume": 79500.93789600002,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "normalization_total": 1.012,
+        "liquidity": 33511.82611,
+        "volume": 79500.937896,
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004785,
+      "kalshi": 0.004808,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.002685,
+      "kalshi_edge": -0.002708,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-ATX",
@@ -3173,9 +3182,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004785,
+        "normalized_probability": 0.004808,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -3188,8 +3197,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003132,
-      "consensus_edge": -0.001032,
+      "market_consensus": 0.003145,
+      "consensus_edge": -0.001045,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -3262,9 +3271,9 @@
         -0.5189,
         0.5678
       ],
-      "market": 0.002464,
+      "market": 0.00247,
       "market_raw": 0.0025,
-      "edge": -0.000714,
+      "edge": -0.00072,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Colorado Rapids win the 2026 MLS Cup?",
@@ -3273,17 +3282,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0025,
-        "normalized_probability": 0.002464,
+        "normalized_probability": 0.00247,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 31697.82362,
-        "volume": 118381.840066,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "normalization_total": 1.012,
+        "liquidity": 31357.0073,
+        "volume": 118389.75006600001,
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004785,
+      "kalshi": 0.004808,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.003035,
+      "kalshi_edge": -0.003058,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-COL",
@@ -3291,9 +3300,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004785,
+        "normalized_probability": 0.004808,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -3306,8 +3315,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003624,
-      "consensus_edge": -0.001874,
+      "market_consensus": 0.003639,
+      "consensus_edge": -0.001889,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -3380,9 +3389,9 @@
         -0.7189,
         0.297
       ],
-      "market": 0.012321,
+      "market": 0.012352,
       "market_raw": 0.0125,
-      "edge": 0.007129,
+      "edge": 0.007098,
       "market_details": {
         "source": "Polymarket",
         "question": "Will FC Dallas win the 2026 MLS Cup?",
@@ -3391,17 +3400,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0125,
-        "normalized_probability": 0.012321,
+        "normalized_probability": 0.012352,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 14388.1071,
+        "normalization_total": 1.012,
+        "liquidity": 15218.98341,
         "volume": 88803.50706300001,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.023923,
+      "kalshi": 0.024038,
       "kalshi_raw": 0.025,
-      "kalshi_edge": -0.004473,
+      "kalshi_edge": -0.004588,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-DAL",
@@ -3409,23 +3418,23 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.025,
-        "normalized_probability": 0.023923,
+        "normalized_probability": 0.024038,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.02,
         "ask": 0.03,
-        "last": 0.02,
+        "last": 0.01,
         "spread": 0.01,
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
-        "volume": 26178.0,
-        "volume_24h": 4.0,
-        "open_interest": 24413.68,
+        "volume": 26645.59,
+        "volume_24h": 471.59,
+        "open_interest": 23997.68,
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.018122,
-      "consensus_edge": 0.001328,
+      "market_consensus": 0.018195,
+      "consensus_edge": 0.001255,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -3498,9 +3507,9 @@
         -0.2813,
         0.7474
       ],
-      "market": 0.020207,
+      "market": 0.020257,
       "market_raw": 0.0205,
-      "edge": -0.011407,
+      "edge": -0.011457,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Houston Dynamo FC win the 2026 MLS Cup?",
@@ -3509,17 +3518,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0205,
-        "normalized_probability": 0.020207,
+        "normalized_probability": 0.020257,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 33729.29434,
+        "normalization_total": 1.012,
+        "liquidity": 35850.35519,
         "volume": 464951.48989100015,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.014354,
+      "kalshi": 0.014423,
       "kalshi_raw": 0.015,
-      "kalshi_edge": -0.005554,
+      "kalshi_edge": -0.005623,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-HOU",
@@ -3527,9 +3536,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.015,
-        "normalized_probability": 0.014354,
+        "normalized_probability": 0.014423,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.01,
         "ask": 0.02,
         "last": 0.02,
@@ -3542,8 +3551,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.017281,
-      "consensus_edge": -0.008481,
+      "market_consensus": 0.01734,
+      "consensus_edge": -0.00854,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -3616,9 +3625,9 @@
         -0.2873,
         0.7229
       ],
-      "market": 0.113356,
+      "market": 0.113636,
       "market_raw": 0.115,
-      "edge": -0.011756,
+      "edge": -0.012036,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Los Angeles FC win the 2026 MLS Cup?",
@@ -3627,17 +3636,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.115,
-        "normalized_probability": 0.113356,
+        "normalized_probability": 0.113636,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 17906.5536,
-        "volume": 46667.85347400001,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "normalization_total": 1.012,
+        "liquidity": 18627.1036,
+        "volume": 46667.85347400002,
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.105263,
+      "kalshi": 0.105769,
       "kalshi_raw": 0.11,
-      "kalshi_edge": -0.003663,
+      "kalshi_edge": -0.004169,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-LAFC",
@@ -3645,9 +3654,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.11,
-        "normalized_probability": 0.105263,
+        "normalized_probability": 0.105769,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.1,
         "ask": 0.12,
         "last": 0.12,
@@ -3660,8 +3669,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.10931,
-      "consensus_edge": -0.00771,
+      "market_consensus": 0.109703,
+      "consensus_edge": -0.008103,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -3734,9 +3743,9 @@
         -0.7406,
         0.3053
       ],
-      "market": 0.009364,
-      "market_raw": 0.0095,
-      "edge": -0.007364,
+      "market": 0.008399,
+      "market_raw": 0.0085,
+      "edge": -0.006399,
       "market_details": {
         "source": "Polymarket",
         "question": "Will LA Galaxy win the 2026 MLS Cup?",
@@ -3744,18 +3753,18 @@
         "event_id": "200782",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "raw_probability": 0.0095,
-        "normalized_probability": 0.009364,
+        "raw_probability": 0.0085,
+        "normalized_probability": 0.008399,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 35154.0455,
+        "normalization_total": 1.012,
+        "liquidity": 35154.56892,
         "volume": 24055.090113999995,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.014354,
+      "kalshi": 0.014423,
       "kalshi_raw": 0.015,
-      "kalshi_edge": -0.012354,
+      "kalshi_edge": -0.012423,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-LAG",
@@ -3763,9 +3772,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.015,
-        "normalized_probability": 0.014354,
+        "normalized_probability": 0.014423,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.01,
         "ask": 0.02,
         "last": 0.01,
@@ -3778,8 +3787,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.011859,
-      "consensus_edge": -0.009859,
+      "market_consensus": 0.011411,
+      "consensus_edge": -0.009411,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -3852,9 +3861,9 @@
         -0.5869,
         0.3739
       ],
-      "market": 0.007886,
+      "market": 0.007905,
       "market_raw": 0.008,
-      "edge": -0.007686,
+      "edge": -0.007705,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Minnesota United FC win the 2026 MLS Cup?",
@@ -3863,17 +3872,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.008,
-        "normalized_probability": 0.007886,
+        "normalized_probability": 0.007905,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 27693.11625,
+        "normalization_total": 1.012,
+        "liquidity": 28208.44711,
         "volume": 479656.5572770001,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.014354,
+      "kalshi": 0.014423,
       "kalshi_raw": 0.015,
-      "kalshi_edge": -0.014154,
+      "kalshi_edge": -0.014223,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-MIN",
@@ -3881,9 +3890,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.015,
-        "normalized_probability": 0.014354,
+        "normalized_probability": 0.014423,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.01,
         "ask": 0.02,
         "last": 0.02,
@@ -3896,8 +3905,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.01112,
-      "consensus_edge": -0.01092,
+      "market_consensus": 0.011164,
+      "consensus_edge": -0.010964,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -3970,9 +3979,9 @@
         -0.4682,
         0.5131
       ],
-      "market": 0.00345,
+      "market": 0.003458,
       "market_raw": 0.0035,
-      "edge": 0.0101,
+      "edge": 0.010092,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Portland Timbers win the 2026 MLS Cup?",
@@ -3981,17 +3990,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0035,
-        "normalized_probability": 0.00345,
+        "normalized_probability": 0.003458,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 29792.30561,
-        "volume": 94584.25410300001,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "normalization_total": 1.012,
+        "liquidity": 29166.04986,
+        "volume": 94593.180769,
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004785,
+      "kalshi": 0.004808,
       "kalshi_raw": 0.005,
-      "kalshi_edge": 0.008765,
+      "kalshi_edge": 0.008742,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-POR",
@@ -3999,9 +4008,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004785,
+        "normalized_probability": 0.004808,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -4014,8 +4023,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.004117,
-      "consensus_edge": 0.009433,
+      "market_consensus": 0.004133,
+      "consensus_edge": 0.009417,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -4088,9 +4097,9 @@
         -0.3111,
         0.7744
       ],
-      "market": 0.016264,
+      "market": 0.016304,
       "market_raw": 0.0165,
-      "edge": 0.019686,
+      "edge": 0.019646,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Real Salt Lake win the 2026 MLS Cup?",
@@ -4099,17 +4108,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0165,
-        "normalized_probability": 0.016264,
+        "normalized_probability": 0.016304,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 31241.91379,
-        "volume": 2947847.951036999,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "normalization_total": 1.012,
+        "liquidity": 30835.52685,
+        "volume": 2947847.9510369995,
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.014354,
+      "kalshi": 0.014423,
       "kalshi_raw": 0.015,
-      "kalshi_edge": 0.021596,
+      "kalshi_edge": 0.021527,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-RSL",
@@ -4117,9 +4126,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.015,
-        "normalized_probability": 0.014354,
+        "normalized_probability": 0.014423,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.01,
         "ask": 0.02,
         "last": 0.02,
@@ -4132,8 +4141,8 @@
         "updated_at": "2026-07-13T21:31:32.511076Z",
         "comparison_only": true
       },
-      "market_consensus": 0.015309,
-      "consensus_edge": 0.020641,
+      "market_consensus": 0.015364,
+      "consensus_edge": 0.020586,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -4206,9 +4215,9 @@
         -0.4025,
         0.6653
       ],
-      "market": 0.008871,
+      "market": 0.008893,
       "market_raw": 0.009,
-      "edge": -0.000571,
+      "edge": -0.000593,
       "market_details": {
         "source": "Polymarket",
         "question": "Will St. Louis City SC win the 2026 MLS Cup?",
@@ -4217,17 +4226,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.009,
-        "normalized_probability": 0.008871,
+        "normalized_probability": 0.008893,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 19862.76023,
+        "normalization_total": 1.012,
+        "liquidity": 24029.12732,
         "volume": 89078.522271,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.014354,
+      "kalshi": 0.014423,
       "kalshi_raw": 0.015,
-      "kalshi_edge": -0.006054,
+      "kalshi_edge": -0.006123,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-STL",
@@ -4235,9 +4244,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.015,
-        "normalized_probability": 0.014354,
+        "normalized_probability": 0.014423,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.01,
         "ask": 0.02,
         "last": 0.02,
@@ -4250,8 +4259,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.011613,
-      "consensus_edge": -0.003313,
+      "market_consensus": 0.011658,
+      "consensus_edge": -0.003358,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -4324,9 +4333,9 @@
         -0.6009,
         0.4565
       ],
-      "market": 0.016264,
+      "market": 0.016304,
       "market_raw": 0.0165,
-      "edge": 0.010336,
+      "edge": 0.010296,
       "market_details": {
         "source": "Polymarket",
         "question": "Will San Diego FC win the 2026 MLS Cup?",
@@ -4335,17 +4344,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0165,
-        "normalized_probability": 0.016264,
+        "normalized_probability": 0.016304,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 33744.05752,
+        "normalization_total": 1.012,
+        "liquidity": 33148.96227,
         "volume": 1220228.5661759996,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.014354,
+      "kalshi": 0.014423,
       "kalshi_raw": 0.015,
-      "kalshi_edge": 0.012246,
+      "kalshi_edge": 0.012177,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-SD",
@@ -4353,9 +4362,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.015,
-        "normalized_probability": 0.014354,
+        "normalized_probability": 0.014423,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.01,
         "ask": 0.02,
         "last": 0.02,
@@ -4368,8 +4377,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.015309,
-      "consensus_edge": 0.011291,
+      "market_consensus": 0.015364,
+      "consensus_edge": 0.011236,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -4442,9 +4451,9 @@
         -0.303,
         0.7194
       ],
-      "market": 0.020207,
-      "market_raw": 0.0205,
-      "edge": 0.052693,
+      "market": 0.019269,
+      "market_raw": 0.0195,
+      "edge": 0.053631,
       "market_details": {
         "source": "Polymarket",
         "question": "Will San Jose Earthquakes win the 2026 MLS Cup?",
@@ -4452,18 +4461,18 @@
         "event_id": "200782",
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
-        "raw_probability": 0.0205,
-        "normalized_probability": 0.020207,
+        "raw_probability": 0.0195,
+        "normalized_probability": 0.019269,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 30170.73402,
-        "volume": 1164468.6671090003,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "normalization_total": 1.012,
+        "liquidity": 32952.81171,
+        "volume": 1164904.7071090005,
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.023923,
+      "kalshi": 0.024038,
       "kalshi_raw": 0.025,
-      "kalshi_edge": 0.048977,
+      "kalshi_edge": 0.048862,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-SJ",
@@ -4471,9 +4480,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.025,
-        "normalized_probability": 0.023923,
+        "normalized_probability": 0.024038,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.02,
         "ask": 0.03,
         "last": 0.02,
@@ -4481,13 +4490,13 @@
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
         "volume": 104393.91,
-        "volume_24h": 343.34,
+        "volume_24h": 329.13,
         "open_interest": 55952.35,
         "updated_at": "2026-07-13T21:31:32.511076Z",
         "comparison_only": true
       },
-      "market_consensus": 0.022065,
-      "consensus_edge": 0.050835,
+      "market_consensus": 0.021654,
+      "consensus_edge": 0.051246,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -4560,9 +4569,9 @@
         -0.3467,
         0.7279
       ],
-      "market": 0.038935,
+      "market": 0.039032,
       "market_raw": 0.0395,
-      "edge": -0.024385,
+      "edge": -0.024482,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Seattle Sounders FC win the 2026 MLS Cup?",
@@ -4571,17 +4580,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0395,
-        "normalized_probability": 0.038935,
+        "normalized_probability": 0.039032,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 21891.59414,
-        "volume": 862085.9281669996,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "normalization_total": 1.012,
+        "liquidity": 23360.22264,
+        "volume": 862085.9281669998,
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.023923,
+      "kalshi": 0.024038,
       "kalshi_raw": 0.025,
-      "kalshi_edge": -0.009373,
+      "kalshi_edge": -0.009488,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-SEA",
@@ -4589,9 +4598,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.025,
-        "normalized_probability": 0.023923,
+        "normalized_probability": 0.024038,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.02,
         "ask": 0.03,
         "last": 0.02,
@@ -4604,8 +4613,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.031429,
-      "consensus_edge": -0.016879,
+      "market_consensus": 0.031535,
+      "consensus_edge": -0.016985,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -4678,9 +4687,9 @@
         -1.0187,
         -0.1011
       ],
-      "market": 0.002464,
+      "market": 0.00247,
       "market_raw": 0.0025,
-      "edge": -0.002464,
+      "edge": -0.00247,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Sporting Kansas City win the 2026 MLS Cup?",
@@ -4689,17 +4698,17 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.0025,
-        "normalized_probability": 0.002464,
+        "normalized_probability": 0.00247,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 27554.52068,
+        "normalization_total": 1.012,
+        "liquidity": 28117.04066,
         "volume": 67667.75981100003,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004785,
+      "kalshi": 0.004808,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.004785,
+      "kalshi_edge": -0.004808,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-SKC",
@@ -4707,9 +4716,9 @@
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004785,
+        "normalized_probability": 0.004808,
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.04,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -4722,8 +4731,8 @@
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003624,
-      "consensus_edge": -0.003624,
+      "market_consensus": 0.003639,
+      "consensus_edge": -0.003639,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -4796,9 +4805,9 @@
         -0.2892,
         0.7509
       ],
-      "market": 0.145392,
+      "market": 0.145751,
       "market_raw": 0.1475,
-      "edge": 0.078908,
+      "edge": 0.078549,
       "market_details": {
         "source": "Polymarket",
         "question": "Will Vancouver Whitecaps FC win the 2026 MLS Cup?",
@@ -4807,41 +4816,41 @@
         "event": "MLS Cup Winner 2026",
         "event_slug": "mls-cup-winner-2026",
         "raw_probability": 0.1475,
-        "normalized_probability": 0.145392,
+        "normalized_probability": 0.145751,
         "normalized": true,
-        "normalization_total": 1.0145,
-        "liquidity": 38046.27417,
+        "normalization_total": 1.012,
+        "liquidity": 38290.6339,
         "volume": 381397.822039,
-        "updated_at": "2026-08-14T04:26:31Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.148325,
-      "kalshi_raw": 0.155,
-      "kalshi_edge": 0.075975,
+      "kalshi": 0.144231,
+      "kalshi_raw": 0.15,
+      "kalshi_edge": 0.080069,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXMLSCUP-26-VAN",
         "event_ticker": "KXMLSCUP-26",
         "event": "MLS Cup Champion",
         "event_url": "https://kalshi.com/markets/kxmlscup/mls-cup-champion/kxmlscup-26",
-        "raw_probability": 0.155,
-        "normalized_probability": 0.148325,
+        "raw_probability": 0.15,
+        "normalized_probability": 0.144231,
         "normalized": true,
-        "normalization_total": 1.045,
-        "bid": 0.15,
+        "normalization_total": 1.04,
+        "bid": 0.14,
         "ask": 0.16,
-        "last": 0.15,
-        "spread": 0.01,
+        "last": 0.14,
+        "spread": 0.02,
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
-        "volume": 90288.96,
-        "volume_24h": 0.0,
-        "open_interest": 63383.54,
+        "volume": 90296.21,
+        "volume_24h": 7.25,
+        "open_interest": 63381.44,
         "updated_at": "2026-07-13T21:35:17.822041Z",
         "comparison_only": true
       },
-      "market_consensus": 0.146859,
-      "consensus_edge": 0.077441,
+      "market_consensus": 0.144991,
+      "consensus_edge": 0.079309,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -12984,10 +12993,10 @@
           "draw": "Will Atlanta United FC vs. New York Red Bulls end in a draw?",
           "away": "Will New York Red Bulls win on 2026-08-15?"
         },
-        "liquidity": 118976.11,
-        "volume": 849.27,
+        "liquidity": 91585.0,
+        "volume": 929.87,
         "kickoff": "2026-08-15T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:32Z",
+        "updated_at": "2026-08-14T08:57:29Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -13029,8 +13038,8 @@
         },
         "lasts": {
           "home": 0.5,
-          "draw": 0.23,
-          "away": 0.27
+          "draw": 0.22,
+          "away": 0.28
         },
         "spreads": {
           "home": 0.010000000000000009,
@@ -13043,9 +13052,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 61042.43,
-        "volume_24h": 7034.82,
-        "open_interest": 44683.58,
+        "volume": 63122.05,
+        "volume_24h": 9049.75,
+        "open_interest": 46735.79,
         "kickoff": "2026-08-16T02:30:00+00:00",
         "updated_at": "2026-08-03T18:58:01.434625Z",
         "comparison_only": true
@@ -13130,10 +13139,10 @@
           "draw": "Will Charlotte FC vs. Columbus Crew end in a draw?",
           "away": "Will Columbus Crew win on 2026-08-15?"
         },
-        "liquidity": 100000.58,
-        "volume": 427.48,
+        "liquidity": 64598.02,
+        "volume": 458.59,
         "kickoff": "2026-08-15T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:32Z",
+        "updated_at": "2026-08-14T08:57:30Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -13189,9 +13198,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 28346.73,
-        "volume_24h": 614.3,
-        "open_interest": 19792.69,
+        "volume": 28638.32,
+        "volume_24h": 849.41,
+        "open_interest": 20008.59,
         "kickoff": "2026-08-16T02:30:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
@@ -13276,10 +13285,10 @@
           "draw": "Will CF Montréal vs. D.C. United SC end in a draw?",
           "away": "Will D.C. United SC win on 2026-08-15?"
         },
-        "liquidity": 94068.72,
-        "volume": 583.61,
+        "liquidity": 72629.4,
+        "volume": 615.86,
         "kickoff": "2026-08-15T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:32Z",
+        "updated_at": "2026-08-14T08:57:30Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -13320,8 +13329,8 @@
           "away": 0.31
         },
         "lasts": {
-          "home": 0.43,
-          "draw": 0.27,
+          "home": 0.42,
+          "draw": 0.26,
           "away": 0.31
         },
         "spreads": {
@@ -13335,9 +13344,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 690.3,
-        "volume_24h": 113.27,
-        "open_interest": 504.06,
+        "volume": 914.15,
+        "volume_24h": 368.19,
+        "open_interest": 537.85,
         "kickoff": "2026-08-16T02:30:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
@@ -13422,10 +13431,10 @@
           "draw": "Will Orlando City SC vs. FC Cincinnati end in a draw?",
           "away": "Will FC Cincinnati win on 2026-08-15?"
         },
-        "liquidity": 123747.17,
+        "liquidity": 99274.9,
         "volume": 1705.39,
         "kickoff": "2026-08-15T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:33Z",
+        "updated_at": "2026-08-14T08:57:30Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -13466,9 +13475,9 @@
           "away": 0.33
         },
         "lasts": {
-          "home": 0.44,
-          "draw": 0.22,
-          "away": 0.32
+          "home": 0.45,
+          "draw": 0.23,
+          "away": 0.33
         },
         "spreads": {
           "home": 0.010000000000000009,
@@ -13481,9 +13490,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 44262.05,
-        "volume_24h": 1108.52,
-        "open_interest": 35567.43,
+        "volume": 45276.65,
+        "volume_24h": 2146.67,
+        "open_interest": 36553.09,
         "kickoff": "2026-08-16T02:30:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
@@ -13538,22 +13547,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.442211,
-          "draw": 0.261307,
-          "away": 0.296482
+          "home": 0.444444,
+          "draw": 0.257576,
+          "away": 0.29798
         },
         "raw_probabilities": {
           "home": 0.44,
-          "draw": 0.26,
+          "draw": 0.255,
           "away": 0.295
         },
         "model_edge": {
-          "home": -0.153701,
-          "draw": -0.060687,
-          "away": 0.214388
+          "home": -0.155934,
+          "draw": -0.056956,
+          "away": 0.21289
         },
         "normalized": true,
-        "normalization_total": 0.995,
+        "normalization_total": 0.99,
         "event_id": "790881",
         "event_title": "Toronto FC vs. New England Revolution",
         "event_slug": "mls-tor-ner-2026-08-15",
@@ -13568,31 +13577,31 @@
           "draw": "Will Toronto FC vs. New England Revolution end in a draw?",
           "away": "Will New England Revolution win on 2026-08-15?"
         },
-        "liquidity": 95676.46,
+        "liquidity": 75173.01,
         "volume": 394.24,
         "kickoff": "2026-08-15T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:33Z",
+        "updated_at": "2026-08-14T08:57:30Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.441624,
-          "draw": 0.258883,
-          "away": 0.299492
+          "home": 0.437186,
+          "draw": 0.256281,
+          "away": 0.306533
         },
         "raw_probabilities": {
           "home": 0.435,
           "draw": 0.255,
-          "away": 0.295
+          "away": 0.305
         },
         "model_edge": {
-          "home": -0.153114,
-          "draw": -0.058263,
-          "away": 0.211378
+          "home": -0.148676,
+          "draw": -0.055661,
+          "away": 0.204337
         },
         "normalized": true,
-        "normalization_total": 0.985,
+        "normalization_total": 0.995,
         "event_ticker": "KXMLSGAME-26AUG15TORNE",
         "event_title": "Toronto vs New England",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug15torne",
@@ -13604,12 +13613,12 @@
         "bids": {
           "home": 0.43,
           "draw": 0.25,
-          "away": 0.29
+          "away": 0.3
         },
         "asks": {
           "home": 0.44,
           "draw": 0.26,
-          "away": 0.3
+          "away": 0.31
         },
         "lasts": {
           "home": 0.43,
@@ -13627,23 +13636,23 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 8671.33,
-        "volume_24h": 925.24,
-        "open_interest": 7173.62,
+        "volume": 8779.53,
+        "volume_24h": 1043.82,
+        "open_interest": 7201.27,
         "kickoff": "2026-08-16T02:30:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.441918,
-          "draw": 0.260095,
-          "away": 0.297987
+          "home": 0.440815,
+          "draw": 0.256929,
+          "away": 0.302257
         },
         "model_edge": {
-          "home": -0.153408,
-          "draw": -0.059475,
-          "away": 0.212883
+          "home": -0.152305,
+          "draw": -0.056309,
+          "away": 0.208613
         },
         "sources": [
           "Polymarket",
@@ -13720,8 +13729,8 @@
         },
         "lasts": {
           "home": 0.57,
-          "draw": 0.23,
-          "away": 0.2
+          "draw": 0.22,
+          "away": 0.21
         },
         "spreads": {
           "home": 0.009999999999999898,
@@ -13734,9 +13743,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 15251.53,
-        "volume_24h": 2893.84,
-        "open_interest": 13709.39,
+        "volume": 15714.95,
+        "volume_24h": 1612.57,
+        "open_interest": 14172.73,
         "kickoff": "2026-08-16T03:30:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
@@ -13820,10 +13829,10 @@
           "draw": "Will Nashville SC vs. Inter Miami CF end in a draw?",
           "away": "Will Inter Miami CF win on 2026-08-15?"
         },
-        "liquidity": 111641.92,
-        "volume": 10401.62,
+        "liquidity": 84391.17,
+        "volume": 10545.43,
         "kickoff": "2026-08-16T00:30:00Z",
-        "updated_at": "2026-08-14T04:26:34Z",
+        "updated_at": "2026-08-14T08:57:32Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -13879,9 +13888,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 147471.01,
-        "volume_24h": 12565.08,
-        "open_interest": 75280.54,
+        "volume": 154699.27,
+        "volume_24h": 19221.23,
+        "open_interest": 82285.03,
         "kickoff": "2026-08-16T03:30:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
@@ -13966,10 +13975,10 @@
           "draw": "Will Colorado Rapids SC vs. Sporting Kansas City end in a draw?",
           "away": "Will Sporting Kansas City win on 2026-08-15?"
         },
-        "liquidity": 107593.9,
-        "volume": 495.69,
+        "liquidity": 64902.6,
+        "volume": 535.36,
         "kickoff": "2026-08-16T01:30:00Z",
-        "updated_at": "2026-08-14T04:26:34Z",
+        "updated_at": "2026-08-14T08:57:33Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -14010,7 +14019,7 @@
           "away": 0.15
         },
         "lasts": {
-          "home": 0.67,
+          "home": 0.66,
           "draw": 0.19,
           "away": 0.15
         },
@@ -14025,9 +14034,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 20437.21,
-        "volume_24h": 654.5,
-        "open_interest": 19628.54,
+        "volume": 20472.89,
+        "volume_24h": 720.64,
+        "open_interest": 19622.02,
         "kickoff": "2026-08-16T04:30:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
@@ -14082,22 +14091,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.537688,
-          "draw": 0.246231,
-          "away": 0.21608
+          "home": 0.543147,
+          "draw": 0.248731,
+          "away": 0.208122
         },
         "raw_probabilities": {
           "home": 0.535,
           "draw": 0.245,
-          "away": 0.215
+          "away": 0.205
         },
         "model_edge": {
-          "home": 0.134292,
-          "draw": -0.043061,
-          "away": -0.09122
+          "home": 0.128833,
+          "draw": -0.045561,
+          "away": -0.083262
         },
         "normalized": true,
-        "normalization_total": 0.995,
+        "normalization_total": 0.985,
         "event_id": "791009",
         "event_title": "Real Salt Lake vs. Minnesota United FC",
         "event_slug": "mls-rsl-min-2026-08-15",
@@ -14112,10 +14121,10 @@
           "draw": "Will Real Salt Lake vs. Minnesota United FC end in a draw?",
           "away": "Will Minnesota United FC win on 2026-08-15?"
         },
-        "liquidity": 107688.78,
-        "volume": 1283.14,
+        "liquidity": 71310.53,
+        "volume": 1355.82,
         "kickoff": "2026-08-16T01:30:00Z",
-        "updated_at": "2026-08-14T04:26:34Z",
+        "updated_at": "2026-08-14T08:57:33Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -14171,23 +14180,23 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 4373.04,
-        "volume_24h": 238.32,
-        "open_interest": 3914.69,
+        "volume": 4445.23,
+        "volume_24h": 355.63,
+        "open_interest": 3986.88,
         "kickoff": "2026-08-16T04:30:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.542714,
-          "draw": 0.246231,
-          "away": 0.211055
+          "home": 0.545443,
+          "draw": 0.247481,
+          "away": 0.207076
         },
         "model_edge": {
-          "home": 0.129266,
-          "draw": -0.043061,
-          "away": -0.086195
+          "home": 0.126537,
+          "draw": -0.044311,
+          "away": -0.082216
         },
         "sources": [
           "Polymarket",
@@ -14258,10 +14267,10 @@
           "draw": "Will Los Angeles FC vs. San Diego FC end in a draw?",
           "away": "Will San Diego FC win on 2026-08-15?"
         },
-        "liquidity": 107165.96,
-        "volume": 1801.26,
+        "liquidity": 75436.73,
+        "volume": 1984.31,
         "kickoff": "2026-08-16T02:30:00Z",
-        "updated_at": "2026-08-14T04:26:35Z",
+        "updated_at": "2026-08-14T08:57:33Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -14304,7 +14313,7 @@
         "lasts": {
           "home": 0.61,
           "draw": 0.2,
-          "away": 0.19
+          "away": 0.2
         },
         "spreads": {
           "home": 0.010000000000000009,
@@ -14317,9 +14326,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 83095.3,
-        "volume_24h": 38985.12,
-        "open_interest": 70984.26,
+        "volume": 83614.52,
+        "volume_24h": 20798.7,
+        "open_interest": 71503.48,
         "kickoff": "2026-08-16T05:30:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
@@ -14404,10 +14413,10 @@
           "draw": "Will San Jose Earthquakes vs. St. Louis City SC end in a draw?",
           "away": "Will St. Louis City SC win on 2026-08-15?"
         },
-        "liquidity": 94830.56,
-        "volume": 1265.81,
+        "liquidity": 61909.45,
+        "volume": 1270.83,
         "kickoff": "2026-08-16T02:30:00Z",
-        "updated_at": "2026-08-14T04:26:35Z",
+        "updated_at": "2026-08-14T08:57:34Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -14463,9 +14472,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 2316.77,
-        "volume_24h": 209.41,
-        "open_interest": 2257.93,
+        "volume": 2379.31,
+        "volume_24h": 287.83,
+        "open_interest": 2320.47,
         "kickoff": "2026-08-16T05:30:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
@@ -14550,10 +14559,10 @@
           "draw": "Will Chicago Fire FC vs. Portland Timbers end in a draw?",
           "away": "Will Portland Timbers win on 2026-08-16?"
         },
-        "liquidity": 82168.83,
+        "liquidity": 51346.21,
         "volume": 489.0,
         "kickoff": "2026-08-16T22:00:00Z",
-        "updated_at": "2026-08-14T04:26:35Z",
+        "updated_at": "2026-08-14T08:57:34Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -14596,7 +14605,7 @@
         "lasts": {
           "home": 0.64,
           "draw": 0.19,
-          "away": 0.17
+          "away": 0.18
         },
         "spreads": {
           "home": 0.010000000000000009,
@@ -14609,9 +14618,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 27763.18,
-        "volume_24h": 1906.74,
-        "open_interest": 11423.59,
+        "volume": 28012.21,
+        "volume_24h": 2125.75,
+        "open_interest": 11672.62,
         "kickoff": "2026-08-17T01:00:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
@@ -14696,10 +14705,10 @@
           "draw": "Will New York City FC vs. Philadelphia Union end in a draw?",
           "away": "Will Philadelphia Union win on 2026-08-16?"
         },
-        "liquidity": 54278.5,
+        "liquidity": 41916.21,
         "volume": 367.13,
         "kickoff": "2026-08-16T22:00:00Z",
-        "updated_at": "2026-08-14T04:26:36Z",
+        "updated_at": "2026-08-14T08:57:35Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -14742,7 +14751,7 @@
         "lasts": {
           "home": 0.43,
           "draw": 0.26,
-          "away": 0.31
+          "away": 0.32
         },
         "spreads": {
           "home": 0.010000000000000009,
@@ -14755,9 +14764,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 14049.6,
-        "volume_24h": 557.21,
-        "open_interest": 12442.64,
+        "volume": 14085.36,
+        "volume_24h": 584.97,
+        "open_interest": 12478.4,
         "kickoff": "2026-08-17T01:00:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
@@ -14812,22 +14821,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.341709,
-          "draw": 0.256281,
-          "away": 0.40201
+          "home": 0.345,
+          "draw": 0.255,
+          "away": 0.4
         },
         "raw_probabilities": {
-          "home": 0.34,
+          "home": 0.345,
           "draw": 0.255,
           "away": 0.4
         },
         "model_edge": {
-          "home": 0.002781,
-          "draw": -0.084231,
-          "away": 0.08146
+          "home": -0.00051,
+          "draw": -0.08295,
+          "away": 0.08347
         },
-        "normalized": true,
-        "normalization_total": 0.995,
+        "normalized": false,
+        "normalization_total": 1.0,
         "event_id": "791125",
         "event_title": "Austin FC vs. FC Dallas",
         "event_slug": "mls-aus-dal-2026-08-16",
@@ -14842,31 +14851,31 @@
           "draw": "Will Austin FC vs. FC Dallas end in a draw?",
           "away": "Will FC Dallas win on 2026-08-16?"
         },
-        "liquidity": 81217.01,
-        "volume": 125.6,
+        "liquidity": 51536.68,
+        "volume": 136.6,
         "kickoff": "2026-08-17T00:30:00Z",
-        "updated_at": "2026-08-14T04:26:36Z",
+        "updated_at": "2026-08-14T08:57:35Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.336683,
-          "draw": 0.256281,
-          "away": 0.407035
+          "home": 0.343284,
+          "draw": 0.253731,
+          "away": 0.402985
         },
         "raw_probabilities": {
-          "home": 0.335,
+          "home": 0.345,
           "draw": 0.255,
           "away": 0.405
         },
         "model_edge": {
-          "home": 0.007807,
-          "draw": -0.084231,
-          "away": 0.076435
+          "home": 0.001206,
+          "draw": -0.081681,
+          "away": 0.080485
         },
         "normalized": true,
-        "normalization_total": 0.995,
+        "normalization_total": 1.005,
         "event_ticker": "KXMLSGAME-26AUG16ATXDAL",
         "event_title": "Austin vs Dallas",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug16atxdal",
@@ -14876,22 +14885,22 @@
           "away": "KXMLSGAME-26AUG16ATXDAL-DAL"
         },
         "bids": {
-          "home": 0.33,
+          "home": 0.34,
           "draw": 0.25,
           "away": 0.4
         },
         "asks": {
-          "home": 0.34,
+          "home": 0.35,
           "draw": 0.26,
           "away": 0.41
         },
         "lasts": {
-          "home": 0.34,
+          "home": 0.35,
           "draw": 0.26,
           "away": 0.4
         },
         "spreads": {
-          "home": 0.010000000000000009,
+          "home": 0.009999999999999953,
           "draw": 0.010000000000000009,
           "away": 0.009999999999999953
         },
@@ -14901,23 +14910,23 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 810.79,
-        "volume_24h": 63.78,
-        "open_interest": 772.61,
+        "volume": 911.42,
+        "volume_24h": 164.41,
+        "open_interest": 873.24,
         "kickoff": "2026-08-17T03:30:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.339196,
-          "draw": 0.256281,
-          "away": 0.404523
+          "home": 0.344142,
+          "draw": 0.254366,
+          "away": 0.401493
         },
         "model_edge": {
-          "home": 0.005294,
-          "draw": -0.084231,
-          "away": 0.078947
+          "home": 0.000348,
+          "draw": -0.082316,
+          "away": 0.081977
         },
         "sources": [
           "Polymarket",
@@ -14988,31 +14997,31 @@
           "draw": "Will Seattle Sounders FC vs. Vancouver Whitecaps FC end in a draw?",
           "away": "Will Vancouver Whitecaps FC win on 2026-08-16?"
         },
-        "liquidity": 83285.47,
-        "volume": 360.15,
+        "liquidity": 44146.52,
+        "volume": 369.89,
         "kickoff": "2026-08-17T02:30:00Z",
-        "updated_at": "2026-08-14T04:26:36Z",
+        "updated_at": "2026-08-14T08:57:36Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.262376,
-          "draw": 0.252475,
-          "away": 0.485149
+          "home": 0.263682,
+          "draw": 0.253731,
+          "away": 0.482587
         },
         "raw_probabilities": {
           "home": 0.265,
           "draw": 0.255,
-          "away": 0.49
+          "away": 0.485
         },
         "model_edge": {
-          "home": -0.031936,
-          "draw": -0.060015,
-          "away": 0.091951
+          "home": -0.033242,
+          "draw": -0.061271,
+          "away": 0.094513
         },
         "normalized": true,
-        "normalization_total": 1.01,
+        "normalization_total": 1.005,
         "event_ticker": "KXMLSGAME-26AUG16SEAVAN",
         "event_title": "Seattle vs Vancouver",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug16seavan",
@@ -15029,7 +15038,7 @@
         "asks": {
           "home": 0.27,
           "draw": 0.26,
-          "away": 0.5
+          "away": 0.49
         },
         "lasts": {
           "home": 0.27,
@@ -15039,7 +15048,7 @@
         "spreads": {
           "home": 0.010000000000000009,
           "draw": 0.010000000000000009,
-          "away": 0.020000000000000018
+          "away": 0.010000000000000009
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -15047,23 +15056,23 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 5803.58,
-        "volume_24h": 158.8,
-        "open_interest": 5503.44,
+        "volume": 5821.19,
+        "volume_24h": 176.41,
+        "open_interest": 5521.05,
         "kickoff": "2026-08-17T05:30:00+00:00",
         "updated_at": "2026-08-03T18:59:00.862068Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.263688,
-          "draw": 0.246237,
-          "away": 0.490074
+          "home": 0.264341,
+          "draw": 0.246865,
+          "away": 0.488793
         },
         "model_edge": {
-          "home": -0.033248,
-          "draw": -0.053777,
-          "away": 0.087026
+          "home": -0.033901,
+          "draw": -0.054405,
+          "away": 0.088307
         },
         "sources": [
           "Polymarket",
@@ -15104,19 +15113,19 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.448276,
+          "home": 0.44335,
           "draw": 0.241379,
-          "away": 0.310345
+          "away": 0.315271
         },
         "raw_probabilities": {
-          "home": 0.455,
+          "home": 0.45,
           "draw": 0.245,
-          "away": 0.315
+          "away": 0.32
         },
         "model_edge": {
-          "home": 0.141674,
+          "home": 0.1466,
           "draw": -0.054999,
-          "away": -0.086675
+          "away": -0.091601
         },
         "normalized": true,
         "normalization_total": 1.015,
@@ -15134,31 +15143,31 @@
           "draw": "Will FC Cincinnati vs. New York City FC end in a draw?",
           "away": "Will New York City FC win on 2026-08-19?"
         },
-        "liquidity": 17521.63,
+        "liquidity": 11159.26,
         "volume": 0,
         "kickoff": "2026-08-19T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:37Z",
+        "updated_at": "2026-08-14T08:57:36Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.446602,
-          "draw": 0.252427,
-          "away": 0.300971
+          "home": 0.444444,
+          "draw": 0.251208,
+          "away": 0.304348
         },
         "raw_probabilities": {
           "home": 0.46,
           "draw": 0.26,
-          "away": 0.31
+          "away": 0.315
         },
         "model_edge": {
-          "home": 0.143348,
-          "draw": -0.066047,
-          "away": -0.077301
+          "home": 0.145506,
+          "draw": -0.064828,
+          "away": -0.080678
         },
         "normalized": true,
-        "normalization_total": 1.03,
+        "normalization_total": 1.035,
         "event_ticker": "KXMLSGAME-26AUG19CINNYC",
         "event_title": "Cincinnati vs New York City",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug19cinnyc",
@@ -15170,7 +15179,7 @@
         "bids": {
           "home": 0.44,
           "draw": 0.25,
-          "away": 0.29
+          "away": 0.3
         },
         "asks": {
           "home": 0.48,
@@ -15185,7 +15194,7 @@
         "spreads": {
           "home": 0.03999999999999998,
           "draw": 0.020000000000000018,
-          "away": 0.040000000000000036
+          "away": 0.030000000000000027
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -15202,14 +15211,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.447439,
-          "draw": 0.246903,
-          "away": 0.305658
+          "home": 0.443897,
+          "draw": 0.246293,
+          "away": 0.30981
         },
         "model_edge": {
-          "home": 0.142511,
-          "draw": -0.060523,
-          "away": -0.081988
+          "home": 0.146053,
+          "draw": -0.059913,
+          "away": -0.08614
         },
         "sources": [
           "Polymarket",
@@ -15250,22 +15259,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.581731,
-          "draw": 0.221154,
-          "away": 0.197115
+          "home": 0.59901,
+          "draw": 0.217822,
+          "away": 0.183168
         },
         "raw_probabilities": {
           "home": 0.605,
-          "draw": 0.23,
-          "away": 0.205
+          "draw": 0.22,
+          "away": 0.185
         },
         "model_edge": {
-          "home": -0.090991,
-          "draw": 0.025786,
-          "away": 0.065205
+          "home": -0.10827,
+          "draw": 0.029118,
+          "away": 0.079152
         },
         "normalized": true,
-        "normalization_total": 1.04,
+        "normalization_total": 1.01,
         "event_id": "806548",
         "event_title": "Columbus Crew vs. CF Montréal",
         "event_slug": "mls-clb-mim-2026-08-19",
@@ -15280,31 +15289,31 @@
           "draw": "Will Columbus Crew vs. CF Montréal end in a draw?",
           "away": "Will CF Montréal win on 2026-08-19?"
         },
-        "liquidity": 8295.19,
+        "liquidity": 7232.18,
         "volume": 0,
         "kickoff": "2026-08-19T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:37Z",
+        "updated_at": "2026-08-14T08:57:37Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.598039,
-          "draw": 0.210784,
-          "away": 0.191176
+          "home": 0.60396,
+          "draw": 0.212871,
+          "away": 0.183168
         },
         "raw_probabilities": {
           "home": 0.61,
           "draw": 0.215,
-          "away": 0.195
+          "away": 0.185
         },
         "model_edge": {
-          "home": -0.107299,
-          "draw": 0.036156,
-          "away": 0.071144
+          "home": -0.11322,
+          "draw": 0.034069,
+          "away": 0.079152
         },
         "normalized": true,
-        "normalization_total": 1.02,
+        "normalization_total": 1.01,
         "event_ticker": "KXMLSGAME-26AUG19CLBMTL",
         "event_title": "Columbus vs Montreal",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug19clbmtl",
@@ -15321,17 +15330,17 @@
         "asks": {
           "home": 0.63,
           "draw": 0.23,
-          "away": 0.21
+          "away": 0.19
         },
         "lasts": {
           "home": 0.64,
           "draw": 0.19,
-          "away": 0.23
+          "away": 0.2
         },
         "spreads": {
           "home": 0.040000000000000036,
           "draw": 0.03,
-          "away": 0.03
+          "away": 0.010000000000000009
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -15339,23 +15348,23 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 437.63,
-        "volume_24h": 0.0,
-        "open_interest": 333.35,
+        "volume": 442.33,
+        "volume_24h": 4.7,
+        "open_interest": 338.05,
         "kickoff": "2026-08-20T02:30:00+00:00",
         "updated_at": "2026-08-05T00:40:00.928662Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.589885,
-          "draw": 0.215969,
-          "away": 0.194146
+          "home": 0.601485,
+          "draw": 0.215346,
+          "away": 0.183168
         },
         "model_edge": {
-          "home": -0.099145,
-          "draw": 0.030971,
-          "away": 0.068174
+          "home": -0.110745,
+          "draw": 0.031594,
+          "away": 0.079152
         },
         "sources": [
           "Polymarket",
@@ -15396,22 +15405,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.474747,
-          "draw": 0.252525,
-          "away": 0.272727
+          "home": 0.467662,
+          "draw": 0.253731,
+          "away": 0.278607
         },
         "raw_probabilities": {
           "home": 0.47,
-          "draw": 0.25,
-          "away": 0.27
+          "draw": 0.255,
+          "away": 0.28
         },
         "model_edge": {
-          "home": -0.111007,
-          "draw": 0.017405,
-          "away": 0.093603
+          "home": -0.103922,
+          "draw": 0.016199,
+          "away": 0.087723
         },
         "normalized": true,
-        "normalization_total": 0.99,
+        "normalization_total": 1.005,
         "event_id": "806561",
         "event_title": "D.C. United SC vs. New England Revolution",
         "event_slug": "mls-dcu-ner-2026-08-19",
@@ -15426,31 +15435,31 @@
           "draw": "Will D.C. United SC vs. New England Revolution end in a draw?",
           "away": "Will New England Revolution win on 2026-08-19?"
         },
-        "liquidity": 13831.22,
+        "liquidity": 10764.03,
         "volume": 0,
         "kickoff": "2026-08-19T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:37Z",
+        "updated_at": "2026-08-14T08:57:37Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.463415,
-          "draw": 0.263415,
-          "away": 0.273171
+          "home": 0.460396,
+          "draw": 0.262376,
+          "away": 0.277228
         },
         "raw_probabilities": {
-          "home": 0.475,
-          "draw": 0.27,
+          "home": 0.465,
+          "draw": 0.265,
           "away": 0.28
         },
         "model_edge": {
-          "home": -0.099675,
-          "draw": 0.006515,
-          "away": 0.093159
+          "home": -0.096656,
+          "draw": 0.007554,
+          "away": 0.089102
         },
         "normalized": true,
-        "normalization_total": 1.025,
+        "normalization_total": 1.01,
         "event_ticker": "KXMLSGAME-26AUG19DCUNE",
         "event_title": "DC United vs New England",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug19dcune",
@@ -15460,14 +15469,14 @@
           "away": "KXMLSGAME-26AUG19DCUNE-NE"
         },
         "bids": {
-          "home": 0.45,
+          "home": 0.44,
           "draw": 0.25,
-          "away": 0.25
+          "away": 0.26
         },
         "asks": {
-          "home": 0.5,
-          "draw": 0.29,
-          "away": 0.31
+          "home": 0.49,
+          "draw": 0.28,
+          "away": 0.3
         },
         "lasts": {
           "home": 0.0,
@@ -15476,8 +15485,8 @@
         },
         "spreads": {
           "home": 0.04999999999999999,
-          "draw": 0.03999999999999998,
-          "away": 0.06
+          "draw": 0.030000000000000027,
+          "away": 0.03999999999999998
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -15494,14 +15503,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.469081,
-          "draw": 0.25797,
-          "away": 0.272949
+          "home": 0.464029,
+          "draw": 0.258053,
+          "away": 0.277917
         },
         "model_edge": {
-          "home": -0.105341,
-          "draw": 0.01196,
-          "away": 0.093381
+          "home": -0.100289,
+          "draw": 0.011877,
+          "away": 0.088413
         },
         "sources": [
           "Polymarket",
@@ -15542,22 +15551,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.339901,
-          "draw": 0.251232,
-          "away": 0.408867
+          "home": 0.341584,
+          "draw": 0.247525,
+          "away": 0.410891
         },
         "raw_probabilities": {
           "home": 0.345,
-          "draw": 0.255,
+          "draw": 0.25,
           "away": 0.415
         },
         "model_edge": {
-          "home": -0.221131,
-          "draw": -0.066172,
-          "away": 0.287303
+          "home": -0.222814,
+          "draw": -0.062465,
+          "away": 0.285279
         },
         "normalized": true,
-        "normalization_total": 1.015,
+        "normalization_total": 1.01,
         "event_id": "806534",
         "event_title": "New York Red Bulls vs. Nashville SC",
         "event_slug": "mls-nyr-nas-2026-08-19",
@@ -15572,31 +15581,31 @@
           "draw": "Will New York Red Bulls vs. Nashville SC end in a draw?",
           "away": "Will Nashville SC win on 2026-08-19?"
         },
-        "liquidity": 16046.64,
+        "liquidity": 12067.05,
         "volume": 0,
         "kickoff": "2026-08-19T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:38Z",
+        "updated_at": "2026-08-14T08:57:37Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.338235,
-          "draw": 0.254902,
-          "away": 0.406863
+          "home": 0.334975,
+          "draw": 0.256158,
+          "away": 0.408867
         },
         "raw_probabilities": {
-          "home": 0.345,
+          "home": 0.34,
           "draw": 0.26,
           "away": 0.415
         },
         "model_edge": {
-          "home": -0.219465,
-          "draw": -0.069842,
-          "away": 0.289307
+          "home": -0.216205,
+          "draw": -0.071098,
+          "away": 0.287303
         },
         "normalized": true,
-        "normalization_total": 1.02,
+        "normalization_total": 1.015,
         "event_ticker": "KXMLSGAME-26AUG19NYRBNSH",
         "event_title": "New York RB vs Nashville",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug19nyrbnsh",
@@ -15606,7 +15615,7 @@
           "away": "KXMLSGAME-26AUG19NYRBNSH-NSH"
         },
         "bids": {
-          "home": 0.33,
+          "home": 0.32,
           "draw": 0.25,
           "away": 0.39
         },
@@ -15621,7 +15630,7 @@
           "away": 0.47
         },
         "spreads": {
-          "home": 0.02999999999999997,
+          "home": 0.03999999999999998,
           "draw": 0.020000000000000018,
           "away": 0.04999999999999999
         },
@@ -15640,14 +15649,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.339068,
-          "draw": 0.253067,
-          "away": 0.407865
+          "home": 0.33828,
+          "draw": 0.251841,
+          "away": 0.409879
         },
         "model_edge": {
-          "home": -0.220298,
-          "draw": -0.068007,
-          "away": 0.288305
+          "home": -0.21951,
+          "draw": -0.066781,
+          "away": 0.286291
         },
         "sources": [
           "Polymarket",
@@ -15718,10 +15727,10 @@
           "draw": "Will Orlando City SC vs. Chicago Fire FC end in a draw?",
           "away": "Will Chicago Fire FC win on 2026-08-19?"
         },
-        "liquidity": 15807.42,
+        "liquidity": 15204.66,
         "volume": 53.16,
         "kickoff": "2026-08-19T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:38Z",
+        "updated_at": "2026-08-14T08:57:38Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -15834,22 +15843,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.371981,
-          "draw": 0.236715,
-          "away": 0.391304
+          "home": 0.373786,
+          "draw": 0.23301,
+          "away": 0.393204
         },
         "raw_probabilities": {
           "home": 0.385,
-          "draw": 0.245,
+          "draw": 0.24,
           "away": 0.405
         },
         "model_edge": {
-          "home": 0.007459,
-          "draw": -0.003415,
-          "away": -0.004044
+          "home": 0.005654,
+          "draw": 0.00029,
+          "away": -0.005944
         },
         "normalized": true,
-        "normalization_total": 1.035,
+        "normalization_total": 1.03,
         "event_id": "806481",
         "event_title": "Philadelphia Union vs. Inter Miami CF",
         "event_slug": "mls-phi-mia-2026-08-19",
@@ -15864,31 +15873,31 @@
           "draw": "Will Philadelphia Union vs. Inter Miami CF end in a draw?",
           "away": "Will Inter Miami CF win on 2026-08-19?"
         },
-        "liquidity": 18250.58,
+        "liquidity": 12872.71,
         "volume": 22.16,
         "kickoff": "2026-08-19T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:38Z",
+        "updated_at": "2026-08-14T08:57:38Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.366337,
-          "draw": 0.237624,
-          "away": 0.39604
+          "home": 0.365,
+          "draw": 0.24,
+          "away": 0.395
         },
         "raw_probabilities": {
-          "home": 0.37,
+          "home": 0.365,
           "draw": 0.24,
-          "away": 0.4
+          "away": 0.395
         },
         "model_edge": {
-          "home": 0.013103,
-          "draw": -0.004324,
-          "away": -0.00878
+          "home": 0.01444,
+          "draw": -0.0067,
+          "away": -0.00774
         },
-        "normalized": true,
-        "normalization_total": 1.01,
+        "normalized": false,
+        "normalization_total": 1.0,
         "event_ticker": "KXMLSGAME-26AUG19PHIMIA",
         "event_title": "Philadelphia vs Miami",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug19phimia",
@@ -15898,9 +15907,9 @@
           "away": "KXMLSGAME-26AUG19PHIMIA-MIA"
         },
         "bids": {
-          "home": 0.36,
+          "home": 0.35,
           "draw": 0.22,
-          "away": 0.39
+          "away": 0.38
         },
         "asks": {
           "home": 0.38,
@@ -15913,9 +15922,9 @@
           "away": 0.41
         },
         "spreads": {
-          "home": 0.020000000000000018,
+          "home": 0.030000000000000027,
           "draw": 0.04000000000000001,
-          "away": 0.019999999999999962
+          "away": 0.02999999999999997
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -15923,23 +15932,23 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 7317.65,
-        "volume_24h": 135.82,
-        "open_interest": 5559.11,
+        "volume": 7380.88,
+        "volume_24h": 196.05,
+        "open_interest": 5505.24,
         "kickoff": "2026-08-20T02:30:00+00:00",
         "updated_at": "2026-08-05T00:41:00.930056Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.369159,
-          "draw": 0.23717,
-          "away": 0.393672
+          "home": 0.369393,
+          "draw": 0.236505,
+          "away": 0.394102
         },
         "model_edge": {
-          "home": 0.010281,
-          "draw": -0.00387,
-          "away": -0.006412
+          "home": 0.010047,
+          "draw": -0.003205,
+          "away": -0.006842
         },
         "sources": [
           "Polymarket",
@@ -15980,22 +15989,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.399015,
-          "draw": 0.261084,
-          "away": 0.339901
+          "home": 0.406863,
+          "draw": 0.254902,
+          "away": 0.338235
         },
         "raw_probabilities": {
-          "home": 0.405,
-          "draw": 0.265,
+          "home": 0.415,
+          "draw": 0.26,
           "away": 0.345
         },
         "model_edge": {
-          "home": -0.111395,
-          "draw": -0.038964,
-          "away": 0.150359
+          "home": -0.119243,
+          "draw": -0.032782,
+          "away": 0.152025
         },
         "normalized": true,
-        "normalization_total": 1.015,
+        "normalization_total": 1.02,
         "event_id": "806509",
         "event_title": "Toronto FC vs. Charlotte FC",
         "event_slug": "mls-tor-clt-2026-08-19",
@@ -16010,28 +16019,28 @@
           "draw": "Will Toronto FC vs. Charlotte FC end in a draw?",
           "away": "Will Charlotte FC win on 2026-08-19?"
         },
-        "liquidity": 15293.89,
+        "liquidity": 12290.52,
         "volume": 0,
         "kickoff": "2026-08-19T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:39Z",
+        "updated_at": "2026-08-14T08:57:38Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.40099,
+          "home": 0.405941,
           "draw": 0.262376,
-          "away": 0.336634
+          "away": 0.331683
         },
         "raw_probabilities": {
-          "home": 0.405,
+          "home": 0.41,
           "draw": 0.265,
-          "away": 0.34
+          "away": 0.335
         },
         "model_edge": {
-          "home": -0.11337,
+          "home": -0.118321,
           "draw": -0.040256,
-          "away": 0.153626
+          "away": 0.158577
         },
         "normalized": true,
         "normalization_total": 1.01,
@@ -16044,24 +16053,24 @@
           "away": "KXMLSGAME-26AUG19TORCLT-CLT"
         },
         "bids": {
-          "home": 0.38,
+          "home": 0.39,
           "draw": 0.25,
           "away": 0.32
         },
         "asks": {
           "home": 0.43,
           "draw": 0.28,
-          "away": 0.36
+          "away": 0.35
         },
         "lasts": {
           "home": 0.0,
           "draw": 0.0,
-          "away": 0.0
+          "away": 0.37
         },
         "spreads": {
-          "home": 0.04999999999999999,
+          "home": 0.03999999999999998,
           "draw": 0.030000000000000027,
-          "away": 0.03999999999999998
+          "away": 0.02999999999999997
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -16069,23 +16078,23 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 0.0,
-        "volume_24h": 0.0,
-        "open_interest": 0.0,
+        "volume": 65.41,
+        "volume_24h": 65.41,
+        "open_interest": 65.41,
         "kickoff": "2026-08-20T02:30:00+00:00",
         "updated_at": "2026-08-05T00:41:00.930056Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.400003,
-          "draw": 0.26173,
-          "away": 0.338267
+          "home": 0.406402,
+          "draw": 0.258639,
+          "away": 0.334959
         },
         "model_edge": {
-          "home": -0.112383,
-          "draw": -0.03961,
-          "away": 0.151993
+          "home": -0.118782,
+          "draw": -0.036519,
+          "away": 0.155301
         },
         "sources": [
           "Polymarket",
@@ -16126,22 +16135,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.300493,
-          "draw": 0.241379,
-          "away": 0.458128
+          "home": 0.29703,
+          "draw": 0.242574,
+          "away": 0.460396
         },
         "raw_probabilities": {
-          "home": 0.305,
+          "home": 0.3,
           "draw": 0.245,
           "away": 0.465
         },
         "model_edge": {
-          "home": -0.109143,
-          "draw": -0.033949,
-          "away": 0.143092
+          "home": -0.10568,
+          "draw": -0.035144,
+          "away": 0.140824
         },
         "normalized": true,
-        "normalization_total": 1.015,
+        "normalization_total": 1.01,
         "event_id": "806605",
         "event_title": "Sporting Kansas City vs. St. Louis City SC",
         "event_slug": "mls-skc-stl-2026-08-19",
@@ -16156,31 +16165,31 @@
           "draw": "Will Sporting Kansas City vs. St. Louis City SC end in a draw?",
           "away": "Will St. Louis City SC win on 2026-08-19?"
         },
-        "liquidity": 16395.59,
+        "liquidity": 12052.02,
         "volume": 0,
         "kickoff": "2026-08-20T00:00:00Z",
-        "updated_at": "2026-08-14T04:26:39Z",
+        "updated_at": "2026-08-14T08:57:40Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.298507,
-          "draw": 0.238806,
-          "away": 0.462687
+          "home": 0.29,
+          "draw": 0.25,
+          "away": 0.46
         },
         "raw_probabilities": {
-          "home": 0.3,
-          "draw": 0.24,
-          "away": 0.465
+          "home": 0.29,
+          "draw": 0.25,
+          "away": 0.46
         },
         "model_edge": {
-          "home": -0.107157,
-          "draw": -0.031376,
-          "away": 0.138533
+          "home": -0.09865,
+          "draw": -0.04257,
+          "away": 0.14122
         },
-        "normalized": true,
-        "normalization_total": 1.005,
+        "normalized": false,
+        "normalization_total": 1.0,
         "event_ticker": "KXMLSGAME-26AUG19SKCSTL",
         "event_title": "Kansas City vs Saint Louis",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug19skcstl",
@@ -16190,13 +16199,13 @@
           "away": "KXMLSGAME-26AUG19SKCSTL-STL"
         },
         "bids": {
-          "home": 0.28,
-          "draw": 0.22,
-          "away": 0.45
+          "home": 0.27,
+          "draw": 0.23,
+          "away": 0.44
         },
         "asks": {
-          "home": 0.32,
-          "draw": 0.26,
+          "home": 0.31,
+          "draw": 0.27,
           "away": 0.48
         },
         "lasts": {
@@ -16207,7 +16216,7 @@
         "spreads": {
           "home": 0.03999999999999998,
           "draw": 0.04000000000000001,
-          "away": 0.02999999999999997
+          "away": 0.03999999999999998
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -16224,14 +16233,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.2995,
-          "draw": 0.240092,
-          "away": 0.460407
+          "home": 0.293515,
+          "draw": 0.246287,
+          "away": 0.460198
         },
         "model_edge": {
-          "home": -0.10815,
-          "draw": -0.032662,
-          "away": 0.140813
+          "home": -0.102165,
+          "draw": -0.038857,
+          "away": 0.141022
         },
         "sources": [
           "Polymarket",
@@ -16272,22 +16281,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.546798,
-          "draw": 0.241379,
-          "away": 0.211823
+          "home": 0.552239,
+          "draw": 0.238806,
+          "away": 0.208955
         },
         "raw_probabilities": {
           "home": 0.555,
-          "draw": 0.245,
-          "away": 0.215
+          "draw": 0.24,
+          "away": 0.21
         },
         "model_edge": {
-          "home": -0.089868,
-          "draw": 0.046241,
-          "away": 0.043627
+          "home": -0.095309,
+          "draw": 0.048814,
+          "away": 0.046495
         },
         "normalized": true,
-        "normalization_total": 1.015,
+        "normalization_total": 1.005,
         "event_id": "806612",
         "event_title": "Minnesota United FC vs. Atlanta United FC",
         "event_slug": "mls-min-atl-2026-08-19",
@@ -16302,31 +16311,31 @@
           "draw": "Will Minnesota United FC vs. Atlanta United FC end in a draw?",
           "away": "Will Atlanta United FC win on 2026-08-19?"
         },
-        "liquidity": 15231.03,
+        "liquidity": 12592.8,
         "volume": 33.89,
         "kickoff": "2026-08-20T00:30:00Z",
-        "updated_at": "2026-08-14T04:26:39Z",
+        "updated_at": "2026-08-14T08:57:41Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.551724,
-          "draw": 0.241379,
-          "away": 0.206897
+          "home": 0.552239,
+          "draw": 0.238806,
+          "away": 0.208955
         },
         "raw_probabilities": {
-          "home": 0.56,
-          "draw": 0.245,
+          "home": 0.555,
+          "draw": 0.24,
           "away": 0.21
         },
         "model_edge": {
-          "home": -0.094794,
-          "draw": 0.046241,
-          "away": 0.048553
+          "home": -0.095309,
+          "draw": 0.048814,
+          "away": 0.046495
         },
         "normalized": true,
-        "normalization_total": 1.015,
+        "normalization_total": 1.005,
         "event_ticker": "KXMLSGAME-26AUG19MINATL",
         "event_title": "Minnesota vs Atlanta",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug19minatl",
@@ -16336,8 +16345,8 @@
           "away": "KXMLSGAME-26AUG19MINATL-ATL"
         },
         "bids": {
-          "home": 0.54,
-          "draw": 0.23,
+          "home": 0.53,
+          "draw": 0.22,
           "away": 0.19
         },
         "asks": {
@@ -16351,8 +16360,8 @@
           "away": 0.0
         },
         "spreads": {
-          "home": 0.039999999999999925,
-          "draw": 0.03,
+          "home": 0.04999999999999993,
+          "draw": 0.04000000000000001,
           "away": 0.04000000000000001
         },
         "estimate_methods": {
@@ -16370,14 +16379,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.549261,
-          "draw": 0.241379,
-          "away": 0.20936
+          "home": 0.552239,
+          "draw": 0.238806,
+          "away": 0.208955
         },
         "model_edge": {
-          "home": -0.092331,
-          "draw": 0.046241,
-          "away": 0.04609
+          "home": -0.095309,
+          "draw": 0.048814,
+          "away": 0.046495
         },
         "sources": [
           "Polymarket",
@@ -16418,22 +16427,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.333333,
-          "draw": 0.259804,
-          "away": 0.406863
+          "home": 0.331683,
+          "draw": 0.257426,
+          "away": 0.410891
         },
         "raw_probabilities": {
-          "home": 0.34,
-          "draw": 0.265,
+          "home": 0.335,
+          "draw": 0.26,
           "away": 0.415
         },
         "model_edge": {
-          "home": -0.156863,
-          "draw": -0.058544,
-          "away": 0.215407
+          "home": -0.155213,
+          "draw": -0.056166,
+          "away": 0.211379
         },
         "normalized": true,
-        "normalization_total": 1.02,
+        "normalization_total": 1.01,
         "event_id": "806621",
         "event_title": "Colorado Rapids SC vs. Los Angeles FC",
         "event_slug": "mls-col-laf-2026-08-19",
@@ -16448,28 +16457,28 @@
           "draw": "Will Colorado Rapids SC vs. Los Angeles FC end in a draw?",
           "away": "Will Los Angeles FC win on 2026-08-19?"
         },
-        "liquidity": 15310.72,
+        "liquidity": 12386.48,
         "volume": 0,
         "kickoff": "2026-08-20T01:30:00Z",
-        "updated_at": "2026-08-14T04:26:40Z",
+        "updated_at": "2026-08-14T08:57:41Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.333333,
+          "home": 0.328358,
           "draw": 0.258706,
-          "away": 0.40796
+          "away": 0.412935
         },
         "raw_probabilities": {
-          "home": 0.335,
+          "home": 0.33,
           "draw": 0.26,
-          "away": 0.41
+          "away": 0.415
         },
         "model_edge": {
-          "home": -0.156863,
+          "home": -0.151888,
           "draw": -0.057446,
-          "away": 0.21431
+          "away": 0.209335
         },
         "normalized": true,
         "normalization_total": 1.005,
@@ -16484,10 +16493,10 @@
         "bids": {
           "home": 0.31,
           "draw": 0.24,
-          "away": 0.39
+          "away": 0.4
         },
         "asks": {
-          "home": 0.36,
+          "home": 0.35,
           "draw": 0.28,
           "away": 0.43
         },
@@ -16497,9 +16506,9 @@
           "away": 0.44
         },
         "spreads": {
-          "home": 0.04999999999999999,
+          "home": 0.03999999999999998,
           "draw": 0.040000000000000036,
-          "away": 0.03999999999999998
+          "away": 0.02999999999999997
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -16516,14 +16525,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.333333,
-          "draw": 0.259255,
-          "away": 0.407411
+          "home": 0.33002,
+          "draw": 0.258066,
+          "away": 0.411913
         },
         "model_edge": {
-          "home": -0.156863,
-          "draw": -0.057995,
-          "away": 0.214859
+          "home": -0.15355,
+          "draw": -0.056806,
+          "away": 0.210357
         },
         "sources": [
           "Polymarket",
@@ -16564,22 +16573,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.492683,
-          "draw": 0.239024,
-          "away": 0.268293
+          "home": 0.495098,
+          "draw": 0.240196,
+          "away": 0.264706
         },
         "raw_probabilities": {
           "home": 0.505,
           "draw": 0.245,
-          "away": 0.275
+          "away": 0.27
         },
         "model_edge": {
-          "home": 0.037457,
-          "draw": -0.052804,
-          "away": 0.015347
+          "home": 0.035042,
+          "draw": -0.053976,
+          "away": 0.018934
         },
         "normalized": true,
-        "normalization_total": 1.025,
+        "normalization_total": 1.02,
         "event_id": "806642",
         "event_title": "Real Salt Lake vs. FC Dallas",
         "event_slug": "mls-rsl-dal-2026-08-19",
@@ -16594,27 +16603,27 @@
           "draw": "Will Real Salt Lake vs. FC Dallas end in a draw?",
           "away": "Will FC Dallas win on 2026-08-19?"
         },
-        "liquidity": 15848.03,
+        "liquidity": 11337.53,
         "volume": 0,
         "kickoff": "2026-08-20T01:30:00Z",
-        "updated_at": "2026-08-14T04:26:40Z",
+        "updated_at": "2026-08-14T08:57:41Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.505,
-          "draw": 0.235,
+          "home": 0.5,
+          "draw": 0.24,
           "away": 0.26
         },
         "raw_probabilities": {
-          "home": 0.505,
-          "draw": 0.235,
+          "home": 0.5,
+          "draw": 0.24,
           "away": 0.26
         },
         "model_edge": {
-          "home": 0.02514,
-          "draw": -0.04878,
+          "home": 0.03014,
+          "draw": -0.05378,
           "away": 0.02364
         },
         "normalized": false,
@@ -16628,13 +16637,13 @@
           "away": "KXMLSGAME-26AUG19RSLDAL-DAL"
         },
         "bids": {
-          "home": 0.49,
+          "home": 0.48,
           "draw": 0.22,
           "away": 0.24
         },
         "asks": {
           "home": 0.52,
-          "draw": 0.25,
+          "draw": 0.26,
           "away": 0.28
         },
         "lasts": {
@@ -16643,8 +16652,8 @@
           "away": 0.29
         },
         "spreads": {
-          "home": 0.030000000000000027,
-          "draw": 0.03,
+          "home": 0.040000000000000036,
+          "draw": 0.04000000000000001,
           "away": 0.040000000000000036
         },
         "estimate_methods": {
@@ -16653,23 +16662,23 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 6.0,
-        "volume_24h": 6.0,
-        "open_interest": 6.0,
+        "volume": 33.9,
+        "volume_24h": 33.9,
+        "open_interest": 33.9,
         "kickoff": "2026-08-20T04:30:00+00:00",
         "updated_at": "2026-08-06T00:37:00.126832Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.498841,
-          "draw": 0.237012,
-          "away": 0.264147
+          "home": 0.497549,
+          "draw": 0.240098,
+          "away": 0.262353
         },
         "model_edge": {
-          "home": 0.031299,
-          "draw": -0.050792,
-          "away": 0.019493
+          "home": 0.032591,
+          "draw": -0.053878,
+          "away": 0.021287
         },
         "sources": [
           "Polymarket",
@@ -16740,31 +16749,31 @@
           "draw": "Will Seattle Sounders FC vs. Austin FC end in a draw?",
           "away": "Will Austin FC win on 2026-08-19?"
         },
-        "liquidity": 15631.01,
+        "liquidity": 10697.17,
         "volume": 951.95,
         "kickoff": "2026-08-20T01:30:00Z",
-        "updated_at": "2026-08-14T04:26:40Z",
+        "updated_at": "2026-08-14T08:57:41Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.576355,
-          "draw": 0.226601,
-          "away": 0.197044
+          "home": 0.572139,
+          "draw": 0.228856,
+          "away": 0.199005
         },
         "raw_probabilities": {
-          "home": 0.585,
+          "home": 0.575,
           "draw": 0.23,
           "away": 0.2
         },
         "model_edge": {
-          "home": -0.014145,
-          "draw": -0.017651,
-          "away": 0.031796
+          "home": -0.009929,
+          "draw": -0.019906,
+          "away": 0.029835
         },
         "normalized": true,
-        "normalization_total": 1.015,
+        "normalization_total": 1.005,
         "event_ticker": "KXMLSGAME-26AUG19SEAATX",
         "event_title": "Seattle vs Austin",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug19seaatx",
@@ -16774,7 +16783,7 @@
           "away": "KXMLSGAME-26AUG19SEAATX-ATX"
         },
         "bids": {
-          "home": 0.57,
+          "home": 0.55,
           "draw": 0.21,
           "away": 0.18
         },
@@ -16789,7 +16798,7 @@
           "away": 0.24
         },
         "spreads": {
-          "home": 0.030000000000000027,
+          "home": 0.04999999999999993,
           "draw": 0.04000000000000001,
           "away": 0.04000000000000001
         },
@@ -16808,14 +16817,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.580861,
-          "draw": 0.223056,
-          "away": 0.196083
+          "home": 0.578753,
+          "draw": 0.224184,
+          "away": 0.197064
         },
         "model_edge": {
-          "home": -0.018651,
-          "draw": -0.014106,
-          "away": 0.032757
+          "home": -0.016543,
+          "draw": -0.015234,
+          "away": 0.031776
         },
         "sources": [
           "Polymarket",
@@ -16856,22 +16865,22 @@
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.42268,
-          "draw": 0.216495,
-          "away": 0.360825
+          "home": 0.417085,
+          "draw": 0.221106,
+          "away": 0.361809
         },
         "raw_probabilities": {
-          "home": 0.41,
-          "draw": 0.21,
-          "away": 0.35
+          "home": 0.415,
+          "draw": 0.22,
+          "away": 0.36
         },
         "model_edge": {
-          "home": -0.18709,
-          "draw": -0.035175,
-          "away": 0.222265
+          "home": -0.181495,
+          "draw": -0.039786,
+          "away": 0.221281
         },
         "normalized": true,
-        "normalization_total": 0.97,
+        "normalization_total": 0.995,
         "event_ticker": "KXMLSGAME-26AUG19LAGSJ",
         "event_title": "Los Angeles G vs San Jose",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug19lagsj",
@@ -16882,13 +16891,13 @@
         },
         "bids": {
           "home": 0.39,
-          "draw": 0.2,
-          "away": 0.33
+          "draw": 0.21,
+          "away": 0.34
         },
         "asks": {
-          "home": 0.43,
-          "draw": 0.22,
-          "away": 0.37
+          "home": 0.44,
+          "draw": 0.23,
+          "away": 0.38
         },
         "lasts": {
           "home": 0.44,
@@ -16896,8 +16905,8 @@
           "away": 0.38
         },
         "spreads": {
-          "home": 0.03999999999999998,
-          "draw": 0.01999999999999999,
+          "home": 0.04999999999999999,
+          "draw": 0.020000000000000018,
           "away": 0.03999999999999998
         },
         "estimate_methods": {
@@ -16915,14 +16924,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.42268,
-          "draw": 0.216495,
-          "away": 0.360825
+          "home": 0.417085,
+          "draw": 0.221106,
+          "away": 0.361809
         },
         "model_edge": {
-          "home": -0.18709,
-          "draw": -0.035175,
-          "away": 0.222265
+          "home": -0.181495,
+          "draw": -0.039786,
+          "away": 0.221281
         },
         "sources": [
           "Kalshi"
@@ -16962,22 +16971,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.465347,
-          "draw": 0.232673,
-          "away": 0.30198
+          "home": 0.467662,
+          "draw": 0.228856,
+          "away": 0.303483
         },
         "raw_probabilities": {
           "home": 0.47,
-          "draw": 0.235,
+          "draw": 0.23,
           "away": 0.305
         },
         "model_edge": {
-          "home": -0.067577,
-          "draw": -0.040323,
-          "away": 0.1079
+          "home": -0.069892,
+          "draw": -0.036506,
+          "away": 0.106397
         },
         "normalized": true,
-        "normalization_total": 1.01,
+        "normalization_total": 1.005,
         "event_id": "806669",
         "event_title": "Portland Timbers vs. San Diego FC",
         "event_slug": "mls-por-sdg-2026-08-19",
@@ -16992,31 +17001,31 @@
           "draw": "Will Portland Timbers vs. San Diego FC end in a draw?",
           "away": "Will San Diego FC win on 2026-08-19?"
         },
-        "liquidity": 15592.01,
+        "liquidity": 10912.72,
         "volume": 0,
         "kickoff": "2026-08-20T02:30:00Z",
-        "updated_at": "2026-08-14T04:26:41Z",
+        "updated_at": "2026-08-14T08:57:42Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.467337,
-          "draw": 0.231156,
-          "away": 0.301508
+          "home": 0.469697,
+          "draw": 0.227273,
+          "away": 0.30303
         },
         "raw_probabilities": {
           "home": 0.465,
-          "draw": 0.23,
+          "draw": 0.225,
           "away": 0.3
         },
         "model_edge": {
-          "home": -0.069567,
-          "draw": -0.038806,
-          "away": 0.108372
+          "home": -0.071927,
+          "draw": -0.034923,
+          "away": 0.10685
         },
         "normalized": true,
-        "normalization_total": 0.995,
+        "normalization_total": 0.99,
         "event_ticker": "KXMLSGAME-26AUG19PORSD",
         "event_title": "Portland vs San Diego FC",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug19porsd",
@@ -17032,7 +17041,7 @@
         },
         "asks": {
           "home": 0.48,
-          "draw": 0.25,
+          "draw": 0.24,
           "away": 0.32
         },
         "lasts": {
@@ -17042,7 +17051,7 @@
         },
         "spreads": {
           "home": 0.02999999999999997,
-          "draw": 0.04000000000000001,
+          "draw": 0.03,
           "away": 0.03999999999999998
         },
         "estimate_methods": {
@@ -17060,14 +17069,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.466342,
-          "draw": 0.231914,
-          "away": 0.301744
+          "home": 0.46868,
+          "draw": 0.228065,
+          "away": 0.303257
         },
         "model_edge": {
-          "home": -0.068572,
-          "draw": -0.039564,
-          "away": 0.108136
+          "home": -0.07091,
+          "draw": -0.035715,
+          "away": 0.106623
         },
         "sources": [
           "Polymarket",
@@ -17108,18 +17117,18 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.638614,
-          "draw": 0.20297,
+          "home": 0.643564,
+          "draw": 0.19802,
           "away": 0.158416
         },
         "raw_probabilities": {
-          "home": 0.645,
-          "draw": 0.205,
+          "home": 0.65,
+          "draw": 0.2,
           "away": 0.16
         },
         "model_edge": {
-          "home": 0.082426,
-          "draw": -0.04339,
+          "home": 0.077476,
+          "draw": -0.03844,
           "away": -0.039036
         },
         "normalized": true,
@@ -17138,28 +17147,28 @@
           "draw": "Will Vancouver Whitecaps FC vs. Houston Dynamo end in a draw?",
           "away": "Will Houston Dynamo win on 2026-08-19?"
         },
-        "liquidity": 14924.57,
+        "liquidity": 11868.96,
         "volume": 0,
         "kickoff": "2026-08-20T02:30:00Z",
-        "updated_at": "2026-08-14T04:26:41Z",
+        "updated_at": "2026-08-14T08:57:42Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.641791,
+          "home": 0.646766,
           "draw": 0.199005,
-          "away": 0.159204
+          "away": 0.154229
         },
         "raw_probabilities": {
-          "home": 0.645,
+          "home": 0.65,
           "draw": 0.2,
-          "away": 0.16
+          "away": 0.155
         },
         "model_edge": {
-          "home": 0.079249,
+          "home": 0.074274,
           "draw": -0.039425,
-          "away": -0.039824
+          "away": -0.034849
         },
         "normalized": true,
         "normalization_total": 1.005,
@@ -17172,14 +17181,14 @@
           "away": "KXMLSGAME-26AUG19VANHOU-HOU"
         },
         "bids": {
-          "home": 0.63,
+          "home": 0.64,
           "draw": 0.18,
           "away": 0.14
         },
         "asks": {
           "home": 0.66,
           "draw": 0.22,
-          "away": 0.18
+          "away": 0.17
         },
         "lasts": {
           "home": 0.63,
@@ -17187,9 +17196,9 @@
           "away": 0.19
         },
         "spreads": {
-          "home": 0.030000000000000027,
+          "home": 0.020000000000000018,
           "draw": 0.04000000000000001,
-          "away": 0.03999999999999998
+          "away": 0.03
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -17206,14 +17215,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.640203,
-          "draw": 0.200987,
-          "away": 0.15881
+          "home": 0.645165,
+          "draw": 0.198512,
+          "away": 0.156323
         },
         "model_edge": {
-          "home": 0.080837,
-          "draw": -0.041407,
-          "away": -0.03943
+          "home": 0.075875,
+          "draw": -0.038932,
+          "away": -0.036943
         },
         "sources": [
           "Polymarket",
@@ -17254,22 +17263,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.492537,
-          "draw": 0.253731,
-          "away": 0.253731
+          "home": 0.494949,
+          "draw": 0.252525,
+          "away": 0.252525
         },
         "raw_probabilities": {
-          "home": 0.495,
-          "draw": 0.255,
-          "away": 0.255
+          "home": 0.49,
+          "draw": 0.25,
+          "away": 0.25
         },
         "model_edge": {
-          "home": -0.031217,
-          "draw": 0.027189,
-          "away": 0.004029
+          "home": -0.033629,
+          "draw": 0.028395,
+          "away": 0.005235
         },
         "normalized": true,
-        "normalization_total": 1.005,
+        "normalization_total": 0.99,
         "event_id": "821884",
         "event_title": "Charlotte FC vs. D.C. United SC",
         "event_slug": "mls-clt-dcu-2026-08-22",
@@ -17284,31 +17293,31 @@
           "draw": "Will Charlotte FC vs. D.C. United SC end in a draw?",
           "away": "Will D.C. United SC win on 2026-08-22?"
         },
-        "liquidity": 11812.45,
+        "liquidity": 7739.72,
         "volume": 0,
         "kickoff": "2026-08-22T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:42Z",
+        "updated_at": "2026-08-14T08:57:43Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.483254,
-          "draw": 0.258373,
-          "away": 0.258373
+          "home": 0.449275,
+          "draw": 0.0,
+          "away": 0.550725
         },
         "raw_probabilities": {
-          "home": 0.505,
-          "draw": 0.27,
-          "away": 0.27
+          "home": 0.465,
+          "draw": 0.0,
+          "away": 0.57
         },
         "model_edge": {
-          "home": -0.021934,
-          "draw": 0.022547,
-          "away": -0.000613
+          "home": 0.012045,
+          "draw": 0.28092,
+          "away": -0.292965
         },
         "normalized": true,
-        "normalization_total": 1.045,
+        "normalization_total": 1.035,
         "event_ticker": "KXMLSGAME-26AUG22CLTDCU",
         "event_title": "Charlotte vs DC United",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22cltdcu",
@@ -17318,14 +17327,14 @@
           "away": "KXMLSGAME-26AUG22CLTDCU-DCU"
         },
         "bids": {
-          "home": 0.44,
+          "home": 0.36,
           "draw": 0.2,
-          "away": 0.2
+          "away": 0.14
         },
         "asks": {
           "home": 0.57,
-          "draw": 0.34,
-          "away": 0.34
+          "draw": 0.55,
+          "away": 0.57
         },
         "lasts": {
           "home": 0.0,
@@ -17333,14 +17342,14 @@
           "away": 0.57
         },
         "spreads": {
-          "home": 0.12999999999999995,
-          "draw": 0.14,
-          "away": 0.14
+          "home": 0.20999999999999996,
+          "draw": 0.35000000000000003,
+          "away": 0.42999999999999994
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
-          "draw": "bid_ask_midpoint",
-          "away": "bid_ask_midpoint"
+          "draw": "last_trade",
+          "away": "last_trade"
         },
         "liquidity": 0.0,
         "volume": 3.0,
@@ -17352,14 +17361,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.487896,
-          "draw": 0.256052,
-          "away": 0.256052
+          "home": 0.472112,
+          "draw": 0.126262,
+          "away": 0.401625
         },
         "model_edge": {
-          "home": -0.026576,
-          "draw": 0.024868,
-          "away": 0.001708
+          "home": -0.010792,
+          "draw": 0.154658,
+          "away": -0.143865
         },
         "sources": [
           "Polymarket",
@@ -17400,22 +17409,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.487805,
-          "draw": 0.243902,
-          "away": 0.268293
+          "home": 0.485437,
+          "draw": 0.242718,
+          "away": 0.271845
         },
         "raw_probabilities": {
           "home": 0.5,
           "draw": 0.25,
-          "away": 0.275
+          "away": 0.28
         },
         "model_edge": {
-          "home": 0.058075,
-          "draw": -0.045192,
-          "away": -0.012893
+          "home": 0.060443,
+          "draw": -0.044008,
+          "away": -0.016445
         },
         "normalized": true,
-        "normalization_total": 1.025,
+        "normalization_total": 1.03,
         "event_id": "821866",
         "event_title": "FC Cincinnati vs. Seattle Sounders FC",
         "event_slug": "mls-fcc-sea-2026-08-22",
@@ -17430,31 +17439,31 @@
           "draw": "Will FC Cincinnati vs. Seattle Sounders FC end in a draw?",
           "away": "Will Seattle Sounders FC win on 2026-08-22?"
         },
-        "liquidity": 10512.97,
+        "liquidity": 7015.27,
         "volume": 0,
         "kickoff": "2026-08-22T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:42Z",
+        "updated_at": "2026-08-14T08:57:43Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.487562,
-          "draw": 0.243781,
-          "away": 0.268657
+          "home": 0.492308,
+          "draw": 0.235897,
+          "away": 0.271795
         },
         "raw_probabilities": {
-          "home": 0.49,
-          "draw": 0.245,
-          "away": 0.27
+          "home": 0.48,
+          "draw": 0.23,
+          "away": 0.265
         },
         "model_edge": {
-          "home": 0.058318,
-          "draw": -0.045071,
-          "away": -0.013257
+          "home": 0.053572,
+          "draw": -0.037187,
+          "away": -0.016395
         },
         "normalized": true,
-        "normalization_total": 1.005,
+        "normalization_total": 0.975,
         "event_ticker": "KXMLSGAME-26AUG22CINSEA",
         "event_title": "Cincinnati vs Seattle",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22cinsea",
@@ -17464,13 +17473,13 @@
           "away": "KXMLSGAME-26AUG22CINSEA-SEA"
         },
         "bids": {
-          "home": 0.46,
-          "draw": 0.21,
-          "away": 0.24
+          "home": 0.44,
+          "draw": 0.2,
+          "away": 0.23
         },
         "asks": {
           "home": 0.52,
-          "draw": 0.28,
+          "draw": 0.26,
           "away": 0.3
         },
         "lasts": {
@@ -17479,9 +17488,9 @@
           "away": 0.0
         },
         "spreads": {
-          "home": 0.06,
-          "draw": 0.07000000000000003,
-          "away": 0.06
+          "home": 0.08000000000000002,
+          "draw": 0.06,
+          "away": 0.06999999999999998
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -17498,14 +17507,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.487683,
-          "draw": 0.243841,
-          "away": 0.268475
+          "home": 0.488873,
+          "draw": 0.239308,
+          "away": 0.27182
         },
         "model_edge": {
-          "home": 0.058197,
-          "draw": -0.045131,
-          "away": -0.013075
+          "home": 0.057007,
+          "draw": -0.040598,
+          "away": -0.01642
         },
         "sources": [
           "Polymarket",
@@ -17576,31 +17585,31 @@
           "draw": "Will Inter Miami CF vs. Toronto FC end in a draw?",
           "away": "Will Toronto FC win on 2026-08-22?"
         },
-        "liquidity": 10702.54,
+        "liquidity": 7073.43,
         "volume": 0,
         "kickoff": "2026-08-22T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:43Z",
+        "updated_at": "2026-08-14T08:57:43Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.656716,
-          "draw": 0.19403,
-          "away": 0.149254
+          "home": 0.653266,
+          "draw": 0.190955,
+          "away": 0.155779
         },
         "raw_probabilities": {
-          "home": 0.66,
-          "draw": 0.195,
-          "away": 0.15
+          "home": 0.65,
+          "draw": 0.19,
+          "away": 0.155
         },
         "model_edge": {
-          "home": 0.207944,
-          "draw": -0.1189,
-          "away": -0.089054
+          "home": 0.211394,
+          "draw": -0.115825,
+          "away": -0.095579
         },
         "normalized": true,
-        "normalization_total": 1.005,
+        "normalization_total": 0.995,
         "event_ticker": "KXMLSGAME-26AUG22MIATOR",
         "event_title": "Miami vs Toronto",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22miator",
@@ -17610,14 +17619,14 @@
           "away": "KXMLSGAME-26AUG22MIATOR-TOR"
         },
         "bids": {
-          "home": 0.6,
-          "draw": 0.14,
+          "home": 0.57,
+          "draw": 0.1,
           "away": 0.13
         },
         "asks": {
-          "home": 0.72,
-          "draw": 0.25,
-          "away": 0.17
+          "home": 0.73,
+          "draw": 0.28,
+          "away": 0.18
         },
         "lasts": {
           "home": 0.74,
@@ -17625,9 +17634,9 @@
           "away": 0.35
         },
         "spreads": {
-          "home": 0.12,
-          "draw": 0.10999999999999999,
-          "away": 0.04000000000000001
+          "home": 0.16000000000000003,
+          "draw": 0.18000000000000002,
+          "away": 0.04999999999999999
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -17644,14 +17653,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.643892,
-          "draw": 0.19653,
-          "away": 0.159579
+          "home": 0.642167,
+          "draw": 0.194992,
+          "away": 0.162841
         },
         "model_edge": {
-          "home": 0.220768,
-          "draw": -0.1214,
-          "away": -0.099379
+          "home": 0.222493,
+          "draw": -0.119862,
+          "away": -0.102641
         },
         "sources": [
           "Polymarket",
@@ -17692,22 +17701,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.376238,
-          "draw": 0.262376,
-          "away": 0.361386
+          "home": 0.374384,
+          "draw": 0.26601,
+          "away": 0.359606
         },
         "raw_probabilities": {
           "home": 0.38,
-          "draw": 0.265,
+          "draw": 0.27,
           "away": 0.365
         },
         "model_edge": {
-          "home": 0.111672,
-          "draw": -0.059006,
-          "away": -0.052666
+          "home": 0.113526,
+          "draw": -0.06264,
+          "away": -0.050886
         },
         "normalized": true,
-        "normalization_total": 1.01,
+        "normalization_total": 1.015,
         "event_id": "821875",
         "event_title": "CF Montréal vs. Los Angeles Galaxy",
         "event_slug": "mls-mim-lag-2026-08-22",
@@ -17722,31 +17731,31 @@
           "draw": "Will CF Montréal vs. Los Angeles Galaxy end in a draw?",
           "away": "Will Los Angeles Galaxy win on 2026-08-22?"
         },
-        "liquidity": 3575.62,
+        "liquidity": 3802.6,
         "volume": 0,
         "kickoff": "2026-08-22T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:43Z",
+        "updated_at": "2026-08-14T08:57:44Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.386473,
-          "draw": 0.256039,
-          "away": 0.357488
+          "home": 0.38835,
+          "draw": 0.262136,
+          "away": 0.349515
         },
         "raw_probabilities": {
           "home": 0.4,
-          "draw": 0.265,
-          "away": 0.37
+          "draw": 0.27,
+          "away": 0.36
         },
         "model_edge": {
-          "home": 0.101437,
-          "draw": -0.052669,
-          "away": -0.048768
+          "home": 0.09956,
+          "draw": -0.058766,
+          "away": -0.040795
         },
         "normalized": true,
-        "normalization_total": 1.035,
+        "normalization_total": 1.03,
         "event_ticker": "KXMLSGAME-26AUG22MTLLAG",
         "event_title": "Montreal vs Los Angeles G",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22mtllag",
@@ -17757,8 +17766,8 @@
         },
         "bids": {
           "home": 0.34,
-          "draw": 0.2,
-          "away": 0.3
+          "draw": 0.21,
+          "away": 0.28
         },
         "asks": {
           "home": 0.46,
@@ -17772,8 +17781,8 @@
         },
         "spreads": {
           "home": 0.12,
-          "draw": 0.13,
-          "away": 0.14
+          "draw": 0.12000000000000002,
+          "away": 0.15999999999999998
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -17790,14 +17799,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.381356,
-          "draw": 0.259208,
-          "away": 0.359437
+          "home": 0.381367,
+          "draw": 0.264073,
+          "away": 0.354561
         },
         "model_edge": {
-          "home": 0.106554,
-          "draw": -0.055838,
-          "away": -0.050717
+          "home": 0.106543,
+          "draw": -0.060703,
+          "away": -0.045841
         },
         "sources": [
           "Polymarket",
@@ -17868,31 +17877,31 @@
           "draw": "Will New York Red Bulls vs. Chicago Fire FC end in a draw?",
           "away": "Will Chicago Fire FC win on 2026-08-22?"
         },
-        "liquidity": 10217.6,
+        "liquidity": 6525.34,
         "volume": 0,
         "kickoff": "2026-08-22T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:43Z",
+        "updated_at": "2026-08-14T08:57:45Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.29064,
-          "draw": 0.246305,
-          "away": 0.463054
+          "home": 0.282927,
+          "draw": 0.24878,
+          "away": 0.468293
         },
         "raw_probabilities": {
-          "home": 0.295,
-          "draw": 0.25,
-          "away": 0.47
+          "home": 0.29,
+          "draw": 0.255,
+          "away": 0.48
         },
         "model_edge": {
-          "home": 0.07241,
-          "draw": -0.050355,
-          "away": -0.022054
+          "home": 0.080123,
+          "draw": -0.05283,
+          "away": -0.027293
         },
         "normalized": true,
-        "normalization_total": 1.015,
+        "normalization_total": 1.025,
         "event_ticker": "KXMLSGAME-26AUG22NYRBCHI",
         "event_title": "New York RB vs Chicago Fire",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22nyrbchi",
@@ -17907,9 +17916,9 @@
           "away": 0.39
         },
         "asks": {
-          "home": 0.35,
-          "draw": 0.31,
-          "away": 0.55
+          "home": 0.34,
+          "draw": 0.32,
+          "away": 0.57
         },
         "lasts": {
           "home": 0.0,
@@ -17917,9 +17926,9 @@
           "away": 0.0
         },
         "spreads": {
-          "home": 0.10999999999999999,
-          "draw": 0.12,
-          "away": 0.16000000000000003
+          "home": 0.10000000000000003,
+          "draw": 0.13,
+          "away": 0.17999999999999994
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -17936,14 +17945,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.286096,
-          "draw": 0.244511,
-          "away": 0.469391
+          "home": 0.28224,
+          "draw": 0.245749,
+          "away": 0.47201
         },
         "model_edge": {
-          "home": 0.076954,
-          "draw": -0.048561,
-          "away": -0.028391
+          "home": 0.08081,
+          "draw": -0.049799,
+          "away": -0.03101
         },
         "sources": [
           "Polymarket",
@@ -18014,31 +18023,31 @@
           "draw": "Will Orlando City SC vs. Real Salt Lake end in a draw?",
           "away": "Will Real Salt Lake win on 2026-08-22?"
         },
-        "liquidity": 10625.35,
+        "liquidity": 7792.41,
         "volume": 0,
         "kickoff": "2026-08-22T23:30:00Z",
-        "updated_at": "2026-08-14T04:26:44Z",
+        "updated_at": "2026-08-14T08:57:45Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.390244,
-          "draw": 0.243902,
-          "away": 0.365854
+          "home": 0.37619,
+          "draw": 0.242857,
+          "away": 0.380952
         },
         "raw_probabilities": {
-          "home": 0.4,
-          "draw": 0.25,
-          "away": 0.375
+          "home": 0.395,
+          "draw": 0.255,
+          "away": 0.4
         },
         "model_edge": {
-          "home": -0.089384,
-          "draw": -0.052412,
-          "away": 0.141796
+          "home": -0.07533,
+          "draw": -0.051367,
+          "away": 0.126698
         },
         "normalized": true,
-        "normalization_total": 1.025,
+        "normalization_total": 1.05,
         "event_ticker": "KXMLSGAME-26AUG22ORLRSL",
         "event_title": "Orlando vs Salt Lake",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22orlrsl",
@@ -18048,14 +18057,14 @@
           "away": "KXMLSGAME-26AUG22ORLRSL-RSL"
         },
         "bids": {
-          "home": 0.34,
+          "home": 0.31,
           "draw": 0.19,
           "away": 0.33
         },
         "asks": {
-          "home": 0.46,
-          "draw": 0.31,
-          "away": 0.42
+          "home": 0.48,
+          "draw": 0.32,
+          "away": 0.47
         },
         "lasts": {
           "home": 0.57,
@@ -18063,9 +18072,9 @@
           "away": 0.43
         },
         "spreads": {
-          "home": 0.12,
-          "draw": 0.12,
-          "away": 0.08999999999999997
+          "home": 0.16999999999999998,
+          "draw": 0.13,
+          "away": 0.13999999999999996
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -18074,7 +18083,7 @@
         },
         "liquidity": 0.0,
         "volume": 70.0,
-        "volume_24h": 34.0,
+        "volume_24h": 0.0,
         "open_interest": 36.0,
         "kickoff": "2026-08-23T02:30:00+00:00",
         "updated_at": "2026-08-08T00:52:00.212464Z",
@@ -18082,14 +18091,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.389703,
-          "draw": 0.245104,
-          "away": 0.365193
+          "home": 0.382676,
+          "draw": 0.244581,
+          "away": 0.372742
         },
         "model_edge": {
-          "home": -0.088843,
-          "draw": -0.053614,
-          "away": 0.142457
+          "home": -0.081816,
+          "draw": -0.053091,
+          "away": 0.134908
         },
         "sources": [
           "Polymarket",
@@ -18160,31 +18169,31 @@
           "draw": "Will Austin FC vs. Philadelphia Union end in a draw?",
           "away": "Will Philadelphia Union win on 2026-08-22?"
         },
-        "liquidity": 12347.38,
+        "liquidity": 8758.0,
         "volume": 0,
         "kickoff": "2026-08-23T00:30:00Z",
-        "updated_at": "2026-08-14T04:26:44Z",
+        "updated_at": "2026-08-14T08:57:45Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.346341,
-          "draw": 0.263415,
-          "away": 0.390244
+          "home": 0.345972,
+          "draw": 0.270142,
+          "away": 0.383886
         },
         "raw_probabilities": {
-          "home": 0.355,
-          "draw": 0.27,
-          "away": 0.4
+          "home": 0.365,
+          "draw": 0.285,
+          "away": 0.405
         },
         "model_edge": {
-          "home": -0.101041,
-          "draw": -0.031635,
-          "away": 0.132676
+          "home": -0.100672,
+          "draw": -0.038362,
+          "away": 0.139034
         },
         "normalized": true,
-        "normalization_total": 1.025,
+        "normalization_total": 1.055,
         "event_ticker": "KXMLSGAME-26AUG22ATXPHI",
         "event_title": "Austin vs Philadelphia",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22atxphi",
@@ -18199,9 +18208,9 @@
           "away": 0.35
         },
         "asks": {
-          "home": 0.41,
-          "draw": 0.33,
-          "away": 0.45
+          "home": 0.43,
+          "draw": 0.36,
+          "away": 0.46
         },
         "lasts": {
           "home": 0.75,
@@ -18209,9 +18218,9 @@
           "away": 0.0
         },
         "spreads": {
-          "home": 0.10999999999999999,
-          "draw": 0.12000000000000002,
-          "away": 0.10000000000000003
+          "home": 0.13,
+          "draw": 0.15,
+          "away": 0.11000000000000004
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -18228,14 +18237,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.346537,
-          "draw": 0.259848,
-          "away": 0.393614
+          "home": 0.346353,
+          "draw": 0.263211,
+          "away": 0.390435
         },
         "model_edge": {
-          "home": -0.101237,
-          "draw": -0.028068,
-          "away": 0.129306
+          "home": -0.101053,
+          "draw": -0.031431,
+          "away": 0.132485
         },
         "sources": [
           "Polymarket",
@@ -18306,31 +18315,31 @@
           "draw": "Will Nashville SC vs. Columbus Crew end in a draw?",
           "away": "Will Columbus Crew win on 2026-08-22?"
         },
-        "liquidity": 11029.73,
+        "liquidity": 7610.53,
         "volume": 0,
         "kickoff": "2026-08-23T00:30:00Z",
-        "updated_at": "2026-08-14T04:26:44Z",
+        "updated_at": "2026-08-14T08:57:46Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.525,
-          "draw": 0.25,
-          "away": 0.225
+          "home": 0.522388,
+          "draw": 0.248756,
+          "away": 0.228856
         },
         "raw_probabilities": {
           "home": 0.525,
           "draw": 0.25,
-          "away": 0.225
+          "away": 0.23
         },
         "model_edge": {
-          "home": 0.09858,
-          "draw": -0.00972,
-          "away": -0.08886
+          "home": 0.101192,
+          "draw": -0.008476,
+          "away": -0.092716
         },
-        "normalized": false,
-        "normalization_total": 1.0,
+        "normalized": true,
+        "normalization_total": 1.005,
         "event_ticker": "KXMLSGAME-26AUG22NSHCLB",
         "event_title": "Nashville vs Columbus",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22nshclb",
@@ -18347,7 +18356,7 @@
         "asks": {
           "home": 0.56,
           "draw": 0.28,
-          "away": 0.25
+          "away": 0.26
         },
         "lasts": {
           "home": 0.0,
@@ -18357,7 +18366,7 @@
         "spreads": {
           "home": 0.07000000000000006,
           "draw": 0.060000000000000026,
-          "away": 0.04999999999999999
+          "away": 0.06
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -18374,14 +18383,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.520954,
-          "draw": 0.25302,
-          "away": 0.226027
+          "home": 0.519648,
+          "draw": 0.252397,
+          "away": 0.227955
         },
         "model_edge": {
-          "home": 0.102626,
-          "draw": -0.01274,
-          "away": -0.089887
+          "home": 0.103932,
+          "draw": -0.012117,
+          "away": -0.091815
         },
         "sources": [
           "Polymarket",
@@ -18422,22 +18431,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.482759,
-          "draw": 0.256158,
-          "away": 0.261084
+          "home": 0.480392,
+          "draw": 0.254902,
+          "away": 0.264706
         },
         "raw_probabilities": {
           "home": 0.49,
           "draw": 0.26,
-          "away": 0.265
+          "away": 0.27
         },
         "model_edge": {
-          "home": -0.087269,
-          "draw": 0.040962,
-          "away": 0.046306
+          "home": -0.084902,
+          "draw": 0.042218,
+          "away": 0.042684
         },
         "normalized": true,
-        "normalization_total": 1.015,
+        "normalization_total": 1.02,
         "event_id": "821894",
         "event_title": "St. Louis City SC vs. Houston Dynamo",
         "event_slug": "mls-stl-hou-2026-08-22",
@@ -18452,88 +18461,27 @@
           "draw": "Will St. Louis City SC vs. Houston Dynamo end in a draw?",
           "away": "Will Houston Dynamo win on 2026-08-22?"
         },
-        "liquidity": 10786.09,
+        "liquidity": 7851.25,
         "volume": 0,
         "kickoff": "2026-08-23T00:30:00Z",
-        "updated_at": "2026-08-14T04:26:45Z",
-        "comparison_only": true
-      },
-      "kalshi": {
-        "source": "Kalshi",
-        "probabilities": {
-          "home": 0.490291,
-          "draw": 0.247573,
-          "away": 0.262136
-        },
-        "raw_probabilities": {
-          "home": 0.505,
-          "draw": 0.255,
-          "away": 0.27
-        },
-        "model_edge": {
-          "home": -0.094801,
-          "draw": 0.049547,
-          "away": 0.045254
-        },
-        "normalized": true,
-        "normalization_total": 1.03,
-        "event_ticker": "KXMLSGAME-26AUG22STLHOU",
-        "event_title": "Saint Louis vs Houston",
-        "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22stlhou",
-        "market_tickers": {
-          "home": "KXMLSGAME-26AUG22STLHOU-STL",
-          "draw": "KXMLSGAME-26AUG22STLHOU-TIE",
-          "away": "KXMLSGAME-26AUG22STLHOU-HOU"
-        },
-        "bids": {
-          "home": 0.44,
-          "draw": 0.19,
-          "away": 0.21
-        },
-        "asks": {
-          "home": 0.57,
-          "draw": 0.32,
-          "away": 0.33
-        },
-        "lasts": {
-          "home": 0.0,
-          "draw": 0.0,
-          "away": 0.0
-        },
-        "spreads": {
-          "home": 0.12999999999999995,
-          "draw": 0.13,
-          "away": 0.12000000000000002
-        },
-        "estimate_methods": {
-          "home": "bid_ask_midpoint",
-          "draw": "bid_ask_midpoint",
-          "away": "bid_ask_midpoint"
-        },
-        "liquidity": 0.0,
-        "volume": 0.0,
-        "volume_24h": 0.0,
-        "open_interest": 0.0,
-        "kickoff": "2026-08-23T03:30:00+00:00",
-        "updated_at": "2026-08-09T00:46:00.210294Z",
+        "updated_at": "2026-08-14T08:57:46Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.486525,
-          "draw": 0.251865,
-          "away": 0.26161
+          "home": 0.480392,
+          "draw": 0.254902,
+          "away": 0.264706
         },
         "model_edge": {
-          "home": -0.091035,
-          "draw": 0.045255,
-          "away": 0.04578
+          "home": -0.084902,
+          "draw": 0.042218,
+          "away": 0.042684
         },
         "sources": [
-          "Polymarket",
-          "Kalshi"
+          "Polymarket"
         ],
-        "source_count": 2,
+        "source_count": 1,
         "method": "Equal-weight mean of available normalized prediction-market estimates",
         "comparison_only": true
       }
@@ -18568,22 +18516,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.605911,
-          "draw": 0.221675,
-          "away": 0.172414
+          "home": 0.6,
+          "draw": 0.219512,
+          "away": 0.180488
         },
         "raw_probabilities": {
           "home": 0.615,
           "draw": 0.225,
-          "away": 0.175
+          "away": 0.185
         },
         "model_edge": {
-          "home": 0.151369,
-          "draw": -0.112035,
-          "away": -0.039334
+          "home": 0.15728,
+          "draw": -0.109872,
+          "away": -0.047408
         },
         "normalized": true,
-        "normalization_total": 1.015,
+        "normalization_total": 1.025,
         "event_id": "821902",
         "event_title": "Vancouver Whitecaps FC vs. FC Dallas",
         "event_slug": "mls-vwh-dal-2026-08-22",
@@ -18598,28 +18546,28 @@
           "draw": "Will Vancouver Whitecaps FC vs. FC Dallas end in a draw?",
           "away": "Will FC Dallas win on 2026-08-22?"
         },
-        "liquidity": 10605.84,
+        "liquidity": 7262.18,
         "volume": 3.95,
         "kickoff": "2026-08-23T01:30:00Z",
-        "updated_at": "2026-08-14T04:26:45Z",
+        "updated_at": "2026-08-14T08:57:48Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
           "home": 0.613861,
-          "draw": 0.217822,
-          "away": 0.168317
+          "draw": 0.212871,
+          "away": 0.173267
         },
         "raw_probabilities": {
           "home": 0.62,
-          "draw": 0.22,
-          "away": 0.17
+          "draw": 0.215,
+          "away": 0.175
         },
         "model_edge": {
           "home": 0.143419,
-          "draw": -0.108182,
-          "away": -0.035237
+          "draw": -0.103231,
+          "away": -0.040187
         },
         "normalized": true,
         "normalization_total": 1.01,
@@ -18633,8 +18581,8 @@
         },
         "bids": {
           "home": 0.6,
-          "draw": 0.19,
-          "away": 0.13
+          "draw": 0.18,
+          "away": 0.14
         },
         "asks": {
           "home": 0.64,
@@ -18648,8 +18596,8 @@
         },
         "spreads": {
           "home": 0.040000000000000036,
-          "draw": 0.06,
-          "away": 0.07999999999999999
+          "draw": 0.07,
+          "away": 0.06999999999999998
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -18658,7 +18606,7 @@
         },
         "liquidity": 0.0,
         "volume": 35.0,
-        "volume_24h": 32.0,
+        "volume_24h": 2.0,
         "open_interest": 33.0,
         "kickoff": "2026-08-23T04:30:00+00:00",
         "updated_at": "2026-08-09T00:46:00.210294Z",
@@ -18666,14 +18614,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.609886,
-          "draw": 0.219749,
-          "away": 0.170366
+          "home": 0.606931,
+          "draw": 0.216192,
+          "away": 0.176878
         },
         "model_edge": {
-          "home": 0.147394,
-          "draw": -0.110109,
-          "away": -0.037286
+          "home": 0.150349,
+          "draw": -0.106552,
+          "away": -0.043798
         },
         "sources": [
           "Polymarket",
@@ -18744,28 +18692,28 @@
           "draw": "Will Los Angeles FC vs. Portland Timbers end in a draw?",
           "away": "Will Portland Timbers win on 2026-08-22?"
         },
-        "liquidity": 10782.99,
+        "liquidity": 6969.94,
         "volume": 0,
         "kickoff": "2026-08-23T02:30:00Z",
-        "updated_at": "2026-08-14T04:26:45Z",
+        "updated_at": "2026-08-14T08:57:48Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.630542,
+          "home": 0.625616,
           "draw": 0.20197,
-          "away": 0.167488
+          "away": 0.172414
         },
         "raw_probabilities": {
-          "home": 0.64,
+          "home": 0.635,
           "draw": 0.205,
-          "away": 0.17
+          "away": 0.175
         },
         "model_edge": {
-          "home": 0.006918,
+          "home": 0.011844,
           "draw": -0.02993,
-          "away": 0.023012
+          "away": 0.018086
         },
         "normalized": true,
         "normalization_total": 1.015,
@@ -18778,14 +18726,14 @@
           "away": "KXMLSGAME-26AUG22LAFCPOR-POR"
         },
         "bids": {
-          "home": 0.61,
+          "home": 0.6,
           "draw": 0.18,
           "away": 0.14
         },
         "asks": {
           "home": 0.67,
           "draw": 0.23,
-          "away": 0.2
+          "away": 0.21
         },
         "lasts": {
           "home": 0.0,
@@ -18793,9 +18741,9 @@
           "away": 0.18
         },
         "spreads": {
-          "home": 0.06000000000000005,
+          "home": 0.07000000000000006,
           "draw": 0.05000000000000002,
-          "away": 0.06
+          "away": 0.06999999999999998
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -18804,7 +18752,7 @@
         },
         "liquidity": 0.0,
         "volume": 37.0,
-        "volume_24h": 32.0,
+        "volume_24h": 0.0,
         "open_interest": 37.0,
         "kickoff": "2026-08-23T05:30:00+00:00",
         "updated_at": "2026-08-09T00:47:00.213028Z",
@@ -18812,14 +18760,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.630805,
+          "home": 0.628342,
           "draw": 0.200499,
-          "away": 0.168695
+          "away": 0.171158
         },
         "model_edge": {
-          "home": 0.006655,
+          "home": 0.009118,
           "draw": -0.028459,
-          "away": 0.021805
+          "away": 0.019342
         },
         "sources": [
           "Polymarket",
@@ -18890,31 +18838,31 @@
           "draw": "Will San Diego FC vs. Colorado Rapids SC end in a draw?",
           "away": "Will Colorado Rapids SC win on 2026-08-22?"
         },
-        "liquidity": 11149.31,
+        "liquidity": 7769.1,
         "volume": 0,
         "kickoff": "2026-08-23T02:30:00Z",
-        "updated_at": "2026-08-14T04:26:46Z",
+        "updated_at": "2026-08-14T08:57:49Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.47,
-          "draw": 0.24,
-          "away": 0.29
+          "home": 0.472362,
+          "draw": 0.241206,
+          "away": 0.286432
         },
         "raw_probabilities": {
           "home": 0.47,
           "draw": 0.24,
-          "away": 0.29
+          "away": 0.285
         },
         "model_edge": {
-          "home": 0.19733,
-          "draw": -0.06427,
-          "away": -0.13306
+          "home": 0.194968,
+          "draw": -0.065476,
+          "away": -0.129492
         },
-        "normalized": false,
-        "normalization_total": 1.0,
+        "normalized": true,
+        "normalization_total": 0.995,
         "event_ticker": "KXMLSGAME-26AUG22SDCOL",
         "event_title": "San Diego FC vs Colorado",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22sdcol",
@@ -18931,7 +18879,7 @@
         "asks": {
           "home": 0.5,
           "draw": 0.27,
-          "away": 0.32
+          "away": 0.31
         },
         "lasts": {
           "home": 0.51,
@@ -18941,7 +18889,7 @@
         "spreads": {
           "home": 0.06,
           "draw": 0.060000000000000026,
-          "away": 0.06
+          "away": 0.04999999999999999
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -18958,14 +18906,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.468009,
-          "draw": 0.241359,
-          "away": 0.290631
+          "home": 0.469191,
+          "draw": 0.241962,
+          "away": 0.288847
         },
         "model_edge": {
-          "home": 0.199321,
-          "draw": -0.065629,
-          "away": -0.133691
+          "home": 0.198139,
+          "draw": -0.066232,
+          "away": -0.131907
         },
         "sources": [
           "Polymarket",
@@ -19036,31 +18984,31 @@
           "draw": "Will San Jose Earthquakes vs. Minnesota United FC end in a draw?",
           "away": "Will Minnesota United FC win on 2026-08-22?"
         },
-        "liquidity": 9855.36,
+        "liquidity": 6877.13,
         "volume": 0,
         "kickoff": "2026-08-23T02:30:00Z",
-        "updated_at": "2026-08-14T04:26:46Z",
+        "updated_at": "2026-08-14T08:57:49Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.46,
-          "draw": 0.265,
-          "away": 0.275
+          "home": 0.460396,
+          "draw": 0.262376,
+          "away": 0.277228
         },
         "raw_probabilities": {
-          "home": 0.46,
+          "home": 0.465,
           "draw": 0.265,
-          "away": 0.275
+          "away": 0.28
         },
         "model_edge": {
-          "home": 0.30233,
-          "draw": -0.11675,
-          "away": -0.18558
+          "home": 0.301934,
+          "draw": -0.114126,
+          "away": -0.187808
         },
-        "normalized": false,
-        "normalization_total": 1.0,
+        "normalized": true,
+        "normalization_total": 1.01,
         "event_ticker": "KXMLSGAME-26AUG22SJMIN",
         "event_title": "San Jose vs Minnesota",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22sjmin",
@@ -19075,9 +19023,9 @@
           "away": 0.23
         },
         "asks": {
-          "home": 0.52,
+          "home": 0.53,
           "draw": 0.3,
-          "away": 0.32
+          "away": 0.33
         },
         "lasts": {
           "home": 0.0,
@@ -19085,9 +19033,9 @@
           "away": 0.0
         },
         "spreads": {
-          "home": 0.12,
+          "home": 0.13,
           "draw": 0.06999999999999998,
-          "away": 0.09
+          "away": 0.1
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -19104,14 +19052,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.458724,
-          "draw": 0.273458,
-          "away": 0.267819
+          "home": 0.458921,
+          "draw": 0.272146,
+          "away": 0.268933
         },
         "model_edge": {
-          "home": 0.303606,
-          "draw": -0.125208,
-          "away": -0.178399
+          "home": 0.303409,
+          "draw": -0.123896,
+          "away": -0.179513
         },
         "sources": [
           "Polymarket",
@@ -19152,22 +19100,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.373134,
-          "draw": 0.268657,
-          "away": 0.358209
+          "home": 0.376238,
+          "draw": 0.267327,
+          "away": 0.356436
         },
         "raw_probabilities": {
-          "home": 0.375,
+          "home": 0.38,
           "draw": 0.27,
           "away": 0.36
         },
         "model_edge": {
-          "home": 0.046876,
-          "draw": -0.016417,
-          "away": -0.030469
+          "home": 0.043772,
+          "draw": -0.015087,
+          "away": -0.028696
         },
         "normalized": true,
-        "normalization_total": 1.005,
+        "normalization_total": 1.01,
         "event_id": "828446",
         "event_title": "New England Revolution vs. New York City FC",
         "event_slug": "mls-ner-nyc-2026-08-23",
@@ -19182,31 +19130,31 @@
           "draw": "Will New England Revolution vs. New York City FC end in a draw?",
           "away": "Will New York City FC win on 2026-08-23?"
         },
-        "liquidity": 9597.49,
+        "liquidity": 5373.33,
         "volume": 0,
         "kickoff": "2026-08-23T20:30:00Z",
-        "updated_at": "2026-08-14T04:26:46Z",
+        "updated_at": "2026-08-14T08:57:49Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.371287,
-          "draw": 0.267327,
-          "away": 0.361386
+          "home": 0.376884,
+          "draw": 0.266332,
+          "away": 0.356784
         },
         "raw_probabilities": {
           "home": 0.375,
-          "draw": 0.27,
-          "away": 0.365
+          "draw": 0.265,
+          "away": 0.355
         },
         "model_edge": {
-          "home": 0.048723,
-          "draw": -0.015087,
-          "away": -0.033646
+          "home": 0.043126,
+          "draw": -0.014092,
+          "away": -0.029044
         },
         "normalized": true,
-        "normalization_total": 1.01,
+        "normalization_total": 0.995,
         "event_ticker": "KXMLSGAME-26AUG23NENYC",
         "event_title": "New England vs New York City",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug23nenyc",
@@ -19218,11 +19166,11 @@
         "bids": {
           "home": 0.34,
           "draw": 0.23,
-          "away": 0.33
+          "away": 0.31
         },
         "asks": {
           "home": 0.41,
-          "draw": 0.31,
+          "draw": 0.3,
           "away": 0.4
         },
         "lasts": {
@@ -19232,8 +19180,8 @@
         },
         "spreads": {
           "home": 0.06999999999999995,
-          "draw": 0.07999999999999999,
-          "away": 0.07
+          "draw": 0.06999999999999998,
+          "away": 0.09000000000000002
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -19250,14 +19198,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.37221,
-          "draw": 0.267992,
-          "away": 0.359797
+          "home": 0.376561,
+          "draw": 0.266829,
+          "away": 0.35661
         },
         "model_edge": {
-          "home": 0.0478,
-          "draw": -0.015752,
-          "away": -0.032057
+          "home": 0.043449,
+          "draw": -0.014589,
+          "away": -0.02887
         },
         "sources": [
           "Polymarket",
@@ -19298,22 +19246,22 @@
       "polymarket": {
         "source": "Polymarket",
         "probabilities": {
-          "home": 0.504587,
-          "draw": 0.252294,
-          "away": 0.243119
+          "home": 0.506912,
+          "draw": 0.253456,
+          "away": 0.239631
         },
         "raw_probabilities": {
           "home": 0.55,
           "draw": 0.275,
-          "away": 0.265
+          "away": 0.26
         },
         "model_edge": {
-          "home": -0.006127,
-          "draw": -0.018794,
-          "away": 0.024921
+          "home": -0.008452,
+          "draw": -0.019956,
+          "away": 0.028409
         },
         "normalized": true,
-        "normalization_total": 1.09,
+        "normalization_total": 1.085,
         "event_id": "828459",
         "event_title": "Atlanta United FC vs. Sporting Kansas City",
         "event_slug": "mls-atl-skc-2026-08-23",
@@ -19328,31 +19276,31 @@
           "draw": "Will Atlanta United FC vs. Sporting Kansas City end in a draw?",
           "away": "Will Sporting Kansas City win on 2026-08-23?"
         },
-        "liquidity": 8466.72,
+        "liquidity": 4858.94,
         "volume": 0,
         "kickoff": "2026-08-23T23:00:00Z",
-        "updated_at": "2026-08-14T04:26:47Z",
+        "updated_at": "2026-08-14T08:57:50Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.466368,
-          "draw": 0.273543,
-          "away": 0.26009
+          "home": 0.527638,
+          "draw": 0.241206,
+          "away": 0.231156
         },
         "raw_probabilities": {
-          "home": 0.52,
-          "draw": 0.305,
-          "away": 0.29
+          "home": 0.525,
+          "draw": 0.24,
+          "away": 0.23
         },
         "model_edge": {
-          "home": 0.032092,
-          "draw": -0.040043,
-          "away": 0.00795
+          "home": -0.029178,
+          "draw": -0.007706,
+          "away": 0.036884
         },
         "normalized": true,
-        "normalization_total": 1.115,
+        "normalization_total": 0.995,
         "event_ticker": "KXMLSGAME-26AUG23ATLSKC",
         "event_title": "Atlanta vs Kansas City",
         "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug23atlskc",
@@ -19362,14 +19310,14 @@
           "away": "KXMLSGAME-26AUG23ATLSKC-SKC"
         },
         "bids": {
-          "home": 0.46,
+          "home": 0.47,
           "draw": 0.19,
           "away": 0.18
         },
         "asks": {
           "home": 0.58,
-          "draw": 0.42,
-          "away": 0.4
+          "draw": 0.29,
+          "away": 0.28
         },
         "lasts": {
           "home": 0.65,
@@ -19377,9 +19325,9 @@
           "away": 0.18
         },
         "spreads": {
-          "home": 0.11999999999999994,
-          "draw": 0.22999999999999998,
-          "away": 0.22000000000000003
+          "home": 0.10999999999999999,
+          "draw": 0.09999999999999998,
+          "away": 0.10000000000000003
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -19396,14 +19344,14 @@
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.485478,
-          "draw": 0.262918,
-          "away": 0.251605
+          "home": 0.517275,
+          "draw": 0.247331,
+          "away": 0.235394
         },
         "model_edge": {
-          "home": 0.012982,
-          "draw": -0.029418,
-          "away": 0.016435
+          "home": -0.018815,
+          "draw": -0.013831,
+          "away": 0.032646
         },
         "sources": [
           "Polymarket",
@@ -24905,17 +24853,17 @@
   ],
   "news": [
     {
-      "id": "system-mls-2026-08-14T04:26:54Z",
+      "id": "system-mls-2026-08-14T08:57:56Z",
       "type": "system",
       "date": "2026-08-14",
-      "generated_at": "2026-08-14T04:26:54Z",
+      "generated_at": "2026-08-14T08:57:56Z",
       "team": null,
       "headline": "Automated model refresh completed",
       "summary": "The latest Major League Soccer data was downloaded, the Bayesian model was fully refitted, and 20,000 season simulations were completed.",
       "affects_forecast": true,
       "impact": "System update",
       "details": {
-        "generated_at": "2026-08-14T04:26:54Z",
+        "generated_at": "2026-08-14T08:57:56Z",
         "model_version": "bayes-ss-poisson-v5-market-consensus",
         "matches_fitted": 809,
         "simulations": 20000,
@@ -24942,16 +24890,16 @@
         "polymarket_match_quotes": 43,
         "polymarket_match_coverage": 0.716667,
         "kalshi_season_quotes": 29,
-        "kalshi_match_quotes": 45,
-        "kalshi_match_coverage": 0.75,
+        "kalshi_match_quotes": 44,
+        "kalshi_match_coverage": 0.7333333333333333,
         "note": "This is an automated system entry. It is intentionally not assigned to a club."
       }
     },
     {
-      "id": "warning-mls-2026-08-14T04:26:54Z",
+      "id": "warning-mls-2026-08-14T08:57:56Z",
       "type": "warning",
       "date": "2026-08-14",
-      "generated_at": "2026-08-14T04:26:54Z",
+      "generated_at": "2026-08-14T08:57:56Z",
       "team": null,
       "headline": "One or more data-source warnings were reported",
       "summary": "The forecast completed, but at least one connected source returned a warning that should be reviewed.",
@@ -24970,10 +24918,10 @@
       }
     },
     {
-      "id": "warning-match-market-mls-2026-08-14T04:26:54Z",
+      "id": "warning-match-market-mls-2026-08-14T08:57:56Z",
       "type": "warning",
       "date": "2026-08-14",
-      "generated_at": "2026-08-14T04:26:54Z",
+      "generated_at": "2026-08-14T08:57:56Z",
       "team": null,
       "headline": "A match forecast differs materially from Polymarket",
       "summary": "The largest exact-match gap is 30.5 percentage points for San Jose Earthquakes vs Minnesota United FC.",
@@ -25011,8 +24959,8 @@
             "away": "nashville-sc",
             "outcome": "away",
             "model": 0.69617,
-            "market": 0.408867,
-            "difference": 0.287303
+            "market": 0.410891,
+            "difference": 0.285279
           },
           {
             "fixture_id": "fd-mls-2026-284",
@@ -25042,22 +24990,22 @@
             "difference": 0.223867
           },
           {
-            "fixture_id": "fd-mls-2026-294",
-            "home": "colorado-rapids",
-            "away": "los-angeles-fc",
-            "outcome": "away",
-            "model": 0.62227,
-            "market": 0.406863,
-            "difference": 0.215407
-          },
-          {
             "fixture_id": "fd-mls-2026-276",
             "home": "toronto-fc",
             "away": "new-england-revolution",
             "outcome": "away",
             "model": 0.51087,
-            "market": 0.296482,
-            "difference": 0.214388
+            "market": 0.29798,
+            "difference": 0.21289
+          },
+          {
+            "fixture_id": "fd-mls-2026-294",
+            "home": "colorado-rapids",
+            "away": "los-angeles-fc",
+            "outcome": "away",
+            "model": 0.62227,
+            "market": 0.410891,
+            "difference": 0.211379
           },
           {
             "fixture_id": "fd-mls-2026-311",
