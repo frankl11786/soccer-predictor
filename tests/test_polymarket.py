@@ -238,6 +238,60 @@ class PolymarketComparisonTests(unittest.TestCase):
         self.assertEqual(mocked.call_count, 1)
         self.assertTrue(metadata["errors"])
 
+    def test_match_discovery_uses_active_soccer_events_before_public_search(self):
+        markets = [
+            binary_market("home-discovery", "Atlanta United", 0.43),
+            binary_market("draw-discovery", "Draw", 0.29),
+            binary_market("away-discovery", "Seattle Sounders FC", 0.31),
+        ]
+        # Generic startDate is deliberately unrelated; gameStartTime is the
+        # sports-specific field and should be preferred for fixture matching.
+        event = self.event(markets, startDate="2026-01-01T00:00:00Z")
+        event.pop("eventStartTime", None)
+        for market in event["markets"]:
+            market["gameStartTime"] = self.kickoff.isoformat().replace("+00:00", "Z")
+
+        calls = []
+
+        def side_effect(url, **kwargs):
+            calls.append((url, kwargs))
+            if url.endswith("/events"):
+                return FakeResponse([event])
+            raise AssertionError(f"public-search should not be needed: {url}")
+
+        with patch("predictor.polymarket.requests.get", side_effect=side_effect):
+            quotes, metadata = fetch_match_quotes([self.fixture], self.teams, ("MLS",), 7, 10)
+
+        self.assertIn("mls-1", quotes)
+        self.assertEqual(metadata["search_fallbacks"], 0)
+        self.assertEqual(metadata["discovery_events"], 1)
+        params = calls[0][1]["params"]
+        self.assertEqual(params["tag_slug"], "soccer")
+        self.assertTrue(params["active"])
+        self.assertFalse(params["closed"])
+
+    def test_public_search_remains_fallback_when_event_discovery_misses(self):
+        markets = [
+            binary_market("home-fallback", "Atlanta United", 0.43),
+            binary_market("draw-fallback", "Draw", 0.29),
+            binary_market("away-fallback", "Seattle Sounders FC", 0.31),
+        ]
+        event = self.event(markets)
+
+        def side_effect(url, **kwargs):
+            if url.endswith("/events"):
+                return FakeResponse([])
+            if url.endswith("/public-search"):
+                return FakeResponse({"events": [event]})
+            raise AssertionError(f"unexpected URL {url}")
+
+        with patch("predictor.polymarket.requests.get", side_effect=side_effect):
+            quotes, metadata = fetch_match_quotes([self.fixture], self.teams, ("MLS",), 7, 10)
+
+        self.assertIn("mls-1", quotes)
+        self.assertEqual(metadata["search_fallbacks"], 1)
+        self.assertEqual(metadata["queries_sent"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

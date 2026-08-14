@@ -202,6 +202,82 @@ class KalshiComparisonTests(unittest.TestCase):
         quotes, _ = fetch_match_quotes(fixtures, teams, "KXMLSGAME", lookahead_days=365, max_fixtures=5)
         self.assertEqual(quotes, {})
 
+    @patch("predictor.kalshi.requests.get")
+    def test_atlanta_new_york_is_found_via_status_agnostic_markets_fallback(self, get):
+        event_ticker = "KXMLSGAME-26AUG15ATLNYRB"
+        market_rows = [
+            {
+                "ticker": f"{event_ticker}-ATL",
+                "event_ticker": event_ticker,
+                "yes_sub_title": "Atlanta",
+                "status": "active",
+                "yes_bid_dollars": "0.49",
+                "yes_ask_dollars": "0.51",
+                "close_time": "2026-08-16T03:30:00Z",
+                "volume_fp": "1000",
+            },
+            {
+                "ticker": f"{event_ticker}-TIE",
+                "event_ticker": event_ticker,
+                "yes_sub_title": "Tie",
+                "status": "active",
+                "yes_bid_dollars": "0.22",
+                "yes_ask_dollars": "0.24",
+                "close_time": "2026-08-16T03:30:00Z",
+                "volume_fp": "1000",
+            },
+            {
+                "ticker": f"{event_ticker}-NYRB",
+                "event_ticker": event_ticker,
+                "yes_sub_title": "New York RB",
+                "status": "active",
+                "yes_bid_dollars": "0.27",
+                "yes_ask_dollars": "0.29",
+                "close_time": "2026-08-16T03:30:00Z",
+                "volume_fp": "1000",
+            },
+        ]
+
+        def side_effect(url, **kwargs):
+            if url.endswith("/events"):
+                return response({"events": [], "cursor": ""})
+            if url.endswith("/markets"):
+                return response({"markets": market_rows, "cursor": ""})
+            raise AssertionError(f"unexpected URL {url}")
+
+        get.side_effect = side_effect
+        fixtures = [
+            {
+                "id": "atl-nyrb",
+                "status": "scheduled",
+                "date": "2026-08-15",
+                "kickoff": "2026-08-15T23:30:00Z",
+                "home": "atlanta-united",
+                "away": "red-bull-new-york",
+            }
+        ]
+        teams = [
+            {"slug": "atlanta-united", "name": "Atlanta United", "short": "ATL"},
+            {"slug": "red-bull-new-york", "name": "Red Bull New York", "short": "RBNY"},
+        ]
+
+        quotes, meta = fetch_match_quotes(fixtures, teams, "KXMLSGAME", lookahead_days=365, max_fixtures=5)
+        self.assertIn("atl-nyrb", quotes)
+        quote = quotes["atl-nyrb"]
+        self.assertEqual(quote.event_ticker, event_ticker)
+        self.assertAlmostEqual(quote.home_raw_probability, 0.50, places=6)
+        self.assertAlmostEqual(quote.draw_raw_probability, 0.23, places=6)
+        self.assertAlmostEqual(quote.away_raw_probability, 0.28, places=6)
+        self.assertEqual(meta["discovery"]["market_rows"], 3)
+
+        event_call = next(call for call in get.call_args_list if call.args[0].endswith("/events"))
+        market_call = next(call for call in get.call_args_list if call.args[0].endswith("/markets"))
+        self.assertNotIn("status", event_call.kwargs["params"])
+        self.assertNotIn("status", market_call.kwargs["params"])
+        self.assertIn("min_close_ts", event_call.kwargs["params"])
+        self.assertIn("min_close_ts", market_call.kwargs["params"])
+        self.assertEqual(market_call.kwargs["params"]["mve_filter"], "exclude")
+
 
 if __name__ == "__main__":
     unittest.main()

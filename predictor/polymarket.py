@@ -427,15 +427,26 @@ def _alias_match_score(text: str, aliases: tuple[str, ...]) -> int:
 
 
 def _event_start(event: dict[str, Any]) -> datetime | None:
-    for key in ("eventStartTime", "startDate", "startDateIso", "gameStartTime"):
+    # Sports-specific kickoff fields are more reliable than generic startDate,
+    # which can represent when an event/market became available for trading.
+    for market in event.get("markets") or []:
+        for key in ("gameStartTime", "eventStartTime"):
+            parsed = _parse_datetime(market.get(key))
+            if parsed:
+                return parsed
+    for key in ("gameStartTime", "eventStartTime"):
         parsed = _parse_datetime(event.get(key))
         if parsed:
             return parsed
     for market in event.get("markets") or []:
-        for key in ("gameStartTime", "eventStartTime", "startDate", "startDateIso", "endDate", "endDateIso"):
+        for key in ("startDate", "startDateIso", "endDate", "endDateIso"):
             parsed = _parse_datetime(market.get(key))
             if parsed:
                 return parsed
+    for key in ("startDate", "startDateIso"):
+        parsed = _parse_datetime(event.get(key))
+        if parsed:
+            return parsed
     return None
 
 
@@ -650,6 +661,63 @@ def _extract_match_outcomes(
     return raw, market_ids, questions, liquidity, volume
 
 
+def _discover_active_soccer_events() -> tuple[list[dict[str, Any]], list[str], int]:
+    """Fetch active soccer events systematically before using text search.
+
+    Polymarket recommends the events endpoint for complete active-market
+    discovery.  We keep public-search as a per-fixture fallback because search
+    can still be useful for newly listed or unusually tagged games.
+    """
+
+    events_by_id: dict[str, dict[str, Any]] = {}
+    errors: list[str] = []
+    pages = 0
+    limit = 500
+    for page_index in range(10):
+        offset = page_index * limit
+        try:
+            response = requests.get(
+                f"{GAMMA_URL}/events",
+                params={
+                    "tag_slug": "soccer",
+                    "related_tags": True,
+                    "active": True,
+                    "closed": False,
+                    "limit": limit,
+                    "offset": offset,
+                    "order": "start_date",
+                    "ascending": False,
+                },
+                timeout=25,
+            )
+            response.raise_for_status()
+            payload = response.json()
+            if isinstance(payload, list):
+                page = payload
+            elif isinstance(payload, dict):
+                # Defensive compatibility with keyset/search-like wrappers and
+                # with existing mocked tests.
+                page = payload.get("events") or []
+            else:
+                page = []
+        except (requests.RequestException, ValueError, AttributeError, TypeError) as exc:
+            errors.append(f"event discovery: {exc}")
+            break
+
+        pages += 1
+        valid_page = [event for event in page if isinstance(event, dict)]
+        for event in valid_page:
+            if event.get("active") is False or event.get("closed") is True:
+                continue
+            key = str(event.get("id") or event.get("slug") or "")
+            if key:
+                events_by_id[key] = event
+        if len(valid_page) < limit:
+            break
+
+    return list(events_by_id.values()), errors, pages
+
+
 def _search_match_event(
     query: str,
 ) -> tuple[list[dict[str, Any]], str | None]:
@@ -682,11 +750,10 @@ def fetch_match_quotes(
 ) -> tuple[dict[str, MatchMarketQuote], dict[str, Any]]:
     """Find exact 1X2 Polymarket events for near-term scheduled fixtures.
 
-    Polymarket generally opens soccer match markets close to kickoff. The
-    function intentionally searches only a bounded upcoming window and only
-    accepts events that match both clubs, a compatible date when supplied, and
-    all three soccer outcomes (home, draw, away). Missing markets remain null;
-    they never block or alter the Bayesian forecast.
+    Active soccer events are discovered systematically first.  Public text
+    search is then used only when the broad event feed did not yield a valid
+    exact market for a fixture.  Both paths still require both clubs, a
+    compatible kickoff, and a complete home/draw/away result set.
     """
 
     team_by_slug = {str(team.get("slug")): team for team in teams}
@@ -708,25 +775,27 @@ def fetch_match_quotes(
     eligible = eligible[: max(1, max_fixtures)]
 
     quotes: dict[str, MatchMarketQuote] = {}
-    errors: list[str] = []
+    discovery_events, discovery_errors, discovery_pages = _discover_active_soccer_events()
+    errors: list[str] = list(discovery_errors)
     events_checked = 0
+    fallback_searches = 0
     rejected_incomplete = 0
     rejected_ambiguous = 0
 
-    for kickoff, fixture in eligible:
+    def best_quote_for_events(
+        fixture: dict[str, Any],
+        kickoff: datetime,
+        events: list[dict[str, Any]],
+    ) -> MatchMarketQuote | None:
+        nonlocal events_checked, rejected_incomplete, rejected_ambiguous
         home = team_by_slug[str(fixture["home"])]
         away = team_by_slug[str(fixture["away"])]
         home_aliases = _team_aliases(home)
         away_aliases = _team_aliases(away)
-        query = f"{home['name']} vs {away['name']}"
-        events, error = _search_match_event(query)
-        if error:
-            errors.append(f"{fixture.get('id')}: {error}")
-            continue
-        events_checked += len(events)
-
         candidates: list[tuple[int, float, MatchMarketQuote]] = []
+
         for event in events:
+            events_checked += 1
             if event.get("active") is False or event.get("closed") is True:
                 continue
             event_score = _event_candidate_score(event, home_aliases, away_aliases, kickoff, league_terms)
@@ -739,10 +808,10 @@ def fetch_match_quotes(
                 continue
             raw, market_ids, questions, liquidity, volume = extracted
             total = raw["home"] + raw["draw"] + raw["away"]
-            normalized = {
-                key: value / total
-                for key, value in raw.items()
-            }
+            if total <= 0:
+                rejected_incomplete += 1
+                continue
+            normalized = {key: value / total for key, value in raw.items()}
             event_slug = str(event.get("slug") or "")
             quote = MatchMarketQuote(
                 fixture_id=str(fixture.get("id") or ""),
@@ -768,9 +837,25 @@ def fetch_match_quotes(
             score, quality = event_score
             candidates.append((score, quality + quote.liquidity + quote.volume * 0.001, quote))
 
-        if candidates:
-            candidates.sort(key=lambda item: (item[0], item[1]), reverse=True)
-            quotes[str(fixture["id"])] = candidates[0][2]
+        if not candidates:
+            return None
+        candidates.sort(key=lambda item: (item[0], item[1]), reverse=True)
+        return candidates[0][2]
+
+    for kickoff, fixture in eligible:
+        quote = best_quote_for_events(fixture, kickoff, discovery_events)
+        if quote is None:
+            home = team_by_slug[str(fixture["home"])]
+            away = team_by_slug[str(fixture["away"])]
+            query = f"{home['name']} vs {away['name']}"
+            events, error = _search_match_event(query)
+            fallback_searches += 1
+            if error:
+                errors.append(f"{fixture.get('id')}: {error}")
+            else:
+                quote = best_quote_for_events(fixture, kickoff, events)
+        if quote is not None:
+            quotes[str(fixture["id"])] = quote
 
     metadata = {
         "source": "Polymarket",
@@ -778,7 +863,10 @@ def fetch_match_quotes(
         "lookahead_days": lookahead_days,
         "max_fixtures": max_fixtures,
         "eligible_fixtures": len(eligible),
-        "queries_sent": len(eligible),
+        "discovery_events": len(discovery_events),
+        "discovery_pages": discovery_pages,
+        "search_fallbacks": fallback_searches,
+        "queries_sent": fallback_searches,
         "events_checked": events_checked,
         "quotes_found": len(quotes),
         "coverage": round(len(quotes) / len(eligible), 6) if eligible else 0.0,
@@ -787,8 +875,9 @@ def fetch_match_quotes(
         "errors": errors,
         "updated_at": utc_now_iso(),
         "note": (
-            "Only exact three-outcome match-result markets are accepted. "
-            "Polymarket normally lists games near kickoff, so later fixtures may show no market."
+            "Active soccer events are discovered through Polymarket's events endpoint first; "
+            "public-search is only a fallback. Only exact three-outcome match-result markets "
+            "are accepted, and market prices remain comparison-only."
         ),
     }
     return quotes, metadata

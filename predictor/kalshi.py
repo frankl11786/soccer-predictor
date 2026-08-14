@@ -26,7 +26,7 @@ KALSHI_ALIASES: dict[str, tuple[str, ...]] = {
     "sportingkansascity": ("Kansas City", "Sporting Kansas City"),
     "realsaltlake": ("Salt Lake", "Real Salt Lake"),
     "stlouiscity": ("Saint Louis", "St. Louis", "St Louis"),
-    "redbullnewyork": ("New York RB", "New York Red Bulls", "Red Bulls"),
+    "redbullnewyork": ("New York RB", "New York Red Bulls", "Red Bulls", "NYRB"),
     "newyorkcity": ("New York City", "NYCFC"),
     "montreal": ("Montreal", "CF Montreal"),
     "seattlesounders": ("Seattle", "Seattle Sounders"),
@@ -462,27 +462,69 @@ def _classify_market(
     home_aliases: tuple[str, ...],
     away_aliases: tuple[str, ...],
 ) -> str | None:
-    label = _market_text(market)
-    normalized = normalize_name(label)
-    if "tie" in normalized or "draw" in normalized:
-        return "draw"
-    home_score = _alias_score(label, home_aliases)
-    away_score = _alias_score(label, away_aliases)
-    if home_score and not away_score:
-        return "home"
-    if away_score and not home_score:
-        return "away"
+    # Do not classify from the full ticker. Kalshi game-market tickers embed
+    # both club codes (for example ATLNYRB), so a short code such as ATL can
+    # otherwise make the opposing outcome look like it mentions both teams.
+    labels = [
+        str(market.get("yes_sub_title") or "").strip(),
+        str(market.get("subtitle") or "").strip(),
+        str(market.get("title") or "").strip(),
+    ]
+    ticker = str(market.get("ticker") or "")
+    if ticker:
+        labels.append(ticker.rsplit("-", 1)[-1])
+
+    for label in labels:
+        if not label:
+            continue
+        normalized = normalize_name(label)
+        if normalized in {"tie", "draw"} or "draw" in normalized:
+            return "draw"
+        home_score = _alias_score(label, home_aliases)
+        away_score = _alias_score(label, away_aliases)
+        if home_score and not away_score:
+            return "home"
+        if away_score and not home_score:
+            return "away"
     return None
 
 
-def _open_events(series_ticker: str) -> tuple[list[dict[str, Any]], list[str]]:
-    events: list[dict[str, Any]] = []
+def _merge_market_lists(existing: list[dict[str, Any]], incoming: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    merged: dict[str, dict[str, Any]] = {}
+    anonymous: list[dict[str, Any]] = []
+    for market in [*existing, *incoming]:
+        if not isinstance(market, dict):
+            continue
+        ticker = str(market.get("ticker") or "")
+        if ticker:
+            merged[ticker] = {**merged.get(ticker, {}), **market}
+        else:
+            anonymous.append(market)
+    return [*merged.values(), *anonymous]
+
+
+def _upcoming_events(
+    series_ticker: str,
+    min_close_ts: int,
+) -> tuple[list[dict[str, Any]], list[str], dict[str, int]]:
+    """Discover upcoming Kalshi game events without relying on one status value.
+
+    Kalshi's event and market list endpoints both support a series filter.  We
+    query events with nested markets first, then supplement them from the
+    markets endpoint.  The second path protects against an event being omitted
+    by a lifecycle/status interpretation or a nested-market response change.
+    """
+
     errors: list[str] = []
+    events_by_ticker: dict[str, dict[str, Any]] = {}
+    event_rows = 0
+    market_rows = 0
+
     cursor = ""
     for _ in range(5):
         params: dict[str, Any] = {
             "series_ticker": series_ticker,
-            "status": "open",
+            "min_close_ts": min_close_ts,
             "with_nested_markets": "true",
             "limit": 200,
         }
@@ -491,15 +533,79 @@ def _open_events(series_ticker: str) -> tuple[list[dict[str, Any]], list[str]]:
         try:
             payload = _request_json("/events", params=params)
         except (requests.RequestException, ValueError, TypeError) as exc:
-            errors.append(f"open events {series_ticker}: {exc}")
+            errors.append(f"events {series_ticker}: {exc}")
             break
+
         page = payload.get("events") or []
-        events.extend(event for event in page if isinstance(event, dict))
+        for event in page:
+            if not isinstance(event, dict):
+                continue
+            event_rows += 1
+            ticker = str(event.get("event_ticker") or "")
+            if not ticker:
+                continue
+            previous = events_by_ticker.get(ticker, {})
+            events_by_ticker[ticker] = {
+                **previous,
+                **event,
+                "markets": _merge_market_lists(
+                    list(previous.get("markets") or []),
+                    list(event.get("markets") or []),
+                ),
+            }
         cursor = str(payload.get("cursor") or "")
         if not cursor:
             break
-    return events, errors
 
+    # Independent discovery path. Do not set a status filter: Kalshi documents
+    # min_close_ts for this endpoint with an empty status, and this lets our
+    # local team/date/result checks decide whether a returned market is usable.
+    cursor = ""
+    for _ in range(5):
+        params = {
+            "series_ticker": series_ticker,
+            "min_close_ts": min_close_ts,
+            "mve_filter": "exclude",
+            "limit": 1000,
+        }
+        if cursor:
+            params["cursor"] = cursor
+        try:
+            payload = _request_json("/markets", params=params)
+        except (requests.RequestException, ValueError, TypeError) as exc:
+            errors.append(f"markets {series_ticker}: {exc}")
+            break
+
+        page = payload.get("markets") or []
+        for market in page:
+            if not isinstance(market, dict):
+                continue
+            market_rows += 1
+            event_ticker = str(market.get("event_ticker") or "")
+            if not event_ticker:
+                continue
+            event = events_by_ticker.setdefault(
+                event_ticker,
+                {
+                    "event_ticker": event_ticker,
+                    "series_ticker": series_ticker,
+                    "title": "",
+                    "markets": [],
+                },
+            )
+            event["markets"] = _merge_market_lists(
+                list(event.get("markets") or []),
+                [market],
+            )
+        cursor = str(payload.get("cursor") or "")
+        if not cursor:
+            break
+
+    return list(events_by_ticker.values()), errors, {
+        "event_rows": event_rows,
+        "market_rows": market_rows,
+        "merged_events": len(events_by_ticker),
+    }
 
 def fetch_match_quotes(
     fixtures: list[dict[str, Any]],
@@ -534,7 +640,8 @@ def fetch_match_quotes(
     candidates.sort(key=lambda fixture: _fixture_datetime(fixture) or horizon)
     candidates = candidates[:max_fixtures]
 
-    events, errors = _open_events(series_ticker)
+    discovery_min_close_ts = int((now - timedelta(hours=12)).timestamp())
+    events, errors, discovery = _upcoming_events(series_ticker, discovery_min_close_ts)
     quotes: dict[str, KalshiMatchQuote] = {}
     used_events: set[str] = set()
 
@@ -647,12 +754,15 @@ def fetch_match_quotes(
         "market_type": "match_result",
         "series_ticker": series_ticker,
         "events_checked": len(events),
+        "discovery": discovery,
+        "discovery_min_close_ts": discovery_min_close_ts,
         "fixtures_checked": len(candidates),
         "quotes_found": len(quotes),
         "coverage": (len(quotes) / len(candidates)) if candidates else 0.0,
         "lookahead_days": lookahead_days,
         "max_fixtures": max_fixtures,
         "price_method": "bid/ask midpoint when usable; otherwise last trade; 1X2 normalized to 100%",
+        "discovery_method": "status-agnostic events plus markets fallback within the configured Kalshi series",
         "errors": errors,
         "updated_at": utc_now_iso(),
     }
