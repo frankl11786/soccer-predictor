@@ -4,7 +4,7 @@
     "name": "English Premier League",
     "season": "2026/27",
     "as_of": "2026-08-15",
-    "generated_at": "2026-08-15T03:11:08Z",
+    "generated_at": "2026-08-15T06:00:35Z",
     "model_version": "bayes-ss-poisson-v5-market-consensus",
     "data_mode": "LIVE API + BAYESIAN MODEL",
     "iterations": 20000,
@@ -36,7 +36,7 @@
             }
           ],
           "fixtures_received": 0,
-          "updated_at": "2026-08-15T02:57:08Z"
+          "updated_at": "2026-08-15T05:41:01Z"
         },
         {
           "source": "OpenFootball",
@@ -58,7 +58,7 @@
           "fixtures_received": 1900,
           "cached_seasons": [],
           "errors": [],
-          "updated_at": "2026-08-15T02:57:09Z"
+          "updated_at": "2026-08-15T05:41:02Z"
         }
       ],
       "backtest": {
@@ -76,7 +76,7 @@
         "brier_skill_vs_naive": -0.051341,
         "limitations": "This is a lightweight match-outcome holdout, not a complete season-title calibration study. Current preseason seeds and Polymarket data are excluded. It is intended to catch large regressions during automated rebuilds."
       },
-      "updated_at": "2026-08-15T03:11:08Z"
+      "updated_at": "2026-08-15T06:00:35Z"
     },
     "polymarket": {
       "source": "Polymarket",
@@ -101,7 +101,7 @@
         }
       ],
       "errors": [],
-      "updated_at": "2026-08-15T03:10:58Z",
+      "updated_at": "2026-08-15T06:00:29Z",
       "match_markets": {
         "source": "Polymarket",
         "market_type": "match_1x2",
@@ -112,20 +112,30 @@
         "discovery_pages": 0,
         "search_fallbacks": 20,
         "queries_sent": 20,
-        "events_checked": 46,
-        "quotes_found": 10,
-        "coverage": 0.5,
+        "events_checked": 45,
+        "quotes_found": 11,
+        "coverage": 0.55,
         "rejected_incomplete_1x2": 0,
-        "rejected_ambiguous": 28,
+        "rejected_ambiguous": 26,
         "errors": [
           "event discovery: 422 Client Error: Unprocessable Entity for url: https://gamma-api.polymarket.com/events?tag_slug=soccer&related_tags=True&active=True&closed=False&limit=500&offset=0&order=start_date&ascending=False"
         ],
-        "updated_at": "2026-08-15T03:11:07Z",
+        "updated_at": "2026-08-15T06:00:34Z",
         "note": "Active soccer events are discovered through Polymarket's events endpoint first; public-search is only a fallback. Only exact three-outcome match-result markets are accepted, and market prices remain comparison-only.",
         "sanity_checks": {
           "threshold": 0.2,
-          "status": "passed",
-          "large_divergences": [],
+          "status": "warning",
+          "large_divergences": [
+            {
+              "fixture_id": "of-b1d85d33da2e8d8f",
+              "home": "crystal-palace",
+              "away": "manchester-city",
+              "outcome": "away",
+              "model": 0.71827,
+              "market": 0.454545,
+              "difference": 0.263725
+            }
+          ],
           "note": "Match-market checks are informational and never change model probabilities."
         }
       },
@@ -159,10 +169,10 @@
       "priced_contracts": 20,
       "quotes_found": 20,
       "normalization_applied": true,
-      "normalization_total": 1.07,
+      "normalization_total": 1.06,
       "price_method": "bid/ask midpoint when usable; otherwise last trade",
       "errors": [],
-      "updated_at": "2026-08-15T03:11:07Z",
+      "updated_at": "2026-08-15T06:00:34Z",
       "match_markets": {
         "source": "Kalshi",
         "market_type": "match_result",
@@ -173,7 +183,7 @@
           "market_rows": 45,
           "merged_events": 15
         },
-        "discovery_min_close_ts": 1786720267,
+        "discovery_min_close_ts": 1786730434,
         "fixtures_checked": 20,
         "quotes_found": 9,
         "coverage": 0.45,
@@ -182,7 +192,7 @@
         "price_method": "bid/ask midpoint when usable; otherwise last trade; 1X2 normalized to 100%",
         "discovery_method": "status-agnostic events plus markets fallback within the configured Kalshi series",
         "errors": [],
-        "updated_at": "2026-08-15T03:11:08Z",
+        "updated_at": "2026-08-15T06:00:35Z",
         "sanity_checks": {
           "threshold": 0.2,
           "status": "passed",
@@ -199,9 +209,9 @@
             "team_name": "Arsenal",
             "metric": "title",
             "model": 0.6151,
-            "market": 0.341121,
+            "market": 0.34434,
             "market_raw": 0.365,
-            "difference": 0.273979
+            "difference": 0.27076
           }
         ],
         "note": "Sanity checks never feed Kalshi prices into the Bayesian model."
@@ -222,17 +232,30 @@
             "team_name": "Arsenal",
             "metric": "title",
             "model": 0.6151,
-            "market": 0.359828,
-            "difference": 0.255272,
+            "market": 0.361437,
+            "difference": 0.253663,
             "sources": [
               "Polymarket",
               "Kalshi"
             ]
           }
         ],
-        "match_large_divergences": []
+        "match_large_divergences": [
+          {
+            "fixture_id": "of-b1d85d33da2e8d8f",
+            "home": "crystal-palace",
+            "away": "manchester-city",
+            "outcome": "away",
+            "model": 0.71827,
+            "market": 0.454545,
+            "difference": 0.263725,
+            "sources": [
+              "Polymarket"
+            ]
+          }
+        ]
       },
-      "updated_at": "2026-08-15T03:11:08Z"
+      "updated_at": "2026-08-15T06:00:35Z"
     },
     "compared_with_previous_snapshot": true
   },
@@ -903,14 +926,14 @@
         "normalized_probability": 0.378534,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 331847.3665,
-        "volume": 456879.95443599997,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "liquidity": 330116.1472,
+        "volume": 456889.95443599997,
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.341121,
+      "kalshi": 0.34434,
       "kalshi_raw": 0.365,
-      "kalshi_edge": 0.273979,
+      "kalshi_edge": 0.27076,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-ARS",
@@ -918,23 +941,23 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.365,
-        "normalized_probability": 0.341121,
+        "normalized_probability": 0.34434,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.36,
         "ask": 0.37,
         "last": 0.37,
         "spread": 0.01,
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
-        "volume": 105386.74,
-        "volume_24h": 702.92,
-        "open_interest": 84979.47,
+        "volume": 105792.46,
+        "volume_24h": 1082.76,
+        "open_interest": 85385.19,
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.359828,
-      "consensus_edge": 0.255272,
+      "market_consensus": 0.361437,
+      "consensus_edge": 0.253663,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1009,26 +1032,26 @@
         "normalized_probability": 0.011979,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 527287.08531,
-        "volume": 202991.368964,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "liquidity": 527525.89671,
+        "volume": 202991.36896400002,
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.023364,
-      "kalshi_raw": 0.025,
-      "kalshi_edge": -0.021764,
+      "kalshi": 0.014151,
+      "kalshi_raw": 0.015,
+      "kalshi_edge": -0.012551,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-AVL",
         "event_ticker": "KXPREMIERLEAGUE-27",
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
-        "raw_probability": 0.025,
-        "normalized_probability": 0.023364,
+        "raw_probability": 0.015,
+        "normalized_probability": 0.014151,
         "normalized": true,
-        "normalization_total": 1.07,
-        "bid": 0.02,
-        "ask": 0.03,
+        "normalization_total": 1.06,
+        "bid": 0.01,
+        "ask": 0.02,
         "last": 0.03,
         "spread": 0.01,
         "estimate_method": "bid_ask_midpoint",
@@ -1039,8 +1062,8 @@
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.017672,
-      "consensus_edge": -0.016072,
+      "market_consensus": 0.013065,
+      "consensus_edge": -0.011465,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1115,14 +1138,14 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 479578.96751,
-        "volume": 209810.34300000002,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "liquidity": 480277.30751,
+        "volume": 209810.34300000005,
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.004423,
+      "kalshi_edge": -0.004467,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-BOU",
@@ -1130,9 +1153,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -1145,8 +1168,8 @@
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003055,
-      "consensus_edge": -0.002805,
+      "market_consensus": 0.003077,
+      "consensus_edge": -0.002827,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1221,14 +1244,14 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 508317.12909,
-        "volume": 196636.78748300002,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "liquidity": 509125.00909,
+        "volume": 196636.787483,
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.004323,
+      "kalshi_edge": -0.004367,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-BRE",
@@ -1236,9 +1259,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -1251,8 +1274,8 @@
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003055,
-      "consensus_edge": -0.002705,
+      "market_consensus": 0.003077,
+      "consensus_edge": -0.002727,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1327,14 +1350,14 @@
         "normalized_probability": 0.002396,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 525758.14126,
+        "liquidity": 521766.98969,
         "volume": 210298.432562,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.001023,
+      "kalshi_edge": -0.001067,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-BRI",
@@ -1342,9 +1365,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -1357,8 +1380,8 @@
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003534,
-      "consensus_edge": 0.000116,
+      "market_consensus": 0.003556,
+      "consensus_edge": 9.4e-05,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1433,14 +1456,14 @@
         "normalized_probability": 0.09104,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 450176.2784,
+        "liquidity": 450985.9369,
         "volume": 315561.23023300007,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.098131,
+      "kalshi": 0.099057,
       "kalshi_raw": 0.105,
-      "kalshi_edge": -0.097481,
+      "kalshi_edge": -0.098407,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-CFC",
@@ -1448,23 +1471,23 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.105,
-        "normalized_probability": 0.098131,
+        "normalized_probability": 0.099057,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.1,
         "ask": 0.11,
         "last": 0.11,
         "spread": 0.01,
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
-        "volume": 143300.5,
-        "volume_24h": 1969.71,
-        "open_interest": 127469.03,
+        "volume": 143851.87,
+        "volume_24h": 2324.84,
+        "open_interest": 128020.4,
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.094585,
-      "consensus_edge": -0.093935,
+      "market_consensus": 0.095048,
+      "consensus_edge": -0.094398,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1539,14 +1562,14 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 539791.68925,
+        "liquidity": 545317.78025,
         "volume": 155262.29274900001,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.004673,
+      "kalshi_edge": -0.004717,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-COV",
@@ -1554,9 +1577,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -1569,8 +1592,8 @@
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003055,
-      "consensus_edge": -0.003055,
+      "market_consensus": 0.003077,
+      "consensus_edge": -0.003077,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1645,14 +1668,14 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 574508.78281,
+        "liquidity": 572632.55481,
         "volume": 111822.628233,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.004573,
+      "kalshi_edge": -0.004617,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-CRY",
@@ -1660,9 +1683,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -1675,8 +1698,8 @@
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003055,
-      "consensus_edge": -0.002955,
+      "market_consensus": 0.003077,
+      "consensus_edge": -0.002977,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1751,14 +1774,14 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 597244.85792,
+        "liquidity": 594702.45412,
         "volume": 95869.36600000002,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.004423,
+      "kalshi_edge": -0.004467,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-EVE",
@@ -1766,9 +1789,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -1781,8 +1804,8 @@
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003055,
-      "consensus_edge": -0.002805,
+      "market_consensus": 0.003077,
+      "consensus_edge": -0.002827,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1857,14 +1880,14 @@
         "normalized_probability": 0.000479,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 566163.01084,
+        "liquidity": 566865.89584,
         "volume": 133859.15305999998,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.003273,
+      "kalshi_edge": -0.003317,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-FUL",
@@ -1872,9 +1895,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -1887,8 +1910,8 @@
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.002576,
-      "consensus_edge": -0.001176,
+      "market_consensus": 0.002598,
+      "consensus_edge": -0.001198,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -1963,14 +1986,14 @@
         "normalized_probability": 0.000479,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 575394.47895,
+        "liquidity": 574986.03395,
         "volume": 89505.43542699997,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.004673,
+      "kalshi_edge": -0.004717,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-HUL",
@@ -1978,9 +2001,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -1993,8 +2016,8 @@
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.002576,
-      "consensus_edge": -0.002576,
+      "market_consensus": 0.002598,
+      "consensus_edge": -0.002598,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2069,14 +2092,14 @@
         "normalized_probability": 0.000479,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 565206.715,
+        "liquidity": 565187.445,
         "volume": 121549.92476099996,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.004673,
+      "kalshi_edge": -0.004717,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-IPS",
@@ -2084,9 +2107,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -2099,8 +2122,8 @@
         "updated_at": "2026-07-13T21:31:32.511076Z",
         "comparison_only": true
       },
-      "market_consensus": 0.002576,
-      "consensus_edge": -0.002576,
+      "market_consensus": 0.002598,
+      "consensus_edge": -0.002598,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2175,14 +2198,14 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 463244.57574,
+        "liquidity": 462877.92074,
         "volume": 216639.92527200005,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.004323,
+      "kalshi_edge": -0.004367,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-LEE",
@@ -2190,9 +2213,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -2205,8 +2228,8 @@
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003055,
-      "consensus_edge": -0.002705,
+      "market_consensus": 0.003077,
+      "consensus_edge": -0.002727,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2281,14 +2304,14 @@
         "normalized_probability": 0.119789,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 325932.2095,
+        "liquidity": 326135.7609,
         "volume": 323779.2838469999,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.116822,
+      "kalshi": 0.117925,
       "kalshi_raw": 0.125,
-      "kalshi_edge": -0.097922,
+      "kalshi_edge": -0.099025,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-LFC",
@@ -2296,9 +2319,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.125,
-        "normalized_probability": 0.116822,
+        "normalized_probability": 0.117925,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.12,
         "ask": 0.13,
         "last": 0.13,
@@ -2311,8 +2334,8 @@
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.118306,
-      "consensus_edge": -0.099406,
+      "market_consensus": 0.118857,
+      "consensus_edge": -0.099957,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2387,14 +2410,14 @@
         "normalized_probability": 0.253953,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 670909.3312,
-        "volume": 1545851.2907380003,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "liquidity": 671475.698,
+        "volume": 1546063.398144,
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.228972,
+      "kalshi": 0.231132,
       "kalshi_raw": 0.245,
-      "kalshi_edge": 0.105828,
+      "kalshi_edge": 0.103668,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-MCI",
@@ -2402,23 +2425,23 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.245,
-        "normalized_probability": 0.228972,
+        "normalized_probability": 0.231132,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.24,
         "ask": 0.25,
         "last": 0.25,
         "spread": 0.01,
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
-        "volume": 106043.5,
-        "volume_24h": 3680.59,
-        "open_interest": 89239.13,
+        "volume": 107440.96,
+        "volume_24h": 4432.51,
+        "open_interest": 90234.59,
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.241463,
-      "consensus_edge": 0.093337,
+      "market_consensus": 0.242543,
+      "consensus_edge": 0.092257,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2493,14 +2516,14 @@
         "normalized_probability": 0.100623,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 495297.2208,
-        "volume": 193688.54112600003,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "liquidity": 496375.2595,
+        "volume": 193688.541126,
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.098131,
+      "kalshi": 0.099057,
       "kalshi_raw": 0.105,
-      "kalshi_edge": -0.089531,
+      "kalshi_edge": -0.090457,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-MUN",
@@ -2508,23 +2531,23 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.105,
-        "normalized_probability": 0.098131,
+        "normalized_probability": 0.099057,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.1,
         "ask": 0.11,
-        "last": 0.1,
+        "last": 0.11,
         "spread": 0.01,
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
-        "volume": 108201.21,
-        "volume_24h": 4125.43,
-        "open_interest": 98506.53,
+        "volume": 108329.5,
+        "volume_24h": 4253.72,
+        "open_interest": 98634.82,
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.099377,
-      "consensus_edge": -0.090777,
+      "market_consensus": 0.09984,
+      "consensus_edge": -0.09124,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2599,14 +2622,14 @@
         "normalized_probability": 0.002396,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 356063.51648,
+        "liquidity": 356520.58148,
         "volume": 396468.7155180002,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.001123,
+      "kalshi_edge": -0.001167,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-NEW",
@@ -2614,9 +2637,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -2624,13 +2647,13 @@
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
         "volume": 13282.22,
-        "volume_24h": 935.19,
+        "volume_24h": 0.0,
         "open_interest": 13179.22,
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003534,
-      "consensus_edge": 1.6e-05,
+      "market_consensus": 0.003556,
+      "consensus_edge": -6e-06,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2705,14 +2728,14 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 547096.0957,
+        "liquidity": 546200.0687,
         "volume": 118839.97959399999,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.001073,
+      "kalshi_edge": -0.001117,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-NFO",
@@ -2720,9 +2743,9 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
@@ -2735,8 +2758,8 @@
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003055,
-      "consensus_edge": 0.000545,
+      "market_consensus": 0.003077,
+      "consensus_edge": 0.000523,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2811,14 +2834,14 @@
         "normalized_probability": 0.001437,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 590604.33098,
+        "liquidity": 592013.15998,
         "volume": 87096.913227,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.004673,
+      "kalshi": 0.004717,
       "kalshi_raw": 0.005,
-      "kalshi_edge": -0.004373,
+      "kalshi_edge": -0.004417,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-SUN",
@@ -2826,23 +2849,23 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.005,
-        "normalized_probability": 0.004673,
+        "normalized_probability": 0.004717,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.0,
         "ask": 0.01,
         "last": 0.01,
         "spread": 0.01,
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
-        "volume": 1415.7,
-        "volume_24h": 0.0,
-        "open_interest": 1322.19,
+        "volume": 1509.21,
+        "volume_24h": 93.51,
+        "open_interest": 1415.7,
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.003055,
-      "consensus_edge": -0.002755,
+      "market_consensus": 0.003077,
+      "consensus_edge": -0.002777,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -2917,14 +2940,14 @@
         "normalized_probability": 0.026354,
         "normalized": true,
         "normalization_total": 1.0435,
-        "liquidity": 432017.56298,
+        "liquidity": 428400.32298,
         "volume": 352520.46774399997,
-        "updated_at": "2026-08-15T03:10:58Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
-      "kalshi": 0.03271,
+      "kalshi": 0.033019,
       "kalshi_raw": 0.035,
-      "kalshi_edge": -0.02616,
+      "kalshi_edge": -0.026469,
       "kalshi_details": {
         "source": "Kalshi",
         "market_ticker": "KXPREMIERLEAGUE-27-TOT",
@@ -2932,23 +2955,23 @@
         "event": "English Premier League Champion",
         "event_url": "https://kalshi.com/markets/kxpremierleague/premier-league/kxpremierleague-27",
         "raw_probability": 0.035,
-        "normalized_probability": 0.03271,
+        "normalized_probability": 0.033019,
         "normalized": true,
-        "normalization_total": 1.07,
+        "normalization_total": 1.06,
         "bid": 0.03,
         "ask": 0.04,
         "last": 0.04,
         "spread": 0.01,
         "estimate_method": "bid_ask_midpoint",
         "liquidity": 0.0,
-        "volume": 84859.08,
-        "volume_24h": 2414.18,
-        "open_interest": 73515.3,
+        "volume": 86006.94,
+        "volume_24h": 3515.19,
+        "open_interest": 74663.16,
         "updated_at": "2026-07-13T21:35:22.218937Z",
         "comparison_only": true
       },
-      "market_consensus": 0.029532,
-      "consensus_edge": -0.022982,
+      "market_consensus": 0.029686,
+      "consensus_edge": -0.023136,
       "consensus_details": {
         "sources": [
           "Polymarket",
@@ -3021,31 +3044,31 @@
           "draw": "Will Arsenal FC vs. Coventry City FC end in a draw?",
           "away": "Will Coventry City FC win on 2026-08-21?"
         },
-        "liquidity": 174618.57,
-        "volume": 3266.03,
+        "liquidity": 174245.31,
+        "volume": 3283.68,
         "kickoff": "2026-08-21T19:00:00Z",
-        "updated_at": "2026-08-15T03:10:59Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.832512,
-          "draw": 0.1133,
-          "away": 0.054187
+          "home": 0.835,
+          "draw": 0.11,
+          "away": 0.055
         },
         "raw_probabilities": {
-          "home": 0.845,
-          "draw": 0.115,
+          "home": 0.835,
+          "draw": 0.11,
           "away": 0.055
         },
         "model_edge": {
-          "home": 0.082018,
-          "draw": -0.04874,
-          "away": -0.033277
+          "home": 0.07953,
+          "draw": -0.04544,
+          "away": -0.03409
         },
-        "normalized": true,
-        "normalization_total": 1.015,
+        "normalized": false,
+        "normalization_total": 1.0,
         "event_ticker": "KXEPLGAME-26AUG21ARSCOV",
         "event_title": "Arsenal vs Coventry",
         "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug21arscov",
@@ -3055,23 +3078,23 @@
           "away": "KXEPLGAME-26AUG21ARSCOV-COV"
         },
         "bids": {
-          "home": 0.84,
-          "draw": 0.11,
+          "home": 0.83,
+          "draw": 0.1,
           "away": 0.05
         },
         "asks": {
-          "home": 0.85,
+          "home": 0.84,
           "draw": 0.12,
           "away": 0.06
         },
         "lasts": {
           "home": 0.84,
           "draw": 0.12,
-          "away": 0.06
+          "away": 0.05
         },
         "spreads": {
           "home": 0.010000000000000009,
-          "draw": 0.009999999999999995,
+          "draw": 0.01999999999999999,
           "away": 0.009999999999999995
         },
         "estimate_methods": {
@@ -3080,23 +3103,23 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 36191.12,
-        "volume_24h": 4485.61,
-        "open_interest": 30369.16,
+        "volume": 37509.74,
+        "volume_24h": 5359.65,
+        "open_interest": 30439.78,
         "kickoff": "2026-08-21T22:00:00+00:00",
         "updated_at": "2026-08-07T00:37:00.24615Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.832512,
-          "draw": 0.1133,
-          "away": 0.054187
+          "home": 0.833756,
+          "draw": 0.11165,
+          "away": 0.054594
         },
         "model_edge": {
-          "home": 0.082018,
-          "draw": -0.04874,
-          "away": -0.033277
+          "home": 0.080774,
+          "draw": -0.04709,
+          "away": -0.033684
         },
         "sources": [
           "Polymarket",
@@ -3167,10 +3190,10 @@
           "draw": "Will Hull City AFC vs. Manchester United FC end in a draw?",
           "away": "Will Manchester United FC win on 2026-08-22?"
         },
-        "liquidity": 213848.06,
+        "liquidity": 216978.59,
         "volume": 5011.33,
         "kickoff": "2026-08-22T11:30:00Z",
-        "updated_at": "2026-08-15T03:11:00Z",
+        "updated_at": "2026-08-15T06:00:29Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -3226,9 +3249,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 42332.44,
-        "volume_24h": 10572.68,
-        "open_interest": 34761.37,
+        "volume": 42502.65,
+        "volume_24h": 10145.43,
+        "open_interest": 34851.64,
         "kickoff": "2026-08-22T14:30:00+00:00",
         "updated_at": "2026-08-08T00:50:00.213416Z",
         "comparison_only": true
@@ -3313,31 +3336,31 @@
           "draw": "Will Everton FC vs. Crystal Palace FC end in a draw?",
           "away": "Will Crystal Palace FC win on 2026-08-22?"
         },
-        "liquidity": 172769.89,
+        "liquidity": 169216.65,
         "volume": 744.07,
         "kickoff": "2026-08-22T14:00:00Z",
-        "updated_at": "2026-08-15T03:11:00Z",
+        "updated_at": "2026-08-15T06:00:30Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.427184,
-          "draw": 0.296117,
-          "away": 0.276699
+          "home": 0.42439,
+          "draw": 0.297561,
+          "away": 0.278049
         },
         "raw_probabilities": {
-          "home": 0.44,
+          "home": 0.435,
           "draw": 0.305,
           "away": 0.285
         },
         "model_edge": {
-          "home": 0.026916,
-          "draw": -0.045967,
-          "away": 0.019051
+          "home": 0.02971,
+          "draw": -0.047411,
+          "away": 0.017701
         },
         "normalized": true,
-        "normalization_total": 1.03,
+        "normalization_total": 1.025,
         "event_ticker": "KXEPLGAME-26AUG22EVECRY",
         "event_title": "Everton vs Crystal Palace",
         "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug22evecry",
@@ -3352,7 +3375,7 @@
           "away": 0.28
         },
         "asks": {
-          "home": 0.45,
+          "home": 0.44,
           "draw": 0.31,
           "away": 0.29
         },
@@ -3362,7 +3385,7 @@
           "away": 0.29
         },
         "spreads": {
-          "home": 0.020000000000000018,
+          "home": 0.010000000000000009,
           "draw": 0.010000000000000009,
           "away": 0.009999999999999953
         },
@@ -3372,23 +3395,23 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 1758.75,
-        "volume_24h": 381.65,
-        "open_interest": 1271.3,
+        "volume": 1810.75,
+        "volume_24h": 427.65,
+        "open_interest": 1323.3,
         "kickoff": "2026-08-22T17:00:00+00:00",
         "updated_at": "2026-08-08T00:50:00.213416Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.434985,
-          "draw": 0.289849,
-          "away": 0.275165
+          "home": 0.433588,
+          "draw": 0.290571,
+          "away": 0.27584
         },
         "model_edge": {
-          "home": 0.019115,
-          "draw": -0.039699,
-          "away": 0.020585
+          "home": 0.020512,
+          "draw": -0.040421,
+          "away": 0.01991
         },
         "sources": [
           "Polymarket",
@@ -3459,10 +3482,10 @@
           "draw": "Will Ipswich Town FC vs. Sunderland AFC end in a draw?",
           "away": "Will Sunderland AFC win on 2026-08-22?"
         },
-        "liquidity": 129423.41,
+        "liquidity": 123440.58,
         "volume": 264.74,
         "kickoff": "2026-08-22T14:00:00Z",
-        "updated_at": "2026-08-15T03:11:00Z",
+        "updated_at": "2026-08-15T06:00:30Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -3518,9 +3541,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 4759.46,
-        "volume_24h": 2344.71,
-        "open_interest": 4174.12,
+        "volume": 4777.46,
+        "volume_24h": 2325.37,
+        "open_interest": 4192.12,
         "kickoff": "2026-08-22T17:00:00+00:00",
         "updated_at": "2026-08-08T00:50:00.213416Z",
         "comparison_only": true
@@ -3605,10 +3628,10 @@
           "draw": "Will Nottingham Forest FC vs. Leeds United FC end in a draw?",
           "away": "Will Leeds United FC win on 2026-08-22?"
         },
-        "liquidity": 133389.85,
+        "liquidity": 130851.07,
         "volume": 110.91,
         "kickoff": "2026-08-22T14:00:00Z",
-        "updated_at": "2026-08-15T03:11:01Z",
+        "updated_at": "2026-08-15T06:00:30Z",
         "comparison_only": true
       },
       "market_consensus": {
@@ -3690,10 +3713,10 @@
           "draw": "Will Brentford FC vs. Tottenham Hotspur FC end in a draw?",
           "away": "Will Tottenham Hotspur FC win on 2026-08-22?"
         },
-        "liquidity": 209152.84,
+        "liquidity": 209696.41,
         "volume": 1654.75,
         "kickoff": "2026-08-22T16:30:00Z",
-        "updated_at": "2026-08-15T03:11:01Z",
+        "updated_at": "2026-08-15T06:00:30Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -3749,9 +3772,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 13003.95,
-        "volume_24h": 5856.54,
-        "open_interest": 12714.0,
+        "volume": 13324.95,
+        "volume_24h": 5707.23,
+        "open_interest": 13035.0,
         "kickoff": "2026-08-22T19:30:00+00:00",
         "updated_at": "2026-08-08T00:50:00.213416Z",
         "comparison_only": true
@@ -3836,28 +3859,28 @@
           "draw": "Will Manchester City FC vs. AFC Bournemouth end in a draw?",
           "away": "Will AFC Bournemouth win on 2026-08-23?"
         },
-        "liquidity": 124871.58,
+        "liquidity": 124933.18,
         "volume": 4945.77,
         "kickoff": "2026-08-23T13:00:00Z",
-        "updated_at": "2026-08-15T03:11:02Z",
+        "updated_at": "2026-08-15T06:00:31Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
           "home": 0.681818,
-          "draw": 0.176768,
-          "away": 0.141414
+          "draw": 0.181818,
+          "away": 0.136364
         },
         "raw_probabilities": {
           "home": 0.675,
-          "draw": 0.175,
-          "away": 0.14
+          "draw": 0.18,
+          "away": 0.135
         },
         "model_edge": {
           "home": 0.128362,
-          "draw": -0.048978,
-          "away": -0.079384
+          "draw": -0.054028,
+          "away": -0.074334
         },
         "normalized": true,
         "normalization_total": 0.99,
@@ -3876,18 +3899,18 @@
         },
         "asks": {
           "home": 0.68,
-          "draw": 0.18,
-          "away": 0.15
+          "draw": 0.19,
+          "away": 0.14
         },
         "lasts": {
-          "home": 0.68,
+          "home": 0.67,
           "draw": 0.18,
           "away": 0.15
         },
         "spreads": {
           "home": 0.010000000000000009,
-          "draw": 0.009999999999999981,
-          "away": 0.01999999999999999
+          "draw": 0.01999999999999999,
+          "away": 0.010000000000000009
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -3895,9 +3918,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 6221.34,
-        "volume_24h": 2396.5,
-        "open_interest": 6101.39,
+        "volume": 6290.69,
+        "volume_24h": 2176.66,
+        "open_interest": 6167.92,
         "kickoff": "2026-08-23T16:00:00+00:00",
         "updated_at": "2026-08-09T00:44:00.27146Z",
         "comparison_only": true
@@ -3905,13 +3928,13 @@
       "market_consensus": {
         "probabilities": {
           "home": 0.67673,
-          "draw": 0.180424,
-          "away": 0.142846
+          "draw": 0.182949,
+          "away": 0.140321
         },
         "model_edge": {
           "home": 0.13345,
-          "draw": -0.052634,
-          "away": -0.080816
+          "draw": -0.055159,
+          "away": -0.078291
         },
         "sources": [
           "Polymarket",
@@ -3982,28 +4005,28 @@
           "draw": "Will Brighton & Hove Albion FC vs. Aston Villa FC end in a draw?",
           "away": "Will Aston Villa FC win on 2026-08-23?"
         },
-        "liquidity": 135339.84,
+        "liquidity": 131179.52,
         "volume": 1623.74,
         "kickoff": "2026-08-23T13:00:00Z",
-        "updated_at": "2026-08-15T03:11:02Z",
+        "updated_at": "2026-08-15T06:00:31Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.426396,
+          "home": 0.431472,
           "draw": 0.258883,
-          "away": 0.314721
+          "away": 0.309645
         },
         "raw_probabilities": {
-          "home": 0.42,
+          "home": 0.425,
           "draw": 0.255,
-          "away": 0.31
+          "away": 0.305
         },
         "model_edge": {
-          "home": 0.066654,
+          "home": 0.061578,
           "draw": -0.031313,
-          "away": -0.035341
+          "away": -0.030265
         },
         "normalized": true,
         "normalization_total": 0.985,
@@ -4016,24 +4039,24 @@
           "away": "KXEPLGAME-26AUG23BRIAVL-AVL"
         },
         "bids": {
-          "home": 0.41,
+          "home": 0.42,
           "draw": 0.25,
           "away": 0.3
         },
         "asks": {
           "home": 0.43,
           "draw": 0.26,
-          "away": 0.32
+          "away": 0.31
         },
         "lasts": {
           "home": 0.43,
           "draw": 0.26,
-          "away": 0.32
+          "away": 0.31
         },
         "spreads": {
-          "home": 0.020000000000000018,
+          "home": 0.010000000000000009,
           "draw": 0.010000000000000009,
-          "away": 0.020000000000000018
+          "away": 0.010000000000000009
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -4041,23 +4064,23 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 2606.27,
-        "volume_24h": 1288.22,
-        "open_interest": 2442.02,
+        "volume": 2829.72,
+        "volume_24h": 1057.67,
+        "open_interest": 2650.56,
         "kickoff": "2026-08-23T16:00:00+00:00",
         "updated_at": "2026-08-09T00:44:00.27146Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.423594,
+          "home": 0.426132,
           "draw": 0.258154,
-          "away": 0.318252
+          "away": 0.315713
         },
         "model_edge": {
-          "home": 0.069456,
+          "home": 0.066918,
           "draw": -0.030584,
-          "away": -0.038872
+          "away": -0.036333
         },
         "sources": [
           "Polymarket",
@@ -4128,10 +4151,10 @@
           "draw": "Will Newcastle United FC vs. Liverpool FC end in a draw?",
           "away": "Will Liverpool FC win on 2026-08-23?"
         },
-        "liquidity": 140881.8,
+        "liquidity": 143792.65,
         "volume": 19344.17,
         "kickoff": "2026-08-23T15:30:00Z",
-        "updated_at": "2026-08-15T03:11:03Z",
+        "updated_at": "2026-08-15T06:00:31Z",
         "comparison_only": true
       },
       "kalshi": {
@@ -4187,9 +4210,9 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 8752.47,
-        "volume_24h": 3524.72,
-        "open_interest": 8423.73,
+        "volume": 8810.0,
+        "volume_24h": 3284.95,
+        "open_interest": 8481.26,
         "kickoff": "2026-08-23T18:30:00+00:00",
         "updated_at": "2026-08-09T00:44:00.27146Z",
         "comparison_only": true
@@ -4274,31 +4297,31 @@
           "draw": "Will Fulham FC vs. Chelsea FC end in a draw?",
           "away": "Will Chelsea FC win on 2026-08-24?"
         },
-        "liquidity": 204909.88,
-        "volume": 3347.41,
+        "liquidity": 209009.9,
+        "volume": 3522.34,
         "kickoff": "2026-08-24T19:00:00Z",
-        "updated_at": "2026-08-15T03:11:03Z",
+        "updated_at": "2026-08-15T06:00:31Z",
         "comparison_only": true
       },
       "kalshi": {
         "source": "Kalshi",
         "probabilities": {
-          "home": 0.29,
-          "draw": 0.25,
-          "away": 0.46
+          "home": 0.292929,
+          "draw": 0.247475,
+          "away": 0.459596
         },
         "raw_probabilities": {
           "home": 0.29,
-          "draw": 0.25,
-          "away": 0.46
+          "draw": 0.245,
+          "away": 0.455
         },
         "model_edge": {
-          "home": 0.09479,
-          "draw": 0.07135,
-          "away": -0.16614
+          "home": 0.091861,
+          "draw": 0.073875,
+          "away": -0.165736
         },
-        "normalized": false,
-        "normalization_total": 1.0,
+        "normalized": true,
+        "normalization_total": 0.99,
         "event_ticker": "KXEPLGAME-26AUG24FULCFC",
         "event_title": "Fulham vs Chelsea",
         "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug24fulcfc",
@@ -4314,18 +4337,18 @@
         },
         "asks": {
           "home": 0.3,
+          "draw": 0.25,
+          "away": 0.46
+        },
+        "lasts": {
+          "home": 0.29,
           "draw": 0.26,
           "away": 0.47
         },
-        "lasts": {
-          "home": 0.31,
-          "draw": 0.26,
-          "away": 0.44
-        },
         "spreads": {
           "home": 0.019999999999999962,
-          "draw": 0.020000000000000018,
-          "away": 0.019999999999999962
+          "draw": 0.010000000000000009,
+          "away": 0.010000000000000009
         },
         "estimate_methods": {
           "home": "bid_ask_midpoint",
@@ -4333,23 +4356,23 @@
           "away": "bid_ask_midpoint"
         },
         "liquidity": 0.0,
-        "volume": 5942.76,
-        "volume_24h": 2460.92,
-        "open_interest": 5204.98,
+        "volume": 5980.76,
+        "volume_24h": 2323.67,
+        "open_interest": 5242.98,
         "kickoff": "2026-08-24T22:00:00+00:00",
         "updated_at": "2026-08-10T00:37:00.211228Z",
         "comparison_only": true
       },
       "market_consensus": {
         "probabilities": {
-          "home": 0.285394,
-          "draw": 0.250616,
-          "away": 0.46399
+          "home": 0.286859,
+          "draw": 0.249354,
+          "away": 0.463788
         },
         "model_edge": {
-          "home": 0.099396,
-          "draw": 0.070734,
-          "away": -0.17013
+          "home": 0.097931,
+          "draw": 0.071996,
+          "away": -0.169928
         },
         "sources": [
           "Polymarket",
@@ -4610,6 +4633,63 @@
           0.54725,
           0.85723
         ]
+      },
+      "polymarket": {
+        "source": "Polymarket",
+        "probabilities": {
+          "home": 0.277512,
+          "draw": 0.267943,
+          "away": 0.454545
+        },
+        "raw_probabilities": {
+          "home": 0.29,
+          "draw": 0.28,
+          "away": 0.475
+        },
+        "model_edge": {
+          "home": -0.167672,
+          "draw": -0.096053,
+          "away": 0.263725
+        },
+        "normalized": true,
+        "normalization_total": 1.045,
+        "event_id": "851799",
+        "event_title": "Crystal Palace FC vs. Manchester City FC",
+        "event_slug": "epl-cry-mac-2026-08-28",
+        "event_url": "https://polymarket.com/event/epl-cry-mac-2026-08-28",
+        "market_ids": {
+          "home": "3595723",
+          "draw": "3595733",
+          "away": "3595745"
+        },
+        "questions": {
+          "home": "Will Crystal Palace FC win on 2026-08-28?",
+          "draw": "Will Crystal Palace FC vs. Manchester City FC end in a draw?",
+          "away": "Will Manchester City FC win on 2026-08-28?"
+        },
+        "liquidity": 333.52,
+        "volume": 0,
+        "kickoff": "2026-08-28T19:00:00Z",
+        "updated_at": "2026-08-15T06:00:34Z",
+        "comparison_only": true
+      },
+      "market_consensus": {
+        "probabilities": {
+          "home": 0.277512,
+          "draw": 0.267943,
+          "away": 0.454545
+        },
+        "model_edge": {
+          "home": -0.167672,
+          "draw": -0.096053,
+          "away": 0.263725
+        },
+        "sources": [
+          "Polymarket"
+        ],
+        "source_count": 1,
+        "method": "Equal-weight mean of available normalized prediction-market estimates",
+        "comparison_only": true
       }
     },
     {
@@ -14723,17 +14803,17 @@
   ],
   "news": [
     {
-      "id": "system-epl-2026-08-15T03:11:08Z",
+      "id": "system-epl-2026-08-15T06:00:35Z",
       "type": "system",
       "date": "2026-08-15",
-      "generated_at": "2026-08-15T03:11:08Z",
+      "generated_at": "2026-08-15T06:00:35Z",
       "team": null,
       "headline": "Automated model refresh completed",
       "summary": "The latest English Premier League data was downloaded, the Bayesian model was fully refitted, and 20,000 season simulations were completed.",
       "affects_forecast": true,
       "impact": "System update",
       "details": {
-        "generated_at": "2026-08-15T03:11:08Z",
+        "generated_at": "2026-08-15T06:00:35Z",
         "model_version": "bayes-ss-poisson-v5-market-consensus",
         "matches_fitted": 1520,
         "simulations": 20000,
@@ -14780,8 +14860,8 @@
           "uses_polymarket": false
         },
         "polymarket_season_quotes": 20,
-        "polymarket_match_quotes": 10,
-        "polymarket_match_coverage": 0.5,
+        "polymarket_match_quotes": 11,
+        "polymarket_match_coverage": 0.55,
         "kalshi_season_quotes": 20,
         "kalshi_match_quotes": 9,
         "kalshi_match_coverage": 0.45,
@@ -14789,10 +14869,10 @@
       }
     },
     {
-      "id": "warning-epl-2026-08-15T03:11:08Z",
+      "id": "warning-epl-2026-08-15T06:00:35Z",
       "type": "warning",
       "date": "2026-08-15",
-      "generated_at": "2026-08-15T03:11:08Z",
+      "generated_at": "2026-08-15T06:00:35Z",
       "team": null,
       "headline": "One or more data-source warnings were reported",
       "summary": "The forecast completed, but at least one connected source returned a warning that should be reviewed.",
@@ -14810,10 +14890,10 @@
       }
     },
     {
-      "id": "warning-backtest-epl-2026-08-15T03:11:08Z",
+      "id": "warning-backtest-epl-2026-08-15T06:00:35Z",
       "type": "warning",
       "date": "2026-08-15",
-      "generated_at": "2026-08-15T03:11:08Z",
+      "generated_at": "2026-08-15T06:00:35Z",
       "team": null,
       "headline": "Temporal holdout performance fell below the naive baseline",
       "summary": "The holdout Brier skill score was -5.1%. The forecast was published with a model-review warning.",
@@ -14827,10 +14907,10 @@
       }
     },
     {
-      "id": "warning-market-epl-2026-08-15T03:11:08Z",
+      "id": "warning-market-epl-2026-08-15T06:00:35Z",
       "type": "warning",
       "date": "2026-08-15",
-      "generated_at": "2026-08-15T03:11:08Z",
+      "generated_at": "2026-08-15T06:00:35Z",
       "team": "arsenal",
       "headline": "Model-to-market divergence exceeds the review threshold",
       "summary": "The largest gap is 23.7 percentage points. Polymarket remains an independent comparison and is not used to force the model toward market prices.",
@@ -14865,187 +14945,42 @@
       }
     },
     {
-      "id": "forecast-2026-08-15-everton-relegation",
-      "type": "forecast_mover",
+      "id": "warning-match-market-epl-2026-08-15T06:00:35Z",
+      "type": "warning",
       "date": "2026-08-15",
-      "generated_at": "2026-08-15T03:11:08Z",
-      "team": "everton",
-      "headline": "Everton relegation probability increased",
-      "summary": "Relegation moved from 11.7% to 12.4% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+0.7 percentage points",
+      "generated_at": "2026-08-15T06:00:35Z",
+      "team": null,
+      "headline": "A match forecast differs materially from Polymarket",
+      "summary": "The largest exact-match gap is 26.4 percentage points for Crystal Palace vs Manchester City.",
+      "affects_forecast": false,
+      "impact": "Match review flag",
       "details": {
-        "metric": "Relegation",
-        "metric_key": "relegation",
-        "before": 0.1169,
-        "after": 0.1239,
-        "delta": 0.007,
-        "projected_points_before": 46.29,
-        "projected_points_after": 46.22,
-        "avg_position_before": 12.57,
-        "avg_position_after": 12.6,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-15-coventry-city-relegation",
-      "type": "forecast_mover",
-      "date": "2026-08-15",
-      "generated_at": "2026-08-15T03:11:08Z",
-      "team": "coventry-city",
-      "headline": "Coventry City relegation probability decreased",
-      "summary": "Relegation moved from 56.8% to 56.2% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-0.5 percentage points",
-      "details": {
-        "metric": "Relegation",
-        "metric_key": "relegation",
-        "before": 0.56765,
-        "after": 0.56215,
-        "delta": -0.0055,
-        "projected_points_before": 33.14,
-        "projected_points_after": 33.17,
-        "avg_position_before": 17.25,
-        "avg_position_after": 17.23,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-15-sunderland-relegation",
-      "type": "forecast_mover",
-      "date": "2026-08-15",
-      "generated_at": "2026-08-15T03:11:08Z",
-      "team": "sunderland",
-      "headline": "Sunderland relegation probability decreased",
-      "summary": "Relegation moved from 13.2% to 12.6% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-0.5 percentage points",
-      "details": {
-        "metric": "Relegation",
-        "metric_key": "relegation",
-        "before": 0.13155,
-        "after": 0.1264,
-        "delta": -0.00515,
-        "projected_points_before": 46.09,
-        "projected_points_after": 46.06,
-        "avg_position_before": 12.65,
-        "avg_position_after": 12.63,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-15-brighton-and-hove-albion-top4",
-      "type": "forecast_mover",
-      "date": "2026-08-15",
-      "generated_at": "2026-08-15T03:11:08Z",
-      "team": "brighton-and-hove-albion",
-      "headline": "Brighton & Hove Albion top-four finish probability increased",
-      "summary": "Top-four finish moved from 20.6% to 21.0% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+0.5 percentage points",
-      "details": {
-        "metric": "Top-four finish",
-        "metric_key": "top4",
-        "before": 0.2059,
-        "after": 0.2104,
-        "delta": 0.0045,
-        "projected_points_before": 57.73,
-        "projected_points_after": 57.74,
-        "avg_position_before": 8.24,
-        "avg_position_after": 8.24,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-15-leeds-united-relegation",
-      "type": "forecast_mover",
-      "date": "2026-08-15",
-      "generated_at": "2026-08-15T03:11:08Z",
-      "team": "leeds-united",
-      "headline": "Leeds United relegation probability increased",
-      "summary": "Relegation moved from 14.5% to 14.8% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+0.4 percentage points",
-      "details": {
-        "metric": "Relegation",
-        "metric_key": "relegation",
-        "before": 0.14465,
-        "after": 0.14825,
-        "delta": 0.0036,
-        "projected_points_before": 45.49,
-        "projected_points_after": 45.52,
-        "avg_position_before": 12.88,
-        "avg_position_after": 12.88,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-15-arsenal-title",
-      "type": "forecast_mover",
-      "date": "2026-08-15",
-      "generated_at": "2026-08-15T03:11:08Z",
-      "team": "arsenal",
-      "headline": "Arsenal premier league title probability decreased",
-      "summary": "Premier League title moved from 61.9% to 61.5% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "-0.3 percentage points",
-      "details": {
-        "metric": "Premier League title",
-        "metric_key": "title",
-        "before": 0.61855,
-        "after": 0.6151,
-        "delta": -0.00345,
-        "projected_points_before": 88.56,
-        "projected_points_after": 88.55,
-        "avg_position_before": 1.53,
-        "avg_position_after": 1.53,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-15-manchester-city-title",
-      "type": "forecast_mover",
-      "date": "2026-08-15",
-      "generated_at": "2026-08-15T03:11:08Z",
-      "team": "manchester-city",
-      "headline": "Manchester City premier league title probability increased",
-      "summary": "Premier League title moved from 33.2% to 33.5% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+0.3 percentage points",
-      "details": {
-        "metric": "Premier League title",
-        "metric_key": "title",
-        "before": 0.33175,
-        "after": 0.3348,
-        "delta": 0.00305,
-        "projected_points_before": 83.53,
-        "projected_points_after": 83.57,
-        "avg_position_before": 2.08,
-        "avg_position_after": 2.08,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
-      }
-    },
-    {
-      "id": "forecast-2026-08-15-aston-villa-top4",
-      "type": "forecast_mover",
-      "date": "2026-08-15",
-      "generated_at": "2026-08-15T03:11:08Z",
-      "team": "aston-villa",
-      "headline": "Aston Villa top-four finish probability increased",
-      "summary": "Top-four finish moved from 11.7% to 12.0% since the prior published snapshot.",
-      "affects_forecast": true,
-      "impact": "+0.2 percentage points",
-      "details": {
-        "metric": "Top-four finish",
-        "metric_key": "top4",
-        "before": 0.11735,
-        "after": 0.1198,
-        "delta": 0.00245,
-        "projected_points_before": 53.39,
-        "projected_points_after": 53.4,
-        "avg_position_before": 9.86,
-        "avg_position_after": 9.86,
-        "explanation": "The nightly rebuild incorporated the latest results, remaining schedule, updated attack and defense states, and fresh season simulations."
+        "validation": "away: model 71.8% vs normalized market 45.5%.",
+        "review_status": "1 exact match market(s) exceeded the 20-point threshold.",
+        "model_treatment": "The market comparison is diagnostic only and never changes the match forecast.",
+        "affected_fixtures": "Crystal Palace vs Manchester City",
+        "note": "Open the scheduled match page to compare all three outcomes.",
+        "threshold": 0.2,
+        "largest_divergence": {
+          "fixture_id": "of-b1d85d33da2e8d8f",
+          "home": "crystal-palace",
+          "away": "manchester-city",
+          "outcome": "away",
+          "model": 0.71827,
+          "market": 0.454545,
+          "difference": 0.263725
+        },
+        "all_large_divergences": [
+          {
+            "fixture_id": "of-b1d85d33da2e8d8f",
+            "home": "crystal-palace",
+            "away": "manchester-city",
+            "outcome": "away",
+            "model": 0.71827,
+            "market": 0.454545,
+            "difference": 0.263725
+          }
+        ]
       }
     }
   ],
