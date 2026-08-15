@@ -643,6 +643,7 @@ html[data-theme="dark"] .theme-toggle:hover { background: #173029; }
 .market-outcome span { color: var(--muted); font-size: 9px; }
 .market-outcome strong { font: 850 13px ui-monospace,monospace; }
 .market-outcome .market-range { color: var(--muted); font-size: 8px; }
+.market-outcome .market-explainer { margin: 10px 0 0; padding-top: 10px; border-top: 1px solid var(--line); color: var(--ink); font-size: 9.5px; line-height: 1.55; }
 .market-meta { display: flex; flex-wrap: wrap; gap: 7px 14px; margin-top: 14px; color: var(--muted); font-size: 9px; }
 .market-meta a { color: var(--green); font-weight: 800; text-decoration: none; }
 .market-meta a:hover { text-decoration: underline; }

@@ -113,6 +113,59 @@ function tripletFromMarket(market, digits = 1) {
 function marketTriplet(f, digits = 1) { return tripletFromMarket(fixtureMarket(f), digits); }
 function kalshiTriplet(f, digits = 1) { return tripletFromMarket(fixtureKalshi(f), digits); }
 function consensusTriplet(f, digits = 1) { return tripletFromMarket(fixtureConsensus(f), digits); }
+function marketOutcomeExplainer(key, label, model, poly, kalshi, consensus) {
+  const modelProbability = Number(model?.[key]);
+  const polyProbability = poly?.probabilities?.[key] === null || poly?.probabilities?.[key] === undefined ? null : Number(poly.probabilities[key]);
+  const kalshiProbabilityValue = kalshi?.probabilities?.[key] === null || kalshi?.probabilities?.[key] === undefined ? null : Number(kalshi.probabilities[key]);
+  const consensusProbabilityValue = consensus?.probabilities?.[key] === null || consensus?.probabilities?.[key] === undefined ? null : Number(consensus.probabilities[key]);
+
+  if (!Number.isFinite(modelProbability) || !Number.isFinite(consensusProbabilityValue)) return '';
+
+  const marketGap = consensusProbabilityValue - modelProbability;
+  const absGap = Math.abs(marketGap);
+  const subject = key === 'draw' ? 'the draw' : `${String(label).replace(/\s+win$/i, '')} winning`;
+
+  let lead;
+  if (absGap < 0.02) {
+    lead = `The markets and our model are closely aligned on ${subject}.`;
+  } else if (marketGap > 0) {
+    const intensity = absGap >= 0.10 ? 'much more likely' : absGap >= 0.05 ? 'more likely' : 'somewhat more likely';
+    lead = `The prediction markets see ${subject} as ${intensity} than our model does.`;
+  } else {
+    const intensity = absGap >= 0.10 ? 'much more likely' : absGap >= 0.05 ? 'more likely' : 'somewhat more likely';
+    lead = `Our model sees ${subject} as ${intensity} than the prediction markets do.`;
+  }
+
+  const modelText = probPct(modelProbability, 1);
+  const consensusText = probPct(consensusProbabilityValue, 1);
+  const points = (absGap * 100).toFixed(1);
+  const comparison = absGap < 0.02
+    ? `just ${points} point${points === '1.0' ? '' : 's'} from the model's ${modelText}`
+    : `${points} percentage points ${marketGap > 0 ? 'above' : 'below'} the model's ${modelText}`;
+
+  const hasPoly = Number.isFinite(polyProbability);
+  const hasKalshi = Number.isFinite(kalshiProbabilityValue);
+
+  let sourceRead;
+  if (hasPoly && hasKalshi) {
+    const exchangeGap = Math.abs(polyProbability - kalshiProbabilityValue);
+    if (exchangeGap <= 0.02) {
+      sourceRead = `Polymarket (${probPct(polyProbability, 1)}) and Kalshi (${probPct(kalshiProbabilityValue, 1)}) are closely aligned around a ${consensusText} consensus`;
+    } else if (exchangeGap <= 0.05) {
+      sourceRead = `Polymarket (${probPct(polyProbability, 1)}) and Kalshi (${probPct(kalshiProbabilityValue, 1)}) are broadly similar, producing a ${consensusText} consensus`;
+    } else {
+      sourceRead = `Polymarket (${probPct(polyProbability, 1)}) and Kalshi (${probPct(kalshiProbabilityValue, 1)}) disagree by ${(exchangeGap * 100).toFixed(1)} points, with consensus at ${consensusText}`;
+    }
+  } else if (hasPoly) {
+    sourceRead = `Polymarket prices ${subject} at ${probPct(polyProbability, 1)}, so the available-market consensus is ${consensusText}`;
+  } else if (hasKalshi) {
+    sourceRead = `Kalshi prices ${subject} at ${probPct(kalshiProbabilityValue, 1)}, so the available-market consensus is ${consensusText}`;
+  } else {
+    sourceRead = `The available-market consensus is ${consensusText}`;
+  }
+
+  return `${lead} ${sourceRead}—${comparison}.`;
+}
 function modelTriplet(f, digits = 1) {
   const p = f.probabilities || {};
   return `${pct(p.home,digits)} · ${pct(p.draw,digits)} · ${pct(p.away,digits)}`;
@@ -574,7 +627,7 @@ function matchMarketComparison(f, h, a) {
     if(bid===null||bid===undefined||ask===null||ask===undefined) return '';
     return `${probPct(bid,1)}–${probPct(ask,1)}`;
   };
-  return `<article class="card market-comparison-card"><div class="card-head"><h2>Prediction-market comparison</h2><span class="eyebrow">Independent markets</span></div><div class="card-body"><div class="market-outcome-grid">${rows.map(([key,label])=>`<div class="market-outcome"><small>${esc(label)}</small><div><span>Model</span><strong>${probPct(model[key],1)}</strong></div><div><span>Polymarket</span><strong>${poly?probPct(poly.probabilities[key],1):'—'}</strong></div><div><span>Kalshi</span><strong>${kalshi?probPct(kalshi.probabilities[key],1):'—'}</strong></div>${kalshi&&kalshiRange(key)?`<div><span>Kalshi bid–ask</span><strong class="market-range">${kalshiRange(key)}</strong></div>`:''}<div><span>Consensus</span><strong>${consensus?probPct(consensus.probabilities[key],1):'—'}</strong></div><div><span>Model vs consensus</span><strong class="${consensus?.model_edge?.[key]>0?'positive':consensus?.model_edge?.[key]<0?'negative':'neutral'}">${consensus?signedPct(consensus.model_edge[key]):'—'}</strong></div></div>`).join('')}</div><div class="market-meta">${poly?`<span>Polymarket: ${poly.normalized?`normalized from ${Number(poly.normalization_total).toFixed(3)}`:'approximately 100% raw total'} · Volume ${money(poly.volume)}</span><span>PM updated ${esc(marketUpdated(poly))}</span>${polyUrl?`<a href="${esc(polyUrl)}" target="_blank" rel="noopener noreferrer">Open Polymarket ↗</a>`:''}`:'<span>Polymarket unavailable</span>'}${kalshi?`<span>Kalshi: ${kalshi.normalized?`normalized from ${Number(kalshi.normalization_total).toFixed(3)}`:'approximately 100% raw total'} · Volume ${money(kalshi.volume)}</span><span>Kalshi updated ${esc(marketUpdated(kalshi))}</span>${kalshiUrl?`<a href="${esc(kalshiUrl)}" target="_blank" rel="noopener noreferrer">Open Kalshi ↗</a>`:''}`:'<span>Kalshi unavailable</span>'}</div><p class="detail-note">Both exchanges are comparison-only. Kalshi uses a bid/ask midpoint when the spread is usable and otherwise falls back to the latest trade. Consensus is an equal-weight mean of the available normalized exchange estimates. None of these values enter the Bayesian fit or simulations.</p></div></article>`;
+  return `<article class="card market-comparison-card"><div class="card-head"><h2>Prediction-market comparison</h2><span class="eyebrow">Independent markets</span></div><div class="card-body"><div class="market-outcome-grid">${rows.map(([key,label])=>`<div class="market-outcome"><small>${esc(label)}</small><div><span>Model</span><strong>${probPct(model[key],1)}</strong></div><div><span>Polymarket</span><strong>${poly?probPct(poly.probabilities[key],1):'—'}</strong></div><div><span>Kalshi</span><strong>${kalshi?probPct(kalshi.probabilities[key],1):'—'}</strong></div>${kalshi&&kalshiRange(key)?`<div><span>Kalshi bid–ask</span><strong class="market-range">${kalshiRange(key)}</strong></div>`:''}<div><span>Consensus</span><strong>${consensus?probPct(consensus.probabilities[key],1):'—'}</strong></div><div><span>Model vs consensus</span><strong class="${consensus?.model_edge?.[key]>0?'positive':consensus?.model_edge?.[key]<0?'negative':'neutral'}">${consensus?signedPct(consensus.model_edge[key]):'—'}</strong></div>${consensus?`<p class="market-explainer">${esc(marketOutcomeExplainer(key,label,model,poly,kalshi,consensus))}</p>`:''}</div>`).join('')}</div><div class="market-meta">${poly?`<span>Polymarket: ${poly.normalized?`normalized from ${Number(poly.normalization_total).toFixed(3)}`:'approximately 100% raw total'} · Volume ${money(poly.volume)}</span><span>PM updated ${esc(marketUpdated(poly))}</span>${polyUrl?`<a href="${esc(polyUrl)}" target="_blank" rel="noopener noreferrer">Open Polymarket ↗</a>`:''}`:'<span>Polymarket unavailable</span>'}${kalshi?`<span>Kalshi: ${kalshi.normalized?`normalized from ${Number(kalshi.normalization_total).toFixed(3)}`:'approximately 100% raw total'} · Volume ${money(kalshi.volume)}</span><span>Kalshi updated ${esc(marketUpdated(kalshi))}</span>${kalshiUrl?`<a href="${esc(kalshiUrl)}" target="_blank" rel="noopener noreferrer">Open Kalshi ↗</a>`:''}`:'<span>Kalshi unavailable</span>'}</div><p class="detail-note">Both exchanges are comparison-only. Kalshi uses a bid/ask midpoint when the spread is usable and otherwise falls back to the latest trade. Consensus is an equal-weight mean of the available normalized exchange estimates. None of these values enter the Bayesian fit or simulations.</p></div></article>`;
 }
 
 function renderMatch(id) {
