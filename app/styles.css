@@ -276,6 +276,9 @@ select, .input { border: 1px solid var(--line); border-radius: 10px; background:
 .likely-score strong { display: block; font-size: 20px; letter-spacing: -.04em; }
 .likely-score span { display: block; color: var(--green); font-size: 11px; font-weight: 850; }
 .likely-score small { display: block; margin-top: 2px; color: var(--muted); font: 8px ui-monospace, monospace; }
+.score-explainer { grid-column: 1/-1; margin-top: 4px; padding: 11px 13px; border: 1px solid var(--line); border-radius: 11px; background: rgba(25, 143, 102, .055); }
+.score-explainer strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: 10px; }
+.score-explainer p { margin: 0; color: var(--muted); font-size: 9.5px; line-height: 1.55; }
 .detail-note { grid-column: 1/-1; margin: 4px 2px 0; color: var(--muted); font-size: 9px; line-height: 1.45; }
 .rating-grid { grid-template-columns: repeat(2,minmax(0,1fr)); margin-top: 16px; }
 .rating-card { padding: 17px; }
@@ -727,4 +730,54 @@ html[data-theme="dark"] .consensus-line.available b { color: #78dfbd; }
   .team-market-panel { grid-template-columns: 1fr; }
   .team-market-meta { grid-column: auto; }
   .profile-metrics { grid-template-columns: 1fr; }
+}
+
+html[data-theme="dark"] .score-explainer { background: rgba(83, 209, 160, .055); }
+
+/* Historical forecast accuracy + postgame review */
+.postgame-card { margin-top: 16px; }
+.postgame-lead { margin: 0 0 14px; color: var(--muted); font-size: 12px; }
+.postgame-lead strong { color: var(--ink); }
+.postgame-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; }
+.postgame-source { padding: 13px; border: 1px solid var(--line); border-radius: 13px; background: rgba(240,237,228,.5); }
+.postgame-source small,.postgame-source strong,.postgame-source span { display: block; }
+.postgame-source small { color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: .06em; font-weight: 850; }
+.postgame-source strong { margin: 6px 0; font-size: 13px; }
+.postgame-source span { color: var(--muted); font-size: 9px; margin-top: 3px; }
+.postgame-source.correct { border-top: 3px solid var(--green); }
+.postgame-source.miss { border-top: 3px solid var(--amber); }
+.postgame-summary { display: flex; justify-content: space-between; gap: 18px; margin-top: 14px; padding: 11px 13px; border-radius: 12px; background: rgba(10,111,87,.07); }
+.postgame-summary strong { font-size: 11px; }
+.postgame-summary span { max-width: 660px; color: var(--muted); font-size: 10px; text-align: right; }
+
+.accuracy-kpis { grid-template-columns: repeat(4,minmax(0,1fr)); margin-bottom: 16px; }
+.accuracy-page > .card { margin-bottom: 16px; }
+.accuracy-pair-grid { grid-template-columns: repeat(2,minmax(0,1fr)); margin-bottom: 16px; }
+.accuracy-comparison { min-width: 0; }
+.accuracy-table th,.accuracy-table td,.accuracy-comparison th,.accuracy-comparison td { white-space: nowrap; }
+.accuracy-history { display: grid; }
+.accuracy-match { display: grid; grid-template-columns: minmax(150px,1.4fr) minmax(120px,1fr) minmax(110px,.8fr) minmax(90px,.7fr) auto; gap: 12px; align-items: center; padding: 11px 2px; border-bottom: 1px solid var(--line); color: inherit; text-decoration: none; }
+.accuracy-match:last-child { border-bottom: 0; }
+.accuracy-match:hover { background: rgba(10,111,87,.035); }
+.accuracy-match small,.accuracy-match strong { display: block; }
+.accuracy-match small { color: var(--muted); font-size: 8px; text-transform: uppercase; letter-spacing: .05em; }
+.accuracy-match strong { margin-top: 2px; font-size: 11px; }
+.accuracy-match em { color: var(--green); font-size: 9px; font-style: normal; font-weight: 800; }
+
+html[data-theme="dark"] .postgame-source { background: #202d2a; }
+html[data-theme="dark"] .postgame-summary { background: rgba(120,223,189,.07); }
+
+@media (max-width: 1100px) {
+  .postgame-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .accuracy-kpis { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .accuracy-pair-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 780px) {
+  .postgame-summary { display: block; }
+  .postgame-summary span { display: block; margin-top: 5px; text-align: left; }
+  .accuracy-match { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .accuracy-match em { grid-column: 1/-1; }
+}
+@media (max-width: 520px) {
+  .postgame-grid,.accuracy-kpis { grid-template-columns: 1fr; }
 }

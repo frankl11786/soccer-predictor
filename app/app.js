@@ -256,6 +256,7 @@ function renderRoute() {
     races: renderRaces,
     schedule: renderSchedule,
     scores: renderScores,
+    accuracy: renderAccuracy,
     news: renderNews,
     method: renderMethod,
     team: () => renderTeam(slug),
@@ -593,6 +594,13 @@ function fixtureScoreModel(f) {
 function likelyScores(matrix, home, away) {
   return matrix.flatMap((row,h)=>row.map((prob,a)=>({h,a,prob}))).sort((x,y)=>y.prob-x.prob).slice(0,5).map(row=>`<div class="likely-score"><strong>${row.h}–${row.a}</strong><span>${pct(row.prob,1)}</span><small>${esc(home.short)}–${esc(away.short)}</small></div>`).join('');
 }
+function exactScoreExplainer(matrix, probabilities, home, away) {
+  const top=matrix.flatMap((row,h)=>row.map((prob,a)=>({h,a,prob}))).sort((x,y)=>y.prob-x.prob)[0];
+  const favoriteKey=['home','draw','away'].sort((x,y)=>Number(probabilities[y]||0)-Number(probabilities[x]||0))[0];
+  const favoriteLabel=favoriteKey==='home'?`${home.short} win`:favoriteKey==='away'?`${away.short} win`:'draw';
+  const resultDescription=favoriteKey==='home'?`${home.short} scores more than ${away.short}`:favoriteKey==='away'?`${away.short} scores more than ${home.short}`:'the teams finish level';
+  return `Why ${top.h}–${top.a} can be the top score: ${top.h}–${top.a} is the most likely single exact scoreline at ${pct(top.prob,1)}. The ${favoriteLabel} probability of ${pct(probabilities[favoriteKey],1)} adds together every scoreline where ${resultDescription}. A single scoreline can therefore rank first even when a different overall result category is more likely.`;
+}
 function intervalLabel(value) {
   return Array.isArray(value) && value.length===2 ? `${pct(value[0],1)}–${pct(value[1],1)}` : 'Not available';
 }
@@ -630,6 +638,33 @@ function matchMarketComparison(f, h, a) {
   return `<article class="card market-comparison-card"><div class="card-head"><h2>Prediction-market comparison</h2><span class="eyebrow">Independent markets</span></div><div class="card-body"><div class="market-outcome-grid">${rows.map(([key,label])=>`<div class="market-outcome"><small>${esc(label)}</small><div><span>Model</span><strong>${probPct(model[key],1)}</strong></div><div><span>Polymarket</span><strong>${poly?probPct(poly.probabilities[key],1):'—'}</strong></div><div><span>Kalshi</span><strong>${kalshi?probPct(kalshi.probabilities[key],1):'—'}</strong></div>${kalshi&&kalshiRange(key)?`<div><span>Kalshi bid–ask</span><strong class="market-range">${kalshiRange(key)}</strong></div>`:''}<div><span>Consensus</span><strong>${consensus?probPct(consensus.probabilities[key],1):'—'}</strong></div><div><span>Model vs consensus</span><strong class="${consensus?.model_edge?.[key]>0?'positive':consensus?.model_edge?.[key]<0?'negative':'neutral'}">${consensus?signedPct(consensus.model_edge[key]):'—'}</strong></div>${consensus?`<p class="market-explainer">${esc(marketOutcomeExplainer(key,label,model,poly,kalshi,consensus))}</p>`:''}</div>`).join('')}</div><div class="market-meta">${poly?`<span>Polymarket: ${poly.normalized?`normalized from ${Number(poly.normalization_total).toFixed(3)}`:'approximately 100% raw total'} · Volume ${money(poly.volume)}</span><span>PM updated ${esc(marketUpdated(poly))}</span>${polyUrl?`<a href="${esc(polyUrl)}" target="_blank" rel="noopener noreferrer">Open Polymarket ↗</a>`:''}`:'<span>Polymarket unavailable</span>'}${kalshi?`<span>Kalshi: ${kalshi.normalized?`normalized from ${Number(kalshi.normalization_total).toFixed(3)}`:'approximately 100% raw total'} · Volume ${money(kalshi.volume)}</span><span>Kalshi updated ${esc(marketUpdated(kalshi))}</span>${kalshiUrl?`<a href="${esc(kalshiUrl)}" target="_blank" rel="noopener noreferrer">Open Kalshi ↗</a>`:''}`:'<span>Kalshi unavailable</span>'}</div><p class="detail-note">Both exchanges are comparison-only. Kalshi uses a bid/ask midpoint when the spread is usable and otherwise falls back to the latest trade. Consensus is an equal-weight mean of the available normalized exchange estimates. None of these values enter the Bayesian fit or simulations.</p></div></article>`;
 }
 
+function outcomeDisplay(outcome, h, a) {
+  if (outcome === 'home') return `${h.name} win`;
+  if (outcome === 'away') return `${a.name} win`;
+  return 'Draw';
+}
+
+function sourceDisplay(source) {
+  return ({model:'Bayesian model', polymarket:'Polymarket', kalshi:'Kalshi', consensus:'Market consensus'})[source] || source;
+}
+
+function postgameAnalysis(f, h, a) {
+  const review = f?.postgame_analysis;
+  if (f?.status !== 'final' || !review?.actual || !review?.sources || !review?.scores) return '';
+  const actual = review.actual.outcome;
+  if (!review.sources.model || !review.sources.polymarket || !review.sources.kalshi) return '';
+  const rows = ['model','polymarket','kalshi','consensus'].filter(source => review.sources[source] && review.scores[source]);
+  const best = [...rows].sort((x,y) => Number(review.scores[x].brier) - Number(review.scores[y].brier))[0];
+  const actualLabel = outcomeDisplay(actual,h,a);
+  const cards = rows.map(source => {
+    const probabilities = review.sources[source];
+    const score = review.scores[source];
+    const pickLabel = outcomeDisplay(score.top_pick,h,a);
+    return `<div class="postgame-source ${score.correct_pick?'correct':'miss'}"><small>${esc(sourceDisplay(source))}</small><strong>${probPct(score.actual_probability,1)} on the actual result</strong><span>Top pick: ${esc(pickLabel)} · ${score.correct_pick?'correct':'missed'}</span><span>Brier ${Number(score.brier).toFixed(3)} · Log loss ${Number(score.log_loss).toFixed(3)}</span></div>`;
+  }).join('');
+  return `<article class="card postgame-card"><div class="card-head"><h2>Postgame forecast review</h2><span class="eyebrow">Frozen pregame snapshot</span></div><div class="card-body"><p class="postgame-lead"><strong>${esc(actualLabel)}</strong> was the final 1X2 result (${Number(review.actual.home_score)}–${Number(review.actual.away_score)}). These probabilities are the last snapshot captured before kickoff, not probabilities recalculated after the result.</p><div class="postgame-grid">${cards}</div><div class="postgame-summary"><strong>Best probability forecast on this match: ${esc(sourceDisplay(best))}</strong><span>Lowest Brier score among the available pregame forecasts. Lower Brier and log-loss values indicate better probabilistic accuracy.</span></div></div></article>`;
+}
+
 function renderMatch(id) {
   const f=fixtureById(id);
   if(!f){ main.innerHTML=`<div class="page"><article class="card"><div class="empty"><h2>Match not found</h2><p>The fixture may have changed during the latest data refresh.</p><a class="button" href="#/schedule">Back to schedule</a></div></article></div>`; return; }
@@ -642,10 +677,47 @@ function renderMatch(id) {
   main.innerHTML=`<div class="page match-page">
     <a class="back-link" href="#/schedule">← Back to schedule</a>
     <section class="match-hero card"><div class="match-meta"><span class="eyebrow">${esc(state.data.meta.name)} · Round ${esc(f.round)}</span><strong>${esc(timing)}</strong><span class="status-pill ${f.status==='final'?'final':''}">${esc(status)}</span></div><div class="match-teams"><a href="#/team/${h.slug}" class="match-club">${badge(h,'large')}<span><strong>${esc(h.name)}</strong><small>Home</small></span></a><div class="match-score"><strong>${f.status==='final'?`${f.home_score}–${f.away_score}`:'vs'}</strong><span>${Number(f.xg_home).toFixed(2)}–${Number(f.xg_away).toFixed(2)} xG</span></div><a href="#/team/${a.slug}" class="match-club away">${badge(a,'large')}<span><strong>${esc(a.name)}</strong><small>Away</small></span></a></div></section>
-    <section class="grid match-detail-grid"><article class="card"><div class="card-head"><h2>Outcome forecast</h2><span class="eyebrow">Posterior probability</span></div><div class="card-body"><div class="outcome-grid"><div class="outcome-card ${probs.home===max?'favorite':''}"><small>${esc(h.short)} win</small><strong>${pct(probs.home,1)}</strong><span>90% range ${intervalLabel(probs.home_interval)}</span></div><div class="outcome-card ${probs.draw===max?'favorite':''}"><small>Draw</small><strong>${pct(probs.draw,1)}</strong><span>90% range ${intervalLabel(probs.draw_interval)}</span></div><div class="outcome-card ${probs.away===max?'favorite':''}"><small>${esc(a.short)} win</small><strong>${pct(probs.away,1)}</strong><span>90% range ${intervalLabel(probs.away_interval)}</span></div></div><div class="model-read"><strong>Model read</strong><p>${esc(read)}</p></div></div></article><article class="card"><div class="card-head"><h2>Most likely scores</h2><span class="eyebrow">Mean-xG Poisson</span></div><div class="card-body likely-scores">${likelyScores(model.matrix,h,a)}<p class="detail-note">Exact-score probabilities use the mean expected goals. The 1X2 probabilities include posterior uncertainty, so the two views will not match perfectly.</p></div></article></section>
+    <section class="grid match-detail-grid"><article class="card"><div class="card-head"><h2>Outcome forecast</h2><span class="eyebrow">Posterior probability</span></div><div class="card-body"><div class="outcome-grid"><div class="outcome-card ${probs.home===max?'favorite':''}"><small>${esc(h.short)} win</small><strong>${pct(probs.home,1)}</strong><span>90% range ${intervalLabel(probs.home_interval)}</span></div><div class="outcome-card ${probs.draw===max?'favorite':''}"><small>Draw</small><strong>${pct(probs.draw,1)}</strong><span>90% range ${intervalLabel(probs.draw_interval)}</span></div><div class="outcome-card ${probs.away===max?'favorite':''}"><small>${esc(a.short)} win</small><strong>${pct(probs.away,1)}</strong><span>90% range ${intervalLabel(probs.away_interval)}</span></div></div><div class="model-read"><strong>Model read</strong><p>${esc(read)}</p></div></div></article><article class="card"><div class="card-head"><h2>Most likely scores</h2><span class="eyebrow">Mean-xG Poisson</span></div><div class="card-body likely-scores">${likelyScores(model.matrix,h,a)}<div class="score-explainer"><strong>How to read this</strong><p>${esc(exactScoreExplainer(model.matrix,probs,h,a))}</p></div><p class="detail-note">Exact-score probabilities use the mean expected goals. The 1X2 probabilities include posterior uncertainty, so the two views will not match perfectly.</p></div></article></section>
     ${matchMarketComparison(f,h,a)}
+    ${postgameAnalysis(f,h,a)}
     <section class="grid rating-grid">${ratingCard(h,hForecast)}${ratingCard(a,aForecast)}</section>
     <section class="grid match-detail-grid"><article class="card"><div class="card-head"><h2>Exact score matrix</h2><span class="eyebrow">Rows ${esc(h.short)} · columns ${esc(a.short)}</span></div><div class="card-body table-wrap">${scoreMatrix(model.matrix)}</div></article><article class="card"><div class="card-head"><h2>Recent form</h2><span class="eyebrow">Last five completed</span></div><div class="card-body form-columns"><div><h3>${esc(h.short)}</h3>${recentForm(h.slug,f.id)}</div><div><h3>${esc(a.short)}</h3>${recentForm(a.slug,f.id)}</div></div></article></section>
+  </div>`;
+}
+
+function accuracyMetric(value, type='number') {
+  if (value === null || value === undefined || !Number.isFinite(Number(value))) return '—';
+  if (type === 'pct') return probPct(Number(value),1);
+  return Number(value).toFixed(3);
+}
+
+function accuracySourceRows(metrics, sources=['model','polymarket','kalshi','consensus']) {
+  return sources.map(source => {
+    const row = metrics?.[source] || {};
+    return `<tr><td><strong>${esc(row.label || sourceDisplay(source))}</strong></td><td>${Number(row.matches||0).toLocaleString()}</td><td>${accuracyMetric(row.pick_accuracy,'pct')}</td><td>${accuracyMetric(row.brier)}</td><td>${accuracyMetric(row.log_loss)}</td><td>${accuracyMetric(row.avg_actual_probability,'pct')}</td></tr>`;
+  }).join('');
+}
+
+function comparisonPanel(title, comparison, sources) {
+  const n = Number(comparison?.matches || 0);
+  return `<article class="card accuracy-comparison"><div class="card-head"><h2>${esc(title)}</h2><span class="eyebrow">${n} shared match${n===1?'':'es'}</span></div><div class="card-body">${n?`<div class="table-wrap"><table><thead><tr><th>Forecast</th><th>Matches</th><th>Top-pick accuracy</th><th>Brier ↓</th><th>Log loss ↓</th><th>Avg prob. on actual</th></tr></thead><tbody>${accuracySourceRows(comparison.sources,sources)}</tbody></table></div>`:'<div class="empty"><p>No completed matches with this exact coverage set have been graded yet.</p></div>'}</div></article>`;
+}
+
+function renderAccuracy() {
+  const accuracy=state.data.accuracy || {};
+  const history=(state.data.prediction_history || []).filter(row=>row.status==='final').sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
+  const comparisons=accuracy.comparisons || {};
+  const tMap=teamMap();
+  const recent=history.slice(0,25);
+  const tracked=Number(accuracy.graded_matches||0);
+  main.innerHTML=`<div class="page accuracy-page">
+    ${pageHead('Forecast accountability','Historical accuracy','A running audit of frozen pregame probabilities from our Bayesian model, Polymarket and Kalshi. The page starts accumulating results from the date this tracking feature is deployed; it does not reconstruct old forecasts after the fact.')}
+    <div class="notice"><strong>How accuracy is measured</strong><span>Multiclass Brier score is the primary metric and lower is better. Log loss also rewards calibrated confidence. Top-pick accuracy simply asks whether the highest-probability home/draw/away outcome occurred.</span></div>
+    <section class="grid accuracy-kpis">${metric('Graded matches',tracked.toLocaleString(),'Frozen pregame snapshots')}${metric('Pending snapshots',Number(accuracy.pending_matches||0).toLocaleString(),'Waiting for final results')}${metric('Primary metric','Brier ↓','Lower is better')}${metric('Tracking rule','Pregame only','No retrospective reconstruction')}</section>
+    <article class="card"><div class="card-head"><h2>Overall recorded performance</h2><span class="eyebrow">Coverage differs by source</span></div><div class="card-body">${tracked?`<div class="table-wrap"><table class="accuracy-table"><thead><tr><th>Forecast</th><th>Matches</th><th>Top-pick accuracy</th><th>Brier ↓</th><th>Log loss ↓</th><th>Avg prob. on actual</th></tr></thead><tbody>${accuracySourceRows(accuracy.overall)}</tbody></table></div>`:'<div class="empty"><h3>No graded matches yet</h3><p>The first pregame snapshots will be stored on the next forecast run. Once those matches finish, this page will begin grading the model and any available prediction markets.</p></div>'}<p class="detail-note">Overall rows can contain different numbers of matches because prediction-market coverage varies. Use the shared-match comparisons below for the fairest model-versus-market comparison.</p></div></article>
+    <section class="grid accuracy-pair-grid">${comparisonPanel('Model vs Polymarket',comparisons.model_vs_polymarket,['model','polymarket'])}${comparisonPanel('Model vs Kalshi',comparisons.model_vs_kalshi,['model','kalshi'])}</section>
+    ${comparisonPanel('All three on the same matches',comparisons.all_three,['model','polymarket','kalshi'])}
+    <article class="card"><div class="card-head"><h2>Recent graded matches</h2><span class="eyebrow">Frozen before kickoff</span></div><div class="card-body">${recent.length?`<div class="accuracy-history">${recent.map(row=>{const h=tMap[row.home],a=tMap[row.away],actual=row.actual?.outcome; const model=row.scores?.model; return `<a class="accuracy-match" href="#/match/${encodeURIComponent(row.fixture_id)}"><span><small>${esc(row.date||'')}</small><strong>${esc(h?.short||row.home)} vs ${esc(a?.short||row.away)}</strong></span><span><small>Actual</small><strong>${esc(outcomeDisplay(actual,h||{name:row.home},a||{name:row.away}))}</strong></span><span><small>Model on actual</small><strong>${model?probPct(model.actual_probability,1):'—'}</strong></span><span><small>Model Brier</small><strong>${model?Number(model.brier).toFixed(3):'—'}</strong></span><em>Review →</em></a>`;}).join('')}</div>`:'<div class="empty"><p>No completed tracked matches yet.</p></div>'}</div></article>
   </div>`;
 }
 
@@ -819,7 +891,7 @@ function renderMethod() {
       <section id="league"><div class="eyebrow">04</div><h2>${esc(state.data.meta.name)} rules</h2>${leagueSpecific}<p>Competition rules belong in a configuration layer so changes to playoff formats, qualification places or tiebreakers do not require rewriting the statistical model.</p></section>
       <section id="market-comparison"><div class="eyebrow">05</div><h2>Independent Polymarket + Kalshi comparison</h2><p>Both exchanges are displayed as separate benchmarks, never as training data, priors or calibration targets. The Bayesian model is fitted and the season is simulated before either market source is attached to the published snapshot.</p><div class="market-method-grid"><div><strong>Polymarket</strong><p>Season-winner contracts and exact full-match home/draw/away markets are normalized within their matched event. Raw contract prices are retained so the normalized comparison remains auditable.</p></div><div><strong>Kalshi</strong><p>The pipeline retrieves the exact season-winner event and open league-game events. For each Kalshi contract, it uses the midpoint of the best Yes bid and ask when the spread is usable; otherwise it falls back to the latest trade. Bid, ask, last trade and spread are retained.</p></div><div><strong>Individual matches</strong><p>A match quote is published only when both clubs match, the event date is verified, and all three 90-minute outcomes—home win, draw and away win—are available. Each exchange’s three outcomes are normalized independently to 100%.</p></div><div><strong>Market consensus</strong><p>When at least one external source is available, the site reports a market consensus. When both are available, it is the equal-weight mean of the normalized Polymarket and Kalshi estimates. It remains comparison-only and never feeds back into the Bayesian model.</p></div></div><div class="equation">Exchange-normalized probability = source estimate ÷ sum of estimates in the exact event<br><br>Market consensus = mean of available normalized Polymarket and Kalshi estimates<br><br>Model vs consensus = Bayesian probability − market consensus</div><p>A dash means no exact active market was safely matched. The site does not substitute sportsbook odds or infer a missing exchange price from the other exchange. Prediction-market prices can change between nightly snapshots.</p></section>
       <section id="validation"><div class="eyebrow">06</div><h2>How the production model is checked</h2><p>Every EPL rebuild removes the latest eligible historical matches, fits a smaller training-only model, and predicts the unseen holdout before the full production fit. The resulting Brier score, log loss and skill versus a naive frequency baseline are stored with the forecast and surfaced in Model News.</p><table><thead><tr><th>Metric</th><th>Purpose</th></tr></thead><tbody><tr><td>Multiclass Brier score</td><td>Accuracy of home/draw/away probabilities</td></tr><tr><td>Log loss</td><td>Penalizes confidently wrong forecasts</td></tr><tr><td>Calibration</td><td>Tests whether 60% events occur about 60% of the time</td></tr><tr><td>Ranked probability score</td><td>Quality of final-position distributions</td></tr><tr><td>Baseline comparison</td><td>Checks whether the holdout beats naive outcome frequencies</td></tr></tbody></table><p>Large model-to-market gaps create diagnostic review warnings. These warnings never alter the Bayesian forecast or either exchange’s displayed estimate.</p></section>
-      <section id="limitations"><div class="eyebrow">07</div><h2>Current limitations</h2><ul><li>Fixtures and results depend on the seasons available through the connected data sources.</li><li>Squad values and attack/defense seeds remain manually maintained and should be refreshed after transfer windows.</li><li>The nightly holdout checks match outcomes; it is not yet a full historical backtest of preseason title probabilities.</li><li>Polymarket and Kalshi market availability varies. Season contracts can become unavailable, and individual match markets are commonly listed closer to kickoff.</li><li>Kalshi bid/ask spreads can be wide in thin markets; the site exposes the range rather than presenting the midpoint as perfectly precise.</li><li>Prediction-market estimates reflect trader activity and liquidity, not objective ground truth.</li><li>Player availability, rest, travel and congestion are not yet included.</li><li>The scoring model is independent Poisson; a future validation phase should compare it with a Dixon–Coles correction.</li></ul></section>
+      <section id="limitations"><div class="eyebrow">07</div><h2>Current limitations</h2><ul><li>Fixtures and results depend on the seasons available through the connected data sources.</li><li>Squad values and attack/defense seeds remain manually maintained and should be refreshed after transfer windows.</li><li>The nightly holdout checks match outcomes; it is not yet a full historical backtest of preseason title probabilities.</li><li>Polymarket and Kalshi market availability varies. Season contracts can become unavailable, and individual match markets are commonly listed closer to kickoff.</li><li>Kalshi bid/ask spreads can be wide in thin markets; the site exposes the range rather than presenting the midpoint as perfectly precise.</li><li>Prediction-market estimates reflect trader activity and liquidity, not objective ground truth.</li><li>Historical match accuracy uses only frozen pre-kickoff snapshots captured after the accuracy feature is deployed; older forecasts are not reconstructed retrospectively.</li><li>Player availability, rest, travel and congestion are not yet included.</li><li>The scoring model is independent Poisson; a future validation phase should compare it with a Dixon–Coles correction.</li></ul></section>
     </article>
   </section></div>`;
 }

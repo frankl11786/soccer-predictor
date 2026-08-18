@@ -1,4 +1,5 @@
 import unittest
+from datetime import datetime, timezone
 from unittest.mock import Mock, patch
 
 from predictor.kalshi import _market_price, fetch_match_quotes, fetch_winner_quotes
@@ -261,7 +262,14 @@ class KalshiComparisonTests(unittest.TestCase):
             {"slug": "red-bull-new-york", "name": "Red Bull New York", "short": "RBNY"},
         ]
 
-        quotes, meta = fetch_match_quotes(fixtures, teams, "KXMLSGAME", lookahead_days=365, max_fixtures=5)
+        quotes, meta = fetch_match_quotes(
+            fixtures,
+            teams,
+            "KXMLSGAME",
+            lookahead_days=365,
+            max_fixtures=5,
+            as_of=datetime(2026, 8, 14, 12, tzinfo=timezone.utc),
+        )
         self.assertIn("atl-nyrb", quotes)
         quote = quotes["atl-nyrb"]
         self.assertEqual(quote.event_ticker, event_ticker)

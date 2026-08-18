@@ -6,6 +6,7 @@ from typing import Any
 from .bayes import PosteriorFit
 from .config import FUTURE_STATE_RETENTION, LeagueConfig, MARKET_SANITY_THRESHOLD, MODEL_VERSION
 from .data_prep import PreparedLeague
+from .history import attach_postgame_analysis, build_accuracy_summary, update_prediction_history
 from .kalshi import KalshiMatchQuote, KalshiWinnerQuote
 from .polymarket import MarketQuote, MatchMarketQuote
 from .simulate import SimulationResult
@@ -720,6 +721,15 @@ def build_snapshot(
     }
 
     generated = utc_now_iso()
+    prediction_history = update_prediction_history(
+        previous.get("prediction_history") if isinstance(previous, dict) else None,
+        simulation.fixtures,
+        generated,
+        MODEL_VERSION,
+    )
+    attach_postgame_analysis(simulation.fixtures, prediction_history)
+    accuracy = build_accuracy_summary(prediction_history)
+
     completed = sum(1 for fixture in simulation.fixtures if fixture["status"] == "final")
     team_names = {team["slug"]: team["name"] for team in teams}
     snapshot = {
@@ -780,6 +790,8 @@ def build_snapshot(
         "current_table": simulation.current_table,
         "forecast": simulation.forecast,
         "fixtures": simulation.fixtures,
+        "prediction_history": prediction_history,
+        "accuracy": accuracy,
         "news": _build_news(
             cfg,
             previous,

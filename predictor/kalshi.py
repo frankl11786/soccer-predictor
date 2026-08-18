@@ -613,6 +613,7 @@ def fetch_match_quotes(
     series_ticker: str | None,
     lookahead_days: int = 21,
     max_fixtures: int = 60,
+    as_of: datetime | None = None,
 ) -> tuple[dict[str, KalshiMatchQuote], dict[str, Any]]:
     if not series_ticker:
         return {}, {
@@ -625,7 +626,7 @@ def fetch_match_quotes(
         }
 
     team_by_slug = {str(team.get("slug")): team for team in teams}
-    now = datetime.now(timezone.utc)
+    now = as_of.astimezone(timezone.utc) if as_of is not None else datetime.now(timezone.utc)
     horizon = now + timedelta(days=max(1, lookahead_days))
     candidates = []
     for fixture in fixtures:
