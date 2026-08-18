@@ -1,0 +1,70 @@
+name: Backfill historical match comparisons
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: forecast-refresh
+  cancel-in-progress: false
+
+jobs:
+  backfill:
+    name: Recover and deploy historical comparisons
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      FTP_HOST: ${{ secrets.FTP_HOST }}
+      FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+      FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+      FTP_REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
+      FTP_TLS: ${{ secrets.FTP_TLS }}
+    steps:
+      - name: Check out full repository history
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Validate historical-history code
+        run: python3 -m unittest tests.test_history -v
+
+      - name: Recover historical pregame snapshots
+        run: python3 scripts/backfill_history.py --league both
+
+      - name: Commit recovered history
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "forecast-bot"
+          git config user.email "forecast-bot@users.noreply.github.com"
+          git add app/data/epl.json app/data/mls.json
+
+          if git diff --cached --quiet; then
+            echo "No new historical snapshots were recovered."
+            exit 0
+          fi
+
+          git commit -m "Backfill historical prediction comparisons"
+
+          for attempt in 1 2 3; do
+            git fetch origin main
+            if ! git rebase origin/main; then
+              git rebase --abort || true
+              echo "::error::Could not safely rebase historical data onto latest main."
+              exit 1
+            fi
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "main changed during publish; retrying ($attempt/3)..."
+            sleep 2
+          done
+
+          echo "::error::Unable to push historical backfill after 3 attempts."
+          exit 1
+
+      - name: Deploy website to GoDaddy
+        run: python3 scripts/deploy_ftp.py
