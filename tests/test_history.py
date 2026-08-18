@@ -1,6 +1,11 @@
 import unittest
 
-from predictor.history import attach_postgame_analysis, build_accuracy_summary, update_prediction_history
+from predictor.history import (
+    attach_postgame_analysis,
+    build_accuracy_summary,
+    recover_prediction_history_from_snapshots,
+    update_prediction_history,
+)
 
 
 class PredictionHistoryTests(unittest.TestCase):
@@ -78,6 +83,87 @@ class PredictionHistoryTests(unittest.TestCase):
         self.assertIn("model", postgame["sources"])
         self.assertIn("polymarket", postgame["sources"])
         self.assertIn("kalshi", postgame["sources"])
+
+    def test_archived_pregame_snapshot_backfills_completed_match(self):
+        final = {**self.scheduled_fixture(), "status": "final", "home_score": 1, "away_score": 0}
+        old_fixture = self.scheduled_fixture()
+        snapshot = {
+            "commit": "abcdef1234567890",
+            "data": {
+                "meta": {"generated_at": "2026-08-20T04:00:00Z", "model_version": "historical-v1"},
+                "fixtures": [old_fixture],
+            },
+        }
+        history = recover_prediction_history_from_snapshots(
+            [snapshot], [final], recovered_at="2026-08-21T04:00:00Z"
+        )
+        self.assertEqual(len(history), 1)
+        row = history[0]
+        self.assertEqual(row["status"], "final")
+        self.assertEqual(row["actual"]["outcome"], "home")
+        self.assertAlmostEqual(row["sources"]["polymarket"]["home"], 0.49)
+        self.assertAlmostEqual(row["sources"]["kalshi"]["home"], 0.50)
+        self.assertEqual(row["provenance"]["type"], "archived_git_snapshot")
+        self.assertEqual(row["provenance"]["commit"], "abcdef123456")
+
+    def test_backfill_never_uses_post_kickoff_snapshot(self):
+        final = {**self.scheduled_fixture(), "status": "final", "home_score": 1, "away_score": 0}
+        snapshot = {
+            "commit": "late",
+            "data": {
+                "meta": {"generated_at": "2026-08-21T04:00:00Z"},
+                "fixtures": [self.scheduled_fixture()],
+            },
+        }
+        history = recover_prediction_history_from_snapshots(
+            [snapshot], [final], recovered_at="2026-08-21T05:00:00Z"
+        )
+        self.assertEqual(history, [])
+
+    def test_backfill_prefers_richer_market_coverage_before_kickoff(self):
+        final = {**self.scheduled_fixture(), "status": "final", "home_score": 1, "away_score": 0}
+        rich = self.scheduled_fixture()
+        thin = self.scheduled_fixture()
+        thin.pop("kalshi")
+        thin.pop("market_consensus")
+        snapshots = [
+            {
+                "commit": "rich",
+                "data": {
+                    "meta": {"generated_at": "2026-08-19T04:00:00Z"},
+                    "fixtures": [rich],
+                },
+            },
+            {
+                "commit": "thin",
+                "data": {
+                    "meta": {"generated_at": "2026-08-20T20:00:00Z"},
+                    "fixtures": [thin],
+                },
+            },
+        ]
+        history = recover_prediction_history_from_snapshots(
+            snapshots, [final], recovered_at="2026-08-21T04:00:00Z"
+        )
+        self.assertIn("kalshi", history[0]["sources"])
+        self.assertEqual(history[0]["captured_at"], "2026-08-19T04:00:00Z")
+
+    def test_accuracy_summary_reports_recovered_coverage(self):
+        final = {**self.scheduled_fixture(), "status": "final", "home_score": 1, "away_score": 0}
+        snapshot = {
+            "commit": "abc",
+            "data": {
+                "meta": {"generated_at": "2026-08-20T04:00:00Z"},
+                "fixtures": [self.scheduled_fixture()],
+            },
+        }
+        history = recover_prediction_history_from_snapshots(
+            [snapshot], [final], recovered_at="2026-08-21T04:00:00Z"
+        )
+        accuracy = build_accuracy_summary(history)
+        self.assertEqual(accuracy["recovered_matches"], 1)
+        self.assertEqual(accuracy["coverage_start"], "2026-08-20")
+        self.assertEqual(accuracy["coverage_end"], "2026-08-20")
 
 
 if __name__ == "__main__":

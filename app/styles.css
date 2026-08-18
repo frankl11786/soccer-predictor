@@ -781,3 +781,18 @@ html[data-theme="dark"] .postgame-summary { background: rgba(120,223,189,.07); }
 @media (max-width: 520px) {
   .postgame-grid,.accuracy-kpis { grid-template-columns: 1fr; }
 }
+
+/* Archived pregame market history */
+.archived-market-card { border-color: rgba(10,111,87,.22); }
+.archived-market-card .card-head { background: rgba(10,111,87,.035); }
+.postgame-verdict { display: flex; justify-content: space-between; gap: 18px; margin: 0 0 14px; padding: 11px 13px; border: 1px solid var(--line); border-radius: 12px; }
+.postgame-verdict strong { font-size: 10px; text-transform: uppercase; letter-spacing: .05em; }
+.postgame-verdict span { color: var(--muted); font-size: 10px; text-align: right; }
+.postgame-table th,.postgame-table td { white-space: nowrap; }
+.postgame-table tbody tr.correct td:first-child { border-left: 3px solid var(--green); }
+.postgame-table tbody tr.miss td:first-child { border-left: 3px solid var(--amber); }
+html[data-theme="dark"] .archived-market-card .card-head { background: rgba(120,223,189,.035); }
+@media (max-width: 700px) {
+  .postgame-verdict { display: block; }
+  .postgame-verdict span { display: block; margin-top: 5px; text-align: left; }
+}
