@@ -354,7 +354,9 @@
       },
       "updated_at": "2026-08-18T05:29:10Z"
     },
-    "compared_with_previous_snapshot": true
+    "compared_with_previous_snapshot": true,
+    "history_backfill_at": "2026-08-18T05:48:00.072991Z",
+    "history_backfill_method": "archived committed pregame snapshots"
   },
   "methodology": {
     "market_comparison": {
@@ -15668,15 +15670,17 @@
       "round": "Regular Season - 1",
       "home": "arsenal",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-ars-cov-2026-08-21",
+          "event_slug": "epl-ars-cov-2026-08-21",
           "updated_at": "2026-08-18T05:29:02Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug21arscov",
+          "event_ticker": "KXEPLGAME-26AUG21ARSCOV",
           "updated_at": "2026-08-07T00:37:00.24615Z"
         }
       },
@@ -15711,15 +15715,17 @@
       "round": "Regular Season - 1",
       "home": "everton",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-eve-cry-2026-08-22",
+          "event_slug": "epl-eve-cry-2026-08-22",
           "updated_at": "2026-08-18T05:29:02Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug22evecry",
+          "event_ticker": "KXEPLGAME-26AUG22EVECRY",
           "updated_at": "2026-08-08T00:50:00.213416Z"
         }
       },
@@ -15754,15 +15760,17 @@
       "round": "Regular Season - 1",
       "home": "brentford",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-bre-tot-2026-08-22",
+          "event_slug": "epl-bre-tot-2026-08-22",
           "updated_at": "2026-08-18T05:29:03Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug22bretot",
+          "event_ticker": "KXEPLGAME-26AUG22BRETOT",
           "updated_at": "2026-08-08T00:50:00.213416Z"
         }
       },
@@ -15797,15 +15805,17 @@
       "round": "Regular Season - 1",
       "home": "ipswich-town",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-ips-sun-2026-08-22",
+          "event_slug": "epl-ips-sun-2026-08-22",
           "updated_at": "2026-08-18T05:29:03Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug22ipssun",
+          "event_ticker": "KXEPLGAME-26AUG22IPSSUN",
           "updated_at": "2026-08-08T00:50:00.213416Z"
         }
       },
@@ -15840,15 +15850,17 @@
       "round": "Regular Season - 1",
       "home": "hull-city",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-hul-mun-2026-08-22",
+          "event_slug": "epl-hul-mun-2026-08-22",
           "updated_at": "2026-08-18T05:29:02Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug22hulmun",
+          "event_ticker": "KXEPLGAME-26AUG22HULMUN",
           "updated_at": "2026-08-08T00:50:00.213416Z"
         }
       },
@@ -15883,11 +15895,12 @@
       "round": "Regular Season - 1",
       "home": "nottingham-forest",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-not-lee-2026-08-22",
+          "event_slug": "epl-not-lee-2026-08-22",
           "updated_at": "2026-08-18T05:29:03Z"
         },
         "kalshi": null
@@ -15918,15 +15931,17 @@
       "round": "Regular Season - 1",
       "home": "manchester-city",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-mac-bou-2026-08-23",
+          "event_slug": "epl-mac-bou-2026-08-23",
           "updated_at": "2026-08-18T05:29:04Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug23mcibou",
+          "event_ticker": "KXEPLGAME-26AUG23MCIBOU",
           "updated_at": "2026-08-09T00:44:00.27146Z"
         }
       },
@@ -15961,15 +15976,17 @@
       "round": "Regular Season - 1",
       "home": "newcastle-united",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-new-liv-2026-08-23",
+          "event_slug": "epl-new-liv-2026-08-23",
           "updated_at": "2026-08-18T05:29:04Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug23newlfc",
+          "event_ticker": "KXEPLGAME-26AUG23NEWLFC",
           "updated_at": "2026-08-09T00:44:00.27146Z"
         }
       },
@@ -16004,15 +16021,17 @@
       "round": "Regular Season - 1",
       "home": "brighton-and-hove-albion",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-bri-ast-2026-08-23",
+          "event_slug": "epl-bri-ast-2026-08-23",
           "updated_at": "2026-08-18T05:29:04Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug23briavl",
+          "event_ticker": "KXEPLGAME-26AUG23BRIAVL",
           "updated_at": "2026-08-09T00:44:00.27146Z"
         }
       },
@@ -16047,15 +16066,17 @@
       "round": "Regular Season - 1",
       "home": "fulham",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-ful-che-2026-08-24",
+          "event_slug": "epl-ful-che-2026-08-24",
           "updated_at": "2026-08-18T05:29:04Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug24fulcfc",
+          "event_ticker": "KXEPLGAME-26AUG24FULCFC",
           "updated_at": "2026-08-10T00:37:00.211228Z"
         }
       },
@@ -16090,11 +16111,12 @@
       "round": "Regular Season - 2",
       "home": "leeds-united",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-lee-bre-2026-08-30",
+          "event_slug": "epl-lee-bre-2026-08-30",
           "updated_at": "2026-08-18T05:29:05Z"
         },
         "kalshi": null
@@ -16125,15 +16147,17 @@
       "round": "Regular Season - 2",
       "home": "manchester-united",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-mun-ips-2026-08-30",
+          "event_slug": "epl-mun-ips-2026-08-30",
           "updated_at": "2026-08-18T05:29:05Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug30munips",
+          "event_ticker": "KXEPLGAME-26AUG30MUNIPS",
           "updated_at": "2026-08-16T00:51:00.216951Z"
         }
       },
@@ -16168,7 +16192,7 @@
       "round": "Regular Season - 2",
       "home": "aston-villa",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16190,11 +16214,12 @@
       "round": "Regular Season - 2",
       "home": "bournemouth",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-bou-eve-2026-08-29",
+          "event_slug": "epl-bou-eve-2026-08-29",
           "updated_at": "2026-08-18T05:29:05Z"
         },
         "kalshi": null
@@ -16225,11 +16250,12 @@
       "round": "Regular Season - 2",
       "home": "sunderland",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-sun-ful-2026-08-30",
+          "event_slug": "epl-sun-ful-2026-08-30",
           "updated_at": "2026-08-18T05:29:06Z"
         },
         "kalshi": null
@@ -16260,11 +16286,12 @@
       "round": "Regular Season - 2",
       "home": "liverpool",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-liv-not-2026-08-29",
+          "event_slug": "epl-liv-not-2026-08-29",
           "updated_at": "2026-08-18T05:29:06Z"
         },
         "kalshi": null
@@ -16295,15 +16322,17 @@
       "round": "Regular Season - 2",
       "home": "chelsea",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-che-bri-2026-08-30",
+          "event_slug": "epl-che-bri-2026-08-30",
           "updated_at": "2026-08-18T05:29:06Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug30cfcbri",
+          "event_ticker": "KXEPLGAME-26AUG30CFCBRI",
           "updated_at": "2026-08-16T00:51:00.216951Z"
         }
       },
@@ -16338,15 +16367,17 @@
       "round": "Regular Season - 2",
       "home": "tottenham-hotspur",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-tot-new-2026-08-29",
+          "event_slug": "epl-tot-new-2026-08-29",
           "updated_at": "2026-08-18T05:29:06Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug29totnew",
+          "event_ticker": "KXEPLGAME-26AUG29TOTNEW",
           "updated_at": "2026-08-15T00:55:00.212316Z"
         }
       },
@@ -16381,15 +16412,17 @@
       "round": "Regular Season - 2",
       "home": "crystal-palace",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-cry-mac-2026-08-28",
+          "event_slug": "epl-cry-mac-2026-08-28",
           "updated_at": "2026-08-18T05:29:07Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug28crymci",
+          "event_ticker": "KXEPLGAME-26AUG28CRYMCI",
           "updated_at": "2026-08-14T00:38:00.214105Z"
         }
       },
@@ -16424,15 +16457,17 @@
       "round": "Regular Season - 2",
       "home": "coventry-city",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
           "event_url": "https://polymarket.com/event/epl-cov-hul-2026-08-29",
+          "event_slug": "epl-cov-hul-2026-08-29",
           "updated_at": "2026-08-18T05:29:07Z"
         },
         "kalshi": {
           "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug29covhul",
+          "event_ticker": "KXEPLGAME-26AUG29COVHUL",
           "updated_at": "2026-08-15T00:55:00.212316Z"
         }
       },
@@ -16467,7 +16502,7 @@
       "round": "Regular Season - 3",
       "home": "ipswich-town",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16489,7 +16524,7 @@
       "round": "Regular Season - 3",
       "home": "newcastle-united",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16511,7 +16546,7 @@
       "round": "Regular Season - 3",
       "home": "fulham",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16533,7 +16568,7 @@
       "round": "Regular Season - 3",
       "home": "manchester-city",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16555,7 +16590,7 @@
       "round": "Regular Season - 3",
       "home": "brighton-and-hove-albion",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16577,7 +16612,7 @@
       "round": "Regular Season - 3",
       "home": "brentford",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16599,7 +16634,7 @@
       "round": "Regular Season - 3",
       "home": "arsenal",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16621,7 +16656,7 @@
       "round": "Regular Season - 3",
       "home": "hull-city",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16643,7 +16678,7 @@
       "round": "Regular Season - 3",
       "home": "nottingham-forest",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16665,7 +16700,7 @@
       "round": "Regular Season - 3",
       "home": "everton",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16687,7 +16722,7 @@
       "round": "Regular Season - 4",
       "home": "liverpool",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16709,7 +16744,7 @@
       "round": "Regular Season - 4",
       "home": "sunderland",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16731,7 +16766,7 @@
       "round": "Regular Season - 4",
       "home": "tottenham-hotspur",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16753,7 +16788,7 @@
       "round": "Regular Season - 4",
       "home": "chelsea",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16775,7 +16810,7 @@
       "round": "Regular Season - 4",
       "home": "bournemouth",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16797,7 +16832,7 @@
       "round": "Regular Season - 4",
       "home": "manchester-united",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16819,7 +16854,7 @@
       "round": "Regular Season - 4",
       "home": "crystal-palace",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16841,7 +16876,7 @@
       "round": "Regular Season - 4",
       "home": "coventry-city",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16863,7 +16898,7 @@
       "round": "Regular Season - 4",
       "home": "leeds-united",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16885,7 +16920,7 @@
       "round": "Regular Season - 4",
       "home": "aston-villa",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16907,7 +16942,7 @@
       "round": "Regular Season - 5",
       "home": "fulham",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16929,7 +16964,7 @@
       "round": "Regular Season - 5",
       "home": "newcastle-united",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16951,7 +16986,7 @@
       "round": "Regular Season - 5",
       "home": "everton",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16973,7 +17008,7 @@
       "round": "Regular Season - 5",
       "home": "nottingham-forest",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -16995,7 +17030,7 @@
       "round": "Regular Season - 5",
       "home": "brighton-and-hove-albion",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17017,7 +17052,7 @@
       "round": "Regular Season - 5",
       "home": "brentford",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17039,7 +17074,7 @@
       "round": "Regular Season - 5",
       "home": "leeds-united",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17061,7 +17096,7 @@
       "round": "Regular Season - 5",
       "home": "tottenham-hotspur",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17083,7 +17118,7 @@
       "round": "Regular Season - 5",
       "home": "manchester-city",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17105,7 +17140,7 @@
       "round": "Regular Season - 5",
       "home": "bournemouth",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17127,7 +17162,7 @@
       "round": "Regular Season - 6",
       "home": "sunderland",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17149,7 +17184,7 @@
       "round": "Regular Season - 6",
       "home": "liverpool",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17171,7 +17206,7 @@
       "round": "Regular Season - 6",
       "home": "crystal-palace",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17193,7 +17228,7 @@
       "round": "Regular Season - 6",
       "home": "aston-villa",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17215,7 +17250,7 @@
       "round": "Regular Season - 6",
       "home": "hull-city",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17237,7 +17272,7 @@
       "round": "Regular Season - 6",
       "home": "manchester-united",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17259,7 +17294,7 @@
       "round": "Regular Season - 6",
       "home": "coventry-city",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17281,7 +17316,7 @@
       "round": "Regular Season - 6",
       "home": "arsenal",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17303,7 +17338,7 @@
       "round": "Regular Season - 6",
       "home": "chelsea",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17325,7 +17360,7 @@
       "round": "Regular Season - 6",
       "home": "ipswich-town",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17347,7 +17382,7 @@
       "round": "Regular Season - 7",
       "home": "brighton-and-hove-albion",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17369,7 +17404,7 @@
       "round": "Regular Season - 7",
       "home": "newcastle-united",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17391,7 +17426,7 @@
       "round": "Regular Season - 7",
       "home": "manchester-city",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17413,7 +17448,7 @@
       "round": "Regular Season - 7",
       "home": "fulham",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17435,7 +17470,7 @@
       "round": "Regular Season - 7",
       "home": "nottingham-forest",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17457,7 +17492,7 @@
       "round": "Regular Season - 7",
       "home": "brentford",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17479,7 +17514,7 @@
       "round": "Regular Season - 7",
       "home": "everton",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17501,7 +17536,7 @@
       "round": "Regular Season - 7",
       "home": "tottenham-hotspur",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17523,7 +17558,7 @@
       "round": "Regular Season - 7",
       "home": "leeds-united",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17545,7 +17580,7 @@
       "round": "Regular Season - 7",
       "home": "bournemouth",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17567,7 +17602,7 @@
       "round": "Regular Season - 8",
       "home": "coventry-city",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17589,7 +17624,7 @@
       "round": "Regular Season - 8",
       "home": "hull-city",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17611,7 +17646,7 @@
       "round": "Regular Season - 8",
       "home": "ipswich-town",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17633,7 +17668,7 @@
       "round": "Regular Season - 8",
       "home": "sunderland",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17655,7 +17690,7 @@
       "round": "Regular Season - 8",
       "home": "arsenal",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17677,7 +17712,7 @@
       "round": "Regular Season - 8",
       "home": "chelsea",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17699,7 +17734,7 @@
       "round": "Regular Season - 8",
       "home": "liverpool",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17721,7 +17756,7 @@
       "round": "Regular Season - 8",
       "home": "aston-villa",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17743,7 +17778,7 @@
       "round": "Regular Season - 8",
       "home": "manchester-united",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17765,7 +17800,7 @@
       "round": "Regular Season - 8",
       "home": "crystal-palace",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17787,7 +17822,7 @@
       "round": "Regular Season - 9",
       "home": "brentford",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17809,7 +17844,7 @@
       "round": "Regular Season - 9",
       "home": "chelsea",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17831,7 +17866,7 @@
       "round": "Regular Season - 9",
       "home": "tottenham-hotspur",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17853,7 +17888,7 @@
       "round": "Regular Season - 9",
       "home": "newcastle-united",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17875,7 +17910,7 @@
       "round": "Regular Season - 9",
       "home": "aston-villa",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17897,7 +17932,7 @@
       "round": "Regular Season - 9",
       "home": "coventry-city",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17919,7 +17954,7 @@
       "round": "Regular Season - 9",
       "home": "manchester-city",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17941,7 +17976,7 @@
       "round": "Regular Season - 9",
       "home": "liverpool",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17963,7 +17998,7 @@
       "round": "Regular Season - 9",
       "home": "bournemouth",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -17985,7 +18020,7 @@
       "round": "Regular Season - 9",
       "home": "hull-city",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18007,7 +18042,7 @@
       "round": "Regular Season - 10",
       "home": "everton",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18029,7 +18064,7 @@
       "round": "Regular Season - 10",
       "home": "sunderland",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18051,7 +18086,7 @@
       "round": "Regular Season - 10",
       "home": "nottingham-forest",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18073,7 +18108,7 @@
       "round": "Regular Season - 10",
       "home": "brighton-and-hove-albion",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18095,7 +18130,7 @@
       "round": "Regular Season - 10",
       "home": "crystal-palace",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18117,7 +18152,7 @@
       "round": "Regular Season - 10",
       "home": "ipswich-town",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18139,7 +18174,7 @@
       "round": "Regular Season - 10",
       "home": "leeds-united",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18161,7 +18196,7 @@
       "round": "Regular Season - 10",
       "home": "manchester-united",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18183,7 +18218,7 @@
       "round": "Regular Season - 10",
       "home": "arsenal",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18205,7 +18240,7 @@
       "round": "Regular Season - 10",
       "home": "fulham",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18227,7 +18262,7 @@
       "round": "Regular Season - 11",
       "home": "tottenham-hotspur",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18249,7 +18284,7 @@
       "round": "Regular Season - 11",
       "home": "manchester-city",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18271,7 +18306,7 @@
       "round": "Regular Season - 11",
       "home": "brentford",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18293,7 +18328,7 @@
       "round": "Regular Season - 11",
       "home": "newcastle-united",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18315,7 +18350,7 @@
       "round": "Regular Season - 11",
       "home": "liverpool",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18337,7 +18372,7 @@
       "round": "Regular Season - 11",
       "home": "aston-villa",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18359,7 +18394,7 @@
       "round": "Regular Season - 11",
       "home": "hull-city",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18381,7 +18416,7 @@
       "round": "Regular Season - 11",
       "home": "bournemouth",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18403,7 +18438,7 @@
       "round": "Regular Season - 11",
       "home": "coventry-city",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18425,7 +18460,7 @@
       "round": "Regular Season - 11",
       "home": "chelsea",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18447,7 +18482,7 @@
       "round": "Regular Season - 12",
       "home": "arsenal",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18469,7 +18504,7 @@
       "round": "Regular Season - 12",
       "home": "nottingham-forest",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18491,7 +18526,7 @@
       "round": "Regular Season - 12",
       "home": "brighton-and-hove-albion",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18513,7 +18548,7 @@
       "round": "Regular Season - 12",
       "home": "manchester-united",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18535,7 +18570,7 @@
       "round": "Regular Season - 12",
       "home": "sunderland",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18557,7 +18592,7 @@
       "round": "Regular Season - 12",
       "home": "crystal-palace",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18579,7 +18614,7 @@
       "round": "Regular Season - 12",
       "home": "ipswich-town",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18601,7 +18636,7 @@
       "round": "Regular Season - 12",
       "home": "everton",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18623,7 +18658,7 @@
       "round": "Regular Season - 12",
       "home": "fulham",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18645,7 +18680,7 @@
       "round": "Regular Season - 12",
       "home": "leeds-united",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18667,7 +18702,7 @@
       "round": "Regular Season - 13",
       "home": "hull-city",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18689,7 +18724,7 @@
       "round": "Regular Season - 13",
       "home": "bournemouth",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18711,7 +18746,7 @@
       "round": "Regular Season - 13",
       "home": "coventry-city",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18733,7 +18768,7 @@
       "round": "Regular Season - 13",
       "home": "liverpool",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18755,7 +18790,7 @@
       "round": "Regular Season - 13",
       "home": "newcastle-united",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18777,7 +18812,7 @@
       "round": "Regular Season - 13",
       "home": "chelsea",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18799,7 +18834,7 @@
       "round": "Regular Season - 13",
       "home": "tottenham-hotspur",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18821,7 +18856,7 @@
       "round": "Regular Season - 13",
       "home": "manchester-city",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18843,7 +18878,7 @@
       "round": "Regular Season - 13",
       "home": "aston-villa",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18865,7 +18900,7 @@
       "round": "Regular Season - 13",
       "home": "brentford",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18887,7 +18922,7 @@
       "round": "Regular Season - 14",
       "home": "bournemouth",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18909,7 +18944,7 @@
       "round": "Regular Season - 14",
       "home": "tottenham-hotspur",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18931,7 +18966,7 @@
       "round": "Regular Season - 14",
       "home": "leeds-united",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18953,7 +18988,7 @@
       "round": "Regular Season - 14",
       "home": "nottingham-forest",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18975,7 +19010,7 @@
       "round": "Regular Season - 14",
       "home": "chelsea",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -18997,7 +19032,7 @@
       "round": "Regular Season - 14",
       "home": "manchester-united",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19019,7 +19054,7 @@
       "round": "Regular Season - 14",
       "home": "newcastle-united",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19041,7 +19076,7 @@
       "round": "Regular Season - 14",
       "home": "aston-villa",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19063,7 +19098,7 @@
       "round": "Regular Season - 14",
       "home": "everton",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19085,7 +19120,7 @@
       "round": "Regular Season - 14",
       "home": "brentford",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19107,7 +19142,7 @@
       "round": "Regular Season - 15",
       "home": "manchester-city",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19129,7 +19164,7 @@
       "round": "Regular Season - 15",
       "home": "ipswich-town",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19151,7 +19186,7 @@
       "round": "Regular Season - 15",
       "home": "sunderland",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19173,7 +19208,7 @@
       "round": "Regular Season - 15",
       "home": "crystal-palace",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19195,7 +19230,7 @@
       "round": "Regular Season - 15",
       "home": "liverpool",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19217,7 +19252,7 @@
       "round": "Regular Season - 15",
       "home": "arsenal",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19239,7 +19274,7 @@
       "round": "Regular Season - 15",
       "home": "brighton-and-hove-albion",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19261,7 +19296,7 @@
       "round": "Regular Season - 15",
       "home": "hull-city",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19283,7 +19318,7 @@
       "round": "Regular Season - 15",
       "home": "fulham",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19305,7 +19340,7 @@
       "round": "Regular Season - 15",
       "home": "coventry-city",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19327,7 +19362,7 @@
       "round": "Regular Season - 16",
       "home": "brentford",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19349,7 +19384,7 @@
       "round": "Regular Season - 16",
       "home": "liverpool",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19371,7 +19406,7 @@
       "round": "Regular Season - 16",
       "home": "manchester-city",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19393,7 +19428,7 @@
       "round": "Regular Season - 16",
       "home": "brighton-and-hove-albion",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19415,7 +19450,7 @@
       "round": "Regular Season - 16",
       "home": "bournemouth",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19437,7 +19472,7 @@
       "round": "Regular Season - 16",
       "home": "leeds-united",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19459,7 +19494,7 @@
       "round": "Regular Season - 16",
       "home": "sunderland",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19481,7 +19516,7 @@
       "round": "Regular Season - 16",
       "home": "arsenal",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19503,7 +19538,7 @@
       "round": "Regular Season - 16",
       "home": "chelsea",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19525,7 +19560,7 @@
       "round": "Regular Season - 16",
       "home": "nottingham-forest",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19547,7 +19582,7 @@
       "round": "Regular Season - 17",
       "home": "hull-city",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19569,7 +19604,7 @@
       "round": "Regular Season - 17",
       "home": "newcastle-united",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19591,7 +19626,7 @@
       "round": "Regular Season - 17",
       "home": "crystal-palace",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19613,7 +19648,7 @@
       "round": "Regular Season - 17",
       "home": "everton",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19635,7 +19670,7 @@
       "round": "Regular Season - 17",
       "home": "manchester-united",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19657,7 +19692,7 @@
       "round": "Regular Season - 17",
       "home": "tottenham-hotspur",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19679,7 +19714,7 @@
       "round": "Regular Season - 17",
       "home": "ipswich-town",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19701,7 +19736,7 @@
       "round": "Regular Season - 17",
       "home": "fulham",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19723,7 +19758,7 @@
       "round": "Regular Season - 17",
       "home": "coventry-city",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19745,7 +19780,7 @@
       "round": "Regular Season - 17",
       "home": "aston-villa",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19767,7 +19802,7 @@
       "round": "Regular Season - 18",
       "home": "ipswich-town",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19789,7 +19824,7 @@
       "round": "Regular Season - 18",
       "home": "aston-villa",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19811,7 +19846,7 @@
       "round": "Regular Season - 18",
       "home": "coventry-city",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19833,7 +19868,7 @@
       "round": "Regular Season - 18",
       "home": "hull-city",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19855,7 +19890,7 @@
       "round": "Regular Season - 18",
       "home": "crystal-palace",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19877,7 +19912,7 @@
       "round": "Regular Season - 18",
       "home": "tottenham-hotspur",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19899,7 +19934,7 @@
       "round": "Regular Season - 18",
       "home": "fulham",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19921,7 +19956,7 @@
       "round": "Regular Season - 18",
       "home": "everton",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19943,7 +19978,7 @@
       "round": "Regular Season - 18",
       "home": "newcastle-united",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19965,7 +20000,7 @@
       "round": "Regular Season - 18",
       "home": "manchester-united",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -19987,7 +20022,7 @@
       "round": "Regular Season - 19",
       "home": "leeds-united",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20009,7 +20044,7 @@
       "round": "Regular Season - 19",
       "home": "arsenal",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20031,7 +20066,7 @@
       "round": "Regular Season - 19",
       "home": "sunderland",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20053,7 +20088,7 @@
       "round": "Regular Season - 19",
       "home": "nottingham-forest",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20075,7 +20110,7 @@
       "round": "Regular Season - 19",
       "home": "chelsea",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20097,7 +20132,7 @@
       "round": "Regular Season - 19",
       "home": "bournemouth",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20119,7 +20154,7 @@
       "round": "Regular Season - 19",
       "home": "brighton-and-hove-albion",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20141,7 +20176,7 @@
       "round": "Regular Season - 19",
       "home": "brentford",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20163,7 +20198,7 @@
       "round": "Regular Season - 19",
       "home": "liverpool",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20185,7 +20220,7 @@
       "round": "Regular Season - 19",
       "home": "manchester-city",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20207,7 +20242,7 @@
       "round": "Regular Season - 20",
       "home": "ipswich-town",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20229,7 +20264,7 @@
       "round": "Regular Season - 20",
       "home": "sunderland",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20251,7 +20286,7 @@
       "round": "Regular Season - 20",
       "home": "everton",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20273,7 +20308,7 @@
       "round": "Regular Season - 20",
       "home": "fulham",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20295,7 +20330,7 @@
       "round": "Regular Season - 20",
       "home": "arsenal",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20317,7 +20352,7 @@
       "round": "Regular Season - 20",
       "home": "crystal-palace",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20339,7 +20374,7 @@
       "round": "Regular Season - 20",
       "home": "brighton-and-hove-albion",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20361,7 +20396,7 @@
       "round": "Regular Season - 20",
       "home": "manchester-united",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20383,7 +20418,7 @@
       "round": "Regular Season - 20",
       "home": "nottingham-forest",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20405,7 +20440,7 @@
       "round": "Regular Season - 20",
       "home": "leeds-united",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20427,7 +20462,7 @@
       "round": "Regular Season - 21",
       "home": "aston-villa",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20449,7 +20484,7 @@
       "round": "Regular Season - 21",
       "home": "tottenham-hotspur",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20471,7 +20506,7 @@
       "round": "Regular Season - 21",
       "home": "hull-city",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20493,7 +20528,7 @@
       "round": "Regular Season - 21",
       "home": "chelsea",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20515,7 +20550,7 @@
       "round": "Regular Season - 21",
       "home": "newcastle-united",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20537,7 +20572,7 @@
       "round": "Regular Season - 21",
       "home": "coventry-city",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20559,7 +20594,7 @@
       "round": "Regular Season - 21",
       "home": "bournemouth",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20581,7 +20616,7 @@
       "round": "Regular Season - 21",
       "home": "manchester-city",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20603,7 +20638,7 @@
       "round": "Regular Season - 21",
       "home": "brentford",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20625,7 +20660,7 @@
       "round": "Regular Season - 21",
       "home": "liverpool",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20647,7 +20682,7 @@
       "round": "Regular Season - 22",
       "home": "leeds-united",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20669,7 +20704,7 @@
       "round": "Regular Season - 22",
       "home": "fulham",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20691,7 +20726,7 @@
       "round": "Regular Season - 22",
       "home": "brighton-and-hove-albion",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20713,7 +20748,7 @@
       "round": "Regular Season - 22",
       "home": "everton",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20735,7 +20770,7 @@
       "round": "Regular Season - 22",
       "home": "manchester-united",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20757,7 +20792,7 @@
       "round": "Regular Season - 22",
       "home": "sunderland",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20779,7 +20814,7 @@
       "round": "Regular Season - 22",
       "home": "arsenal",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20801,7 +20836,7 @@
       "round": "Regular Season - 22",
       "home": "nottingham-forest",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20823,7 +20858,7 @@
       "round": "Regular Season - 22",
       "home": "ipswich-town",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20845,7 +20880,7 @@
       "round": "Regular Season - 22",
       "home": "crystal-palace",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20867,7 +20902,7 @@
       "round": "Regular Season - 23",
       "home": "bournemouth",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20889,7 +20924,7 @@
       "round": "Regular Season - 23",
       "home": "manchester-city",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20911,7 +20946,7 @@
       "round": "Regular Season - 23",
       "home": "chelsea",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20933,7 +20968,7 @@
       "round": "Regular Season - 23",
       "home": "coventry-city",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20955,7 +20990,7 @@
       "round": "Regular Season - 23",
       "home": "hull-city",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20977,7 +21012,7 @@
       "round": "Regular Season - 23",
       "home": "brentford",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -20999,7 +21034,7 @@
       "round": "Regular Season - 23",
       "home": "newcastle-united",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21021,7 +21056,7 @@
       "round": "Regular Season - 23",
       "home": "liverpool",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21043,7 +21078,7 @@
       "round": "Regular Season - 23",
       "home": "aston-villa",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21065,7 +21100,7 @@
       "round": "Regular Season - 23",
       "home": "tottenham-hotspur",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21087,7 +21122,7 @@
       "round": "Regular Season - 24",
       "home": "crystal-palace",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21109,7 +21144,7 @@
       "round": "Regular Season - 24",
       "home": "ipswich-town",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21131,7 +21166,7 @@
       "round": "Regular Season - 24",
       "home": "manchester-united",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21153,7 +21188,7 @@
       "round": "Regular Season - 24",
       "home": "fulham",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21175,7 +21210,7 @@
       "round": "Regular Season - 24",
       "home": "everton",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21197,7 +21232,7 @@
       "round": "Regular Season - 24",
       "home": "brighton-and-hove-albion",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21219,7 +21254,7 @@
       "round": "Regular Season - 24",
       "home": "nottingham-forest",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21241,7 +21276,7 @@
       "round": "Regular Season - 24",
       "home": "sunderland",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21263,7 +21298,7 @@
       "round": "Regular Season - 24",
       "home": "arsenal",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21285,7 +21320,7 @@
       "round": "Regular Season - 24",
       "home": "leeds-united",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21307,7 +21342,7 @@
       "round": "Regular Season - 25",
       "home": "manchester-united",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21329,7 +21364,7 @@
       "round": "Regular Season - 25",
       "home": "tottenham-hotspur",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21351,7 +21386,7 @@
       "round": "Regular Season - 25",
       "home": "hull-city",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21373,7 +21408,7 @@
       "round": "Regular Season - 25",
       "home": "everton",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21395,7 +21430,7 @@
       "round": "Regular Season - 25",
       "home": "coventry-city",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21417,7 +21452,7 @@
       "round": "Regular Season - 25",
       "home": "fulham",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21439,7 +21474,7 @@
       "round": "Regular Season - 25",
       "home": "aston-villa",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21461,7 +21496,7 @@
       "round": "Regular Season - 25",
       "home": "ipswich-town",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21483,7 +21518,7 @@
       "round": "Regular Season - 25",
       "home": "newcastle-united",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21505,7 +21540,7 @@
       "round": "Regular Season - 25",
       "home": "crystal-palace",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21527,7 +21562,7 @@
       "round": "Regular Season - 26",
       "home": "brentford",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21549,7 +21584,7 @@
       "round": "Regular Season - 26",
       "home": "leeds-united",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21571,7 +21606,7 @@
       "round": "Regular Season - 26",
       "home": "sunderland",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21593,7 +21628,7 @@
       "round": "Regular Season - 26",
       "home": "manchester-city",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21615,7 +21650,7 @@
       "round": "Regular Season - 26",
       "home": "nottingham-forest",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21637,7 +21672,7 @@
       "round": "Regular Season - 26",
       "home": "arsenal",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21659,7 +21694,7 @@
       "round": "Regular Season - 26",
       "home": "liverpool",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21681,7 +21716,7 @@
       "round": "Regular Season - 26",
       "home": "bournemouth",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21703,7 +21738,7 @@
       "round": "Regular Season - 26",
       "home": "chelsea",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21725,7 +21760,7 @@
       "round": "Regular Season - 26",
       "home": "brighton-and-hove-albion",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21747,7 +21782,7 @@
       "round": "Regular Season - 27",
       "home": "hull-city",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21769,7 +21804,7 @@
       "round": "Regular Season - 27",
       "home": "everton",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21791,7 +21826,7 @@
       "round": "Regular Season - 27",
       "home": "ipswich-town",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21813,7 +21848,7 @@
       "round": "Regular Season - 27",
       "home": "tottenham-hotspur",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21835,7 +21870,7 @@
       "round": "Regular Season - 27",
       "home": "manchester-united",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21857,7 +21892,7 @@
       "round": "Regular Season - 27",
       "home": "newcastle-united",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21879,7 +21914,7 @@
       "round": "Regular Season - 27",
       "home": "coventry-city",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21901,7 +21936,7 @@
       "round": "Regular Season - 27",
       "home": "fulham",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21923,7 +21958,7 @@
       "round": "Regular Season - 27",
       "home": "crystal-palace",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21945,7 +21980,7 @@
       "round": "Regular Season - 27",
       "home": "aston-villa",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21967,7 +22002,7 @@
       "round": "Regular Season - 28",
       "home": "brighton-and-hove-albion",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -21989,7 +22024,7 @@
       "round": "Regular Season - 28",
       "home": "liverpool",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22011,7 +22046,7 @@
       "round": "Regular Season - 28",
       "home": "chelsea",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22033,7 +22068,7 @@
       "round": "Regular Season - 28",
       "home": "leeds-united",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22055,7 +22090,7 @@
       "round": "Regular Season - 28",
       "home": "arsenal",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22077,7 +22112,7 @@
       "round": "Regular Season - 28",
       "home": "manchester-city",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22099,7 +22134,7 @@
       "round": "Regular Season - 28",
       "home": "brentford",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22121,7 +22156,7 @@
       "round": "Regular Season - 28",
       "home": "sunderland",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22143,7 +22178,7 @@
       "round": "Regular Season - 28",
       "home": "bournemouth",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22165,7 +22200,7 @@
       "round": "Regular Season - 28",
       "home": "nottingham-forest",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22187,7 +22222,7 @@
       "round": "Regular Season - 29",
       "home": "sunderland",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22209,7 +22244,7 @@
       "round": "Regular Season - 29",
       "home": "manchester-united",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22231,7 +22266,7 @@
       "round": "Regular Season - 29",
       "home": "leeds-united",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22253,7 +22288,7 @@
       "round": "Regular Season - 29",
       "home": "bournemouth",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22275,7 +22310,7 @@
       "round": "Regular Season - 29",
       "home": "aston-villa",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22297,7 +22332,7 @@
       "round": "Regular Season - 29",
       "home": "coventry-city",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22319,7 +22354,7 @@
       "round": "Regular Season - 29",
       "home": "liverpool",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22341,7 +22376,7 @@
       "round": "Regular Season - 29",
       "home": "chelsea",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22363,7 +22398,7 @@
       "round": "Regular Season - 29",
       "home": "tottenham-hotspur",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22385,7 +22420,7 @@
       "round": "Regular Season - 29",
       "home": "crystal-palace",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22407,7 +22442,7 @@
       "round": "Regular Season - 30",
       "home": "newcastle-united",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22429,7 +22464,7 @@
       "round": "Regular Season - 30",
       "home": "nottingham-forest",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22451,7 +22486,7 @@
       "round": "Regular Season - 30",
       "home": "hull-city",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22473,7 +22508,7 @@
       "round": "Regular Season - 30",
       "home": "brighton-and-hove-albion",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22495,7 +22530,7 @@
       "round": "Regular Season - 30",
       "home": "ipswich-town",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22517,7 +22552,7 @@
       "round": "Regular Season - 30",
       "home": "arsenal",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22539,7 +22574,7 @@
       "round": "Regular Season - 30",
       "home": "manchester-city",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22561,7 +22596,7 @@
       "round": "Regular Season - 30",
       "home": "fulham",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22583,7 +22618,7 @@
       "round": "Regular Season - 30",
       "home": "brentford",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22605,7 +22640,7 @@
       "round": "Regular Season - 30",
       "home": "everton",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22627,7 +22662,7 @@
       "round": "Regular Season - 31",
       "home": "leeds-united",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22649,7 +22684,7 @@
       "round": "Regular Season - 31",
       "home": "tottenham-hotspur",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22671,7 +22706,7 @@
       "round": "Regular Season - 31",
       "home": "sunderland",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22693,7 +22728,7 @@
       "round": "Regular Season - 31",
       "home": "chelsea",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22715,7 +22750,7 @@
       "round": "Regular Season - 31",
       "home": "liverpool",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22737,7 +22772,7 @@
       "round": "Regular Season - 31",
       "home": "bournemouth",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22759,7 +22794,7 @@
       "round": "Regular Season - 31",
       "home": "crystal-palace",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22781,7 +22816,7 @@
       "round": "Regular Season - 31",
       "home": "aston-villa",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22803,7 +22838,7 @@
       "round": "Regular Season - 31",
       "home": "manchester-united",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22825,7 +22860,7 @@
       "round": "Regular Season - 31",
       "home": "coventry-city",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22847,7 +22882,7 @@
       "round": "Regular Season - 32",
       "home": "arsenal",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22869,7 +22904,7 @@
       "round": "Regular Season - 32",
       "home": "manchester-city",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22891,7 +22926,7 @@
       "round": "Regular Season - 32",
       "home": "newcastle-united",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22913,7 +22948,7 @@
       "round": "Regular Season - 32",
       "home": "fulham",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22935,7 +22970,7 @@
       "round": "Regular Season - 32",
       "home": "nottingham-forest",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22957,7 +22992,7 @@
       "round": "Regular Season - 32",
       "home": "everton",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -22979,7 +23014,7 @@
       "round": "Regular Season - 32",
       "home": "hull-city",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23001,7 +23036,7 @@
       "round": "Regular Season - 32",
       "home": "brentford",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23023,7 +23058,7 @@
       "round": "Regular Season - 32",
       "home": "brighton-and-hove-albion",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23045,7 +23080,7 @@
       "round": "Regular Season - 32",
       "home": "ipswich-town",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23067,7 +23102,7 @@
       "round": "Regular Season - 33",
       "home": "tottenham-hotspur",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23089,7 +23124,7 @@
       "round": "Regular Season - 33",
       "home": "manchester-united",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23111,7 +23146,7 @@
       "round": "Regular Season - 33",
       "home": "chelsea",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23133,7 +23168,7 @@
       "round": "Regular Season - 33",
       "home": "everton",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23155,7 +23190,7 @@
       "round": "Regular Season - 33",
       "home": "newcastle-united",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23177,7 +23212,7 @@
       "round": "Regular Season - 33",
       "home": "bournemouth",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23199,7 +23234,7 @@
       "round": "Regular Season - 33",
       "home": "brentford",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23221,7 +23256,7 @@
       "round": "Regular Season - 33",
       "home": "leeds-united",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23243,7 +23278,7 @@
       "round": "Regular Season - 33",
       "home": "nottingham-forest",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23265,7 +23300,7 @@
       "round": "Regular Season - 33",
       "home": "aston-villa",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23287,7 +23322,7 @@
       "round": "Regular Season - 34",
       "home": "sunderland",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23309,7 +23344,7 @@
       "round": "Regular Season - 34",
       "home": "manchester-city",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23331,7 +23366,7 @@
       "round": "Regular Season - 34",
       "home": "liverpool",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23353,7 +23388,7 @@
       "round": "Regular Season - 34",
       "home": "fulham",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23375,7 +23410,7 @@
       "round": "Regular Season - 34",
       "home": "brighton-and-hove-albion",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23397,7 +23432,7 @@
       "round": "Regular Season - 34",
       "home": "crystal-palace",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23419,7 +23454,7 @@
       "round": "Regular Season - 34",
       "home": "arsenal",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23441,7 +23476,7 @@
       "round": "Regular Season - 34",
       "home": "coventry-city",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23463,7 +23498,7 @@
       "round": "Regular Season - 34",
       "home": "ipswich-town",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23485,7 +23520,7 @@
       "round": "Regular Season - 34",
       "home": "hull-city",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23507,7 +23542,7 @@
       "round": "Regular Season - 35",
       "home": "fulham",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23529,7 +23564,7 @@
       "round": "Regular Season - 35",
       "home": "everton",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23551,7 +23586,7 @@
       "round": "Regular Season - 35",
       "home": "bournemouth",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23573,7 +23608,7 @@
       "round": "Regular Season - 35",
       "home": "leeds-united",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23595,7 +23630,7 @@
       "round": "Regular Season - 35",
       "home": "manchester-city",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23617,7 +23652,7 @@
       "round": "Regular Season - 35",
       "home": "tottenham-hotspur",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23639,7 +23674,7 @@
       "round": "Regular Season - 35",
       "home": "newcastle-united",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23661,7 +23696,7 @@
       "round": "Regular Season - 35",
       "home": "nottingham-forest",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23683,7 +23718,7 @@
       "round": "Regular Season - 35",
       "home": "brighton-and-hove-albion",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23705,7 +23740,7 @@
       "round": "Regular Season - 35",
       "home": "brentford",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23727,7 +23762,7 @@
       "round": "Regular Season - 36",
       "home": "crystal-palace",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23749,7 +23784,7 @@
       "round": "Regular Season - 36",
       "home": "arsenal",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23771,7 +23806,7 @@
       "round": "Regular Season - 36",
       "home": "hull-city",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23793,7 +23828,7 @@
       "round": "Regular Season - 36",
       "home": "liverpool",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23815,7 +23850,7 @@
       "round": "Regular Season - 36",
       "home": "chelsea",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23837,7 +23872,7 @@
       "round": "Regular Season - 36",
       "home": "sunderland",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23859,7 +23894,7 @@
       "round": "Regular Season - 36",
       "home": "aston-villa",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23881,7 +23916,7 @@
       "round": "Regular Season - 36",
       "home": "manchester-united",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23903,7 +23938,7 @@
       "round": "Regular Season - 36",
       "home": "ipswich-town",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23925,7 +23960,7 @@
       "round": "Regular Season - 36",
       "home": "coventry-city",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23947,7 +23982,7 @@
       "round": "Regular Season - 37",
       "home": "brentford",
       "away": "hull-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23969,7 +24004,7 @@
       "round": "Regular Season - 37",
       "home": "tottenham-hotspur",
       "away": "manchester-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -23991,7 +24026,7 @@
       "round": "Regular Season - 37",
       "home": "leeds-united",
       "away": "sunderland",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24013,7 +24048,7 @@
       "round": "Regular Season - 37",
       "home": "manchester-city",
       "away": "aston-villa",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24035,7 +24070,7 @@
       "round": "Regular Season - 37",
       "home": "bournemouth",
       "away": "chelsea",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24057,7 +24092,7 @@
       "round": "Regular Season - 37",
       "home": "everton",
       "away": "arsenal",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24079,7 +24114,7 @@
       "round": "Regular Season - 37",
       "home": "nottingham-forest",
       "away": "ipswich-town",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24101,7 +24136,7 @@
       "round": "Regular Season - 37",
       "home": "newcastle-united",
       "away": "crystal-palace",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24123,7 +24158,7 @@
       "round": "Regular Season - 37",
       "home": "fulham",
       "away": "coventry-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24145,7 +24180,7 @@
       "round": "Regular Season - 37",
       "home": "brighton-and-hove-albion",
       "away": "liverpool",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24167,7 +24202,7 @@
       "round": "Regular Season - 38",
       "home": "arsenal",
       "away": "brighton-and-hove-albion",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24189,7 +24224,7 @@
       "round": "Regular Season - 38",
       "home": "aston-villa",
       "away": "tottenham-hotspur",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24211,7 +24246,7 @@
       "round": "Regular Season - 38",
       "home": "liverpool",
       "away": "bournemouth",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24233,7 +24268,7 @@
       "round": "Regular Season - 38",
       "home": "hull-city",
       "away": "newcastle-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24255,7 +24290,7 @@
       "round": "Regular Season - 38",
       "home": "ipswich-town",
       "away": "everton",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24277,7 +24312,7 @@
       "round": "Regular Season - 38",
       "home": "manchester-united",
       "away": "fulham",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24299,7 +24334,7 @@
       "round": "Regular Season - 38",
       "home": "crystal-palace",
       "away": "leeds-united",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24321,7 +24356,7 @@
       "round": "Regular Season - 38",
       "home": "sunderland",
       "away": "manchester-city",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24343,7 +24378,7 @@
       "round": "Regular Season - 38",
       "home": "chelsea",
       "away": "brentford",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24365,7 +24400,7 @@
       "round": "Regular Season - 38",
       "home": "coventry-city",
       "away": "nottingham-forest",
-      "captured_at": "2026-08-18T05:29:10Z",
+      "captured_at": "2026-08-18T05:48:00.072991Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -24381,10 +24416,13 @@
     }
   ],
   "accuracy": {
-    "tracking_method": "Latest captured pre-kickoff snapshot; no retrospective reconstruction",
+    "tracking_method": "Latest genuine pre-kickoff snapshot, including archived committed snapshots recovered from git history; no post-match model reconstruction",
     "primary_metric": "Multiclass Brier score (lower is better)",
     "graded_matches": 0,
     "pending_matches": 380,
+    "recovered_matches": 0,
+    "coverage_start": null,
+    "coverage_end": null,
     "overall": {
       "model": {
         "source": "model",
