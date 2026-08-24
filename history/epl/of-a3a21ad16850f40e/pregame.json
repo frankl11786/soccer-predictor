@@ -1,0 +1,54 @@
+{
+  "fixture_id": "of-a3a21ad16850f40e",
+  "status": "pending",
+  "date": "2026-08-22",
+  "kickoff": "2026-08-22T14:00:00Z",
+  "round": "Regular Season - 1",
+  "home": "nottingham-forest",
+  "away": "leeds-united",
+  "captured_at": "2026-08-22T04:55:17Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/epl-not-lee-2026-08-22",
+      "event_slug": "epl-not-lee-2026-08-22",
+      "updated_at": "2026-08-22T04:55:09Z"
+    },
+    "kalshi": null
+  },
+  "sources": {
+    "model": {
+      "home": 0.573056,
+      "draw": 0.218082,
+      "away": 0.208862
+    },
+    "polymarket": {
+      "home": 0.412935,
+      "draw": 0.283582,
+      "away": 0.303483
+    },
+    "consensus": {
+      "home": 0.412935,
+      "draw": 0.283582,
+      "away": 0.303483
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-22T04:55:17Z",
+    "polymarket": "2026-08-22T04:55:17Z",
+    "consensus": "2026-08-22T04:55:17Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-22T04:55:17Z",
+    "updated_at": "2026-08-22T04:55:17Z"
+  },
+  "locked": false
+}

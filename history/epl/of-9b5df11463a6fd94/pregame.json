@@ -1,0 +1,64 @@
+{
+  "fixture_id": "of-9b5df11463a6fd94",
+  "status": "pending",
+  "date": "2026-08-29",
+  "kickoff": "2026-08-29T14:00:00Z",
+  "round": "Regular Season - 2",
+  "home": "tottenham-hotspur",
+  "away": "newcastle-united",
+  "captured_at": "2026-08-24T20:29:09.552489Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/epl-tot-new-2026-08-29",
+      "event_slug": "epl-tot-new-2026-08-29",
+      "updated_at": "2026-08-22T04:55:12Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug29totnew",
+      "event_ticker": "KXEPLGAME-26AUG29TOTNEW",
+      "updated_at": "2026-08-15T00:55:00.212316Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.473635,
+      "draw": 0.237462,
+      "away": 0.288903
+    },
+    "polymarket": {
+      "home": 0.472362,
+      "draw": 0.246231,
+      "away": 0.281407
+    },
+    "kalshi": {
+      "home": 0.4689,
+      "draw": 0.263158,
+      "away": 0.267943
+    },
+    "consensus": {
+      "home": 0.470631,
+      "draw": 0.254694,
+      "away": 0.274675
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-24T20:29:09.552489Z",
+    "polymarket": "2026-08-24T20:29:09.552489Z",
+    "kalshi": "2026-08-24T20:29:09.552489Z",
+    "consensus": "2026-08-24T20:29:09.552489Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T20:29:09.552489Z",
+    "updated_at": "2026-08-22T04:55:17Z"
+  },
+  "locked": false
+}

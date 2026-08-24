@@ -1,0 +1,64 @@
+{
+  "fixture_id": "of-2f49ef3b712c2c5d",
+  "status": "pending",
+  "date": "2026-08-22",
+  "kickoff": "2026-08-22T16:30:00Z",
+  "round": "Regular Season - 1",
+  "home": "brentford",
+  "away": "tottenham-hotspur",
+  "captured_at": "2026-08-22T04:55:17Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/epl-bre-tot-2026-08-22",
+      "event_slug": "epl-bre-tot-2026-08-22",
+      "updated_at": "2026-08-22T04:55:09Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug22bretot",
+      "event_ticker": "KXEPLGAME-26AUG22BRETOT",
+      "updated_at": "2026-08-08T00:50:00.213416Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.322547,
+      "draw": 0.278697,
+      "away": 0.398756
+    },
+    "polymarket": {
+      "home": 0.452736,
+      "draw": 0.253731,
+      "away": 0.293532
+    },
+    "kalshi": {
+      "home": 0.441624,
+      "draw": 0.258883,
+      "away": 0.299492
+    },
+    "consensus": {
+      "home": 0.44718,
+      "draw": 0.256307,
+      "away": 0.296512
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-22T04:55:17Z",
+    "polymarket": "2026-08-22T04:55:17Z",
+    "kalshi": "2026-08-22T04:55:17Z",
+    "consensus": "2026-08-22T04:55:17Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-22T04:55:17Z",
+    "updated_at": "2026-08-22T04:55:17Z"
+  },
+  "locked": false
+}

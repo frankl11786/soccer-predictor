@@ -1,0 +1,38 @@
+{
+  "fixture_id": "fd-mls-2026-390",
+  "status": "pending",
+  "date": "2026-09-20",
+  "kickoff": "2026-09-20T00:30:00Z",
+  "round": "Regular Season - 27",
+  "home": "st-louis-city-sc",
+  "away": "toronto-fc",
+  "captured_at": "2026-08-24T20:29:10.323168Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": null,
+    "kalshi": null
+  },
+  "sources": {
+    "model": {
+      "home": 0.61878,
+      "draw": 0.18012,
+      "away": 0.2011
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-24T20:29:10.323168Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T20:29:10.323168Z",
+    "updated_at": "2026-08-22T04:53:25Z"
+  },
+  "locked": false
+}

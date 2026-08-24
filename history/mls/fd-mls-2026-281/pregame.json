@@ -1,0 +1,67 @@
+{
+  "fixture_id": "fd-mls-2026-281",
+  "status": "pending",
+  "date": "2026-08-16",
+  "kickoff": "2026-08-16T00:30:00Z",
+  "round": "Regular Season - 20",
+  "home": "nashville-sc",
+  "away": "inter-miami-cf",
+  "captured_at": "2026-08-15T05:58:13Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-nas-mia-2026-08-15",
+      "event_slug": "mls-nas-mia-2026-08-15",
+      "updated_at": "2026-08-15T05:57:53Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug15nshmia",
+      "event_ticker": "KXMLSGAME-26AUG15NSHMIA",
+      "updated_at": "2026-08-03T18:59:00.862068Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.522905,
+      "draw": 0.214228,
+      "away": 0.262867
+    },
+    "polymarket": {
+      "home": 0.366834,
+      "draw": 0.256281,
+      "away": 0.376884
+    },
+    "kalshi": {
+      "home": 0.376884,
+      "draw": 0.246231,
+      "away": 0.376884
+    },
+    "consensus": {
+      "home": 0.371859,
+      "draw": 0.251256,
+      "away": 0.376884
+    }
+  },
+  "provenance": {
+    "type": "archived_git_snapshot",
+    "recovered": true,
+    "commit": "b598a790c07f",
+    "snapshot_generated_at": "2026-08-15T05:58:13Z",
+    "recovered_at": "2026-08-18T05:48:00.614713Z",
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-15T05:58:13Z",
+    "polymarket": "2026-08-15T05:58:13Z",
+    "kalshi": "2026-08-15T05:58:13Z",
+    "consensus": "2026-08-15T05:58:13Z"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-15T05:58:13Z",
+    "updated_at": "2026-08-24T20:29:10.323168Z"
+  },
+  "locked": false
+}

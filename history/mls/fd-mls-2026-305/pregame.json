@@ -1,0 +1,64 @@
+{
+  "fixture_id": "fd-mls-2026-305",
+  "status": "pending",
+  "date": "2026-08-22",
+  "kickoff": "2026-08-22T23:30:00Z",
+  "round": "Regular Season - 22",
+  "home": "cf-montréal",
+  "away": "la-galaxy",
+  "captured_at": "2026-08-22T04:53:25Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-mim-lag-2026-08-22",
+      "event_slug": "mls-mim-lag-2026-08-22",
+      "updated_at": "2026-08-22T04:53:04Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22mtllag",
+      "event_ticker": "KXMLSGAME-26AUG22MTLLAG",
+      "updated_at": "2026-08-08T00:51:00.214309Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.479535,
+      "draw": 0.208302,
+      "away": 0.312163
+    },
+    "polymarket": {
+      "home": 0.452736,
+      "draw": 0.253731,
+      "away": 0.293532
+    },
+    "kalshi": {
+      "home": 0.452736,
+      "draw": 0.253731,
+      "away": 0.293532
+    },
+    "consensus": {
+      "home": 0.452736,
+      "draw": 0.253731,
+      "away": 0.293532
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-22T04:53:25Z",
+    "polymarket": "2026-08-22T04:53:25Z",
+    "kalshi": "2026-08-22T04:53:25Z",
+    "consensus": "2026-08-22T04:53:25Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-22T04:53:25Z",
+    "updated_at": "2026-08-22T04:53:25Z"
+  },
+  "locked": false
+}

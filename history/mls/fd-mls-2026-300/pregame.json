@@ -1,0 +1,63 @@
+{
+  "fixture_id": "fd-mls-2026-300",
+  "status": "pending",
+  "date": "2026-08-20",
+  "kickoff": "2026-08-20T01:30:00Z",
+  "round": "Regular Season - 21",
+  "home": "seattle-sounders-fc",
+  "away": "austin-fc",
+  "captured_at": "2026-08-19T05:32:42Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-sea-aus-2026-08-19",
+      "event_slug": "mls-sea-aus-2026-08-19",
+      "updated_at": "2026-08-19T05:32:26Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug19seaatx",
+      "event_ticker": "KXMLSGAME-26AUG19SEAATX",
+      "updated_at": "2026-08-06T00:37:00.126832Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.55358,
+      "draw": 0.21272,
+      "away": 0.2337
+    },
+    "polymarket": {
+      "home": 0.567839,
+      "draw": 0.226131,
+      "away": 0.20603
+    },
+    "kalshi": {
+      "home": 0.567839,
+      "draw": 0.226131,
+      "away": 0.20603
+    },
+    "consensus": {
+      "home": 0.567839,
+      "draw": 0.226131,
+      "away": 0.20603
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-19T05:32:42Z",
+    "polymarket": "2026-08-19T05:32:42Z",
+    "kalshi": "2026-08-19T05:32:42Z",
+    "consensus": "2026-08-19T05:32:42Z"
+  },
+  "provenance": {
+    "type": "prediction_archive_seed",
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-19T05:32:42Z",
+    "updated_at": "2026-08-24T20:29:10.323168Z"
+  },
+  "locked": false
+}

@@ -1,0 +1,64 @@
+{
+  "fixture_id": "fd-mls-2026-319",
+  "status": "pending",
+  "date": "2026-08-29",
+  "kickoff": "2026-08-29T23:30:00Z",
+  "round": "Regular Season - 23",
+  "home": "dc-united",
+  "away": "los-angeles-fc",
+  "captured_at": "2026-08-24T20:29:10.323168Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-dcu-laf-2026-08-29",
+      "event_slug": "mls-dcu-laf-2026-08-29",
+      "updated_at": "2026-08-22T04:53:10Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29dculafc",
+      "event_ticker": "KXMLSGAME-26AUG29DCULAFC",
+      "updated_at": "2026-08-15T00:56:00.269763Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.20639,
+      "draw": 0.22396,
+      "away": 0.56965
+    },
+    "polymarket": {
+      "home": 0.294118,
+      "draw": 0.254902,
+      "away": 0.45098
+    },
+    "kalshi": {
+      "home": 0.298578,
+      "draw": 0.270142,
+      "away": 0.43128
+    },
+    "consensus": {
+      "home": 0.296348,
+      "draw": 0.262522,
+      "away": 0.44113
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-24T20:29:10.323168Z",
+    "polymarket": "2026-08-24T20:29:10.323168Z",
+    "kalshi": "2026-08-24T20:29:10.323168Z",
+    "consensus": "2026-08-24T20:29:10.323168Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T20:29:10.323168Z",
+    "updated_at": "2026-08-22T04:53:25Z"
+  },
+  "locked": false
+}

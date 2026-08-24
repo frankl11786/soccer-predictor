@@ -1,0 +1,64 @@
+{
+  "fixture_id": "fd-mls-2026-312",
+  "status": "pending",
+  "date": "2026-08-23",
+  "kickoff": "2026-08-23T02:30:00Z",
+  "round": "Regular Season - 22",
+  "home": "san-jose-earthquakes",
+  "away": "minnesota-united-fc",
+  "captured_at": "2026-08-22T04:53:25Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-sje-min-2026-08-22",
+      "event_slug": "mls-sje-min-2026-08-22",
+      "updated_at": "2026-08-22T04:53:08Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22sjmin",
+      "event_ticker": "KXMLSGAME-26AUG22SJMIN",
+      "updated_at": "2026-08-09T00:47:00.213028Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.766652,
+      "draw": 0.142099,
+      "away": 0.091249
+    },
+    "polymarket": {
+      "home": 0.44,
+      "draw": 0.245,
+      "away": 0.315
+    },
+    "kalshi": {
+      "home": 0.437186,
+      "draw": 0.246231,
+      "away": 0.316583
+    },
+    "consensus": {
+      "home": 0.438593,
+      "draw": 0.245615,
+      "away": 0.315792
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-22T04:53:25Z",
+    "polymarket": "2026-08-22T04:53:25Z",
+    "kalshi": "2026-08-22T04:53:25Z",
+    "consensus": "2026-08-22T04:53:25Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-22T04:53:25Z",
+    "updated_at": "2026-08-22T04:53:25Z"
+  },
+  "locked": false
+}

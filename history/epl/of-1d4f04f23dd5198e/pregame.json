@@ -1,0 +1,64 @@
+{
+  "fixture_id": "of-1d4f04f23dd5198e",
+  "status": "pending",
+  "date": "2026-08-23",
+  "kickoff": "2026-08-23T15:30:00Z",
+  "round": "Regular Season - 1",
+  "home": "newcastle-united",
+  "away": "liverpool",
+  "captured_at": "2026-08-22T04:55:17Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/epl-new-liv-2026-08-23",
+      "event_slug": "epl-new-liv-2026-08-23",
+      "updated_at": "2026-08-22T04:55:10Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug23newlfc",
+      "event_ticker": "KXEPLGAME-26AUG23NEWLFC",
+      "updated_at": "2026-08-09T00:44:00.27146Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.35937,
+      "draw": 0.23541,
+      "away": 0.40522
+    },
+    "polymarket": {
+      "home": 0.241379,
+      "draw": 0.251232,
+      "away": 0.507389
+    },
+    "kalshi": {
+      "home": 0.243781,
+      "draw": 0.243781,
+      "away": 0.512438
+    },
+    "consensus": {
+      "home": 0.24258,
+      "draw": 0.247507,
+      "away": 0.509913
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-22T04:55:17Z",
+    "polymarket": "2026-08-22T04:55:17Z",
+    "kalshi": "2026-08-22T04:55:17Z",
+    "consensus": "2026-08-22T04:55:17Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-22T04:55:17Z",
+    "updated_at": "2026-08-22T04:55:17Z"
+  },
+  "locked": false
+}

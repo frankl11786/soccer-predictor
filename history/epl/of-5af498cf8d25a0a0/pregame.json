@@ -1,0 +1,38 @@
+{
+  "fixture_id": "of-5af498cf8d25a0a0",
+  "status": "pending",
+  "date": "2026-10-24",
+  "kickoff": "2026-10-24T14:00:00Z",
+  "round": "Regular Season - 8",
+  "home": "sunderland",
+  "away": "leeds-united",
+  "captured_at": "2026-08-24T20:29:09.552489Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": null,
+    "kalshi": null
+  },
+  "sources": {
+    "model": {
+      "home": 0.42862,
+      "draw": 0.26567,
+      "away": 0.30571
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-24T20:29:09.552489Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T20:29:09.552489Z",
+    "updated_at": "2026-08-22T04:55:17Z"
+  },
+  "locked": false
+}

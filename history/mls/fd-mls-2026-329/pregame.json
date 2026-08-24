@@ -1,0 +1,64 @@
+{
+  "fixture_id": "fd-mls-2026-329",
+  "status": "pending",
+  "date": "2026-08-30",
+  "kickoff": "2026-08-30T02:30:00Z",
+  "round": "Regular Season - 23",
+  "home": "portland-timbers",
+  "away": "austin-fc",
+  "captured_at": "2026-08-24T20:29:10.323168Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-por-aus-2026-08-29",
+      "event_slug": "mls-por-aus-2026-08-29",
+      "updated_at": "2026-08-22T04:53:13Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29poratx",
+      "event_ticker": "KXMLSGAME-26AUG29PORATX",
+      "updated_at": "2026-08-16T00:53:00.218564Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.57835,
+      "draw": 0.1844,
+      "away": 0.23725
+    },
+    "polymarket": {
+      "home": 0.504762,
+      "draw": 0.247619,
+      "away": 0.247619
+    },
+    "kalshi": {
+      "home": 0.490385,
+      "draw": 0.264423,
+      "away": 0.245192
+    },
+    "consensus": {
+      "home": 0.497574,
+      "draw": 0.256021,
+      "away": 0.246405
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-24T20:29:10.323168Z",
+    "polymarket": "2026-08-24T20:29:10.323168Z",
+    "kalshi": "2026-08-24T20:29:10.323168Z",
+    "consensus": "2026-08-24T20:29:10.323168Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T20:29:10.323168Z",
+    "updated_at": "2026-08-22T04:53:25Z"
+  },
+  "locked": false
+}

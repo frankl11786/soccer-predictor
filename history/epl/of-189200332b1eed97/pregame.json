@@ -1,0 +1,64 @@
+{
+  "fixture_id": "of-189200332b1eed97",
+  "status": "pending",
+  "date": "2026-08-23",
+  "kickoff": "2026-08-23T13:00:00Z",
+  "round": "Regular Season - 1",
+  "home": "manchester-city",
+  "away": "bournemouth",
+  "captured_at": "2026-08-22T04:55:17Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/epl-mac-bou-2026-08-23",
+      "event_slug": "epl-mac-bou-2026-08-23",
+      "updated_at": "2026-08-22T04:55:09Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug23mcibou",
+      "event_ticker": "KXEPLGAME-26AUG23MCIBOU",
+      "updated_at": "2026-08-09T00:44:00.27146Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.80862,
+      "draw": 0.12863,
+      "away": 0.06275
+    },
+    "polymarket": {
+      "home": 0.651741,
+      "draw": 0.19403,
+      "away": 0.154229
+    },
+    "kalshi": {
+      "home": 0.661691,
+      "draw": 0.18408,
+      "away": 0.154229
+    },
+    "consensus": {
+      "home": 0.656716,
+      "draw": 0.189055,
+      "away": 0.154229
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-22T04:55:17Z",
+    "polymarket": "2026-08-22T04:55:17Z",
+    "kalshi": "2026-08-22T04:55:17Z",
+    "consensus": "2026-08-22T04:55:17Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-22T04:55:17Z",
+    "updated_at": "2026-08-22T04:55:17Z"
+  },
+  "locked": false
+}

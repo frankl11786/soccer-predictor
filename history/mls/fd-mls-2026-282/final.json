@@ -1,0 +1,103 @@
+{
+  "fixture_id": "fd-mls-2026-282",
+  "status": "final",
+  "date": "2026-08-16",
+  "kickoff": "2026-08-16T01:30:00Z",
+  "round": "Regular Season - 20",
+  "home": "real-salt-lake",
+  "away": "minnesota-united-fc",
+  "captured_at": "2026-08-15T05:58:13Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-rsl-min-2026-08-15",
+      "event_slug": "mls-rsl-min-2026-08-15",
+      "updated_at": "2026-08-15T05:57:54Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug15rslmin",
+      "event_ticker": "KXMLSGAME-26AUG15RSLMIN",
+      "updated_at": "2026-08-03T18:59:00.862068Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.671973,
+      "draw": 0.203168,
+      "away": 0.124859
+    },
+    "polymarket": {
+      "home": 0.557789,
+      "draw": 0.236181,
+      "away": 0.20603
+    },
+    "kalshi": {
+      "home": 0.552239,
+      "draw": 0.243781,
+      "away": 0.20398
+    },
+    "consensus": {
+      "home": 0.555014,
+      "draw": 0.239981,
+      "away": 0.205005
+    }
+  },
+  "provenance": {
+    "type": "archived_git_snapshot",
+    "recovered": true,
+    "commit": "b598a790c07f",
+    "snapshot_generated_at": "2026-08-15T05:58:13Z",
+    "recovered_at": "2026-08-18T05:48:00.614713Z",
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "actual": {
+    "outcome": "draw",
+    "home_score": 1,
+    "away_score": 1
+  },
+  "graded_at": "2026-08-24T20:29:10.323168Z",
+  "scores": {
+    "model": {
+      "top_pick": "home",
+      "correct_pick": false,
+      "actual_probability": 0.203168,
+      "brier": 1.102079,
+      "log_loss": 1.593722
+    },
+    "polymarket": {
+      "top_pick": "home",
+      "correct_pick": false,
+      "actual_probability": 0.236181,
+      "brier": 0.936996,
+      "log_loss": 1.443157
+    },
+    "kalshi": {
+      "top_pick": "home",
+      "correct_pick": false,
+      "actual_probability": 0.243781,
+      "brier": 0.918443,
+      "log_loss": 1.411485
+    },
+    "consensus": {
+      "top_pick": "home",
+      "correct_pick": false,
+      "actual_probability": 0.239981,
+      "brier": 0.927696,
+      "log_loss": 1.427196
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-15T05:58:13Z",
+    "polymarket": "2026-08-15T05:58:13Z",
+    "kalshi": "2026-08-15T05:58:13Z",
+    "consensus": "2026-08-15T05:58:13Z"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-15T05:58:13Z",
+    "updated_at": "2026-08-24T20:29:10.323168Z"
+  },
+  "locked": true
+}

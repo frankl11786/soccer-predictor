@@ -1,0 +1,86 @@
+{
+  "fixture_id": "fd-mls-2026-279",
+  "status": "final",
+  "date": "2026-08-16",
+  "kickoff": "2026-08-16T00:30:00Z",
+  "round": "Regular Season - 20",
+  "home": "houston-dynamo-fc",
+  "away": "la-galaxy",
+  "captured_at": "2026-08-15T05:58:13Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": null,
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug15houlag",
+      "event_ticker": "KXMLSGAME-26AUG15HOULAG",
+      "updated_at": "2026-08-03T18:59:00.862068Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.49135,
+      "draw": 0.24648,
+      "away": 0.26217
+    },
+    "kalshi": {
+      "home": 0.552239,
+      "draw": 0.233831,
+      "away": 0.21393
+    },
+    "consensus": {
+      "home": 0.552239,
+      "draw": 0.233831,
+      "away": 0.21393
+    }
+  },
+  "provenance": {
+    "type": "archived_git_snapshot",
+    "recovered": true,
+    "commit": "b598a790c07f",
+    "snapshot_generated_at": "2026-08-15T05:58:13Z",
+    "recovered_at": "2026-08-18T05:48:00.614713Z",
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "actual": {
+    "outcome": "home",
+    "home_score": 1,
+    "away_score": 0
+  },
+  "graded_at": "2026-08-24T20:29:10.323168Z",
+  "scores": {
+    "model": {
+      "top_pick": "home",
+      "correct_pick": true,
+      "actual_probability": 0.49135,
+      "brier": 0.38821,
+      "log_loss": 0.710599
+    },
+    "kalshi": {
+      "top_pick": "home",
+      "correct_pick": true,
+      "actual_probability": 0.552239,
+      "brier": 0.300933,
+      "log_loss": 0.593774
+    },
+    "consensus": {
+      "top_pick": "home",
+      "correct_pick": true,
+      "actual_probability": 0.552239,
+      "brier": 0.300933,
+      "log_loss": 0.593774
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-15T05:58:13Z",
+    "kalshi": "2026-08-15T05:58:13Z",
+    "consensus": "2026-08-15T05:58:13Z"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-15T05:58:13Z",
+    "updated_at": "2026-08-24T20:29:10.323168Z"
+  },
+  "locked": true
+}

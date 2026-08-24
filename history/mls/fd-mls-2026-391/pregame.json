@@ -1,0 +1,38 @@
+{
+  "fixture_id": "fd-mls-2026-391",
+  "status": "pending",
+  "date": "2026-09-20",
+  "kickoff": "2026-09-20T23:00:00Z",
+  "round": "Regular Season - 27",
+  "home": "inter-miami-cf",
+  "away": "san-diego-fc",
+  "captured_at": "2026-08-24T20:29:10.323168Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": null,
+    "kalshi": null
+  },
+  "sources": {
+    "model": {
+      "home": 0.60286,
+      "draw": 0.15546,
+      "away": 0.24168
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-24T20:29:10.323168Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T20:29:10.323168Z",
+    "updated_at": "2026-08-22T04:53:25Z"
+  },
+  "locked": false
+}

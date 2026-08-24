@@ -1,0 +1,103 @@
+{
+  "fixture_id": "fd-mls-2026-272",
+  "status": "final",
+  "date": "2026-08-15",
+  "kickoff": "2026-08-15T23:30:00Z",
+  "round": "Regular Season - 20",
+  "home": "atlanta-united",
+  "away": "red-bull-new-york",
+  "captured_at": "2026-08-15T05:58:13Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-atl-nyr-2026-08-15",
+      "event_slug": "mls-atl-nyr-2026-08-15",
+      "updated_at": "2026-08-15T05:57:51Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug15atlnyrb",
+      "event_ticker": "KXMLSGAME-26AUG15ATLNYRB",
+      "updated_at": "2026-08-03T18:58:01.434625Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.34352,
+      "draw": 0.26358,
+      "away": 0.3929
+    },
+    "polymarket": {
+      "home": 0.452736,
+      "draw": 0.243781,
+      "away": 0.303483
+    },
+    "kalshi": {
+      "home": 0.451777,
+      "draw": 0.238579,
+      "away": 0.309645
+    },
+    "consensus": {
+      "home": 0.452257,
+      "draw": 0.24118,
+      "away": 0.306564
+    }
+  },
+  "provenance": {
+    "type": "archived_git_snapshot",
+    "recovered": true,
+    "commit": "b598a790c07f",
+    "snapshot_generated_at": "2026-08-15T05:58:13Z",
+    "recovered_at": "2026-08-18T05:48:00.614713Z",
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "actual": {
+    "outcome": "home",
+    "home_score": 2,
+    "away_score": 1
+  },
+  "graded_at": "2026-08-24T20:29:10.323168Z",
+  "scores": {
+    "model": {
+      "top_pick": "away",
+      "correct_pick": false,
+      "actual_probability": 0.34352,
+      "brier": 0.654811,
+      "log_loss": 1.06851
+    },
+    "polymarket": {
+      "top_pick": "home",
+      "correct_pick": true,
+      "actual_probability": 0.452736,
+      "brier": 0.451029,
+      "log_loss": 0.792446
+    },
+    "kalshi": {
+      "top_pick": "home",
+      "correct_pick": true,
+      "actual_probability": 0.451777,
+      "brier": 0.453348,
+      "log_loss": 0.794567
+    },
+    "consensus": {
+      "top_pick": "home",
+      "correct_pick": true,
+      "actual_probability": 0.452257,
+      "brier": 0.452172,
+      "log_loss": 0.793505
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-15T05:58:13Z",
+    "polymarket": "2026-08-15T05:58:13Z",
+    "kalshi": "2026-08-15T05:58:13Z",
+    "consensus": "2026-08-15T05:58:13Z"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-15T05:58:13Z",
+    "updated_at": "2026-08-24T20:29:10.323168Z"
+  },
+  "locked": true
+}

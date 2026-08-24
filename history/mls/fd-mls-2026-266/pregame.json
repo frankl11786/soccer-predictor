@@ -1,0 +1,41 @@
+{
+  "fixture_id": "fd-mls-2026-266",
+  "status": "pending",
+  "date": "2026-08-02",
+  "kickoff": "2026-08-02T01:30:00Z",
+  "round": "Regular Season",
+  "home": "colorado-rapids",
+  "away": "austin-fc",
+  "captured_at": "2026-08-01T10:38:21Z",
+  "model_version": "bayes-ss-poisson-v4-market-comparison",
+  "market_refs": {
+    "polymarket": null,
+    "kalshi": null
+  },
+  "sources": {
+    "model": {
+      "home": 0.31331,
+      "draw": 0.27717,
+      "away": 0.40952
+    }
+  },
+  "provenance": {
+    "type": "archived_git_snapshot",
+    "recovered": true,
+    "commit": "61f2f9d3b253",
+    "snapshot_generated_at": "2026-08-01T10:38:21Z",
+    "recovered_at": "2026-08-18T05:48:00.614713Z",
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-01T10:38:21Z"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-01T10:38:21Z",
+    "updated_at": "2026-08-24T20:29:10.323168Z"
+  },
+  "locked": false
+}

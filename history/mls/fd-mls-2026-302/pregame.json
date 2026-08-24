@@ -1,0 +1,64 @@
+{
+  "fixture_id": "fd-mls-2026-302",
+  "status": "pending",
+  "date": "2026-08-22",
+  "kickoff": "2026-08-22T23:30:00Z",
+  "round": "Regular Season - 22",
+  "home": "charlotte-fc",
+  "away": "dc-united",
+  "captured_at": "2026-08-22T04:53:25Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-clt-dcu-2026-08-22",
+      "event_slug": "mls-clt-dcu-2026-08-22",
+      "updated_at": "2026-08-22T04:53:03Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22cltdcu",
+      "event_ticker": "KXMLSGAME-26AUG22CLTDCU",
+      "updated_at": "2026-08-08T00:51:00.214309Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.48549,
+      "draw": 0.26705,
+      "away": 0.24746
+    },
+    "polymarket": {
+      "home": 0.527094,
+      "draw": 0.241379,
+      "away": 0.231527
+    },
+    "kalshi": {
+      "home": 0.537688,
+      "draw": 0.236181,
+      "away": 0.226131
+    },
+    "consensus": {
+      "home": 0.532391,
+      "draw": 0.23878,
+      "away": 0.228829
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-22T04:53:25Z",
+    "polymarket": "2026-08-22T04:53:25Z",
+    "kalshi": "2026-08-22T04:53:25Z",
+    "consensus": "2026-08-22T04:53:25Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-22T04:53:25Z",
+    "updated_at": "2026-08-22T04:53:25Z"
+  },
+  "locked": false
+}
