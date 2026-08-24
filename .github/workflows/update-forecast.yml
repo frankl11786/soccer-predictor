@@ -9,7 +9,6 @@ on:
 permissions:
   contents: write
 
-# Prevent a manual run and the nightly run from updating/deploying at the same time.
 concurrency:
   group: forecast-refresh
   cancel-in-progress: false
@@ -89,7 +88,7 @@ jobs:
           compression-level: 0
 
   publish:
-    name: Save and deploy forecasts
+    name: Archive, save and deploy forecasts
     needs: rebuild
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -100,8 +99,18 @@ jobs:
       FTP_REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
       FTP_TLS: ${{ secrets.FTP_TLS }}
     steps:
-      - name: Check out repository
+      # Always publish from the newest main branch. This avoids the non-fast-forward
+      # failure that happens when a normal code/UI commit lands during a long model run.
+      - name: Check out latest main with full history
         uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+
+      # CRITICAL: preserve the currently published pregame probabilities before the
+      # freshly rebuilt app/data files are downloaded over them.
+      - name: Freeze currently published pregame predictions
+        run: python3 scripts/prediction_archive.py capture --league both
 
       - name: Download both league results
         uses: actions/download-artifact@v8
@@ -110,7 +119,10 @@ jobs:
           path: .
           merge-multiple: true
 
-      - name: Verify merged forecast files
+      - name: Finalize completed matches and sync archive
+        run: python3 scripts/prediction_archive.py sync --league both
+
+      - name: Verify merged forecast and archive files
         run: |
           python3 - <<'PY'
           import json
@@ -123,24 +135,54 @@ jobs:
               data = json.loads(path.read_text())
               if not data.get("fixtures") or not data.get("forecast"):
                   raise SystemExit(f"Generated {league} snapshot is incomplete")
+              archive = (data.get("meta") or {}).get("prediction_archive") or {}
+              if archive.get("schema_version") != 1:
+                  raise SystemExit(f"Prediction archive was not synchronized for {league}")
               print(
-                  f"Validated {league}: "
-                  f"{len(data['fixtures'])} fixtures, "
-                  f"{len(data['forecast'])} forecast rows"
+                  f"Validated {league}: {len(data['fixtures'])} fixtures, "
+                  f"{len(data['forecast'])} forecast rows, "
+                  f"{archive.get('records', 0)} archived match records"
               )
           PY
+          python3 -m unittest tests.test_history tests.test_prediction_archive tests.test_snapshots -v
 
-      - name: Save snapshots, model files, and source cache
+      - name: Save snapshots, archive, model files, and source cache
+        shell: bash
         run: |
           set -euo pipefail
+
           git config user.name "forecast-bot"
           git config user.email "forecast-bot@users.noreply.github.com"
-          git add app/data data/cache data/model
+          git add app/data data/cache data/model history
+
           if git diff --cached --quiet; then
-            echo "No forecast changes to commit."
+            echo "No forecast or archive changes to commit."
           else
             git commit -m "Automated nightly forecast refresh"
-            git push
+
+            for attempt in 1 2 3; do
+              echo "Push attempt $attempt of 3"
+              git fetch origin main
+
+              if ! git rebase origin/main; then
+                echo "::error::Could not safely rebase forecast/archive data onto the latest main branch."
+                git rebase --abort || true
+                exit 1
+              fi
+
+              if git push origin HEAD:main; then
+                echo "Forecast and prediction archive pushed successfully."
+                break
+              fi
+
+              if [ "$attempt" -eq 3 ]; then
+                echo "::error::Unable to push forecast/archive commit after 3 attempts."
+                exit 1
+              fi
+
+              echo "main changed again before push completed; retrying..."
+              sleep 2
+            done
           fi
 
       - name: Deploy website to GoDaddy
