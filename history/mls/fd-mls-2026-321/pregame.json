@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "red-bull-new-york",
   "away": "philadelphia-union",
-  "captured_at": "2026-08-24T20:41:47.852730Z",
+  "captured_at": "2026-08-24T21:01:33Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-nyr-phi-2026-08-29",
       "event_slug": "mls-nyr-phi-2026-08-29",
-      "updated_at": "2026-08-22T04:53:11Z"
+      "updated_at": "2026-08-24T21:01:10Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29nyrbphi",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.16386,
-      "draw": 0.2244,
-      "away": 0.61174
+      "home": 0.1548,
+      "draw": 0.22459,
+      "away": 0.62061
     },
     "polymarket": {
-      "home": 0.321951,
-      "draw": 0.253659,
-      "away": 0.42439
+      "home": 0.309645,
+      "draw": 0.243655,
+      "away": 0.446701
     },
     "kalshi": {
-      "home": 0.321608,
-      "draw": 0.251256,
-      "away": 0.427136
+      "home": 0.316583,
+      "draw": 0.236181,
+      "away": 0.447236
     },
     "consensus": {
-      "home": 0.321779,
-      "draw": 0.252458,
-      "away": 0.425763
+      "home": 0.313114,
+      "draw": 0.239918,
+      "away": 0.446968
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T20:41:47.852730Z",
-    "polymarket": "2026-08-24T20:41:47.852730Z",
-    "kalshi": "2026-08-24T20:41:47.852730Z",
-    "consensus": "2026-08-24T20:41:47.852730Z"
+    "model": "2026-08-24T21:01:33Z",
+    "polymarket": "2026-08-24T21:01:33Z",
+    "kalshi": "2026-08-24T21:01:33Z",
+    "consensus": "2026-08-24T21:01:33Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-24T20:29:10.323168Z"
+    "updated_at": "2026-08-24T21:01:33Z"
   },
   "locked": false
 }

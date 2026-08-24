@@ -1,0 +1,63 @@
+{
+  "fixture_id": "of-a018cdb98057ef95",
+  "status": "pending",
+  "date": "2026-08-28",
+  "kickoff": "2026-08-28T19:00:00Z",
+  "round": "Regular Season - 2",
+  "home": "crystal-palace",
+  "away": "manchester-city",
+  "captured_at": "2026-08-24T21:03:04Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/epl-cry-mac-2026-08-28",
+      "event_slug": "epl-cry-mac-2026-08-28",
+      "updated_at": "2026-08-24T21:02:49Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug28crymci",
+      "event_ticker": "KXEPLGAME-26AUG28CRYMCI",
+      "updated_at": "2026-08-14T00:38:00.214105Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.105481,
+      "draw": 0.165952,
+      "away": 0.728567
+    },
+    "polymarket": {
+      "home": 0.174129,
+      "draw": 0.223881,
+      "away": 0.60199
+    },
+    "kalshi": {
+      "home": 0.18,
+      "draw": 0.215,
+      "away": 0.605
+    },
+    "consensus": {
+      "home": 0.177065,
+      "draw": 0.21944,
+      "away": 0.603495
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-24T21:03:04Z",
+    "polymarket": "2026-08-24T21:03:04Z",
+    "kalshi": "2026-08-24T21:03:04Z",
+    "consensus": "2026-08-24T21:03:04Z"
+  },
+  "provenance": {
+    "type": "prediction_archive_seed",
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T21:03:04Z",
+    "updated_at": "2026-08-24T21:03:04Z"
+  },
+  "locked": false
+}

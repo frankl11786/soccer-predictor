@@ -1,0 +1,100 @@
+{
+  "fixture_id": "of-45c2daa2f15c6d40",
+  "status": "final",
+  "date": "2026-08-22",
+  "kickoff": "2026-08-22T14:00:00Z",
+  "round": "Regular Season - 1",
+  "home": "ipswich-town",
+  "away": "sunderland",
+  "captured_at": "2026-08-22T04:55:17Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/epl-ips-sun-2026-08-22",
+      "event_slug": "epl-ips-sun-2026-08-22",
+      "updated_at": "2026-08-22T04:55:09Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug22ipssun",
+      "event_ticker": "KXEPLGAME-26AUG22IPSSUN",
+      "updated_at": "2026-08-08T00:50:00.213416Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.29,
+      "draw": 0.26294,
+      "away": 0.44706
+    },
+    "polymarket": {
+      "home": 0.339901,
+      "draw": 0.29064,
+      "away": 0.369458
+    },
+    "kalshi": {
+      "home": 0.343284,
+      "draw": 0.293532,
+      "away": 0.363184
+    },
+    "consensus": {
+      "home": 0.341592,
+      "draw": 0.292086,
+      "away": 0.366321
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-22T04:55:17Z",
+    "polymarket": "2026-08-22T04:55:17Z",
+    "kalshi": "2026-08-22T04:55:17Z",
+    "consensus": "2026-08-22T04:55:17Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-22T04:55:17Z",
+    "updated_at": "2026-08-22T04:55:17Z"
+  },
+  "locked": true,
+  "actual": {
+    "outcome": "home",
+    "home_score": 2,
+    "away_score": 1
+  },
+  "graded_at": "2026-08-24T21:03:04Z",
+  "scores": {
+    "model": {
+      "top_pick": "away",
+      "correct_pick": false,
+      "actual_probability": 0.29,
+      "brier": 0.7731,
+      "log_loss": 1.237874
+    },
+    "polymarket": {
+      "top_pick": "away",
+      "correct_pick": false,
+      "actual_probability": 0.339901,
+      "brier": 0.656702,
+      "log_loss": 1.079101
+    },
+    "kalshi": {
+      "top_pick": "away",
+      "correct_pick": false,
+      "actual_probability": 0.343284,
+      "brier": 0.64934,
+      "log_loss": 1.069197
+    },
+    "consensus": {
+      "top_pick": "away",
+      "correct_pick": false,
+      "actual_probability": 0.341592,
+      "brier": 0.653006,
+      "log_loss": 1.074138
+    }
+  }
+}

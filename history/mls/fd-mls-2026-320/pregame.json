@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "inter-miami-cf",
   "away": "cf-montréal",
-  "captured_at": "2026-08-24T20:41:47.852730Z",
+  "captured_at": "2026-08-24T21:01:33Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-mia-mim-2026-08-29",
       "event_slug": "mls-mia-mim-2026-08-29",
-      "updated_at": "2026-08-22T04:53:10Z"
+      "updated_at": "2026-08-24T21:01:10Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29miamtl",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.742013,
-      "draw": 0.127179,
-      "away": 0.130809
+      "home": 0.71426,
+      "draw": 0.1346,
+      "away": 0.15114
     },
     "polymarket": {
-      "home": 0.649289,
-      "draw": 0.184834,
-      "away": 0.165877
+      "home": 0.678392,
+      "draw": 0.175879,
+      "away": 0.145729
     },
     "kalshi": {
-      "home": 0.600917,
-      "draw": 0.206422,
-      "away": 0.192661
+      "home": 0.688442,
+      "draw": 0.165829,
+      "away": 0.145729
     },
     "consensus": {
-      "home": 0.625103,
-      "draw": 0.195628,
-      "away": 0.179269
+      "home": 0.683417,
+      "draw": 0.170854,
+      "away": 0.145729
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T20:41:47.852730Z",
-    "polymarket": "2026-08-24T20:41:47.852730Z",
-    "kalshi": "2026-08-24T20:41:47.852730Z",
-    "consensus": "2026-08-24T20:41:47.852730Z"
+    "model": "2026-08-24T21:01:33Z",
+    "polymarket": "2026-08-24T21:01:33Z",
+    "kalshi": "2026-08-24T21:01:33Z",
+    "consensus": "2026-08-24T21:01:33Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-24T20:29:10.323168Z"
+    "updated_at": "2026-08-24T21:01:33Z"
   },
   "locked": false
 }

@@ -1,0 +1,37 @@
+{
+  "fixture_id": "of-2dffe1a8bd89726b",
+  "status": "pending",
+  "date": "2027-01-30",
+  "kickoff": "2027-01-30T15:00:00Z",
+  "round": "Regular Season - 23",
+  "home": "chelsea",
+  "away": "nottingham-forest",
+  "captured_at": "2026-08-24T21:03:04Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": null,
+    "kalshi": null
+  },
+  "sources": {
+    "model": {
+      "home": 0.36047,
+      "draw": 0.30164,
+      "away": 0.33789
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-24T21:03:04Z"
+  },
+  "provenance": {
+    "type": "prediction_archive_seed",
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T21:03:04Z",
+    "updated_at": "2026-08-24T21:03:04Z"
+  },
+  "locked": false
+}

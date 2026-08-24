@@ -1,0 +1,100 @@
+{
+  "fixture_id": "fd-mls-2026-306",
+  "status": "final",
+  "date": "2026-08-22",
+  "kickoff": "2026-08-22T23:30:00Z",
+  "round": "Regular Season - 22",
+  "home": "red-bull-new-york",
+  "away": "chicago-fire-fc",
+  "captured_at": "2026-08-22T04:53:25Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-nyr-chi-2026-08-22",
+      "event_slug": "mls-nyr-chi-2026-08-22",
+      "updated_at": "2026-08-22T04:53:05Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22nyrbchi",
+      "event_ticker": "KXMLSGAME-26AUG22NYRBCHI",
+      "updated_at": "2026-08-08T00:52:00.212464Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.34067,
+      "draw": 0.19732,
+      "away": 0.46201
+    },
+    "polymarket": {
+      "home": 0.355,
+      "draw": 0.24,
+      "away": 0.405
+    },
+    "kalshi": {
+      "home": 0.363184,
+      "draw": 0.233831,
+      "away": 0.402985
+    },
+    "consensus": {
+      "home": 0.359092,
+      "draw": 0.236916,
+      "away": 0.403992
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-22T04:53:25Z",
+    "polymarket": "2026-08-22T04:53:25Z",
+    "kalshi": "2026-08-22T04:53:25Z",
+    "consensus": "2026-08-22T04:53:25Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-22T04:53:25Z",
+    "updated_at": "2026-08-22T04:53:25Z"
+  },
+  "locked": true,
+  "actual": {
+    "outcome": "draw",
+    "home_score": 1,
+    "away_score": 1
+  },
+  "graded_at": "2026-08-24T21:01:33Z",
+  "scores": {
+    "model": {
+      "top_pick": "away",
+      "correct_pick": false,
+      "actual_probability": 0.19732,
+      "brier": 0.973804,
+      "log_loss": 1.622929
+    },
+    "polymarket": {
+      "top_pick": "away",
+      "correct_pick": false,
+      "actual_probability": 0.24,
+      "brier": 0.86765,
+      "log_loss": 1.427116
+    },
+    "kalshi": {
+      "top_pick": "away",
+      "correct_pick": false,
+      "actual_probability": 0.233831,
+      "brier": 0.881314,
+      "log_loss": 1.453157
+    },
+    "consensus": {
+      "top_pick": "away",
+      "correct_pick": false,
+      "actual_probability": 0.236916,
+      "brier": 0.874454,
+      "log_loss": 1.44005
+    }
+  }
+}

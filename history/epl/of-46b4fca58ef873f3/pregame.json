@@ -1,0 +1,37 @@
+{
+  "fixture_id": "of-46b4fca58ef873f3",
+  "status": "pending",
+  "date": "2027-05-30",
+  "kickoff": "2027-05-30T15:00:00Z",
+  "round": "Regular Season - 38",
+  "home": "aston-villa",
+  "away": "tottenham-hotspur",
+  "captured_at": "2026-08-24T21:03:04Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": null,
+    "kalshi": null
+  },
+  "sources": {
+    "model": {
+      "home": 0.35771,
+      "draw": 0.24302,
+      "away": 0.39927
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-24T21:03:04Z"
+  },
+  "provenance": {
+    "type": "prediction_archive_seed",
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T21:03:04Z",
+    "updated_at": "2026-08-24T21:03:04Z"
+  },
+  "locked": false
+}

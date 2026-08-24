@@ -1,0 +1,100 @@
+{
+  "fixture_id": "fd-mls-2026-304",
+  "status": "final",
+  "date": "2026-08-22",
+  "kickoff": "2026-08-22T23:30:00Z",
+  "round": "Regular Season - 22",
+  "home": "inter-miami-cf",
+  "away": "toronto-fc",
+  "captured_at": "2026-08-22T04:53:25Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-mia-tor-2026-08-22",
+      "event_slug": "mls-mia-tor-2026-08-22",
+      "updated_at": "2026-08-22T04:53:04Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug22miator",
+      "event_ticker": "KXMLSGAME-26AUG22MIATOR",
+      "updated_at": "2026-08-08T00:51:00.214309Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.85281,
+      "draw": 0.07671,
+      "away": 0.07048
+    },
+    "polymarket": {
+      "home": 0.711443,
+      "draw": 0.164179,
+      "away": 0.124378
+    },
+    "kalshi": {
+      "home": 0.721393,
+      "draw": 0.154229,
+      "away": 0.124378
+    },
+    "consensus": {
+      "home": 0.716418,
+      "draw": 0.159204,
+      "away": 0.124378
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-22T04:53:25Z",
+    "polymarket": "2026-08-22T04:53:25Z",
+    "kalshi": "2026-08-22T04:53:25Z",
+    "consensus": "2026-08-22T04:53:25Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-22T04:53:25Z",
+    "updated_at": "2026-08-22T04:53:25Z"
+  },
+  "locked": true,
+  "actual": {
+    "outcome": "away",
+    "home_score": 1,
+    "away_score": 2
+  },
+  "graded_at": "2026-08-24T21:01:33Z",
+  "scores": {
+    "model": {
+      "top_pick": "home",
+      "correct_pick": false,
+      "actual_probability": 0.07048,
+      "brier": 1.597177,
+      "log_loss": 2.652426
+    },
+    "polymarket": {
+      "top_pick": "home",
+      "correct_pick": false,
+      "actual_probability": 0.124378,
+      "brier": 1.29982,
+      "log_loss": 2.08443
+    },
+    "kalshi": {
+      "top_pick": "home",
+      "correct_pick": false,
+      "actual_probability": 0.124378,
+      "brier": 1.310908,
+      "log_loss": 2.08443
+    },
+    "consensus": {
+      "top_pick": "home",
+      "correct_pick": false,
+      "actual_probability": 0.124378,
+      "brier": 1.305315,
+      "log_loss": 2.08443
+    }
+  }
+}

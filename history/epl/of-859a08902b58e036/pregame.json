@@ -1,0 +1,37 @@
+{
+  "fixture_id": "of-859a08902b58e036",
+  "status": "pending",
+  "date": "2026-10-19",
+  "kickoff": "2026-10-19T19:00:00Z",
+  "round": "Regular Season - 7",
+  "home": "tottenham-hotspur",
+  "away": "coventry-city",
+  "captured_at": "2026-08-24T21:03:04Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": null,
+    "kalshi": null
+  },
+  "sources": {
+    "model": {
+      "home": 0.704067,
+      "draw": 0.177082,
+      "away": 0.118851
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-24T21:03:04Z"
+  },
+  "provenance": {
+    "type": "prediction_archive_seed",
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T21:03:04Z",
+    "updated_at": "2026-08-24T21:03:04Z"
+  },
+  "locked": false
+}

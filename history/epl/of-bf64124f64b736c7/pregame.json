@@ -1,0 +1,63 @@
+{
+  "fixture_id": "of-bf64124f64b736c7",
+  "status": "pending",
+  "date": "2026-09-04",
+  "kickoff": "2026-09-04T19:00:00Z",
+  "round": "Regular Season - 3",
+  "home": "ipswich-town",
+  "away": "liverpool",
+  "captured_at": "2026-08-24T21:03:04Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/epl-ips-liv-2026-09-04",
+      "event_slug": "epl-ips-liv-2026-09-04",
+      "updated_at": "2026-08-24T21:02:52Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep04ipslfc",
+      "event_ticker": "KXEPLGAME-26SEP04IPSLFC",
+      "updated_at": "2026-08-21T00:40:00.009966Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.141231,
+      "draw": 0.174482,
+      "away": 0.684287
+    },
+    "polymarket": {
+      "home": 0.18408,
+      "draw": 0.21393,
+      "away": 0.60199
+    },
+    "kalshi": {
+      "home": 0.2,
+      "draw": 0.21,
+      "away": 0.59
+    },
+    "consensus": {
+      "home": 0.19204,
+      "draw": 0.211965,
+      "away": 0.595995
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-24T21:03:04Z",
+    "polymarket": "2026-08-24T21:03:04Z",
+    "kalshi": "2026-08-24T21:03:04Z",
+    "consensus": "2026-08-24T21:03:04Z"
+  },
+  "provenance": {
+    "type": "prediction_archive_seed",
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T21:03:04Z",
+    "updated_at": "2026-08-24T21:03:04Z"
+  },
+  "locked": false
+}

@@ -6,7 +6,7 @@
   "round": "Regular Season - 27",
   "home": "fc-dallas",
   "away": "austin-fc",
-  "captured_at": "2026-08-24T20:41:47.852730Z",
+  "captured_at": "2026-08-24T21:01:33Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -14,15 +14,15 @@
   },
   "sources": {
     "model": {
-      "home": 0.64181,
-      "draw": 0.14164,
-      "away": 0.21655
+      "home": 0.62261,
+      "draw": 0.14841,
+      "away": 0.22898
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T20:41:47.852730Z"
+    "model": "2026-08-24T21:01:33Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-24T20:29:10.323168Z"
+    "updated_at": "2026-08-24T21:01:33Z"
   },
   "locked": false
 }

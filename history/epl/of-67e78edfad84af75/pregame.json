@@ -6,13 +6,13 @@
   "round": "Regular Season - 2",
   "home": "bournemouth",
   "away": "everton",
-  "captured_at": "2026-08-24T20:41:46.961449Z",
+  "captured_at": "2026-08-24T21:03:04Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-bou-eve-2026-08-29",
       "event_slug": "epl-bou-eve-2026-08-29",
-      "updated_at": "2026-08-22T04:55:11Z"
+      "updated_at": "2026-08-24T21:02:49Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug29boueve",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.41193,
-      "draw": 0.25967,
-      "away": 0.3284
+      "home": 0.40098,
+      "draw": 0.26045,
+      "away": 0.33857
     },
     "polymarket": {
-      "home": 0.509901,
-      "draw": 0.262376,
-      "away": 0.227723
+      "home": 0.467337,
+      "draw": 0.266332,
+      "away": 0.266332
     },
     "kalshi": {
-      "home": 0.519608,
-      "draw": 0.259804,
-      "away": 0.220588
+      "home": 0.467337,
+      "draw": 0.266332,
+      "away": 0.266332
     },
     "consensus": {
-      "home": 0.514754,
-      "draw": 0.26109,
-      "away": 0.224156
+      "home": 0.467337,
+      "draw": 0.266332,
+      "away": 0.266332
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T20:41:46.961449Z",
-    "polymarket": "2026-08-24T20:41:46.961449Z",
-    "kalshi": "2026-08-24T20:41:46.961449Z",
-    "consensus": "2026-08-24T20:41:46.961449Z"
+    "model": "2026-08-24T21:03:04Z",
+    "polymarket": "2026-08-24T21:03:04Z",
+    "kalshi": "2026-08-24T21:03:04Z",
+    "consensus": "2026-08-24T21:03:04Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-24T20:29:09.552489Z"
+    "updated_at": "2026-08-24T21:03:04Z"
   },
   "locked": false
 }

@@ -1,0 +1,37 @@
+{
+  "fixture_id": "of-1e2fc259bad2c086",
+  "status": "pending",
+  "date": "2027-05-08",
+  "kickoff": "2027-05-08T14:00:00Z",
+  "round": "Regular Season - 35",
+  "home": "everton",
+  "away": "hull-city",
+  "captured_at": "2026-08-24T21:03:04Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": null,
+    "kalshi": null
+  },
+  "sources": {
+    "model": {
+      "home": 0.61094,
+      "draw": 0.21318,
+      "away": 0.17588
+    }
+  },
+  "league": "epl",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-24T21:03:04Z"
+  },
+  "provenance": {
+    "type": "prediction_archive_seed",
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T21:03:04Z",
+    "updated_at": "2026-08-24T21:03:04Z"
+  },
+  "locked": false
+}

@@ -6,7 +6,7 @@
   "round": "Regular Season - 27",
   "home": "dc-united",
   "away": "charlotte-fc",
-  "captured_at": "2026-08-24T20:41:47.852730Z",
+  "captured_at": "2026-08-24T21:01:33Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -14,15 +14,15 @@
   },
   "sources": {
     "model": {
-      "home": 0.343493,
-      "draw": 0.280603,
-      "away": 0.375904
+      "home": 0.34022,
+      "draw": 0.27432,
+      "away": 0.38546
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T20:41:47.852730Z"
+    "model": "2026-08-24T21:01:33Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-24T20:29:10.323168Z"
+    "updated_at": "2026-08-24T21:01:33Z"
   },
   "locked": false
 }

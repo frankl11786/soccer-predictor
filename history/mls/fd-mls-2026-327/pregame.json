@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "minnesota-united-fc",
   "away": "orlando-city-sc",
-  "captured_at": "2026-08-24T20:41:47.852730Z",
+  "captured_at": "2026-08-24T21:01:33Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-min-orl-2026-08-29",
       "event_slug": "mls-min-orl-2026-08-29",
-      "updated_at": "2026-08-22T04:53:12Z"
+      "updated_at": "2026-08-24T21:01:11Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29minorl",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.32903,
-      "draw": 0.22667,
-      "away": 0.4443
+      "home": 0.3657,
+      "draw": 0.22585,
+      "away": 0.40845
     },
     "polymarket": {
-      "home": 0.497585,
-      "draw": 0.246377,
-      "away": 0.256039
+      "home": 0.538071,
+      "draw": 0.22335,
+      "away": 0.238579
     },
     "kalshi": {
-      "home": 0.492462,
-      "draw": 0.246231,
-      "away": 0.261307
+      "home": 0.547739,
+      "draw": 0.21608,
+      "away": 0.236181
     },
     "consensus": {
-      "home": 0.495024,
-      "draw": 0.246304,
-      "away": 0.258673
+      "home": 0.542905,
+      "draw": 0.219715,
+      "away": 0.23738
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T20:41:47.852730Z",
-    "polymarket": "2026-08-24T20:41:47.852730Z",
-    "kalshi": "2026-08-24T20:41:47.852730Z",
-    "consensus": "2026-08-24T20:41:47.852730Z"
+    "model": "2026-08-24T21:01:33Z",
+    "polymarket": "2026-08-24T21:01:33Z",
+    "kalshi": "2026-08-24T21:01:33Z",
+    "consensus": "2026-08-24T21:01:33Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-24T20:29:10.323168Z"
+    "updated_at": "2026-08-24T21:01:33Z"
   },
   "locked": false
 }

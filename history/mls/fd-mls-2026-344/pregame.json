@@ -6,23 +6,49 @@
   "round": "Regular Season - 24",
   "home": "real-salt-lake",
   "away": "los-angeles-fc",
-  "captured_at": "2026-08-24T20:41:47.852730Z",
+  "captured_at": "2026-08-24T21:01:33Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
-    "polymarket": null,
-    "kalshi": null
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-rsl-laf-2026-09-05",
+      "event_slug": "mls-rsl-laf-2026-09-05",
+      "updated_at": "2026-08-24T21:01:21Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05rsllafc",
+      "event_ticker": "KXMLSGAME-26SEP05RSLLAFC",
+      "updated_at": "2026-08-23T00:58:01.022742Z"
+    }
   },
   "sources": {
     "model": {
-      "home": 0.38513,
-      "draw": 0.22155,
-      "away": 0.39332
+      "home": 0.39748,
+      "draw": 0.2295,
+      "away": 0.37302
+    },
+    "polymarket": {
+      "home": 0.413793,
+      "draw": 0.251232,
+      "away": 0.334975
+    },
+    "kalshi": {
+      "home": 0.420513,
+      "draw": 0.251282,
+      "away": 0.328205
+    },
+    "consensus": {
+      "home": 0.417153,
+      "draw": 0.251257,
+      "away": 0.33159
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T20:41:47.852730Z"
+    "model": "2026-08-24T21:01:33Z",
+    "polymarket": "2026-08-24T21:01:33Z",
+    "kalshi": "2026-08-24T21:01:33Z",
+    "consensus": "2026-08-24T21:01:33Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-24T20:29:10.323168Z"
+    "updated_at": "2026-08-24T21:01:33Z"
   },
   "locked": false
 }

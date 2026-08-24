@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "sporting-kansas-city",
   "away": "vancouver-whitecaps-fc",
-  "captured_at": "2026-08-24T20:41:47.852730Z",
+  "captured_at": "2026-08-24T21:01:33Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-skc-vwh-2026-08-29",
       "event_slug": "mls-skc-vwh-2026-08-29",
-      "updated_at": "2026-08-22T04:53:12Z"
+      "updated_at": "2026-08-24T21:01:11Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29skcvan",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.05474,
-      "draw": 0.08334,
-      "away": 0.86192
+      "home": 0.04776,
+      "draw": 0.07773,
+      "away": 0.87451
     },
     "polymarket": {
-      "home": 0.175355,
-      "draw": 0.203791,
-      "away": 0.620854
+      "home": 0.134715,
+      "draw": 0.176166,
+      "away": 0.689119
     },
     "kalshi": {
-      "home": 0.201835,
-      "draw": 0.211009,
-      "away": 0.587156
+      "home": 0.135678,
+      "draw": 0.165829,
+      "away": 0.698493
     },
     "consensus": {
-      "home": 0.188595,
-      "draw": 0.2074,
-      "away": 0.604005
+      "home": 0.135196,
+      "draw": 0.170997,
+      "away": 0.693807
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T20:41:47.852730Z",
-    "polymarket": "2026-08-24T20:41:47.852730Z",
-    "kalshi": "2026-08-24T20:41:47.852730Z",
-    "consensus": "2026-08-24T20:41:47.852730Z"
+    "model": "2026-08-24T21:01:33Z",
+    "polymarket": "2026-08-24T21:01:33Z",
+    "kalshi": "2026-08-24T21:01:33Z",
+    "consensus": "2026-08-24T21:01:33Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-24T20:29:10.323168Z"
+    "updated_at": "2026-08-24T21:01:33Z"
   },
   "locked": false
 }
