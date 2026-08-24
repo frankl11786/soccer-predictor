@@ -350,13 +350,13 @@
     "prediction_archive": {
       "schema_version": 1,
       "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
-      "synchronized_at": "2026-08-24T21:03:20.321790Z",
+      "synchronized_at": "2026-08-24T21:03:53.867174Z",
       "records": 273,
       "finalized_records": 77,
       "pending_records": 196,
       "seed_stats": {
         "seeded_pending": 196,
-        "seeded_final": 15
+        "seeded_final": 0
       },
       "capture_stats": {
         "captured": 0,
@@ -368,7 +368,9 @@
         "missing_pregame": 237,
         "already_final": 77
       }
-    }
+    },
+    "history_backfill_at": "2026-08-24T21:03:53.867174Z",
+    "history_backfill_method": "archived committed pregame snapshots materialized into the permanent prediction archive"
   },
   "methodology": {
     "market_comparison": {
@@ -34850,7 +34852,7 @@
       "round": "Regular Season - 23",
       "home": "atlanta-united",
       "away": "charlotte-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -34889,10 +34891,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -34914,7 +34916,7 @@
       "round": "Regular Season - 23",
       "home": "columbus-crew",
       "away": "new-england-revolution",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -34953,10 +34955,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -34978,7 +34980,7 @@
       "round": "Regular Season - 23",
       "home": "dc-united",
       "away": "los-angeles-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35017,10 +35019,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35042,7 +35044,7 @@
       "round": "Regular Season - 23",
       "home": "inter-miami-cf",
       "away": "cf-montréal",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35081,10 +35083,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35106,7 +35108,7 @@
       "round": "Regular Season - 23",
       "home": "red-bull-new-york",
       "away": "philadelphia-union",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35145,10 +35147,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35170,7 +35172,7 @@
       "round": "Regular Season - 23",
       "home": "seattle-sounders-fc",
       "away": "chicago-fire-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35209,10 +35211,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35234,7 +35236,7 @@
       "round": "Regular Season - 23",
       "home": "toronto-fc",
       "away": "new-york-city-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35273,10 +35275,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35298,7 +35300,7 @@
       "round": "Regular Season - 23",
       "home": "colorado-rapids",
       "away": "real-salt-lake",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35337,10 +35339,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35362,7 +35364,7 @@
       "round": "Regular Season - 23",
       "home": "houston-dynamo-fc",
       "away": "san-jose-earthquakes",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -35392,9 +35394,9 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35416,7 +35418,7 @@
       "round": "Regular Season - 23",
       "home": "sporting-kansas-city",
       "away": "vancouver-whitecaps-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35455,10 +35457,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35480,7 +35482,7 @@
       "round": "Regular Season - 23",
       "home": "minnesota-united-fc",
       "away": "orlando-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35519,10 +35521,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35544,7 +35546,7 @@
       "round": "Regular Season - 23",
       "home": "nashville-sc",
       "away": "fc-cincinnati",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35583,10 +35585,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35608,7 +35610,7 @@
       "round": "Regular Season - 23",
       "home": "portland-timbers",
       "away": "austin-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35647,10 +35649,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35672,7 +35674,7 @@
       "round": "Regular Season - 23",
       "home": "san-diego-fc",
       "away": "la-galaxy",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35711,10 +35713,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35736,7 +35738,7 @@
       "round": "Regular Season - 23",
       "home": "st-louis-city-sc",
       "away": "fc-dallas",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35775,10 +35777,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35800,7 +35802,7 @@
       "round": "Regular Season - 24",
       "home": "new-york-city-fc",
       "away": "nashville-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35839,10 +35841,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35864,7 +35866,7 @@
       "round": "Regular Season - 24",
       "home": "charlotte-fc",
       "away": "houston-dynamo-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35903,10 +35905,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35928,7 +35930,7 @@
       "round": "Regular Season - 24",
       "home": "fc-cincinnati",
       "away": "dc-united",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -35967,10 +35969,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -35992,7 +35994,7 @@
       "round": "Regular Season - 24",
       "home": "columbus-crew",
       "away": "colorado-rapids",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -36022,9 +36024,9 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36046,7 +36048,7 @@
       "round": "Regular Season - 24",
       "home": "inter-miami-cf",
       "away": "atlanta-united",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -36085,10 +36087,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36110,7 +36112,7 @@
       "round": "Regular Season - 24",
       "home": "orlando-city-sc",
       "away": "san-diego-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -36149,10 +36151,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36174,7 +36176,7 @@
       "round": "Regular Season - 24",
       "home": "philadelphia-union",
       "away": "cf-montréal",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -36213,10 +36215,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36238,7 +36240,7 @@
       "round": "Regular Season - 24",
       "home": "toronto-fc",
       "away": "chicago-fire-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -36277,10 +36279,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36302,7 +36304,7 @@
       "round": "Regular Season - 24",
       "home": "austin-fc",
       "away": "san-jose-earthquakes",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -36341,10 +36343,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36366,7 +36368,7 @@
       "round": "Regular Season - 24",
       "home": "fc-dallas",
       "away": "sporting-kansas-city",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -36405,10 +36407,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36430,7 +36432,7 @@
       "round": "Regular Season - 24",
       "home": "la-galaxy",
       "away": "new-england-revolution",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -36460,9 +36462,9 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36484,7 +36486,7 @@
       "round": "Regular Season - 24",
       "home": "portland-timbers",
       "away": "minnesota-united-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -36523,10 +36525,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36548,7 +36550,7 @@
       "round": "Regular Season - 24",
       "home": "real-salt-lake",
       "away": "los-angeles-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -36587,10 +36589,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36612,7 +36614,7 @@
       "round": "Regular Season - 24",
       "home": "seattle-sounders-fc",
       "away": "red-bull-new-york",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -36651,10 +36653,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36676,7 +36678,7 @@
       "round": "Regular Season - 24",
       "home": "vancouver-whitecaps-fc",
       "away": "st-louis-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": {
@@ -36715,10 +36717,10 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z",
-        "polymarket": "2026-08-24T21:01:33Z",
-        "kalshi": "2026-08-24T21:01:33Z",
-        "consensus": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z",
+        "polymarket": "2026-08-24T21:03:53.867174Z",
+        "kalshi": "2026-08-24T21:03:53.867174Z",
+        "consensus": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36740,7 +36742,7 @@
       "round": "Regular Season - 25",
       "home": "atlanta-united",
       "away": "orlando-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -36756,7 +36758,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36778,7 +36780,7 @@
       "round": "Regular Season - 25",
       "home": "dc-united",
       "away": "columbus-crew",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -36794,7 +36796,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36816,7 +36818,7 @@
       "round": "Regular Season - 25",
       "home": "cf-montréal",
       "away": "charlotte-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -36832,7 +36834,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36854,7 +36856,7 @@
       "round": "Regular Season - 25",
       "home": "new-york-city-fc",
       "away": "new-england-revolution",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -36870,7 +36872,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36892,7 +36894,7 @@
       "round": "Regular Season - 25",
       "home": "philadelphia-union",
       "away": "fc-cincinnati",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -36908,7 +36910,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36930,7 +36932,7 @@
       "round": "Regular Season - 25",
       "home": "toronto-fc",
       "away": "nashville-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -36946,7 +36948,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -36968,7 +36970,7 @@
       "round": "Regular Season - 25",
       "home": "austin-fc",
       "away": "colorado-rapids",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -36984,7 +36986,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37006,7 +37008,7 @@
       "round": "Regular Season - 25",
       "home": "chicago-fire-fc",
       "away": "inter-miami-cf",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37022,7 +37024,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37044,7 +37046,7 @@
       "round": "Regular Season - 25",
       "home": "houston-dynamo-fc",
       "away": "real-salt-lake",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37060,7 +37062,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37082,7 +37084,7 @@
       "round": "Regular Season - 25",
       "home": "los-angeles-fc",
       "away": "red-bull-new-york",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37098,7 +37100,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37120,7 +37122,7 @@
       "round": "Regular Season - 25",
       "home": "minnesota-united-fc",
       "away": "fc-dallas",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37136,7 +37138,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37158,7 +37160,7 @@
       "round": "Regular Season - 25",
       "home": "portland-timbers",
       "away": "st-louis-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37174,7 +37176,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37196,7 +37198,7 @@
       "round": "Regular Season - 25",
       "home": "san-diego-fc",
       "away": "san-jose-earthquakes",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37212,7 +37214,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37234,7 +37236,7 @@
       "round": "Regular Season - 25",
       "home": "vancouver-whitecaps-fc",
       "away": "la-galaxy",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37250,7 +37252,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37272,7 +37274,7 @@
       "round": "Regular Season - 26",
       "home": "fc-cincinnati",
       "away": "charlotte-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37288,7 +37290,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37310,7 +37312,7 @@
       "round": "Regular Season - 26",
       "home": "columbus-crew",
       "away": "red-bull-new-york",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37326,7 +37328,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37348,7 +37350,7 @@
       "round": "Regular Season - 26",
       "home": "dc-united",
       "away": "atlanta-united",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37364,7 +37366,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37386,7 +37388,7 @@
       "round": "Regular Season - 26",
       "home": "inter-miami-cf",
       "away": "nashville-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37402,7 +37404,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37424,7 +37426,7 @@
       "round": "Regular Season - 26",
       "home": "orlando-city-sc",
       "away": "toronto-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37440,7 +37442,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37462,7 +37464,7 @@
       "round": "Regular Season - 26",
       "home": "colorado-rapids",
       "away": "cf-montréal",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37478,7 +37480,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37500,7 +37502,7 @@
       "round": "Regular Season - 26",
       "home": "fc-dallas",
       "away": "portland-timbers",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37516,7 +37518,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37538,7 +37540,7 @@
       "round": "Regular Season - 26",
       "home": "sporting-kansas-city",
       "away": "los-angeles-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37554,7 +37556,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37576,7 +37578,7 @@
       "round": "Regular Season - 26",
       "home": "la-galaxy",
       "away": "seattle-sounders-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37592,7 +37594,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37614,7 +37616,7 @@
       "round": "Regular Season - 26",
       "home": "real-salt-lake",
       "away": "new-york-city-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37630,7 +37632,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37652,7 +37654,7 @@
       "round": "Regular Season - 26",
       "home": "san-jose-earthquakes",
       "away": "houston-dynamo-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37668,7 +37670,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37690,7 +37692,7 @@
       "round": "Regular Season - 26",
       "home": "st-louis-city-sc",
       "away": "minnesota-united-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37706,7 +37708,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37728,7 +37730,7 @@
       "round": "Regular Season - 26",
       "home": "chicago-fire-fc",
       "away": "new-england-revolution",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37744,7 +37746,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37766,7 +37768,7 @@
       "round": "Regular Season - 26",
       "home": "vancouver-whitecaps-fc",
       "away": "austin-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37782,7 +37784,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37804,7 +37806,7 @@
       "round": "Regular Season - 26",
       "home": "san-diego-fc",
       "away": "philadelphia-union",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37820,7 +37822,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37842,7 +37844,7 @@
       "round": "Regular Season - 27",
       "home": "new-york-city-fc",
       "away": "red-bull-new-york",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37858,7 +37860,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37880,7 +37882,7 @@
       "round": "Regular Season - 27",
       "home": "dc-united",
       "away": "charlotte-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37896,7 +37898,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37918,7 +37920,7 @@
       "round": "Regular Season - 27",
       "home": "cf-montréal",
       "away": "columbus-crew",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37934,7 +37936,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37956,7 +37958,7 @@
       "round": "Regular Season - 27",
       "home": "new-england-revolution",
       "away": "orlando-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -37972,7 +37974,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -37994,7 +37996,7 @@
       "round": "Regular Season - 27",
       "home": "san-jose-earthquakes",
       "away": "los-angeles-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38010,7 +38012,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38032,7 +38034,7 @@
       "round": "Regular Season - 27",
       "home": "colorado-rapids",
       "away": "seattle-sounders-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38048,7 +38050,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38070,7 +38072,7 @@
       "round": "Regular Season - 27",
       "home": "fc-dallas",
       "away": "austin-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38086,7 +38088,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38108,7 +38110,7 @@
       "round": "Regular Season - 27",
       "home": "houston-dynamo-fc",
       "away": "fc-cincinnati",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38124,7 +38126,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38146,7 +38148,7 @@
       "round": "Regular Season - 27",
       "home": "sporting-kansas-city",
       "away": "philadelphia-union",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38162,7 +38164,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38184,7 +38186,7 @@
       "round": "Regular Season - 27",
       "home": "minnesota-united-fc",
       "away": "la-galaxy",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38200,7 +38202,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38222,7 +38224,7 @@
       "round": "Regular Season - 27",
       "home": "nashville-sc",
       "away": "chicago-fire-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38238,7 +38240,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38260,7 +38262,7 @@
       "round": "Regular Season - 27",
       "home": "portland-timbers",
       "away": "atlanta-united",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38276,7 +38278,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38298,7 +38300,7 @@
       "round": "Regular Season - 27",
       "home": "real-salt-lake",
       "away": "vancouver-whitecaps-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38314,7 +38316,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38336,7 +38338,7 @@
       "round": "Regular Season - 27",
       "home": "st-louis-city-sc",
       "away": "toronto-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38352,7 +38354,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38374,7 +38376,7 @@
       "round": "Regular Season - 27",
       "home": "inter-miami-cf",
       "away": "san-diego-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38390,7 +38392,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38412,7 +38414,7 @@
       "round": "Regular Season - 27",
       "home": "seattle-sounders-fc",
       "away": "real-salt-lake",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38428,7 +38430,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38450,7 +38452,7 @@
       "round": "Regular Season - 28",
       "home": "atlanta-united",
       "away": "new-york-city-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38466,7 +38468,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38488,7 +38490,7 @@
       "round": "Regular Season - 28",
       "home": "charlotte-fc",
       "away": "chicago-fire-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38504,7 +38506,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38526,7 +38528,7 @@
       "round": "Regular Season - 28",
       "home": "cf-montréal",
       "away": "fc-cincinnati",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38542,7 +38544,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38564,7 +38566,7 @@
       "round": "Regular Season - 28",
       "home": "red-bull-new-york",
       "away": "st-louis-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38580,7 +38582,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38602,7 +38604,7 @@
       "round": "Regular Season - 28",
       "home": "philadelphia-union",
       "away": "orlando-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38618,7 +38620,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38640,7 +38642,7 @@
       "round": "Regular Season - 28",
       "home": "austin-fc",
       "away": "san-diego-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38656,7 +38658,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38678,7 +38680,7 @@
       "round": "Regular Season - 28",
       "home": "columbus-crew",
       "away": "inter-miami-cf",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38694,7 +38696,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38716,7 +38718,7 @@
       "round": "Regular Season - 28",
       "home": "fc-dallas",
       "away": "los-angeles-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38732,7 +38734,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38754,7 +38756,7 @@
       "round": "Regular Season - 28",
       "home": "houston-dynamo-fc",
       "away": "sporting-kansas-city",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38770,7 +38772,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38792,7 +38794,7 @@
       "round": "Regular Season - 28",
       "home": "la-galaxy",
       "away": "colorado-rapids",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38808,7 +38810,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38830,7 +38832,7 @@
       "round": "Regular Season - 28",
       "home": "nashville-sc",
       "away": "toronto-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38846,7 +38848,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38868,7 +38870,7 @@
       "round": "Regular Season - 28",
       "home": "real-salt-lake",
       "away": "new-england-revolution",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38884,7 +38886,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38906,7 +38908,7 @@
       "round": "Regular Season - 28",
       "home": "san-jose-earthquakes",
       "away": "portland-timbers",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38922,7 +38924,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38944,7 +38946,7 @@
       "round": "Regular Season - 28",
       "home": "seattle-sounders-fc",
       "away": "minnesota-united-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38960,7 +38962,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -38982,7 +38984,7 @@
       "round": "Regular Season - 28",
       "home": "vancouver-whitecaps-fc",
       "away": "dc-united",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -38998,7 +39000,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39020,7 +39022,7 @@
       "round": "Regular Season - 28",
       "home": "seattle-sounders-fc",
       "away": "sporting-kansas-city",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39036,7 +39038,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39058,7 +39060,7 @@
       "round": "Regular Season - 28",
       "home": "chicago-fire-fc",
       "away": "vancouver-whitecaps-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39074,7 +39076,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39096,7 +39098,7 @@
       "round": "Regular Season - 29",
       "home": "atlanta-united",
       "away": "fc-cincinnati",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39112,7 +39114,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39134,7 +39136,7 @@
       "round": "Regular Season - 29",
       "home": "charlotte-fc",
       "away": "fc-dallas",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39150,7 +39152,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39172,7 +39174,7 @@
       "round": "Regular Season - 29",
       "home": "chicago-fire-fc",
       "away": "new-york-city-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39188,7 +39190,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39210,7 +39212,7 @@
       "round": "Regular Season - 29",
       "home": "inter-miami-cf",
       "away": "dc-united",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39226,7 +39228,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39248,7 +39250,7 @@
       "round": "Regular Season - 29",
       "home": "new-england-revolution",
       "away": "seattle-sounders-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39264,7 +39266,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39286,7 +39288,7 @@
       "round": "Regular Season - 29",
       "home": "red-bull-new-york",
       "away": "san-diego-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39302,7 +39304,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39324,7 +39326,7 @@
       "round": "Regular Season - 29",
       "home": "orlando-city-sc",
       "away": "columbus-crew",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39340,7 +39342,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39362,7 +39364,7 @@
       "round": "Regular Season - 29",
       "home": "philadelphia-union",
       "away": "real-salt-lake",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39378,7 +39380,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39400,7 +39402,7 @@
       "round": "Regular Season - 29",
       "home": "toronto-fc",
       "away": "cf-montréal",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39416,7 +39418,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39438,7 +39440,7 @@
       "round": "Regular Season - 29",
       "home": "austin-fc",
       "away": "nashville-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39454,7 +39456,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39476,7 +39478,7 @@
       "round": "Regular Season - 29",
       "home": "colorado-rapids",
       "away": "san-jose-earthquakes",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39492,7 +39494,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39514,7 +39516,7 @@
       "round": "Regular Season - 29",
       "home": "sporting-kansas-city",
       "away": "portland-timbers",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39530,7 +39532,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39552,7 +39554,7 @@
       "round": "Regular Season - 29",
       "home": "los-angeles-fc",
       "away": "vancouver-whitecaps-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39568,7 +39570,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39590,7 +39592,7 @@
       "round": "Regular Season - 29",
       "home": "minnesota-united-fc",
       "away": "houston-dynamo-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39606,7 +39608,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39628,7 +39630,7 @@
       "round": "Regular Season - 29",
       "home": "st-louis-city-sc",
       "away": "la-galaxy",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39644,7 +39646,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39666,7 +39668,7 @@
       "round": "Regular Season - 30",
       "home": "fc-cincinnati",
       "away": "new-england-revolution",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39682,7 +39684,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39704,7 +39706,7 @@
       "round": "Regular Season - 30",
       "home": "columbus-crew",
       "away": "charlotte-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39720,7 +39722,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39742,7 +39744,7 @@
       "round": "Regular Season - 30",
       "home": "dc-united",
       "away": "red-bull-new-york",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39758,7 +39760,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39780,7 +39782,7 @@
       "round": "Regular Season - 30",
       "home": "inter-miami-cf",
       "away": "new-york-city-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39796,7 +39798,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39818,7 +39820,7 @@
       "round": "Regular Season - 30",
       "home": "cf-montréal",
       "away": "atlanta-united",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39834,7 +39836,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39856,7 +39858,7 @@
       "round": "Regular Season - 30",
       "home": "toronto-fc",
       "away": "orlando-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39872,7 +39874,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39894,7 +39896,7 @@
       "round": "Regular Season - 30",
       "home": "chicago-fire-fc",
       "away": "philadelphia-union",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39910,7 +39912,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39932,7 +39934,7 @@
       "round": "Regular Season - 30",
       "home": "colorado-rapids",
       "away": "minnesota-united-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39948,7 +39950,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -39970,7 +39972,7 @@
       "round": "Regular Season - 30",
       "home": "fc-dallas",
       "away": "seattle-sounders-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -39986,7 +39988,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40008,7 +40010,7 @@
       "round": "Regular Season - 30",
       "home": "la-galaxy",
       "away": "portland-timbers",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40024,7 +40026,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40046,7 +40048,7 @@
       "round": "Regular Season - 30",
       "home": "los-angeles-fc",
       "away": "austin-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40062,7 +40064,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40084,7 +40086,7 @@
       "round": "Regular Season - 30",
       "home": "nashville-sc",
       "away": "sporting-kansas-city",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40100,7 +40102,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40122,7 +40124,7 @@
       "round": "Regular Season - 30",
       "home": "real-salt-lake",
       "away": "san-jose-earthquakes",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40138,7 +40140,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40160,7 +40162,7 @@
       "round": "Regular Season - 30",
       "home": "san-diego-fc",
       "away": "houston-dynamo-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40176,7 +40178,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40198,7 +40200,7 @@
       "round": "Regular Season - 30",
       "home": "st-louis-city-sc",
       "away": "vancouver-whitecaps-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40214,7 +40216,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40236,7 +40238,7 @@
       "round": "Regular Season - 31",
       "home": "atlanta-united",
       "away": "inter-miami-cf",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40252,7 +40254,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40274,7 +40276,7 @@
       "round": "Regular Season - 31",
       "home": "minnesota-united-fc",
       "away": "st-louis-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40290,7 +40292,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40312,7 +40314,7 @@
       "round": "Regular Season - 31",
       "home": "new-england-revolution",
       "away": "chicago-fire-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40328,7 +40330,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40350,7 +40352,7 @@
       "round": "Regular Season - 31",
       "home": "red-bull-new-york",
       "away": "toronto-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40366,7 +40368,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40388,7 +40390,7 @@
       "round": "Regular Season - 31",
       "home": "orlando-city-sc",
       "away": "dc-united",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40404,7 +40406,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40426,7 +40428,7 @@
       "round": "Regular Season - 31",
       "home": "philadelphia-union",
       "away": "charlotte-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40442,7 +40444,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40464,7 +40466,7 @@
       "round": "Regular Season - 31",
       "home": "austin-fc",
       "away": "vancouver-whitecaps-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40480,7 +40482,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40502,7 +40504,7 @@
       "round": "Regular Season - 31",
       "home": "houston-dynamo-fc",
       "away": "fc-dallas",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40518,7 +40520,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40540,7 +40542,7 @@
       "round": "Regular Season - 31",
       "home": "sporting-kansas-city",
       "away": "real-salt-lake",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40556,7 +40558,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40578,7 +40580,7 @@
       "round": "Regular Season - 31",
       "home": "la-galaxy",
       "away": "san-diego-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40594,7 +40596,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40616,7 +40618,7 @@
       "round": "Regular Season - 31",
       "home": "portland-timbers",
       "away": "colorado-rapids",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40632,7 +40634,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40654,7 +40656,7 @@
       "round": "Regular Season - 31",
       "home": "san-jose-earthquakes",
       "away": "nashville-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40670,7 +40672,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40692,7 +40694,7 @@
       "round": "Regular Season - 31",
       "home": "seattle-sounders-fc",
       "away": "cf-montréal",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40708,7 +40710,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40730,7 +40732,7 @@
       "round": "Regular Season - 31",
       "home": "fc-cincinnati",
       "away": "columbus-crew",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40746,7 +40748,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40768,7 +40770,7 @@
       "round": "Regular Season - 32",
       "home": "atlanta-united",
       "away": "chicago-fire-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40784,7 +40786,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40806,7 +40808,7 @@
       "round": "Regular Season - 32",
       "home": "columbus-crew",
       "away": "toronto-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40822,7 +40824,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40844,7 +40846,7 @@
       "round": "Regular Season - 32",
       "home": "dc-united",
       "away": "fc-cincinnati",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40860,7 +40862,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40882,7 +40884,7 @@
       "round": "Regular Season - 32",
       "home": "cf-montréal",
       "away": "nashville-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40898,7 +40900,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40920,7 +40922,7 @@
       "round": "Regular Season - 32",
       "home": "red-bull-new-york",
       "away": "inter-miami-cf",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40936,7 +40938,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40958,7 +40960,7 @@
       "round": "Regular Season - 32",
       "home": "orlando-city-sc",
       "away": "new-york-city-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -40974,7 +40976,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -40996,7 +40998,7 @@
       "round": "Regular Season - 32",
       "home": "philadelphia-union",
       "away": "new-england-revolution",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41012,7 +41014,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41034,7 +41036,7 @@
       "round": "Regular Season - 32",
       "home": "colorado-rapids",
       "away": "vancouver-whitecaps-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41050,7 +41052,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41072,7 +41074,7 @@
       "round": "Regular Season - 32",
       "home": "fc-dallas",
       "away": "san-jose-earthquakes",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41088,7 +41090,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41110,7 +41112,7 @@
       "round": "Regular Season - 32",
       "home": "houston-dynamo-fc",
       "away": "minnesota-united-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41126,7 +41128,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41148,7 +41150,7 @@
       "round": "Regular Season - 32",
       "home": "sporting-kansas-city",
       "away": "austin-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41164,7 +41166,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41186,7 +41188,7 @@
       "round": "Regular Season - 32",
       "home": "portland-timbers",
       "away": "charlotte-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41202,7 +41204,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41224,7 +41226,7 @@
       "round": "Regular Season - 32",
       "home": "real-salt-lake",
       "away": "st-louis-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41240,7 +41242,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41262,7 +41264,7 @@
       "round": "Regular Season - 32",
       "home": "san-diego-fc",
       "away": "seattle-sounders-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41278,7 +41280,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41300,7 +41302,7 @@
       "round": "Regular Season - 32",
       "home": "los-angeles-fc",
       "away": "la-galaxy",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41316,7 +41318,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41338,7 +41340,7 @@
       "round": "Regular Season - 33",
       "home": "charlotte-fc",
       "away": "cf-montréal",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41354,7 +41356,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41376,7 +41378,7 @@
       "round": "Regular Season - 33",
       "home": "inter-miami-cf",
       "away": "fc-cincinnati",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41392,7 +41394,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41414,7 +41416,7 @@
       "round": "Regular Season - 33",
       "home": "new-england-revolution",
       "away": "red-bull-new-york",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41430,7 +41432,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41452,7 +41454,7 @@
       "round": "Regular Season - 33",
       "home": "new-york-city-fc",
       "away": "atlanta-united",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41468,7 +41470,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41490,7 +41492,7 @@
       "round": "Regular Season - 33",
       "home": "toronto-fc",
       "away": "dc-united",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41506,7 +41508,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41528,7 +41530,7 @@
       "round": "Regular Season - 33",
       "home": "austin-fc",
       "away": "real-salt-lake",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41544,7 +41546,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41566,7 +41568,7 @@
       "round": "Regular Season - 33",
       "home": "chicago-fire-fc",
       "away": "orlando-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41582,7 +41584,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41604,7 +41606,7 @@
       "round": "Regular Season - 33",
       "home": "fc-dallas",
       "away": "columbus-crew",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41620,7 +41622,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41642,7 +41644,7 @@
       "round": "Regular Season - 33",
       "home": "minnesota-united-fc",
       "away": "sporting-kansas-city",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41658,7 +41660,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41680,7 +41682,7 @@
       "round": "Regular Season - 33",
       "home": "nashville-sc",
       "away": "philadelphia-union",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41696,7 +41698,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41718,7 +41720,7 @@
       "round": "Regular Season - 33",
       "home": "san-jose-earthquakes",
       "away": "colorado-rapids",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41734,7 +41736,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41756,7 +41758,7 @@
       "round": "Regular Season - 33",
       "home": "seattle-sounders-fc",
       "away": "houston-dynamo-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41772,7 +41774,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41794,7 +41796,7 @@
       "round": "Regular Season - 33",
       "home": "st-louis-city-sc",
       "away": "portland-timbers",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41810,7 +41812,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41832,7 +41834,7 @@
       "round": "Regular Season - 33",
       "home": "vancouver-whitecaps-fc",
       "away": "san-diego-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41848,7 +41850,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41870,7 +41872,7 @@
       "round": "Regular Season - 34",
       "home": "charlotte-fc",
       "away": "orlando-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41886,7 +41888,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41908,7 +41910,7 @@
       "round": "Regular Season - 34",
       "home": "fc-cincinnati",
       "away": "philadelphia-union",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41924,7 +41926,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41946,7 +41948,7 @@
       "round": "Regular Season - 34",
       "home": "columbus-crew",
       "away": "dc-united",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -41962,7 +41964,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -41984,7 +41986,7 @@
       "round": "Regular Season - 34",
       "home": "sporting-kansas-city",
       "away": "fc-dallas",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42000,7 +42002,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42022,7 +42024,7 @@
       "round": "Regular Season - 34",
       "home": "la-galaxy",
       "away": "austin-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42038,7 +42040,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42060,7 +42062,7 @@
       "round": "Regular Season - 34",
       "home": "new-york-city-fc",
       "away": "cf-montréal",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42076,7 +42078,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42098,7 +42100,7 @@
       "round": "Regular Season - 34",
       "home": "san-jose-earthquakes",
       "away": "real-salt-lake",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42114,7 +42116,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42136,7 +42138,7 @@
       "round": "Regular Season - 34",
       "home": "st-louis-city-sc",
       "away": "san-diego-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42152,7 +42154,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42174,7 +42176,7 @@
       "round": "Regular Season - 34",
       "home": "nashville-sc",
       "away": "red-bull-new-york",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42190,7 +42192,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42212,7 +42214,7 @@
       "round": "Regular Season - 34",
       "home": "colorado-rapids",
       "away": "chicago-fire-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42228,7 +42230,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42250,7 +42252,7 @@
       "round": "Regular Season - 34",
       "home": "vancouver-whitecaps-fc",
       "away": "seattle-sounders-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42266,7 +42268,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42288,7 +42290,7 @@
       "round": "Regular Season - 34",
       "home": "atlanta-united",
       "away": "toronto-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42304,7 +42306,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42326,7 +42328,7 @@
       "round": "Regular Season - 34",
       "home": "los-angeles-fc",
       "away": "minnesota-united-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42342,7 +42344,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42364,7 +42366,7 @@
       "round": "Regular Season - 34",
       "home": "new-england-revolution",
       "away": "inter-miami-cf",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42380,7 +42382,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42402,7 +42404,7 @@
       "round": "Regular Season - 34",
       "home": "portland-timbers",
       "away": "houston-dynamo-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42418,7 +42420,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42440,7 +42442,7 @@
       "round": "Regular Season - 34",
       "home": "new-york-city-fc",
       "away": "los-angeles-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42456,7 +42458,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42478,7 +42480,7 @@
       "round": "Regular Season - 35",
       "home": "chicago-fire-fc",
       "away": "columbus-crew",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42494,7 +42496,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42516,7 +42518,7 @@
       "round": "Regular Season - 35",
       "home": "fc-cincinnati",
       "away": "nashville-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42532,7 +42534,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42554,7 +42556,7 @@
       "round": "Regular Season - 35",
       "home": "dc-united",
       "away": "new-york-city-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42570,7 +42572,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42592,7 +42594,7 @@
       "round": "Regular Season - 35",
       "home": "inter-miami-cf",
       "away": "charlotte-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42608,7 +42610,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42630,7 +42632,7 @@
       "round": "Regular Season - 35",
       "home": "cf-montréal",
       "away": "vancouver-whitecaps-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42646,7 +42648,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42668,7 +42670,7 @@
       "round": "Regular Season - 35",
       "home": "red-bull-new-york",
       "away": "atlanta-united",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42684,7 +42686,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42706,7 +42708,7 @@
       "round": "Regular Season - 35",
       "home": "orlando-city-sc",
       "away": "new-england-revolution",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42722,7 +42724,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42744,7 +42746,7 @@
       "round": "Regular Season - 35",
       "home": "philadelphia-union",
       "away": "toronto-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42760,7 +42762,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42782,7 +42784,7 @@
       "round": "Regular Season - 35",
       "home": "austin-fc",
       "away": "portland-timbers",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42798,7 +42800,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42820,7 +42822,7 @@
       "round": "Regular Season - 35",
       "home": "fc-dallas",
       "away": "colorado-rapids",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42836,7 +42838,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42858,7 +42860,7 @@
       "round": "Regular Season - 35",
       "home": "houston-dynamo-fc",
       "away": "st-louis-city-sc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42874,7 +42876,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42896,7 +42898,7 @@
       "round": "Regular Season - 35",
       "home": "minnesota-united-fc",
       "away": "san-jose-earthquakes",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42912,7 +42914,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42934,7 +42936,7 @@
       "round": "Regular Season - 35",
       "home": "real-salt-lake",
       "away": "la-galaxy",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42950,7 +42952,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -42972,7 +42974,7 @@
       "round": "Regular Season - 35",
       "home": "san-diego-fc",
       "away": "sporting-kansas-city",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -42988,7 +42990,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",
@@ -43010,7 +43012,7 @@
       "round": "Regular Season - 35",
       "home": "seattle-sounders-fc",
       "away": "los-angeles-fc",
-      "captured_at": "2026-08-24T21:01:33Z",
+      "captured_at": "2026-08-24T21:03:53.867174Z",
       "model_version": "bayes-ss-poisson-v5-market-consensus",
       "market_refs": {
         "polymarket": null,
@@ -43026,7 +43028,7 @@
       "league": "mls",
       "schema_version": 1,
       "source_captured_at": {
-        "model": "2026-08-24T21:01:33Z"
+        "model": "2026-08-24T21:03:53.867174Z"
       },
       "provenance": {
         "type": "prediction_archive",

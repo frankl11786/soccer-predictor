@@ -6,7 +6,7 @@
   "round": "Regular Season - 23",
   "home": "st-louis-city-sc",
   "away": "fc-dallas",
-  "captured_at": "2026-08-24T21:01:33Z",
+  "captured_at": "2026-08-24T21:03:53.867174Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
@@ -45,10 +45,10 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T21:01:33Z",
-    "polymarket": "2026-08-24T21:01:33Z",
-    "kalshi": "2026-08-24T21:01:33Z",
-    "consensus": "2026-08-24T21:01:33Z"
+    "model": "2026-08-24T21:03:53.867174Z",
+    "polymarket": "2026-08-24T21:03:53.867174Z",
+    "kalshi": "2026-08-24T21:03:53.867174Z",
+    "consensus": "2026-08-24T21:03:53.867174Z"
   },
   "provenance": {
     "type": "prediction_archive",

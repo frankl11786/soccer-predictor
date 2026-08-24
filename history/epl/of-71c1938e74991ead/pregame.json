@@ -6,7 +6,7 @@
   "round": "Regular Season - 12",
   "home": "sunderland",
   "away": "tottenham-hotspur",
-  "captured_at": "2026-08-24T21:03:04Z",
+  "captured_at": "2026-08-24T21:03:49.886391Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T21:03:04Z"
+    "model": "2026-08-24T21:03:49.886391Z"
   },
   "provenance": {
     "type": "prediction_archive",

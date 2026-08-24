@@ -6,7 +6,7 @@
   "round": "Regular Season - 2",
   "home": "coventry-city",
   "away": "hull-city",
-  "captured_at": "2026-08-24T21:03:04Z",
+  "captured_at": "2026-08-24T21:03:49.886391Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
@@ -45,10 +45,10 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T21:03:04Z",
-    "polymarket": "2026-08-24T21:03:04Z",
-    "kalshi": "2026-08-24T21:03:04Z",
-    "consensus": "2026-08-24T21:03:04Z"
+    "model": "2026-08-24T21:03:49.886391Z",
+    "polymarket": "2026-08-24T21:03:49.886391Z",
+    "kalshi": "2026-08-24T21:03:49.886391Z",
+    "consensus": "2026-08-24T21:03:49.886391Z"
   },
   "provenance": {
     "type": "prediction_archive",
