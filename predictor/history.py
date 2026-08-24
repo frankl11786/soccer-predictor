@@ -453,8 +453,8 @@ def build_accuracy_summary(history: list[dict[str, Any]]) -> dict[str, Any]:
     ]
     return {
         "tracking_method": (
-            "Latest genuine pre-kickoff snapshot, including archived committed snapshots recovered from git history; "
-            "no post-match model reconstruction"
+            "Latest genuine pre-kickoff probabilities persisted in a permanent per-fixture archive, with older gaps "
+            "recoverable from committed git snapshots; no post-match model reconstruction"
         ),
         "primary_metric": "Multiclass Brier score (lower is better)",
         "graded_matches": len(finalized),
@@ -487,6 +487,8 @@ def attach_postgame_analysis(
             "sources": record.get("sources"),
             "scores": record.get("scores"),
             "market_refs": record.get("market_refs"),
+            "source_captured_at": record.get("source_captured_at"),
+            "archive": record.get("archive"),
             "provenance": record.get("provenance"),
             "comparison_only": True,
         }

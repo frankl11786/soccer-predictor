@@ -111,7 +111,10 @@ class KalshiComparisonTests(unittest.TestCase):
             {"slug": "arsenal", "name": "Arsenal", "short": "ARS"},
             {"slug": "leedsunited", "name": "Leeds United", "short": "LEE"},
         ]
-        quotes, meta = fetch_match_quotes(fixtures, teams, "KXEPLGAME", lookahead_days=365, max_fixtures=5)
+        quotes, meta = fetch_match_quotes(
+            fixtures, teams, "KXEPLGAME", lookahead_days=365, max_fixtures=5,
+            as_of=datetime(2026, 8, 21, 12, tzinfo=timezone.utc),
+        )
         self.assertIn("epl-1", quotes)
         quote = quotes["epl-1"]
         self.assertAlmostEqual(quote.home_probability + quote.draw_probability + quote.away_probability, 1.0, places=6)
@@ -139,7 +142,10 @@ class KalshiComparisonTests(unittest.TestCase):
         )
         fixtures = [{"id": "f", "status": "scheduled", "date": "2026-08-22", "kickoff": "2026-08-22T16:00:00Z", "home": "arsenal", "away": "leedsunited"}]
         teams = [{"slug": "arsenal", "name": "Arsenal", "short": "ARS"}, {"slug": "leedsunited", "name": "Leeds United", "short": "LEE"}]
-        quotes, _ = fetch_match_quotes(fixtures, teams, "KXEPLGAME", lookahead_days=365, max_fixtures=5)
+        quotes, _ = fetch_match_quotes(
+            fixtures, teams, "KXEPLGAME", lookahead_days=365, max_fixtures=5,
+            as_of=datetime(2026, 8, 21, 12, tzinfo=timezone.utc),
+        )
         self.assertEqual(quotes, {})
 
     @patch("predictor.kalshi.requests.get")
@@ -175,7 +181,10 @@ class KalshiComparisonTests(unittest.TestCase):
             {"slug": "los-angeles-fc", "name": "Los Angeles FC", "short": "LAFC"},
             {"slug": "inter-miami-cf", "name": "Inter Miami CF", "short": "MIA"},
         ]
-        quotes, _ = fetch_match_quotes(fixtures, teams, "KXMLSGAME", lookahead_days=365, max_fixtures=5)
+        quotes, _ = fetch_match_quotes(
+            fixtures, teams, "KXMLSGAME", lookahead_days=365, max_fixtures=5,
+            as_of=datetime(2026, 8, 21, 12, tzinfo=timezone.utc),
+        )
         self.assertIn("mls-short", quotes)
         self.assertEqual(quotes["mls-short"].market_tickers["home"], "H")
         self.assertEqual(quotes["mls-short"].market_tickers["away"], "A")
@@ -200,7 +209,10 @@ class KalshiComparisonTests(unittest.TestCase):
         )
         fixtures = [{"id": "f", "status": "scheduled", "date": "2026-08-22", "kickoff": "2026-08-22T23:00:00Z", "home": "intermiami", "away": "atlantaunited"}]
         teams = [{"slug": "intermiami", "name": "Inter Miami", "short": "MIA"}, {"slug": "atlantaunited", "name": "Atlanta United", "short": "ATL"}]
-        quotes, _ = fetch_match_quotes(fixtures, teams, "KXMLSGAME", lookahead_days=365, max_fixtures=5)
+        quotes, _ = fetch_match_quotes(
+            fixtures, teams, "KXMLSGAME", lookahead_days=365, max_fixtures=5,
+            as_of=datetime(2026, 8, 21, 12, tzinfo=timezone.utc),
+        )
         self.assertEqual(quotes, {})
 
     @patch("predictor.kalshi.requests.get")
