@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "manchester-city",
   "away": "coventry-city",
-  "captured_at": "2026-08-24T21:03:49.886391Z",
+  "captured_at": "2026-08-25T05:01:26Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-mac-cov-2026-09-05",
       "event_slug": "epl-mac-cov-2026-09-05",
-      "updated_at": "2026-08-24T21:02:53Z"
+      "updated_at": "2026-08-25T05:01:21Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep05mcicov",
@@ -27,28 +27,28 @@
       "away": 0.03174
     },
     "polymarket": {
-      "home": 0.805,
-      "draw": 0.125,
-      "away": 0.07
+      "home": 0.809045,
+      "draw": 0.120603,
+      "away": 0.070352
     },
     "kalshi": {
-      "home": 0.798995,
-      "draw": 0.120603,
-      "away": 0.080402
+      "home": 0.809278,
+      "draw": 0.118557,
+      "away": 0.072165
     },
     "consensus": {
-      "home": 0.801997,
-      "draw": 0.122802,
-      "away": 0.075201
+      "home": 0.809161,
+      "draw": 0.11958,
+      "away": 0.071259
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T21:03:49.886391Z",
-    "polymarket": "2026-08-24T21:03:49.886391Z",
-    "kalshi": "2026-08-24T21:03:49.886391Z",
-    "consensus": "2026-08-24T21:03:49.886391Z"
+    "model": "2026-08-25T05:01:26Z",
+    "polymarket": "2026-08-25T05:01:26Z",
+    "kalshi": "2026-08-25T05:01:26Z",
+    "consensus": "2026-08-25T05:01:26Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-24T21:03:04Z"
+    "updated_at": "2026-08-25T05:01:26Z"
   },
   "locked": false
 }

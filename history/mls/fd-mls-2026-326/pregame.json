@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "sporting-kansas-city",
   "away": "vancouver-whitecaps-fc",
-  "captured_at": "2026-08-24T21:03:53.867174Z",
+  "captured_at": "2026-08-25T04:56:34Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-skc-vwh-2026-08-29",
       "event_slug": "mls-skc-vwh-2026-08-29",
-      "updated_at": "2026-08-24T21:01:11Z"
+      "updated_at": "2026-08-25T04:56:11Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29skcvan",
@@ -27,9 +27,9 @@
       "away": 0.87451
     },
     "polymarket": {
-      "home": 0.134715,
-      "draw": 0.176166,
-      "away": 0.689119
+      "home": 0.137056,
+      "draw": 0.177665,
+      "away": 0.685279
     },
     "kalshi": {
       "home": 0.135678,
@@ -37,18 +37,18 @@
       "away": 0.698493
     },
     "consensus": {
-      "home": 0.135196,
-      "draw": 0.170997,
-      "away": 0.693807
+      "home": 0.136367,
+      "draw": 0.171747,
+      "away": 0.691886
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-24T21:03:53.867174Z",
-    "polymarket": "2026-08-24T21:03:53.867174Z",
-    "kalshi": "2026-08-24T21:03:53.867174Z",
-    "consensus": "2026-08-24T21:03:53.867174Z"
+    "model": "2026-08-25T04:56:34Z",
+    "polymarket": "2026-08-25T04:56:34Z",
+    "kalshi": "2026-08-25T04:56:34Z",
+    "consensus": "2026-08-25T04:56:34Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-24T21:01:33Z"
+    "updated_at": "2026-08-25T04:56:34Z"
   },
   "locked": false
 }
