@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "brentford",
   "away": "sunderland",
-  "captured_at": "2026-08-25T05:01:26Z",
+  "captured_at": "2026-08-26T05:03:29Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-bre-sun-2026-09-05",
       "event_slug": "epl-bre-sun-2026-09-05",
-      "updated_at": "2026-08-25T05:01:21Z"
+      "updated_at": "2026-08-26T05:03:23Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep05bresun",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.41967,
-      "draw": 0.30707,
-      "away": 0.27326
+      "home": 0.42116,
+      "draw": 0.3059,
+      "away": 0.27294
     },
     "polymarket": {
-      "home": 0.571429,
-      "draw": 0.244898,
-      "away": 0.183673
+      "home": 0.572139,
+      "draw": 0.243781,
+      "away": 0.18408
     },
     "kalshi": {
-      "home": 0.552764,
-      "draw": 0.256281,
+      "home": 0.557789,
+      "draw": 0.251256,
       "away": 0.190955
     },
     "consensus": {
-      "home": 0.562096,
-      "draw": 0.25059,
-      "away": 0.187314
+      "home": 0.564964,
+      "draw": 0.247518,
+      "away": 0.187518
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-25T05:01:26Z",
-    "polymarket": "2026-08-25T05:01:26Z",
-    "kalshi": "2026-08-25T05:01:26Z",
-    "consensus": "2026-08-25T05:01:26Z"
+    "model": "2026-08-26T05:03:29Z",
+    "polymarket": "2026-08-26T05:03:29Z",
+    "kalshi": "2026-08-26T05:03:29Z",
+    "consensus": "2026-08-26T05:03:29Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-25T05:01:26Z"
+    "updated_at": "2026-08-26T05:03:29Z"
   },
   "locked": false
 }

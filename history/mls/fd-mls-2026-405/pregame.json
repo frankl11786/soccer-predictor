@@ -6,7 +6,7 @@
   "round": "Regular Season - 28",
   "home": "seattle-sounders-fc",
   "away": "minnesota-united-fc",
-  "captured_at": "2026-08-25T04:56:34Z",
+  "captured_at": "2026-08-26T04:59:24Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-25T04:56:34Z"
+    "model": "2026-08-26T04:59:24Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-25T04:56:34Z"
+    "updated_at": "2026-08-26T04:59:24Z"
   },
   "locked": false
 }

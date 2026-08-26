@@ -6,13 +6,13 @@
   "round": "Regular Season - 2",
   "home": "aston-villa",
   "away": "arsenal",
-  "captured_at": "2026-08-25T05:01:26Z",
+  "captured_at": "2026-08-26T05:03:29Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-ast-ars-2026-08-31",
       "event_slug": "epl-ast-ars-2026-08-31",
-      "updated_at": "2026-08-25T05:01:20Z"
+      "updated_at": "2026-08-26T05:03:21Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug31avlars",
@@ -22,14 +22,14 @@
   },
   "sources": {
     "model": {
-      "home": 0.09183,
-      "draw": 0.16281,
-      "away": 0.74536
+      "home": 0.082629,
+      "draw": 0.149889,
+      "away": 0.767482
     },
     "polymarket": {
-      "home": 0.142857,
-      "draw": 0.221675,
-      "away": 0.635468
+      "home": 0.134328,
+      "draw": 0.223881,
+      "away": 0.641791
     },
     "kalshi": {
       "home": 0.142857,
@@ -37,18 +37,18 @@
       "away": 0.635468
     },
     "consensus": {
-      "home": 0.142857,
-      "draw": 0.221675,
-      "away": 0.635468
+      "home": 0.138593,
+      "draw": 0.222778,
+      "away": 0.638629
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-25T05:01:26Z",
-    "polymarket": "2026-08-25T05:01:26Z",
-    "kalshi": "2026-08-25T05:01:26Z",
-    "consensus": "2026-08-25T05:01:26Z"
+    "model": "2026-08-26T05:03:29Z",
+    "polymarket": "2026-08-26T05:03:29Z",
+    "kalshi": "2026-08-26T05:03:29Z",
+    "consensus": "2026-08-26T05:03:29Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-25T05:01:26Z"
+    "updated_at": "2026-08-26T05:03:29Z"
   },
   "locked": false
 }

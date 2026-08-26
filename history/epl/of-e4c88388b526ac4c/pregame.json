@@ -6,21 +6,21 @@
   "round": "Regular Season - 2",
   "home": "liverpool",
   "away": "nottingham-forest",
-  "captured_at": "2026-08-25T05:01:26Z",
+  "captured_at": "2026-08-26T05:03:29Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-liv-not-2026-08-29",
       "event_slug": "epl-liv-not-2026-08-29",
-      "updated_at": "2026-08-25T05:01:17Z"
+      "updated_at": "2026-08-26T05:03:19Z"
     },
     "kalshi": null
   },
   "sources": {
     "model": {
-      "home": 0.51438,
-      "draw": 0.22831,
-      "away": 0.25731
+      "home": 0.507205,
+      "draw": 0.227272,
+      "away": 0.265523
     },
     "polymarket": {
       "home": 0.651741,
@@ -36,9 +36,9 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-25T05:01:26Z",
-    "polymarket": "2026-08-25T05:01:26Z",
-    "consensus": "2026-08-25T05:01:26Z"
+    "model": "2026-08-26T05:03:29Z",
+    "polymarket": "2026-08-26T05:03:29Z",
+    "consensus": "2026-08-26T05:03:29Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -48,7 +48,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-25T05:01:26Z"
+    "updated_at": "2026-08-26T05:03:29Z"
   },
   "locked": false
 }

@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "inter-miami-cf",
   "away": "atlanta-united",
-  "captured_at": "2026-08-25T04:56:34Z",
+  "captured_at": "2026-08-26T04:59:24Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-mia-atl-2026-09-05",
       "event_slug": "mls-mia-atl-2026-09-05",
-      "updated_at": "2026-08-25T04:56:15Z"
+      "updated_at": "2026-08-26T04:59:13Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05miaatl",
@@ -27,28 +27,28 @@
       "away": 0.08006
     },
     "polymarket": {
-      "home": 0.688119,
-      "draw": 0.173267,
-      "away": 0.138614
+      "home": 0.686274,
+      "draw": 0.176471,
+      "away": 0.137255
     },
     "kalshi": {
-      "home": 0.7,
-      "draw": 0.165,
-      "away": 0.135
+      "home": 0.707071,
+      "draw": 0.161616,
+      "away": 0.131313
     },
     "consensus": {
-      "home": 0.69406,
-      "draw": 0.169133,
-      "away": 0.136807
+      "home": 0.696672,
+      "draw": 0.169044,
+      "away": 0.134284
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-25T04:56:34Z",
-    "polymarket": "2026-08-25T04:56:34Z",
-    "kalshi": "2026-08-25T04:56:34Z",
-    "consensus": "2026-08-25T04:56:34Z"
+    "model": "2026-08-26T04:59:24Z",
+    "polymarket": "2026-08-26T04:59:24Z",
+    "kalshi": "2026-08-26T04:59:24Z",
+    "consensus": "2026-08-26T04:59:24Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-25T04:56:34Z"
+    "updated_at": "2026-08-26T04:59:24Z"
   },
   "locked": false
 }

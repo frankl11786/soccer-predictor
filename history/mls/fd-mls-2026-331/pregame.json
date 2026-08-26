@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "st-louis-city-sc",
   "away": "fc-dallas",
-  "captured_at": "2026-08-25T04:56:34Z",
+  "captured_at": "2026-08-26T04:59:24Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-stl-dal-2026-08-30",
       "event_slug": "mls-stl-dal-2026-08-30",
-      "updated_at": "2026-08-25T04:56:14Z"
+      "updated_at": "2026-08-26T04:59:11Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug30stldal",
@@ -27,28 +27,28 @@
       "away": 0.36261
     },
     "polymarket": {
-      "home": 0.497462,
-      "draw": 0.248731,
-      "away": 0.253807
+      "home": 0.495,
+      "draw": 0.245,
+      "away": 0.26
     },
     "kalshi": {
       "home": 0.497487,
-      "draw": 0.241206,
-      "away": 0.261307
+      "draw": 0.246231,
+      "away": 0.256281
     },
     "consensus": {
-      "home": 0.497475,
-      "draw": 0.244969,
-      "away": 0.257557
+      "home": 0.496244,
+      "draw": 0.245615,
+      "away": 0.25814
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-25T04:56:34Z",
-    "polymarket": "2026-08-25T04:56:34Z",
-    "kalshi": "2026-08-25T04:56:34Z",
-    "consensus": "2026-08-25T04:56:34Z"
+    "model": "2026-08-26T04:59:24Z",
+    "polymarket": "2026-08-26T04:59:24Z",
+    "kalshi": "2026-08-26T04:59:24Z",
+    "consensus": "2026-08-26T04:59:24Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-25T04:56:34Z"
+    "updated_at": "2026-08-26T04:59:24Z"
   },
   "locked": false
 }

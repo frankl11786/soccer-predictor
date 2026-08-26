@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "brighton-and-hove-albion",
   "away": "leeds-united",
-  "captured_at": "2026-08-25T05:01:26Z",
+  "captured_at": "2026-08-26T05:03:29Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-bri-lee-2026-09-05",
       "event_slug": "epl-bri-lee-2026-09-05",
-      "updated_at": "2026-08-25T05:01:21Z"
+      "updated_at": "2026-08-26T05:03:23Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep05brilee",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.56257,
-      "draw": 0.21559,
-      "away": 0.22184
+      "home": 0.599316,
+      "draw": 0.203882,
+      "away": 0.196802
     },
     "polymarket": {
-      "home": 0.519802,
-      "draw": 0.262376,
-      "away": 0.217822
+      "home": 0.522389,
+      "draw": 0.258706,
+      "away": 0.218905
     },
     "kalshi": {
-      "home": 0.52,
-      "draw": 0.26,
-      "away": 0.22
+      "home": 0.525252,
+      "draw": 0.257576,
+      "away": 0.217172
     },
     "consensus": {
-      "home": 0.519901,
-      "draw": 0.261188,
-      "away": 0.218911
+      "home": 0.523821,
+      "draw": 0.258141,
+      "away": 0.218038
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-25T05:01:26Z",
-    "polymarket": "2026-08-25T05:01:26Z",
-    "kalshi": "2026-08-25T05:01:26Z",
-    "consensus": "2026-08-25T05:01:26Z"
+    "model": "2026-08-26T05:03:29Z",
+    "polymarket": "2026-08-26T05:03:29Z",
+    "kalshi": "2026-08-26T05:03:29Z",
+    "consensus": "2026-08-26T05:03:29Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-25T05:01:26Z"
+    "updated_at": "2026-08-26T05:03:29Z"
   },
   "locked": false
 }
