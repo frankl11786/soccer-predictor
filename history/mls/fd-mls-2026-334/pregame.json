@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "fc-cincinnati",
   "away": "dc-united",
-  "captured_at": "2026-08-26T04:59:24Z",
+  "captured_at": "2026-08-27T15:21:18Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-fcc-dcu-2026-09-05",
       "event_slug": "mls-fcc-dcu-2026-09-05",
-      "updated_at": "2026-08-26T04:59:12Z"
+      "updated_at": "2026-08-27T15:20:57Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05cindcu",
@@ -27,28 +27,28 @@
       "away": 0.179668
     },
     "polymarket": {
-      "home": 0.640394,
-      "draw": 0.197044,
-      "away": 0.162562
+      "home": 0.645,
+      "draw": 0.195,
+      "away": 0.16
     },
     "kalshi": {
-      "home": 0.665,
-      "draw": 0.185,
-      "away": 0.15
+      "home": 0.65534,
+      "draw": 0.18932,
+      "away": 0.15534
     },
     "consensus": {
-      "home": 0.652697,
-      "draw": 0.191022,
-      "away": 0.156281
+      "home": 0.65017,
+      "draw": 0.19216,
+      "away": 0.15767
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-26T04:59:24Z",
-    "polymarket": "2026-08-26T04:59:24Z",
-    "kalshi": "2026-08-26T04:59:24Z",
-    "consensus": "2026-08-26T04:59:24Z"
+    "model": "2026-08-27T15:21:18Z",
+    "polymarket": "2026-08-27T15:21:18Z",
+    "kalshi": "2026-08-27T15:21:18Z",
+    "consensus": "2026-08-27T15:21:18Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-26T04:59:24Z"
+    "updated_at": "2026-08-27T15:21:18Z"
   },
   "locked": false
 }

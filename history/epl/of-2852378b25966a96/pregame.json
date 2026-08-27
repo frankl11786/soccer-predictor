@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "fulham",
   "away": "crystal-palace",
-  "captured_at": "2026-08-26T05:03:29Z",
+  "captured_at": "2026-08-27T15:23:20Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-ful-cry-2026-09-05",
       "event_slug": "epl-ful-cry-2026-09-05",
-      "updated_at": "2026-08-26T05:03:22Z"
+      "updated_at": "2026-08-27T15:23:13Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep05fulcry",
@@ -27,28 +27,28 @@
       "away": 0.207642
     },
     "polymarket": {
-      "home": 0.407035,
-      "draw": 0.286432,
-      "away": 0.306533
+      "home": 0.402985,
+      "draw": 0.283582,
+      "away": 0.313433
     },
     "kalshi": {
-      "home": 0.39801,
-      "draw": 0.278607,
-      "away": 0.323383
+      "home": 0.399038,
+      "draw": 0.278846,
+      "away": 0.322115
     },
     "consensus": {
-      "home": 0.402523,
-      "draw": 0.28252,
-      "away": 0.314958
+      "home": 0.401011,
+      "draw": 0.281214,
+      "away": 0.317774
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-26T05:03:29Z",
-    "polymarket": "2026-08-26T05:03:29Z",
-    "kalshi": "2026-08-26T05:03:29Z",
-    "consensus": "2026-08-26T05:03:29Z"
+    "model": "2026-08-27T15:23:20Z",
+    "polymarket": "2026-08-27T15:23:20Z",
+    "kalshi": "2026-08-27T15:23:20Z",
+    "consensus": "2026-08-27T15:23:20Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-26T05:03:29Z"
+    "updated_at": "2026-08-27T15:23:20Z"
   },
   "locked": false
 }

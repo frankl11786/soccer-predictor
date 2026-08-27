@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "toronto-fc",
   "away": "new-york-city-fc",
-  "captured_at": "2026-08-26T04:59:24Z",
+  "captured_at": "2026-08-27T15:21:18Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-tor-nyc-2026-08-29",
       "event_slug": "mls-tor-nyc-2026-08-29",
-      "updated_at": "2026-08-26T04:59:09Z"
+      "updated_at": "2026-08-27T15:20:53Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29tornyc",
@@ -27,28 +27,28 @@
       "away": 0.41641
     },
     "polymarket": {
-      "home": 0.387755,
-      "draw": 0.260204,
-      "away": 0.352041
-    },
-    "kalshi": {
       "home": 0.386935,
       "draw": 0.256281,
       "away": 0.356784
     },
+    "kalshi": {
+      "home": 0.385,
+      "draw": 0.26,
+      "away": 0.355
+    },
     "consensus": {
-      "home": 0.387345,
-      "draw": 0.258242,
-      "away": 0.354413
+      "home": 0.385968,
+      "draw": 0.25814,
+      "away": 0.355892
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-26T04:59:24Z",
-    "polymarket": "2026-08-26T04:59:24Z",
-    "kalshi": "2026-08-26T04:59:24Z",
-    "consensus": "2026-08-26T04:59:24Z"
+    "model": "2026-08-27T15:21:18Z",
+    "polymarket": "2026-08-27T15:21:18Z",
+    "kalshi": "2026-08-27T15:21:18Z",
+    "consensus": "2026-08-27T15:21:18Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-26T04:59:24Z"
+    "updated_at": "2026-08-27T15:21:18Z"
   },
   "locked": false
 }

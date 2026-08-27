@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "minnesota-united-fc",
   "away": "orlando-city-sc",
-  "captured_at": "2026-08-26T04:59:24Z",
+  "captured_at": "2026-08-27T15:21:18Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-min-orl-2026-08-29",
       "event_slug": "mls-min-orl-2026-08-29",
-      "updated_at": "2026-08-26T04:59:10Z"
+      "updated_at": "2026-08-27T15:20:54Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29minorl",
@@ -27,28 +27,28 @@
       "away": 0.40845
     },
     "polymarket": {
-      "home": 0.535353,
-      "draw": 0.227273,
-      "away": 0.237374
-    },
-    "kalshi": {
       "home": 0.537688,
       "draw": 0.226131,
       "away": 0.236181
     },
+    "kalshi": {
+      "home": 0.532338,
+      "draw": 0.223881,
+      "away": 0.243781
+    },
     "consensus": {
-      "home": 0.53652,
-      "draw": 0.226702,
-      "away": 0.236778
+      "home": 0.535013,
+      "draw": 0.225006,
+      "away": 0.239981
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-26T04:59:24Z",
-    "polymarket": "2026-08-26T04:59:24Z",
-    "kalshi": "2026-08-26T04:59:24Z",
-    "consensus": "2026-08-26T04:59:24Z"
+    "model": "2026-08-27T15:21:18Z",
+    "polymarket": "2026-08-27T15:21:18Z",
+    "kalshi": "2026-08-27T15:21:18Z",
+    "consensus": "2026-08-27T15:21:18Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-26T04:59:24Z"
+    "updated_at": "2026-08-27T15:21:18Z"
   },
   "locked": false
 }

@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "nashville-sc",
   "away": "fc-cincinnati",
-  "captured_at": "2026-08-26T04:59:24Z",
+  "captured_at": "2026-08-27T15:21:18Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-nas-fcc-2026-08-29",
       "event_slug": "mls-nas-fcc-2026-08-29",
-      "updated_at": "2026-08-26T04:59:10Z"
+      "updated_at": "2026-08-27T15:20:54Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29nshcin",
@@ -27,28 +27,28 @@
       "away": 0.15676
     },
     "polymarket": {
-      "home": 0.550505,
+      "home": 0.545454,
       "draw": 0.217172,
-      "away": 0.232323
+      "away": 0.237374
     },
     "kalshi": {
-      "home": 0.547739,
-      "draw": 0.21608,
-      "away": 0.236181
+      "home": 0.542288,
+      "draw": 0.223881,
+      "away": 0.233831
     },
     "consensus": {
-      "home": 0.549122,
-      "draw": 0.216626,
-      "away": 0.234252
+      "home": 0.543871,
+      "draw": 0.220527,
+      "away": 0.235602
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-26T04:59:24Z",
-    "polymarket": "2026-08-26T04:59:24Z",
-    "kalshi": "2026-08-26T04:59:24Z",
-    "consensus": "2026-08-26T04:59:24Z"
+    "model": "2026-08-27T15:21:18Z",
+    "polymarket": "2026-08-27T15:21:18Z",
+    "kalshi": "2026-08-27T15:21:18Z",
+    "consensus": "2026-08-27T15:21:18Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-26T04:59:24Z"
+    "updated_at": "2026-08-27T15:21:18Z"
   },
   "locked": false
 }

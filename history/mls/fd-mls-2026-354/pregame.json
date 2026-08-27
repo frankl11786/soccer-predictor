@@ -6,23 +6,39 @@
   "round": "Regular Season - 25",
   "home": "chicago-fire-fc",
   "away": "inter-miami-cf",
-  "captured_at": "2026-08-26T04:59:24Z",
+  "captured_at": "2026-08-27T15:21:18Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
-    "kalshi": null
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep09chimia",
+      "event_ticker": "KXMLSGAME-26SEP09CHIMIA",
+      "updated_at": "2026-08-27T00:38:00.376447Z"
+    }
   },
   "sources": {
     "model": {
       "home": 0.24303,
       "draw": 0.14781,
       "away": 0.60916
+    },
+    "kalshi": {
+      "home": 0.0,
+      "draw": 0.0,
+      "away": 1.0
+    },
+    "consensus": {
+      "home": 0.0,
+      "draw": 0.0,
+      "away": 1.0
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-26T04:59:24Z"
+    "model": "2026-08-27T15:21:18Z",
+    "kalshi": "2026-08-27T15:21:18Z",
+    "consensus": "2026-08-27T15:21:18Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +48,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-26T04:59:24Z"
+    "updated_at": "2026-08-27T15:21:18Z"
   },
   "locked": false
 }

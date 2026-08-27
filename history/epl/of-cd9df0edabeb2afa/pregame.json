@@ -6,13 +6,13 @@
   "round": "Regular Season - 2",
   "home": "manchester-united",
   "away": "ipswich-town",
-  "captured_at": "2026-08-26T05:03:29Z",
+  "captured_at": "2026-08-27T15:23:20Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-mun-ips-2026-08-30",
       "event_slug": "epl-mun-ips-2026-08-30",
-      "updated_at": "2026-08-26T05:03:21Z"
+      "updated_at": "2026-08-27T15:23:11Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug30munips",
@@ -32,23 +32,23 @@
       "away": 0.125628
     },
     "kalshi": {
-      "home": 0.681592,
-      "draw": 0.18408,
-      "away": 0.134328
+      "home": 0.688442,
+      "draw": 0.18593,
+      "away": 0.125628
     },
     "consensus": {
-      "home": 0.685017,
-      "draw": 0.185005,
-      "away": 0.129978
+      "home": 0.688442,
+      "draw": 0.18593,
+      "away": 0.125628
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-26T05:03:29Z",
-    "polymarket": "2026-08-26T05:03:29Z",
-    "kalshi": "2026-08-26T05:03:29Z",
-    "consensus": "2026-08-26T05:03:29Z"
+    "model": "2026-08-27T15:23:20Z",
+    "polymarket": "2026-08-27T15:23:20Z",
+    "kalshi": "2026-08-27T15:23:20Z",
+    "consensus": "2026-08-27T15:23:20Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-26T05:03:29Z"
+    "updated_at": "2026-08-27T15:23:20Z"
   },
   "locked": false
 }
