@@ -6,13 +6,13 @@
   "round": "Regular Season - 2",
   "home": "chelsea",
   "away": "brighton-and-hove-albion",
-  "captured_at": "2026-08-27T15:23:20Z",
+  "captured_at": "2026-08-28T16:36:03Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-che-bri-2026-08-30",
       "event_slug": "epl-che-bri-2026-08-30",
-      "updated_at": "2026-08-27T15:23:10Z"
+      "updated_at": "2026-08-28T16:35:49Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug30cfcbri",
@@ -27,28 +27,28 @@
       "away": 0.37385
     },
     "polymarket": {
-      "home": 0.517588,
-      "draw": 0.246231,
-      "away": 0.236181
+      "home": 0.522388,
+      "draw": 0.243781,
+      "away": 0.233831
     },
     "kalshi": {
-      "home": 0.517413,
+      "home": 0.532338,
       "draw": 0.243781,
-      "away": 0.238806
+      "away": 0.223881
     },
     "consensus": {
-      "home": 0.517501,
-      "draw": 0.245006,
-      "away": 0.237493
+      "home": 0.527363,
+      "draw": 0.243781,
+      "away": 0.228856
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-27T15:23:20Z",
-    "polymarket": "2026-08-27T15:23:20Z",
-    "kalshi": "2026-08-27T15:23:20Z",
-    "consensus": "2026-08-27T15:23:20Z"
+    "model": "2026-08-28T16:36:03Z",
+    "polymarket": "2026-08-28T16:36:03Z",
+    "kalshi": "2026-08-28T16:36:03Z",
+    "consensus": "2026-08-28T16:36:03Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-27T15:23:20Z"
+    "updated_at": "2026-08-28T16:36:03Z"
   },
   "locked": false
 }

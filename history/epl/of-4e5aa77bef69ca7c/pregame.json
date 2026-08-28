@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "brentford",
   "away": "sunderland",
-  "captured_at": "2026-08-27T15:23:20Z",
+  "captured_at": "2026-08-28T16:36:03Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-bre-sun-2026-09-05",
       "event_slug": "epl-bre-sun-2026-09-05",
-      "updated_at": "2026-08-27T15:23:14Z"
+      "updated_at": "2026-08-28T16:35:52Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep05bresun",
@@ -27,28 +27,28 @@
       "away": 0.27294
     },
     "polymarket": {
-      "home": 0.585,
-      "draw": 0.24,
-      "away": 0.175
+      "home": 0.579208,
+      "draw": 0.237624,
+      "away": 0.183168
     },
     "kalshi": {
-      "home": 0.579208,
-      "draw": 0.242574,
-      "away": 0.178218
+      "home": 0.587939,
+      "draw": 0.231156,
+      "away": 0.180905
     },
     "consensus": {
-      "home": 0.582104,
-      "draw": 0.241287,
-      "away": 0.176609
+      "home": 0.583574,
+      "draw": 0.23439,
+      "away": 0.182036
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-27T15:23:20Z",
-    "polymarket": "2026-08-27T15:23:20Z",
-    "kalshi": "2026-08-27T15:23:20Z",
-    "consensus": "2026-08-27T15:23:20Z"
+    "model": "2026-08-28T16:36:03Z",
+    "polymarket": "2026-08-28T16:36:03Z",
+    "kalshi": "2026-08-28T16:36:03Z",
+    "consensus": "2026-08-28T16:36:03Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-27T15:23:20Z"
+    "updated_at": "2026-08-28T16:36:03Z"
   },
   "locked": false
 }

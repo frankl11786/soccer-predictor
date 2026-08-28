@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "toronto-fc",
   "away": "chicago-fire-fc",
-  "captured_at": "2026-08-27T15:21:18Z",
+  "captured_at": "2026-08-28T16:37:27Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-tor-chi-2026-09-05",
       "event_slug": "mls-tor-chi-2026-09-05",
-      "updated_at": "2026-08-27T15:21:02Z"
+      "updated_at": "2026-08-28T16:37:14Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05torchi",
@@ -27,28 +27,28 @@
       "away": 0.4498
     },
     "polymarket": {
-      "home": 0.326733,
+      "home": 0.321782,
       "draw": 0.242574,
-      "away": 0.430693
+      "away": 0.435644
     },
     "kalshi": {
-      "home": 0.316583,
-      "draw": 0.236181,
-      "away": 0.447236
+      "home": 0.323383,
+      "draw": 0.233831,
+      "away": 0.442786
     },
     "consensus": {
-      "home": 0.321658,
-      "draw": 0.239378,
-      "away": 0.438964
+      "home": 0.322582,
+      "draw": 0.238203,
+      "away": 0.439215
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-27T15:21:18Z",
-    "polymarket": "2026-08-27T15:21:18Z",
-    "kalshi": "2026-08-27T15:21:18Z",
-    "consensus": "2026-08-27T15:21:18Z"
+    "model": "2026-08-28T16:37:27Z",
+    "polymarket": "2026-08-28T16:37:27Z",
+    "kalshi": "2026-08-28T16:37:27Z",
+    "consensus": "2026-08-28T16:37:27Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-27T15:21:18Z"
+    "updated_at": "2026-08-28T16:37:27Z"
   },
   "locked": false
 }

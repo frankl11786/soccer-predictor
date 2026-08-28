@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "colorado-rapids",
   "away": "real-salt-lake",
-  "captured_at": "2026-08-27T15:21:18Z",
+  "captured_at": "2026-08-28T16:37:27Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-col-rsl-2026-08-29",
       "event_slug": "mls-col-rsl-2026-08-29",
-      "updated_at": "2026-08-27T15:20:55Z"
+      "updated_at": "2026-08-28T16:37:10Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29colrsl",
@@ -27,28 +27,28 @@
       "away": 0.48449
     },
     "polymarket": {
-      "home": 0.477387,
+      "home": 0.497487,
       "draw": 0.246231,
-      "away": 0.276382
+      "away": 0.256281
     },
     "kalshi": {
-      "home": 0.472362,
-      "draw": 0.251256,
-      "away": 0.276382
+      "home": 0.482587,
+      "draw": 0.243781,
+      "away": 0.273632
     },
     "consensus": {
-      "home": 0.474874,
-      "draw": 0.248744,
-      "away": 0.276382
+      "home": 0.490037,
+      "draw": 0.245006,
+      "away": 0.264956
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-27T15:21:18Z",
-    "polymarket": "2026-08-27T15:21:18Z",
-    "kalshi": "2026-08-27T15:21:18Z",
-    "consensus": "2026-08-27T15:21:18Z"
+    "model": "2026-08-28T16:37:27Z",
+    "polymarket": "2026-08-28T16:37:27Z",
+    "kalshi": "2026-08-28T16:37:27Z",
+    "consensus": "2026-08-28T16:37:27Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-27T15:21:18Z"
+    "updated_at": "2026-08-28T16:37:27Z"
   },
   "locked": false
 }
