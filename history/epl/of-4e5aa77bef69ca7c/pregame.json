@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "brentford",
   "away": "sunderland",
-  "captured_at": "2026-08-29T07:02:53.193638Z",
+  "captured_at": "2026-08-29T08:21:42Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-bre-sun-2026-09-05",
       "event_slug": "epl-bre-sun-2026-09-05",
-      "updated_at": "2026-08-29T06:51:26Z"
+      "updated_at": "2026-08-29T08:21:36Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep05bresun",
@@ -27,28 +27,28 @@
       "away": 0.27294
     },
     "polymarket": {
-      "home": 0.58,
-      "draw": 0.24,
-      "away": 0.18
+      "home": 0.576355,
+      "draw": 0.241379,
+      "away": 0.182266
     },
     "kalshi": {
-      "home": 0.579208,
-      "draw": 0.232673,
-      "away": 0.188119
+      "home": 0.582089,
+      "draw": 0.228856,
+      "away": 0.189055
     },
     "consensus": {
-      "home": 0.579604,
-      "draw": 0.236337,
-      "away": 0.184059
+      "home": 0.579221,
+      "draw": 0.235118,
+      "away": 0.185661
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:53.193638Z",
-    "polymarket": "2026-08-29T07:02:53.193638Z",
-    "kalshi": "2026-08-29T07:02:53.193638Z",
-    "consensus": "2026-08-29T07:02:53.193638Z"
+    "model": "2026-08-29T08:21:42Z",
+    "polymarket": "2026-08-29T08:21:42Z",
+    "kalshi": "2026-08-29T08:21:42Z",
+    "consensus": "2026-08-29T08:21:42Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-29T06:51:30Z"
+    "updated_at": "2026-08-29T08:21:42Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 1.961,
+      "exact": {
+        "0": 0.140718,
+        "1": 0.275947,
+        "2": 0.270566,
+        "3": 0.17686,
+        "4": 0.086706,
+        "5": 0.034006,
+        "6+": 0.015197
+      },
+      "over": {
+        "0.5": 0.859282,
+        "1.5": 0.583335,
+        "2.5": 0.312769,
+        "3.5": 0.135909,
+        "4.5": 0.049203,
+        "5.5": 0.015197
+      },
+      "under": {
+        "0.5": 0.140718,
+        "1.5": 0.416665,
+        "2.5": 0.687231,
+        "3.5": 0.864091,
+        "4.5": 0.950797,
+        "5.5": 0.984803
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:21:42Z"
+  },
+  "xg_home": 1.128,
+  "xg_away": 0.833
 }

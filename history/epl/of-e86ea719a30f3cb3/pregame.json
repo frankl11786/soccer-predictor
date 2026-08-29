@@ -6,7 +6,7 @@
   "round": "Regular Season - 14",
   "home": "everton",
   "away": "fulham",
-  "captured_at": "2026-08-29T07:02:53.193638Z",
+  "captured_at": "2026-08-29T08:21:42Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:53.193638Z"
+    "model": "2026-08-29T08:21:42Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-29T06:51:30Z"
+    "updated_at": "2026-08-29T08:21:42Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 2.134,
+      "exact": {
+        "0": 0.118363,
+        "1": 0.252586,
+        "2": 0.26951,
+        "3": 0.191711,
+        "4": 0.102278,
+        "5": 0.043652,
+        "6+": 0.0219
+      },
+      "over": {
+        "0.5": 0.881637,
+        "1.5": 0.629051,
+        "2.5": 0.359541,
+        "3.5": 0.16783,
+        "4.5": 0.065552,
+        "5.5": 0.0219
+      },
+      "under": {
+        "0.5": 0.118363,
+        "1.5": 0.370949,
+        "2.5": 0.640459,
+        "3.5": 0.83217,
+        "4.5": 0.934448,
+        "5.5": 0.9781
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:21:42Z"
+  },
+  "xg_home": 1.022,
+  "xg_away": 1.112
 }

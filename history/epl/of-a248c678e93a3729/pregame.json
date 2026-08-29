@@ -6,7 +6,7 @@
   "round": "Regular Season - 38",
   "home": "ipswich-town",
   "away": "everton",
-  "captured_at": "2026-08-29T07:02:53.193638Z",
+  "captured_at": "2026-08-29T08:21:42Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:53.193638Z"
+    "model": "2026-08-29T08:21:42Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-29T06:51:30Z"
+    "updated_at": "2026-08-29T08:21:42Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 2.853,
+      "exact": {
+        "0": 0.057671,
+        "1": 0.164535,
+        "2": 0.23471,
+        "3": 0.223209,
+        "4": 0.159204,
+        "5": 0.090842,
+        "6+": 0.069829
+      },
+      "over": {
+        "0.5": 0.942329,
+        "1.5": 0.777793,
+        "2.5": 0.543084,
+        "3.5": 0.319874,
+        "4.5": 0.160671,
+        "5.5": 0.069829
+      },
+      "under": {
+        "0.5": 0.057671,
+        "1.5": 0.222207,
+        "2.5": 0.456916,
+        "3.5": 0.680126,
+        "4.5": 0.839329,
+        "5.5": 0.930171
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:21:42Z"
+  },
+  "xg_home": 1.179,
+  "xg_away": 1.674
 }

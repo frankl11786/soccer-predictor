@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "hull-city",
   "away": "aston-villa",
-  "captured_at": "2026-08-29T07:02:53.193638Z",
+  "captured_at": "2026-08-29T08:21:42Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-hul-ast-2026-09-05",
       "event_slug": "epl-hul-ast-2026-09-05",
-      "updated_at": "2026-08-29T06:51:26Z"
+      "updated_at": "2026-08-29T08:21:37Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep05hulavl",
@@ -27,9 +27,9 @@
       "away": 0.53131
     },
     "polymarket": {
-      "home": 0.237624,
-      "draw": 0.257426,
-      "away": 0.50495
+      "home": 0.238806,
+      "draw": 0.258706,
+      "away": 0.502488
     },
     "kalshi": {
       "home": 0.235,
@@ -37,18 +37,18 @@
       "away": 0.515
     },
     "consensus": {
-      "home": 0.236312,
-      "draw": 0.253713,
-      "away": 0.509975
+      "home": 0.236903,
+      "draw": 0.254353,
+      "away": 0.508744
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:53.193638Z",
-    "polymarket": "2026-08-29T07:02:53.193638Z",
-    "kalshi": "2026-08-29T07:02:53.193638Z",
-    "consensus": "2026-08-29T07:02:53.193638Z"
+    "model": "2026-08-29T08:21:42Z",
+    "polymarket": "2026-08-29T08:21:42Z",
+    "kalshi": "2026-08-29T08:21:42Z",
+    "consensus": "2026-08-29T08:21:42Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-29T06:51:30Z"
+    "updated_at": "2026-08-29T08:21:42Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 3.35,
+      "exact": {
+        "0": 0.035084,
+        "1": 0.117533,
+        "2": 0.196867,
+        "3": 0.219835,
+        "4": 0.184112,
+        "5": 0.123355,
+        "6+": 0.123214
+      },
+      "over": {
+        "0.5": 0.964916,
+        "1.5": 0.847383,
+        "2.5": 0.650516,
+        "3.5": 0.430681,
+        "4.5": 0.246569,
+        "5.5": 0.123214
+      },
+      "under": {
+        "0.5": 0.035084,
+        "1.5": 0.152617,
+        "2.5": 0.349484,
+        "3.5": 0.569319,
+        "4.5": 0.753431,
+        "5.5": 0.876786
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:21:42Z"
+  },
+  "xg_home": 1.325,
+  "xg_away": 2.025
 }

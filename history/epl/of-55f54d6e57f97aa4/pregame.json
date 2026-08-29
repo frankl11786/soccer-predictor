@@ -6,7 +6,7 @@
   "round": "Regular Season - 13",
   "home": "liverpool",
   "away": "sunderland",
-  "captured_at": "2026-08-29T07:02:53.193638Z",
+  "captured_at": "2026-08-29T08:21:42Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:53.193638Z"
+    "model": "2026-08-29T08:21:42Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-29T06:51:30Z"
+    "updated_at": "2026-08-29T08:21:42Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 2.655,
+      "exact": {
+        "0": 0.070299,
+        "1": 0.186643,
+        "2": 0.247769,
+        "3": 0.219276,
+        "4": 0.145544,
+        "5": 0.077284,
+        "6+": 0.053185
+      },
+      "over": {
+        "0.5": 0.929701,
+        "1.5": 0.743058,
+        "2.5": 0.495289,
+        "3.5": 0.276013,
+        "4.5": 0.130469,
+        "5.5": 0.053185
+      },
+      "under": {
+        "0.5": 0.070299,
+        "1.5": 0.256942,
+        "2.5": 0.504711,
+        "3.5": 0.723987,
+        "4.5": 0.869531,
+        "5.5": 0.946815
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:21:42Z"
+  },
+  "xg_home": 1.838,
+  "xg_away": 0.817
 }

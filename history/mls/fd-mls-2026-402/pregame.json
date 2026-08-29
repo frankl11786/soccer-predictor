@@ -6,7 +6,7 @@
   "round": "Regular Season - 28",
   "home": "nashville-sc",
   "away": "toronto-fc",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 4.579,
+      "exact": {
+        "0": 0.010265,
+        "1": 0.047004,
+        "2": 0.107616,
+        "3": 0.164258,
+        "4": 0.188034,
+        "5": 0.172202,
+        "6+": 0.310621
+      },
+      "over": {
+        "0.5": 0.989735,
+        "1.5": 0.942731,
+        "2.5": 0.835115,
+        "3.5": 0.670857,
+        "4.5": 0.482823,
+        "5.5": 0.310621
+      },
+      "under": {
+        "0.5": 0.010265,
+        "1.5": 0.057269,
+        "2.5": 0.164885,
+        "3.5": 0.329143,
+        "4.5": 0.517177,
+        "5.5": 0.689379
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 3.832,
+  "xg_away": 0.747
 }

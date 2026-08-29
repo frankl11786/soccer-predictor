@@ -6,7 +6,7 @@
   "round": "Regular Season - 32",
   "home": "houston-dynamo-fc",
   "away": "minnesota-united-fc",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 2.13,
+      "exact": {
+        "0": 0.118837,
+        "1": 0.253123,
+        "2": 0.269576,
+        "3": 0.191399,
+        "4": 0.10192,
+        "5": 0.043418,
+        "6+": 0.021725
+      },
+      "over": {
+        "0.5": 0.881163,
+        "1.5": 0.628039,
+        "2.5": 0.358463,
+        "3.5": 0.167064,
+        "4.5": 0.065143,
+        "5.5": 0.021725
+      },
+      "under": {
+        "0.5": 0.118837,
+        "1.5": 0.371961,
+        "2.5": 0.641537,
+        "3.5": 0.832936,
+        "4.5": 0.934857,
+        "5.5": 0.978275
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 1.478,
+  "xg_away": 0.652
 }

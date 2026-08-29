@@ -6,7 +6,7 @@
   "round": "Regular Season - 33",
   "home": "minnesota-united-fc",
   "away": "sporting-kansas-city",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 2.727,
+      "exact": {
+        "0": 0.065415,
+        "1": 0.178387,
+        "2": 0.243231,
+        "3": 0.221097,
+        "4": 0.150733,
+        "5": 0.08221,
+        "6+": 0.058926
+      },
+      "over": {
+        "0.5": 0.934585,
+        "1.5": 0.756197,
+        "2.5": 0.512966,
+        "3.5": 0.291869,
+        "4.5": 0.141136,
+        "5.5": 0.058926
+      },
+      "under": {
+        "0.5": 0.065415,
+        "1.5": 0.243803,
+        "2.5": 0.487034,
+        "3.5": 0.708131,
+        "4.5": 0.858864,
+        "5.5": 0.941074
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 1.726,
+  "xg_away": 1.001
 }

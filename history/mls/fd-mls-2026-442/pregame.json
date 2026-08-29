@@ -6,7 +6,7 @@
   "round": "Regular Season - 31",
   "home": "orlando-city-sc",
   "away": "dc-united",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 3.025,
+      "exact": {
+        "0": 0.048558,
+        "1": 0.146887,
+        "2": 0.222167,
+        "3": 0.224019,
+        "4": 0.169414,
+        "5": 0.102496,
+        "6+": 0.086459
+      },
+      "over": {
+        "0.5": 0.951442,
+        "1.5": 0.804555,
+        "2.5": 0.582388,
+        "3.5": 0.358369,
+        "4.5": 0.188955,
+        "5.5": 0.086459
+      },
+      "under": {
+        "0.5": 0.048558,
+        "1.5": 0.195445,
+        "2.5": 0.417612,
+        "3.5": 0.641631,
+        "4.5": 0.811045,
+        "5.5": 0.913541
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 1.696,
+  "xg_away": 1.329
 }

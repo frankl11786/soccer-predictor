@@ -6,7 +6,7 @@
   "round": "Regular Season - 10",
   "home": "manchester-united",
   "away": "aston-villa",
-  "captured_at": "2026-08-29T07:02:53.193638Z",
+  "captured_at": "2026-08-29T08:21:42Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:53.193638Z"
+    "model": "2026-08-29T08:21:42Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-29T06:51:30Z"
+    "updated_at": "2026-08-29T08:21:42Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 4.126,
+      "exact": {
+        "0": 0.016147,
+        "1": 0.066624,
+        "2": 0.137445,
+        "3": 0.189033,
+        "4": 0.194987,
+        "5": 0.160904,
+        "6+": 0.23486
+      },
+      "over": {
+        "0.5": 0.983853,
+        "1.5": 0.917229,
+        "2.5": 0.779784,
+        "3.5": 0.590751,
+        "4.5": 0.395763,
+        "5.5": 0.23486
+      },
+      "under": {
+        "0.5": 0.016147,
+        "1.5": 0.082771,
+        "2.5": 0.220216,
+        "3.5": 0.409249,
+        "4.5": 0.604237,
+        "5.5": 0.76514
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:21:42Z"
+  },
+  "xg_home": 2.502,
+  "xg_away": 1.624
 }

@@ -6,7 +6,7 @@
   "round": "Regular Season - 34",
   "home": "ipswich-town",
   "away": "leeds-united",
-  "captured_at": "2026-08-29T07:02:53.193638Z",
+  "captured_at": "2026-08-29T08:21:42Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:53.193638Z"
+    "model": "2026-08-29T08:21:42Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-29T06:51:30Z"
+    "updated_at": "2026-08-29T08:21:42Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 3.222,
+      "exact": {
+        "0": 0.039875,
+        "1": 0.128478,
+        "2": 0.206978,
+        "3": 0.222294,
+        "4": 0.179058,
+        "5": 0.115385,
+        "6+": 0.107931
+      },
+      "over": {
+        "0.5": 0.960125,
+        "1.5": 0.831647,
+        "2.5": 0.624669,
+        "3.5": 0.402374,
+        "4.5": 0.223316,
+        "5.5": 0.107931
+      },
+      "under": {
+        "0.5": 0.039875,
+        "1.5": 0.168353,
+        "2.5": 0.375331,
+        "3.5": 0.597626,
+        "4.5": 0.776684,
+        "5.5": 0.892069
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:21:42Z"
+  },
+  "xg_home": 1.354,
+  "xg_away": 1.868
 }

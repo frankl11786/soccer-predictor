@@ -6,7 +6,7 @@
   "round": "Regular Season - 28",
   "home": "seattle-sounders-fc",
   "away": "sporting-kansas-city",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 3.089,
+      "exact": {
+        "0": 0.045547,
+        "1": 0.140696,
+        "2": 0.217305,
+        "3": 0.223752,
+        "4": 0.172792,
+        "5": 0.106751,
+        "6+": 0.093156
+      },
+      "over": {
+        "0.5": 0.954453,
+        "1.5": 0.813756,
+        "2.5": 0.596451,
+        "3.5": 0.372699,
+        "4.5": 0.199907,
+        "5.5": 0.093156
+      },
+      "under": {
+        "0.5": 0.045547,
+        "1.5": 0.186244,
+        "2.5": 0.403549,
+        "3.5": 0.627301,
+        "4.5": 0.800093,
+        "5.5": 0.906844
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 2.387,
+  "xg_away": 0.702
 }

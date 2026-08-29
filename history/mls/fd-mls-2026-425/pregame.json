@@ -6,7 +6,7 @@
   "round": "Regular Season - 30",
   "home": "inter-miami-cf",
   "away": "new-york-city-fc",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 3.942,
+      "exact": {
+        "0": 0.019409,
+        "1": 0.076512,
+        "2": 0.150805,
+        "3": 0.198157,
+        "4": 0.195284,
+        "5": 0.153962,
+        "6+": 0.205872
+      },
+      "over": {
+        "0.5": 0.980591,
+        "1.5": 0.904079,
+        "2.5": 0.753274,
+        "3.5": 0.555117,
+        "4.5": 0.359833,
+        "5.5": 0.205872
+      },
+      "under": {
+        "0.5": 0.019409,
+        "1.5": 0.095921,
+        "2.5": 0.246726,
+        "3.5": 0.444883,
+        "4.5": 0.640167,
+        "5.5": 0.794128
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 2.858,
+  "xg_away": 1.084
 }

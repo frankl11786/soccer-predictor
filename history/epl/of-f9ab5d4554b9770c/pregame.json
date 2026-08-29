@@ -6,7 +6,7 @@
   "round": "Regular Season - 4",
   "home": "aston-villa",
   "away": "nottingham-forest",
-  "captured_at": "2026-08-29T07:02:53.193638Z",
+  "captured_at": "2026-08-29T08:21:42Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:53.193638Z"
+    "model": "2026-08-29T08:21:42Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-29T06:51:30Z"
+    "updated_at": "2026-08-29T08:21:42Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 3.193,
+      "exact": {
+        "0": 0.041049,
+        "1": 0.131068,
+        "2": 0.20925,
+        "3": 0.222712,
+        "4": 0.17778,
+        "5": 0.11353,
+        "6+": 0.104612
+      },
+      "over": {
+        "0.5": 0.958951,
+        "1.5": 0.827883,
+        "2.5": 0.618633,
+        "3.5": 0.395922,
+        "4.5": 0.218142,
+        "5.5": 0.104612
+      },
+      "under": {
+        "0.5": 0.041049,
+        "1.5": 0.172117,
+        "2.5": 0.381367,
+        "3.5": 0.604078,
+        "4.5": 0.781858,
+        "5.5": 0.895388
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:21:42Z"
+  },
+  "xg_home": 1.551,
+  "xg_away": 1.642
 }

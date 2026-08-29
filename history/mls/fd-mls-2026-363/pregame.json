@@ -6,7 +6,7 @@
   "round": "Regular Season - 26",
   "home": "columbus-crew",
   "away": "red-bull-new-york",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 2.47,
+      "exact": {
+        "0": 0.084585,
+        "1": 0.208925,
+        "2": 0.258022,
+        "3": 0.212438,
+        "4": 0.13118,
+        "5": 0.064803,
+        "6+": 0.040047
+      },
+      "over": {
+        "0.5": 0.915415,
+        "1.5": 0.706491,
+        "2.5": 0.448469,
+        "3.5": 0.236031,
+        "4.5": 0.10485,
+        "5.5": 0.040047
+      },
+      "under": {
+        "0.5": 0.084585,
+        "1.5": 0.293509,
+        "2.5": 0.551531,
+        "3.5": 0.763969,
+        "4.5": 0.89515,
+        "5.5": 0.959953
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 1.72,
+  "xg_away": 0.75
 }

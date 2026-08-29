@@ -6,7 +6,7 @@
   "round": "Regular Season - 28",
   "home": "austin-fc",
   "away": "san-diego-fc",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 3.924,
+      "exact": {
+        "0": 0.019762,
+        "1": 0.077546,
+        "2": 0.152145,
+        "3": 0.199005,
+        "4": 0.195224,
+        "5": 0.153212,
+        "6+": 0.203107
+      },
+      "over": {
+        "0.5": 0.980238,
+        "1.5": 0.902692,
+        "2.5": 0.750548,
+        "3.5": 0.551543,
+        "4.5": 0.356319,
+        "5.5": 0.203107
+      },
+      "under": {
+        "0.5": 0.019762,
+        "1.5": 0.097308,
+        "2.5": 0.249452,
+        "3.5": 0.448457,
+        "4.5": 0.643681,
+        "5.5": 0.796893
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 1.469,
+  "xg_away": 2.455
 }

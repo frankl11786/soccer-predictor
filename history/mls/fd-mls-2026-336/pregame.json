@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "inter-miami-cf",
   "away": "atlanta-united",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-mia-atl-2026-09-05",
       "event_slug": "mls-mia-atl-2026-09-05",
-      "updated_at": "2026-08-29T06:53:01Z"
+      "updated_at": "2026-08-29T08:17:15Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05miaatl",
@@ -27,9 +27,9 @@
       "away": 0.08006
     },
     "polymarket": {
-      "home": 0.707071,
-      "draw": 0.161616,
-      "away": 0.131313
+      "home": 0.700507,
+      "draw": 0.167513,
+      "away": 0.13198
     },
     "kalshi": {
       "home": 0.710659,
@@ -37,18 +37,18 @@
       "away": 0.126904
     },
     "consensus": {
-      "home": 0.708864,
-      "draw": 0.162027,
-      "away": 0.129109
+      "home": 0.705583,
+      "draw": 0.164975,
+      "away": 0.129442
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z",
-    "polymarket": "2026-08-29T07:02:54.161880Z",
-    "kalshi": "2026-08-29T07:02:54.161880Z",
-    "consensus": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z",
+    "polymarket": "2026-08-29T08:17:30Z",
+    "kalshi": "2026-08-29T08:17:30Z",
+    "consensus": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 4.398,
+      "exact": {
+        "0": 0.012302,
+        "1": 0.054104,
+        "2": 0.118974,
+        "3": 0.174416,
+        "4": 0.191771,
+        "5": 0.168682,
+        "6+": 0.279751
+      },
+      "over": {
+        "0.5": 0.987698,
+        "1.5": 0.933594,
+        "2.5": 0.81462,
+        "3.5": 0.640204,
+        "4.5": 0.448433,
+        "5.5": 0.279751
+      },
+      "under": {
+        "0.5": 0.012302,
+        "1.5": 0.066406,
+        "2.5": 0.18538,
+        "3.5": 0.359796,
+        "4.5": 0.551567,
+        "5.5": 0.720249
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 3.552,
+  "xg_away": 0.846
 }

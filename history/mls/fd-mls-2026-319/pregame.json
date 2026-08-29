@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "dc-united",
   "away": "los-angeles-fc",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-dcu-laf-2026-08-29",
       "event_slug": "mls-dcu-laf-2026-08-29",
-      "updated_at": "2026-08-29T06:52:56Z"
+      "updated_at": "2026-08-29T08:17:11Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29dculafc",
@@ -45,10 +45,10 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z",
-    "polymarket": "2026-08-29T07:02:54.161880Z",
-    "kalshi": "2026-08-29T07:02:54.161880Z",
-    "consensus": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z",
+    "polymarket": "2026-08-29T08:17:30Z",
+    "kalshi": "2026-08-29T08:17:30Z",
+    "consensus": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,202 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 2.774,
+      "exact": {
+        "0": 0.062412,
+        "1": 0.17313,
+        "2": 0.240132,
+        "3": 0.222042,
+        "4": 0.153986,
+        "5": 0.085432,
+        "6+": 0.062866
+      },
+      "over": {
+        "0.5": 0.937588,
+        "1.5": 0.764458,
+        "2.5": 0.524326,
+        "3.5": 0.302284,
+        "4.5": 0.148297,
+        "5.5": 0.062866
+      },
+      "under": {
+        "0.5": 0.062412,
+        "1.5": 0.235542,
+        "2.5": 0.475674,
+        "3.5": 0.697716,
+        "4.5": 0.851703,
+        "5.5": 0.937134
+      }
+    },
+    "kalshi": {
+      "source": "Kalshi",
+      "lines": {
+        "0.5": {
+          "over": 0.945,
+          "under": 0.055,
+          "bid": 0.94,
+          "ask": 0.95,
+          "last": 0.94,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26AUG29DCULAFC-1",
+          "volume": 36.14,
+          "volume_24h": 9.0,
+          "open_interest": 34.57
+        },
+        "1.5": {
+          "over": 0.815,
+          "under": 0.185,
+          "bid": 0.81,
+          "ask": 0.82,
+          "last": 0.81,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26AUG29DCULAFC-2",
+          "volume": 7.21,
+          "volume_24h": 0.0,
+          "open_interest": 7.21
+        },
+        "2.5": {
+          "over": 0.595,
+          "under": 0.405,
+          "bid": 0.59,
+          "ask": 0.6,
+          "last": 0.6,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26AUG29DCULAFC-3",
+          "volume": 576.62,
+          "volume_24h": 51.12,
+          "open_interest": 551.62
+        },
+        "3.5": {
+          "over": 0.365,
+          "under": 0.635,
+          "bid": 0.36,
+          "ask": 0.37,
+          "last": 0.37,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26AUG29DCULAFC-4",
+          "volume": 927.66,
+          "volume_24h": 16.0,
+          "open_interest": 458.69
+        },
+        "4.5": {
+          "over": 0.195,
+          "under": 0.805,
+          "bid": 0.19,
+          "ask": 0.2,
+          "last": 0.19,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26AUG29DCULAFC-5",
+          "volume": 124.09,
+          "volume_24h": 121.2,
+          "open_interest": 124.09
+        },
+        "5.5": {
+          "over": 0.085,
+          "under": 0.915,
+          "bid": 0.08,
+          "ask": 0.09,
+          "last": 0.08,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26AUG29DCULAFC-6",
+          "volume": 1072.04,
+          "volume_24h": 968.56,
+          "open_interest": 1044.56
+        }
+      },
+      "event_ticker": "KXMLSTOTAL-26AUG29DCULAFC",
+      "event_title": "DC United vs Los Angeles F: Total Goals",
+      "event_url": "https://kalshi.com/markets/kxmlstotal/",
+      "kickoff": "2026-08-30T03:30:00+00:00",
+      "liquidity": 0.0,
+      "volume": 2743.76,
+      "volume_24h": 1165.88,
+      "open_interest": 2220.74,
+      "updated_at": "2026-08-23T02:40:56.229169Z",
+      "comparison_only": true,
+      "over": {
+        "0.5": 0.945,
+        "1.5": 0.815,
+        "2.5": 0.595,
+        "3.5": 0.365,
+        "4.5": 0.195,
+        "5.5": 0.085
+      },
+      "under": {
+        "0.5": 0.055,
+        "1.5": 0.185,
+        "2.5": 0.405,
+        "3.5": 0.635,
+        "4.5": 0.805,
+        "5.5": 0.915
+      }
+    },
+    "consensus": {
+      "model_edge": {
+        "0.5": -0.007412,
+        "1.5": -0.050542,
+        "2.5": -0.070674,
+        "3.5": -0.062716,
+        "4.5": -0.046703,
+        "5.5": -0.022134
+      },
+      "sources_by_line": {
+        "0.5": [
+          "kalshi"
+        ],
+        "1.5": [
+          "kalshi"
+        ],
+        "2.5": [
+          "kalshi"
+        ],
+        "3.5": [
+          "kalshi"
+        ],
+        "4.5": [
+          "kalshi"
+        ],
+        "5.5": [
+          "kalshi"
+        ]
+      },
+      "method": "Equal-weight mean of available prediction-market over probabilities",
+      "comparison_only": true,
+      "over": {
+        "0.5": 0.945,
+        "1.5": 0.815,
+        "2.5": 0.595,
+        "3.5": 0.365,
+        "4.5": 0.195,
+        "5.5": 0.085
+      },
+      "under": {
+        "0.5": 0.055,
+        "1.5": 0.185,
+        "2.5": 0.405,
+        "3.5": 0.635,
+        "4.5": 0.805,
+        "5.5": 0.915
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z",
+    "kalshi": "2026-08-29T08:17:30Z",
+    "consensus": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 0.936,
+  "xg_away": 1.838
 }

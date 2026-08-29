@@ -6,13 +6,13 @@
   "round": "Regular Season - 25",
   "home": "philadelphia-union",
   "away": "fc-cincinnati",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-phi-fcc-2026-09-09",
       "event_slug": "mls-phi-fcc-2026-09-09",
-      "updated_at": "2026-08-29T06:53:06Z"
+      "updated_at": "2026-08-29T08:17:19Z"
     },
     "kalshi": null
   },
@@ -36,9 +36,9 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z",
-    "polymarket": "2026-08-29T07:02:54.161880Z",
-    "consensus": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z",
+    "polymarket": "2026-08-29T08:17:30Z",
+    "consensus": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -48,7 +48,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 2.897,
+      "exact": {
+        "0": 0.055189,
+        "1": 0.159881,
+        "2": 0.231588,
+        "3": 0.223637,
+        "4": 0.161969,
+        "5": 0.093845,
+        "6+": 0.073892
+      },
+      "over": {
+        "0.5": 0.944811,
+        "1.5": 0.78493,
+        "2.5": 0.553342,
+        "3.5": 0.329706,
+        "4.5": 0.167737,
+        "5.5": 0.073892
+      },
+      "under": {
+        "0.5": 0.055189,
+        "1.5": 0.21507,
+        "2.5": 0.446658,
+        "3.5": 0.670294,
+        "4.5": 0.832263,
+        "5.5": 0.926108
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 1.814,
+  "xg_away": 1.083
 }

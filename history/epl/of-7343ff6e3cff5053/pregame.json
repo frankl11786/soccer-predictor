@@ -6,7 +6,7 @@
   "round": "Regular Season - 34",
   "home": "crystal-palace",
   "away": "aston-villa",
-  "captured_at": "2026-08-29T07:02:53.193638Z",
+  "captured_at": "2026-08-29T08:21:42Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:53.193638Z"
+    "model": "2026-08-29T08:21:42Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-29T06:51:30Z"
+    "updated_at": "2026-08-29T08:21:42Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 3.345,
+      "exact": {
+        "0": 0.03526,
+        "1": 0.117945,
+        "2": 0.197264,
+        "3": 0.219949,
+        "4": 0.183932,
+        "5": 0.123051,
+        "6+": 0.122598
+      },
+      "over": {
+        "0.5": 0.96474,
+        "1.5": 0.846794,
+        "2.5": 0.649531,
+        "3.5": 0.429582,
+        "4.5": 0.245649,
+        "5.5": 0.122598
+      },
+      "under": {
+        "0.5": 0.03526,
+        "1.5": 0.153206,
+        "2.5": 0.350469,
+        "3.5": 0.570418,
+        "4.5": 0.754351,
+        "5.5": 0.877402
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:21:42Z"
+  },
+  "xg_home": 1.672,
+  "xg_away": 1.673
 }

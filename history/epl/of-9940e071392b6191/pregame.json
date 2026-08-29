@@ -6,7 +6,7 @@
   "round": "Regular Season - 28",
   "home": "chelsea",
   "away": "coventry-city",
-  "captured_at": "2026-08-29T07:02:53.193638Z",
+  "captured_at": "2026-08-29T08:21:42Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:53.193638Z"
+    "model": "2026-08-29T08:21:42Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-29T06:51:30Z"
+    "updated_at": "2026-08-29T08:21:42Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 2.148,
+      "exact": {
+        "0": 0.116717,
+        "1": 0.250709,
+        "2": 0.269261,
+        "3": 0.192791,
+        "4": 0.103529,
+        "5": 0.044476,
+        "6+": 0.022516
+      },
+      "over": {
+        "0.5": 0.883283,
+        "1.5": 0.632574,
+        "2.5": 0.363312,
+        "3.5": 0.170521,
+        "4.5": 0.066992,
+        "5.5": 0.022516
+      },
+      "under": {
+        "0.5": 0.116717,
+        "1.5": 0.367426,
+        "2.5": 0.636688,
+        "3.5": 0.829479,
+        "4.5": 0.933008,
+        "5.5": 0.977484
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:21:42Z"
+  },
+  "xg_home": 1.479,
+  "xg_away": 0.669
 }

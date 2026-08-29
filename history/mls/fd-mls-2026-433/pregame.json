@@ -6,7 +6,7 @@
   "round": "Regular Season - 30",
   "home": "nashville-sc",
   "away": "sporting-kansas-city",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 4.38,
+      "exact": {
+        "0": 0.012525,
+        "1": 0.054861,
+        "2": 0.120146,
+        "3": 0.175413,
+        "4": 0.192077,
+        "5": 0.168259,
+        "6+": 0.276719
+      },
+      "over": {
+        "0.5": 0.987475,
+        "1.5": 0.932614,
+        "2.5": 0.812468,
+        "3.5": 0.637055,
+        "4.5": 0.444978,
+        "5.5": 0.276719
+      },
+      "under": {
+        "0.5": 0.012525,
+        "1.5": 0.067386,
+        "2.5": 0.187532,
+        "3.5": 0.362945,
+        "4.5": 0.555022,
+        "5.5": 0.723281
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 3.911,
+  "xg_away": 0.469
 }

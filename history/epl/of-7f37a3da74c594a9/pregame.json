@@ -6,7 +6,7 @@
   "round": "Regular Season - 7",
   "home": "brighton-and-hove-albion",
   "away": "crystal-palace",
-  "captured_at": "2026-08-29T07:02:53.193638Z",
+  "captured_at": "2026-08-29T08:21:42Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:53.193638Z"
+    "model": "2026-08-29T08:21:42Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-29T06:51:30Z"
+    "updated_at": "2026-08-29T08:21:42Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 3.313,
+      "exact": {
+        "0": 0.036407,
+        "1": 0.120616,
+        "2": 0.1998,
+        "3": 0.220646,
+        "4": 0.18275,
+        "5": 0.12109,
+        "6+": 0.118692
+      },
+      "over": {
+        "0.5": 0.963593,
+        "1.5": 0.842978,
+        "2.5": 0.643178,
+        "3.5": 0.422532,
+        "4.5": 0.239782,
+        "5.5": 0.118692
+      },
+      "under": {
+        "0.5": 0.036407,
+        "1.5": 0.157022,
+        "2.5": 0.356822,
+        "3.5": 0.577468,
+        "4.5": 0.760218,
+        "5.5": 0.881308
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:21:42Z"
+  },
+  "xg_home": 2.277,
+  "xg_away": 1.036
 }

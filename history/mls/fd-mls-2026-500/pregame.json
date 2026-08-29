@@ -6,7 +6,7 @@
   "round": "Regular Season - 35",
   "home": "cf-montréal",
   "away": "vancouver-whitecaps-fc",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,7 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 4.356,
+      "exact": {
+        "0": 0.01283,
+        "1": 0.055886,
+        "2": 0.121719,
+        "3": 0.176736,
+        "4": 0.192466,
+        "5": 0.167676,
+        "6+": 0.272687
+      },
+      "over": {
+        "0.5": 0.98717,
+        "1.5": 0.931285,
+        "2.5": 0.809565,
+        "3.5": 0.632829,
+        "4.5": 0.440363,
+        "5.5": 0.272687
+      },
+      "under": {
+        "0.5": 0.01283,
+        "1.5": 0.068715,
+        "2.5": 0.190435,
+        "3.5": 0.367171,
+        "4.5": 0.559637,
+        "5.5": 0.727313
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 1.211,
+  "xg_away": 3.145
 }

@@ -6,13 +6,13 @@
   "round": "Regular Season - 25",
   "home": "minnesota-united-fc",
   "away": "fc-dallas",
-  "captured_at": "2026-08-29T07:02:54.161880Z",
+  "captured_at": "2026-08-29T08:17:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-min-dal-2026-09-09",
       "event_slug": "mls-min-dal-2026-09-09",
-      "updated_at": "2026-08-29T06:53:08Z"
+      "updated_at": "2026-08-29T08:17:21Z"
     },
     "kalshi": null
   },
@@ -36,9 +36,9 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T07:02:54.161880Z",
-    "polymarket": "2026-08-29T07:02:54.161880Z",
-    "consensus": "2026-08-29T07:02:54.161880Z"
+    "model": "2026-08-29T08:17:30Z",
+    "polymarket": "2026-08-29T08:17:30Z",
+    "consensus": "2026-08-29T08:17:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -48,7 +48,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T06:53:16Z"
+    "updated_at": "2026-08-29T08:17:30Z"
   },
-  "locked": false
+  "locked": false,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 3.908,
+      "exact": {
+        "0": 0.020081,
+        "1": 0.078475,
+        "2": 0.15334,
+        "3": 0.199751,
+        "4": 0.195157,
+        "5": 0.152535,
+        "6+": 0.200661
+      },
+      "over": {
+        "0.5": 0.979919,
+        "1.5": 0.901444,
+        "2.5": 0.748104,
+        "3.5": 0.548353,
+        "4.5": 0.353196,
+        "5.5": 0.200661
+      },
+      "under": {
+        "0.5": 0.020081,
+        "1.5": 0.098556,
+        "2.5": 0.251896,
+        "3.5": 0.451647,
+        "4.5": 0.646804,
+        "5.5": 0.799339
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-29T08:17:30Z"
+  },
+  "xg_home": 1.48,
+  "xg_away": 2.428
 }
