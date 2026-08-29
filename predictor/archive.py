@@ -95,6 +95,11 @@ def _candidate_from_fixture(
     record["source_captured_at"] = {
         source: captured_at for source in (record.get("sources") or {}) if source in SOURCES
     }
+    record["goal_total_source_captured_at"] = {
+        source: captured_at
+        for source in (record.get("goal_totals") or {})
+        if source in SOURCES
+    }
     record["archive"] = {
         "policy": ARCHIVE_POLICY,
         "created_at": captured_at,
@@ -118,6 +123,8 @@ def _merge_pregame(existing: dict[str, Any] | None, candidate: dict[str, Any]) -
     merged.setdefault("sources", {})
     merged.setdefault("source_captured_at", {})
     merged.setdefault("market_refs", {})
+    merged.setdefault("goal_totals", {})
+    merged.setdefault("goal_total_source_captured_at", {})
 
     candidate_time = _parse_datetime(candidate.get("captured_at"))
     for source, probabilities in (candidate.get("sources") or {}).items():
@@ -133,8 +140,18 @@ def _merge_pregame(existing: dict[str, Any] | None, candidate: dict[str, Any]) -
             if candidate_ref:
                 merged["market_refs"][source] = candidate_ref
 
+    for source, total_row in (candidate.get("goal_totals") or {}).items():
+        if source not in SOURCES or not isinstance(total_row, dict):
+            continue
+        old_text = (existing.get("goal_total_source_captured_at") or {}).get(source)
+        old_time = _parse_datetime(old_text or existing.get("captured_at"))
+        if old_time is not None and candidate_time is not None and candidate_time < old_time:
+            continue
+        merged["goal_totals"][source] = total_row
+        merged["goal_total_source_captured_at"][source] = candidate.get("captured_at")
+
     # Keep fixture metadata current while preserving source-level capture timestamps.
-    for key in ("fixture_id", "league", "date", "kickoff", "round", "home", "away", "model_version"):
+    for key in ("fixture_id", "league", "date", "kickoff", "round", "home", "away", "model_version", "xg_home", "xg_away"):
         if candidate.get(key) is not None:
             merged[key] = candidate.get(key)
 
@@ -212,6 +229,10 @@ def _normalize_seed_record(league: str, record: dict[str, Any]) -> dict[str, Any
     for source in normalized.get("sources") or {}:
         if source in SOURCES:
             normalized["source_captured_at"].setdefault(source, normalized.get("captured_at"))
+    normalized.setdefault("goal_total_source_captured_at", {})
+    for source in normalized.get("goal_totals") or {}:
+        if source in SOURCES:
+            normalized["goal_total_source_captured_at"].setdefault(source, normalized.get("captured_at"))
     normalized.setdefault("provenance", {})
     normalized["provenance"] = {
         **normalized.get("provenance", {}),

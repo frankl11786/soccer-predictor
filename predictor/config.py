@@ -27,6 +27,7 @@ class LeagueConfig:
     polymarket_match_max_fixtures: int
     kalshi_event_ticker: str | None
     kalshi_game_series_ticker: str | None
+    kalshi_total_series_ticker: str | None
     season_label: str
 
 
@@ -53,6 +54,7 @@ LEAGUES = {
         polymarket_match_max_fixtures=60,
         kalshi_event_ticker="KXPREMIERLEAGUE-27",
         kalshi_game_series_ticker="KXEPLGAME",
+        kalshi_total_series_ticker="KXEPLTOTAL",
         season_label="2026/27",
     ),
     "mls": LeagueConfig(
@@ -75,6 +77,7 @@ LEAGUES = {
         polymarket_match_max_fixtures=60,
         kalshi_event_ticker="KXMLSCUP-26",
         kalshi_game_series_ticker="KXMLSGAME",
+        kalshi_total_series_ticker="KXMLSTOTAL",
         season_label="2026",
     ),
 }

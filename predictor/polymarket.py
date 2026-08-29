@@ -124,6 +124,20 @@ class MatchMarketQuote:
     updated_at: str
 
 
+@dataclass(frozen=True)
+class TotalGoalsQuote:
+    fixture_id: str
+    lines: dict[str, dict[str, Any]]
+    event_id: str
+    event_title: str
+    event_slug: str
+    event_url: str
+    kickoff: str | None
+    liquidity: float
+    volume: float
+    updated_at: str
+
+
 def _json_list(value: Any) -> list[Any]:
     if isinstance(value, list):
         return value
@@ -879,5 +893,216 @@ def fetch_match_quotes(
             "public-search is only a fallback. Only exact three-outcome match-result markets "
             "are accepted, and market prices remain comparison-only."
         ),
+    }
+    return quotes, metadata
+
+
+def _total_line_from_market(market: dict[str, Any]) -> float | None:
+    value = market.get("line")
+    if value is not None and value != "":
+        try:
+            line = float(value)
+            if line >= 0.5:
+                return line
+        except (TypeError, ValueError):
+            pass
+    text = _market_text(market)
+    for pattern in (
+        r"\bover\s+(\d+(?:\.\d+)?)\s+(?:total\s+)?goals?\b",
+        r"\bunder\s+(\d+(?:\.\d+)?)\s+(?:total\s+)?goals?\b",
+        r"\b(?:o|u)\s*(\d+\.5)\b",
+    ):
+        match = re.search(pattern, text, flags=re.IGNORECASE)
+        if match:
+            return float(match.group(1))
+    return None
+
+
+def _extract_total_goals_lines(
+    event: dict[str, Any],
+    home_aliases: tuple[str, ...],
+    away_aliases: tuple[str, ...],
+) -> dict[str, dict[str, Any]]:
+    lines: dict[str, dict[str, Any]] = {}
+    for market in event.get("markets") or []:
+        if not isinstance(market, dict):
+            continue
+        if market.get("active") is False or market.get("closed") is True:
+            continue
+        market_type = normalize_name(str(market.get("sportsMarketType") or ""))
+        text = _market_text(market)
+        normalized_text = normalize_name(text)
+        if market_type:
+            if "total" not in market_type or "team" in market_type:
+                continue
+        else:
+            # Fallback for older event payloads that omit sportsMarketType.
+            if "goal" not in normalized_text or ("over" not in normalized_text and "under" not in normalized_text):
+                continue
+
+        # Reject team totals. A contest total normally mentions both teams only
+        # at the event level, while a team-total market commonly names exactly
+        # one club in the market question/label.
+        home_in_market = bool(_alias_match_score(text, home_aliases))
+        away_in_market = bool(_alias_match_score(text, away_aliases))
+        if home_in_market ^ away_in_market:
+            continue
+
+        line = _total_line_from_market(market)
+        if line is None or line < 0.5 or line > 5.5 or abs((line * 2) % 2 - 1) > 1e-6:
+            continue
+
+        outcomes = [str(item).strip().lower() for item in _json_list(market.get("outcomes"))]
+        prices = _json_list(market.get("outcomePrices"))
+        if len(outcomes) != len(prices) or len(outcomes) < 2:
+            continue
+        parsed_prices: list[float] = []
+        try:
+            parsed_prices = [float(price) for price in prices]
+        except (TypeError, ValueError):
+            continue
+
+        raw_over: float | None = None
+        raw_under: float | None = None
+        if "over" in outcomes and "under" in outcomes:
+            raw_over = parsed_prices[outcomes.index("over")]
+            raw_under = parsed_prices[outcomes.index("under")]
+        elif "yes" in outcomes and "no" in outcomes:
+            yes = parsed_prices[outcomes.index("yes")]
+            no = parsed_prices[outcomes.index("no")]
+            subject = " ".join(str(market.get(key) or "") for key in ("question", "groupItemTitle", "slug"))
+            if re.search(r"\bunder\b", subject, flags=re.IGNORECASE):
+                raw_over, raw_under = no, yes
+            else:
+                raw_over, raw_under = yes, no
+        if raw_over is None or raw_under is None:
+            continue
+        total = raw_over + raw_under
+        if not (0.50 <= total <= 1.50):
+            continue
+        over = raw_over / total
+        under = raw_under / total
+        key = f"{line:.1f}"
+        liquidity = as_float(market.get("liquidityNum") or market.get("liquidity"), 0)
+        volume = as_float(market.get("volumeNum") or market.get("volume"), 0)
+        candidate = {
+            "over": round(over, 6),
+            "under": round(under, 6),
+            "raw_over": round(raw_over, 6),
+            "raw_under": round(raw_under, 6),
+            "normalized": abs(total - 1.0) > 0.0005,
+            "normalization_total": round(total, 6),
+            "market_id": str(market.get("id") or ""),
+            "question": str(market.get("question") or market.get("groupItemTitle") or ""),
+            "liquidity": round(liquidity, 2),
+            "volume": round(volume, 2),
+        }
+        previous = lines.get(key)
+        if previous is None or (liquidity + volume * 0.001) > (float(previous.get("liquidity") or 0) + float(previous.get("volume") or 0) * 0.001):
+            lines[key] = candidate
+    return lines
+
+
+def fetch_total_goals_quotes(
+    fixtures: list[dict[str, Any]],
+    teams: list[dict[str, Any]],
+    league_terms: tuple[str, ...],
+    lookahead_days: int = 21,
+    max_fixtures: int = 60,
+    as_of: datetime | None = None,
+) -> tuple[dict[str, TotalGoalsQuote], dict[str, Any]]:
+    """Find date/team-verified regulation-time total-goals markets."""
+
+    team_by_slug = {str(team.get("slug")): team for team in teams}
+    now = as_of.astimezone(timezone.utc) if as_of is not None else datetime.now(timezone.utc)
+    window_end = now + timedelta(days=max(1, lookahead_days))
+    eligible: list[tuple[datetime, dict[str, Any]]] = []
+    for fixture in fixtures:
+        if fixture.get("status") == "final":
+            continue
+        kickoff = _parse_datetime(fixture.get("kickoff")) or _parse_datetime(fixture.get("date"))
+        if kickoff is None or kickoff < now - timedelta(hours=8) or kickoff > window_end:
+            continue
+        if str(fixture.get("home")) not in team_by_slug or str(fixture.get("away")) not in team_by_slug:
+            continue
+        eligible.append((kickoff, fixture))
+    eligible.sort(key=lambda item: item[0])
+    eligible = eligible[: max(1, max_fixtures)]
+
+    discovery_events, discovery_errors, discovery_pages = _discover_active_soccer_events()
+    errors = list(discovery_errors)
+    quotes: dict[str, TotalGoalsQuote] = {}
+    fallback_searches = 0
+    events_checked = 0
+
+    def best_for_events(fixture: dict[str, Any], kickoff: datetime, events: list[dict[str, Any]]) -> TotalGoalsQuote | None:
+        nonlocal events_checked
+        home = team_by_slug[str(fixture["home"])]
+        away = team_by_slug[str(fixture["away"])]
+        home_aliases = _team_aliases(home)
+        away_aliases = _team_aliases(away)
+        candidates: list[tuple[int, float, TotalGoalsQuote]] = []
+        for event in events:
+            events_checked += 1
+            if event.get("active") is False or event.get("closed") is True:
+                continue
+            event_score = _event_candidate_score(event, home_aliases, away_aliases, kickoff, league_terms)
+            if event_score is None:
+                continue
+            lines = _extract_total_goals_lines(event, home_aliases, away_aliases)
+            if not lines:
+                continue
+            event_slug = str(event.get("slug") or "")
+            liquidity = sum(float(row.get("liquidity") or 0) for row in lines.values())
+            volume = sum(float(row.get("volume") or 0) for row in lines.values())
+            quote = TotalGoalsQuote(
+                fixture_id=str(fixture.get("id") or ""),
+                lines=lines,
+                event_id=str(event.get("id") or ""),
+                event_title=str(event.get("title") or ""),
+                event_slug=event_slug,
+                event_url=f"{POLYMARKET_EVENT_URL}/{event_slug}" if event_slug else "",
+                kickoff=(_event_start(event) or kickoff).isoformat().replace("+00:00", "Z"),
+                liquidity=liquidity,
+                volume=volume,
+                updated_at=utc_now_iso(),
+            )
+            score, quality = event_score
+            candidates.append((score, quality + liquidity + volume * 0.001, quote))
+        if not candidates:
+            return None
+        candidates.sort(key=lambda item: (item[0], item[1]), reverse=True)
+        return candidates[0][2]
+
+    for kickoff, fixture in eligible:
+        quote = best_for_events(fixture, kickoff, discovery_events)
+        if quote is None:
+            home = team_by_slug[str(fixture["home"])]
+            away = team_by_slug[str(fixture["away"])]
+            events, error = _search_match_event(f"{home['name']} vs {away['name']}")
+            fallback_searches += 1
+            if error:
+                errors.append(f"{fixture.get('id')}: {error}")
+            else:
+                quote = best_for_events(fixture, kickoff, events)
+        if quote is not None:
+            quotes[str(fixture.get("id") or "")] = quote
+
+    metadata = {
+        "source": "Polymarket",
+        "market_type": "total_goals",
+        "lookahead_days": lookahead_days,
+        "max_fixtures": max_fixtures,
+        "eligible_fixtures": len(eligible),
+        "discovery_events": len(discovery_events),
+        "discovery_pages": discovery_pages,
+        "search_fallbacks": fallback_searches,
+        "events_checked": events_checked,
+        "quotes_found": len(quotes),
+        "line_quotes_found": sum(len(quote.lines) for quote in quotes.values()),
+        "coverage": round(len(quotes) / len(eligible), 6) if eligible else 0.0,
+        "errors": errors,
+        "updated_at": utc_now_iso(),
+        "note": "Only verified full-match total-goals lines are accepted; team totals are rejected and all prices remain comparison-only.",
     }
     return quotes, metadata

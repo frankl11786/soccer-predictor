@@ -113,6 +113,21 @@ class KalshiMatchQuote:
     updated_at: str
 
 
+@dataclass(frozen=True)
+class KalshiTotalGoalsQuote:
+    fixture_id: str
+    lines: dict[str, dict[str, Any]]
+    event_ticker: str
+    event_title: str
+    event_url: str
+    kickoff: str | None
+    volume: float
+    volume_24h: float
+    liquidity: float
+    open_interest: float
+    updated_at: str
+
+
 def _request_json(path: str, params: dict[str, Any] | None = None) -> dict[str, Any]:
     response = requests.get(
         f"{API_BASE}{path}",
@@ -764,6 +779,199 @@ def fetch_match_quotes(
         "max_fixtures": max_fixtures,
         "price_method": "bid/ask midpoint when usable; otherwise last trade; 1X2 normalized to 100%",
         "discovery_method": "status-agnostic events plus markets fallback within the configured Kalshi series",
+        "errors": errors,
+        "updated_at": utc_now_iso(),
+    }
+    return quotes, metadata
+
+
+def _total_line(market: dict[str, Any]) -> float | None:
+    for key in ("functional_strike", "floor_strike", "cap_strike", "strike", "line"):
+        value = market.get(key)
+        if value is None or value == "":
+            continue
+        try:
+            number = float(value)
+        except (TypeError, ValueError):
+            continue
+        # Kalshi total tickers often use the integer goal threshold marker
+        # (e.g. -3 means over 2.5). Descriptive fields are preferred below,
+        # so only accept explicit half-goal values from numeric fields here.
+        if abs(number * 2 - round(number * 2)) < 1e-9 and abs(number % 1 - 0.5) < 1e-9:
+            return number
+
+    text = " ".join(
+        str(market.get(key) or "")
+        for key in ("title", "yes_sub_title", "subtitle", "rules_primary", "rules_secondary")
+    )
+    match = re.search(r"over\s+(\d+(?:\.\d+)?)\s+goals?", text, flags=re.IGNORECASE)
+    if match:
+        return float(match.group(1))
+
+    ticker = str(market.get("ticker") or "")
+    suffix = ticker.rsplit("-", 1)[-1]
+    if suffix.isdigit():
+        marker = int(suffix)
+        if 1 <= marker <= 20:
+            return marker - 0.5
+    return None
+
+
+def fetch_total_goals_quotes(
+    fixtures: list[dict[str, Any]],
+    teams: list[dict[str, Any]],
+    series_ticker: str | None,
+    lookahead_days: int = 21,
+    max_fixtures: int = 60,
+    as_of: datetime | None = None,
+) -> tuple[dict[str, KalshiTotalGoalsQuote], dict[str, Any]]:
+    """Fetch regulation-time match total-goals markets from Kalshi.
+
+    Total-goals markets live in a dedicated series (KXEPLTOTAL/KXMLSTOTAL),
+    so this lookup is independent of the 1X2 event and remains conservative on
+    team/date matching. The published comparison uses the same bid/ask midpoint
+    estimator as the 1X2 integration.
+    """
+
+    if not series_ticker:
+        return {}, {
+            "source": "Kalshi",
+            "market_type": "total_goals",
+            "series_ticker": None,
+            "quotes_found": 0,
+            "errors": ["No Kalshi total-goals series ticker configured"],
+            "updated_at": utc_now_iso(),
+        }
+
+    team_by_slug = {str(team.get("slug")): team for team in teams}
+    now = as_of.astimezone(timezone.utc) if as_of is not None else datetime.now(timezone.utc)
+    horizon = now + timedelta(days=max(1, lookahead_days))
+    candidates: list[dict[str, Any]] = []
+    for fixture in fixtures:
+        if fixture.get("status") == "final":
+            continue
+        kickoff = _fixture_datetime(fixture)
+        if kickoff is None or kickoff < now - timedelta(hours=12) or kickoff > horizon:
+            continue
+        if str(fixture.get("home")) not in team_by_slug or str(fixture.get("away")) not in team_by_slug:
+            continue
+        candidates.append(fixture)
+    candidates.sort(key=lambda fixture: _fixture_datetime(fixture) or horizon)
+    candidates = candidates[:max_fixtures]
+
+    discovery_min_close_ts = int((now - timedelta(hours=12)).timestamp())
+    events, errors, discovery = _upcoming_events(series_ticker, discovery_min_close_ts)
+    quotes: dict[str, KalshiTotalGoalsQuote] = {}
+    used_events: set[str] = set()
+
+    for fixture in candidates:
+        home = team_by_slug[str(fixture.get("home"))]
+        away = team_by_slug[str(fixture.get("away"))]
+        home_aliases = _team_aliases(str(home.get("name") or ""), str(home.get("short") or ""))
+        away_aliases = _team_aliases(str(away.get("name") or ""), str(away.get("short") or ""))
+        fixture_dt = _fixture_datetime(fixture)
+        if fixture_dt is None:
+            continue
+
+        event_candidates: list[tuple[int, float, dict[str, Any]]] = []
+        for event in events:
+            event_ticker = str(event.get("event_ticker") or "")
+            if event_ticker in used_events:
+                continue
+            text = _event_text(event)
+            home_score = _alias_score(text, home_aliases)
+            away_score = _alias_score(text, away_aliases)
+            if not home_score or not away_score:
+                continue
+            event_dt = _event_datetime(event)
+            if event_dt is None:
+                continue
+            ticker_day = _ticker_date(event_ticker)
+            if ticker_day is not None:
+                if abs((ticker_day - fixture_dt.date()).days) > 1:
+                    continue
+            elif abs((event_dt - fixture_dt).total_seconds()) > 36 * 3600:
+                continue
+            score = home_score + away_score + (50 if " vs " in str(event.get("title") or "").lower() else 0)
+            distance = abs((event_dt - fixture_dt).total_seconds()) / 3600.0
+            score += max(0, int(36 - min(distance, 36)))
+            volume = sum(_market_float(m, "volume_fp", "volume") for m in event.get("markets") or [] if isinstance(m, dict))
+            event_candidates.append((score, volume, event))
+
+        if not event_candidates:
+            continue
+        event_candidates.sort(key=lambda item: (item[0], item[1]), reverse=True)
+        event = event_candidates[0][2]
+        event_ticker = str(event.get("event_ticker") or "")
+
+        line_rows: dict[str, dict[str, Any]] = {}
+        selected_markets: list[dict[str, Any]] = []
+        for market in event.get("markets") or []:
+            if not isinstance(market, dict):
+                continue
+            if str(market.get("status") or "open").lower() in {"settled", "closed"}:
+                continue
+            line = _total_line(market)
+            if line is None or line < 0.5 or line > 5.5 or abs((line * 2) % 2 - 1) > 1e-6:
+                continue
+            price = _market_price(market)
+            if price is None:
+                continue
+            key = f"{line:.1f}"
+            current = line_rows.get(key)
+            quality = (-(price.spread if price.spread is not None else 1.0), _market_float(market, "volume_fp", "volume"))
+            current_quality = current.get("_quality") if current else None
+            if current_quality is not None and tuple(current_quality) >= quality:
+                continue
+            line_rows[key] = {
+                "over": round(price.probability, 6),
+                "under": round(1.0 - price.probability, 6),
+                "bid": round(price.bid, 6) if price.bid is not None else None,
+                "ask": round(price.ask, 6) if price.ask is not None else None,
+                "last": round(price.last, 6) if price.last is not None else None,
+                "spread": round(price.spread, 6) if price.spread is not None else None,
+                "estimate_method": price.method,
+                "market_ticker": str(market.get("ticker") or ""),
+                "volume": round(_market_float(market, "volume_fp", "volume"), 2),
+                "volume_24h": round(_market_float(market, "volume_24h_fp", "volume_24h"), 2),
+                "open_interest": round(_market_float(market, "open_interest_fp", "open_interest"), 2),
+                "_quality": quality,
+            }
+            selected_markets.append(market)
+
+        if not line_rows:
+            continue
+        for row in line_rows.values():
+            row.pop("_quality", None)
+        quote = KalshiTotalGoalsQuote(
+            fixture_id=str(fixture.get("id") or ""),
+            lines=line_rows,
+            event_ticker=event_ticker,
+            event_title=str(event.get("title") or ""),
+            event_url=_event_url(series_ticker, event_ticker),
+            kickoff=_event_datetime(event).isoformat() if _event_datetime(event) else None,
+            volume=sum(_market_float(m, "volume_fp", "volume") for m in selected_markets),
+            volume_24h=sum(_market_float(m, "volume_24h_fp", "volume_24h") for m in selected_markets),
+            liquidity=sum(_market_float(m, "liquidity_dollars", "liquidity") for m in selected_markets),
+            open_interest=sum(_market_float(m, "open_interest_fp", "open_interest") for m in selected_markets),
+            updated_at=max((_updated_at(m, event) for m in selected_markets), default=utc_now_iso()),
+        )
+        quotes[str(fixture.get("id") or "")] = quote
+        used_events.add(event_ticker)
+
+    metadata = {
+        "source": "Kalshi",
+        "market_type": "total_goals",
+        "series_ticker": series_ticker,
+        "events_checked": len(events),
+        "discovery": discovery,
+        "fixtures_checked": len(candidates),
+        "quotes_found": len(quotes),
+        "line_quotes_found": sum(len(quote.lines) for quote in quotes.values()),
+        "coverage": (len(quotes) / len(candidates)) if candidates else 0.0,
+        "lookahead_days": lookahead_days,
+        "max_fixtures": max_fixtures,
+        "price_method": "Over probability from Yes bid/ask midpoint when usable; otherwise latest trade",
         "errors": errors,
         "updated_at": utc_now_iso(),
     }

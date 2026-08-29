@@ -33,6 +33,28 @@ class PredictionArchiveTests(unittest.TestCase):
                 "event_ticker": "KXMLSGAME-26AUG20ATLNYRB",
             },
             "market_consensus": {"probabilities": {"home": 0.495, "draw": 0.23, "away": 0.275}},
+            "goal_totals": {
+                "model": {
+                    "over": {"2.5": 0.62},
+                    "under": {"2.5": 0.38},
+                    "exact": {"0": 0.05, "1": 0.14, "2": 0.19, "3": 0.20, "4": 0.16, "5": 0.11, "6+": 0.15},
+                },
+                "polymarket": {
+                    "over": {"2.5": 0.58},
+                    "under": {"2.5": 0.42},
+                    "lines": {"2.5": {"over": 0.58, "under": 0.42}},
+                },
+                "kalshi": {
+                    "over": {"2.5": 0.57},
+                    "under": {"2.5": 0.43},
+                    "lines": {"2.5": {"over": 0.57, "under": 0.43}},
+                },
+                "consensus": {
+                    "over": {"2.5": 0.575},
+                    "under": {"2.5": 0.425},
+                    "model_edge": {"2.5": 0.045},
+                },
+            },
         }
 
     def snapshot(self, generated_at, fixture=None):
@@ -55,6 +77,8 @@ class PredictionArchiveTests(unittest.TestCase):
             }
             later.pop("kalshi")
             later.pop("market_consensus")
+            later["goal_totals"].pop("kalshi")
+            later["goal_totals"].pop("consensus")
             archive_snapshot("mls", self.snapshot("2026-08-20T18:00:00Z", later), root)
 
             history = load_archive_history("mls", root)
@@ -66,6 +90,8 @@ class PredictionArchiveTests(unittest.TestCase):
             self.assertAlmostEqual(row["sources"]["kalshi"]["home"], 0.50)
             self.assertEqual(row["source_captured_at"]["kalshi"], "2026-08-18T04:00:00Z")
             self.assertEqual(row["source_captured_at"]["model"], "2026-08-20T18:00:00Z")
+            self.assertAlmostEqual(row["goal_totals"]["kalshi"]["over"]["2.5"], 0.57)
+            self.assertEqual(row["goal_total_source_captured_at"]["kalshi"], "2026-08-18T04:00:00Z")
 
     def test_snapshot_generated_after_kickoff_is_never_archived(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -122,6 +148,9 @@ class PredictionArchiveTests(unittest.TestCase):
             self.assertIn("polymarket", review["sources"])
             self.assertIn("kalshi", review["sources"])
             self.assertAlmostEqual(review["sources"]["model"]["away"], 0.40)
+            self.assertIn("goal_totals", review)
+            self.assertIn("totals_scores", review)
+            self.assertIn("2.5", review["totals_scores"]["model"])
 
 
 if __name__ == "__main__":

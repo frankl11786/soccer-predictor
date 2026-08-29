@@ -7,8 +7,9 @@ from .bayes import PosteriorFit
 from .config import FUTURE_STATE_RETENTION, LeagueConfig, MARKET_SANITY_THRESHOLD, MODEL_VERSION
 from .data_prep import PreparedLeague
 from .history import attach_postgame_analysis, build_accuracy_summary, update_prediction_history
-from .kalshi import KalshiMatchQuote, KalshiWinnerQuote
-from .polymarket import MarketQuote, MatchMarketQuote
+from .goal_totals import model_goal_totals
+from .kalshi import KalshiMatchQuote, KalshiTotalGoalsQuote, KalshiWinnerQuote
+from .polymarket import MarketQuote, MatchMarketQuote, TotalGoalsQuote
 from .simulate import SimulationResult
 from .utils import read_json, utc_now_iso, write_json
 
@@ -60,6 +61,83 @@ def _market_errors(source: str, market_meta: dict[str, Any]) -> list[str]:
         hidden = len(errors) - 20
         errors = errors[:20] + [f"{hidden} additional {source} request error(s) omitted from this entry"]
     return errors
+
+
+def _attach_goal_totals(
+    fixture: dict[str, Any],
+    polymarket_quote: TotalGoalsQuote | None,
+    kalshi_quote: KalshiTotalGoalsQuote | None,
+) -> None:
+    model = model_goal_totals(float(fixture.get("xg_home") or 0.0), float(fixture.get("xg_away") or 0.0))
+    totals: dict[str, Any] = {"model": model}
+
+    if polymarket_quote:
+        totals["polymarket"] = {
+            "source": "Polymarket",
+            "over": {line: row["over"] for line, row in polymarket_quote.lines.items()},
+            "under": {line: row["under"] for line, row in polymarket_quote.lines.items()},
+            "lines": polymarket_quote.lines,
+            "event_id": polymarket_quote.event_id,
+            "event_title": polymarket_quote.event_title,
+            "event_slug": polymarket_quote.event_slug,
+            "event_url": polymarket_quote.event_url,
+            "kickoff": polymarket_quote.kickoff,
+            "liquidity": round(polymarket_quote.liquidity, 2),
+            "volume": round(polymarket_quote.volume, 2),
+            "updated_at": polymarket_quote.updated_at,
+            "comparison_only": True,
+        }
+
+    if kalshi_quote:
+        totals["kalshi"] = {
+            "source": "Kalshi",
+            "over": {line: row["over"] for line, row in kalshi_quote.lines.items()},
+            "under": {line: row["under"] for line, row in kalshi_quote.lines.items()},
+            "lines": kalshi_quote.lines,
+            "event_ticker": kalshi_quote.event_ticker,
+            "event_title": kalshi_quote.event_title,
+            "event_url": kalshi_quote.event_url,
+            "kickoff": kalshi_quote.kickoff,
+            "liquidity": round(kalshi_quote.liquidity, 2),
+            "volume": round(kalshi_quote.volume, 2),
+            "volume_24h": round(kalshi_quote.volume_24h, 2),
+            "open_interest": round(kalshi_quote.open_interest, 2),
+            "updated_at": kalshi_quote.updated_at,
+            "comparison_only": True,
+        }
+
+    external = [totals[source] for source in ("polymarket", "kalshi") if source in totals]
+    if external:
+        all_lines = sorted({line for source in external for line in (source.get("over") or {})}, key=float)
+        consensus_over: dict[str, float] = {}
+        consensus_under: dict[str, float] = {}
+        model_edges: dict[str, float] = {}
+        sources_by_line: dict[str, list[str]] = {}
+        for line in all_lines:
+            values: list[tuple[str, float]] = []
+            for source_name in ("polymarket", "kalshi"):
+                source = totals.get(source_name) or {}
+                value = (source.get("over") or {}).get(line)
+                if value is not None:
+                    values.append((source_name, float(value)))
+            if not values:
+                continue
+            consensus = sum(value for _, value in values) / len(values)
+            consensus_over[line] = round(consensus, 6)
+            consensus_under[line] = round(1.0 - consensus, 6)
+            if line in model["over"]:
+                model_edges[line] = round(float(model["over"][line]) - consensus, 6)
+            sources_by_line[line] = [name for name, _ in values]
+        totals["consensus"] = {
+            "over": consensus_over,
+            "under": consensus_under,
+            "model_edge": model_edges,
+            "sources_by_line": sources_by_line,
+            "method": "Equal-weight mean of available prediction-market over probabilities",
+            "comparison_only": True,
+        }
+
+    fixture["goal_totals"] = totals
 
 
 def _metric_specs(cfg: LeagueConfig) -> tuple[tuple[str, str], ...]:
@@ -364,6 +442,8 @@ def build_snapshot(
     kalshi_quotes: dict[str, KalshiWinnerQuote],
     kalshi_match_quotes: dict[str, KalshiMatchQuote],
     kalshi_meta: dict[str, Any],
+    total_goal_quotes: dict[str, TotalGoalsQuote],
+    kalshi_total_goal_quotes: dict[str, KalshiTotalGoalsQuote],
     data_meta: dict[str, Any],
     output_path,
 ) -> dict[str, Any]:
@@ -647,6 +727,12 @@ def build_snapshot(
         else:
             fixture.pop("kalshi", None)
 
+        _attach_goal_totals(
+            fixture,
+            total_goal_quotes.get(fixture_id),
+            kalshi_total_goal_quotes.get(fixture_id),
+        )
+
         external_distributions: list[tuple[str, dict[str, float]]] = []
         if fixture.get("polymarket"):
             external_distributions.append(("Polymarket", fixture["polymarket"]["probabilities"]))
@@ -745,7 +831,7 @@ def build_snapshot(
             "notice": (
                 f"Fixtures and results come from a free multi-source pipeline. Attack and defense ratings are fitted from "
                 f"{fit.summary['matches']:,} completed matches using a Bayesian state-space Poisson model. "
-                "Polymarket and Kalshi season-winner and exact 1X2 match prices are displayed as independent comparisons when exact markets are available. "
+                "Polymarket and Kalshi season-winner, exact 1X2, and regulation-time total-goals prices are displayed as independent comparisons when exact markets are available. "
                 "Each source is normalized within its event for like-for-like comparison; a simple cross-market consensus is also shown. None of these prices are used as model inputs."
             ),
             "completed_matches": completed,
@@ -768,6 +854,10 @@ def build_snapshot(
                 "match_prices": (
                     "A match comparison is published only for a date-verified full-match home/draw/away "
                     "event that matches both clubs and contains all three outcomes."
+                ),
+                "total_goals_prices": (
+                    "Regulation-time total-goals comparisons use date/team-verified contest totals only. "
+                    "Team totals and other derivative markets are rejected."
                 ),
                 "kalshi_price_method": (
                     "Kalshi uses the midpoint of the best Yes bid and ask when the spread is usable; "

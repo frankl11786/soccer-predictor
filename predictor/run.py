@@ -11,10 +11,14 @@ from .config import APP_DATA, LEAGUES
 from .data_prep import prepare_league
 from .mls_schedule import fetch_complete_mls_schedule
 from .identity import canonicalize_fixture_rows
-from .kalshi import fetch_match_quotes as fetch_kalshi_match_quotes, fetch_winner_quotes as fetch_kalshi_winner_quotes
+from .kalshi import (
+    fetch_match_quotes as fetch_kalshi_match_quotes,
+    fetch_total_goals_quotes as fetch_kalshi_total_goals_quotes,
+    fetch_winner_quotes as fetch_kalshi_winner_quotes,
+)
 from .openfootball import fetch_epl_rows
 from .output import build_snapshot
-from .polymarket import fetch_match_quotes, fetch_winner_quotes
+from .polymarket import fetch_match_quotes, fetch_total_goals_quotes, fetch_winner_quotes
 from .simulate import simulate_epl, simulate_mls
 from .utils import utc_now_iso
 
@@ -94,10 +98,19 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
         max_fixtures=cfg.polymarket_match_max_fixtures,
     )
     market_meta["match_markets"] = match_market_meta
+    total_goal_quotes, total_goal_meta = fetch_total_goals_quotes(
+        simulation.fixtures,
+        prepared.teams,
+        league_terms=cfg.polymarket_league_terms,
+        lookahead_days=cfg.polymarket_match_lookahead_days,
+        max_fixtures=cfg.polymarket_match_max_fixtures,
+    )
+    market_meta["total_goals"] = total_goal_meta
     print(
         "Polymarket comparison: "
         f"{len(quotes)} season-winner quotes; "
-        f"{len(match_quotes)} exact match markets"
+        f"{len(match_quotes)} exact match markets; "
+        f"{len(total_goal_quotes)} total-goals events"
     )
 
     kalshi_quotes, kalshi_meta = fetch_kalshi_winner_quotes(
@@ -112,10 +125,19 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
         max_fixtures=cfg.polymarket_match_max_fixtures,
     )
     kalshi_meta["match_markets"] = kalshi_match_meta
+    kalshi_total_goal_quotes, kalshi_total_goal_meta = fetch_kalshi_total_goals_quotes(
+        simulation.fixtures,
+        prepared.teams,
+        series_ticker=cfg.kalshi_total_series_ticker,
+        lookahead_days=cfg.polymarket_match_lookahead_days,
+        max_fixtures=cfg.polymarket_match_max_fixtures,
+    )
+    kalshi_meta["total_goals"] = kalshi_total_goal_meta
     print(
         "Kalshi comparison: "
         f"{len(kalshi_quotes)} season-winner quotes; "
-        f"{len(kalshi_match_quotes)} exact match markets"
+        f"{len(kalshi_match_quotes)} exact match markets; "
+        f"{len(kalshi_total_goal_quotes)} total-goals events"
     )
     data_meta = {
         "sources": source_meta,
@@ -134,6 +156,8 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
         kalshi_quotes,
         kalshi_match_quotes,
         kalshi_meta,
+        total_goal_quotes,
+        kalshi_total_goal_quotes,
         data_meta,
         output_path,
     )

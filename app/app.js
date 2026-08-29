@@ -591,6 +591,67 @@ function fixtureScoreModel(f) {
   const matrix = Array.from({length:7},(_,h)=>Array.from({length:7},(_,a)=>poissonP(lh,h)*poissonP(la,a)));
   return {lh, la, matrix};
 }
+function probabilityBand(value) {
+  const p=Number(value||0);
+  if(p>=.60) return {className:'prob-very-high',label:'High probability'};
+  if(p>=.45) return {className:'prob-high',label:'Above average'};
+  if(p>=.30) return {className:'prob-medium',label:'Competitive'};
+  if(p>=.15) return {className:'prob-low',label:'Low probability'};
+  return {className:'prob-very-low',label:'Long shot'};
+}
+function outcomeCard(label, probability, max, detail) {
+  const band=probabilityBand(probability);
+  const favorite=Number(probability)===Number(max);
+  return `<div class="outcome-card ${band.className} ${favorite?'favorite':''}" aria-label="${esc(label)} ${probPct(probability,1)}, ${esc(band.label)}${favorite?', highest probability outcome':''}"><small>${esc(label)}</small><strong>${probPct(probability,1)}</strong><span class="probability-strength">${esc(band.label)}${favorite?' · highest':''}</span><span class="probability-detail">${esc(detail)}</span></div>`;
+}
+function goalTotalsData(f) {
+  const archived=f?.status==='final' ? f?.postgame_analysis?.goal_totals : null;
+  if(archived?.model?.over) return {data:archived,archived:true};
+  if(f?.goal_totals?.model?.over) return {data:f.goal_totals,archived:false};
+  const lambda=Math.max(.01,Number(f?.xg_home||0)+Number(f?.xg_away||0));
+  const exact={}; let cumulative=0;
+  for(let goals=0;goals<6;goals++){const value=poissonP(lambda,goals);exact[String(goals)]=value;cumulative+=value;}
+  exact['6+']=Math.max(0,1-cumulative);
+  const over={},under={};
+  [0.5,1.5,2.5,3.5,4.5,5.5].forEach(line=>{
+    let u=0; for(let goals=0;goals<=Math.floor(line);goals++)u+=poissonP(lambda,goals);
+    over[line.toFixed(1)]=Math.max(0,1-u); under[line.toFixed(1)]=u;
+  });
+  return {data:{model:{lambda,exact,over,under,method:'Poisson total from home xG + away xG'}},archived:false};
+}
+function overUnderText(source,line) {
+  const over=source?.over?.[line];
+  if(over===null||over===undefined||!Number.isFinite(Number(over))) return '—';
+  const under=source?.under?.[line] ?? (1-Number(over));
+  return `O ${probPct(over,1)} · U ${probPct(under,1)}`;
+}
+function goalTotalsExplainer(totals) {
+  const model=totals?.model?.over||{}, consensus=totals?.consensus?.over||{};
+  const candidates=Object.keys(consensus).filter(line=>Number.isFinite(Number(model[line]))&&Number.isFinite(Number(consensus[line]))).map(line=>({line,edge:Number(model[line])-Number(consensus[line])}));
+  if(!candidates.length) return 'No exact prediction-market total-goals line is available yet. The model distribution is still shown from the mean expected-goals view.';
+  candidates.sort((a,b)=>Math.abs(b.edge)-Math.abs(a.edge));
+  const top=candidates[0], abs=Math.abs(top.edge);
+  const direction=top.edge>0?'higher-scoring':'lower-scoring';
+  const relation=abs<.02?'is closely aligned with':top.edge>0?'puts more weight on the over than':'puts less weight on the over than';
+  return `The model ${relation} the prediction markets at Over ${top.line}: model ${probPct(model[top.line],1)} vs ${probPct(consensus[top.line],1)} consensus (${signedPct(top.edge)}). Overall, the largest available totals gap points to a ${direction} model view.`;
+}
+function goalTotalsCard(f) {
+  const resolved=goalTotalsData(f), totals=resolved.data||{}, model=totals.model||{};
+  const poly=totals.polymarket||null, kalshi=totals.kalshi||null, consensus=totals.consensus||null;
+  const lines=['0.5','1.5','2.5','3.5','4.5','5.5'];
+  const exactKeys=['0','1','2','3','4','5','6+'];
+  const distribution=exactKeys.map(key=>`<div class="goal-total-chip"><small>${key} goal${key==='1'?'':'s'}</small><strong>${model.exact?.[key]===undefined?'—':probPct(model.exact[key],1)}</strong></div>`).join('');
+  const rows=lines.map(line=>{
+    const edge=consensus?.model_edge?.[line];
+    const kline=kalshi?.lines?.[line];
+    const range=kline?.bid!==null&&kline?.bid!==undefined&&kline?.ask!==null&&kline?.ask!==undefined?`<small>Bid–ask ${probPct(kline.bid,1)}–${probPct(kline.ask,1)}</small>`:'';
+    const hasExternal=poly?.over?.[line]!==undefined||kalshi?.over?.[line]!==undefined;
+    return `<tr class="${hasExternal?'has-market':''}"><td><strong>Over ${line}</strong></td><td>${overUnderText(model,line)}</td><td>${overUnderText(poly,line)}</td><td>${overUnderText(kalshi,line)}${range}</td><td>${overUnderText(consensus,line)}</td><td><strong class="${Number(edge)>0?'positive':Number(edge)<0?'negative':'neutral'}">${edge===null||edge===undefined?'—':signedPct(edge)}</strong></td></tr>`;
+  }).join('');
+  const polyUrl=poly?.event_url||''; const kalshiUrl=kalshi?.event_url||'';
+  const archiveNote=resolved.archived?'Frozen pregame totals':'Current pregame totals';
+  return `<article class="card goal-totals-card"><div class="card-head"><h2>Total goals</h2><span class="eyebrow">${esc(archiveNote)}</span></div><div class="card-body"><div class="goal-total-distribution">${distribution}</div><p class="detail-note goal-total-distribution-note">Exact total-goal probabilities use the full Poisson total distribution; the 6+ bucket includes the entire scoring tail beyond five goals.</p><div class="table-wrap"><table class="goal-totals-table"><thead><tr><th>Line</th><th>Our model</th><th>Polymarket</th><th>Kalshi</th><th>Consensus</th><th>Model vs consensus</th></tr></thead><tbody>${rows}</tbody></table></div><div class="goal-total-read"><strong>Totals read</strong><p>${esc(goalTotalsExplainer(totals))}</p></div><div class="market-meta goal-total-meta">${poly?`<span>Polymarket totals · Volume ${money(poly.volume)}</span>${polyUrl?`<a href="${esc(polyUrl)}" target="_blank" rel="noopener noreferrer">Open Polymarket ↗</a>`:''}`:'<span>Polymarket totals unavailable</span>'}${kalshi?`<span>Kalshi totals · Volume ${money(kalshi.volume)}</span>${kalshiUrl?`<a href="${esc(kalshiUrl)}" target="_blank" rel="noopener noreferrer">Open Kalshi ↗</a>`:''}`:'<span>Kalshi totals unavailable</span>'}</div><p class="detail-note">Over/under markets are regulation-time contest totals only. Team totals are excluded. Market prices are comparison-only and never enter the Bayesian model.</p></div></article>`;
+}
 function likelyScores(matrix, home, away) {
   return matrix.flatMap((row,h)=>row.map((prob,a)=>({h,a,prob}))).sort((x,y)=>y.prob-x.prob).slice(0,5).map(row=>`<div class="likely-score"><strong>${row.h}–${row.a}</strong><span>${pct(row.prob,1)}</span><small>${esc(home.short)}–${esc(away.short)}</small></div>`).join('');
 }
@@ -730,11 +791,12 @@ function renderMatch(id) {
   main.innerHTML=`<div class="page match-page">
     <a class="back-link" href="#/schedule">← Back to schedule</a>
     <section class="match-hero card"><div class="match-meta"><span class="eyebrow">${esc(state.data.meta.name)} · Round ${esc(f.round)}</span><strong>${esc(timing)}</strong><span class="status-pill ${f.status==='final'?'final':''}">${esc(status)}</span></div><div class="match-teams"><a href="#/team/${h.slug}" class="match-club">${badge(h,'large')}<span><strong>${esc(h.name)}</strong><small>Home</small></span></a><div class="match-score"><strong>${f.status==='final'?`${f.home_score}–${f.away_score}`:'vs'}</strong><span>${Number(f.xg_home).toFixed(2)}–${Number(f.xg_away).toFixed(2)} xG</span></div><a href="#/team/${a.slug}" class="match-club away">${badge(a,'large')}<span><strong>${esc(a.name)}</strong><small>Away</small></span></a></div></section>
-    <section class="grid match-detail-grid"><article class="card"><div class="card-head"><h2>Outcome forecast</h2><span class="eyebrow">${esc(outcomeEyebrow)}</span></div><div class="card-body"><div class="outcome-grid"><div class="outcome-card ${probs.home===max?'favorite':''}"><small>${esc(h.short)} win</small><strong>${pct(probs.home,1)}</strong><span>${outcomeSubtext?esc(outcomeSubtext):`90% range ${intervalLabel(f.probabilities.home_interval)}`}</span></div><div class="outcome-card ${probs.draw===max?'favorite':''}"><small>Draw</small><strong>${pct(probs.draw,1)}</strong><span>${outcomeSubtext?esc(outcomeSubtext):`90% range ${intervalLabel(f.probabilities.draw_interval)}`}</span></div><div class="outcome-card ${probs.away===max?'favorite':''}"><small>${esc(a.short)} win</small><strong>${pct(probs.away,1)}</strong><span>${outcomeSubtext?esc(outcomeSubtext):`90% range ${intervalLabel(f.probabilities.away_interval)}`}</span></div></div><div class="model-read"><strong>${hasArchivedPregameModel?'Pregame model read':'Model read'}</strong><p>${esc(read)}</p></div></div></article><article class="card"><div class="card-head"><h2>Most likely scores</h2><span class="eyebrow">Mean-xG Poisson</span></div><div class="card-body likely-scores">${likelyScores(model.matrix,h,a)}<div class="score-explainer"><strong>How to read this</strong><p>${esc(exactScoreExplainer(model.matrix,probs,h,a))}</p></div><p class="detail-note">${hasArchivedPregameModel?'The 1X2 probabilities above are the frozen pregame forecast. Exact-score probabilities on this completed-match page use the currently stored mean expected goals, so they should be read separately from the archived pregame 1X2 forecast.':'Exact-score probabilities use the mean expected goals. The 1X2 probabilities include posterior uncertainty, so the two views will not match perfectly.'}</p></div></article></section>
+    <section class="grid match-detail-grid"><article class="card"><div class="card-head"><h2>Outcome forecast</h2><span class="eyebrow">${esc(outcomeEyebrow)}</span></div><div class="card-body"><div class="outcome-grid">${outcomeCard(`${h.short} win`,probs.home,max,outcomeSubtext||`90% range ${intervalLabel(f.probabilities.home_interval)}`)}${outcomeCard('Draw',probs.draw,max,outcomeSubtext||`90% range ${intervalLabel(f.probabilities.draw_interval)}`)}${outcomeCard(`${a.short} win`,probs.away,max,outcomeSubtext||`90% range ${intervalLabel(f.probabilities.away_interval)}`)}</div><div class="model-read"><strong>${hasArchivedPregameModel?'Pregame model read':'Model read'}</strong><p>${esc(read)}</p></div></div></article><article class="card"><div class="card-head"><h2>Most likely scores</h2><span class="eyebrow">Mean-xG Poisson</span></div><div class="card-body likely-scores">${likelyScores(model.matrix,h,a)}<div class="score-explainer"><strong>How to read this</strong><p>${esc(exactScoreExplainer(model.matrix,probs,h,a))}</p></div><p class="detail-note">${hasArchivedPregameModel?'The 1X2 probabilities above are the frozen pregame forecast. Exact-score probabilities on this completed-match page use the currently stored mean expected goals, so they should be read separately from the archived pregame 1X2 forecast.':'Exact-score probabilities use the mean expected goals. The 1X2 probabilities include posterior uncertainty, so the two views will not match perfectly.'}</p></div></article></section>
     ${matchMarketComparison(f,h,a)}
     ${postgameAnalysis(f,h,a)}
     <section class="grid rating-grid">${ratingCard(h,hForecast)}${ratingCard(a,aForecast)}</section>
-    <section class="grid match-detail-grid"><article class="card"><div class="card-head"><h2>Exact score matrix</h2><span class="eyebrow">Rows ${esc(h.short)} · columns ${esc(a.short)}</span></div><div class="card-body table-wrap">${scoreMatrix(model.matrix)}</div></article><article class="card"><div class="card-head"><h2>Recent form</h2><span class="eyebrow">Last five completed</span></div><div class="card-body form-columns"><div><h3>${esc(h.short)}</h3>${recentForm(h.slug,f.id)}</div><div><h3>${esc(a.short)}</h3>${recentForm(a.slug,f.id)}</div></div></article></section>
+    <section class="grid match-detail-grid"><article class="card"><div class="card-head"><h2>Exact score matrix</h2><span class="eyebrow">Rows ${esc(h.short)} · columns ${esc(a.short)}</span></div><div class="card-body"><div class="score-matrix-axis"><span>Home goals ↓</span><span>Away goals →</span></div><div class="table-wrap">${scoreMatrix(model.matrix)}</div><p class="detail-note">The matrix displays 0–6 goals for each club. The total-goals section below uses the complete Poisson distribution, including outcomes beyond the visible matrix.</p></div></article><article class="card"><div class="card-head"><h2>Recent form</h2><span class="eyebrow">Last five completed</span></div><div class="card-body form-columns"><div><h3>${esc(h.short)}</h3>${recentForm(h.slug,f.id)}</div><div><h3>${esc(a.short)}</h3>${recentForm(a.slug,f.id)}</div></div></article></section>
+    ${goalTotalsCard(f)}
   </div>`;
 }
 
@@ -756,10 +818,23 @@ function comparisonPanel(title, comparison, sources) {
   return `<article class="card accuracy-comparison"><div class="card-head"><h2>${esc(title)}</h2><span class="eyebrow">${n} shared match${n===1?'':'es'}</span></div><div class="card-body">${n?`<div class="table-wrap"><table><thead><tr><th>Forecast</th><th>Matches</th><th>Top-pick accuracy</th><th>Brier ↓</th><th>Log loss ↓</th><th>Avg prob. on actual</th></tr></thead><tbody>${accuracySourceRows(comparison.sources,sources)}</tbody></table></div>`:'<div class="empty"><p>No completed matches with this exact coverage set have been graded yet.</p></div>'}</div></article>`;
 }
 
+function totalsAccuracyRows(metrics, sources=['model','polymarket','kalshi','consensus']) {
+  return sources.map(source=>{
+    const row=metrics?.[source]||{};
+    return `<tr><td><strong>${esc(row.label||sourceDisplay(source))}</strong></td><td>${Number(row.matches||0).toLocaleString()}</td><td>${Number(row.line_forecasts||0).toLocaleString()}</td><td>${accuracyMetric(row.pick_accuracy,'pct')}</td><td>${accuracyMetric(row.brier)}</td><td>${accuracyMetric(row.log_loss)}</td><td>${accuracyMetric(row.avg_actual_probability,'pct')}</td></tr>`;
+  }).join('');
+}
+function totalsComparisonPanel(title, comparison, sources) {
+  const n=Number(comparison?.line_forecasts||0), matches=Number(comparison?.matches||0);
+  return `<article class="card accuracy-comparison"><div class="card-head"><h2>${esc(title)}</h2><span class="eyebrow">${n} shared line${n===1?'':'s'} · ${matches} match${matches===1?'':'es'}</span></div><div class="card-body">${n?`<div class="table-wrap"><table><thead><tr><th>Forecast</th><th>Matches</th><th>Lines</th><th>Side accuracy</th><th>Brier ↓</th><th>Log loss ↓</th><th>Avg prob. on actual</th></tr></thead><tbody>${totalsAccuracyRows(comparison.sources,sources)}</tbody></table></div>`:'<div class="empty"><p>No completed matches with shared frozen total-goals lines have been graded yet.</p></div>'}</div></article>`;
+}
+
 function renderAccuracy() {
   const accuracy=state.data.accuracy || {};
   const history=(state.data.prediction_history || []).filter(row=>row.status==='final').sort((a,b)=>String(b.date||'').localeCompare(String(a.date||'')));
   const comparisons=accuracy.comparisons || {};
+  const totalsAccuracy=accuracy.goal_totals || {};
+  const totalsComparisons=totalsAccuracy.comparisons || {};
   const tMap=teamMap();
   const recent=history.slice(0,25);
   const tracked=Number(accuracy.graded_matches||0);
@@ -770,6 +845,10 @@ function renderAccuracy() {
     <article class="card"><div class="card-head"><h2>Overall recorded performance</h2><span class="eyebrow">Coverage differs by source</span></div><div class="card-body">${tracked?`<div class="table-wrap"><table class="accuracy-table"><thead><tr><th>Forecast</th><th>Matches</th><th>Top-pick accuracy</th><th>Brier ↓</th><th>Log loss ↓</th><th>Avg prob. on actual</th></tr></thead><tbody>${accuracySourceRows(accuracy.overall)}</tbody></table></div>`:'<div class="empty"><h3>No graded matches yet</h3><p>No completed pregame snapshots have been recovered yet. Run the historical backfill once, then future matches will continue to be tracked automatically.</p></div>'}<p class="detail-note">Overall rows can contain different numbers of matches because prediction-market coverage varies. Use the shared-match comparisons below for the fairest model-versus-market comparison.</p></div></article>
     <section class="grid accuracy-pair-grid">${comparisonPanel('Model vs Polymarket',comparisons.model_vs_polymarket,['model','polymarket'])}${comparisonPanel('Model vs Kalshi',comparisons.model_vs_kalshi,['model','kalshi'])}</section>
     ${comparisonPanel('All three on the same matches',comparisons.all_three,['model','polymarket','kalshi'])}
+    <div class="accuracy-section-heading"><span class="eyebrow">Scoring calibration</span><h2>Goal totals accuracy</h2><p>Each frozen Over/Under line is graded as a binary probability forecast. Lower Brier and log loss are better; shared-line panels compare the exact same match and threshold on both sources.</p></div>
+    <article class="card"><div class="card-head"><h2>Overall total-goals performance</h2><span class="eyebrow">Coverage differs by line</span></div><div class="card-body"><div class="table-wrap"><table class="accuracy-table"><thead><tr><th>Forecast</th><th>Matches</th><th>Lines</th><th>Side accuracy</th><th>Brier ↓</th><th>Log loss ↓</th><th>Avg prob. on actual</th></tr></thead><tbody>${totalsAccuracyRows(totalsAccuracy.overall)}</tbody></table></div><p class="detail-note">Totals history begins only when an actual pregame total-goals price was captured. Older 1X2 history does not manufacture missing totals prices retroactively.</p></div></article>
+    <section class="grid accuracy-pair-grid">${totalsComparisonPanel('Totals · Model vs Polymarket',totalsComparisons.model_vs_polymarket,['model','polymarket'])}${totalsComparisonPanel('Totals · Model vs Kalshi',totalsComparisons.model_vs_kalshi,['model','kalshi'])}</section>
+    ${totalsComparisonPanel('Totals · All three on the same lines',totalsComparisons.all_three,['model','polymarket','kalshi'])}
     <article class="card"><div class="card-head"><h2>Recent graded matches</h2><span class="eyebrow">Frozen before kickoff</span></div><div class="card-body">${recent.length?`<div class="accuracy-history">${recent.map(row=>{const h=tMap[row.home],a=tMap[row.away],actual=row.actual?.outcome; const model=row.scores?.model; return `<a class="accuracy-match" href="#/match/${encodeURIComponent(row.fixture_id)}"><span><small>${esc(row.date||'')}</small><strong>${esc(h?.short||row.home)} vs ${esc(a?.short||row.away)}</strong></span><span><small>Actual</small><strong>${esc(outcomeDisplay(actual,h||{name:row.home},a||{name:row.away}))}</strong></span><span><small>Model on actual</small><strong>${model?probPct(model.actual_probability,1):'—'}</strong></span><span><small>Model Brier</small><strong>${model?Number(model.brier).toFixed(3):'—'}</strong></span><em>Review →</em></a>`;}).join('')}</div>`:'<div class="empty"><p>No completed tracked matches yet.</p></div>'}</div></article>
   </div>`;
 }

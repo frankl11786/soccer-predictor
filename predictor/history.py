@@ -108,6 +108,65 @@ def _score_distribution(probabilities: dict[str, float], actual: str) -> dict[st
     }
 
 
+def _binary_score(probability: float, actual: bool) -> dict[str, Any]:
+    probability = min(1.0, max(0.0, float(probability)))
+    actual_probability = probability if actual else 1.0 - probability
+    predicted_over = probability >= 0.5
+    return {
+        "predicted_over": predicted_over,
+        "correct_pick": predicted_over == actual,
+        "actual_probability": round(actual_probability, 6),
+        "brier": round((probability - (1.0 if actual else 0.0)) ** 2, 6),
+        "log_loss": round(-math.log(max(actual_probability, 1e-12)), 6),
+    }
+
+
+def _goal_totals_from_fixture(fixture: dict[str, Any]) -> dict[str, Any] | None:
+    value = fixture.get("goal_totals")
+    if not isinstance(value, dict) or not isinstance(value.get("model"), dict):
+        return None
+    copied: dict[str, Any] = {}
+    for source in ("model", "polymarket", "kalshi", "consensus"):
+        row = value.get(source)
+        if not isinstance(row, dict):
+            continue
+        over = row.get("over")
+        under = row.get("under")
+        if not isinstance(over, dict):
+            continue
+        copied[source] = {
+            **{key: val for key, val in row.items() if key not in {"over", "under"}},
+            "over": {str(line): round(float(prob), 6) for line, prob in over.items()},
+            "under": {str(line): round(float(prob), 6) for line, prob in (under or {}).items()},
+        }
+    return copied or None
+
+
+def _score_goal_totals(goal_totals: dict[str, Any], total_goals: int) -> dict[str, Any]:
+    scored: dict[str, Any] = {}
+    for source in SOURCES:
+        source_row = goal_totals.get(source)
+        over = source_row.get("over") if isinstance(source_row, dict) else None
+        if not isinstance(over, dict):
+            continue
+        line_scores: dict[str, Any] = {}
+        for line, probability in over.items():
+            try:
+                threshold = float(line)
+                value = float(probability)
+            except (TypeError, ValueError):
+                continue
+            actual_over = total_goals > threshold
+            line_scores[str(line)] = {
+                "actual_over": actual_over,
+                "over_probability": round(value, 6),
+                **_binary_score(value, actual_over),
+            }
+        if line_scores:
+            scored[source] = line_scores
+    return scored
+
+
 def _market_refs(fixture: dict[str, Any]) -> dict[str, Any]:
     return {
         "polymarket": {
@@ -148,7 +207,10 @@ def _record_from_fixture(
         "away": fixture.get("away"),
         "captured_at": captured_at,
         "model_version": model_version,
+        "xg_home": fixture.get("xg_home"),
+        "xg_away": fixture.get("xg_away"),
         "market_refs": _market_refs(fixture),
+        "goal_totals": _goal_totals_from_fixture(fixture),
         "sources": {
             source: {outcome: round(probabilities[outcome], 6) for outcome in OUTCOMES}
             for source, probabilities in sources.items()
@@ -163,10 +225,14 @@ def _grade_record(record: dict[str, Any], fixture: dict[str, Any], graded_at: st
         return record
     graded = dict(record)
     graded["status"] = "final"
+    home_score = int(fixture["home_score"])
+    away_score = int(fixture["away_score"])
+    total_goals = home_score + away_score
     graded["actual"] = {
         "outcome": actual,
-        "home_score": int(fixture["home_score"]),
-        "away_score": int(fixture["away_score"]),
+        "home_score": home_score,
+        "away_score": away_score,
+        "total_goals": total_goals,
     }
     graded["graded_at"] = graded_at
     graded["scores"] = {
@@ -174,6 +240,9 @@ def _grade_record(record: dict[str, Any], fixture: dict[str, Any], graded_at: st
         for source, probabilities in (graded.get("sources") or {}).items()
         if source in SOURCES and _distribution(probabilities)
     }
+    goal_totals = graded.get("goal_totals")
+    if isinstance(goal_totals, dict):
+        graded["totals_scores"] = _score_goal_totals(goal_totals, total_goals)
     return graded
 
 
@@ -428,6 +497,81 @@ def _subset(history: list[dict[str, Any]], required_sources: tuple[str, ...]) ->
     return result
 
 
+def _aggregate_totals(records: list[dict[str, Any]], source: str) -> dict[str, Any]:
+    rows: list[dict[str, Any]] = []
+    matches: set[str] = set()
+    for record in records:
+        if record.get("status") != "final":
+            continue
+        source_scores = (record.get("totals_scores") or {}).get(source)
+        if not isinstance(source_scores, dict):
+            continue
+        for score in source_scores.values():
+            if isinstance(score, dict):
+                rows.append(score)
+                matches.add(str(record.get("fixture_id") or ""))
+    if not rows:
+        return {
+            "source": source,
+            "label": SOURCE_LABELS[source],
+            "matches": 0,
+            "line_forecasts": 0,
+            "pick_accuracy": None,
+            "brier": None,
+            "log_loss": None,
+            "avg_actual_probability": None,
+        }
+    n = len(rows)
+    return {
+        "source": source,
+        "label": SOURCE_LABELS[source],
+        "matches": len({value for value in matches if value}),
+        "line_forecasts": n,
+        "pick_accuracy": round(sum(bool(row.get("correct_pick")) for row in rows) / n, 6),
+        "brier": round(sum(float(row["brier"]) for row in rows) / n, 6),
+        "log_loss": round(sum(float(row["log_loss"]) for row in rows) / n, 6),
+        "avg_actual_probability": round(sum(float(row["actual_probability"]) for row in rows) / n, 6),
+    }
+
+
+def _shared_total_line_records(history: list[dict[str, Any]], required_sources: tuple[str, ...]) -> list[dict[str, Any]]:
+    shared: list[dict[str, Any]] = []
+    for record in history:
+        if record.get("status") != "final":
+            continue
+        totals_scores = record.get("totals_scores") or {}
+        if not all(isinstance(totals_scores.get(source), dict) for source in required_sources):
+            continue
+        common_lines = set(totals_scores[required_sources[0]])
+        for source in required_sources[1:]:
+            common_lines &= set(totals_scores[source])
+        for line in common_lines:
+            shared.append({
+                "fixture_id": record.get("fixture_id"),
+                "line": line,
+                "scores": {source: totals_scores[source][line] for source in required_sources},
+            })
+    return shared
+
+
+def _aggregate_total_shared(rows: list[dict[str, Any]], source: str) -> dict[str, Any]:
+    scores = [row["scores"][source] for row in rows if source in (row.get("scores") or {})]
+    matches = {str(row.get("fixture_id") or "") for row in rows}
+    if not scores:
+        return _aggregate_totals([], source)
+    n = len(scores)
+    return {
+        "source": source,
+        "label": SOURCE_LABELS[source],
+        "matches": len({value for value in matches if value}),
+        "line_forecasts": n,
+        "pick_accuracy": round(sum(bool(row.get("correct_pick")) for row in scores) / n, 6),
+        "brier": round(sum(float(row["brier"]) for row in scores) / n, 6),
+        "log_loss": round(sum(float(row["log_loss"]) for row in scores) / n, 6),
+        "avg_actual_probability": round(sum(float(row["actual_probability"]) for row in scores) / n, 6),
+    }
+
+
 def build_accuracy_summary(history: list[dict[str, Any]]) -> dict[str, Any]:
     finalized = [record for record in history if record.get("status") == "final"]
     pending = [record for record in history if record.get("status") != "final"]
@@ -451,6 +595,21 @@ def build_accuracy_summary(history: list[dict[str, Any]]) -> dict[str, Any]:
         for record in finalized
         if (record.get("provenance") or {}).get("type") == "archived_git_snapshot"
     ]
+
+    totals_overall = {source: _aggregate_totals(finalized, source) for source in SOURCES}
+    totals_comparisons: dict[str, Any] = {}
+    for key, sources in {
+        "model_vs_polymarket": ("model", "polymarket"),
+        "model_vs_kalshi": ("model", "kalshi"),
+        "all_three": ("model", "polymarket", "kalshi"),
+    }.items():
+        rows = _shared_total_line_records(finalized, sources)
+        totals_comparisons[key] = {
+            "line_forecasts": len(rows),
+            "matches": len({str(row.get("fixture_id") or "") for row in rows if row.get("fixture_id")}),
+            "sources": {source: _aggregate_total_shared(rows, source) for source in sources},
+        }
+
     return {
         "tracking_method": (
             "Latest genuine pre-kickoff probabilities persisted in a permanent per-fixture archive, with older gaps "
@@ -464,6 +623,11 @@ def build_accuracy_summary(history: list[dict[str, Any]]) -> dict[str, Any]:
         "coverage_end": dates[-1] if dates else None,
         "overall": overall,
         "comparisons": comparisons,
+        "goal_totals": {
+            "primary_metric": "Binary Brier score across frozen over/under lines (lower is better)",
+            "overall": totals_overall,
+            "comparisons": totals_comparisons,
+        },
     }
 
 
@@ -486,6 +650,8 @@ def attach_postgame_analysis(
             "actual": record.get("actual"),
             "sources": record.get("sources"),
             "scores": record.get("scores"),
+            "goal_totals": record.get("goal_totals"),
+            "totals_scores": record.get("totals_scores"),
             "market_refs": record.get("market_refs"),
             "source_captured_at": record.get("source_captured_at"),
             "archive": record.get("archive"),

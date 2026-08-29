@@ -1,0 +1,14 @@
+app/app.js
+app/styles.css
+predictor/archive.py
+predictor/config.py
+predictor/goal_totals.py
+predictor/history.py
+predictor/kalshi.py
+predictor/output.py
+predictor/polymarket.py
+predictor/run.py
+tests/test_goal_totals.py
+tests/test_prediction_archive.py
+README-GOAL-TOTALS-ACCESSIBILITY.md
+PATCH-MANIFEST.txt
