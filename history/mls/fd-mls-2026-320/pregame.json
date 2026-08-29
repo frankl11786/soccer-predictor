@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "inter-miami-cf",
   "away": "cf-montréal",
-  "captured_at": "2026-08-29T09:27:40Z",
+  "captured_at": "2026-08-29T11:12:27Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-mia-mim-2026-08-29",
       "event_slug": "mls-mia-mim-2026-08-29",
-      "updated_at": "2026-08-29T09:27:20Z"
+      "updated_at": "2026-08-29T11:12:01Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29miamtl",
@@ -45,10 +45,10 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T09:27:40Z",
-    "polymarket": "2026-08-29T09:27:40Z",
-    "kalshi": "2026-08-29T09:27:40Z",
-    "consensus": "2026-08-29T09:27:40Z"
+    "model": "2026-08-29T11:12:27Z",
+    "polymarket": "2026-08-29T11:12:27Z",
+    "kalshi": "2026-08-29T11:12:27Z",
+    "consensus": "2026-08-29T11:12:27Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T09:27:40Z"
+    "updated_at": "2026-08-29T11:12:27Z"
   },
   "locked": false,
   "goal_totals": {
@@ -138,13 +138,13 @@
           "under": 0.425,
           "bid": 0.57,
           "ask": 0.58,
-          "last": 0.57,
+          "last": 0.58,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26AUG29MIAMTL-4",
-          "volume": 1928.15,
-          "volume_24h": 514.83,
-          "open_interest": 1561.44
+          "volume": 1944.89,
+          "volume_24h": 531.57,
+          "open_interest": 1578.18
         },
         "4.5": {
           "over": 0.385,
@@ -168,9 +168,9 @@
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26AUG29MIAMTL-6",
-          "volume": 1029.67,
-          "volume_24h": 434.31,
-          "open_interest": 1026.23
+          "volume": 1096.3,
+          "volume_24h": 500.94,
+          "open_interest": 1092.86
         }
       },
       "event_ticker": "KXMLSTOTAL-26AUG29MIAMTL",
@@ -178,9 +178,9 @@
       "event_url": "https://kalshi.com/markets/kxmlstotal/",
       "kickoff": "2026-08-30T03:30:00+00:00",
       "liquidity": 0.0,
-      "volume": 16568.26,
-      "volume_24h": 5906.38,
-      "open_interest": 13702.8,
+      "volume": 16651.63,
+      "volume_24h": 5989.75,
+      "open_interest": 13786.17,
       "updated_at": "2026-08-23T02:41:06.375767Z",
       "comparison_only": true,
       "over": {
@@ -250,9 +250,9 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T09:27:40Z",
-    "kalshi": "2026-08-29T09:27:40Z",
-    "consensus": "2026-08-29T09:27:40Z"
+    "model": "2026-08-29T11:12:27Z",
+    "kalshi": "2026-08-29T11:12:27Z",
+    "consensus": "2026-08-29T11:12:27Z"
   },
   "xg_home": 3.311,
   "xg_away": 1.317

@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "everton",
   "away": "manchester-united",
-  "captured_at": "2026-08-29T09:33:12Z",
+  "captured_at": "2026-08-29T11:14:44Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-eve-mun-2026-09-06",
       "event_slug": "epl-eve-mun-2026-09-06",
-      "updated_at": "2026-08-29T09:33:02Z"
+      "updated_at": "2026-08-29T11:14:38Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep06evemun",
@@ -27,28 +27,28 @@
       "away": 0.41935
     },
     "polymarket": {
-      "home": 0.31068,
-      "draw": 0.271845,
-      "away": 0.417476
+      "home": 0.312195,
+      "draw": 0.268293,
+      "away": 0.419512
     },
     "kalshi": {
-      "home": 0.310345,
-      "draw": 0.26601,
-      "away": 0.423645
+      "home": 0.30303,
+      "draw": 0.267677,
+      "away": 0.429293
     },
     "consensus": {
-      "home": 0.310512,
-      "draw": 0.268927,
-      "away": 0.420561
+      "home": 0.307613,
+      "draw": 0.267985,
+      "away": 0.424403
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T09:33:12Z",
-    "polymarket": "2026-08-29T09:33:12Z",
-    "kalshi": "2026-08-29T09:33:12Z",
-    "consensus": "2026-08-29T09:33:12Z"
+    "model": "2026-08-29T11:14:44Z",
+    "polymarket": "2026-08-29T11:14:44Z",
+    "kalshi": "2026-08-29T11:14:44Z",
+    "consensus": "2026-08-29T11:14:44Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-29T09:33:12Z"
+    "updated_at": "2026-08-29T11:14:44Z"
   },
   "locked": false,
   "goal_totals": {
@@ -93,7 +93,7 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T09:33:12Z"
+    "model": "2026-08-29T11:14:44Z"
   },
   "xg_home": 1.587,
   "xg_away": 1.743

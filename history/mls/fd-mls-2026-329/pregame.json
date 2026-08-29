@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "portland-timbers",
   "away": "austin-fc",
-  "captured_at": "2026-08-29T09:27:40Z",
+  "captured_at": "2026-08-29T11:12:27Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-por-aus-2026-08-29",
       "event_slug": "mls-por-aus-2026-08-29",
-      "updated_at": "2026-08-29T09:27:22Z"
+      "updated_at": "2026-08-29T11:12:04Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29poratx",
@@ -32,23 +32,23 @@
       "away": 0.192118
     },
     "kalshi": {
-      "home": 0.61194,
-      "draw": 0.20398,
-      "away": 0.18408
+      "home": 0.61809,
+      "draw": 0.19598,
+      "away": 0.18593
     },
     "consensus": {
-      "home": 0.608926,
-      "draw": 0.202975,
-      "away": 0.188099
+      "home": 0.612001,
+      "draw": 0.198975,
+      "away": 0.189024
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T09:27:40Z",
-    "polymarket": "2026-08-29T09:27:40Z",
-    "kalshi": "2026-08-29T09:27:40Z",
-    "consensus": "2026-08-29T09:27:40Z"
+    "model": "2026-08-29T11:12:27Z",
+    "polymarket": "2026-08-29T11:12:27Z",
+    "kalshi": "2026-08-29T11:12:27Z",
+    "consensus": "2026-08-29T11:12:27Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T09:27:40Z"
+    "updated_at": "2026-08-29T11:12:27Z"
   },
   "locked": false,
   "goal_totals": {
@@ -108,12 +108,12 @@
           "open_interest": 1063.24
         },
         "1.5": {
-          "over": 0.855,
-          "under": 0.145,
+          "over": 0.86,
+          "under": 0.14,
           "bid": 0.85,
-          "ask": 0.86,
+          "ask": 0.87,
           "last": 0.85,
-          "spread": 0.01,
+          "spread": 0.02,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26AUG29PORATX-2",
           "volume": 183.9,
@@ -138,13 +138,13 @@
           "under": 0.555,
           "bid": 0.44,
           "ask": 0.45,
-          "last": 0.44,
+          "last": 0.45,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26AUG29PORATX-4",
-          "volume": 433.07,
-          "volume_24h": 432.53,
-          "open_interest": 433.07
+          "volume": 454.44,
+          "volume_24h": 453.9,
+          "open_interest": 454.44
         },
         "4.5": {
           "over": 0.245,
@@ -178,14 +178,14 @@
       "event_url": "https://kalshi.com/markets/kxmlstotal/",
       "kickoff": "2026-08-30T06:30:00+00:00",
       "liquidity": 0.0,
-      "volume": 4427.16,
-      "volume_24h": 2817.82,
-      "open_interest": 4346.96,
+      "volume": 4448.53,
+      "volume_24h": 2839.19,
+      "open_interest": 4368.33,
       "updated_at": "2026-08-23T04:40:41.355142Z",
       "comparison_only": true,
       "over": {
         "0.5": 0.965,
-        "1.5": 0.855,
+        "1.5": 0.86,
         "2.5": 0.655,
         "3.5": 0.445,
         "4.5": 0.245,
@@ -193,7 +193,7 @@
       },
       "under": {
         "0.5": 0.035,
-        "1.5": 0.145,
+        "1.5": 0.14,
         "2.5": 0.345,
         "3.5": 0.555,
         "4.5": 0.755,
@@ -203,7 +203,7 @@
     "consensus": {
       "model_edge": {
         "0.5": 0.007013,
-        "1.5": 0.01693,
+        "1.5": 0.01193,
         "2.5": 0.037981,
         "3.5": 0.034675,
         "4.5": 0.043978,
@@ -233,7 +233,7 @@
       "comparison_only": true,
       "over": {
         "0.5": 0.965,
-        "1.5": 0.855,
+        "1.5": 0.86,
         "2.5": 0.655,
         "3.5": 0.445,
         "4.5": 0.245,
@@ -241,7 +241,7 @@
       },
       "under": {
         "0.5": 0.035,
-        "1.5": 0.145,
+        "1.5": 0.14,
         "2.5": 0.345,
         "3.5": 0.555,
         "4.5": 0.755,
@@ -250,9 +250,9 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T09:27:40Z",
-    "kalshi": "2026-08-29T09:27:40Z",
-    "consensus": "2026-08-29T09:27:40Z"
+    "model": "2026-08-29T11:12:27Z",
+    "kalshi": "2026-08-29T11:12:27Z",
+    "consensus": "2026-08-29T11:12:27Z"
   },
   "xg_home": 2.395,
   "xg_away": 1.181

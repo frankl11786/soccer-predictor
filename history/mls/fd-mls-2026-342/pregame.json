@@ -6,7 +6,7 @@
   "round": "Regular Season - 24",
   "home": "la-galaxy",
   "away": "new-england-revolution",
-  "captured_at": "2026-08-29T09:27:40Z",
+  "captured_at": "2026-08-29T11:12:27Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -23,22 +23,22 @@
       "away": 0.395634
     },
     "kalshi": {
-      "home": 0.474747,
+      "home": 0.479798,
       "draw": 0.242424,
-      "away": 0.282828
+      "away": 0.277778
     },
     "consensus": {
-      "home": 0.474747,
+      "home": 0.479798,
       "draw": 0.242424,
-      "away": 0.282828
+      "away": 0.277778
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T09:27:40Z",
-    "kalshi": "2026-08-29T09:27:40Z",
-    "consensus": "2026-08-29T09:27:40Z"
+    "model": "2026-08-29T11:12:27Z",
+    "kalshi": "2026-08-29T11:12:27Z",
+    "consensus": "2026-08-29T11:12:27Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -48,7 +48,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T09:27:40Z"
+    "updated_at": "2026-08-29T11:12:27Z"
   },
   "locked": false,
   "goal_totals": {
@@ -83,7 +83,7 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T09:27:40Z"
+    "model": "2026-08-29T11:12:27Z"
   },
   "xg_home": 1.598,
   "xg_away": 1.64

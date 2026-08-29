@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "colorado-rapids",
   "away": "real-salt-lake",
-  "captured_at": "2026-08-29T09:27:40Z",
+  "captured_at": "2026-08-29T11:12:27Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-col-rsl-2026-08-29",
       "event_slug": "mls-col-rsl-2026-08-29",
-      "updated_at": "2026-08-29T09:27:22Z"
+      "updated_at": "2026-08-29T11:12:03Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29colrsl",
@@ -45,10 +45,10 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T09:27:40Z",
-    "polymarket": "2026-08-29T09:27:40Z",
-    "kalshi": "2026-08-29T09:27:40Z",
-    "consensus": "2026-08-29T09:27:40Z"
+    "model": "2026-08-29T11:12:27Z",
+    "polymarket": "2026-08-29T11:12:27Z",
+    "kalshi": "2026-08-29T11:12:27Z",
+    "consensus": "2026-08-29T11:12:27Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T09:27:40Z"
+    "updated_at": "2026-08-29T11:12:27Z"
   },
   "locked": false,
   "goal_totals": {
@@ -125,13 +125,13 @@
           "under": 0.415,
           "bid": 0.58,
           "ask": 0.59,
-          "last": 0.59,
+          "last": 0.58,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26AUG29COLRSL-3",
-          "volume": 356.76,
-          "volume_24h": 0.0,
-          "open_interest": 211.11
+          "volume": 379.63,
+          "volume_24h": 22.87,
+          "open_interest": 233.98
         },
         "3.5": {
           "over": 0.365,
@@ -178,9 +178,9 @@
       "event_url": "https://kalshi.com/markets/kxmlstotal/",
       "kickoff": "2026-08-30T05:30:00+00:00",
       "liquidity": 0.0,
-      "volume": 1706.96,
-      "volume_24h": 29.04,
-      "open_interest": 869.41,
+      "volume": 1729.83,
+      "volume_24h": 51.91,
+      "open_interest": 892.28,
       "updated_at": "2026-08-23T02:41:31.704189Z",
       "comparison_only": true,
       "over": {
@@ -250,9 +250,9 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T09:27:40Z",
-    "kalshi": "2026-08-29T09:27:40Z",
-    "consensus": "2026-08-29T09:27:40Z"
+    "model": "2026-08-29T11:12:27Z",
+    "kalshi": "2026-08-29T11:12:27Z",
+    "consensus": "2026-08-29T11:12:27Z"
   },
   "xg_home": 0.948,
   "xg_away": 1.492

@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "nashville-sc",
   "away": "fc-cincinnati",
-  "captured_at": "2026-08-29T09:27:40Z",
+  "captured_at": "2026-08-29T11:12:27Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-nas-fcc-2026-08-29",
       "event_slug": "mls-nas-fcc-2026-08-29",
-      "updated_at": "2026-08-29T09:27:22Z"
+      "updated_at": "2026-08-29T11:12:03Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29nshcin",
@@ -45,10 +45,10 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T09:27:40Z",
-    "polymarket": "2026-08-29T09:27:40Z",
-    "kalshi": "2026-08-29T09:27:40Z",
-    "consensus": "2026-08-29T09:27:40Z"
+    "model": "2026-08-29T11:12:27Z",
+    "polymarket": "2026-08-29T11:12:27Z",
+    "kalshi": "2026-08-29T11:12:27Z",
+    "consensus": "2026-08-29T11:12:27Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T09:27:40Z"
+    "updated_at": "2026-08-29T11:12:27Z"
   },
   "locked": false,
   "goal_totals": {
@@ -138,13 +138,13 @@
           "under": 0.585,
           "bid": 0.41,
           "ask": 0.42,
-          "last": 0.41,
+          "last": 0.42,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26AUG29NSHCIN-4",
-          "volume": 36.0,
-          "volume_24h": 6.0,
-          "open_interest": 36.0
+          "volume": 58.87,
+          "volume_24h": 28.87,
+          "open_interest": 58.87
         },
         "4.5": {
           "over": 0.235,
@@ -160,17 +160,17 @@
           "open_interest": 164.48
         },
         "5.5": {
-          "over": 0.105,
-          "under": 0.895,
-          "bid": 0.1,
-          "ask": 0.11,
-          "last": 0.1,
+          "over": 0.115,
+          "under": 0.885,
+          "bid": 0.11,
+          "ask": 0.12,
+          "last": 0.11,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26AUG29NSHCIN-6",
-          "volume": 124.01,
-          "volume_24h": 124.01,
-          "open_interest": 124.01
+          "volume": 182.01,
+          "volume_24h": 182.01,
+          "open_interest": 182.01
         }
       },
       "event_ticker": "KXMLSTOTAL-26AUG29NSHCIN",
@@ -178,9 +178,9 @@
       "event_url": "https://kalshi.com/markets/kxmlstotal/",
       "kickoff": "2026-08-30T04:30:00+00:00",
       "liquidity": 0.0,
-      "volume": 5479.51,
-      "volume_24h": 229.17,
-      "open_interest": 4285.51,
+      "volume": 5560.38,
+      "volume_24h": 310.04,
+      "open_interest": 4366.38,
       "updated_at": "2026-08-23T02:41:29.311355Z",
       "comparison_only": true,
       "over": {
@@ -189,7 +189,7 @@
         "2.5": 0.635,
         "3.5": 0.415,
         "4.5": 0.235,
-        "5.5": 0.105
+        "5.5": 0.115
       },
       "under": {
         "0.5": 0.035,
@@ -197,7 +197,7 @@
         "2.5": 0.365,
         "3.5": 0.585,
         "4.5": 0.765,
-        "5.5": 0.895
+        "5.5": 0.885
       }
     },
     "consensus": {
@@ -207,7 +207,7 @@
         "2.5": 0.031202,
         "3.5": 0.033407,
         "4.5": 0.026594,
-        "5.5": 0.028403
+        "5.5": 0.018403
       },
       "sources_by_line": {
         "0.5": [
@@ -237,7 +237,7 @@
         "2.5": 0.635,
         "3.5": 0.415,
         "4.5": 0.235,
-        "5.5": 0.105
+        "5.5": 0.115
       },
       "under": {
         "0.5": 0.035,
@@ -245,14 +245,14 @@
         "2.5": 0.365,
         "3.5": 0.585,
         "4.5": 0.765,
-        "5.5": 0.895
+        "5.5": 0.885
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T09:27:40Z",
-    "kalshi": "2026-08-29T09:27:40Z",
-    "consensus": "2026-08-29T09:27:40Z"
+    "model": "2026-08-29T11:12:27Z",
+    "kalshi": "2026-08-29T11:12:27Z",
+    "consensus": "2026-08-29T11:12:27Z"
   },
   "xg_home": 2.465,
   "xg_away": 0.966

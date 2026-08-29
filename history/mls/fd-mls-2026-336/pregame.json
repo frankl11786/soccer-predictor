@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "inter-miami-cf",
   "away": "atlanta-united",
-  "captured_at": "2026-08-29T09:27:40Z",
+  "captured_at": "2026-08-29T11:12:27Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-mia-atl-2026-09-05",
       "event_slug": "mls-mia-atl-2026-09-05",
-      "updated_at": "2026-08-29T09:27:24Z"
+      "updated_at": "2026-08-29T11:12:06Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05miaatl",
@@ -27,28 +27,28 @@
       "away": 0.08006
     },
     "polymarket": {
-      "home": 0.704082,
-      "draw": 0.163265,
-      "away": 0.132653
+      "home": 0.703518,
+      "draw": 0.165829,
+      "away": 0.130653
     },
     "kalshi": {
-      "home": 0.710659,
-      "draw": 0.162437,
-      "away": 0.126904
+      "home": 0.70707,
+      "draw": 0.166667,
+      "away": 0.126263
     },
     "consensus": {
-      "home": 0.707371,
-      "draw": 0.162851,
-      "away": 0.129778
+      "home": 0.705294,
+      "draw": 0.166248,
+      "away": 0.128458
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T09:27:40Z",
-    "polymarket": "2026-08-29T09:27:40Z",
-    "kalshi": "2026-08-29T09:27:40Z",
-    "consensus": "2026-08-29T09:27:40Z"
+    "model": "2026-08-29T11:12:27Z",
+    "polymarket": "2026-08-29T11:12:27Z",
+    "kalshi": "2026-08-29T11:12:27Z",
+    "consensus": "2026-08-29T11:12:27Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T09:27:40Z"
+    "updated_at": "2026-08-29T11:12:27Z"
   },
   "locked": false,
   "goal_totals": {
@@ -93,7 +93,7 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T09:27:40Z"
+    "model": "2026-08-29T11:12:27Z"
   },
   "xg_home": 3.552,
   "xg_away": 0.846

@@ -6,13 +6,13 @@
   "round": "Regular Season - 2",
   "home": "chelsea",
   "away": "brighton-and-hove-albion",
-  "captured_at": "2026-08-29T09:33:12Z",
+  "captured_at": "2026-08-29T11:14:44Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-che-bri-2026-08-30",
       "event_slug": "epl-che-bri-2026-08-30",
-      "updated_at": "2026-08-29T09:32:58Z"
+      "updated_at": "2026-08-29T11:14:35Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug30cfcbri",
@@ -27,9 +27,9 @@
       "away": 0.37385
     },
     "polymarket": {
-      "home": 0.527638,
-      "draw": 0.246231,
-      "away": 0.226131
+      "home": 0.532338,
+      "draw": 0.243781,
+      "away": 0.223881
     },
     "kalshi": {
       "home": 0.536946,
@@ -37,18 +37,18 @@
       "away": 0.221675
     },
     "consensus": {
-      "home": 0.532292,
-      "draw": 0.243805,
-      "away": 0.223903
+      "home": 0.534642,
+      "draw": 0.24258,
+      "away": 0.222778
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T09:33:12Z",
-    "polymarket": "2026-08-29T09:33:12Z",
-    "kalshi": "2026-08-29T09:33:12Z",
-    "consensus": "2026-08-29T09:33:12Z"
+    "model": "2026-08-29T11:14:44Z",
+    "polymarket": "2026-08-29T11:14:44Z",
+    "kalshi": "2026-08-29T11:14:44Z",
+    "consensus": "2026-08-29T11:14:44Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-29T09:33:12Z"
+    "updated_at": "2026-08-29T11:14:44Z"
   },
   "locked": false,
   "goal_totals": {
@@ -130,7 +130,7 @@
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30CFCBRI-3",
           "volume": 5571.45,
-          "volume_24h": 1830.67,
+          "volume_24h": 1668.55,
           "open_interest": 4896.94
         },
         "3.5": {
@@ -179,7 +179,7 @@
       "kickoff": "2026-08-30T17:00:00+00:00",
       "liquidity": 0.0,
       "volume": 13278.55,
-      "volume_24h": 2889.86,
+      "volume_24h": 2727.74,
       "open_interest": 12594.96,
       "updated_at": "2026-08-23T14:25:41.903245Z",
       "comparison_only": true,
@@ -250,9 +250,9 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T09:33:12Z",
-    "kalshi": "2026-08-29T09:33:12Z",
-    "consensus": "2026-08-29T09:33:12Z"
+    "model": "2026-08-29T11:14:44Z",
+    "kalshi": "2026-08-29T11:14:44Z",
+    "consensus": "2026-08-29T11:14:44Z"
   },
   "xg_home": 0.939,
   "xg_away": 1.051
