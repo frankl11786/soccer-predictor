@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "seattle-sounders-fc",
   "away": "red-bull-new-york",
-  "captured_at": "2026-08-29T08:17:30Z",
+  "captured_at": "2026-08-29T09:27:40Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-sea-nyr-2026-09-05",
       "event_slug": "mls-sea-nyr-2026-09-05",
-      "updated_at": "2026-08-29T08:17:17Z"
+      "updated_at": "2026-08-29T09:27:26Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05seanyrb",
@@ -32,23 +32,23 @@
       "away": 0.242574
     },
     "kalshi": {
-      "home": 0.54359,
-      "draw": 0.210256,
-      "away": 0.246154
+      "home": 0.540816,
+      "draw": 0.214286,
+      "away": 0.244898
     },
     "consensus": {
-      "home": 0.539122,
-      "draw": 0.216514,
-      "away": 0.244364
+      "home": 0.537735,
+      "draw": 0.218529,
+      "away": 0.243736
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T08:17:30Z",
-    "polymarket": "2026-08-29T08:17:30Z",
-    "kalshi": "2026-08-29T08:17:30Z",
-    "consensus": "2026-08-29T08:17:30Z"
+    "model": "2026-08-29T09:27:40Z",
+    "polymarket": "2026-08-29T09:27:40Z",
+    "kalshi": "2026-08-29T09:27:40Z",
+    "consensus": "2026-08-29T09:27:40Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T08:17:30Z"
+    "updated_at": "2026-08-29T09:27:40Z"
   },
   "locked": false,
   "goal_totals": {
@@ -93,7 +93,7 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T08:17:30Z"
+    "model": "2026-08-29T09:27:40Z"
   },
   "xg_home": 1.926,
   "xg_away": 0.761

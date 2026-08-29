@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "inter-miami-cf",
   "away": "atlanta-united",
-  "captured_at": "2026-08-29T08:17:30Z",
+  "captured_at": "2026-08-29T09:27:40Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-mia-atl-2026-09-05",
       "event_slug": "mls-mia-atl-2026-09-05",
-      "updated_at": "2026-08-29T08:17:15Z"
+      "updated_at": "2026-08-29T09:27:24Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05miaatl",
@@ -27,9 +27,9 @@
       "away": 0.08006
     },
     "polymarket": {
-      "home": 0.700507,
-      "draw": 0.167513,
-      "away": 0.13198
+      "home": 0.704082,
+      "draw": 0.163265,
+      "away": 0.132653
     },
     "kalshi": {
       "home": 0.710659,
@@ -37,18 +37,18 @@
       "away": 0.126904
     },
     "consensus": {
-      "home": 0.705583,
-      "draw": 0.164975,
-      "away": 0.129442
+      "home": 0.707371,
+      "draw": 0.162851,
+      "away": 0.129778
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T08:17:30Z",
-    "polymarket": "2026-08-29T08:17:30Z",
-    "kalshi": "2026-08-29T08:17:30Z",
-    "consensus": "2026-08-29T08:17:30Z"
+    "model": "2026-08-29T09:27:40Z",
+    "polymarket": "2026-08-29T09:27:40Z",
+    "kalshi": "2026-08-29T09:27:40Z",
+    "consensus": "2026-08-29T09:27:40Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T08:17:30Z"
+    "updated_at": "2026-08-29T09:27:40Z"
   },
   "locked": false,
   "goal_totals": {
@@ -93,7 +93,7 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T08:17:30Z"
+    "model": "2026-08-29T09:27:40Z"
   },
   "xg_home": 3.552,
   "xg_away": 0.846

@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "arsenal",
   "away": "chelsea",
-  "captured_at": "2026-08-29T08:21:42Z",
+  "captured_at": "2026-08-29T09:33:12Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-ars-che-2026-09-06",
       "event_slug": "epl-ars-che-2026-09-06",
-      "updated_at": "2026-08-29T08:21:37Z"
+      "updated_at": "2026-08-29T09:33:02Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep06arscfc",
@@ -45,10 +45,10 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T08:21:42Z",
-    "polymarket": "2026-08-29T08:21:42Z",
-    "kalshi": "2026-08-29T08:21:42Z",
-    "consensus": "2026-08-29T08:21:42Z"
+    "model": "2026-08-29T09:33:12Z",
+    "polymarket": "2026-08-29T09:33:12Z",
+    "kalshi": "2026-08-29T09:33:12Z",
+    "consensus": "2026-08-29T09:33:12Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-29T08:21:42Z"
+    "updated_at": "2026-08-29T09:33:12Z"
   },
   "locked": false,
   "goal_totals": {
@@ -93,7 +93,7 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T08:21:42Z"
+    "model": "2026-08-29T09:33:12Z"
   },
   "xg_home": 1.886,
   "xg_away": 0.334

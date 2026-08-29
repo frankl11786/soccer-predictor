@@ -6,13 +6,13 @@
   "round": "Regular Season - 2",
   "home": "sunderland",
   "away": "fulham",
-  "captured_at": "2026-08-29T08:21:42Z",
+  "captured_at": "2026-08-29T09:33:12Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-sun-ful-2026-08-30",
       "event_slug": "epl-sun-ful-2026-08-30",
-      "updated_at": "2026-08-29T08:21:34Z"
+      "updated_at": "2026-08-29T09:32:58Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug30sunful",
@@ -45,10 +45,10 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T08:21:42Z",
-    "polymarket": "2026-08-29T08:21:42Z",
-    "kalshi": "2026-08-29T08:21:42Z",
-    "consensus": "2026-08-29T08:21:42Z"
+    "model": "2026-08-29T09:33:12Z",
+    "polymarket": "2026-08-29T09:33:12Z",
+    "kalshi": "2026-08-29T09:33:12Z",
+    "consensus": "2026-08-29T09:33:12Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-29T08:21:42Z"
+    "updated_at": "2026-08-29T09:33:12Z"
   },
   "locked": false,
   "goal_totals": {
@@ -129,9 +129,9 @@
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30SUNFUL-3",
-          "volume": 5131.41,
-          "volume_24h": 4872.93,
-          "open_interest": 5099.22
+          "volume": 5156.02,
+          "volume_24h": 4897.54,
+          "open_interest": 5123.83
         },
         "3.5": {
           "over": 0.255,
@@ -178,9 +178,9 @@
       "event_url": "https://kalshi.com/markets/kxepltotal/",
       "kickoff": "2026-08-30T17:00:00+00:00",
       "liquidity": 0.0,
-      "volume": 5752.5,
-      "volume_24h": 5463.92,
-      "open_interest": 5720.31,
+      "volume": 5777.11,
+      "volume_24h": 5488.53,
+      "open_interest": 5744.92,
       "updated_at": "2026-08-24T22:26:12.720377Z",
       "comparison_only": true,
       "over": {
@@ -250,9 +250,9 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T08:21:42Z",
-    "kalshi": "2026-08-29T08:21:42Z",
-    "consensus": "2026-08-29T08:21:42Z"
+    "model": "2026-08-29T09:33:12Z",
+    "kalshi": "2026-08-29T09:33:12Z",
+    "consensus": "2026-08-29T09:33:12Z"
   },
   "xg_home": 0.904,
   "xg_away": 1.066

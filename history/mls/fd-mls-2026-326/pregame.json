@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "sporting-kansas-city",
   "away": "vancouver-whitecaps-fc",
-  "captured_at": "2026-08-29T08:17:30Z",
+  "captured_at": "2026-08-29T09:27:40Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-skc-vwh-2026-08-29",
       "event_slug": "mls-skc-vwh-2026-08-29",
-      "updated_at": "2026-08-29T08:17:12Z"
+      "updated_at": "2026-08-29T09:27:21Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29skcvan",
@@ -27,28 +27,28 @@
       "away": 0.87451
     },
     "polymarket": {
-      "home": 0.145,
-      "draw": 0.18,
-      "away": 0.675
+      "home": 0.144279,
+      "draw": 0.18408,
+      "away": 0.671641
     },
     "kalshi": {
-      "home": 0.141414,
-      "draw": 0.176768,
-      "away": 0.681818
+      "home": 0.144279,
+      "draw": 0.174129,
+      "away": 0.681592
     },
     "consensus": {
-      "home": 0.143207,
-      "draw": 0.178384,
-      "away": 0.678409
+      "home": 0.144279,
+      "draw": 0.179104,
+      "away": 0.676617
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T08:17:30Z",
-    "polymarket": "2026-08-29T08:17:30Z",
-    "kalshi": "2026-08-29T08:17:30Z",
-    "consensus": "2026-08-29T08:17:30Z"
+    "model": "2026-08-29T09:27:40Z",
+    "polymarket": "2026-08-29T09:27:40Z",
+    "kalshi": "2026-08-29T09:27:40Z",
+    "consensus": "2026-08-29T09:27:40Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T08:17:30Z"
+    "updated_at": "2026-08-29T09:27:40Z"
   },
   "locked": false,
   "goal_totals": {
@@ -250,9 +250,9 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T08:17:30Z",
-    "kalshi": "2026-08-29T08:17:30Z",
-    "consensus": "2026-08-29T08:17:30Z"
+    "model": "2026-08-29T09:27:40Z",
+    "kalshi": "2026-08-29T09:27:40Z",
+    "consensus": "2026-08-29T09:27:40Z"
   },
   "xg_home": 0.731,
   "xg_away": 4.195
