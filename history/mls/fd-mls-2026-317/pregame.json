@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "atlanta-united",
   "away": "charlotte-fc",
-  "captured_at": "2026-08-28T16:37:27Z",
+  "captured_at": "2026-08-29T06:53:16Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-atl-clt-2026-08-29",
       "event_slug": "mls-atl-clt-2026-08-29",
-      "updated_at": "2026-08-28T16:37:07Z"
+      "updated_at": "2026-08-29T06:52:55Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29atlclt",
@@ -27,28 +27,28 @@
       "away": 0.47158
     },
     "polymarket": {
-      "home": 0.401015,
-      "draw": 0.258883,
-      "away": 0.340102
+      "home": 0.386935,
+      "draw": 0.256281,
+      "away": 0.356784
     },
     "kalshi": {
-      "home": 0.396985,
-      "draw": 0.256281,
-      "away": 0.346734
+      "home": 0.393035,
+      "draw": 0.253731,
+      "away": 0.353234
     },
     "consensus": {
-      "home": 0.399,
-      "draw": 0.257582,
-      "away": 0.343418
+      "home": 0.389985,
+      "draw": 0.255006,
+      "away": 0.355009
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-28T16:37:27Z",
-    "polymarket": "2026-08-28T16:37:27Z",
-    "kalshi": "2026-08-28T16:37:27Z",
-    "consensus": "2026-08-28T16:37:27Z"
+    "model": "2026-08-29T06:53:16Z",
+    "polymarket": "2026-08-29T06:53:16Z",
+    "kalshi": "2026-08-29T06:53:16Z",
+    "consensus": "2026-08-29T06:53:16Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-28T16:37:27Z"
+    "updated_at": "2026-08-29T06:53:16Z"
   },
   "locked": false
 }

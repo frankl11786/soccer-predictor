@@ -6,13 +6,13 @@
   "round": "Regular Season - 23",
   "home": "columbus-crew",
   "away": "new-england-revolution",
-  "captured_at": "2026-08-28T16:37:27Z",
+  "captured_at": "2026-08-29T06:53:16Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-clb-ner-2026-08-29",
       "event_slug": "mls-clb-ner-2026-08-29",
-      "updated_at": "2026-08-28T16:37:07Z"
+      "updated_at": "2026-08-29T06:52:55Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug29clbne",
@@ -27,28 +27,28 @@
       "away": 0.317283
     },
     "polymarket": {
-      "home": 0.487437,
-      "draw": 0.256281,
-      "away": 0.256281
+      "home": 0.47,
+      "draw": 0.255,
+      "away": 0.275
     },
     "kalshi": {
-      "home": 0.487437,
+      "home": 0.467337,
       "draw": 0.256281,
-      "away": 0.256281
+      "away": 0.276382
     },
     "consensus": {
-      "home": 0.487437,
-      "draw": 0.256281,
-      "away": 0.256281
+      "home": 0.468668,
+      "draw": 0.25564,
+      "away": 0.275691
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-28T16:37:27Z",
-    "polymarket": "2026-08-28T16:37:27Z",
-    "kalshi": "2026-08-28T16:37:27Z",
-    "consensus": "2026-08-28T16:37:27Z"
+    "model": "2026-08-29T06:53:16Z",
+    "polymarket": "2026-08-29T06:53:16Z",
+    "kalshi": "2026-08-29T06:53:16Z",
+    "consensus": "2026-08-29T06:53:16Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-28T16:37:27Z"
+    "updated_at": "2026-08-29T06:53:16Z"
   },
   "locked": false
 }

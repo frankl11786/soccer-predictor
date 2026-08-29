@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "newcastle-united",
   "away": "bournemouth",
-  "captured_at": "2026-08-28T16:36:03Z",
+  "captured_at": "2026-08-29T06:51:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-new-bou-2026-09-05",
       "event_slug": "epl-new-bou-2026-09-05",
-      "updated_at": "2026-08-28T16:35:51Z"
+      "updated_at": "2026-08-29T06:51:25Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep05newbou",
@@ -32,23 +32,23 @@
       "away": 0.334975
     },
     "kalshi": {
-      "home": 0.415385,
-      "draw": 0.246154,
-      "away": 0.338462
+      "home": 0.408163,
+      "draw": 0.260204,
+      "away": 0.331633
     },
     "consensus": {
-      "home": 0.414589,
-      "draw": 0.248693,
-      "away": 0.336719
+      "home": 0.410978,
+      "draw": 0.255718,
+      "away": 0.333304
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-28T16:36:03Z",
-    "polymarket": "2026-08-28T16:36:03Z",
-    "kalshi": "2026-08-28T16:36:03Z",
-    "consensus": "2026-08-28T16:36:03Z"
+    "model": "2026-08-29T06:51:30Z",
+    "polymarket": "2026-08-29T06:51:30Z",
+    "kalshi": "2026-08-29T06:51:30Z",
+    "consensus": "2026-08-29T06:51:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-28T16:36:03Z"
+    "updated_at": "2026-08-29T06:51:30Z"
   },
   "locked": false
 }

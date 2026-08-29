@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "hull-city",
   "away": "aston-villa",
-  "captured_at": "2026-08-28T16:36:03Z",
+  "captured_at": "2026-08-29T06:51:30Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-hul-ast-2026-09-05",
       "event_slug": "epl-hul-ast-2026-09-05",
-      "updated_at": "2026-08-28T16:35:53Z"
+      "updated_at": "2026-08-29T06:51:26Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep05hulavl",
@@ -27,28 +27,28 @@
       "away": 0.53131
     },
     "polymarket": {
-      "home": 0.238806,
-      "draw": 0.263682,
-      "away": 0.497512
+      "home": 0.237624,
+      "draw": 0.257426,
+      "away": 0.50495
     },
     "kalshi": {
-      "home": 0.238579,
-      "draw": 0.248731,
-      "away": 0.51269
+      "home": 0.235,
+      "draw": 0.25,
+      "away": 0.515
     },
     "consensus": {
-      "home": 0.238693,
-      "draw": 0.256207,
-      "away": 0.5051
+      "home": 0.236312,
+      "draw": 0.253713,
+      "away": 0.509975
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-28T16:36:03Z",
-    "polymarket": "2026-08-28T16:36:03Z",
-    "kalshi": "2026-08-28T16:36:03Z",
-    "consensus": "2026-08-28T16:36:03Z"
+    "model": "2026-08-29T06:51:30Z",
+    "polymarket": "2026-08-29T06:51:30Z",
+    "kalshi": "2026-08-29T06:51:30Z",
+    "consensus": "2026-08-29T06:51:30Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-28T16:36:03Z"
+    "updated_at": "2026-08-29T06:51:30Z"
   },
   "locked": false
 }

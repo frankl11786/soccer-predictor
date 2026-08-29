@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "philadelphia-union",
   "away": "cf-montréal",
-  "captured_at": "2026-08-28T16:37:27Z",
+  "captured_at": "2026-08-29T06:53:16Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-phi-mim-2026-09-05",
       "event_slug": "mls-phi-mim-2026-09-05",
-      "updated_at": "2026-08-28T16:37:14Z"
+      "updated_at": "2026-08-29T06:53:02Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05phimtl",
@@ -27,9 +27,9 @@
       "away": 0.16764
     },
     "polymarket": {
-      "home": 0.66,
-      "draw": 0.2,
-      "away": 0.14
+      "home": 0.668341,
+      "draw": 0.190955,
+      "away": 0.140704
     },
     "kalshi": {
       "home": 0.666666,
@@ -37,18 +37,18 @@
       "away": 0.136364
     },
     "consensus": {
-      "home": 0.663333,
-      "draw": 0.198485,
-      "away": 0.138182
+      "home": 0.667503,
+      "draw": 0.193963,
+      "away": 0.138534
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-28T16:37:27Z",
-    "polymarket": "2026-08-28T16:37:27Z",
-    "kalshi": "2026-08-28T16:37:27Z",
-    "consensus": "2026-08-28T16:37:27Z"
+    "model": "2026-08-29T06:53:16Z",
+    "polymarket": "2026-08-29T06:53:16Z",
+    "kalshi": "2026-08-29T06:53:16Z",
+    "consensus": "2026-08-29T06:53:16Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-28T16:37:27Z"
+    "updated_at": "2026-08-29T06:53:16Z"
   },
   "locked": false
 }

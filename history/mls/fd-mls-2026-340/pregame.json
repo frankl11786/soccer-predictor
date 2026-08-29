@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "austin-fc",
   "away": "san-jose-earthquakes",
-  "captured_at": "2026-08-28T16:37:27Z",
+  "captured_at": "2026-08-29T06:53:16Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-aus-sje-2026-09-05",
       "event_slug": "mls-aus-sje-2026-09-05",
-      "updated_at": "2026-08-28T16:37:14Z"
+      "updated_at": "2026-08-29T06:53:02Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05atxsj",
@@ -27,28 +27,28 @@
       "away": 0.5524
     },
     "polymarket": {
-      "home": 0.420792,
-      "draw": 0.237624,
-      "away": 0.341584
+      "home": 0.42233,
+      "draw": 0.237864,
+      "away": 0.339806
     },
     "kalshi": {
-      "home": 0.428571,
-      "draw": 0.241379,
-      "away": 0.330049
+      "home": 0.426471,
+      "draw": 0.245098,
+      "away": 0.328431
     },
     "consensus": {
-      "home": 0.424681,
-      "draw": 0.239502,
-      "away": 0.335816
+      "home": 0.4244,
+      "draw": 0.241481,
+      "away": 0.334118
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-28T16:37:27Z",
-    "polymarket": "2026-08-28T16:37:27Z",
-    "kalshi": "2026-08-28T16:37:27Z",
-    "consensus": "2026-08-28T16:37:27Z"
+    "model": "2026-08-29T06:53:16Z",
+    "polymarket": "2026-08-29T06:53:16Z",
+    "kalshi": "2026-08-29T06:53:16Z",
+    "consensus": "2026-08-29T06:53:16Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-28T16:37:27Z"
+    "updated_at": "2026-08-29T06:53:16Z"
   },
   "locked": false
 }
