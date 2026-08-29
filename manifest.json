@@ -1,0 +1,13 @@
+{
+  "name": "Touchline Forecast total-goals and accuracy update",
+  "date": "2026-08-29",
+  "files": [
+    "README_UPDATE.md",
+    "app/accuracy.html",
+    "app/goal-accuracy.css",
+    "app/goal-accuracy.js",
+    "predictor/goal_accuracy.py",
+    "scripts/apply_touchline_update.py",
+    "tests/test_goal_accuracy.py"
+  ]
+}
