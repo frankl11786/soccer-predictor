@@ -6,7 +6,7 @@
   "round": "Regular Season - 3",
   "home": "arsenal",
   "away": "chelsea",
-  "captured_at": "2026-08-29T06:51:30Z",
+  "captured_at": "2026-08-29T07:02:53.193638Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
@@ -45,10 +45,10 @@
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T06:51:30Z",
-    "polymarket": "2026-08-29T06:51:30Z",
-    "kalshi": "2026-08-29T06:51:30Z",
-    "consensus": "2026-08-29T06:51:30Z"
+    "model": "2026-08-29T07:02:53.193638Z",
+    "polymarket": "2026-08-29T07:02:53.193638Z",
+    "kalshi": "2026-08-29T07:02:53.193638Z",
+    "consensus": "2026-08-29T07:02:53.193638Z"
   },
   "provenance": {
     "type": "prediction_archive",

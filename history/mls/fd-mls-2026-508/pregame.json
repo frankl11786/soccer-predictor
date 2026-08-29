@@ -6,7 +6,7 @@
   "round": "Regular Season - 35",
   "home": "real-salt-lake",
   "away": "la-galaxy",
-  "captured_at": "2026-08-29T06:53:16Z",
+  "captured_at": "2026-08-29T07:02:54.161880Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -22,7 +22,7 @@
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T06:53:16Z"
+    "model": "2026-08-29T07:02:54.161880Z"
   },
   "provenance": {
     "type": "prediction_archive",
