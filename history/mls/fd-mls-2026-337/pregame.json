@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "orlando-city-sc",
   "away": "san-diego-fc",
-  "captured_at": "2026-08-29T11:12:27Z",
+  "captured_at": "2026-08-30T05:06:02Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-orl-sdg-2026-09-05",
       "event_slug": "mls-orl-sdg-2026-09-05",
-      "updated_at": "2026-08-29T11:12:07Z"
+      "updated_at": "2026-08-30T05:05:44Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05orlsd",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.25134,
-      "draw": 0.16903,
-      "away": 0.57963
+      "home": 0.27242,
+      "draw": 0.16855,
+      "away": 0.55903
     },
     "polymarket": {
-      "home": 0.482587,
-      "draw": 0.228856,
-      "away": 0.288557
+      "home": 0.479381,
+      "draw": 0.231959,
+      "away": 0.28866
     },
     "kalshi": {
-      "home": 0.485149,
-      "draw": 0.232673,
-      "away": 0.282178
+      "home": 0.472081,
+      "draw": 0.22335,
+      "away": 0.304569
     },
     "consensus": {
-      "home": 0.483868,
-      "draw": 0.230764,
-      "away": 0.285367
+      "home": 0.475731,
+      "draw": 0.227654,
+      "away": 0.296615
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T11:12:27Z",
-    "polymarket": "2026-08-29T11:12:27Z",
-    "kalshi": "2026-08-29T11:12:27Z",
-    "consensus": "2026-08-29T11:12:27Z"
+    "model": "2026-08-30T05:06:02Z",
+    "polymarket": "2026-08-30T05:06:02Z",
+    "kalshi": "2026-08-30T05:06:02Z",
+    "consensus": "2026-08-30T05:06:02Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,43 +58,202 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T11:12:27Z"
+    "updated_at": "2026-08-30T05:06:02Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 4.259,
+      "lambda": 4.39,
       "exact": {
-        "0": 0.014136,
-        "1": 0.060207,
-        "2": 0.128211,
-        "3": 0.182017,
-        "4": 0.193802,
-        "5": 0.165081,
-        "6+": 0.256546
+        "0": 0.012401,
+        "1": 0.054439,
+        "2": 0.119494,
+        "3": 0.17486,
+        "4": 0.191908,
+        "5": 0.168496,
+        "6+": 0.278402
       },
       "over": {
-        "0.5": 0.985864,
-        "1.5": 0.925657,
-        "2.5": 0.797446,
-        "3.5": 0.615429,
-        "4.5": 0.421626,
-        "5.5": 0.256546
+        "0.5": 0.987599,
+        "1.5": 0.93316,
+        "2.5": 0.813666,
+        "3.5": 0.638806,
+        "4.5": 0.446898,
+        "5.5": 0.278402
       },
       "under": {
-        "0.5": 0.014136,
-        "1.5": 0.074343,
-        "2.5": 0.202554,
-        "3.5": 0.384571,
-        "4.5": 0.578374,
-        "5.5": 0.743454
+        "0.5": 0.012401,
+        "1.5": 0.06684,
+        "2.5": 0.186334,
+        "3.5": 0.361194,
+        "4.5": 0.553102,
+        "5.5": 0.721598
+      }
+    },
+    "kalshi": {
+      "source": "Kalshi",
+      "lines": {
+        "0.5": {
+          "over": 0.955,
+          "under": 0.045,
+          "bid": 0.94,
+          "ask": 0.97,
+          "last": 0.95,
+          "spread": 0.03,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26SEP05ORLSD-1",
+          "volume": 60.0,
+          "volume_24h": 60.0,
+          "open_interest": 60.0
+        },
+        "1.5": {
+          "over": 0.885,
+          "under": 0.115,
+          "bid": 0.87,
+          "ask": 0.9,
+          "last": 0.0,
+          "spread": 0.03,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26SEP05ORLSD-2",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "2.5": {
+          "over": 0.71,
+          "under": 0.29,
+          "bid": 0.7,
+          "ask": 0.72,
+          "last": 0.0,
+          "spread": 0.02,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26SEP05ORLSD-3",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "3.5": {
+          "over": 0.5,
+          "under": 0.5,
+          "bid": 0.49,
+          "ask": 0.51,
+          "last": 0.52,
+          "spread": 0.02,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26SEP05ORLSD-4",
+          "volume": 193.0,
+          "volume_24h": 193.0,
+          "open_interest": 175.0
+        },
+        "4.5": {
+          "over": 0.31,
+          "under": 0.69,
+          "bid": 0.3,
+          "ask": 0.32,
+          "last": 0.0,
+          "spread": 0.02,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26SEP05ORLSD-5",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "5.5": {
+          "over": 0.165,
+          "under": 0.835,
+          "bid": 0.16,
+          "ask": 0.17,
+          "last": 0.0,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26SEP05ORLSD-6",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        }
+      },
+      "event_ticker": "KXMLSTOTAL-26SEP05ORLSD",
+      "event_title": "Orlando vs San Diego FC: Total Goals",
+      "event_url": "https://kalshi.com/markets/kxmlstotal/",
+      "kickoff": "2026-09-06T03:30:00+00:00",
+      "liquidity": 0.0,
+      "volume": 253.0,
+      "volume_24h": 253.0,
+      "open_interest": 235.0,
+      "updated_at": "2026-08-30T00:37:33.390908Z",
+      "comparison_only": true,
+      "over": {
+        "0.5": 0.955,
+        "1.5": 0.885,
+        "2.5": 0.71,
+        "3.5": 0.5,
+        "4.5": 0.31,
+        "5.5": 0.165
+      },
+      "under": {
+        "0.5": 0.045,
+        "1.5": 0.115,
+        "2.5": 0.29,
+        "3.5": 0.5,
+        "4.5": 0.69,
+        "5.5": 0.835
+      }
+    },
+    "consensus": {
+      "model_edge": {
+        "0.5": 0.032599,
+        "1.5": 0.04816,
+        "2.5": 0.103666,
+        "3.5": 0.138806,
+        "4.5": 0.136898,
+        "5.5": 0.113402
+      },
+      "sources_by_line": {
+        "0.5": [
+          "kalshi"
+        ],
+        "1.5": [
+          "kalshi"
+        ],
+        "2.5": [
+          "kalshi"
+        ],
+        "3.5": [
+          "kalshi"
+        ],
+        "4.5": [
+          "kalshi"
+        ],
+        "5.5": [
+          "kalshi"
+        ]
+      },
+      "method": "Equal-weight mean of available prediction-market over probabilities",
+      "comparison_only": true,
+      "over": {
+        "0.5": 0.955,
+        "1.5": 0.885,
+        "2.5": 0.71,
+        "3.5": 0.5,
+        "4.5": 0.31,
+        "5.5": 0.165
+      },
+      "under": {
+        "0.5": 0.045,
+        "1.5": 0.115,
+        "2.5": 0.29,
+        "3.5": 0.5,
+        "4.5": 0.69,
+        "5.5": 0.835
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T11:12:27Z"
+    "model": "2026-08-30T05:06:02Z",
+    "kalshi": "2026-08-30T05:06:02Z",
+    "consensus": "2026-08-30T05:06:02Z"
   },
-  "xg_home": 1.59,
-  "xg_away": 2.669
+  "xg_home": 1.72,
+  "xg_away": 2.67
 }

@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "new-york-city-fc",
   "away": "nashville-sc",
-  "captured_at": "2026-08-29T11:12:27Z",
+  "captured_at": "2026-08-30T05:06:02Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-nyc-nas-2026-09-04",
       "event_slug": "mls-nyc-nas-2026-09-04",
-      "updated_at": "2026-08-29T11:12:05Z"
+      "updated_at": "2026-08-30T05:05:42Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep04nycnsh",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.15861,
-      "draw": 0.20889,
-      "away": 0.6325
+      "home": 0.14505,
+      "draw": 0.20772,
+      "away": 0.64723
     },
     "polymarket": {
-      "home": 0.401961,
-      "draw": 0.254902,
-      "away": 0.343137
+      "home": 0.373737,
+      "draw": 0.257576,
+      "away": 0.368687
     },
     "kalshi": {
-      "home": 0.405,
-      "draw": 0.25,
-      "away": 0.345
+      "home": 0.383085,
+      "draw": 0.253731,
+      "away": 0.363184
     },
     "consensus": {
-      "home": 0.403481,
-      "draw": 0.252451,
-      "away": 0.344068
+      "home": 0.378411,
+      "draw": 0.255653,
+      "away": 0.365935
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T11:12:27Z",
-    "polymarket": "2026-08-29T11:12:27Z",
-    "kalshi": "2026-08-29T11:12:27Z",
-    "consensus": "2026-08-29T11:12:27Z"
+    "model": "2026-08-30T05:06:02Z",
+    "polymarket": "2026-08-30T05:06:02Z",
+    "kalshi": "2026-08-30T05:06:02Z",
+    "consensus": "2026-08-30T05:06:02Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,37 +58,37 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T11:12:27Z"
+    "updated_at": "2026-08-30T05:06:02Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 2.819,
+      "lambda": 2.76,
       "exact": {
-        "0": 0.059666,
-        "1": 0.168197,
-        "2": 0.237074,
-        "3": 0.222771,
-        "4": 0.156998,
-        "5": 0.088515,
-        "6+": 0.06678
+        "0": 0.063292,
+        "1": 0.174685,
+        "2": 0.241066,
+        "3": 0.22178,
+        "4": 0.153028,
+        "5": 0.084472,
+        "6+": 0.061677
       },
       "over": {
-        "0.5": 0.940334,
-        "1.5": 0.772137,
-        "2.5": 0.535063,
-        "3.5": 0.312293,
-        "4.5": 0.155295,
-        "5.5": 0.06678
+        "0.5": 0.936708,
+        "1.5": 0.762023,
+        "2.5": 0.520957,
+        "3.5": 0.299177,
+        "4.5": 0.146148,
+        "5.5": 0.061677
       },
       "under": {
-        "0.5": 0.059666,
-        "1.5": 0.227863,
-        "2.5": 0.464937,
-        "3.5": 0.687707,
-        "4.5": 0.844705,
-        "5.5": 0.93322
+        "0.5": 0.063292,
+        "1.5": 0.237977,
+        "2.5": 0.479043,
+        "3.5": 0.700823,
+        "4.5": 0.853852,
+        "5.5": 0.938323
       }
     },
     "kalshi": {
@@ -104,29 +104,29 @@
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP04NYCNSH-1",
           "volume": 38.0,
-          "volume_24h": 38.0,
+          "volume_24h": 0.0,
           "open_interest": 38.0
         },
         "1.5": {
-          "over": 0.785,
-          "under": 0.215,
-          "bid": 0.78,
-          "ask": 0.79,
-          "last": 0.0,
+          "over": 0.775,
+          "under": 0.225,
+          "bid": 0.77,
+          "ask": 0.78,
+          "last": 0.67,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP04NYCNSH-2",
-          "volume": 0.0,
-          "volume_24h": 0.0,
-          "open_interest": 0.0
+          "volume": 116.0,
+          "volume_24h": 116.0,
+          "open_interest": 116.0
         },
         "2.5": {
-          "over": 0.555,
-          "under": 0.445,
+          "over": 0.55,
+          "under": 0.45,
           "bid": 0.54,
-          "ask": 0.57,
+          "ask": 0.56,
           "last": 0.0,
-          "spread": 0.03,
+          "spread": 0.02,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP04NYCNSH-3",
           "volume": 0.0,
@@ -134,12 +134,12 @@
           "open_interest": 0.0
         },
         "3.5": {
-          "over": 0.315,
-          "under": 0.685,
+          "over": 0.32,
+          "under": 0.68,
           "bid": 0.31,
-          "ask": 0.32,
+          "ask": 0.33,
           "last": 0.0,
-          "spread": 0.01,
+          "spread": 0.02,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP04NYCNSH-4",
           "volume": 0.0,
@@ -147,17 +147,17 @@
           "open_interest": 0.0
         },
         "4.5": {
-          "over": 0.165,
-          "under": 0.835,
+          "over": 0.155,
+          "under": 0.845,
           "bid": 0.15,
-          "ask": 0.18,
-          "last": 0.0,
-          "spread": 0.03,
+          "ask": 0.16,
+          "last": 0.23,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP04NYCNSH-5",
-          "volume": 0.0,
-          "volume_24h": 0.0,
-          "open_interest": 0.0
+          "volume": 29.0,
+          "volume_24h": 29.0,
+          "open_interest": 29.0
         },
         "5.5": {
           "over": 0.07,
@@ -178,36 +178,36 @@
       "event_url": "https://kalshi.com/markets/kxmlstotal/",
       "kickoff": "2026-09-05T03:30:00+00:00",
       "liquidity": 0.0,
-      "volume": 38.0,
-      "volume_24h": 38.0,
-      "open_interest": 38.0,
+      "volume": 183.0,
+      "volume_24h": 145.0,
+      "open_interest": 183.0,
       "updated_at": "2026-08-29T00:40:54.833877Z",
       "comparison_only": true,
       "over": {
         "0.5": 0.94,
-        "1.5": 0.785,
-        "2.5": 0.555,
-        "3.5": 0.315,
-        "4.5": 0.165,
+        "1.5": 0.775,
+        "2.5": 0.55,
+        "3.5": 0.32,
+        "4.5": 0.155,
         "5.5": 0.07
       },
       "under": {
         "0.5": 0.06,
-        "1.5": 0.215,
-        "2.5": 0.445,
-        "3.5": 0.685,
-        "4.5": 0.835,
+        "1.5": 0.225,
+        "2.5": 0.45,
+        "3.5": 0.68,
+        "4.5": 0.845,
         "5.5": 0.93
       }
     },
     "consensus": {
       "model_edge": {
-        "0.5": 0.000334,
-        "1.5": -0.012863,
-        "2.5": -0.019937,
-        "3.5": -0.002707,
-        "4.5": -0.009705,
-        "5.5": -0.00322
+        "0.5": -0.003292,
+        "1.5": -0.012977,
+        "2.5": -0.029043,
+        "3.5": -0.020823,
+        "4.5": -0.008852,
+        "5.5": -0.008323
       },
       "sources_by_line": {
         "0.5": [
@@ -233,27 +233,27 @@
       "comparison_only": true,
       "over": {
         "0.5": 0.94,
-        "1.5": 0.785,
-        "2.5": 0.555,
-        "3.5": 0.315,
-        "4.5": 0.165,
+        "1.5": 0.775,
+        "2.5": 0.55,
+        "3.5": 0.32,
+        "4.5": 0.155,
         "5.5": 0.07
       },
       "under": {
         "0.5": 0.06,
-        "1.5": 0.215,
-        "2.5": 0.445,
-        "3.5": 0.685,
-        "4.5": 0.835,
+        "1.5": 0.225,
+        "2.5": 0.45,
+        "3.5": 0.68,
+        "4.5": 0.845,
         "5.5": 0.93
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T11:12:27Z",
-    "kalshi": "2026-08-29T11:12:27Z",
-    "consensus": "2026-08-29T11:12:27Z"
+    "model": "2026-08-30T05:06:02Z",
+    "kalshi": "2026-08-30T05:06:02Z",
+    "consensus": "2026-08-30T05:06:02Z"
   },
-  "xg_home": 0.785,
-  "xg_away": 2.034
+  "xg_home": 0.724,
+  "xg_away": 2.036
 }

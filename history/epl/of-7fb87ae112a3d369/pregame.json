@@ -6,13 +6,13 @@
   "round": "Regular Season - 2",
   "home": "chelsea",
   "away": "brighton-and-hove-albion",
-  "captured_at": "2026-08-29T11:14:44Z",
+  "captured_at": "2026-08-30T05:02:23Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-che-bri-2026-08-30",
       "event_slug": "epl-che-bri-2026-08-30",
-      "updated_at": "2026-08-29T11:14:35Z"
+      "updated_at": "2026-08-30T05:02:10Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug30cfcbri",
@@ -27,28 +27,28 @@
       "away": 0.37385
     },
     "polymarket": {
-      "home": 0.532338,
-      "draw": 0.243781,
-      "away": 0.223881
+      "home": 0.497487,
+      "draw": 0.246231,
+      "away": 0.256281
     },
     "kalshi": {
-      "home": 0.536946,
-      "draw": 0.241379,
-      "away": 0.221675
+      "home": 0.507538,
+      "draw": 0.246231,
+      "away": 0.246231
     },
     "consensus": {
-      "home": 0.534642,
-      "draw": 0.24258,
-      "away": 0.222778
+      "home": 0.502513,
+      "draw": 0.246231,
+      "away": 0.251256
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T11:14:44Z",
-    "polymarket": "2026-08-29T11:14:44Z",
-    "kalshi": "2026-08-29T11:14:44Z",
-    "consensus": "2026-08-29T11:14:44Z"
+    "model": "2026-08-30T05:02:23Z",
+    "polymarket": "2026-08-30T05:02:23Z",
+    "kalshi": "2026-08-30T05:02:23Z",
+    "consensus": "2026-08-30T05:02:23Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-29T11:14:44Z"
+    "updated_at": "2026-08-30T05:02:23Z"
   },
   "locked": false,
   "goal_totals": {
@@ -103,74 +103,74 @@
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30CFCBRI-1",
-          "volume": 890.35,
-          "volume_24h": 8.35,
-          "open_interest": 886.23
+          "volume": 11240.97,
+          "volume_24h": 10350.62,
+          "open_interest": 10120.85
         },
         "1.5": {
-          "over": 0.815,
-          "under": 0.185,
-          "bid": 0.81,
-          "ask": 0.82,
-          "last": 0.82,
+          "over": 0.825,
+          "under": 0.175,
+          "bid": 0.82,
+          "ask": 0.83,
+          "last": 0.83,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30CFCBRI-2",
-          "volume": 457.2,
-          "volume_24h": 455.28,
-          "open_interest": 456.24
+          "volume": 37579.85,
+          "volume_24h": 37122.65,
+          "open_interest": 37432.19
         },
         "2.5": {
-          "over": 0.605,
-          "under": 0.395,
-          "bid": 0.6,
-          "ask": 0.61,
-          "last": 0.61,
+          "over": 0.595,
+          "under": 0.405,
+          "bid": 0.59,
+          "ask": 0.6,
+          "last": 0.59,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30CFCBRI-3",
-          "volume": 5571.45,
-          "volume_24h": 1668.55,
-          "open_interest": 4896.94
+          "volume": 25907.35,
+          "volume_24h": 20384.41,
+          "open_interest": 23677.41
         },
         "3.5": {
-          "over": 0.365,
-          "under": 0.635,
-          "bid": 0.36,
-          "ask": 0.37,
-          "last": 0.37,
+          "over": 0.355,
+          "under": 0.645,
+          "bid": 0.35,
+          "ask": 0.36,
+          "last": 0.36,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30CFCBRI-4",
-          "volume": 1821.41,
-          "volume_24h": 475.56,
-          "open_interest": 1817.41
+          "volume": 8767.9,
+          "volume_24h": 7228.63,
+          "open_interest": 7667.71
         },
         "4.5": {
-          "over": 0.195,
-          "under": 0.805,
-          "bid": 0.19,
-          "ask": 0.2,
-          "last": 0.19,
+          "over": 0.175,
+          "under": 0.825,
+          "bid": 0.17,
+          "ask": 0.18,
+          "last": 0.17,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30CFCBRI-5",
-          "volume": 858.26,
-          "volume_24h": 120.0,
-          "open_interest": 858.26
+          "volume": 2936.36,
+          "volume_24h": 2078.1,
+          "open_interest": 1767.36
         },
         "5.5": {
-          "over": 0.085,
-          "under": 0.915,
-          "bid": 0.08,
-          "ask": 0.09,
-          "last": 0.09,
+          "over": 0.075,
+          "under": 0.925,
+          "bid": 0.07,
+          "ask": 0.08,
+          "last": 0.08,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30CFCBRI-6",
-          "volume": 3679.88,
-          "volume_24h": 0.0,
-          "open_interest": 3679.88
+          "volume": 6113.87,
+          "volume_24h": 2433.99,
+          "open_interest": 6113.87
         }
       },
       "event_ticker": "KXEPLTOTAL-26AUG30CFCBRI",
@@ -178,36 +178,36 @@
       "event_url": "https://kalshi.com/markets/kxepltotal/",
       "kickoff": "2026-08-30T17:00:00+00:00",
       "liquidity": 0.0,
-      "volume": 13278.55,
-      "volume_24h": 2727.74,
-      "open_interest": 12594.96,
+      "volume": 92546.3,
+      "volume_24h": 79598.4,
+      "open_interest": 86779.39,
       "updated_at": "2026-08-23T14:25:41.903245Z",
       "comparison_only": true,
       "over": {
         "0.5": 0.955,
-        "1.5": 0.815,
-        "2.5": 0.605,
-        "3.5": 0.365,
-        "4.5": 0.195,
-        "5.5": 0.085
+        "1.5": 0.825,
+        "2.5": 0.595,
+        "3.5": 0.355,
+        "4.5": 0.175,
+        "5.5": 0.075
       },
       "under": {
         "0.5": 0.045,
-        "1.5": 0.185,
-        "2.5": 0.395,
-        "3.5": 0.635,
-        "4.5": 0.805,
-        "5.5": 0.915
+        "1.5": 0.175,
+        "2.5": 0.405,
+        "3.5": 0.645,
+        "4.5": 0.825,
+        "5.5": 0.925
       }
     },
     "consensus": {
       "model_edge": {
         "0.5": -0.091695,
-        "1.5": -0.223719,
-        "2.5": -0.284383,
-        "3.5": -0.223923,
-        "4.5": -0.143245,
-        "5.5": -0.068795
+        "1.5": -0.233719,
+        "2.5": -0.274383,
+        "3.5": -0.213923,
+        "4.5": -0.123245,
+        "5.5": -0.058795
       },
       "sources_by_line": {
         "0.5": [
@@ -233,26 +233,26 @@
       "comparison_only": true,
       "over": {
         "0.5": 0.955,
-        "1.5": 0.815,
-        "2.5": 0.605,
-        "3.5": 0.365,
-        "4.5": 0.195,
-        "5.5": 0.085
+        "1.5": 0.825,
+        "2.5": 0.595,
+        "3.5": 0.355,
+        "4.5": 0.175,
+        "5.5": 0.075
       },
       "under": {
         "0.5": 0.045,
-        "1.5": 0.185,
-        "2.5": 0.395,
-        "3.5": 0.635,
-        "4.5": 0.805,
-        "5.5": 0.915
+        "1.5": 0.175,
+        "2.5": 0.405,
+        "3.5": 0.645,
+        "4.5": 0.825,
+        "5.5": 0.925
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T11:14:44Z",
-    "kalshi": "2026-08-29T11:14:44Z",
-    "consensus": "2026-08-29T11:14:44Z"
+    "model": "2026-08-30T05:02:23Z",
+    "kalshi": "2026-08-30T05:02:23Z",
+    "consensus": "2026-08-30T05:02:23Z"
   },
   "xg_home": 0.939,
   "xg_away": 1.051

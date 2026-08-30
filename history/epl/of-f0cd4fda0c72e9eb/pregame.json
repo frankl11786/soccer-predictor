@@ -6,13 +6,13 @@
   "round": "Regular Season - 2",
   "home": "aston-villa",
   "away": "arsenal",
-  "captured_at": "2026-08-29T11:14:44Z",
+  "captured_at": "2026-08-30T05:02:23Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-ast-ars-2026-08-31",
       "event_slug": "epl-ast-ars-2026-08-31",
-      "updated_at": "2026-08-29T11:14:35Z"
+      "updated_at": "2026-08-30T05:02:11Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug31avlars",
@@ -27,28 +27,28 @@
       "away": 0.767482
     },
     "polymarket": {
-      "home": 0.145729,
+      "home": 0.135678,
       "draw": 0.226131,
-      "away": 0.62814
+      "away": 0.638191
     },
     "kalshi": {
-      "home": 0.142857,
-      "draw": 0.221675,
-      "away": 0.635468
+      "home": 0.134328,
+      "draw": 0.223881,
+      "away": 0.641791
     },
     "consensus": {
-      "home": 0.144293,
-      "draw": 0.223903,
-      "away": 0.631804
+      "home": 0.135003,
+      "draw": 0.225006,
+      "away": 0.639991
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T11:14:44Z",
-    "polymarket": "2026-08-29T11:14:44Z",
-    "kalshi": "2026-08-29T11:14:44Z",
-    "consensus": "2026-08-29T11:14:44Z"
+    "model": "2026-08-30T05:02:23Z",
+    "polymarket": "2026-08-30T05:02:23Z",
+    "kalshi": "2026-08-30T05:02:23Z",
+    "consensus": "2026-08-30T05:02:23Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-29T11:14:44Z"
+    "updated_at": "2026-08-30T05:02:23Z"
   },
   "locked": false,
   "goal_totals": {
@@ -99,26 +99,26 @@
           "under": 0.055,
           "bid": 0.94,
           "ask": 0.95,
-          "last": 0.94,
+          "last": 0.95,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG31AVLARS-1",
-          "volume": 241.0,
-          "volume_24h": 178.0,
-          "open_interest": 241.0
+          "volume": 544.0,
+          "volume_24h": 403.0,
+          "open_interest": 519.0
         },
         "1.5": {
           "over": 0.775,
           "under": 0.225,
           "bid": 0.77,
           "ask": 0.78,
-          "last": 0.78,
+          "last": 0.77,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG31AVLARS-2",
-          "volume": 670.87,
-          "volume_24h": 638.87,
-          "open_interest": 670.87
+          "volume": 705.02,
+          "volume_24h": 665.45,
+          "open_interest": 705.02
         },
         "2.5": {
           "over": 0.525,
@@ -129,9 +129,9 @@
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG31AVLARS-3",
-          "volume": 1252.55,
-          "volume_24h": 142.74,
-          "open_interest": 1021.89
+          "volume": 1649.95,
+          "volume_24h": 397.4,
+          "open_interest": 1281.15
         },
         "3.5": {
           "over": 0.305,
@@ -142,9 +142,9 @@
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG31AVLARS-4",
-          "volume": 22.37,
-          "volume_24h": 15.38,
-          "open_interest": 22.37
+          "volume": 237.76,
+          "volume_24h": 215.39,
+          "open_interest": 237.76
         },
         "4.5": {
           "over": 0.145,
@@ -156,7 +156,7 @@
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG31AVLARS-5",
           "volume": 2153.3,
-          "volume_24h": 31.46,
+          "volume_24h": 0.0,
           "open_interest": 2135.46
         },
         "5.5": {
@@ -178,9 +178,9 @@
       "event_url": "https://kalshi.com/markets/kxepltotal/",
       "kickoff": "2026-08-31T23:00:00+00:00",
       "liquidity": 0.0,
-      "volume": 4340.09,
-      "volume_24h": 1006.45,
-      "open_interest": 4091.59,
+      "volume": 5290.03,
+      "volume_24h": 1681.24,
+      "open_interest": 4878.39,
       "updated_at": "2026-08-25T16:01:28.156172Z",
       "comparison_only": true,
       "over": {
@@ -250,9 +250,9 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T11:14:44Z",
-    "kalshi": "2026-08-29T11:14:44Z",
-    "consensus": "2026-08-29T11:14:44Z"
+    "model": "2026-08-30T05:02:23Z",
+    "kalshi": "2026-08-30T05:02:23Z",
+    "consensus": "2026-08-30T05:02:23Z"
   },
   "xg_home": 0.643,
   "xg_away": 2.56

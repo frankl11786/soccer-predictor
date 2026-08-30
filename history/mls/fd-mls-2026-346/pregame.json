@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "vancouver-whitecaps-fc",
   "away": "st-louis-city-sc",
-  "captured_at": "2026-08-29T11:12:27Z",
+  "captured_at": "2026-08-30T05:06:02Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-vwh-stl-2026-09-05",
       "event_slug": "mls-vwh-stl-2026-09-05",
-      "updated_at": "2026-08-29T11:12:10Z"
+      "updated_at": "2026-08-30T05:05:46Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05vanstl",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.74465,
-      "draw": 0.14666,
-      "away": 0.10869
+      "home": 0.75264,
+      "draw": 0.14444,
+      "away": 0.10292
     },
     "polymarket": {
-      "home": 0.681818,
-      "draw": 0.186869,
-      "away": 0.131313
+      "home": 0.683938,
+      "draw": 0.186528,
+      "away": 0.129534
     },
     "kalshi": {
-      "home": 0.676767,
-      "draw": 0.186869,
-      "away": 0.136364
+      "home": 0.685279,
+      "draw": 0.187817,
+      "away": 0.126904
     },
     "consensus": {
-      "home": 0.679292,
-      "draw": 0.186869,
-      "away": 0.133839
+      "home": 0.684608,
+      "draw": 0.187173,
+      "away": 0.128219
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T11:12:27Z",
-    "polymarket": "2026-08-29T11:12:27Z",
-    "kalshi": "2026-08-29T11:12:27Z",
-    "consensus": "2026-08-29T11:12:27Z"
+    "model": "2026-08-30T05:06:02Z",
+    "polymarket": "2026-08-30T05:06:02Z",
+    "kalshi": "2026-08-30T05:06:02Z",
+    "consensus": "2026-08-30T05:06:02Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,43 +58,202 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T11:12:27Z"
+    "updated_at": "2026-08-30T05:06:02Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 3.723,
+      "lambda": 3.705,
       "exact": {
-        "0": 0.024161,
-        "1": 0.089953,
-        "2": 0.167447,
-        "3": 0.207802,
-        "4": 0.193412,
-        "5": 0.144014,
-        "6+": 0.173211
+        "0": 0.0246,
+        "1": 0.091144,
+        "2": 0.168844,
+        "3": 0.208522,
+        "4": 0.193144,
+        "5": 0.143119,
+        "6+": 0.170627
       },
       "over": {
-        "0.5": 0.975839,
-        "1.5": 0.885886,
-        "2.5": 0.718439,
-        "3.5": 0.510637,
-        "4.5": 0.317225,
-        "5.5": 0.173211
+        "0.5": 0.9754,
+        "1.5": 0.884256,
+        "2.5": 0.715412,
+        "3.5": 0.50689,
+        "4.5": 0.313746,
+        "5.5": 0.170627
       },
       "under": {
-        "0.5": 0.024161,
-        "1.5": 0.114114,
-        "2.5": 0.281561,
-        "3.5": 0.489363,
-        "4.5": 0.682775,
-        "5.5": 0.826789
+        "0.5": 0.0246,
+        "1.5": 0.115744,
+        "2.5": 0.284588,
+        "3.5": 0.49311,
+        "4.5": 0.686254,
+        "5.5": 0.829373
+      }
+    },
+    "kalshi": {
+      "source": "Kalshi",
+      "lines": {
+        "0.5": {
+          "over": 0.92,
+          "under": 0.08,
+          "bid": 0.57,
+          "ask": 0.95,
+          "last": 0.92,
+          "spread": 0.38,
+          "estimate_method": "last_trade",
+          "market_ticker": "KXMLSTOTAL-26SEP05VANSTL-1",
+          "volume": 30.0,
+          "volume_24h": 30.0,
+          "open_interest": 30.0
+        },
+        "1.5": {
+          "over": 0.0,
+          "under": 1.0,
+          "bid": 0.2,
+          "ask": 0.87,
+          "last": 0.0,
+          "spread": 0.67,
+          "estimate_method": "last_trade",
+          "market_ticker": "KXMLSTOTAL-26SEP05VANSTL-2",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "2.5": {
+          "over": 0.0,
+          "under": 1.0,
+          "bid": 0.16,
+          "ask": 0.67,
+          "last": 0.0,
+          "spread": 0.51,
+          "estimate_method": "last_trade",
+          "market_ticker": "KXMLSTOTAL-26SEP05VANSTL-3",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "3.5": {
+          "over": 0.0,
+          "under": 1.0,
+          "bid": 0.21,
+          "ask": 0.63,
+          "last": 0.0,
+          "spread": 0.42,
+          "estimate_method": "last_trade",
+          "market_ticker": "KXMLSTOTAL-26SEP05VANSTL-4",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "4.5": {
+          "over": 0.0,
+          "under": 1.0,
+          "bid": 0.18,
+          "ask": 0.62,
+          "last": 0.0,
+          "spread": 0.44,
+          "estimate_method": "last_trade",
+          "market_ticker": "KXMLSTOTAL-26SEP05VANSTL-5",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "5.5": {
+          "over": 0.0,
+          "under": 1.0,
+          "bid": 0.1,
+          "ask": 0.62,
+          "last": 0.0,
+          "spread": 0.52,
+          "estimate_method": "last_trade",
+          "market_ticker": "KXMLSTOTAL-26SEP05VANSTL-6",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        }
+      },
+      "event_ticker": "KXMLSTOTAL-26SEP05VANSTL",
+      "event_title": "Vancouver vs Saint Louis: Total Goals",
+      "event_url": "https://kalshi.com/markets/kxmlstotal/",
+      "kickoff": "2026-09-06T06:30:00+00:00",
+      "liquidity": 0.0,
+      "volume": 30.0,
+      "volume_24h": 30.0,
+      "open_interest": 30.0,
+      "updated_at": "2026-08-30T04:51:28.750685Z",
+      "comparison_only": true,
+      "over": {
+        "0.5": 0.92,
+        "1.5": 0.0,
+        "2.5": 0.0,
+        "3.5": 0.0,
+        "4.5": 0.0,
+        "5.5": 0.0
+      },
+      "under": {
+        "0.5": 0.08,
+        "1.5": 1.0,
+        "2.5": 1.0,
+        "3.5": 1.0,
+        "4.5": 1.0,
+        "5.5": 1.0
+      }
+    },
+    "consensus": {
+      "model_edge": {
+        "0.5": 0.0554,
+        "1.5": 0.884256,
+        "2.5": 0.715412,
+        "3.5": 0.50689,
+        "4.5": 0.313746,
+        "5.5": 0.170627
+      },
+      "sources_by_line": {
+        "0.5": [
+          "kalshi"
+        ],
+        "1.5": [
+          "kalshi"
+        ],
+        "2.5": [
+          "kalshi"
+        ],
+        "3.5": [
+          "kalshi"
+        ],
+        "4.5": [
+          "kalshi"
+        ],
+        "5.5": [
+          "kalshi"
+        ]
+      },
+      "method": "Equal-weight mean of available prediction-market over probabilities",
+      "comparison_only": true,
+      "over": {
+        "0.5": 0.92,
+        "1.5": 0.0,
+        "2.5": 0.0,
+        "3.5": 0.0,
+        "4.5": 0.0,
+        "5.5": 0.0
+      },
+      "under": {
+        "0.5": 0.08,
+        "1.5": 1.0,
+        "2.5": 1.0,
+        "3.5": 1.0,
+        "4.5": 1.0,
+        "5.5": 1.0
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T11:12:27Z"
+    "model": "2026-08-30T05:06:02Z",
+    "kalshi": "2026-08-30T05:06:02Z",
+    "consensus": "2026-08-30T05:06:02Z"
   },
-  "xg_home": 2.893,
-  "xg_away": 0.83
+  "xg_home": 2.905,
+  "xg_away": 0.8
 }

@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "seattle-sounders-fc",
   "away": "red-bull-new-york",
-  "captured_at": "2026-08-29T11:12:27Z",
+  "captured_at": "2026-08-30T05:06:02Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-sea-nyr-2026-09-05",
       "event_slug": "mls-sea-nyr-2026-09-05",
-      "updated_at": "2026-08-29T11:12:08Z"
+      "updated_at": "2026-08-30T05:05:45Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05seanyrb",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.61258,
-      "draw": 0.22145,
-      "away": 0.16597
+      "home": 0.653657,
+      "draw": 0.198872,
+      "away": 0.147471
     },
     "polymarket": {
-      "home": 0.539216,
-      "draw": 0.220588,
-      "away": 0.240196
+      "home": 0.527919,
+      "draw": 0.243655,
+      "away": 0.228426
     },
     "kalshi": {
-      "home": 0.532663,
-      "draw": 0.226131,
-      "away": 0.241206
+      "home": 0.537688,
+      "draw": 0.231156,
+      "away": 0.231156
     },
     "consensus": {
-      "home": 0.53594,
-      "draw": 0.223359,
-      "away": 0.240701
+      "home": 0.532804,
+      "draw": 0.237405,
+      "away": 0.229791
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T11:12:27Z",
-    "polymarket": "2026-08-29T11:12:27Z",
-    "kalshi": "2026-08-29T11:12:27Z",
-    "consensus": "2026-08-29T11:12:27Z"
+    "model": "2026-08-30T05:06:02Z",
+    "polymarket": "2026-08-30T05:06:02Z",
+    "kalshi": "2026-08-30T05:06:02Z",
+    "consensus": "2026-08-30T05:06:02Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,43 +58,202 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T11:12:27Z"
+    "updated_at": "2026-08-30T05:06:02Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 2.687,
+      "lambda": 2.944,
       "exact": {
-        "0": 0.068085,
-        "1": 0.182944,
-        "2": 0.245785,
-        "3": 0.220142,
-        "4": 0.14788,
-        "5": 0.079471,
-        "6+": 0.055693
+        "0": 0.052655,
+        "1": 0.155015,
+        "2": 0.228183,
+        "3": 0.223923,
+        "4": 0.164808,
+        "5": 0.097039,
+        "6+": 0.078378
       },
       "over": {
-        "0.5": 0.931915,
-        "1.5": 0.748971,
-        "2.5": 0.503186,
-        "3.5": 0.283044,
-        "4.5": 0.135164,
-        "5.5": 0.055693
+        "0.5": 0.947345,
+        "1.5": 0.79233,
+        "2.5": 0.564147,
+        "3.5": 0.340224,
+        "4.5": 0.175416,
+        "5.5": 0.078378
       },
       "under": {
-        "0.5": 0.068085,
-        "1.5": 0.251029,
-        "2.5": 0.496814,
-        "3.5": 0.716956,
-        "4.5": 0.864836,
-        "5.5": 0.944307
+        "0.5": 0.052655,
+        "1.5": 0.20767,
+        "2.5": 0.435853,
+        "3.5": 0.659776,
+        "4.5": 0.824584,
+        "5.5": 0.921622
+      }
+    },
+    "kalshi": {
+      "source": "Kalshi",
+      "lines": {
+        "0.5": {
+          "over": 0.92,
+          "under": 0.08,
+          "bid": 0.47,
+          "ask": 0.95,
+          "last": 0.92,
+          "spread": 0.48,
+          "estimate_method": "last_trade",
+          "market_ticker": "KXMLSTOTAL-26SEP05SEANYRB-1",
+          "volume": 38.0,
+          "volume_24h": 38.0,
+          "open_interest": 38.0
+        },
+        "1.5": {
+          "over": 0.875,
+          "under": 0.125,
+          "bid": 0.86,
+          "ask": 0.89,
+          "last": 0.0,
+          "spread": 0.03,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26SEP05SEANYRB-2",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "2.5": {
+          "over": 0.675,
+          "under": 0.325,
+          "bid": 0.67,
+          "ask": 0.68,
+          "last": 0.0,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26SEP05SEANYRB-3",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "3.5": {
+          "over": 0.475,
+          "under": 0.525,
+          "bid": 0.46,
+          "ask": 0.49,
+          "last": 0.0,
+          "spread": 0.03,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26SEP05SEANYRB-4",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "4.5": {
+          "over": 0.285,
+          "under": 0.715,
+          "bid": 0.27,
+          "ask": 0.3,
+          "last": 0.0,
+          "spread": 0.03,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26SEP05SEANYRB-5",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "5.5": {
+          "over": 0.145,
+          "under": 0.855,
+          "bid": 0.13,
+          "ask": 0.16,
+          "last": 0.0,
+          "spread": 0.03,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26SEP05SEANYRB-6",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        }
+      },
+      "event_ticker": "KXMLSTOTAL-26SEP05SEANYRB",
+      "event_title": "Seattle vs New York RB: Total Goals",
+      "event_url": "https://kalshi.com/markets/kxmlstotal/",
+      "kickoff": "2026-09-06T04:30:00+00:00",
+      "liquidity": 0.0,
+      "volume": 38.0,
+      "volume_24h": 38.0,
+      "open_interest": 38.0,
+      "updated_at": "2026-08-30T02:52:05.029154Z",
+      "comparison_only": true,
+      "over": {
+        "0.5": 0.92,
+        "1.5": 0.875,
+        "2.5": 0.675,
+        "3.5": 0.475,
+        "4.5": 0.285,
+        "5.5": 0.145
+      },
+      "under": {
+        "0.5": 0.08,
+        "1.5": 0.125,
+        "2.5": 0.325,
+        "3.5": 0.525,
+        "4.5": 0.715,
+        "5.5": 0.855
+      }
+    },
+    "consensus": {
+      "model_edge": {
+        "0.5": 0.027345,
+        "1.5": -0.08267,
+        "2.5": -0.110853,
+        "3.5": -0.134776,
+        "4.5": -0.109584,
+        "5.5": -0.066622
+      },
+      "sources_by_line": {
+        "0.5": [
+          "kalshi"
+        ],
+        "1.5": [
+          "kalshi"
+        ],
+        "2.5": [
+          "kalshi"
+        ],
+        "3.5": [
+          "kalshi"
+        ],
+        "4.5": [
+          "kalshi"
+        ],
+        "5.5": [
+          "kalshi"
+        ]
+      },
+      "method": "Equal-weight mean of available prediction-market over probabilities",
+      "comparison_only": true,
+      "over": {
+        "0.5": 0.92,
+        "1.5": 0.875,
+        "2.5": 0.675,
+        "3.5": 0.475,
+        "4.5": 0.285,
+        "5.5": 0.145
+      },
+      "under": {
+        "0.5": 0.08,
+        "1.5": 0.125,
+        "2.5": 0.325,
+        "3.5": 0.525,
+        "4.5": 0.715,
+        "5.5": 0.855
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T11:12:27Z"
+    "model": "2026-08-30T05:06:02Z",
+    "kalshi": "2026-08-30T05:06:02Z",
+    "consensus": "2026-08-30T05:06:02Z"
   },
-  "xg_home": 1.926,
-  "xg_away": 0.761
+  "xg_home": 2.173,
+  "xg_away": 0.771
 }

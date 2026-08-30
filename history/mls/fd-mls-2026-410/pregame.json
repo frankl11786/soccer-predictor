@@ -6,7 +6,7 @@
   "round": "Regular Season - 29",
   "home": "inter-miami-cf",
   "away": "dc-united",
-  "captured_at": "2026-08-29T11:12:27Z",
+  "captured_at": "2026-08-30T05:06:02Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -14,15 +14,15 @@
   },
   "sources": {
     "model": {
-      "home": 0.73073,
-      "draw": 0.15076,
-      "away": 0.11851
+      "home": 0.7559,
+      "draw": 0.13945,
+      "away": 0.10465
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-29T11:12:27Z"
+    "model": "2026-08-30T05:06:02Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,43 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-29T11:12:27Z"
+    "updated_at": "2026-08-30T05:06:02Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 3.771,
+      "lambda": 3.91,
       "exact": {
-        "0": 0.023029,
-        "1": 0.086842,
-        "2": 0.163741,
-        "3": 0.205823,
-        "4": 0.19404,
-        "5": 0.146345,
-        "6+": 0.18018
+        "0": 0.020041,
+        "1": 0.078358,
+        "2": 0.153191,
+        "3": 0.199658,
+        "4": 0.195166,
+        "5": 0.15262,
+        "6+": 0.200966
       },
       "over": {
-        "0.5": 0.976971,
-        "1.5": 0.890129,
-        "2.5": 0.726387,
-        "3.5": 0.520564,
-        "4.5": 0.326525,
-        "5.5": 0.18018
+        "0.5": 0.979959,
+        "1.5": 0.901601,
+        "2.5": 0.748411,
+        "3.5": 0.548752,
+        "4.5": 0.353586,
+        "5.5": 0.200966
       },
       "under": {
-        "0.5": 0.023029,
-        "1.5": 0.109871,
-        "2.5": 0.273613,
-        "3.5": 0.479436,
-        "4.5": 0.673475,
-        "5.5": 0.81982
+        "0.5": 0.020041,
+        "1.5": 0.098399,
+        "2.5": 0.251589,
+        "3.5": 0.451248,
+        "4.5": 0.646414,
+        "5.5": 0.799034
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-29T11:12:27Z"
+    "model": "2026-08-30T05:06:02Z"
   },
-  "xg_home": 2.876,
-  "xg_away": 0.895
+  "xg_home": 3.041,
+  "xg_away": 0.869
 }
