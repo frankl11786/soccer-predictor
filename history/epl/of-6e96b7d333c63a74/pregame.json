@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "newcastle-united",
   "away": "bournemouth",
-  "captured_at": "2026-08-30T05:02:23Z",
+  "captured_at": "2026-08-30T10:11:19Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-new-bou-2026-09-05",
       "event_slug": "epl-new-bou-2026-09-05",
-      "updated_at": "2026-08-30T05:02:12Z"
+      "updated_at": "2026-08-30T10:11:04Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep05newbou",
@@ -32,23 +32,23 @@
       "away": 0.319797
     },
     "kalshi": {
-      "home": 0.422886,
-      "draw": 0.263682,
-      "away": 0.313433
+      "home": 0.431472,
+      "draw": 0.248731,
+      "away": 0.319797
     },
     "consensus": {
-      "home": 0.422103,
-      "draw": 0.261282,
-      "away": 0.316615
+      "home": 0.426396,
+      "draw": 0.253807,
+      "away": 0.319797
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T05:02:23Z",
-    "polymarket": "2026-08-30T05:02:23Z",
-    "kalshi": "2026-08-30T05:02:23Z",
-    "consensus": "2026-08-30T05:02:23Z"
+    "model": "2026-08-30T10:11:19Z",
+    "polymarket": "2026-08-30T10:11:19Z",
+    "kalshi": "2026-08-30T10:11:19Z",
+    "consensus": "2026-08-30T10:11:19Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-30T05:02:23Z"
+    "updated_at": "2026-08-30T10:11:19Z"
   },
   "locked": false,
   "goal_totals": {
@@ -95,12 +95,12 @@
       "source": "Kalshi",
       "lines": {
         "0.5": {
-          "over": 0.95,
-          "under": 0.05,
-          "bid": 0.94,
+          "over": 0.955,
+          "under": 0.045,
+          "bid": 0.95,
           "ask": 0.96,
           "last": 0.93,
-          "spread": 0.02,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26SEP05NEWBOU-1",
           "volume": 229.26,
@@ -138,26 +138,26 @@
           "under": 0.625,
           "bid": 0.37,
           "ask": 0.38,
-          "last": 0.0,
+          "last": 0.37,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26SEP05NEWBOU-4",
-          "volume": 0.0,
-          "volume_24h": 0.0,
-          "open_interest": 0.0
+          "volume": 13.0,
+          "volume_24h": 13.0,
+          "open_interest": 13.0
         },
         "4.5": {
-          "over": 0.2,
-          "under": 0.8,
+          "over": 0.195,
+          "under": 0.805,
           "bid": 0.19,
-          "ask": 0.21,
-          "last": 0.0,
-          "spread": 0.02,
+          "ask": 0.2,
+          "last": 0.19,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26SEP05NEWBOU-5",
-          "volume": 0.0,
-          "volume_24h": 0.0,
-          "open_interest": 0.0
+          "volume": 11.0,
+          "volume_24h": 11.0,
+          "open_interest": 11.0
         },
         "5.5": {
           "over": 0.085,
@@ -178,35 +178,35 @@
       "event_url": "https://kalshi.com/markets/kxepltotal/",
       "kickoff": "2026-09-05T15:30:00+00:00",
       "liquidity": 0.0,
-      "volume": 231.26,
-      "volume_24h": 231.26,
-      "open_interest": 112.63,
+      "volume": 255.26,
+      "volume_24h": 255.26,
+      "open_interest": 136.63,
       "updated_at": "2026-08-29T16:22:03.775979Z",
       "comparison_only": true,
       "over": {
-        "0.5": 0.95,
+        "0.5": 0.955,
         "1.5": 0.82,
         "2.5": 0.6,
         "3.5": 0.375,
-        "4.5": 0.2,
+        "4.5": 0.195,
         "5.5": 0.085
       },
       "under": {
-        "0.5": 0.05,
+        "0.5": 0.045,
         "1.5": 0.18,
         "2.5": 0.4,
         "3.5": 0.625,
-        "4.5": 0.8,
+        "4.5": 0.805,
         "5.5": 0.915
       }
     },
     "consensus": {
       "model_edge": {
-        "0.5": 0.010482,
+        "0.5": 0.005482,
         "1.5": 0.0128,
         "2.5": 0.026528,
         "3.5": 0.029374,
-        "4.5": 0.024929,
+        "4.5": 0.029929,
         "5.5": 0.023972
       },
       "sources_by_line": {
@@ -232,27 +232,27 @@
       "method": "Equal-weight mean of available prediction-market over probabilities",
       "comparison_only": true,
       "over": {
-        "0.5": 0.95,
+        "0.5": 0.955,
         "1.5": 0.82,
         "2.5": 0.6,
         "3.5": 0.375,
-        "4.5": 0.2,
+        "4.5": 0.195,
         "5.5": 0.085
       },
       "under": {
-        "0.5": 0.05,
+        "0.5": 0.045,
         "1.5": 0.18,
         "2.5": 0.4,
         "3.5": 0.625,
-        "4.5": 0.8,
+        "4.5": 0.805,
         "5.5": 0.915
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T05:02:23Z",
-    "kalshi": "2026-08-30T05:02:23Z",
-    "consensus": "2026-08-30T05:02:23Z"
+    "model": "2026-08-30T10:11:19Z",
+    "kalshi": "2026-08-30T10:11:19Z",
+    "consensus": "2026-08-30T10:11:19Z"
   },
   "xg_home": 2.104,
   "xg_away": 1.127

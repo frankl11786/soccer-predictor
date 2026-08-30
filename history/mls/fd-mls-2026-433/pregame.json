@@ -6,7 +6,7 @@
   "round": "Regular Season - 30",
   "home": "nashville-sc",
   "away": "sporting-kansas-city",
-  "captured_at": "2026-08-30T05:06:02Z",
+  "captured_at": "2026-08-30T10:07:17Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -14,15 +14,15 @@
   },
   "sources": {
     "model": {
-      "home": 0.90292,
-      "draw": 0.07137,
-      "away": 0.02571
+      "home": 0.90312,
+      "draw": 0.0712,
+      "away": 0.02568
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T05:06:02Z"
+    "model": "2026-08-30T10:07:17Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,43 +32,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-30T05:06:02Z"
+    "updated_at": "2026-08-30T10:07:17Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 4.365,
+      "lambda": 4.369,
       "exact": {
-        "0": 0.012715,
-        "1": 0.055499,
-        "2": 0.121128,
-        "3": 0.176241,
-        "4": 0.192323,
-        "5": 0.167898,
-        "6+": 0.274197
+        "0": 0.012664,
+        "1": 0.055329,
+        "2": 0.120865,
+        "3": 0.17602,
+        "4": 0.192258,
+        "5": 0.167995,
+        "6+": 0.274869
       },
       "over": {
-        "0.5": 0.987285,
-        "1.5": 0.931786,
-        "2.5": 0.810658,
-        "3.5": 0.634418,
-        "4.5": 0.442095,
-        "5.5": 0.274197
+        "0.5": 0.987336,
+        "1.5": 0.932008,
+        "2.5": 0.811142,
+        "3.5": 0.635122,
+        "4.5": 0.442864,
+        "5.5": 0.274869
       },
       "under": {
-        "0.5": 0.012715,
-        "1.5": 0.068214,
-        "2.5": 0.189342,
-        "3.5": 0.365582,
-        "4.5": 0.557905,
-        "5.5": 0.725803
+        "0.5": 0.012664,
+        "1.5": 0.067992,
+        "2.5": 0.188858,
+        "3.5": 0.364878,
+        "4.5": 0.557136,
+        "5.5": 0.725131
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T05:06:02Z"
+    "model": "2026-08-30T10:07:17Z"
   },
-  "xg_home": 3.939,
-  "xg_away": 0.426
+  "xg_home": 3.942,
+  "xg_away": 0.427
 }

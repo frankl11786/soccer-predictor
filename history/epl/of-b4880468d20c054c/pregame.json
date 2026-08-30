@@ -6,13 +6,13 @@
   "round": "Regular Season - 2",
   "home": "leeds-united",
   "away": "brentford",
-  "captured_at": "2026-08-30T05:02:23Z",
+  "captured_at": "2026-08-30T10:11:19Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-lee-bre-2026-08-30",
       "event_slug": "epl-lee-bre-2026-08-30",
-      "updated_at": "2026-08-30T05:02:10Z"
+      "updated_at": "2026-08-30T10:11:03Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug30leebre",
@@ -27,28 +27,28 @@
       "away": 0.32085
     },
     "polymarket": {
-      "home": 0.363184,
-      "draw": 0.283582,
-      "away": 0.353234
+      "home": 0.349754,
+      "draw": 0.280788,
+      "away": 0.369458
     },
     "kalshi": {
-      "home": 0.366834,
-      "draw": 0.286432,
-      "away": 0.346734
+      "home": 0.353234,
+      "draw": 0.273632,
+      "away": 0.373134
     },
     "consensus": {
-      "home": 0.365009,
-      "draw": 0.285007,
-      "away": 0.349984
+      "home": 0.351494,
+      "draw": 0.27721,
+      "away": 0.371296
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T05:02:23Z",
-    "polymarket": "2026-08-30T05:02:23Z",
-    "kalshi": "2026-08-30T05:02:23Z",
-    "consensus": "2026-08-30T05:02:23Z"
+    "model": "2026-08-30T10:11:19Z",
+    "polymarket": "2026-08-30T10:11:19Z",
+    "kalshi": "2026-08-30T10:11:19Z",
+    "consensus": "2026-08-30T10:11:19Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-30T05:02:23Z"
+    "updated_at": "2026-08-30T10:11:19Z"
   },
   "locked": false,
   "goal_totals": {
@@ -103,9 +103,9 @@
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30LEEBRE-1",
-          "volume": 248.14,
-          "volume_24h": 247.14,
-          "open_interest": 248.14
+          "volume": 1098.92,
+          "volume_24h": 1058.92,
+          "open_interest": 1098.92
         },
         "1.5": {
           "over": 0.765,
@@ -116,35 +116,35 @@
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30LEEBRE-2",
-          "volume": 3269.81,
-          "volume_24h": 3269.81,
-          "open_interest": 1959.41
+          "volume": 5899.76,
+          "volume_24h": 5867.31,
+          "open_interest": 4589.36
         },
         "2.5": {
           "over": 0.515,
           "under": 0.485,
           "bid": 0.51,
           "ask": 0.52,
-          "last": 0.51,
+          "last": 0.52,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30LEEBRE-3",
-          "volume": 23632.94,
-          "volume_24h": 22821.34,
-          "open_interest": 19310.52
+          "volume": 36554.7,
+          "volume_24h": 35774.12,
+          "open_interest": 32063.26
         },
         "3.5": {
           "over": 0.295,
           "under": 0.705,
           "bid": 0.29,
           "ask": 0.3,
-          "last": 0.3,
+          "last": 0.29,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30LEEBRE-4",
-          "volume": 478.99,
-          "volume_24h": 472.18,
-          "open_interest": 478.99
+          "volume": 1443.72,
+          "volume_24h": 1436.91,
+          "open_interest": 1328.72
         },
         "4.5": {
           "over": 0.135,
@@ -155,22 +155,22 @@
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30LEEBRE-5",
-          "volume": 3759.31,
-          "volume_24h": 3714.37,
-          "open_interest": 3758.31
+          "volume": 4617.42,
+          "volume_24h": 4572.48,
+          "open_interest": 4616.42
         },
         "5.5": {
           "over": 0.055,
           "under": 0.945,
           "bid": 0.05,
           "ask": 0.06,
-          "last": 0.05,
+          "last": 0.06,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG30LEEBRE-6",
-          "volume": 2848.34,
-          "volume_24h": 2847.34,
-          "open_interest": 2526.34
+          "volume": 3426.93,
+          "volume_24h": 3425.93,
+          "open_interest": 3104.93
         }
       },
       "event_ticker": "KXEPLTOTAL-26AUG30LEEBRE",
@@ -178,9 +178,9 @@
       "event_url": "https://kalshi.com/markets/kxepltotal/",
       "kickoff": "2026-08-30T17:00:00+00:00",
       "liquidity": 0.0,
-      "volume": 34237.53,
-      "volume_24h": 33372.18,
-      "open_interest": 28281.71,
+      "volume": 53041.45,
+      "volume_24h": 52135.67,
+      "open_interest": 46801.61,
       "updated_at": "2026-08-24T14:24:53.421914Z",
       "comparison_only": true,
       "over": {
@@ -250,9 +250,9 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T05:02:23Z",
-    "kalshi": "2026-08-30T05:02:23Z",
-    "consensus": "2026-08-30T05:02:23Z"
+    "model": "2026-08-30T10:11:19Z",
+    "kalshi": "2026-08-30T10:11:19Z",
+    "consensus": "2026-08-30T10:11:19Z"
   },
   "xg_home": 1.295,
   "xg_away": 1.102
