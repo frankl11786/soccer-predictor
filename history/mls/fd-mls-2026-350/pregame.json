@@ -6,13 +6,13 @@
   "round": "Regular Season - 25",
   "home": "new-york-city-fc",
   "away": "new-england-revolution",
-  "captured_at": "2026-08-31T10:56:00Z",
+  "captured_at": "2026-08-31T22:58:23Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-nyc-ner-2026-09-09",
       "event_slug": "mls-nyc-ner-2026-09-09",
-      "updated_at": "2026-08-31T10:55:42Z"
+      "updated_at": "2026-08-31T22:58:08Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep09nycne",
@@ -27,28 +27,28 @@
       "away": 0.38419
     },
     "polymarket": {
-      "home": 0.459184,
-      "draw": 0.265306,
-      "away": 0.27551
+      "home": 0.457711,
+      "draw": 0.258706,
+      "away": 0.283582
     },
     "consensus": {
-      "home": 0.456865,
-      "draw": 0.261441,
-      "away": 0.281694
+      "home": 0.455896,
+      "draw": 0.259455,
+      "away": 0.284648
     },
     "kalshi": {
-      "home": 0.454545,
-      "draw": 0.257576,
-      "away": 0.287879
+      "home": 0.454082,
+      "draw": 0.260204,
+      "away": 0.285714
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-31T10:56:00Z",
-    "polymarket": "2026-08-31T10:56:00Z",
-    "consensus": "2026-08-31T10:56:00Z",
-    "kalshi": "2026-08-31T10:56:00Z"
+    "model": "2026-08-31T22:58:23Z",
+    "polymarket": "2026-08-31T22:58:23Z",
+    "consensus": "2026-08-31T22:58:23Z",
+    "kalshi": "2026-08-31T22:58:23Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-31T10:56:00Z"
+    "updated_at": "2026-08-31T22:58:23Z"
   },
   "locked": false,
   "goal_totals": {
@@ -93,7 +93,7 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-31T10:56:00Z"
+    "model": "2026-08-31T22:58:23Z"
   },
   "xg_home": 1.331,
   "xg_away": 1.378

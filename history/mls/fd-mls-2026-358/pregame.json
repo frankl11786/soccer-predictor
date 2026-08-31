@@ -6,13 +6,13 @@
   "round": "Regular Season - 25",
   "home": "portland-timbers",
   "away": "st-louis-city-sc",
-  "captured_at": "2026-08-31T10:56:00Z",
+  "captured_at": "2026-08-31T22:58:23Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-por-stl-2026-09-09",
       "event_slug": "mls-por-stl-2026-09-09",
-      "updated_at": "2026-08-31T10:55:44Z"
+      "updated_at": "2026-08-31T22:58:10Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep09porstl",
@@ -27,28 +27,28 @@
       "away": 0.279433
     },
     "polymarket": {
-      "home": 0.365854,
-      "draw": 0.347561,
-      "away": 0.286585
+      "home": 0.455882,
+      "draw": 0.25,
+      "away": 0.294118
     },
     "consensus": {
-      "home": 0.415601,
-      "draw": 0.295068,
-      "away": 0.289332
+      "home": 0.460441,
+      "draw": 0.2475,
+      "away": 0.292059
     },
     "kalshi": {
-      "home": 0.465347,
-      "draw": 0.242574,
-      "away": 0.292079
+      "home": 0.465,
+      "draw": 0.245,
+      "away": 0.29
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-31T10:56:00Z",
-    "polymarket": "2026-08-31T10:56:00Z",
-    "consensus": "2026-08-31T10:56:00Z",
-    "kalshi": "2026-08-31T10:56:00Z"
+    "model": "2026-08-31T22:58:23Z",
+    "polymarket": "2026-08-31T22:58:23Z",
+    "consensus": "2026-08-31T22:58:23Z",
+    "kalshi": "2026-08-31T22:58:23Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-31T10:56:00Z"
+    "updated_at": "2026-08-31T22:58:23Z"
   },
   "locked": false,
   "goal_totals": {
@@ -93,7 +93,7 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-31T10:56:00Z"
+    "model": "2026-08-31T22:58:23Z"
   },
   "xg_home": 1.677,
   "xg_away": 1.149

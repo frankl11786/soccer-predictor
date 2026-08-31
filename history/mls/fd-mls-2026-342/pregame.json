@@ -6,7 +6,7 @@
   "round": "Regular Season - 24",
   "home": "la-galaxy",
   "away": "new-england-revolution",
-  "captured_at": "2026-08-31T10:56:00Z",
+  "captured_at": "2026-08-31T22:58:23Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -23,22 +23,22 @@
       "away": 0.42139
     },
     "kalshi": {
-      "home": 0.441624,
+      "home": 0.401015,
       "draw": 0.248731,
-      "away": 0.309645
+      "away": 0.350254
     },
     "consensus": {
-      "home": 0.441624,
+      "home": 0.401015,
       "draw": 0.248731,
-      "away": 0.309645
+      "away": 0.350254
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-31T10:56:00Z",
-    "kalshi": "2026-08-31T10:56:00Z",
-    "consensus": "2026-08-31T10:56:00Z"
+    "model": "2026-08-31T22:58:23Z",
+    "kalshi": "2026-08-31T22:58:23Z",
+    "consensus": "2026-08-31T22:58:23Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -48,7 +48,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-31T10:56:00Z"
+    "updated_at": "2026-08-31T22:58:23Z"
   },
   "locked": false,
   "goal_totals": {
@@ -94,29 +94,29 @@
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05LAGNE-1",
           "volume": 167.0,
-          "volume_24h": 129.0,
+          "volume_24h": 0.0,
           "open_interest": 167.0
         },
         "1.5": {
-          "over": 0.815,
-          "under": 0.185,
-          "bid": 0.8,
+          "over": 0.82,
+          "under": 0.18,
+          "bid": 0.81,
           "ask": 0.83,
           "last": 0.72,
-          "spread": 0.03,
+          "spread": 0.02,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05LAGNE-2",
           "volume": 127.0,
-          "volume_24h": 127.0,
+          "volume_24h": 0.0,
           "open_interest": 127.0
         },
         "2.5": {
-          "over": 0.605,
-          "under": 0.395,
-          "bid": 0.6,
+          "over": 0.6,
+          "under": 0.4,
+          "bid": 0.59,
           "ask": 0.61,
           "last": 0.0,
-          "spread": 0.01,
+          "spread": 0.02,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05LAGNE-3",
           "volume": 0.0,
@@ -137,12 +137,12 @@
           "open_interest": 0.0
         },
         "4.5": {
-          "over": 0.205,
-          "under": 0.795,
-          "bid": 0.2,
+          "over": 0.2,
+          "under": 0.8,
+          "bid": 0.19,
           "ask": 0.21,
           "last": 0.0,
-          "spread": 0.01,
+          "spread": 0.02,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05LAGNE-5",
           "volume": 0.0,
@@ -169,34 +169,34 @@
       "kickoff": "2026-09-06T05:30:00+00:00",
       "liquidity": 0.0,
       "volume": 294.0,
-      "volume_24h": 256.0,
+      "volume_24h": 0.0,
       "open_interest": 294.0,
       "updated_at": "2026-08-30T06:47:29.115736Z",
       "comparison_only": true,
       "over": {
         "0.5": 0.945,
-        "1.5": 0.815,
-        "2.5": 0.605,
+        "1.5": 0.82,
+        "2.5": 0.6,
         "3.5": 0.38,
-        "4.5": 0.205,
+        "4.5": 0.2,
         "5.5": 0.095
       },
       "under": {
         "0.5": 0.055,
-        "1.5": 0.185,
-        "2.5": 0.395,
+        "1.5": 0.18,
+        "2.5": 0.4,
         "3.5": 0.62,
-        "4.5": 0.795,
+        "4.5": 0.8,
         "5.5": 0.905
       }
     },
     "consensus": {
       "model_edge": {
         "0.5": 0.018557,
-        "1.5": 0.027857,
-        "2.5": 0.037978,
+        "1.5": 0.022857,
+        "2.5": 0.042978,
         "3.5": 0.042311,
-        "4.5": 0.034599,
+        "4.5": 0.039599,
         "5.5": 0.023571
       },
       "sources_by_line": {
@@ -223,26 +223,26 @@
       "comparison_only": true,
       "over": {
         "0.5": 0.945,
-        "1.5": 0.815,
-        "2.5": 0.605,
+        "1.5": 0.82,
+        "2.5": 0.6,
         "3.5": 0.38,
-        "4.5": 0.205,
+        "4.5": 0.2,
         "5.5": 0.095
       },
       "under": {
         "0.5": 0.055,
-        "1.5": 0.185,
-        "2.5": 0.395,
+        "1.5": 0.18,
+        "2.5": 0.4,
         "3.5": 0.62,
-        "4.5": 0.795,
+        "4.5": 0.8,
         "5.5": 0.905
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-31T10:56:00Z",
-    "kalshi": "2026-08-31T10:56:00Z",
-    "consensus": "2026-08-31T10:56:00Z"
+    "model": "2026-08-31T22:58:23Z",
+    "kalshi": "2026-08-31T22:58:23Z",
+    "consensus": "2026-08-31T22:58:23Z"
   },
   "xg_home": 1.568,
   "xg_away": 1.744

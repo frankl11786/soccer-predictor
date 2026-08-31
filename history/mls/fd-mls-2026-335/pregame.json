@@ -6,7 +6,7 @@
   "round": "Regular Season - 24",
   "home": "columbus-crew",
   "away": "colorado-rapids",
-  "captured_at": "2026-08-31T10:56:00Z",
+  "captured_at": "2026-08-31T22:58:23Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -23,22 +23,22 @@
       "away": 0.24707
     },
     "kalshi": {
-      "home": 0.487437,
-      "draw": 0.246231,
-      "away": 0.266332
+      "home": 0.487179,
+      "draw": 0.241026,
+      "away": 0.271795
     },
     "consensus": {
-      "home": 0.487437,
-      "draw": 0.246231,
-      "away": 0.266332
+      "home": 0.487179,
+      "draw": 0.241026,
+      "away": 0.271795
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-31T10:56:00Z",
-    "kalshi": "2026-08-31T10:56:00Z",
-    "consensus": "2026-08-31T10:56:00Z"
+    "model": "2026-08-31T22:58:23Z",
+    "kalshi": "2026-08-31T22:58:23Z",
+    "consensus": "2026-08-31T22:58:23Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -48,7 +48,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-31T10:56:00Z"
+    "updated_at": "2026-08-31T22:58:23Z"
   },
   "locked": false,
   "goal_totals": {
@@ -94,16 +94,16 @@
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05CLBCOL-1",
           "volume": 130.0,
-          "volume_24h": 100.0,
+          "volume_24h": 0.0,
           "open_interest": 130.0
         },
         "1.5": {
-          "over": 0.8,
-          "under": 0.2,
+          "over": 0.795,
+          "under": 0.205,
           "bid": 0.79,
-          "ask": 0.81,
+          "ask": 0.8,
           "last": 0.0,
-          "spread": 0.02,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05CLBCOL-2",
           "volume": 0.0,
@@ -150,12 +150,12 @@
           "open_interest": 0.0
         },
         "5.5": {
-          "over": 0.08,
-          "under": 0.92,
+          "over": 0.085,
+          "under": 0.915,
           "bid": 0.07,
-          "ask": 0.09,
+          "ask": 0.1,
           "last": 0.0,
-          "spread": 0.02,
+          "spread": 0.03,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05CLBCOL-6",
           "volume": 0.0,
@@ -169,35 +169,35 @@
       "kickoff": "2026-09-06T03:30:00+00:00",
       "liquidity": 0.0,
       "volume": 130.0,
-      "volume_24h": 100.0,
+      "volume_24h": 0.0,
       "open_interest": 130.0,
       "updated_at": "2026-08-30T02:51:05.881123Z",
       "comparison_only": true,
       "over": {
         "0.5": 0.945,
-        "1.5": 0.8,
+        "1.5": 0.795,
         "2.5": 0.575,
         "3.5": 0.35,
         "4.5": 0.185,
-        "5.5": 0.08
+        "5.5": 0.085
       },
       "under": {
         "0.5": 0.055,
-        "1.5": 0.2,
+        "1.5": 0.205,
         "2.5": 0.425,
         "3.5": 0.65,
         "4.5": 0.815,
-        "5.5": 0.92
+        "5.5": 0.915
       }
     },
     "consensus": {
       "model_edge": {
         "0.5": -0.085718,
-        "1.5": -0.216665,
+        "1.5": -0.211665,
         "2.5": -0.262231,
         "3.5": -0.214091,
         "4.5": -0.135797,
-        "5.5": -0.064803
+        "5.5": -0.069803
       },
       "sources_by_line": {
         "0.5": [
@@ -223,26 +223,26 @@
       "comparison_only": true,
       "over": {
         "0.5": 0.945,
-        "1.5": 0.8,
+        "1.5": 0.795,
         "2.5": 0.575,
         "3.5": 0.35,
         "4.5": 0.185,
-        "5.5": 0.08
+        "5.5": 0.085
       },
       "under": {
         "0.5": 0.055,
-        "1.5": 0.2,
+        "1.5": 0.205,
         "2.5": 0.425,
         "3.5": 0.65,
         "4.5": 0.815,
-        "5.5": 0.92
+        "5.5": 0.915
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-31T10:56:00Z",
-    "kalshi": "2026-08-31T10:56:00Z",
-    "consensus": "2026-08-31T10:56:00Z"
+    "model": "2026-08-31T22:58:23Z",
+    "kalshi": "2026-08-31T22:58:23Z",
+    "consensus": "2026-08-31T22:58:23Z"
   },
   "xg_home": 1.195,
   "xg_away": 0.766
