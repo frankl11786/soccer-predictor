@@ -30,6 +30,7 @@ jobs:
     env:
       API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
       JAX_PLATFORM_NAME: cpu
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
@@ -44,8 +45,31 @@ jobs:
       - name: Install dependencies
         run: python -m pip install --upgrade pip && pip install -r requirements.txt
 
+      - name: Preserve previous published snapshot
+        shell: bash
+        run: |
+          mkdir -p previous-snapshot
+          if [ -f "app/data/${{ matrix.league }}.json" ]; then
+            cp "app/data/${{ matrix.league }}.json" "previous-snapshot/${{ matrix.league }}.json"
+          fi
+
       - name: Fully rebuild ${{ matrix.league_name }} model
         run: python -m predictor.run --league "${{ matrix.league }}" --refresh
+
+      - name: Reconcile results and calibrate total goals
+        shell: bash
+        run: |
+          PREVIOUS=""
+          if [ -f "previous-snapshot/${{ matrix.league }}.json" ]; then
+            PREVIOUS="--previous previous-snapshot/${{ matrix.league }}.json"
+          fi
+          python scripts/postprocess_snapshot.py \
+            --league "${{ matrix.league }}" \
+            --current "app/data/${{ matrix.league }}.json" \
+            $PREVIOUS
+
+      - name: Validate fixture freshness
+        run: python scripts/validate_fixture_freshness.py "app/data/${{ matrix.league }}.json"
 
       - name: Run validation tests
         run: python -m unittest discover -s tests -v
@@ -54,28 +78,19 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-
           STAGE="forecast-artifact"
           mkdir -p "$STAGE/app/data" "$STAGE/data/model" "$STAGE/data/cache/api_football"
-
           cp "app/data/${{ matrix.league }}.json" "$STAGE/app/data/"
           cp "data/model/posterior_${{ matrix.league }}.npz" "$STAGE/data/model/"
 
           if [ -d "data/cache/api_football/${{ matrix.league }}" ]; then
             cp -R "data/cache/api_football/${{ matrix.league }}" "$STAGE/data/cache/api_football/"
           fi
-
           if [ "${{ matrix.league }}" = "epl" ]; then
-            if [ -d data/cache/openfootball ]; then
-              cp -R data/cache/openfootball "$STAGE/data/cache/"
-            fi
+            if [ -d data/cache/openfootball ]; then cp -R data/cache/openfootball "$STAGE/data/cache/"; fi
           else
-            if [ -d data/cache/asa ]; then
-              cp -R data/cache/asa "$STAGE/data/cache/"
-            fi
-            if [ -d data/cache/espn ]; then
-              cp -R data/cache/espn "$STAGE/data/cache/"
-            fi
+            if [ -d data/cache/asa ]; then cp -R data/cache/asa "$STAGE/data/cache/"; fi
+            if [ -d data/cache/espn ]; then cp -R data/cache/espn "$STAGE/data/cache/"; fi
           fi
 
       - name: Upload ${{ matrix.league_name }} results
@@ -88,7 +103,7 @@ jobs:
           compression-level: 0
 
   publish:
-    name: Archive, save and deploy forecasts
+    name: Save and deploy forecasts
     needs: rebuild
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -98,19 +113,10 @@ jobs:
       FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
       FTP_REMOTE_DIR: ${{ secrets.FTP_REMOTE_DIR }}
       FTP_TLS: ${{ secrets.FTP_TLS }}
-    steps:
-      # Always publish from the newest main branch. This avoids the non-fast-forward
-      # failure that happens when a normal code/UI commit lands during a long model run.
-      - name: Check out latest main with full history
-        uses: actions/checkout@v6
-        with:
-          ref: main
-          fetch-depth: 0
 
-      # CRITICAL: preserve the currently published pregame probabilities before the
-      # freshly rebuilt app/data files are downloaded over them.
-      - name: Freeze currently published pregame predictions
-        run: python3 scripts/prediction_archive.py capture --league both
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
 
       - name: Download both league results
         uses: actions/download-artifact@v8
@@ -119,70 +125,36 @@ jobs:
           path: .
           merge-multiple: true
 
-      - name: Finalize completed matches and sync archive
-        run: python3 scripts/prediction_archive.py sync --league both
+      - name: Wire frontend enhancement assets
+        run: python3 scripts/ensure_frontend_assets.py
 
-      - name: Verify merged forecast and archive files
+      - name: Verify merged forecast files
         run: |
           python3 - <<'PY'
           import json
           from pathlib import Path
-
-          for league in ("epl", "mls"):
-              path = Path("app/data") / f"{league}.json"
-              if not path.exists():
-                  raise SystemExit(f"Missing generated forecast: {path}")
-              data = json.loads(path.read_text())
-              if not data.get("fixtures") or not data.get("forecast"):
-                  raise SystemExit(f"Generated {league} snapshot is incomplete")
-              archive = (data.get("meta") or {}).get("prediction_archive") or {}
-              if archive.get("schema_version") != 1:
-                  raise SystemExit(f"Prediction archive was not synchronized for {league}")
-              print(
-                  f"Validated {league}: {len(data['fixtures'])} fixtures, "
-                  f"{len(data['forecast'])} forecast rows, "
-                  f"{archive.get('records', 0)} archived match records"
-              )
+          for league in ("epl","mls"):
+              path=Path("app/data")/f"{league}.json"
+              if not path.exists(): raise SystemExit(f"Missing generated forecast: {path}")
+              data=json.loads(path.read_text())
+              if not data.get("fixtures") or not data.get("forecast"): raise SystemExit(f"Generated {league} snapshot is incomplete")
+              if not data.get("accuracy"): raise SystemExit(f"Generated {league} snapshot is missing accuracy")
+              stale=[f for f in data["fixtures"] if f.get("result_sync_warning")]
+              if stale: raise SystemExit(f"Generated {league} snapshot has {len(stale)} unresolved stale fixtures")
+              print(f"Validated {league}: {len(data['fixtures'])} fixtures, {len(data['forecast'])} forecast rows")
           PY
-          python3 -m unittest tests.test_history tests.test_prediction_archive tests.test_snapshots -v
 
-      - name: Save snapshots, archive, model files, and source cache
-        shell: bash
+      - name: Save snapshots and generated index wiring
         run: |
           set -euo pipefail
-
           git config user.name "forecast-bot"
           git config user.email "forecast-bot@users.noreply.github.com"
-          git add app/data data/cache data/model history
-
+          git add app/data app/index.html data/cache data/model
           if git diff --cached --quiet; then
-            echo "No forecast or archive changes to commit."
+            echo "No forecast changes to commit."
           else
             git commit -m "Automated nightly forecast refresh"
-
-            for attempt in 1 2 3; do
-              echo "Push attempt $attempt of 3"
-              git fetch origin main
-
-              if ! git rebase origin/main; then
-                echo "::error::Could not safely rebase forecast/archive data onto the latest main branch."
-                git rebase --abort || true
-                exit 1
-              fi
-
-              if git push origin HEAD:main; then
-                echo "Forecast and prediction archive pushed successfully."
-                break
-              fi
-
-              if [ "$attempt" -eq 3 ]; then
-                echo "::error::Unable to push forecast/archive commit after 3 attempts."
-                exit 1
-              fi
-
-              echo "main changed again before push completed; retrying..."
-              sleep 2
-            done
+            git push
           fi
 
       - name: Deploy website to GoDaddy
