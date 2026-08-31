@@ -6,13 +6,13 @@
   "round": "Regular Season - 4",
   "home": "tottenham-hotspur",
   "away": "everton",
-  "captured_at": "2026-08-30T10:11:19Z",
+  "captured_at": "2026-08-31T10:57:47Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-tot-eve-2026-09-12",
       "event_slug": "epl-tot-eve-2026-09-12",
-      "updated_at": "2026-08-30T10:11:10Z"
+      "updated_at": "2026-08-31T10:57:41Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep12toteve",
@@ -27,28 +27,28 @@
       "away": 0.20801
     },
     "kalshi": {
-      "home": 0.764151,
-      "draw": 0.235849,
-      "away": 0.0
+      "home": 0.469697,
+      "draw": 0.262626,
+      "away": 0.267677
     },
     "consensus": {
-      "home": 0.588544,
-      "draw": 0.24479,
-      "away": 0.166666
+      "home": 0.478629,
+      "draw": 0.263154,
+      "away": 0.258217
     },
     "polymarket": {
-      "home": 0.412935,
-      "draw": 0.253731,
-      "away": 0.333333
+      "home": 0.487562,
+      "draw": 0.263682,
+      "away": 0.248756
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T10:11:19Z",
-    "kalshi": "2026-08-30T10:11:19Z",
-    "consensus": "2026-08-30T10:11:19Z",
-    "polymarket": "2026-08-30T10:11:19Z"
+    "model": "2026-08-31T10:57:47Z",
+    "kalshi": "2026-08-31T10:57:47Z",
+    "consensus": "2026-08-31T10:57:47Z",
+    "polymarket": "2026-08-31T10:57:47Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-30T10:11:19Z"
+    "updated_at": "2026-08-31T10:57:47Z"
   },
   "locked": false,
   "goal_totals": {
@@ -93,7 +93,7 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T10:11:19Z"
+    "model": "2026-08-31T10:57:47Z"
   },
   "xg_home": 1.661,
   "xg_away": 0.88

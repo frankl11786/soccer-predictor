@@ -6,39 +6,49 @@
   "round": "Regular Season - 25",
   "home": "austin-fc",
   "away": "colorado-rapids",
-  "captured_at": "2026-08-30T10:07:17Z",
+  "captured_at": "2026-08-31T10:56:00Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-aus-col-2026-09-09",
       "event_slug": "mls-aus-col-2026-09-09",
-      "updated_at": "2026-08-30T10:07:00Z"
+      "updated_at": "2026-08-31T10:55:43Z"
     },
-    "kalshi": null
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep09atxcol",
+      "event_ticker": "KXMLSGAME-26SEP09ATXCOL",
+      "updated_at": "2026-08-27T00:38:00.376447Z"
+    }
   },
   "sources": {
     "model": {
-      "home": 0.428734,
-      "draw": 0.258413,
-      "away": 0.312853
+      "home": 0.42746,
+      "draw": 0.26026,
+      "away": 0.31228
     },
     "polymarket": {
-      "home": 0.386139,
-      "draw": 0.267327,
-      "away": 0.346535
+      "home": 0.383495,
+      "draw": 0.271845,
+      "away": 0.34466
     },
     "consensus": {
+      "home": 0.384817,
+      "draw": 0.264636,
+      "away": 0.350548
+    },
+    "kalshi": {
       "home": 0.386139,
-      "draw": 0.267327,
-      "away": 0.346535
+      "draw": 0.257426,
+      "away": 0.356436
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T10:07:17Z",
-    "polymarket": "2026-08-30T10:07:17Z",
-    "consensus": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z",
+    "polymarket": "2026-08-31T10:56:00Z",
+    "consensus": "2026-08-31T10:56:00Z",
+    "kalshi": "2026-08-31T10:56:00Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -48,43 +58,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-30T10:07:17Z"
+    "updated_at": "2026-08-31T10:56:00Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 2.513,
+      "lambda": 2.488,
       "exact": {
-        "0": 0.081025,
-        "1": 0.203615,
-        "2": 0.255843,
-        "3": 0.214311,
-        "4": 0.134641,
-        "5": 0.06767,
-        "6+": 0.042895
+        "0": 0.083076,
+        "1": 0.206693,
+        "2": 0.257126,
+        "3": 0.213243,
+        "4": 0.132637,
+        "5": 0.066,
+        "6+": 0.041224
       },
       "over": {
-        "0.5": 0.918975,
-        "1.5": 0.71536,
-        "2.5": 0.459517,
-        "3.5": 0.245206,
-        "4.5": 0.110566,
-        "5.5": 0.042895
+        "0.5": 0.916924,
+        "1.5": 0.710231,
+        "2.5": 0.453105,
+        "3.5": 0.239862,
+        "4.5": 0.107225,
+        "5.5": 0.041224
       },
       "under": {
-        "0.5": 0.081025,
-        "1.5": 0.28464,
-        "2.5": 0.540483,
-        "3.5": 0.754794,
-        "4.5": 0.889434,
-        "5.5": 0.957105
+        "0.5": 0.083076,
+        "1.5": 0.289769,
+        "2.5": 0.546895,
+        "3.5": 0.760138,
+        "4.5": 0.892775,
+        "5.5": 0.958776
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z"
   },
-  "xg_home": 1.393,
-  "xg_away": 1.12
+  "xg_home": 1.379,
+  "xg_away": 1.109
 }

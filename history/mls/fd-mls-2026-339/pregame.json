@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "toronto-fc",
   "away": "chicago-fire-fc",
-  "captured_at": "2026-08-30T10:07:17Z",
+  "captured_at": "2026-08-31T10:56:00Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-tor-chi-2026-09-05",
       "event_slug": "mls-tor-chi-2026-09-05",
-      "updated_at": "2026-08-30T10:06:55Z"
+      "updated_at": "2026-08-31T10:55:38Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05torchi",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.38366,
-      "draw": 0.16177,
-      "away": 0.45457
+      "home": 0.388414,
+      "draw": 0.161872,
+      "away": 0.449714
     },
     "polymarket": {
-      "home": 0.323232,
-      "draw": 0.242424,
-      "away": 0.434343
+      "home": 0.329949,
+      "draw": 0.248731,
+      "away": 0.42132
     },
     "kalshi": {
-      "home": 0.309645,
-      "draw": 0.248731,
-      "away": 0.441624
+      "home": 0.336683,
+      "draw": 0.246231,
+      "away": 0.417085
     },
     "consensus": {
-      "home": 0.316439,
-      "draw": 0.245578,
-      "away": 0.437983
+      "home": 0.333316,
+      "draw": 0.247481,
+      "away": 0.419202
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T10:07:17Z",
-    "polymarket": "2026-08-30T10:07:17Z",
-    "kalshi": "2026-08-30T10:07:17Z",
-    "consensus": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z",
+    "polymarket": "2026-08-31T10:56:00Z",
+    "kalshi": "2026-08-31T10:56:00Z",
+    "consensus": "2026-08-31T10:56:00Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,37 +58,37 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-30T10:07:17Z"
+    "updated_at": "2026-08-31T10:56:00Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 5.068,
+      "lambda": 5.07,
       "exact": {
-        "0": 0.006295,
-        "1": 0.031903,
-        "2": 0.080842,
-        "3": 0.13657,
-        "4": 0.173034,
-        "5": 0.175387,
-        "6+": 0.395969
+        "0": 0.006282,
+        "1": 0.031852,
+        "2": 0.080744,
+        "3": 0.136458,
+        "4": 0.172961,
+        "5": 0.175382,
+        "6+": 0.39632
       },
       "over": {
-        "0.5": 0.993705,
-        "1.5": 0.961802,
-        "2.5": 0.88096,
-        "3.5": 0.74439,
-        "4.5": 0.571356,
-        "5.5": 0.395969
+        "0.5": 0.993718,
+        "1.5": 0.961866,
+        "2.5": 0.881121,
+        "3.5": 0.744663,
+        "4.5": 0.571702,
+        "5.5": 0.39632
       },
       "under": {
-        "0.5": 0.006295,
-        "1.5": 0.038198,
-        "2.5": 0.11904,
-        "3.5": 0.25561,
-        "4.5": 0.428644,
-        "5.5": 0.604031
+        "0.5": 0.006282,
+        "1.5": 0.038134,
+        "2.5": 0.118879,
+        "3.5": 0.255337,
+        "4.5": 0.428298,
+        "5.5": 0.60368
       }
     },
     "kalshi": {
@@ -104,14 +104,14 @@
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05TORCHI-1",
           "volume": 30.0,
-          "volume_24h": 30.0,
+          "volume_24h": 0.0,
           "open_interest": 30.0
         },
         "1.5": {
-          "over": 0.85,
-          "under": 0.15,
-          "bid": 0.84,
-          "ask": 0.86,
+          "over": 0.83,
+          "under": 0.17,
+          "bid": 0.82,
+          "ask": 0.84,
           "last": 0.0,
           "spread": 0.02,
           "estimate_method": "bid_ask_midpoint",
@@ -121,25 +121,25 @@
           "open_interest": 0.0
         },
         "2.5": {
-          "over": 0.645,
-          "under": 0.355,
-          "bid": 0.64,
-          "ask": 0.65,
-          "last": 0.0,
+          "over": 0.615,
+          "under": 0.385,
+          "bid": 0.61,
+          "ask": 0.62,
+          "last": 0.63,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05TORCHI-3",
-          "volume": 0.0,
-          "volume_24h": 0.0,
-          "open_interest": 0.0
+          "volume": 2.0,
+          "volume_24h": 2.0,
+          "open_interest": 2.0
         },
         "3.5": {
-          "over": 0.42,
-          "under": 0.58,
-          "bid": 0.41,
-          "ask": 0.43,
+          "over": 0.405,
+          "under": 0.595,
+          "bid": 0.4,
+          "ask": 0.41,
           "last": 0.0,
-          "spread": 0.02,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05TORCHI-4",
           "volume": 0.0,
@@ -147,12 +147,12 @@
           "open_interest": 0.0
         },
         "4.5": {
-          "over": 0.235,
-          "under": 0.765,
-          "bid": 0.23,
+          "over": 0.23,
+          "under": 0.77,
+          "bid": 0.22,
           "ask": 0.24,
           "last": 0.0,
-          "spread": 0.01,
+          "spread": 0.02,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05TORCHI-5",
           "volume": 0.0,
@@ -160,10 +160,10 @@
           "open_interest": 0.0
         },
         "5.5": {
-          "over": 0.12,
-          "under": 0.88,
-          "bid": 0.11,
-          "ask": 0.13,
+          "over": 0.11,
+          "under": 0.89,
+          "bid": 0.1,
+          "ask": 0.12,
           "last": 0.0,
           "spread": 0.02,
           "estimate_method": "bid_ask_midpoint",
@@ -178,36 +178,36 @@
       "event_url": "https://kalshi.com/markets/kxmlstotal/",
       "kickoff": "2026-09-06T03:30:00+00:00",
       "liquidity": 0.0,
-      "volume": 30.0,
-      "volume_24h": 30.0,
-      "open_interest": 30.0,
+      "volume": 32.0,
+      "volume_24h": 2.0,
+      "open_interest": 32.0,
       "updated_at": "2026-08-30T00:37:40.396816Z",
       "comparison_only": true,
       "over": {
         "0.5": 0.945,
-        "1.5": 0.85,
-        "2.5": 0.645,
-        "3.5": 0.42,
-        "4.5": 0.235,
-        "5.5": 0.12
+        "1.5": 0.83,
+        "2.5": 0.615,
+        "3.5": 0.405,
+        "4.5": 0.23,
+        "5.5": 0.11
       },
       "under": {
         "0.5": 0.055,
-        "1.5": 0.15,
-        "2.5": 0.355,
-        "3.5": 0.58,
-        "4.5": 0.765,
-        "5.5": 0.88
+        "1.5": 0.17,
+        "2.5": 0.385,
+        "3.5": 0.595,
+        "4.5": 0.77,
+        "5.5": 0.89
       }
     },
     "consensus": {
       "model_edge": {
-        "0.5": 0.048705,
-        "1.5": 0.111802,
-        "2.5": 0.23596,
-        "3.5": 0.32439,
-        "4.5": 0.336356,
-        "5.5": 0.275969
+        "0.5": 0.048718,
+        "1.5": 0.131866,
+        "2.5": 0.266121,
+        "3.5": 0.339663,
+        "4.5": 0.341702,
+        "5.5": 0.28632
       },
       "sources_by_line": {
         "0.5": [
@@ -233,27 +233,27 @@
       "comparison_only": true,
       "over": {
         "0.5": 0.945,
-        "1.5": 0.85,
-        "2.5": 0.645,
-        "3.5": 0.42,
-        "4.5": 0.235,
-        "5.5": 0.12
+        "1.5": 0.83,
+        "2.5": 0.615,
+        "3.5": 0.405,
+        "4.5": 0.23,
+        "5.5": 0.11
       },
       "under": {
         "0.5": 0.055,
-        "1.5": 0.15,
-        "2.5": 0.355,
-        "3.5": 0.58,
-        "4.5": 0.765,
-        "5.5": 0.88
+        "1.5": 0.17,
+        "2.5": 0.385,
+        "3.5": 0.595,
+        "4.5": 0.77,
+        "5.5": 0.89
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T10:07:17Z",
-    "kalshi": "2026-08-30T10:07:17Z",
-    "consensus": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z",
+    "kalshi": "2026-08-31T10:56:00Z",
+    "consensus": "2026-08-31T10:56:00Z"
   },
-  "xg_home": 2.403,
-  "xg_away": 2.665
+  "xg_home": 2.421,
+  "xg_away": 2.649
 }

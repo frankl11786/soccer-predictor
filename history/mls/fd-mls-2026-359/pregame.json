@@ -6,39 +6,49 @@
   "round": "Regular Season - 25",
   "home": "san-diego-fc",
   "away": "san-jose-earthquakes",
-  "captured_at": "2026-08-30T10:07:17Z",
+  "captured_at": "2026-08-31T10:56:00Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-sdg-sje-2026-09-09",
       "event_slug": "mls-sdg-sje-2026-09-09",
-      "updated_at": "2026-08-30T10:07:02Z"
+      "updated_at": "2026-08-31T10:55:45Z"
     },
-    "kalshi": null
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep09sdsj",
+      "event_ticker": "KXMLSGAME-26SEP09SDSJ",
+      "updated_at": "2026-08-27T00:39:00.378909Z"
+    }
   },
   "sources": {
     "model": {
-      "home": 0.49574,
-      "draw": 0.18273,
-      "away": 0.32153
+      "home": 0.49597,
+      "draw": 0.18354,
+      "away": 0.32049
     },
     "polymarket": {
-      "home": 0.492537,
-      "draw": 0.238806,
-      "away": 0.268657
+      "home": 0.585366,
+      "draw": 0.204878,
+      "away": 0.209756
     },
     "consensus": {
-      "home": 0.492537,
-      "draw": 0.238806,
-      "away": 0.268657
+      "home": 0.592683,
+      "draw": 0.204939,
+      "away": 0.202378
+    },
+    "kalshi": {
+      "home": 0.6,
+      "draw": 0.205,
+      "away": 0.195
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T10:07:17Z",
-    "polymarket": "2026-08-30T10:07:17Z",
-    "consensus": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z",
+    "polymarket": "2026-08-31T10:56:00Z",
+    "consensus": "2026-08-31T10:56:00Z",
+    "kalshi": "2026-08-31T10:56:00Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -48,43 +58,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-30T10:07:17Z"
+    "updated_at": "2026-08-31T10:56:00Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 4.065,
+      "lambda": 4.039,
       "exact": {
-        "0": 0.017163,
-        "1": 0.069768,
-        "2": 0.141803,
-        "3": 0.192142,
-        "4": 0.195265,
-        "5": 0.15875,
-        "6+": 0.225109
+        "0": 0.017615,
+        "1": 0.071147,
+        "2": 0.143682,
+        "3": 0.193444,
+        "4": 0.19533,
+        "5": 0.157788,
+        "6+": 0.220994
       },
       "over": {
-        "0.5": 0.982837,
-        "1.5": 0.913069,
-        "2.5": 0.771267,
-        "3.5": 0.579124,
-        "4.5": 0.38386,
-        "5.5": 0.225109
+        "0.5": 0.982385,
+        "1.5": 0.911238,
+        "2.5": 0.767556,
+        "3.5": 0.574112,
+        "4.5": 0.378782,
+        "5.5": 0.220994
       },
       "under": {
-        "0.5": 0.017163,
-        "1.5": 0.086931,
-        "2.5": 0.228733,
-        "3.5": 0.420876,
-        "4.5": 0.61614,
-        "5.5": 0.774891
+        "0.5": 0.017615,
+        "1.5": 0.088762,
+        "2.5": 0.232444,
+        "3.5": 0.425888,
+        "4.5": 0.621218,
+        "5.5": 0.779006
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z"
   },
-  "xg_home": 2.312,
-  "xg_away": 1.753
+  "xg_home": 2.3,
+  "xg_away": 1.739
 }

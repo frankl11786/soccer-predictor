@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "nottingham-forest",
   "away": "tottenham-hotspur",
-  "captured_at": "2026-08-30T10:11:19Z",
+  "captured_at": "2026-08-31T10:57:47Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-not-tot-2026-09-05",
       "event_slug": "epl-not-tot-2026-09-05",
-      "updated_at": "2026-08-30T10:11:06Z"
+      "updated_at": "2026-08-31T10:57:38Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep05nfotot",
@@ -32,23 +32,23 @@
       "away": 0.339901
     },
     "kalshi": {
-      "home": 0.360406,
-      "draw": 0.279188,
-      "away": 0.360406
+      "home": 0.366834,
+      "draw": 0.276382,
+      "away": 0.356784
     },
     "consensus": {
-      "home": 0.369858,
-      "draw": 0.279988,
-      "away": 0.350154
+      "home": 0.373072,
+      "draw": 0.278585,
+      "away": 0.348342
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T10:11:19Z",
-    "polymarket": "2026-08-30T10:11:19Z",
-    "kalshi": "2026-08-30T10:11:19Z",
-    "consensus": "2026-08-30T10:11:19Z"
+    "model": "2026-08-31T10:57:47Z",
+    "polymarket": "2026-08-31T10:57:47Z",
+    "kalshi": "2026-08-31T10:57:47Z",
+    "consensus": "2026-08-31T10:57:47Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-30T10:11:19Z"
+    "updated_at": "2026-08-31T10:57:47Z"
   },
   "locked": false,
   "goal_totals": {
@@ -104,42 +104,42 @@
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26SEP05NFOTOT-1",
           "volume": 40.21,
-          "volume_24h": 40.21,
+          "volume_24h": 0.0,
           "open_interest": 40.21
         },
         "1.5": {
-          "over": 0.725,
-          "under": 0.275,
+          "over": 0.73,
+          "under": 0.27,
           "bid": 0.72,
-          "ask": 0.73,
+          "ask": 0.74,
           "last": 0.73,
-          "spread": 0.01,
+          "spread": 0.02,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26SEP05NFOTOT-2",
           "volume": 10.0,
-          "volume_24h": 10.0,
+          "volume_24h": 0.0,
           "open_interest": 10.0
         },
         "2.5": {
-          "over": 0.455,
-          "under": 0.545,
-          "bid": 0.45,
-          "ask": 0.46,
+          "over": 0.465,
+          "under": 0.535,
+          "bid": 0.46,
+          "ask": 0.47,
           "last": 0.47,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26SEP05NFOTOT-3",
-          "volume": 11.05,
-          "volume_24h": 11.05,
-          "open_interest": 11.05
+          "volume": 116.05,
+          "volume_24h": 104.0,
+          "open_interest": 116.05
         },
         "3.5": {
-          "over": 0.25,
-          "under": 0.75,
-          "bid": 0.24,
+          "over": 0.255,
+          "under": 0.745,
+          "bid": 0.25,
           "ask": 0.26,
           "last": 0.0,
-          "spread": 0.02,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26SEP05NFOTOT-4",
           "volume": 0.0,
@@ -151,13 +151,13 @@
           "under": 0.895,
           "bid": 0.1,
           "ask": 0.11,
-          "last": 0.0,
+          "last": 0.11,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26SEP05NFOTOT-5",
-          "volume": 0.0,
-          "volume_24h": 0.0,
-          "open_interest": 0.0
+          "volume": 1461.36,
+          "volume_24h": 1461.36,
+          "open_interest": 1461.36
         },
         "5.5": {
           "over": 0.045,
@@ -178,24 +178,24 @@
       "event_url": "https://kalshi.com/markets/kxepltotal/",
       "kickoff": "2026-09-05T18:00:00+00:00",
       "liquidity": 0.0,
-      "volume": 61.26,
-      "volume_24h": 61.26,
-      "open_interest": 61.26,
+      "volume": 1627.62,
+      "volume_24h": 1565.36,
+      "open_interest": 1627.62,
       "updated_at": "2026-08-29T14:23:34.185647Z",
       "comparison_only": true,
       "over": {
         "0.5": 0.925,
-        "1.5": 0.725,
-        "2.5": 0.455,
-        "3.5": 0.25,
+        "1.5": 0.73,
+        "2.5": 0.465,
+        "3.5": 0.255,
         "4.5": 0.105,
         "5.5": 0.045
       },
       "under": {
         "0.5": 0.075,
-        "1.5": 0.275,
-        "2.5": 0.545,
-        "3.5": 0.75,
+        "1.5": 0.27,
+        "2.5": 0.535,
+        "3.5": 0.745,
         "4.5": 0.895,
         "5.5": 0.955
       }
@@ -203,9 +203,9 @@
     "consensus": {
       "model_edge": {
         "0.5": 0.006779,
-        "1.5": 0.023605,
-        "2.5": 0.047694,
-        "3.5": 0.032604,
+        "1.5": 0.018605,
+        "2.5": 0.037694,
+        "3.5": 0.027604,
         "4.5": 0.029868,
         "5.5": 0.010534
       },
@@ -233,26 +233,26 @@
       "comparison_only": true,
       "over": {
         "0.5": 0.925,
-        "1.5": 0.725,
-        "2.5": 0.455,
-        "3.5": 0.25,
+        "1.5": 0.73,
+        "2.5": 0.465,
+        "3.5": 0.255,
         "4.5": 0.105,
         "5.5": 0.045
       },
       "under": {
         "0.5": 0.075,
-        "1.5": 0.275,
-        "2.5": 0.545,
-        "3.5": 0.75,
+        "1.5": 0.27,
+        "2.5": 0.535,
+        "3.5": 0.745,
         "4.5": 0.895,
         "5.5": 0.955
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T10:11:19Z",
-    "kalshi": "2026-08-30T10:11:19Z",
-    "consensus": "2026-08-30T10:11:19Z"
+    "model": "2026-08-31T10:57:47Z",
+    "kalshi": "2026-08-31T10:57:47Z",
+    "consensus": "2026-08-31T10:57:47Z"
   },
   "xg_home": 1.411,
   "xg_away": 1.274

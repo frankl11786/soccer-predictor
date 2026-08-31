@@ -6,13 +6,13 @@
   "round": "Regular Season - 24",
   "home": "fc-dallas",
   "away": "sporting-kansas-city",
-  "captured_at": "2026-08-30T10:07:17Z",
+  "captured_at": "2026-08-31T10:56:00Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-dal-skc-2026-09-05",
       "event_slug": "mls-dal-skc-2026-09-05",
-      "updated_at": "2026-08-30T10:06:56Z"
+      "updated_at": "2026-08-31T10:55:39Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep05dalskc",
@@ -22,33 +22,33 @@
   },
   "sources": {
     "model": {
-      "home": 0.79758,
-      "draw": 0.10419,
-      "away": 0.09823
+      "home": 0.79833,
+      "draw": 0.10436,
+      "away": 0.09731
     },
     "polymarket": {
-      "home": 0.676923,
-      "draw": 0.184615,
-      "away": 0.138462
+      "home": 0.654823,
+      "draw": 0.187817,
+      "away": 0.15736
     },
     "kalshi": {
-      "home": 0.681818,
-      "draw": 0.181818,
-      "away": 0.136364
+      "home": 0.668342,
+      "draw": 0.175879,
+      "away": 0.155779
     },
     "consensus": {
-      "home": 0.67937,
-      "draw": 0.183217,
-      "away": 0.137413
+      "home": 0.661582,
+      "draw": 0.181848,
+      "away": 0.15657
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T10:07:17Z",
-    "polymarket": "2026-08-30T10:07:17Z",
-    "kalshi": "2026-08-30T10:07:17Z",
-    "consensus": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z",
+    "polymarket": "2026-08-31T10:56:00Z",
+    "kalshi": "2026-08-31T10:56:00Z",
+    "consensus": "2026-08-31T10:56:00Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,75 +58,75 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-30T10:07:17Z"
+    "updated_at": "2026-08-31T10:56:00Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 5.043,
+      "lambda": 5.015,
       "exact": {
-        "0": 0.006454,
-        "1": 0.032549,
-        "2": 0.082073,
-        "3": 0.137965,
-        "4": 0.173939,
-        "5": 0.175435,
-        "6+": 0.391584
+        "0": 0.006638,
+        "1": 0.033288,
+        "2": 0.083469,
+        "3": 0.139532,
+        "4": 0.174939,
+        "5": 0.175463,
+        "6+": 0.386671
       },
       "over": {
-        "0.5": 0.993546,
-        "1.5": 0.960996,
-        "2.5": 0.878923,
-        "3.5": 0.740958,
-        "4.5": 0.567019,
-        "5.5": 0.391584
+        "0.5": 0.993362,
+        "1.5": 0.960075,
+        "2.5": 0.876606,
+        "3.5": 0.737073,
+        "4.5": 0.562135,
+        "5.5": 0.386671
       },
       "under": {
-        "0.5": 0.006454,
-        "1.5": 0.039004,
-        "2.5": 0.121077,
-        "3.5": 0.259042,
-        "4.5": 0.432981,
-        "5.5": 0.608416
+        "0.5": 0.006638,
+        "1.5": 0.039925,
+        "2.5": 0.123394,
+        "3.5": 0.262927,
+        "4.5": 0.437865,
+        "5.5": 0.613329
       }
     },
     "kalshi": {
       "source": "Kalshi",
       "lines": {
         "0.5": {
-          "over": 0.96,
-          "under": 0.04,
+          "over": 0.955,
+          "under": 0.045,
           "bid": 0.95,
-          "ask": 0.97,
-          "last": 0.95,
-          "spread": 0.02,
+          "ask": 0.96,
+          "last": 0.89,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05DALSKC-1",
-          "volume": 134.59,
-          "volume_24h": 134.59,
-          "open_interest": 134.59
+          "volume": 183.59,
+          "volume_24h": 49.0,
+          "open_interest": 183.59
         },
         "1.5": {
           "over": 0.865,
           "under": 0.135,
-          "bid": 0.85,
-          "ask": 0.88,
-          "last": 0.0,
-          "spread": 0.03,
+          "bid": 0.86,
+          "ask": 0.87,
+          "last": 0.78,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05DALSKC-2",
-          "volume": 0.0,
-          "volume_24h": 0.0,
-          "open_interest": 0.0
+          "volume": 58.0,
+          "volume_24h": 58.0,
+          "open_interest": 58.0
         },
         "2.5": {
-          "over": 0.69,
-          "under": 0.31,
+          "over": 0.685,
+          "under": 0.315,
           "bid": 0.68,
-          "ask": 0.7,
+          "ask": 0.69,
           "last": 0.0,
-          "spread": 0.02,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05DALSKC-3",
           "volume": 0.0,
@@ -134,12 +134,12 @@
           "open_interest": 0.0
         },
         "3.5": {
-          "over": 0.47,
-          "under": 0.53,
+          "over": 0.465,
+          "under": 0.535,
           "bid": 0.46,
-          "ask": 0.48,
+          "ask": 0.47,
           "last": 0.0,
-          "spread": 0.02,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05DALSKC-4",
           "volume": 0.0,
@@ -147,10 +147,10 @@
           "open_interest": 0.0
         },
         "4.5": {
-          "over": 0.28,
-          "under": 0.72,
-          "bid": 0.27,
-          "ask": 0.29,
+          "over": 0.27,
+          "under": 0.73,
+          "bid": 0.26,
+          "ask": 0.28,
           "last": 0.0,
           "spread": 0.02,
           "estimate_method": "bid_ask_midpoint",
@@ -178,36 +178,36 @@
       "event_url": "https://kalshi.com/markets/kxmlstotal/",
       "kickoff": "2026-09-06T04:30:00+00:00",
       "liquidity": 0.0,
-      "volume": 134.59,
-      "volume_24h": 134.59,
-      "open_interest": 134.59,
+      "volume": 241.59,
+      "volume_24h": 107.0,
+      "open_interest": 241.59,
       "updated_at": "2026-08-30T04:51:05.416811Z",
       "comparison_only": true,
       "over": {
-        "0.5": 0.96,
+        "0.5": 0.955,
         "1.5": 0.865,
-        "2.5": 0.69,
-        "3.5": 0.47,
-        "4.5": 0.28,
+        "2.5": 0.685,
+        "3.5": 0.465,
+        "4.5": 0.27,
         "5.5": 0.145
       },
       "under": {
-        "0.5": 0.04,
+        "0.5": 0.045,
         "1.5": 0.135,
-        "2.5": 0.31,
-        "3.5": 0.53,
-        "4.5": 0.72,
+        "2.5": 0.315,
+        "3.5": 0.535,
+        "4.5": 0.73,
         "5.5": 0.855
       }
     },
     "consensus": {
       "model_edge": {
-        "0.5": 0.033546,
-        "1.5": 0.095996,
-        "2.5": 0.188923,
-        "3.5": 0.270958,
-        "4.5": 0.287019,
-        "5.5": 0.246584
+        "0.5": 0.038362,
+        "1.5": 0.095075,
+        "2.5": 0.191606,
+        "3.5": 0.272073,
+        "4.5": 0.292135,
+        "5.5": 0.241671
       },
       "sources_by_line": {
         "0.5": [
@@ -232,28 +232,28 @@
       "method": "Equal-weight mean of available prediction-market over probabilities",
       "comparison_only": true,
       "over": {
-        "0.5": 0.96,
+        "0.5": 0.955,
         "1.5": 0.865,
-        "2.5": 0.69,
-        "3.5": 0.47,
-        "4.5": 0.28,
+        "2.5": 0.685,
+        "3.5": 0.465,
+        "4.5": 0.27,
         "5.5": 0.145
       },
       "under": {
-        "0.5": 0.04,
+        "0.5": 0.045,
         "1.5": 0.135,
-        "2.5": 0.31,
-        "3.5": 0.53,
-        "4.5": 0.72,
+        "2.5": 0.315,
+        "3.5": 0.535,
+        "4.5": 0.73,
         "5.5": 0.855
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T10:07:17Z",
-    "kalshi": "2026-08-30T10:07:17Z",
-    "consensus": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z",
+    "kalshi": "2026-08-31T10:56:00Z",
+    "consensus": "2026-08-31T10:56:00Z"
   },
-  "xg_home": 3.902,
-  "xg_away": 1.141
+  "xg_home": 3.886,
+  "xg_away": 1.129
 }

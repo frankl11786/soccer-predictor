@@ -6,13 +6,13 @@
   "round": "Regular Season - 4",
   "home": "chelsea",
   "away": "hull-city",
-  "captured_at": "2026-08-30T10:11:19Z",
+  "captured_at": "2026-08-31T10:57:47Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-che-hul-2026-09-12",
       "event_slug": "epl-che-hul-2026-09-12",
-      "updated_at": "2026-08-30T10:11:08Z"
+      "updated_at": "2026-08-31T10:57:40Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep12cfchul",
@@ -27,28 +27,28 @@
       "away": 0.155518
     },
     "kalshi": {
-      "home": 0.659091,
-      "draw": 0.122727,
-      "away": 0.218182
+      "home": 0.77835,
+      "draw": 0.149485,
+      "away": 0.072165
     },
     "consensus": {
-      "home": 0.694545,
-      "draw": 0.128864,
-      "away": 0.176591
+      "home": 0.775874,
+      "draw": 0.15356,
+      "away": 0.070566
     },
     "polymarket": {
-      "home": 0.73,
-      "draw": 0.135,
-      "away": 0.135
+      "home": 0.773399,
+      "draw": 0.157635,
+      "away": 0.068966
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T10:11:19Z",
-    "kalshi": "2026-08-30T10:11:19Z",
-    "consensus": "2026-08-30T10:11:19Z",
-    "polymarket": "2026-08-30T10:11:19Z"
+    "model": "2026-08-31T10:57:47Z",
+    "kalshi": "2026-08-31T10:57:47Z",
+    "consensus": "2026-08-31T10:57:47Z",
+    "polymarket": "2026-08-31T10:57:47Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:09.552489Z",
-    "updated_at": "2026-08-30T10:11:19Z"
+    "updated_at": "2026-08-31T10:57:47Z"
   },
   "locked": false,
   "goal_totals": {
@@ -93,7 +93,7 @@
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T10:11:19Z"
+    "model": "2026-08-31T10:57:47Z"
   },
   "xg_home": 1.584,
   "xg_away": 0.647

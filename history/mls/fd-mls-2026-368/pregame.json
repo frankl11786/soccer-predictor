@@ -6,23 +6,39 @@
   "round": "Regular Season - 26",
   "home": "fc-dallas",
   "away": "portland-timbers",
-  "captured_at": "2026-08-30T10:07:17Z",
+  "captured_at": "2026-08-31T10:56:00Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
-    "polymarket": null,
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-dal-por-2026-09-12",
+      "event_slug": "mls-dal-por-2026-09-12",
+      "updated_at": "2026-08-31T10:55:47Z"
+    },
     "kalshi": null
   },
   "sources": {
     "model": {
-      "home": 0.46111,
-      "draw": 0.17702,
-      "away": 0.36187
+      "home": 0.46737,
+      "draw": 0.17604,
+      "away": 0.35659
+    },
+    "polymarket": {
+      "home": 0.452736,
+      "draw": 0.253731,
+      "away": 0.293532
+    },
+    "consensus": {
+      "home": 0.452736,
+      "draw": 0.253731,
+      "away": 0.293532
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z",
+    "polymarket": "2026-08-31T10:56:00Z",
+    "consensus": "2026-08-31T10:56:00Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -32,43 +48,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-30T10:07:17Z"
+    "updated_at": "2026-08-31T10:56:00Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 4.451,
+      "lambda": 4.481,
       "exact": {
-        "0": 0.011667,
-        "1": 0.051929,
-        "2": 0.115569,
-        "3": 0.171466,
-        "4": 0.190798,
-        "5": 0.169849,
-        "6+": 0.288723
+        "0": 0.011322,
+        "1": 0.050734,
+        "2": 0.11367,
+        "3": 0.169785,
+        "4": 0.190202,
+        "5": 0.170459,
+        "6+": 0.293827
       },
       "over": {
-        "0.5": 0.988333,
-        "1.5": 0.936404,
-        "2.5": 0.820835,
-        "3.5": 0.649369,
-        "4.5": 0.458571,
-        "5.5": 0.288723
+        "0.5": 0.988678,
+        "1.5": 0.937944,
+        "2.5": 0.824274,
+        "3.5": 0.654488,
+        "4.5": 0.464286,
+        "5.5": 0.293827
       },
       "under": {
-        "0.5": 0.011667,
-        "1.5": 0.063596,
-        "2.5": 0.179165,
-        "3.5": 0.350631,
-        "4.5": 0.541429,
-        "5.5": 0.711277
+        "0.5": 0.011322,
+        "1.5": 0.062056,
+        "2.5": 0.175726,
+        "3.5": 0.345512,
+        "4.5": 0.535714,
+        "5.5": 0.706173
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z"
   },
-  "xg_home": 2.398,
-  "xg_away": 2.053
+  "xg_home": 2.433,
+  "xg_away": 2.048
 }

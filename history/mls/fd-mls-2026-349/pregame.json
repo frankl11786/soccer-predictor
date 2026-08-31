@@ -6,39 +6,49 @@
   "round": "Regular Season - 25",
   "home": "cf-montréal",
   "away": "charlotte-fc",
-  "captured_at": "2026-08-30T10:07:17Z",
+  "captured_at": "2026-08-31T10:56:00Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/mls-mim-clt-2026-09-09",
       "event_slug": "mls-mim-clt-2026-09-09",
-      "updated_at": "2026-08-30T10:06:59Z"
+      "updated_at": "2026-08-31T10:55:41Z"
     },
-    "kalshi": null
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26sep09mtlclt",
+      "event_ticker": "KXMLSGAME-26SEP09MTLCLT",
+      "updated_at": "2026-08-26T00:39:00.387266Z"
+    }
   },
   "sources": {
     "model": {
-      "home": 0.37104,
-      "draw": 0.22173,
-      "away": 0.40723
+      "home": 0.36891,
+      "draw": 0.22121,
+      "away": 0.40988
     },
     "polymarket": {
-      "home": 0.308458,
-      "draw": 0.263682,
-      "away": 0.427861
+      "home": 0.29368,
+      "draw": 0.379182,
+      "away": 0.327138
     },
     "consensus": {
-      "home": 0.308458,
-      "draw": 0.263682,
-      "away": 0.427861
+      "home": 0.346335,
+      "draw": 0.313329,
+      "away": 0.340336
+    },
+    "kalshi": {
+      "home": 0.39899,
+      "draw": 0.247475,
+      "away": 0.353535
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T10:07:17Z",
-    "polymarket": "2026-08-30T10:07:17Z",
-    "consensus": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z",
+    "polymarket": "2026-08-31T10:56:00Z",
+    "consensus": "2026-08-31T10:56:00Z",
+    "kalshi": "2026-08-31T10:56:00Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -48,43 +58,43 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-30T10:07:17Z"
+    "updated_at": "2026-08-31T10:56:00Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 3.197,
+      "lambda": 3.206,
       "exact": {
-        "0": 0.040885,
-        "1": 0.130708,
-        "2": 0.208937,
-        "3": 0.222657,
-        "4": 0.177959,
-        "5": 0.113787,
-        "6+": 0.105066
+        "0": 0.040518,
+        "1": 0.129902,
+        "2": 0.208233,
+        "3": 0.222531,
+        "4": 0.178359,
+        "5": 0.114364,
+        "6+": 0.106093
       },
       "over": {
-        "0.5": 0.959115,
-        "1.5": 0.828407,
-        "2.5": 0.61947,
-        "3.5": 0.396812,
-        "4.5": 0.218853,
-        "5.5": 0.105066
+        "0.5": 0.959482,
+        "1.5": 0.82958,
+        "2.5": 0.621347,
+        "3.5": 0.398816,
+        "4.5": 0.220457,
+        "5.5": 0.106093
       },
       "under": {
-        "0.5": 0.040885,
-        "1.5": 0.171593,
-        "2.5": 0.38053,
-        "3.5": 0.603188,
-        "4.5": 0.781147,
-        "5.5": 0.894934
+        "0.5": 0.040518,
+        "1.5": 0.17042,
+        "2.5": 0.378653,
+        "3.5": 0.601184,
+        "4.5": 0.779543,
+        "5.5": 0.893907
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z"
   },
-  "xg_home": 1.551,
-  "xg_away": 1.646
+  "xg_home": 1.549,
+  "xg_away": 1.657
 }

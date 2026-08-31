@@ -6,13 +6,13 @@
   "round": "Regular Season - 2",
   "home": "aston-villa",
   "away": "arsenal",
-  "captured_at": "2026-08-30T10:11:19Z",
+  "captured_at": "2026-08-31T10:57:47Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-ast-ars-2026-08-31",
       "event_slug": "epl-ast-ars-2026-08-31",
-      "updated_at": "2026-08-30T10:11:04Z"
+      "updated_at": "2026-08-31T10:57:36Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26aug31avlars",
@@ -27,28 +27,28 @@
       "away": 0.767482
     },
     "polymarket": {
-      "home": 0.135678,
-      "draw": 0.226131,
+      "home": 0.145729,
+      "draw": 0.21608,
       "away": 0.638191
     },
     "kalshi": {
-      "home": 0.126904,
-      "draw": 0.218274,
-      "away": 0.654822
+      "home": 0.135678,
+      "draw": 0.21608,
+      "away": 0.648242
     },
     "consensus": {
-      "home": 0.131291,
-      "draw": 0.222202,
-      "away": 0.646507
+      "home": 0.140703,
+      "draw": 0.21608,
+      "away": 0.643217
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T10:11:19Z",
-    "polymarket": "2026-08-30T10:11:19Z",
-    "kalshi": "2026-08-30T10:11:19Z",
-    "consensus": "2026-08-30T10:11:19Z"
+    "model": "2026-08-31T10:57:47Z",
+    "polymarket": "2026-08-31T10:57:47Z",
+    "kalshi": "2026-08-31T10:57:47Z",
+    "consensus": "2026-08-31T10:57:47Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-30T10:11:19Z"
+    "updated_at": "2026-08-31T10:57:47Z"
   },
   "locked": false,
   "goal_totals": {
@@ -99,13 +99,13 @@
           "under": 0.055,
           "bid": 0.94,
           "ask": 0.95,
-          "last": 0.95,
+          "last": 0.94,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG31AVLARS-1",
-          "volume": 1107.75,
-          "volume_24h": 866.75,
-          "open_interest": 1082.75
+          "volume": 21915.17,
+          "volume_24h": 20807.42,
+          "open_interest": 21580.2
         },
         "1.5": {
           "over": 0.775,
@@ -116,22 +116,22 @@
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG31AVLARS-2",
-          "volume": 791.52,
-          "volume_24h": 108.16,
-          "open_interest": 791.52
+          "volume": 28805.09,
+          "volume_24h": 28013.57,
+          "open_interest": 27900.55
         },
         "2.5": {
-          "over": 0.525,
-          "under": 0.475,
-          "bid": 0.52,
-          "ask": 0.53,
-          "last": 0.53,
+          "over": 0.535,
+          "under": 0.465,
+          "bid": 0.53,
+          "ask": 0.54,
+          "last": 0.54,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG31AVLARS-3",
-          "volume": 2101.94,
-          "volume_24h": 849.39,
-          "open_interest": 1733.14
+          "volume": 372300.36,
+          "volume_24h": 370106.63,
+          "open_interest": 367441.08
         },
         "3.5": {
           "over": 0.305,
@@ -142,9 +142,9 @@
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG31AVLARS-4",
-          "volume": 479.56,
-          "volume_24h": 457.19,
-          "open_interest": 479.56
+          "volume": 9732.78,
+          "volume_24h": 9251.93,
+          "open_interest": 9101.93
         },
         "4.5": {
           "over": 0.145,
@@ -155,22 +155,22 @@
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG31AVLARS-5",
-          "volume": 2153.3,
-          "volume_24h": 0.0,
-          "open_interest": 2135.46
+          "volume": 7844.64,
+          "volume_24h": 5691.34,
+          "open_interest": 7483.8
         },
         "5.5": {
-          "over": 0.055,
-          "under": 0.945,
-          "bid": 0.05,
-          "ask": 0.06,
-          "last": 0.06,
+          "over": 0.065,
+          "under": 0.935,
+          "bid": 0.06,
+          "ask": 0.07,
+          "last": 0.07,
           "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXEPLTOTAL-26AUG31AVLARS-6",
-          "volume": 419.0,
-          "volume_24h": 419.0,
-          "open_interest": 419.0
+          "volume": 7506.8,
+          "volume_24h": 4046.49,
+          "open_interest": 7506.8
         }
       },
       "event_ticker": "KXEPLTOTAL-26AUG31AVLARS",
@@ -178,36 +178,36 @@
       "event_url": "https://kalshi.com/markets/kxepltotal/",
       "kickoff": "2026-08-31T23:00:00+00:00",
       "liquidity": 0.0,
-      "volume": 7053.07,
-      "volume_24h": 2700.49,
-      "open_interest": 6641.43,
+      "volume": 448104.84,
+      "volume_24h": 437917.38,
+      "open_interest": 441014.36,
       "updated_at": "2026-08-25T16:01:28.156172Z",
       "comparison_only": true,
       "over": {
         "0.5": 0.945,
         "1.5": 0.775,
-        "2.5": 0.525,
+        "2.5": 0.535,
         "3.5": 0.305,
         "4.5": 0.145,
-        "5.5": 0.055
+        "5.5": 0.065
       },
       "under": {
         "0.5": 0.055,
         "1.5": 0.225,
-        "2.5": 0.475,
+        "2.5": 0.465,
         "3.5": 0.695,
         "4.5": 0.855,
-        "5.5": 0.945
+        "5.5": 0.935
       }
     },
     "consensus": {
       "model_edge": {
         "0.5": 0.01436,
         "1.5": 0.05419,
-        "2.5": 0.095722,
+        "2.5": 0.085722,
         "3.5": 0.093148,
         "4.5": 0.074922,
-        "5.5": 0.05075
+        "5.5": 0.04075
       },
       "sources_by_line": {
         "0.5": [
@@ -234,25 +234,25 @@
       "over": {
         "0.5": 0.945,
         "1.5": 0.775,
-        "2.5": 0.525,
+        "2.5": 0.535,
         "3.5": 0.305,
         "4.5": 0.145,
-        "5.5": 0.055
+        "5.5": 0.065
       },
       "under": {
         "0.5": 0.055,
         "1.5": 0.225,
-        "2.5": 0.475,
+        "2.5": 0.465,
         "3.5": 0.695,
         "4.5": 0.855,
-        "5.5": 0.945
+        "5.5": 0.935
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T10:11:19Z",
-    "kalshi": "2026-08-30T10:11:19Z",
-    "consensus": "2026-08-30T10:11:19Z"
+    "model": "2026-08-31T10:57:47Z",
+    "kalshi": "2026-08-31T10:57:47Z",
+    "consensus": "2026-08-31T10:57:47Z"
   },
   "xg_home": 0.643,
   "xg_away": 2.56

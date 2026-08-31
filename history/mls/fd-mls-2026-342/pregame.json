@@ -6,7 +6,7 @@
   "round": "Regular Season - 24",
   "home": "la-galaxy",
   "away": "new-england-revolution",
-  "captured_at": "2026-08-30T10:07:17Z",
+  "captured_at": "2026-08-31T10:56:00Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": null,
@@ -18,27 +18,27 @@
   },
   "sources": {
     "model": {
-      "home": 0.3788,
-      "draw": 0.21742,
-      "away": 0.40378
+      "home": 0.36147,
+      "draw": 0.21714,
+      "away": 0.42139
     },
     "kalshi": {
-      "home": 0.475,
-      "draw": 0.245,
-      "away": 0.28
+      "home": 0.441624,
+      "draw": 0.248731,
+      "away": 0.309645
     },
     "consensus": {
-      "home": 0.475,
-      "draw": 0.245,
-      "away": 0.28
+      "home": 0.441624,
+      "draw": 0.248731,
+      "away": 0.309645
     }
   },
   "league": "mls",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T10:07:17Z",
-    "kalshi": "2026-08-30T10:07:17Z",
-    "consensus": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z",
+    "kalshi": "2026-08-31T10:56:00Z",
+    "consensus": "2026-08-31T10:56:00Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -48,75 +48,75 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T20:29:10.323168Z",
-    "updated_at": "2026-08-30T10:07:17Z"
+    "updated_at": "2026-08-31T10:56:00Z"
   },
   "locked": false,
   "goal_totals": {
     "model": {
       "method": "Poisson total with rate equal to home xG + away xG",
-      "lambda": 3.311,
+      "lambda": 3.312,
       "exact": {
-        "0": 0.03648,
-        "1": 0.120784,
-        "2": 0.199958,
-        "3": 0.220687,
-        "4": 0.182674,
-        "5": 0.120967,
-        "6+": 0.11845
+        "0": 0.036443,
+        "1": 0.1207,
+        "2": 0.199879,
+        "3": 0.220667,
+        "4": 0.182712,
+        "5": 0.121028,
+        "6+": 0.118571
       },
       "over": {
-        "0.5": 0.96352,
-        "1.5": 0.842736,
-        "2.5": 0.642778,
-        "3.5": 0.422091,
-        "4.5": 0.239417,
-        "5.5": 0.11845
+        "0.5": 0.963557,
+        "1.5": 0.842857,
+        "2.5": 0.642978,
+        "3.5": 0.422311,
+        "4.5": 0.239599,
+        "5.5": 0.118571
       },
       "under": {
-        "0.5": 0.03648,
-        "1.5": 0.157264,
-        "2.5": 0.357222,
-        "3.5": 0.577909,
-        "4.5": 0.760583,
-        "5.5": 0.88155
+        "0.5": 0.036443,
+        "1.5": 0.157143,
+        "2.5": 0.357022,
+        "3.5": 0.577689,
+        "4.5": 0.760401,
+        "5.5": 0.881429
       }
     },
     "kalshi": {
       "source": "Kalshi",
       "lines": {
         "0.5": {
-          "over": 0.93,
-          "under": 0.07,
-          "bid": 0.91,
+          "over": 0.945,
+          "under": 0.055,
+          "bid": 0.94,
           "ask": 0.95,
-          "last": 0.92,
-          "spread": 0.04,
+          "last": 0.91,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05LAGNE-1",
-          "volume": 38.0,
-          "volume_24h": 38.0,
-          "open_interest": 38.0
+          "volume": 167.0,
+          "volume_24h": 129.0,
+          "open_interest": 167.0
         },
         "1.5": {
-          "over": 0.825,
-          "under": 0.175,
-          "bid": 0.81,
-          "ask": 0.84,
-          "last": 0.0,
+          "over": 0.815,
+          "under": 0.185,
+          "bid": 0.8,
+          "ask": 0.83,
+          "last": 0.72,
           "spread": 0.03,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05LAGNE-2",
-          "volume": 0.0,
-          "volume_24h": 0.0,
-          "open_interest": 0.0
+          "volume": 127.0,
+          "volume_24h": 127.0,
+          "open_interest": 127.0
         },
         "2.5": {
-          "over": 0.615,
-          "under": 0.385,
+          "over": 0.605,
+          "under": 0.395,
           "bid": 0.6,
-          "ask": 0.63,
+          "ask": 0.61,
           "last": 0.0,
-          "spread": 0.03,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05LAGNE-3",
           "volume": 0.0,
@@ -124,12 +124,12 @@
           "open_interest": 0.0
         },
         "3.5": {
-          "over": 0.385,
-          "under": 0.615,
+          "over": 0.38,
+          "under": 0.62,
           "bid": 0.37,
-          "ask": 0.4,
+          "ask": 0.39,
           "last": 0.0,
-          "spread": 0.03,
+          "spread": 0.02,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05LAGNE-4",
           "volume": 0.0,
@@ -137,12 +137,12 @@
           "open_interest": 0.0
         },
         "4.5": {
-          "over": 0.215,
-          "under": 0.785,
+          "over": 0.205,
+          "under": 0.795,
           "bid": 0.2,
-          "ask": 0.23,
+          "ask": 0.21,
           "last": 0.0,
-          "spread": 0.03,
+          "spread": 0.01,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05LAGNE-5",
           "volume": 0.0,
@@ -150,12 +150,12 @@
           "open_interest": 0.0
         },
         "5.5": {
-          "over": 0.105,
-          "under": 0.895,
+          "over": 0.095,
+          "under": 0.905,
           "bid": 0.08,
-          "ask": 0.13,
+          "ask": 0.11,
           "last": 0.0,
-          "spread": 0.05,
+          "spread": 0.03,
           "estimate_method": "bid_ask_midpoint",
           "market_ticker": "KXMLSTOTAL-26SEP05LAGNE-6",
           "volume": 0.0,
@@ -168,36 +168,36 @@
       "event_url": "https://kalshi.com/markets/kxmlstotal/",
       "kickoff": "2026-09-06T05:30:00+00:00",
       "liquidity": 0.0,
-      "volume": 38.0,
-      "volume_24h": 38.0,
-      "open_interest": 38.0,
+      "volume": 294.0,
+      "volume_24h": 256.0,
+      "open_interest": 294.0,
       "updated_at": "2026-08-30T06:47:29.115736Z",
       "comparison_only": true,
       "over": {
-        "0.5": 0.93,
-        "1.5": 0.825,
-        "2.5": 0.615,
-        "3.5": 0.385,
-        "4.5": 0.215,
-        "5.5": 0.105
+        "0.5": 0.945,
+        "1.5": 0.815,
+        "2.5": 0.605,
+        "3.5": 0.38,
+        "4.5": 0.205,
+        "5.5": 0.095
       },
       "under": {
-        "0.5": 0.07,
-        "1.5": 0.175,
-        "2.5": 0.385,
-        "3.5": 0.615,
-        "4.5": 0.785,
-        "5.5": 0.895
+        "0.5": 0.055,
+        "1.5": 0.185,
+        "2.5": 0.395,
+        "3.5": 0.62,
+        "4.5": 0.795,
+        "5.5": 0.905
       }
     },
     "consensus": {
       "model_edge": {
-        "0.5": 0.03352,
-        "1.5": 0.017736,
-        "2.5": 0.027778,
-        "3.5": 0.037091,
-        "4.5": 0.024417,
-        "5.5": 0.01345
+        "0.5": 0.018557,
+        "1.5": 0.027857,
+        "2.5": 0.037978,
+        "3.5": 0.042311,
+        "4.5": 0.034599,
+        "5.5": 0.023571
       },
       "sources_by_line": {
         "0.5": [
@@ -222,28 +222,28 @@
       "method": "Equal-weight mean of available prediction-market over probabilities",
       "comparison_only": true,
       "over": {
-        "0.5": 0.93,
-        "1.5": 0.825,
-        "2.5": 0.615,
-        "3.5": 0.385,
-        "4.5": 0.215,
-        "5.5": 0.105
+        "0.5": 0.945,
+        "1.5": 0.815,
+        "2.5": 0.605,
+        "3.5": 0.38,
+        "4.5": 0.205,
+        "5.5": 0.095
       },
       "under": {
-        "0.5": 0.07,
-        "1.5": 0.175,
-        "2.5": 0.385,
-        "3.5": 0.615,
-        "4.5": 0.785,
-        "5.5": 0.895
+        "0.5": 0.055,
+        "1.5": 0.185,
+        "2.5": 0.395,
+        "3.5": 0.62,
+        "4.5": 0.795,
+        "5.5": 0.905
       }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T10:07:17Z",
-    "kalshi": "2026-08-30T10:07:17Z",
-    "consensus": "2026-08-30T10:07:17Z"
+    "model": "2026-08-31T10:56:00Z",
+    "kalshi": "2026-08-31T10:56:00Z",
+    "consensus": "2026-08-31T10:56:00Z"
   },
-  "xg_home": 1.616,
-  "xg_away": 1.695
+  "xg_home": 1.568,
+  "xg_away": 1.744
 }

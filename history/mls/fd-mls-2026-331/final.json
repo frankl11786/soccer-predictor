@@ -1,0 +1,466 @@
+{
+  "fixture_id": "fd-mls-2026-331",
+  "status": "final",
+  "date": "2026-08-30",
+  "kickoff": "2026-08-30T23:00:00Z",
+  "round": "Regular Season - 23",
+  "home": "st-louis-city-sc",
+  "away": "fc-dallas",
+  "captured_at": "2026-08-30T10:07:17Z",
+  "model_version": "bayes-ss-poisson-v5-market-consensus",
+  "market_refs": {
+    "polymarket": {
+      "event_url": "https://polymarket.com/event/mls-stl-dal-2026-08-30",
+      "event_slug": "mls-stl-dal-2026-08-30",
+      "updated_at": "2026-08-30T10:06:53Z"
+    },
+    "kalshi": {
+      "event_url": "https://kalshi.com/markets/kxmlsgame/major-league-soccer-game/kxmlsgame-26aug30stldal",
+      "event_ticker": "KXMLSGAME-26AUG30STLDAL",
+      "updated_at": "2026-08-16T00:53:00.218564Z"
+    }
+  },
+  "sources": {
+    "model": {
+      "home": 0.4435,
+      "draw": 0.19334,
+      "away": 0.36316
+    },
+    "polymarket": {
+      "home": 0.487437,
+      "draw": 0.246231,
+      "away": 0.266332
+    },
+    "kalshi": {
+      "home": 0.485,
+      "draw": 0.245,
+      "away": 0.27
+    },
+    "consensus": {
+      "home": 0.486218,
+      "draw": 0.245615,
+      "away": 0.268166
+    }
+  },
+  "league": "mls",
+  "schema_version": 1,
+  "source_captured_at": {
+    "model": "2026-08-30T10:07:17Z",
+    "polymarket": "2026-08-30T10:07:17Z",
+    "kalshi": "2026-08-30T10:07:17Z",
+    "consensus": "2026-08-30T10:07:17Z"
+  },
+  "provenance": {
+    "type": "prediction_archive",
+    "recovered": false,
+    "capture_policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization"
+  },
+  "archive": {
+    "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
+    "created_at": "2026-08-24T20:29:10.323168Z",
+    "updated_at": "2026-08-30T10:07:17Z"
+  },
+  "locked": true,
+  "goal_totals": {
+    "model": {
+      "method": "Poisson total with rate equal to home xG + away xG",
+      "lambda": 3.889,
+      "exact": {
+        "0": 0.020466,
+        "1": 0.079592,
+        "2": 0.154766,
+        "3": 0.200628,
+        "4": 0.19506,
+        "5": 0.151718,
+        "6+": 0.197771
+      },
+      "over": {
+        "0.5": 0.979534,
+        "1.5": 0.899943,
+        "2.5": 0.745177,
+        "3.5": 0.544549,
+        "4.5": 0.349489,
+        "5.5": 0.197771
+      },
+      "under": {
+        "0.5": 0.020466,
+        "1.5": 0.100057,
+        "2.5": 0.254823,
+        "3.5": 0.455451,
+        "4.5": 0.650511,
+        "5.5": 0.802229
+      }
+    },
+    "kalshi": {
+      "source": "Kalshi",
+      "lines": {
+        "0.5": {
+          "over": 0.955,
+          "under": 0.045,
+          "bid": 0.95,
+          "ask": 0.96,
+          "last": 0.95,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26AUG30STLDAL-1",
+          "volume": 615.81,
+          "volume_24h": 12.0,
+          "open_interest": 605.81
+        },
+        "1.5": {
+          "over": 0.82,
+          "under": 0.18,
+          "bid": 0.81,
+          "ask": 0.83,
+          "last": 0.82,
+          "spread": 0.02,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26AUG30STLDAL-2",
+          "volume": 2.2,
+          "volume_24h": 0.0,
+          "open_interest": 2.2
+        },
+        "2.5": {
+          "over": 0.595,
+          "under": 0.405,
+          "bid": 0.59,
+          "ask": 0.6,
+          "last": 0.6,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26AUG30STLDAL-3",
+          "volume": 494.79,
+          "volume_24h": 141.79,
+          "open_interest": 494.79
+        },
+        "3.5": {
+          "over": 0.375,
+          "under": 0.625,
+          "bid": 0.37,
+          "ask": 0.38,
+          "last": 0.37,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26AUG30STLDAL-4",
+          "volume": 20.34,
+          "volume_24h": 0.0,
+          "open_interest": 20.34
+        },
+        "4.5": {
+          "over": 0.195,
+          "under": 0.805,
+          "bid": 0.19,
+          "ask": 0.2,
+          "last": 0.0,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26AUG30STLDAL-5",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "5.5": {
+          "over": 0.085,
+          "under": 0.915,
+          "bid": 0.08,
+          "ask": 0.09,
+          "last": 0.08,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXMLSTOTAL-26AUG30STLDAL-6",
+          "volume": 1194.77,
+          "volume_24h": 0.01,
+          "open_interest": 1194.77
+        }
+      },
+      "event_ticker": "KXMLSTOTAL-26AUG30STLDAL",
+      "event_title": "Saint Louis vs Dallas: Total Goals",
+      "event_url": "https://kalshi.com/markets/kxmlstotal/",
+      "kickoff": "2026-08-31T03:00:00+00:00",
+      "liquidity": 0.0,
+      "volume": 2327.91,
+      "volume_24h": 153.8,
+      "open_interest": 2317.91,
+      "updated_at": "2026-08-24T16:39:07.808838Z",
+      "comparison_only": true,
+      "over": {
+        "0.5": 0.955,
+        "1.5": 0.82,
+        "2.5": 0.595,
+        "3.5": 0.375,
+        "4.5": 0.195,
+        "5.5": 0.085
+      },
+      "under": {
+        "0.5": 0.045,
+        "1.5": 0.18,
+        "2.5": 0.405,
+        "3.5": 0.625,
+        "4.5": 0.805,
+        "5.5": 0.915
+      }
+    },
+    "consensus": {
+      "model_edge": {
+        "0.5": 0.024534,
+        "1.5": 0.079943,
+        "2.5": 0.150177,
+        "3.5": 0.169549,
+        "4.5": 0.154489,
+        "5.5": 0.112771
+      },
+      "sources_by_line": {
+        "0.5": [
+          "kalshi"
+        ],
+        "1.5": [
+          "kalshi"
+        ],
+        "2.5": [
+          "kalshi"
+        ],
+        "3.5": [
+          "kalshi"
+        ],
+        "4.5": [
+          "kalshi"
+        ],
+        "5.5": [
+          "kalshi"
+        ]
+      },
+      "method": "Equal-weight mean of available prediction-market over probabilities",
+      "comparison_only": true,
+      "over": {
+        "0.5": 0.955,
+        "1.5": 0.82,
+        "2.5": 0.595,
+        "3.5": 0.375,
+        "4.5": 0.195,
+        "5.5": 0.085
+      },
+      "under": {
+        "0.5": 0.045,
+        "1.5": 0.18,
+        "2.5": 0.405,
+        "3.5": 0.625,
+        "4.5": 0.805,
+        "5.5": 0.915
+      }
+    }
+  },
+  "goal_total_source_captured_at": {
+    "model": "2026-08-30T10:07:17Z",
+    "kalshi": "2026-08-30T10:07:17Z",
+    "consensus": "2026-08-30T10:07:17Z"
+  },
+  "xg_home": 2.074,
+  "xg_away": 1.815,
+  "actual": {
+    "outcome": "draw",
+    "home_score": 3,
+    "away_score": 3,
+    "total_goals": 6
+  },
+  "graded_at": "2026-08-31T10:56:00Z",
+  "scores": {
+    "model": {
+      "top_pick": "home",
+      "correct_pick": false,
+      "actual_probability": 0.19334,
+      "brier": 0.979278,
+      "log_loss": 1.643305
+    },
+    "polymarket": {
+      "top_pick": "home",
+      "correct_pick": false,
+      "actual_probability": 0.246231,
+      "brier": 0.876695,
+      "log_loss": 1.401485
+    },
+    "kalshi": {
+      "top_pick": "home",
+      "correct_pick": false,
+      "actual_probability": 0.245,
+      "brier": 0.87815,
+      "log_loss": 1.406497
+    },
+    "consensus": {
+      "top_pick": "home",
+      "correct_pick": false,
+      "actual_probability": 0.245615,
+      "brier": 0.877418,
+      "log_loss": 1.40399
+    }
+  },
+  "totals_scores": {
+    "model": {
+      "0.5": {
+        "actual_over": true,
+        "over_probability": 0.979534,
+        "predicted_over": true,
+        "correct_pick": true,
+        "actual_probability": 0.979534,
+        "brier": 0.000419,
+        "log_loss": 0.020678
+      },
+      "1.5": {
+        "actual_over": true,
+        "over_probability": 0.899943,
+        "predicted_over": true,
+        "correct_pick": true,
+        "actual_probability": 0.899943,
+        "brier": 0.010011,
+        "log_loss": 0.105424
+      },
+      "2.5": {
+        "actual_over": true,
+        "over_probability": 0.745177,
+        "predicted_over": true,
+        "correct_pick": true,
+        "actual_probability": 0.745177,
+        "brier": 0.064935,
+        "log_loss": 0.294134
+      },
+      "3.5": {
+        "actual_over": true,
+        "over_probability": 0.544549,
+        "predicted_over": true,
+        "correct_pick": true,
+        "actual_probability": 0.544549,
+        "brier": 0.207436,
+        "log_loss": 0.607797
+      },
+      "4.5": {
+        "actual_over": true,
+        "over_probability": 0.349489,
+        "predicted_over": false,
+        "correct_pick": false,
+        "actual_probability": 0.349489,
+        "brier": 0.423165,
+        "log_loss": 1.051283
+      },
+      "5.5": {
+        "actual_over": true,
+        "over_probability": 0.197771,
+        "predicted_over": false,
+        "correct_pick": false,
+        "actual_probability": 0.197771,
+        "brier": 0.643571,
+        "log_loss": 1.620645
+      }
+    },
+    "kalshi": {
+      "0.5": {
+        "actual_over": true,
+        "over_probability": 0.955,
+        "predicted_over": true,
+        "correct_pick": true,
+        "actual_probability": 0.955,
+        "brier": 0.002025,
+        "log_loss": 0.046044
+      },
+      "1.5": {
+        "actual_over": true,
+        "over_probability": 0.82,
+        "predicted_over": true,
+        "correct_pick": true,
+        "actual_probability": 0.82,
+        "brier": 0.0324,
+        "log_loss": 0.198451
+      },
+      "2.5": {
+        "actual_over": true,
+        "over_probability": 0.595,
+        "predicted_over": true,
+        "correct_pick": true,
+        "actual_probability": 0.595,
+        "brier": 0.164025,
+        "log_loss": 0.519194
+      },
+      "3.5": {
+        "actual_over": true,
+        "over_probability": 0.375,
+        "predicted_over": false,
+        "correct_pick": false,
+        "actual_probability": 0.375,
+        "brier": 0.390625,
+        "log_loss": 0.980829
+      },
+      "4.5": {
+        "actual_over": true,
+        "over_probability": 0.195,
+        "predicted_over": false,
+        "correct_pick": false,
+        "actual_probability": 0.195,
+        "brier": 0.648025,
+        "log_loss": 1.634756
+      },
+      "5.5": {
+        "actual_over": true,
+        "over_probability": 0.085,
+        "predicted_over": false,
+        "correct_pick": false,
+        "actual_probability": 0.085,
+        "brier": 0.837225,
+        "log_loss": 2.465104
+      }
+    },
+    "consensus": {
+      "0.5": {
+        "actual_over": true,
+        "over_probability": 0.955,
+        "predicted_over": true,
+        "correct_pick": true,
+        "actual_probability": 0.955,
+        "brier": 0.002025,
+        "log_loss": 0.046044
+      },
+      "1.5": {
+        "actual_over": true,
+        "over_probability": 0.82,
+        "predicted_over": true,
+        "correct_pick": true,
+        "actual_probability": 0.82,
+        "brier": 0.0324,
+        "log_loss": 0.198451
+      },
+      "2.5": {
+        "actual_over": true,
+        "over_probability": 0.595,
+        "predicted_over": true,
+        "correct_pick": true,
+        "actual_probability": 0.595,
+        "brier": 0.164025,
+        "log_loss": 0.519194
+      },
+      "3.5": {
+        "actual_over": true,
+        "over_probability": 0.375,
+        "predicted_over": false,
+        "correct_pick": false,
+        "actual_probability": 0.375,
+        "brier": 0.390625,
+        "log_loss": 0.980829
+      },
+      "4.5": {
+        "actual_over": true,
+        "over_probability": 0.195,
+        "predicted_over": false,
+        "correct_pick": false,
+        "actual_probability": 0.195,
+        "brier": 0.648025,
+        "log_loss": 1.634756
+      },
+      "5.5": {
+        "actual_over": true,
+        "over_probability": 0.085,
+        "predicted_over": false,
+        "correct_pick": false,
+        "actual_probability": 0.085,
+        "brier": 0.837225,
+        "log_loss": 2.465104
+      }
+    }
+  }
+}

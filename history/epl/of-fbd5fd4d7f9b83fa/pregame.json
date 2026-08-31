@@ -6,13 +6,13 @@
   "round": "Regular Season - 3",
   "home": "arsenal",
   "away": "chelsea",
-  "captured_at": "2026-08-30T10:11:19Z",
+  "captured_at": "2026-08-31T10:57:47Z",
   "model_version": "bayes-ss-poisson-v5-market-consensus",
   "market_refs": {
     "polymarket": {
       "event_url": "https://polymarket.com/event/epl-ars-che-2026-09-06",
       "event_slug": "epl-ars-che-2026-09-06",
-      "updated_at": "2026-08-30T10:11:07Z"
+      "updated_at": "2026-08-31T10:57:39Z"
     },
     "kalshi": {
       "event_url": "https://kalshi.com/markets/kxeplgame/english-premier-league-game/kxeplgame-26sep06arscfc",
@@ -27,28 +27,28 @@
       "away": 0.06353
     },
     "polymarket": {
-      "home": 0.567962,
-      "draw": 0.242718,
-      "away": 0.18932
+      "home": 0.562189,
+      "draw": 0.253731,
+      "away": 0.18408
     },
     "kalshi": {
-      "home": 0.559406,
-      "draw": 0.242574,
-      "away": 0.19802
+      "home": 0.567839,
+      "draw": 0.246231,
+      "away": 0.18593
     },
     "consensus": {
-      "home": 0.563684,
-      "draw": 0.242646,
-      "away": 0.19367
+      "home": 0.565014,
+      "draw": 0.249981,
+      "away": 0.185005
     }
   },
   "league": "epl",
   "schema_version": 1,
   "source_captured_at": {
-    "model": "2026-08-30T10:11:19Z",
-    "polymarket": "2026-08-30T10:11:19Z",
-    "kalshi": "2026-08-30T10:11:19Z",
-    "consensus": "2026-08-30T10:11:19Z"
+    "model": "2026-08-31T10:57:47Z",
+    "polymarket": "2026-08-31T10:57:47Z",
+    "kalshi": "2026-08-31T10:57:47Z",
+    "consensus": "2026-08-31T10:57:47Z"
   },
   "provenance": {
     "type": "prediction_archive",
@@ -58,7 +58,7 @@
   "archive": {
     "policy": "latest genuine pre-kickoff probability per source within the capture window; immutable after finalization",
     "created_at": "2026-08-24T21:03:04Z",
-    "updated_at": "2026-08-30T10:11:19Z"
+    "updated_at": "2026-08-31T10:57:47Z"
   },
   "locked": false,
   "goal_totals": {
@@ -90,10 +90,169 @@
         "4.5": 0.925323,
         "5.5": 0.974126
       }
+    },
+    "kalshi": {
+      "source": "Kalshi",
+      "lines": {
+        "0.5": {
+          "over": 0.935,
+          "under": 0.065,
+          "bid": 0.93,
+          "ask": 0.94,
+          "last": 0.92,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXEPLTOTAL-26SEP06ARSCFC-1",
+          "volume": 81.0,
+          "volume_24h": 81.0,
+          "open_interest": 81.0
+        },
+        "1.5": {
+          "over": 0.765,
+          "under": 0.235,
+          "bid": 0.76,
+          "ask": 0.77,
+          "last": 0.77,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXEPLTOTAL-26SEP06ARSCFC-2",
+          "volume": 126.0,
+          "volume_24h": 126.0,
+          "open_interest": 126.0
+        },
+        "2.5": {
+          "over": 0.525,
+          "under": 0.475,
+          "bid": 0.52,
+          "ask": 0.53,
+          "last": 0.52,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXEPLTOTAL-26SEP06ARSCFC-3",
+          "volume": 2348.85,
+          "volume_24h": 2348.85,
+          "open_interest": 2348.85
+        },
+        "3.5": {
+          "over": 0.305,
+          "under": 0.695,
+          "bid": 0.3,
+          "ask": 0.31,
+          "last": 0.31,
+          "spread": 0.01,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXEPLTOTAL-26SEP06ARSCFC-4",
+          "volume": 3.07,
+          "volume_24h": 3.07,
+          "open_interest": 3.07
+        },
+        "4.5": {
+          "over": 0.14,
+          "under": 0.86,
+          "bid": 0.13,
+          "ask": 0.15,
+          "last": 0.0,
+          "spread": 0.02,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXEPLTOTAL-26SEP06ARSCFC-5",
+          "volume": 0.0,
+          "volume_24h": 0.0,
+          "open_interest": 0.0
+        },
+        "5.5": {
+          "over": 0.06,
+          "under": 0.94,
+          "bid": 0.05,
+          "ask": 0.07,
+          "last": 0.06,
+          "spread": 0.02,
+          "estimate_method": "bid_ask_midpoint",
+          "market_ticker": "KXEPLTOTAL-26SEP06ARSCFC-6",
+          "volume": 1531.0,
+          "volume_24h": 1531.0,
+          "open_interest": 1531.0
+        }
+      },
+      "event_ticker": "KXEPLTOTAL-26SEP06ARSCFC",
+      "event_title": "Arsenal vs Chelsea: Total Goals",
+      "event_url": "https://kalshi.com/markets/kxepltotal/",
+      "kickoff": "2026-09-06T19:30:00+00:00",
+      "liquidity": 0.0,
+      "volume": 4089.92,
+      "volume_24h": 4089.92,
+      "open_interest": 4089.92,
+      "updated_at": "2026-08-30T16:25:44.105167Z",
+      "comparison_only": true,
+      "over": {
+        "0.5": 0.935,
+        "1.5": 0.765,
+        "2.5": 0.525,
+        "3.5": 0.305,
+        "4.5": 0.14,
+        "5.5": 0.06
+      },
+      "under": {
+        "0.5": 0.065,
+        "1.5": 0.235,
+        "2.5": 0.475,
+        "3.5": 0.695,
+        "4.5": 0.86,
+        "5.5": 0.94
+      }
+    },
+    "consensus": {
+      "model_edge": {
+        "0.5": -0.043609,
+        "1.5": -0.114721,
+        "2.5": -0.142356,
+        "3.5": -0.120405,
+        "4.5": -0.065323,
+        "5.5": -0.034126
+      },
+      "sources_by_line": {
+        "0.5": [
+          "kalshi"
+        ],
+        "1.5": [
+          "kalshi"
+        ],
+        "2.5": [
+          "kalshi"
+        ],
+        "3.5": [
+          "kalshi"
+        ],
+        "4.5": [
+          "kalshi"
+        ],
+        "5.5": [
+          "kalshi"
+        ]
+      },
+      "method": "Equal-weight mean of available prediction-market over probabilities",
+      "comparison_only": true,
+      "over": {
+        "0.5": 0.935,
+        "1.5": 0.765,
+        "2.5": 0.525,
+        "3.5": 0.305,
+        "4.5": 0.14,
+        "5.5": 0.06
+      },
+      "under": {
+        "0.5": 0.065,
+        "1.5": 0.235,
+        "2.5": 0.475,
+        "3.5": 0.695,
+        "4.5": 0.86,
+        "5.5": 0.94
+      }
     }
   },
   "goal_total_source_captured_at": {
-    "model": "2026-08-30T10:11:19Z"
+    "model": "2026-08-31T10:57:47Z",
+    "kalshi": "2026-08-31T10:57:47Z",
+    "consensus": "2026-08-31T10:57:47Z"
   },
   "xg_home": 1.886,
   "xg_away": 0.334
