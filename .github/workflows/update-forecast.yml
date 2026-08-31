@@ -30,6 +30,7 @@ jobs:
     env:
       API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
       JAX_PLATFORM_NAME: cpu
+      PYTHONPATH: ${{ github.workspace }}
 
     steps:
       - name: Check out repository
