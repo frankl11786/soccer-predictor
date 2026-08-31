@@ -1,0 +1,18 @@
+{
+  "build_date": "2026-08-31",
+  "files": [
+    ".github/workflows/update-forecast.yml",
+    "UPLOAD_INSTRUCTIONS.md",
+    "app/accuracy.css",
+    "app/accuracy.html",
+    "app/accuracy.js",
+    "app/touchline-enhancements.css",
+    "app/touchline-enhancements.js",
+    "predictor/fixture_reconcile.py",
+    "predictor/goal_accuracy.py",
+    "scripts/ensure_frontend_assets.py",
+    "scripts/postprocess_snapshot.py",
+    "scripts/validate_fixture_freshness.py",
+    "tests/test_postprocess_pipeline.py"
+  ]
+}
