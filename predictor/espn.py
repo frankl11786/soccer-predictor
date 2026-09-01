@@ -44,7 +44,18 @@ def _team_name(competitor: dict[str, Any]) -> str:
     return str(team.get("displayName") or team.get("shortDisplayName") or team.get("name") or "").strip()
 
 
-def _parse_event(event: dict[str, Any], league: str, fallback_season: int) -> dict[str, Any] | None:
+def _parse_event(
+    event: dict[str, Any],
+    league: str | int,
+    fallback_season: int | None = None,
+) -> dict[str, Any] | None:
+    # The original MLS-only parser accepted ``(event, season)``. Keep that
+    # calling convention while allowing the shared EPL/MLS source to provide
+    # an explicit league for stable, league-specific fixture IDs.
+    if fallback_season is None:
+        fallback_season = int(league)
+        league = "mls"
+
     event_id = str(event.get("id") or "").strip()
     competition = (event.get("competitions") or [{}])[0]
     competitors = competition.get("competitors") or []
