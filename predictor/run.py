@@ -10,6 +10,7 @@ from .bayes import fit_model
 from .config import APP_DATA, LEAGUES
 from .data_prep import prepare_league
 from .espn import fetch_league_rows
+from .football_data import fetch_epl_results as fetch_football_data_epl_results
 from .mls_schedule import fetch_complete_mls_schedule
 from .identity import canonicalize_fixture_rows
 from .kalshi import (
@@ -40,6 +41,22 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
     )
 
     if key == "epl":
+        football_data_rows = []
+        football_data_meta = None
+        if espn_meta.get("live_request_failed") or not espn_rows:
+            football_data_rows, football_data_meta = fetch_football_data_epl_results(
+                cfg.current_season,
+                refresh=refresh,
+            )
+            if (
+                not espn_rows
+                and not football_data_rows
+                and football_data_meta.get("live_request_failed")
+            ):
+                raise RuntimeError(
+                    "No usable current EPL results source was available: "
+                    "ESPN returned no rows and Football-Data.co.uk failed."
+                )
         openfootball_seasons = tuple(
             sorted(set(cfg.api_history_seasons + cfg.supplemental_seasons))
         )
@@ -47,8 +64,10 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
             openfootball_seasons,
             refresh=refresh,
         )
-        supplemental_rows = openfootball_rows + espn_rows
+        supplemental_rows = openfootball_rows + espn_rows + football_data_rows
         source_meta = [api_meta, current_meta, espn_meta]
+        if football_data_meta is not None:
+            source_meta.append(football_data_meta)
     else:
         asa_rows, asa_meta = fetch_mls_rows(
             cfg.supplemental_seasons,

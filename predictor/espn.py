@@ -135,13 +135,14 @@ def _month_windows(year: int) -> list[tuple[str, str]]:
     ]
 
 
-def _fetch_events(league: str, season: int) -> tuple[list[dict[str, Any]], list[str]]:
+def _fetch_events(league: str, season: int) -> tuple[list[dict[str, Any]], list[str], int]:
     if league not in BASE_URLS:
         raise ValueError(f"Unsupported ESPN league: {league}")
     session = requests.Session()
     session.headers.update({"User-Agent": "TouchlineForecast/1.0"})
     events: dict[str, dict[str, Any]] = {}
     errors: list[str] = []
+    successful_requests = 0
 
     for start, end in _month_windows(season):
         try:
@@ -151,7 +152,9 @@ def _fetch_events(league: str, season: int) -> tuple[list[dict[str, Any]], list[
                 timeout=45,
             )
             response.raise_for_status()
-            for event in response.json().get("events", []):
+            payload = response.json()
+            successful_requests += 1
+            for event in payload.get("events", []):
                 event_id = str(event.get("id") or "")
                 if event_id:
                     events[event_id] = event
@@ -166,14 +169,16 @@ def _fetch_events(league: str, season: int) -> tuple[list[dict[str, Any]], list[
                 timeout=45,
             )
             response.raise_for_status()
-            for event in response.json().get("events", []):
+            payload = response.json()
+            successful_requests += 1
+            for event in payload.get("events", []):
                 event_id = str(event.get("id") or "")
                 if event_id:
                     events[event_id] = event
         except (requests.RequestException, ValueError) as exc:
             errors.append(f"whole-year fallback: {exc}")
 
-    return list(events.values()), errors
+    return list(events.values()), errors, successful_requests
 
 
 def fetch_league_rows(
@@ -182,26 +187,38 @@ def fetch_league_rows(
     refresh: bool = False,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     path = _cache_path(league, season)
+    cached_rows = (read_json(path, default=[]) or []) if path.exists() else []
+    cached_rows = [
+        row for row in cached_rows
+        if isinstance(row, dict) and row.get("season") == season
+    ]
     if path.exists() and not refresh:
-        rows = read_json(path, default=[]) or []
-        if rows:
-            return rows, {
+        if cached_rows:
+            return cached_rows, {
                 "source": "ESPN",
                 "purpose": f"current {league.upper()} schedule and results",
                 "season": season,
-                "fixtures_received": len(rows),
+                "fixtures_received": len(cached_rows),
                 "cached": True,
+                "cache_fallback": False,
+                "live_request_attempted": False,
+                "live_request_failed": False,
+                "successful_requests": 0,
                 "updated_at": utc_now_iso(),
             }
 
-    events, errors = _fetch_events(league, season)
+    events, errors, successful_requests = _fetch_events(league, season)
+    live_request_failed = successful_requests == 0
     rows = [
         row for event in events
         if (row := _parse_event(event, league, season)) is not None and row["season"] == season
     ]
     rows = sorted({row["fixture_id"]: row for row in rows}.values(),
                   key=lambda row: (row["timestamp"], row["fixture_id"]))
-    if rows:
+    cache_fallback = live_request_failed and bool(cached_rows)
+    if cache_fallback:
+        rows = cached_rows
+    elif rows:
         write_json(path, rows)
 
     metadata = {
@@ -210,10 +227,18 @@ def fetch_league_rows(
         "season": season,
         "fixtures_received": len(rows),
         "request_errors": errors,
-        "cached": False,
+        "cached": cache_fallback,
+        "cache_fallback": cache_fallback,
+        "live_request_attempted": True,
+        "live_request_failed": live_request_failed,
+        "successful_requests": successful_requests,
         "updated_at": utc_now_iso(),
     }
-    print(f"[ESPN] {league.upper()} {season}: {len(rows):,} fixtures; errors={errors}")
+    print(
+        f"[ESPN] {league.upper()} {season}: {len(rows):,} fixtures; "
+        f"live_request_failed={live_request_failed}; cache_fallback={cache_fallback}; "
+        f"errors={errors}"
+    )
     return rows, metadata
 
 
