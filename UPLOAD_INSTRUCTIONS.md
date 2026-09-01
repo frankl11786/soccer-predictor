@@ -1,36 +1,31 @@
-# TOUCHLINE FORECAST — GITHUB-READY UPDATE
+# Final repo-aligned update
 
-Upload the CONTENTS of this ZIP into the ROOT of the Touchline Forecast GitHub repository, preserving folders.
+This package was rebuilt after auditing the actual public GitHub repository.
 
-GitHub should show:
-- `.github/workflows/update-forecast.yml` as REPLACED
-- all other included files as NEW
+Replace these files in GitHub:
+- `.github/workflows/update-forecast.yml`
+- `predictor/espn.py`
+- `predictor/run.py`
+- `app/index.html`
+- `app/touchline-enhancements.js`
 
-Then commit with:
+Do NOT use the old post-build reconciliation step. The new workflow intentionally removes it because it overwrote the repo's existing `accuracy` schema.
 
-`Fix stale results and add total-goals accuracy calibration`
+You can leave these old files in the repo for now; the corrected workflow no longer calls them:
+- `scripts/postprocess_snapshot.py`
+- `scripts/validate_fixture_freshness.py`
+- `predictor/fixture_reconcile.py`
+- `predictor/goal_accuracy.py`
 
-After the commit:
-1. Open **Actions**
-2. Open **Update forecasts**
-3. Click **Run workflow**
-4. Wait for both league builds and the publish job to finish
-5. Hard-refresh `http://predictor.francislavelle.com/#/schedule`
-6. Open `http://predictor.francislavelle.com/accuracy.html?league=epl`
+Commit message:
+`Fix current results ingestion and preserve forecast accuracy`
 
-## What this fixes/adds
-- Authoritative API-Football result reconciliation.
-- Completed matches stop appearing under Upcoming.
-- Final scores/statuses are corrected.
-- Postponed/cancelled/abandoned matches are handled explicitly.
-- Current standings are recomputed from reconciled results.
-- Market-coverage denominator includes only eligible scheduled/live matches.
-- Absolute Expected Total Goals are added to every fixture with home/away goal rates.
-- Existing Schedule cards get an Expected Total Goals line automatically.
-- Frozen pre-match total-goals history is persisted.
-- MAE, RMSE, bias, ±0.5, ±1.0, calibration bins, and O/U Brier calibration are calculated.
-- A standalone Accuracy page is added.
-- Deployment refuses to publish silently stale past fixtures.
+Then manually run `Update forecasts`.
 
-## Important
-The workflow preserves the prior published JSON BEFORE rebuilding. That is what allows completed games to be scored against the actual forecast that existed before the result was known.
+What changed:
+1. ESPN EPL + MLS current results are loaded BEFORE `prepare_league()` and the Bayesian fit.
+2. Newly completed matches therefore update the current table, team ratings, future match probabilities, season simulations, and existing prediction-history grading.
+3. The workflow no longer replaces the production `accuracy` payload with a second incompatible schema.
+4. The workflow fails if a fixture remains `scheduled` more than 18 hours after kickoff.
+5. The schedule enhancement uses the existing `goal_totals.model.lambda` as Expected Total Goals and filters terminal statuses from the Upcoming view.
+6. The existing full Accuracy page and frozen prediction-history architecture remain intact.

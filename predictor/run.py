@@ -9,6 +9,7 @@ from .backtest import temporal_holdout_backtest
 from .bayes import fit_model
 from .config import APP_DATA, LEAGUES
 from .data_prep import prepare_league
+from .espn import fetch_league_rows
 from .mls_schedule import fetch_complete_mls_schedule
 from .identity import canonicalize_fixture_rows
 from .kalshi import (
@@ -29,18 +30,25 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
     client = ApiFootballClient.from_environment()
     history_rows, api_meta = fetch_history_rows(client, cfg, refresh=refresh)
 
+    # ESPN is fetched BEFORE data preparation/model fitting. This is deliberate:
+    # a newly completed match must update the table, Bayesian fit and future
+    # forecasts, not merely be cosmetically patched into the published JSON.
+    espn_rows, espn_meta = fetch_league_rows(
+        key,
+        cfg.current_season,
+        refresh=refresh,
+    )
+
     if key == "epl":
-        # OpenFootball now supplies an independent historical fallback as well
-        # as the current schedule. This keeps the model operational when the
-        # API-Football free tier cannot return one or more older seasons.
         openfootball_seasons = tuple(
             sorted(set(cfg.api_history_seasons + cfg.supplemental_seasons))
         )
-        supplemental_rows, current_meta = fetch_epl_rows(
+        openfootball_rows, current_meta = fetch_epl_rows(
             openfootball_seasons,
             refresh=refresh,
         )
-        source_meta = [api_meta, current_meta]
+        supplemental_rows = openfootball_rows + espn_rows
+        source_meta = [api_meta, current_meta, espn_meta]
     else:
         asa_rows, asa_meta = fetch_mls_rows(
             cfg.supplemental_seasons,
@@ -50,8 +58,8 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
             cfg.current_season,
             refresh=refresh,
         )
-        supplemental_rows = asa_rows + schedule_rows
-        source_meta = [api_meta, asa_meta, schedule_meta]
+        supplemental_rows = asa_rows + schedule_rows + espn_rows
+        source_meta = [api_meta, asa_meta, schedule_meta, espn_meta]
 
     raw_fixtures = canonicalize_fixture_rows(
         cfg,
@@ -106,12 +114,6 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
         max_fixtures=cfg.polymarket_match_max_fixtures,
     )
     market_meta["total_goals"] = total_goal_meta
-    print(
-        "Polymarket comparison: "
-        f"{len(quotes)} season-winner quotes; "
-        f"{len(match_quotes)} exact match markets; "
-        f"{len(total_goal_quotes)} total-goals events"
-    )
 
     kalshi_quotes, kalshi_meta = fetch_kalshi_winner_quotes(
         cfg.kalshi_event_ticker,
@@ -133,12 +135,7 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
         max_fixtures=cfg.polymarket_match_max_fixtures,
     )
     kalshi_meta["total_goals"] = kalshi_total_goal_meta
-    print(
-        "Kalshi comparison: "
-        f"{len(kalshi_quotes)} season-winner quotes; "
-        f"{len(kalshi_match_quotes)} exact match markets; "
-        f"{len(kalshi_total_goal_quotes)} total-goals events"
-    )
+
     data_meta = {
         "sources": source_meta,
         "backtest": backtest_meta,
@@ -146,20 +143,11 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
     }
     output_path = APP_DATA / f"{key}.json"
     build_snapshot(
-        cfg,
-        prepared,
-        fit,
-        simulation,
-        quotes,
-        match_quotes,
-        market_meta,
-        kalshi_quotes,
-        kalshi_match_quotes,
-        kalshi_meta,
-        total_goal_quotes,
-        kalshi_total_goal_quotes,
-        data_meta,
-        output_path,
+        cfg, prepared, fit, simulation,
+        quotes, match_quotes, market_meta,
+        kalshi_quotes, kalshi_match_quotes, kalshi_meta,
+        total_goal_quotes, kalshi_total_goal_quotes,
+        data_meta, output_path,
     )
     print(f"Wrote {output_path}")
 
