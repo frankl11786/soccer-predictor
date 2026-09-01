@@ -105,6 +105,16 @@ function money(value) {
 function fixtureMarket(f) { return f?.polymarket?.probabilities ? f.polymarket : null; }
 function fixtureKalshi(f) { return f?.kalshi?.probabilities ? f.kalshi : null; }
 function fixtureConsensus(f) { return f?.market_consensus?.probabilities ? f.market_consensus : null; }
+function fixtureExpectedTotal(f) {
+  for (const key of ['expected_total_goals','expected_total_goals_raw']) {
+    const raw=f?.[key];
+    if (raw===null||raw===undefined||raw==='') continue;
+    const value=Number(raw);
+    if (Number.isFinite(value)) return value;
+  }
+  const home=Number(f?.xg_home), away=Number(f?.xg_away);
+  return Number.isFinite(home)&&Number.isFinite(away) ? home+away : null;
+}
 function tripletFromMarket(market, digits = 1) {
   if (!market?.probabilities) return 'No exact market';
   const p = market.probabilities;
@@ -580,9 +590,10 @@ function fixtureDetailed(f,tMap) {
   const h=tMap[f.home],a=tMap[f.away];
   const href = `#/match/${encodeURIComponent(f.id)}`;
   const poly=fixtureMarket(f), kalshi=fixtureKalshi(f), consensus=fixtureConsensus(f);
+  const expectedTotal=fixtureExpectedTotal(f);
   const consensusEdge=consensus?.model_edge;
   const edgeText=consensusEdge?`vs consensus ${signedPct(consensusEdge.home)} · ${signedPct(consensusEdge.draw)} · ${signedPct(consensusEdge.away)}`:'Consensus unavailable';
-  return `<a class="fixture-row fixture-row-detailed fixture-link fixture-comparison-row" href="${href}" aria-label="View ${esc(h.name)} versus ${esc(a.name)} details"><span class="date">Round ${esc(f.round)}<br>${dateText(f.date)}</span><span class="fixture-teams"><span class="fixture-team"><span class="team-inline">${badge(h)}<strong>${esc(h.name)}</strong></span>${f.status==='final'?`<b>${f.home_score}</b>`:''}</span><span class="fixture-team"><span class="team-inline">${badge(a)}<strong>${esc(a.name)}</strong></span>${f.status==='final'?`<b>${f.away_score}</b>`:''}</span></span><span class="fixture-market-compare"><span class="comparison-row model"><small>Bayesian model</small><b>${modelTriplet(f,1)}</b></span><span class="comparison-row market ${poly?'available':'unavailable'}"><small>Polymarket</small><b>${poly?marketTriplet(f,1):'No exact market'}</b></span><span class="comparison-row kalshi ${kalshi?'available':'unavailable'}"><small>Kalshi</small><b>${kalshi?kalshiTriplet(f,1):'No exact market'}</b></span><span class="comparison-row consensus ${consensus?'available':'unavailable'}"><small>Consensus</small><b>${consensus?consensusTriplet(f,1):'—'}</b></span><em>H · D · A</em><span class="comparison-edge">${esc(edgeText)}</span><small>xG ${f.xg_home}–${f.xg_away}${f.status==='final'?` · Final ${f.home_score}–${f.away_score}`:''}</small><small class="view-detail">View match details →</small></span></a>`;
+  return `<a class="fixture-row fixture-row-detailed fixture-link fixture-comparison-row" data-fixture-id="${esc(f.id)}" href="${href}" aria-label="View ${esc(h.name)} versus ${esc(a.name)} details"><span class="date">Round ${esc(f.round)}<br>${dateText(f.date)}</span><span class="fixture-teams"><span class="fixture-team"><span class="team-inline">${badge(h)}<strong>${esc(h.name)}</strong></span>${f.status==='final'?`<b>${f.home_score}</b>`:''}</span><span class="fixture-team"><span class="team-inline">${badge(a)}<strong>${esc(a.name)}</strong></span>${f.status==='final'?`<b>${f.away_score}</b>`:''}</span></span><span class="fixture-market-compare"><span class="fixture-expected-total"><span>Expected Total Goals</span><strong>${expectedTotal===null?'—':expectedTotal.toFixed(2)}</strong></span><span class="comparison-row model"><small>Bayesian model</small><b>${modelTriplet(f,1)}</b></span><span class="comparison-row market ${poly?'available':'unavailable'}"><small>Polymarket</small><b>${poly?marketTriplet(f,1):'No exact market'}</b></span><span class="comparison-row kalshi ${kalshi?'available':'unavailable'}"><small>Kalshi</small><b>${kalshi?kalshiTriplet(f,1):'No exact market'}</b></span><span class="comparison-row consensus ${consensus?'available':'unavailable'}"><small>Consensus</small><b>${consensus?consensusTriplet(f,1):'—'}</b></span><em>H · D · A</em><span class="comparison-edge">${esc(edgeText)}</span><small>xG ${f.xg_home}–${f.xg_away}${f.status==='final'?` · Final ${f.home_score}–${f.away_score}`:''}</small><small class="view-detail">View match details →</small></span></a>`;
 }
 
 function fixtureScoreModel(f) {

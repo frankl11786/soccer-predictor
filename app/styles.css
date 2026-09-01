@@ -625,6 +625,9 @@ html[data-theme="dark"] .theme-toggle:hover { background: #173029; }
 .market-coverage-pill { margin-left: auto; padding: 6px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--card); font-size: 9px; font-weight: 750; }
 .fixture-comparison-row { grid-template-columns: 90px minmax(250px,1fr) minmax(330px,1.1fr); }
 .fixture-market-compare { display: grid; gap: 4px; text-align: right; }
+.fixture-expected-total { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 3px; padding: 8px 10px; border: 1px solid rgba(10,111,87,.18); border-radius: 10px; background: rgba(10,111,87,.07); }
+.fixture-expected-total span { color: var(--green); font-size: 9px; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; }
+.fixture-expected-total strong { color: var(--ink); font: 900 17px ui-monospace,monospace; }
 .comparison-row { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: baseline; }
 .comparison-row small { color: var(--muted); font-size: 8px; }
 .comparison-row b { font: 800 10px ui-monospace,monospace; white-space: nowrap; }
@@ -683,6 +686,7 @@ html[data-theme="dark"] .team-market-panel > div:not(.team-market-meta),
 html[data-theme="dark"] .market-method-grid > div { background: #202d2a; }
 html[data-theme="dark"] .market-coverage-pill,
 html[data-theme="dark"] .matchup-market-strip { background: #14201e; }
+html[data-theme="dark"] .fixture-expected-total { border-color: rgba(67,211,166,.28); background: rgba(67,211,166,.09); }
 html[data-theme="dark"] .market-value,
 html[data-theme="dark"] .comparison-row.market.available b,
 html[data-theme="dark"] .market-line.available b,
