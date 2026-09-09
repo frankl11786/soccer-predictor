@@ -61,6 +61,18 @@ def _composite(points: np.ndarray, gd: np.ndarray, gf: np.ndarray, wins: np.ndar
     return points.astype(np.int64) * 10**9 + (gd.astype(np.int64) + 300) * 10**6 + gf.astype(np.int64) * 10**3 + wins.astype(np.int64)
 
 
+def _public_fixture_status(raw_status: Any) -> str:
+    code = str(raw_status or "").upper()
+    if code in FINAL_STATUSES:
+        return "final"
+    return {
+        "PST": "postponed",
+        "CANC": "cancelled",
+        "ABD": "abandoned",
+        "SUSP": "suspended",
+    }.get(code, "scheduled")
+
+
 def _fixture_probabilities(prepared: PreparedLeague, fit: PosteriorFit) -> list[dict[str, Any]]:
     team_pos = {team["api_id"]: i for i, team in enumerate(prepared.teams)}
     fixtures: list[dict[str, Any]] = []
@@ -76,7 +88,7 @@ def _fixture_probabilities(prepared: PreparedLeague, fit: PosteriorFit) -> list[
         lh = np.exp(np.clip(log_h, -3, 2))
         la = np.exp(np.clip(log_a, -3, 2))
         ph, pd, pa = _score_probabilities(lh, la)
-        status = "final" if row["status"] in FINAL_STATUSES else "scheduled"
+        status = _public_fixture_status(row.get("status"))
         record = {
             "id": str(row["fixture_id"]),
             "round": row["round"],

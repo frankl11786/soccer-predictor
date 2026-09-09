@@ -62,6 +62,7 @@ MLS_SCHEDULE_SOURCES = (
 )
 MLS_EXPECTED_FIXTURES = 510
 MLS_EXPECTED_TEAM_MATCHES = 34
+MLS_INTERRUPTED_STATUSES = {"PST", "CANC", "ABD", "SUSP"}
 
 
 def _is_regular_season(row: dict[str, Any]) -> bool:
@@ -152,6 +153,14 @@ def _prepare_mls_current(
     for row in final_rows:
         by_pair.setdefault((row["home_id"], row["away_id"]), []).append(row)
 
+    interrupted_rows = [
+        row for row in season_rows
+        if str(row.get("status") or "").upper() in MLS_INTERRUPTED_STATUSES
+    ]
+    interrupted_by_pair: dict[tuple[int, int], list[dict[str, Any]]] = {}
+    for row in interrupted_rows:
+        interrupted_by_pair.setdefault((row["home_id"], row["away_id"]), []).append(row)
+
     source_rank = {
         "American Soccer Analysis": 0,
         "API-Football": 1,
@@ -191,6 +200,30 @@ def _prepare_mls_current(
                 "result_source": result.get("source"),
             }
             merged.append(combined)
+            continue
+
+        interrupted_candidates = []
+        for result in interrupted_by_pair.get((scheduled["home_id"], scheduled["away_id"]), []):
+            day_gap = abs(int(result.get("timestamp") or 0) - scheduled_ts) / 86400
+            if day_gap <= 45:
+                interrupted_candidates.append(
+                    (day_gap, source_rank.get(str(result.get("source")), 9), result)
+                )
+
+        if interrupted_candidates:
+            _, _, result = min(
+                interrupted_candidates,
+                key=lambda item: (item[1], item[0]),
+            )
+            merged.append(
+                {
+                    **scheduled,
+                    "status": str(result.get("status") or "").upper(),
+                    "status_long": result.get("status_long") or "Postponed",
+                    "schedule_source": scheduled.get("source"),
+                    "status_source": result.get("source"),
+                }
+            )
         else:
             merged.append({**scheduled, "schedule_source": scheduled.get("source")})
 

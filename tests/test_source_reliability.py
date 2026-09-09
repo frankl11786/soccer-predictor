@@ -1,5 +1,7 @@
 import unittest
+from datetime import datetime, timezone
 
+from predictor.asa import _normalize_game_status
 from predictor.config import LEAGUES
 from predictor.data_prep import prepare_league
 from predictor.epl_schedule import parse_fixture_download as parse_epl_fixture_download
@@ -119,6 +121,40 @@ class SourceReliabilityTests(unittest.TestCase):
                 for row in canonical
             )
         )
+
+    def test_postponed_mls_status_is_preserved_through_schedule_overlay(self):
+        kickoff = datetime(2026, 9, 5, 23, 30, tzinfo=timezone.utc)
+        self.assertEqual(_normalize_game_status("Postponed", False, kickoff), "PST")
+
+        rows = _snapshot_fallback(2026)
+        target = next(
+            row
+            for row in rows
+            if row["home_name"] == "FC Cincinnati"
+            and row["away_name"] == "D.C. United"
+        )
+        postponed = {
+            **target,
+            "fixture_id": "asa-postponed-regression",
+            "source": "American Soccer Analysis",
+            "status": "PST",
+            "status_long": "Postponed",
+            "home_goals": None,
+            "away_goals": None,
+        }
+        canonical = canonicalize_fixture_rows(LEAGUES["mls"], rows + [postponed])
+        prepared = prepare_league(LEAGUES["mls"], canonical)
+        current = prepared.current_fixtures.to_dict("records")
+        overlaid = next(
+            row
+            for row in current
+            if row["home_name"] == "FC Cincinnati"
+            and row["away_name"] == "D.C. United"
+            and str(row["date"]).startswith("2026-09-05")
+        )
+        self.assertEqual(overlaid["status"], "PST")
+        self.assertEqual(overlaid["status_long"], "Postponed")
+        self.assertEqual(overlaid["status_source"], "American Soccer Analysis")
 
     def test_published_snapshot_is_a_valid_emergency_mls_spine(self):
         rows = _snapshot_fallback(2026)

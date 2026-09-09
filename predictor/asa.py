@@ -105,6 +105,37 @@ def _fetch_season(client, season: int, refresh: bool) -> list[dict[str, Any]]:
     return records
 
 
+def _normalize_game_status(
+    raw_status: str,
+    score_present: bool,
+    kickoff: datetime,
+) -> str:
+    """Preserve non-played terminal/interruption states from ASA.
+
+    A postponed match must not be treated as an ordinary stale scheduled match.
+    Keep these statuses distinct so the schedule spine can overlay them and the
+    public snapshot can publish them without confusing them with completed games.
+    """
+    status_lower = str(raw_status or "").strip().lower()
+    if "postpon" in status_lower or status_lower in {"ppd", "pst"}:
+        return "PST"
+    if "cancel" in status_lower:
+        return "CANC"
+    if "abandon" in status_lower:
+        return "ABD"
+    if "suspend" in status_lower:
+        return "SUSP"
+    if score_present and (
+        kickoff <= datetime.now(timezone.utc)
+        or any(
+            token in status_lower
+            for token in ("final", "complete", "finished", "fulltime", "full time")
+        )
+    ):
+        return "FT"
+    return "NS"
+
+
 def _safe_year(value: Any, fallback: int) -> int:
     if value is None:
         return fallback
@@ -220,15 +251,13 @@ def fetch_mls_rows(
             raw_status = str(
                 _pick(record, "status", "game_status", default="")
             )
-            status_lower = raw_status.lower()
             score_present = home_score is not None and away_score is not None
-            is_final = score_present and (
-                kickoff_py <= datetime.now(timezone.utc)
-                or any(
-                    token in status_lower
-                    for token in ("final", "complete", "finished", "fulltime", "full time")
-                )
+            normalized_status = _normalize_game_status(
+                raw_status,
+                score_present,
+                kickoff_py,
             )
+            is_final = normalized_status == "FT"
 
             stage = str(
                 _pick(
@@ -253,7 +282,7 @@ def fetch_mls_rows(
                     "timestamp": int(kickoff_py.timestamp()),
                     "season": season_value,
                     "round": stage,
-                    "status": "FT" if is_final else "NS",
+                    "status": normalized_status,
                     "status_long": "Match Finished" if is_final else (raw_status or "Not Started"),
                     "home_id": 0,
                     "home_name": home_name,
