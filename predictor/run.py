@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import traceback
+from datetime import datetime, timezone
 
 from .api_football import ApiFootballClient, fetch_history_rows
 from .asa import fetch_mls_rows
@@ -9,6 +10,7 @@ from .backtest import temporal_holdout_backtest
 from .bayes import fit_model
 from .config import APP_DATA, LEAGUES
 from .data_prep import prepare_league
+from .epl_schedule import fetch_complete_epl_schedule
 from .espn import fetch_league_rows
 from .football_data import fetch_epl_results as fetch_football_data_epl_results
 from .mls_schedule import fetch_complete_mls_schedule
@@ -25,14 +27,40 @@ from .simulate import simulate_epl, simulate_mls
 from .utils import utc_now_iso
 
 
+STALE_FIXTURE_GRACE_HOURS = 18
+
+
+def _assert_current_fixture_freshness(prepared, key: str) -> None:
+    """Abort before Bayesian fitting if a current schedule is obviously stale."""
+    cutoff = int(datetime.now(timezone.utc).timestamp()) - STALE_FIXTURE_GRACE_HOURS * 3600
+    stale = []
+    for row in prepared.current_fixtures.to_dict("records"):
+        status = str(row.get("status") or "").upper()
+        timestamp = int(row.get("timestamp") or 0)
+        if status not in {"NS", "TBD", "SCHEDULED"} or not timestamp or timestamp >= cutoff:
+            continue
+        stale.append(row)
+
+    if stale:
+        sample = "; ".join(
+            f"{row.get('home_name')} vs {row.get('away_name')} ({row.get('date')})"
+            for row in stale[:10]
+        )
+        raise RuntimeError(
+            f"{key}: {len(stale)} stale scheduled fixtures remain more than "
+            f"{STALE_FIXTURE_GRACE_HOURS} hours past kickoff. Refusing to fit the "
+            f"Bayesian model until a current results source is available: {sample}"
+        )
+
+
 def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
     cfg = LEAGUES[key]
     print(f"\n=== {cfg.name} ===")
     client = ApiFootballClient.from_environment()
     history_rows, api_meta = fetch_history_rows(client, cfg, refresh=refresh)
 
-    # ESPN is fetched BEFORE data preparation/model fitting. This is deliberate:
-    # a newly completed match must update the table, Bayesian fit and future
+    # Current-result sources are fetched BEFORE data preparation/model fitting.
+    # Newly completed matches must update the table, Bayesian fit and future
     # forecasts, not merely be cosmetically patched into the published JSON.
     espn_rows, espn_meta = fetch_league_rows(
         key,
@@ -41,6 +69,25 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
     )
 
     if key == "epl":
+        fixture_download_rows = []
+        try:
+            fixture_download_rows, fixture_download_meta = fetch_complete_epl_schedule(
+                cfg.current_season,
+                refresh=refresh,
+            )
+        except RuntimeError as exc:
+            print(f"[FixtureDownload] EPL {cfg.current_season}: unavailable; {exc}")
+            fixture_download_meta = {
+                "source": "FixtureDownload",
+                "purpose": "complete current EPL schedule and results",
+                "season": cfg.current_season,
+                "fixtures_received": 0,
+                "cached": False,
+                "fallback": None,
+                "errors": [str(exc)],
+                "updated_at": utc_now_iso(),
+            }
+
         football_data_rows = []
         football_data_meta = None
         if espn_meta.get("live_request_failed") or not espn_rows:
@@ -48,15 +95,7 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
                 cfg.current_season,
                 refresh=refresh,
             )
-            if (
-                not espn_rows
-                and not football_data_rows
-                and football_data_meta.get("live_request_failed")
-            ):
-                raise RuntimeError(
-                    "No usable current EPL results source was available: "
-                    "ESPN returned no rows and Football-Data.co.uk failed."
-                )
+
         openfootball_seasons = tuple(
             sorted(set(cfg.api_history_seasons + cfg.supplemental_seasons))
         )
@@ -64,8 +103,17 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
             openfootball_seasons,
             refresh=refresh,
         )
-        supplemental_rows = openfootball_rows + espn_rows + football_data_rows
-        source_meta = [api_meta, current_meta, espn_meta]
+
+        # OpenFootball remains the long-form schedule source. FixtureDownload is
+        # an independent 380-match schedule/results spine and can replace stale
+        # scheduled rows with finals when ESPN or Football-Data are unavailable.
+        supplemental_rows = (
+            openfootball_rows
+            + fixture_download_rows
+            + espn_rows
+            + football_data_rows
+        )
+        source_meta = [api_meta, current_meta, fixture_download_meta, espn_meta]
         if football_data_meta is not None:
             source_meta.append(football_data_meta)
     else:
@@ -85,6 +133,11 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
         history_rows + supplemental_rows,
     )
     prepared = prepare_league(cfg, raw_fixtures)
+
+    # Cheap freshness guard: fail here, before the temporal backtest and 5,000
+    # SVI steps, rather than wasting a long Actions run on stale source data.
+    _assert_current_fixture_freshness(prepared, key)
+
     print(
         f"Historical matches: {len(prepared.history):,}; "
         f"current fixtures: {len(prepared.current_fixtures):,}"

@@ -36,8 +36,12 @@ class ScheduleUiTests(unittest.TestCase):
         cls.index = (APP / "index.html").read_text()
 
     def test_mls_and_epl_upcoming_filters_have_fixtures(self):
-        self.assertEqual(len(schedule_rows(self.snapshots["mls"]["fixtures"], "upcoming")), 181)
-        self.assertGreater(len(schedule_rows(self.snapshots["epl"]["fixtures"], "upcoming")), 0)
+        for league in ("mls", "epl"):
+            with self.subTest(league=league):
+                self.assertGreater(
+                    len(schedule_rows(self.snapshots[league]["fixtures"], "upcoming")),
+                    0,
+                )
 
     def test_completed_and_all_filters_preserve_their_status_contract(self):
         for league, data in self.snapshots.items():

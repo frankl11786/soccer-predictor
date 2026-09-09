@@ -22,6 +22,7 @@ ALIASES = {
     "wolverhamptonwanderers": "wolves",
     "wolverhampton": "wolves",
     "tottenham": "tottenhamhotspur",
+    "spurs": "tottenhamhotspur",
     "manchesterutd": "manchesterunited",
     "manutd": "manchesterunited",
     "manunited": "manchesterunited",

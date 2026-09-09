@@ -2,7 +2,8 @@ import unittest
 
 from predictor.config import LEAGUES
 from predictor.data_prep import prepare_league
-from predictor.identity import canonicalize_fixture_rows
+from predictor.epl_schedule import parse_fixture_download as parse_epl_fixture_download
+from predictor.identity import canonicalize_fixture_rows, team_catalog
 from predictor.mls_schedule import _snapshot_fallback, parse_fixture_download
 from predictor.openfootball import parse_premier_league
 
@@ -49,6 +50,31 @@ FIXTURE_DOWNLOAD_SAMPLE = [
     },
 ]
 
+EPL_FIXTURE_DOWNLOAD_SAMPLE = [
+    {
+        "MatchNumber": 27,
+        "RoundNumber": 3,
+        "DateUtc": "2026-09-05 14:00:00Z",
+        "Location": "The City Ground",
+        "HomeTeam": "Nott'm Forest",
+        "AwayTeam": "Spurs",
+        "HomeTeamScore": 0,
+        "AwayTeamScore": 0,
+        "Winner": None,
+    },
+    {
+        "MatchNumber": 30,
+        "RoundNumber": 3,
+        "DateUtc": "2026-09-06 15:30:00Z",
+        "Location": "Emirates Stadium",
+        "HomeTeam": "Arsenal",
+        "AwayTeam": "Chelsea",
+        "HomeTeamScore": None,
+        "AwayTeamScore": None,
+        "Winner": None,
+    },
+]
+
 
 class SourceReliabilityTests(unittest.TestCase):
     def test_openfootball_result_middle_format(self):
@@ -76,6 +102,23 @@ class SourceReliabilityTests(unittest.TestCase):
         self.assertEqual(rows[0]["home_goals"], 2)
         self.assertEqual(rows[1]["status"], "NS")
         self.assertEqual(rows[1]["round"], "Regular Season - 27")
+
+    def test_epl_fixture_download_parser_and_aliases(self):
+        rows = parse_epl_fixture_download(EPL_FIXTURE_DOWNLOAD_SAMPLE, 2026)
+        self.assertEqual(len(rows), 2)
+        self.assertEqual(rows[0]["source"], "FixtureDownload")
+        self.assertEqual(rows[0]["status"], "FT")
+        self.assertEqual(rows[0]["home_goals"], 0)
+        self.assertEqual(rows[1]["status"], "NS")
+
+        canonical = canonicalize_fixture_rows(LEAGUES["epl"], rows)
+        current_ids = {team["api_id"] for team in team_catalog(LEAGUES["epl"])}
+        self.assertTrue(
+            all(
+                row["home_id"] in current_ids and row["away_id"] in current_ids
+                for row in canonical
+            )
+        )
 
     def test_published_snapshot_is_a_valid_emergency_mls_spine(self):
         rows = _snapshot_fallback(2026)
