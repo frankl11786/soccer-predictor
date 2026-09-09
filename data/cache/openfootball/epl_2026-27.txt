@@ -42,18 +42,18 @@
 
 ▪ Matchday 3
   Fri Sep 4
-    20:00  Ipswich Town FC         v Liverpool FC
+    20:00  Ipswich Town FC         v Liverpool FC             0-2 (0-2)
   Sat Sep 5
-    12:30  Newcastle United FC     v AFC Bournemouth
-    15:00  Nottingham Forest FC    v Tottenham Hotspur FC
-           Manchester City FC      v Coventry City FC
-           Brighton & Hove Albion FC v Leeds United FC
-           Brentford FC            v Sunderland AFC
-           Fulham FC               v Crystal Palace FC
-    17:30  Hull City AFC           v Aston Villa FC
+    12:30  Newcastle United FC     v AFC Bournemouth          2-2 (1-2)
+    15:00  Nottingham Forest FC    v Tottenham Hotspur FC     0-0
+           Manchester City FC      v Coventry City FC         1-0 (1-0)
+           Brighton & Hove Albion FC v Leeds United FC          1-1 (0-1)
+           Brentford FC            v Sunderland AFC           1-1 (0-0)
+           Fulham FC               v Crystal Palace FC        2-3 (2-1)
+    17:30  Hull City AFC           v Aston Villa FC           0-0
   Sun Sep 6
-    14:00  Everton FC              v Manchester United FC
-    16:30  Arsenal FC              v Chelsea FC
+    14:00  Everton FC              v Manchester United FC     2-2 (0-0)
+    16:30  Arsenal FC              v Chelsea FC               2-1 (1-1)
 
 
 ▪ Matchday 4
@@ -78,12 +78,12 @@
   Sat Sep 19
     12:30  Tottenham Hotspur FC    v Aston Villa FC
     15:00  Everton FC              v Ipswich Town FC
-           Leeds United FC         v Crystal Palace FC
            Brighton & Hove Albion FC v Arsenal FC
            Newcastle United FC     v Hull City AFC
     17:30  Nottingham Forest FC    v Coventry City FC
   Sun Sep 20
     14:00  AFC Bournemouth         v Liverpool FC
+           Leeds United FC         v Crystal Palace FC
            Manchester City FC      v Sunderland AFC
     16:30  Fulham FC               v Manchester United FC
 
@@ -125,12 +125,12 @@
     20:00  Ipswich Town FC         v Nottingham Forest FC
   Sat Oct 24
     12:30  Aston Villa FC          v Manchester City FC
-    15:00  Liverpool FC            v Brighton & Hove Albion FC
-           Arsenal FC              v Everton FC
+    15:00  Arsenal FC              v Everton FC
            Coventry City FC        v Fulham FC
     17:30  Chelsea FC              v Tottenham Hotspur FC
   Sun Oct 25
-    14:00  Crystal Palace FC       v Newcastle United FC
+    14:00  Liverpool FC            v Brighton & Hove Albion FC
+           Crystal Palace FC       v Newcastle United FC
            Manchester United FC    v AFC Bournemouth
            Hull City AFC           v Brentford FC
     16:30  Sunderland AFC          v Leeds United FC
@@ -145,8 +145,8 @@
            Hull City AFC           v Ipswich Town FC
            Brentford FC            v Nottingham Forest FC
     17:30  Tottenham Hotspur FC    v Crystal Palace FC
+    20:00  Aston Villa FC          v Fulham FC
   Sun Nov 1
-    14:00  Aston Villa FC          v Fulham FC
     16:30  Liverpool FC            v Arsenal FC
   Mon Nov 2
     20:00  Newcastle United FC     v Everton FC
