@@ -1,10 +1,14 @@
 import unittest
 from datetime import datetime, timezone
+from types import SimpleNamespace
+
+import pandas as pd
 
 from predictor.asa import _normalize_game_status
 from predictor.config import LEAGUES
 from predictor.data_prep import prepare_league
 from predictor.epl_schedule import parse_fixture_download as parse_epl_fixture_download
+from predictor.fixture_overrides import apply_fixture_status_overrides
 from predictor.identity import canonicalize_fixture_rows, team_catalog
 from predictor.mls_schedule import _snapshot_fallback, parse_fixture_download
 from predictor.openfootball import parse_premier_league
@@ -122,7 +126,7 @@ class SourceReliabilityTests(unittest.TestCase):
             )
         )
 
-    def test_postponed_mls_status_is_preserved_through_schedule_overlay(self):
+    def test_postponed_mls_status_is_preserved_when_a_feed_reports_it(self):
         kickoff = datetime(2026, 9, 5, 23, 30, tzinfo=timezone.utc)
         self.assertEqual(_normalize_game_status("Postponed", False, kickoff), "PST")
 
@@ -155,6 +159,53 @@ class SourceReliabilityTests(unittest.TestCase):
         self.assertEqual(overlaid["status"], "PST")
         self.assertEqual(overlaid["status_long"], "Postponed")
         self.assertEqual(overlaid["status_source"], "American Soccer Analysis")
+
+    def test_official_override_handles_postponement_missing_from_all_feeds(self):
+        prepared = SimpleNamespace(
+            current_fixtures=pd.DataFrame(
+                [
+                    {
+                        "season": 2026,
+                        "date": "2026-09-05T23:30:00Z",
+                        "timestamp": 1788651000,
+                        "home_name": "FC Cincinnati",
+                        "away_name": "D.C. United",
+                        "status": "NS",
+                        "status_long": "Scheduled",
+                    }
+                ]
+            )
+        )
+        metadata = apply_fixture_status_overrides(prepared, LEAGUES["mls"])
+        row = prepared.current_fixtures.iloc[0]
+        self.assertEqual(metadata["configured"], 1)
+        self.assertEqual(metadata["applied"], 1)
+        self.assertEqual(row["status"], "PST")
+        self.assertEqual(row["status_long"], "Postponed")
+        self.assertEqual(row["status_source"], "Official Status Override")
+
+    def test_official_override_does_not_follow_a_rescheduled_date(self):
+        prepared = SimpleNamespace(
+            current_fixtures=pd.DataFrame(
+                [
+                    {
+                        "season": 2026,
+                        "date": "2026-09-10T23:30:00Z",
+                        "timestamp": 1789083000,
+                        "home_name": "FC Cincinnati",
+                        "away_name": "D.C. United",
+                        "status": "NS",
+                        "status_long": "Scheduled",
+                    }
+                ]
+            )
+        )
+        metadata = apply_fixture_status_overrides(prepared, LEAGUES["mls"])
+        row = prepared.current_fixtures.iloc[0]
+        self.assertEqual(metadata["configured"], 1)
+        self.assertEqual(metadata["applied"], 0)
+        self.assertEqual(metadata["unmatched"], 1)
+        self.assertEqual(row["status"], "NS")
 
     def test_published_snapshot_is_a_valid_emergency_mls_spine(self):
         rows = _snapshot_fallback(2026)

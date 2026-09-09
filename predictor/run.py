@@ -12,6 +12,7 @@ from .config import APP_DATA, LEAGUES
 from .data_prep import prepare_league
 from .epl_schedule import fetch_complete_epl_schedule
 from .espn import fetch_league_rows
+from .fixture_overrides import apply_fixture_status_overrides
 from .football_data import fetch_epl_results as fetch_football_data_epl_results
 from .mls_schedule import fetch_complete_mls_schedule
 from .identity import canonicalize_fixture_rows
@@ -53,7 +54,12 @@ def _assert_current_fixture_freshness(prepared, key: str) -> None:
         )
 
 
-def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
+def run_league(
+    key: str,
+    refresh: bool,
+    steps: int | None = None,
+    preflight_only: bool = False,
+) -> None:
     cfg = LEAGUES[key]
     print(f"\n=== {cfg.name} ===")
     client = ApiFootballClient.from_environment()
@@ -134,6 +140,13 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
     )
     prepared = prepare_league(cfg, raw_fixtures)
 
+    # Exceptional fixture states such as an officially postponed match may lag
+    # in every machine-readable feed. Apply narrowly scoped, source-cited status
+    # overrides after schedule/result reconciliation and before freshness checks.
+    override_meta = apply_fixture_status_overrides(prepared, cfg)
+    if override_meta.get("configured"):
+        source_meta.append(override_meta)
+
     # Cheap freshness guard: fail here, before the temporal backtest and 5,000
     # SVI steps, rather than wasting a long Actions run on stale source data.
     _assert_current_fixture_freshness(prepared, key)
@@ -142,6 +155,11 @@ def run_league(key: str, refresh: bool, steps: int | None = None) -> None:
         f"Historical matches: {len(prepared.history):,}; "
         f"current fixtures: {len(prepared.current_fixtures):,}"
     )
+
+    if preflight_only:
+        print(f"{key}: source and fixture freshness preflight passed; model fitting skipped")
+        return
+
     requested_steps = steps or 5_000
     backtest_steps = min(750, max(100, int(requested_steps * 0.15)))
     backtest_meta = temporal_holdout_backtest(
@@ -229,12 +247,22 @@ def main() -> None:
     parser.add_argument("--league", choices=["epl", "mls", "all"], default="all")
     parser.add_argument("--refresh", action="store_true")
     parser.add_argument("--steps", type=int, default=None)
+    parser.add_argument(
+        "--preflight-only",
+        action="store_true",
+        help="Fetch and reconcile current data, validate freshness, then exit before model fitting.",
+    )
     args = parser.parse_args()
     leagues = ("epl", "mls") if args.league == "all" else (args.league,)
     errors = []
     for key in leagues:
         try:
-            run_league(key, refresh=args.refresh, steps=args.steps)
+            run_league(
+                key,
+                refresh=args.refresh,
+                steps=args.steps,
+                preflight_only=args.preflight_only,
+            )
         except Exception as exc:
             errors.append((key, exc))
             traceback.print_exc()
