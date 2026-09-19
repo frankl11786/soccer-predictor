@@ -1,5 +1,24 @@
 [
   {
+    "game_id": "gpMOgl1DMz",
+    "date_time_utc": "2026-09-18 23:30:00 UTC",
+    "home_score": 0,
+    "away_score": 1,
+    "home_team_id": "Vj58weDM8n",
+    "away_team_id": "a2lqRX2Mr0",
+    "referee_id": "4JMAYlPMKg",
+    "stadium_id": "eVq32yn5WO",
+    "home_manager_id": "0x5g9gZQ7O",
+    "away_manager_id": "zeQZv1jQKw",
+    "expanded_minutes": 99,
+    "season_name": "2026",
+    "matchday": 27,
+    "knockout_game": false,
+    "status": "FullTime",
+    "last_updated_utc": "2026-09-19 01:45:45 UTC",
+    "attendance": NaN
+  },
+  {
     "game_id": "0Oq6oeJgQ6",
     "date_time_utc": "2026-09-14 01:00:00 UTC",
     "home_score": 0,
@@ -15,8 +34,8 @@
     "matchday": 26,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-14 03:18:55 UTC",
-    "attendance": NaN
+    "last_updated_utc": "2026-09-14 14:39:58 UTC",
+    "attendance": 21171.0
   },
   {
     "game_id": "7VqGXPZzQv",
@@ -34,8 +53,8 @@
     "matchday": 26,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-14 00:59:41 UTC",
-    "attendance": NaN
+    "last_updated_utc": "2026-09-14 18:33:43 UTC",
+    "attendance": 23855.0
   },
   {
     "game_id": "0x5gxzkwq7",
@@ -53,27 +72,8 @@
     "matchday": 26,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-14 00:34:14 UTC",
-    "attendance": NaN
-  },
-  {
-    "game_id": "NWMWkzjDMl",
-    "date_time_utc": "2026-09-13 02:30:00 UTC",
-    "home_score": 1,
-    "away_score": 0,
-    "home_team_id": "0KPqjA456v",
-    "away_team_id": "YgOMngl5wN",
-    "referee_id": "9vQ2mPaqK6",
-    "stadium_id": "Vj58W84M8n",
-    "home_manager_id": "LeVq3j5WOJ",
-    "away_manager_id": "vzqoAjJMap",
-    "expanded_minutes": 97,
-    "season_name": "2026",
-    "matchday": 26,
-    "knockout_game": false,
-    "status": "FullTime",
-    "last_updated_utc": "2026-09-14 03:18:05 UTC",
-    "attendance": 15204.0
+    "last_updated_utc": "2026-09-14 18:32:48 UTC",
+    "attendance": 26324.0
   },
   {
     "game_id": "KAqBroRmqb",
@@ -95,6 +95,25 @@
     "attendance": 20489.0
   },
   {
+    "game_id": "NWMWkzjDMl",
+    "date_time_utc": "2026-09-13 02:30:00 UTC",
+    "home_score": 1,
+    "away_score": 0,
+    "home_team_id": "0KPqjA456v",
+    "away_team_id": "YgOMngl5wN",
+    "referee_id": "9vQ2mPaqK6",
+    "stadium_id": "Vj58W84M8n",
+    "home_manager_id": "LeVq3j5WOJ",
+    "away_manager_id": "vzqoAjJMap",
+    "expanded_minutes": 97,
+    "season_name": "2026",
+    "matchday": 26,
+    "knockout_game": false,
+    "status": "FullTime",
+    "last_updated_utc": "2026-09-14 03:18:05 UTC",
+    "attendance": 15204.0
+  },
+  {
     "game_id": "Oa5wP6KDq1",
     "date_time_utc": "2026-09-13 01:30:00 UTC",
     "home_score": 1,
@@ -110,7 +129,7 @@
     "matchday": 26,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-14 03:18:05 UTC",
+    "last_updated_utc": "2026-09-15 10:11:31 UTC",
     "attendance": 15091.0
   },
   {
@@ -124,12 +143,12 @@
     "stadium_id": "e7MzlRjqr0",
     "home_manager_id": "4wM4vOAqjB",
     "away_manager_id": "0x5g9gZQ7O",
-    "expanded_minutes": 105,
+    "expanded_minutes": 104,
     "season_name": "2026",
     "matchday": 26,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-14 03:18:05 UTC",
+    "last_updated_utc": "2026-09-15 10:11:28 UTC",
     "attendance": 20293.0
   },
   {
@@ -148,8 +167,8 @@
     "matchday": 26,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-13 17:38:28 UTC",
-    "attendance": NaN
+    "last_updated_utc": "2026-09-14 18:27:11 UTC",
+    "attendance": 10925.0
   },
   {
     "game_id": "Xj5YPzjyMb",
@@ -167,8 +186,8 @@
     "matchday": 26,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-13 16:09:44 UTC",
-    "attendance": NaN
+    "last_updated_utc": "2026-09-14 18:28:00 UTC",
+    "attendance": 15738.0
   },
   {
     "game_id": "jYQJJyZZQG",
@@ -186,27 +205,8 @@
     "matchday": 26,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-13 17:26:09 UTC",
-    "attendance": NaN
-  },
-  {
-    "game_id": "e7MzyozJQr",
-    "date_time_utc": "2026-09-12 23:30:00 UTC",
-    "home_score": 3,
-    "away_score": 0,
-    "home_team_id": "jYQJ8EW5GR",
-    "away_team_id": "kRQabn8MKZ",
-    "referee_id": "4JMAYlPMKg",
-    "stadium_id": "vzqoJrj5ap",
-    "home_manager_id": "KPqjjgYq6v",
-    "away_manager_id": "0Oq6VPgq6D",
-    "expanded_minutes": 103,
-    "season_name": "2026",
-    "matchday": 26,
-    "knockout_game": false,
-    "status": "FullTime",
-    "last_updated_utc": "2026-09-13 14:13:25 UTC",
-    "attendance": NaN
+    "last_updated_utc": "2026-09-14 18:31:10 UTC",
+    "attendance": 22423.0
   },
   {
     "game_id": "p6qbYzPX50",
@@ -224,8 +224,8 @@
     "matchday": 26,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-13 10:53:13 UTC",
-    "attendance": NaN
+    "last_updated_utc": "2026-09-15 10:55:08 UTC",
+    "attendance": 14189.0
   },
   {
     "game_id": "ljqEdkNV5x",
@@ -243,8 +243,27 @@
     "matchday": 26,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-13 06:19:46 UTC",
-    "attendance": NaN
+    "last_updated_utc": "2026-09-14 18:23:57 UTC",
+    "attendance": 26603.0
+  },
+  {
+    "game_id": "e7MzyozJQr",
+    "date_time_utc": "2026-09-12 23:30:00 UTC",
+    "home_score": 3,
+    "away_score": 0,
+    "home_team_id": "jYQJ8EW5GR",
+    "away_team_id": "kRQabn8MKZ",
+    "referee_id": "4JMAYlPMKg",
+    "stadium_id": "vzqoJrj5ap",
+    "home_manager_id": "KPqjjgYq6v",
+    "away_manager_id": "0Oq6VPgq6D",
+    "expanded_minutes": 103,
+    "season_name": "2026",
+    "matchday": 26,
+    "knockout_game": false,
+    "status": "FullTime",
+    "last_updated_utc": "2026-09-14 18:24:43 UTC",
+    "attendance": 19617.0
   },
   {
     "game_id": "XVqKw7bWq0",
@@ -281,8 +300,8 @@
     "matchday": 26,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-13 17:40:03 UTC",
-    "attendance": NaN
+    "last_updated_utc": "2026-09-14 18:21:35 UTC",
+    "attendance": 25513.0
   },
   {
     "game_id": "4JMA1n82MK",
@@ -475,23 +494,23 @@
     "attendance": 17784.0
   },
   {
-    "game_id": "OlMlWzg4QL",
+    "game_id": "Vj589JaDq8",
     "date_time_utc": "2026-09-09 23:30:00 UTC",
-    "home_score": 2,
-    "away_score": 1,
-    "home_team_id": "EKXMeX3Q64",
-    "away_team_id": "mvzqoLZQap",
-    "referee_id": "KAqBpDvMbg",
-    "stadium_id": "xW5pwORMg1",
-    "home_manager_id": "0x5gZ3rM7O",
-    "away_manager_id": "9z5kj1aMA3",
+    "home_score": 1,
+    "away_score": 2,
+    "home_team_id": "APk5LGOMOW",
+    "away_team_id": "NPqxKXZ59d",
+    "referee_id": "ljqExYw5x0",
+    "stadium_id": "NWMW8pj5lz",
+    "home_manager_id": "wvq9mb7qWn",
+    "away_manager_id": "wvq9NPNQWn",
     "expanded_minutes": 100,
     "season_name": "2026",
     "matchday": 25,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-10 18:38:05 UTC",
-    "attendance": 10115.0
+    "last_updated_utc": "2026-09-10 13:17:58 UTC",
+    "attendance": 12324.0
   },
   {
     "game_id": "a35ro3RoqL",
@@ -532,23 +551,23 @@
     "attendance": 13769.0
   },
   {
-    "game_id": "Vj589JaDq8",
+    "game_id": "OlMlWzg4QL",
     "date_time_utc": "2026-09-09 23:30:00 UTC",
-    "home_score": 1,
-    "away_score": 2,
-    "home_team_id": "APk5LGOMOW",
-    "away_team_id": "NPqxKXZ59d",
-    "referee_id": "ljqExYw5x0",
-    "stadium_id": "NWMW8pj5lz",
-    "home_manager_id": "wvq9mb7qWn",
-    "away_manager_id": "wvq9NPNQWn",
+    "home_score": 2,
+    "away_score": 1,
+    "home_team_id": "EKXMeX3Q64",
+    "away_team_id": "mvzqoLZQap",
+    "referee_id": "KAqBpDvMbg",
+    "stadium_id": "xW5pwORMg1",
+    "home_manager_id": "0x5gZ3rM7O",
+    "away_manager_id": "9z5kj1aMA3",
     "expanded_minutes": 100,
     "season_name": "2026",
     "matchday": 25,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-09-10 13:17:58 UTC",
-    "attendance": 12324.0
+    "last_updated_utc": "2026-09-10 18:38:05 UTC",
+    "attendance": 10115.0
   },
   {
     "game_id": "2vQ1g1Rb5r",
@@ -646,25 +665,6 @@
     "attendance": 26635.0
   },
   {
-    "game_id": "Pk5L3DzEMO",
-    "date_time_utc": "2026-09-06 00:30:00 UTC",
-    "home_score": 4,
-    "away_score": 3,
-    "home_team_id": "mKAqBBmqbg",
-    "away_team_id": "Z2vQ1xlqrA",
-    "referee_id": "odMXLVAMYL",
-    "stadium_id": "eVq3alGMWO",
-    "home_manager_id": "p6qbk8pQ0G",
-    "away_manager_id": "9Yqd8woqvJ",
-    "expanded_minutes": 113,
-    "season_name": "2026",
-    "matchday": 24,
-    "knockout_game": false,
-    "status": "FullTime",
-    "last_updated_utc": "2026-09-06 18:49:02 UTC",
-    "attendance": 10925.0
-  },
-  {
     "game_id": "gjMNWr735K",
     "date_time_utc": "2026-09-06 00:30:00 UTC",
     "home_score": 0,
@@ -701,6 +701,25 @@
     "status": "FullTime",
     "last_updated_utc": "2026-09-06 20:20:47 UTC",
     "attendance": 20738.0
+  },
+  {
+    "game_id": "Pk5L3DzEMO",
+    "date_time_utc": "2026-09-06 00:30:00 UTC",
+    "home_score": 4,
+    "away_score": 3,
+    "home_team_id": "mKAqBBmqbg",
+    "away_team_id": "Z2vQ1xlqrA",
+    "referee_id": "odMXLVAMYL",
+    "stadium_id": "eVq3alGMWO",
+    "home_manager_id": "p6qbk8pQ0G",
+    "away_manager_id": "9Yqd8woqvJ",
+    "expanded_minutes": 113,
+    "season_name": "2026",
+    "matchday": 24,
+    "knockout_game": false,
+    "status": "FullTime",
+    "last_updated_utc": "2026-09-06 18:49:02 UTC",
+    "attendance": 10925.0
   },
   {
     "game_id": "315V9zWYM9",
@@ -855,25 +874,6 @@
     "attendance": 18105.0
   },
   {
-    "game_id": "0x5gxzJwq7",
-    "date_time_utc": "2026-08-30 02:30:00 UTC",
-    "home_score": 3,
-    "away_score": 1,
-    "home_team_id": "zeQZBOzQKw",
-    "away_team_id": "kaDQ0wRqEv",
-    "referee_id": "2lqRokLQr0",
-    "stadium_id": "Oa5wKXY514",
-    "home_manager_id": "aDQ0bNE5Ev",
-    "away_manager_id": "Xj5Yx60Mbd",
-    "expanded_minutes": 103,
-    "season_name": "2026",
-    "matchday": 23,
-    "knockout_game": false,
-    "status": "FullTime",
-    "last_updated_utc": "2026-08-30 21:26:52 UTC",
-    "attendance": 27971.0
-  },
-  {
     "game_id": "NWMWkzgDMl",
     "date_time_utc": "2026-08-30 02:30:00 UTC",
     "home_score": 1,
@@ -891,6 +891,25 @@
     "status": "FullTime",
     "last_updated_utc": "2026-08-30 16:42:16 UTC",
     "attendance": 20952.0
+  },
+  {
+    "game_id": "0x5gxzJwq7",
+    "date_time_utc": "2026-08-30 02:30:00 UTC",
+    "home_score": 3,
+    "away_score": 1,
+    "home_team_id": "zeQZBOzQKw",
+    "away_team_id": "kaDQ0wRqEv",
+    "referee_id": "2lqRokLQr0",
+    "stadium_id": "Oa5wKXY514",
+    "home_manager_id": "aDQ0bNE5Ev",
+    "away_manager_id": "Xj5Yx60Mbd",
+    "expanded_minutes": 103,
+    "season_name": "2026",
+    "matchday": 23,
+    "knockout_game": false,
+    "status": "FullTime",
+    "last_updated_utc": "2026-08-30 21:26:52 UTC",
+    "attendance": 27971.0
   },
   {
     "game_id": "KAqBrovmqb",
@@ -1273,6 +1292,25 @@
     "attendance": 22423.0
   },
   {
+    "game_id": "OlMlWzB4QL",
+    "date_time_utc": "2026-08-22 23:30:00 UTC",
+    "home_score": 1,
+    "away_score": 2,
+    "home_team_id": "zeQZkL1MKw",
+    "away_team_id": "kRQabn8MKZ",
+    "referee_id": "e7MzPKXqr0",
+    "stadium_id": "odMXgYWQYL",
+    "home_manager_id": "NWMWY8jqlz",
+    "away_manager_id": "0Oq6VPgq6D",
+    "expanded_minutes": 102,
+    "season_name": "2026",
+    "matchday": 22,
+    "knockout_game": false,
+    "status": "FullTime",
+    "last_updated_utc": "2026-08-28 13:26:20 UTC",
+    "attendance": 26654.0
+  },
+  {
     "game_id": "a35ro3BoqL",
     "date_time_utc": "2026-08-22 23:30:00 UTC",
     "home_score": 1,
@@ -1311,25 +1349,6 @@
     "attendance": 19619.0
   },
   {
-    "game_id": "OlMlWzB4QL",
-    "date_time_utc": "2026-08-22 23:30:00 UTC",
-    "home_score": 1,
-    "away_score": 2,
-    "home_team_id": "zeQZkL1MKw",
-    "away_team_id": "kRQabn8MKZ",
-    "referee_id": "e7MzPKXqr0",
-    "stadium_id": "odMXgYWQYL",
-    "home_manager_id": "NWMWY8jqlz",
-    "away_manager_id": "0Oq6VPgq6D",
-    "expanded_minutes": 102,
-    "season_name": "2026",
-    "matchday": 22,
-    "knockout_game": false,
-    "status": "FullTime",
-    "last_updated_utc": "2026-08-28 13:26:20 UTC",
-    "attendance": 26654.0
-  },
-  {
     "game_id": "KXMeXz3vQ6",
     "date_time_utc": "2026-08-22 23:30:00 UTC",
     "home_score": 2,
@@ -1349,25 +1368,6 @@
     "attendance": 17612.0
   },
   {
-    "game_id": "2vQ1g1db5r",
-    "date_time_utc": "2026-08-22 23:30:00 UTC",
-    "home_score": 3,
-    "away_score": 1,
-    "home_team_id": "NPqxKXZ59d",
-    "away_team_id": "EKXMeX3Q64",
-    "referee_id": "NWMWR3DQlz",
-    "stadium_id": "KXMeOR2q64",
-    "home_manager_id": "wvq9NPNQWn",
-    "away_manager_id": "0x5gZ3rM7O",
-    "expanded_minutes": 100,
-    "season_name": "2026",
-    "matchday": 22,
-    "knockout_game": false,
-    "status": "FullTime",
-    "last_updated_utc": "2026-08-23 18:08:25 UTC",
-    "attendance": 28257.0
-  },
-  {
     "game_id": "9Yqdezw7Qv",
     "date_time_utc": "2026-08-22 23:30:00 UTC",
     "home_score": 1,
@@ -1385,6 +1385,25 @@
     "status": "FullTime",
     "last_updated_utc": "2026-08-23 21:45:54 UTC",
     "attendance": 25219.0
+  },
+  {
+    "game_id": "2vQ1g1db5r",
+    "date_time_utc": "2026-08-22 23:30:00 UTC",
+    "home_score": 3,
+    "away_score": 1,
+    "home_team_id": "NPqxKXZ59d",
+    "away_team_id": "EKXMeX3Q64",
+    "referee_id": "NWMWR3DQlz",
+    "stadium_id": "KXMeOR2q64",
+    "home_manager_id": "wvq9NPNQWn",
+    "away_manager_id": "0x5gZ3rM7O",
+    "expanded_minutes": 100,
+    "season_name": "2026",
+    "matchday": 22,
+    "knockout_game": false,
+    "status": "FullTime",
+    "last_updated_utc": "2026-08-23 18:08:25 UTC",
+    "attendance": 28257.0
   },
   {
     "game_id": "7vQ7RXxOqD",
@@ -1596,23 +1615,23 @@
     "attendance": 20102.0
   },
   {
-    "game_id": "0Oq6oeLgQ6",
+    "game_id": "2lqROe7aQr",
     "date_time_utc": "2026-08-19 23:30:00 UTC",
-    "home_score": 1,
+    "home_score": 2,
     "away_score": 2,
-    "home_team_id": "mvzqoLZQap",
-    "away_team_id": "APk5LGOMOW",
-    "referee_id": "ljqEymNqx0",
-    "stadium_id": "2vQ1eawQrA",
-    "home_manager_id": "9z5kj1aMA3",
-    "away_manager_id": "wvq9mb7qWn",
-    "expanded_minutes": 101,
+    "home_team_id": "9z5k7Yg5A3",
+    "away_team_id": "zeQZkL1MKw",
+    "referee_id": "xW5pE3Yqg1",
+    "stadium_id": "NWMW8ZN5lz",
+    "home_manager_id": "zeQZnD1QKw",
+    "away_manager_id": "NWMWY8jqlz",
+    "expanded_minutes": 111,
     "season_name": "2026",
     "matchday": 21,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-08-20 18:35:36 UTC",
-    "attendance": 17039.0
+    "last_updated_utc": "2026-08-20 21:40:40 UTC",
+    "attendance": 19778.0
   },
   {
     "game_id": "gOMnGzY85w",
@@ -1653,23 +1672,23 @@
     "attendance": 23717.0
   },
   {
-    "game_id": "2lqROe7aQr",
+    "game_id": "0Oq6oeLgQ6",
     "date_time_utc": "2026-08-19 23:30:00 UTC",
-    "home_score": 2,
+    "home_score": 1,
     "away_score": 2,
-    "home_team_id": "9z5k7Yg5A3",
-    "away_team_id": "zeQZkL1MKw",
-    "referee_id": "xW5pE3Yqg1",
-    "stadium_id": "NWMW8ZN5lz",
-    "home_manager_id": "zeQZnD1QKw",
-    "away_manager_id": "NWMWY8jqlz",
-    "expanded_minutes": 111,
+    "home_team_id": "mvzqoLZQap",
+    "away_team_id": "APk5LGOMOW",
+    "referee_id": "ljqEymNqx0",
+    "stadium_id": "2vQ1eawQrA",
+    "home_manager_id": "9z5kj1aMA3",
+    "away_manager_id": "wvq9mb7qWn",
+    "expanded_minutes": 101,
     "season_name": "2026",
     "matchday": 21,
     "knockout_game": false,
     "status": "FullTime",
-    "last_updated_utc": "2026-08-20 21:40:40 UTC",
-    "attendance": 19778.0
+    "last_updated_utc": "2026-08-20 18:35:36 UTC",
+    "attendance": 17039.0
   },
   {
     "game_id": "0x5gxzWwq7",
@@ -2147,6 +2166,25 @@
     "attendance": 22193.0
   },
   {
+    "game_id": "XVqKw7e0q0",
+    "date_time_utc": "2026-08-01 23:30:00 UTC",
+    "home_score": 3,
+    "away_score": 2,
+    "home_team_id": "9z5k7Yg5A3",
+    "away_team_id": "KAqBN0Vqbg",
+    "referee_id": "vzqoWjkqap",
+    "stadium_id": "NWMW8ZN5lz",
+    "home_manager_id": "zeQZnD1QKw",
+    "away_manager_id": "7vQ7z0dqD1",
+    "expanded_minutes": 106,
+    "season_name": "2026",
+    "matchday": 19,
+    "knockout_game": false,
+    "status": "FullTime",
+    "last_updated_utc": "2026-08-04 09:06:12 UTC",
+    "attendance": 18557.0
+  },
+  {
     "game_id": "zeQZLzXr5K",
     "date_time_utc": "2026-08-01 23:30:00 UTC",
     "home_score": 2,
@@ -2183,25 +2221,6 @@
     "status": "FullTime",
     "last_updated_utc": "2026-08-02 14:14:58 UTC",
     "attendance": 40086.0
-  },
-  {
-    "game_id": "XVqKw7e0q0",
-    "date_time_utc": "2026-08-01 23:30:00 UTC",
-    "home_score": 3,
-    "away_score": 2,
-    "home_team_id": "9z5k7Yg5A3",
-    "away_team_id": "KAqBN0Vqbg",
-    "referee_id": "vzqoWjkqap",
-    "stadium_id": "NWMW8ZN5lz",
-    "home_manager_id": "zeQZnD1QKw",
-    "away_manager_id": "7vQ7z0dqD1",
-    "expanded_minutes": 106,
-    "season_name": "2026",
-    "matchday": 19,
-    "knockout_game": false,
-    "status": "FullTime",
-    "last_updated_utc": "2026-08-04 09:06:12 UTC",
-    "attendance": 18557.0
   },
   {
     "game_id": "BLMvVG7WMx",
@@ -3496,25 +3515,6 @@
     "attendance": 16018.0
   },
   {
-    "game_id": "gOMnGz2l5w",
-    "date_time_utc": "2026-05-14 01:30:00 UTC",
-    "home_score": 3,
-    "away_score": 2,
-    "home_team_id": "jYQJ19EqGR",
-    "away_team_id": "0KPqjA456v",
-    "referee_id": "xW5pE3Yqg1",
-    "stadium_id": "9Yqda07QvJ",
-    "home_manager_id": "odMXxreMYL",
-    "away_manager_id": "LeVq3j5WOJ",
-    "expanded_minutes": 101,
-    "season_name": "2026",
-    "matchday": 13,
-    "knockout_game": false,
-    "status": "FullTime",
-    "last_updated_utc": "2026-05-14 23:13:25 UTC",
-    "attendance": 28726.0
-  },
-  {
     "game_id": "gpMOglrrMz",
     "date_time_utc": "2026-05-14 01:30:00 UTC",
     "home_score": 5,
@@ -3532,6 +3532,25 @@
     "status": "FullTime",
     "last_updated_utc": "2026-05-14 20:14:04 UTC",
     "attendance": 19194.0
+  },
+  {
+    "game_id": "gOMnGz2l5w",
+    "date_time_utc": "2026-05-14 01:30:00 UTC",
+    "home_score": 3,
+    "away_score": 2,
+    "home_team_id": "jYQJ19EqGR",
+    "away_team_id": "0KPqjA456v",
+    "referee_id": "xW5pE3Yqg1",
+    "stadium_id": "9Yqda07QvJ",
+    "home_manager_id": "odMXxreMYL",
+    "away_manager_id": "LeVq3j5WOJ",
+    "expanded_minutes": 101,
+    "season_name": "2026",
+    "matchday": 13,
+    "knockout_game": false,
+    "status": "FullTime",
+    "last_updated_utc": "2026-05-14 23:13:25 UTC",
+    "attendance": 28726.0
   },
   {
     "game_id": "0Oq6oeExQ6",
