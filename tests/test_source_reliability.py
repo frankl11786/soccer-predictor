@@ -149,7 +149,7 @@ class SourceReliabilityTests(unittest.TestCase):
         canonical = canonicalize_fixture_rows(LEAGUES["mls"], rows + [postponed])
         prepared = prepare_league(LEAGUES["mls"], canonical)
         current = prepared.current_fixtures.to_dict("records")
-       target_date = str(target["date"])[:10]
+        target_date = str(target["date"])[:10]
 
         overlaid = next(
             row
@@ -157,8 +157,8 @@ class SourceReliabilityTests(unittest.TestCase):
             if row["home_name"] == "FC Cincinnati"
             and row["away_name"] == "D.C. United"
             and str(row["date"]).startswith(target_date)
-        ) 
-     
+        )
+
         self.assertEqual(overlaid["status"], "PST")
         self.assertEqual(overlaid["status_long"], "Postponed")
         self.assertEqual(overlaid["status_source"], "American Soccer Analysis")
