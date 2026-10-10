@@ -4,8 +4,7 @@ import argparse
 import traceback
 from datetime import datetime, timezone
 
-from .api_football import ApiFootballClient, fetch_history_rows
-from .asa import fetch_mls_rows
+from .api_football import ApiFootballClient
 from .backtest import temporal_holdout_backtest
 from .bayes import fit_model
 from .config import APP_DATA, LEAGUES
@@ -14,16 +13,26 @@ from .epl_schedule import fetch_complete_epl_schedule
 from .espn import fetch_league_rows
 from .fixture_overrides import apply_fixture_status_overrides
 from .football_data import fetch_epl_results as fetch_football_data_epl_results
-from .mls_schedule import fetch_complete_mls_schedule
 from .identity import canonicalize_fixture_rows
+from .integrity import (
+    fetch_history_rows_resilient,
+    fetch_mls_rows_compatible,
+    fetch_polymarket_match_quotes_compatible,
+    fetch_polymarket_total_goals_quotes_compatible,
+    reconcile_epl_fixture_rows,
+    repair_published_snapshot,
+    sanitize_kalshi_match_quotes,
+    validate_prepared_schedule,
+)
 from .kalshi import (
     fetch_match_quotes as fetch_kalshi_match_quotes,
     fetch_total_goals_quotes as fetch_kalshi_total_goals_quotes,
     fetch_winner_quotes as fetch_kalshi_winner_quotes,
 )
+from .mls_schedule import fetch_complete_mls_schedule
 from .openfootball import fetch_epl_rows
 from .output import build_snapshot
-from .polymarket import fetch_match_quotes, fetch_total_goals_quotes, fetch_winner_quotes
+from .polymarket import fetch_winner_quotes
 from .simulate import simulate_epl, simulate_mls
 from .utils import utc_now_iso
 
@@ -63,7 +72,11 @@ def run_league(
     cfg = LEAGUES[key]
     print(f"\n=== {cfg.name} ===")
     client = ApiFootballClient.from_environment()
-    history_rows, api_meta = fetch_history_rows(client, cfg, refresh=refresh)
+    history_rows, api_meta = fetch_history_rows_resilient(
+        client,
+        cfg,
+        refresh=refresh,
+    )
 
     # Current-result sources are fetched BEFORE data preparation/model fitting.
     # Newly completed matches must update the table, Bayesian fit and future
@@ -110,9 +123,9 @@ def run_league(
             refresh=refresh,
         )
 
-        # OpenFootball remains the long-form schedule source. FixtureDownload is
-        # an independent 380-match schedule/results spine and can replace stale
-        # scheduled rows with finals when ESPN or Football-Data are unavailable.
+        # Multiple sources can publish the same EPL match on different dates
+        # after a reschedule. Reconciliation below keeps exactly one 380-match
+        # current-season spine and overlays final results by directed team pair.
         supplemental_rows = (
             openfootball_rows
             + fixture_download_rows
@@ -123,7 +136,7 @@ def run_league(
         if football_data_meta is not None:
             source_meta.append(football_data_meta)
     else:
-        asa_rows, asa_meta = fetch_mls_rows(
+        asa_rows, asa_meta = fetch_mls_rows_compatible(
             cfg.supplemental_seasons,
             refresh=refresh,
         )
@@ -138,7 +151,11 @@ def run_league(
         cfg,
         history_rows + supplemental_rows,
     )
+    if key == "epl":
+        raw_fixtures = reconcile_epl_fixture_rows(cfg, raw_fixtures)
+
     prepared = prepare_league(cfg, raw_fixtures)
+    validate_prepared_schedule(prepared, key)
 
     # Exceptional fixture states such as an officially postponed match may lag
     # in every machine-readable feed. Apply narrowly scoped, source-cited status
@@ -188,7 +205,7 @@ def run_league(
         [team["name"] for team in prepared.teams],
         event_slug=cfg.polymarket_event_slug,
     )
-    match_quotes, match_market_meta = fetch_match_quotes(
+    match_quotes, match_market_meta = fetch_polymarket_match_quotes_compatible(
         simulation.fixtures,
         prepared.teams,
         league_terms=cfg.polymarket_league_terms,
@@ -196,7 +213,7 @@ def run_league(
         max_fixtures=cfg.polymarket_match_max_fixtures,
     )
     market_meta["match_markets"] = match_market_meta
-    total_goal_quotes, total_goal_meta = fetch_total_goals_quotes(
+    total_goal_quotes, total_goal_meta = fetch_polymarket_total_goals_quotes_compatible(
         simulation.fixtures,
         prepared.teams,
         league_terms=cfg.polymarket_league_terms,
@@ -215,6 +232,10 @@ def run_league(
         series_ticker=cfg.kalshi_game_series_ticker,
         lookahead_days=cfg.polymarket_match_lookahead_days,
         max_fixtures=cfg.polymarket_match_max_fixtures,
+    )
+    kalshi_match_quotes, kalshi_match_meta = sanitize_kalshi_match_quotes(
+        kalshi_match_quotes,
+        kalshi_match_meta,
     )
     kalshi_meta["match_markets"] = kalshi_match_meta
     kalshi_total_goal_quotes, kalshi_total_goal_meta = fetch_kalshi_total_goals_quotes(
@@ -238,6 +259,13 @@ def run_league(
         kalshi_quotes, kalshi_match_quotes, kalshi_meta,
         total_goal_quotes, kalshi_total_goal_quotes,
         data_meta, output_path,
+    )
+    repair_meta = repair_published_snapshot(output_path)
+    print(
+        f"Snapshot integrity: relinked_history={repair_meta['history_links_repaired']}; "
+        f"unresolved_history={repair_meta['unresolved_final_history_links']}; "
+        f"frozen_final_probabilities="
+        f"{repair_meta['final_fixtures_using_frozen_pregame_probabilities']}"
     )
     print(f"Wrote {output_path}")
 
